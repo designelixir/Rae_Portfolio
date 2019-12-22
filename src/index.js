@@ -124,9 +124,9 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 
-renderer.setClearColor(0x212121, 0);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio >= 2 ? 2 : 1);
+// renderer.setClearColor("blue", 0);
+// renderer.setSize(window.innerWidth, window.innerHeight);
+// renderer.setPixelRatio(window.devicePixelRatio >= 2 ? 2 : 1);
 
 document.body.appendChild(renderer.domElement);
 
@@ -137,30 +137,35 @@ camera.position.set(0, 20 * 1, 35 * 1);
 camera.lookAt(scene.position);
 scene.add(camera);
 
-const ambientLight = new THREE.AmbientLight('#ffffff', 0.1);
+//transparent light 
+const ambientLight = new THREE.AmbientLight('red', 0.1);
 scene.add(ambientLight);
 
-const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
-light.position.set(0, 40, 0);
+// const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
+// light.position.set(4, 4, 4);
 
-scene.add(light);
+// scene.add(light);
 
 function render() {
   renderer.render(scene, camera);
 }
 
+//something to do with canvas width and size 
 function hcfp(percent) {
-  return `#${new THREE.Color().setHSL(percent, 0.5, 0.5).getHexString()}`;
+  return `#${new THREE.Color().setHSL(percent, 1, 1).getHexString()}`;
 }
 
+//shapes or GEOMETRIES 
 const instances = [
+
+  //weird geometric cube things
   createInstance({
     geometry: new THREE.IcosahedronGeometry(1, 0),
     material: new THREE.MeshPhongMaterial({
-      emissive: hcfp(0),
-      specular: '#efefef',
-      shininess: 20,
-      flatShading: true,
+      // emissive: hcfp(0),
+      // specular: '#efefef',
+      // shininess: 20,
+      // flatShading: true,
     }),
     multiplier: 200,
     duration: 0.7,
@@ -171,13 +176,15 @@ const instances = [
       () => getArrayWithNoise([0, 0, 0], 12),
     ],
   }),
+
+  //boxes
   createInstance({
     geometry: new THREE.BoxGeometry(1, 1, 1),
     material: new THREE.MeshPhongMaterial({
-      emissive: hcfp(0.5 / 3),
-      specular: '#efefef',
-      shininess: 20,
-      flatShading: true,
+      // emissive: hcfp(0.5 / 3),
+      // specular: '#efefef',
+      // shininess: 2,
+      // flatShading: false,
     }),
     multiplier: 200,
     duration: 0.4,
@@ -188,15 +195,17 @@ const instances = [
       () => getArrayWithNoise([10, 0, 0], 4),
     ],
   }),
+
+  //triangles 
   createInstance({
     geometry: new THREE.TetrahedronGeometry(1),
     material: new THREE.MeshPhongMaterial({
-      emissive: hcfp(1.5 / 3),
-      specular: '#efefef',
-      shininess: 20,
-      flatShading: true,
+      // emissive: hcfp(1.5 / 3),
+      // specular: '#efefef',
+      // shininess: 20,
+      // flatShading: true,
     }),
-    multiplier: 400,
+    multiplier: 40,
     duration: 0.4,
     points: [
       () => getArrayWithNoise([0, 10, 0], 10),
@@ -205,6 +214,8 @@ const instances = [
       () => getArrayWithNoise([0, -10, 0], 10),
     ],
   }),
+
+  //circles
   createInstance({
     rainbow: true,
     geometry: new THREE.IcosahedronGeometry(0.8, 3),
@@ -226,11 +237,24 @@ const instances = [
 ];
 
 const headings = document.querySelectorAll('.heading');
+//define document object model 
 const header = document.querySelector('.header');
+const desk = document.querySelector('.desk');
+const doorway = document.querySelector('.doorway');
 
+//updateOnScroll between 0 and 1 px, progress is render 
 uos(0, 1, p => render());
 
-uos(0, 0.05, p => (header.style.opacity = 1 - p));
+var updatedProgress = window.innerWidth/100;
+
+
+//updateOnScroll between 0 and 5% progress is reduce opacity for elements in header 
+uos(0, 0.5, p => (desk.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
+uos(0, 0.5, p => (doorway.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
+
+
+
+
 
 const step = 1 / instances.length;
 for (let i = 0; i < instances.length; i += 1) {
