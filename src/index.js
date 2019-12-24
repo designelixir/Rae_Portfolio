@@ -35,7 +35,7 @@ function createInstance({ rainbow = false, geometry, material, multiplier, durat
     },
     {
       name: 'aOffset',
-      data: i => [i * ((1 - duration) / (multiplier - 1))],
+      data: i => [i * ((1 + duration) / (multiplier - 1))],
       size: 1,
     },
   ];
@@ -152,7 +152,7 @@ function render() {
 
 //something to do with canvas width and size 
 function hcfp(percent) {
-  return `#${new THREE.Color().setHSL(percent, 1, 1).getHexString()}`;
+  return `#${new THREE.Color().setHSL(232, 33, 27).getHexString()}`;
 }
 
 //shapes or GEOMETRIES 
@@ -248,9 +248,10 @@ uos(0, 1, p => render());
 var updatedProgress = window.innerWidth/100;
 
 
+
 //updateOnScroll between 0 and 5% progress is reduce opacity for elements in header 
-uos(0, 0.5, p => (desk.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
-uos(0, 0.5, p => (doorway.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
+uos(0, 2000, p => (desk.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
+uos(0, 2000, p => (doorway.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
 
 
 
