@@ -40,17 +40,17 @@ function createInstance({ rainbow = false, geometry, material, multiplier, durat
     },
   ];
 
-  if (rainbow) {
-    attributes.push({
-      name: 'aColor',
-      data: (i, total) => {
-        const color = new THREE.Color();
-        color.setHSL(i / total, 0.6, 0.7);
-        return [color.r, color.g, color.b];
-      },
-      size: 3,
-    });
-  }
+  // if (rainbow) {
+  //   attributes.push({
+  //     name: 'aColor',
+  //     data: (i, total) => {
+  //       const color = new THREE.Color();
+  //       color.setHSL(i / total, 0.6, 0.7);
+  //       return [color.r, color.g, color.b];
+  //     },
+  //     size: 3,
+  //   });
+  // }
 
   const uniforms = {
     time: {
@@ -116,7 +116,7 @@ function createInstance({ rainbow = false, geometry, material, multiplier, durat
     fragment,
   });
 
-  scene.add(instance.mesh);
+  // scene.add(instance.mesh);
   return instance;
 }
 
@@ -124,9 +124,9 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 
-// renderer.setClearColor("blue", 0);
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// renderer.setPixelRatio(window.devicePixelRatio >= 2 ? 2 : 1);
+renderer.setClearColor(0x2E345B, 1);
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio >= 2 ? 2 : 1);
 
 document.body.appendChild(renderer.domElement);
 
@@ -138,8 +138,8 @@ camera.lookAt(scene.position);
 scene.add(camera);
 
 //transparent light 
-const ambientLight = new THREE.AmbientLight('red', 0.1);
-scene.add(ambientLight);
+// const ambientLight = new THREE.AmbientLight('red', 0.1);
+// scene.add(ambientLight);
 
 // const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
 // light.position.set(4, 4, 4);
@@ -152,7 +152,7 @@ function render() {
 
 //something to do with canvas width and size 
 function hcfp(percent) {
-  return `#${new THREE.Color().setHSL(232, 33, 27).getHexString()}`;
+  return `#${new THREE.Color().setHSL(percent, 33, 27).getHexString()}`;
 }
 
 //shapes or GEOMETRIES 
@@ -237,38 +237,40 @@ const instances = [
 ];
 
 const headings = document.querySelectorAll('.heading');
-//define document object model 
 const header = document.querySelector('.header');
 const desk = document.querySelector('.desk');
 const doorway = document.querySelector('.doorway');
-
+const circle = document.querySelector('.circle');
 //updateOnScroll between 0 and 1 px, progress is render 
-uos(0, 1, p => render());
+// uos(0, 1, p => render());
 
 var updatedProgress = window.innerWidth/100;
 
 
 
-//updateOnScroll between 0 and 5% progress is reduce opacity for elements in header 
-uos(0, 2000, p => (desk.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
-uos(0, 2000, p => (doorway.style.width = updatedProgress / p +"%")); //1 is the starting opacity 
+uos(0.03, 0.7, p => (desk.style.width = (p * updatedProgress*12)*10+"%")); 
+// uos(0.4, 0.5, p => (doorway.style.transform = "translateY("+15+"%)"));
+uos(0.04, 0.4, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
+uos(0.7, 0.99, p => (circle.style.width = (p * updatedProgress*120)*10+"%"));
 
 
 
+console.log(updatedProgress);
 
 
-const step = 1 / instances.length;
-for (let i = 0; i < instances.length; i += 1) {
-  const transitionBegin = i * step;
-  const transitionEnd = transitionBegin + step * 0.5;
-  const textEnd = (i + 1) * step;
-  uos(transitionBegin, transitionEnd, p => (instances[i].uniforms.time.value = p));
-  uos(transitionEnd, textEnd, p => {
-    let np = p * 2.0 - 1.0;
-    np = 1.0 - np * np;
-    headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
-  });
-}
+
+// const step = 1 / instances.length;
+// for (let i = 0; i < instances.length; i += 1) {
+//   const transitionBegin = i * step;
+//   const transitionEnd = transitionBegin + step * 0.5;
+//   const textEnd = (i + 1) * step;
+//   uos(transitionBegin, transitionEnd, p => (instances[i].uniforms.time.value = p));
+//   uos(transitionEnd, textEnd, p => {
+//     let np = p * 2.0 - 1.0;
+//     np = 1.0 - np * np;
+//     headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
+//   });
+// }
 
 function resize() {
   camera.aspect = window.innerWidth / window.innerHeight;

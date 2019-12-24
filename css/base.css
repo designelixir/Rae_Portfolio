@@ -19,7 +19,7 @@ html {
 
 body {
 	height: 100%;
-	color: white;
+	color: #e8e6e6;
 	background-color: #2E345B;
 	font-family: "mazzardBold", "mazzardLight", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -86,11 +86,8 @@ canvas {
 	
 }
 
-h1 {
-	font-size: 1px;
-}
-
 .header {
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -104,21 +101,26 @@ h1 {
 
 .desk {
 	z-index: -1;
-	height: 100%;
-	will-change: width;
+	transform: translateY(10%);
 	min-width: 100%;
 	position: fixed;
+	
+	
 }
 
 .doorway {
 	z-index: 1;
-	width: 110%;
-	will-change: width;
 	min-width: 100%;
-	
+	transform: translateY(10%);
 	position: fixed;
+	
 }
 
+.circle {
+	z-index: 3;
+	position: fixed;
+	width: 10px;
+}
 
 .heading {
 	display: flex;
@@ -133,11 +135,75 @@ h1 {
 	
 	text-align: center;
 	color: white;
-	/* max-width: calc(10% - 80px); */
+	max-width: calc(10% - 80px);
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-10%);
 	
 }
+
+.downArrow{
+	z-index: 3;
+	bottom: 1%;
+	position: fixed;
+	position: -webkit-sticky;
+	
+}
+
+
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
 
 @media screen and (min-width: 53em) {
 	.message {
