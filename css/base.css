@@ -25,7 +25,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
-	min-height: 5000px;
+	min-height: 50000px;
 }
 
 @font-face {
@@ -97,6 +97,12 @@ canvas {
 	opacity: 0;
 }
 
+.logo {
+	z-index: 5;
+	width: 30%;
+	position: absolute;
+	top: 5%;
+}
 
 
 .desk {
@@ -116,10 +122,21 @@ canvas {
 	
 }
 
-.webpage {
-	z-index: 40;
-	width: 10%;
+.hallwayDecor {
+	width: 300px;
+	top: 78%;
+	right: 10%;
+	
+	left: 0px;
+	z-index: 6;
 	position: fixed;
+}
+
+.webpage {
+	z-index: 5;
+	width: 0%;
+	position: fixed;
+	bottom: 35%;
 	
 }
 
@@ -153,7 +170,8 @@ canvas {
 	z-index: 3;
 	bottom: 1%;
 	position: fixed;
-	position: -webkit-sticky;
+	
+	
 	
 }
 

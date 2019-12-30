@@ -242,7 +242,8 @@ const desk = document.querySelector('.desk');
 const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
 const page = document.querySelector('.webpage');
-
+const elixir = document.querySelector('.logo');
+const plant = document.querySelector('.hallwayDecor');
 //updateOnScroll between 0 and 1 px, progress is render 
 // uos(0, 1, p => render());
 
@@ -250,10 +251,12 @@ var updatedProgress = window.innerWidth/100;
 
 
 
-uos(0.03, 0.7, p => (desk.style.width = (p * updatedProgress*12)*10+"%")); 
-// uos(0.4, 0.5, p => (doorway.style.transform = "translateY("+15+"%)"));
-uos(0.04, 0.4, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
-uos(0.5, 0.9, p => (page.style.width = (p * updatedProgress*2)*10+"%"));
+uos(0, 0.2, p => (desk.style.width = (p * updatedProgress*17)*10+"%")); 
+uos(0.01, 0.6, p => (plant.style.left = -(p * updatedProgress*150)*20+"px"));
+uos(0, 0.14, p => (doorway.style.width = (p * updatedProgress*15)*10+"%"));
+// uos(0.3, 0.9, p => (elixir.style.left = (p * updatedProgress*2)*10+"%"));
+
+uos(0.04, 0.3, p => (page.style.width = (p * updatedProgress*12)*10+"%"));
 
 
 
@@ -269,6 +272,8 @@ uos(0.5, 0.9, p => (page.style.width = (p * updatedProgress*2)*10+"%"));
 //     headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
 //   });
 // }
+
+
 
 function resize() {
   camera.aspect = window.innerWidth / window.innerHeight;
