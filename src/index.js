@@ -241,6 +241,8 @@ const header = document.querySelector('.header');
 const desk = document.querySelector('.desk');
 const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
+const page = document.querySelector('.webpage');
+
 //updateOnScroll between 0 and 1 px, progress is render 
 // uos(0, 1, p => render());
 
@@ -251,11 +253,7 @@ var updatedProgress = window.innerWidth/100;
 uos(0.03, 0.7, p => (desk.style.width = (p * updatedProgress*12)*10+"%")); 
 // uos(0.4, 0.5, p => (doorway.style.transform = "translateY("+15+"%)"));
 uos(0.04, 0.4, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
-uos(0.7, 0.99, p => (circle.style.width = (p * updatedProgress*120)*10+"%"));
-
-
-
-console.log(updatedProgress);
+uos(0.5, 0.9, p => (page.style.width = (p * updatedProgress*2)*10+"%"));
 
 
 
