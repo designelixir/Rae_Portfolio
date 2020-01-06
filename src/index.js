@@ -241,9 +241,13 @@ const header = document.querySelector('.header');
 const desk = document.querySelector('.desk');
 const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
-const page = document.querySelector('.webpage');
+const desktop = document.querySelector('.desktop');
 const elixir = document.querySelector('.logo');
 const plant = document.querySelector('.hallwayDecor');
+const page1 = document.querySelector('.page1');
+const page1Logos = document.querySelector('.page1Logos');
+
+
 //updateOnScroll between 0 and 1 px, progress is render 
 // uos(0, 1, p => render());
 
@@ -256,7 +260,9 @@ uos(0.01, 0.6, p => (plant.style.left = -(p * updatedProgress*150)*20+"px"));
 uos(0, 0.14, p => (doorway.style.width = (p * updatedProgress*15)*10+"%"));
 // uos(0.3, 0.9, p => (elixir.style.left = (p * updatedProgress*2)*10+"%"));
 
-uos(0.04, 0.3, p => (page.style.width = (p * updatedProgress*12)*10+"%"));
+uos(0.05, 0.3, p => (desktop.style.width = (p * updatedProgress*12)*10+"%"));
+uos(0.08, 0.6, p => (page1.style.width = (p * updatedProgress*10)*10+"%"));
+uos(0.1, 0.9, p => (page1Logos.style.width = (p * updatedProgress*2)*10+"%"));
 
 
 

@@ -110,6 +110,7 @@ canvas {
 	transform: translateY(10%);
 	min-width: 100%;
 	position: fixed;
+	max-width:556%;
 	
 	
 }
@@ -123,29 +124,44 @@ canvas {
 }
 
 .hallwayDecor {
-	width: 300px;
-	top: 78%;
+	width: 150px;
+	top: 70%;
 	right: 10%;
 	
-	left: 0px;
+	left: 100px;
 	z-index: 6;
 	position: fixed;
 }
 
-.webpage {
+.desktop {
 	z-index: 5;
 	width: 0%;
 	position: fixed;
-	bottom: 35%;
+	padding-bottom: 11%;
 	
+	max-width:87%;
 }
 
-.circle {
-	z-index: 30;
-	
-	position: relative;
-	width: 10px;
+/* logoFinder */
+.page1 { 
+	z-index: 5;
+	width: 0%;
+	position: fixed;
+	padding-left: 15%;
+	padding-bottom: 15px;
+	max-width:60%;
 }
+
+.page1Logos { 
+	z-index: 5;
+	width: 0%;
+	position: fixed;
+	padding-left: 15%;
+	padding-bottom: 15px;
+	max-width:60%;
+}
+
+
 
 .heading {
 	display: flex;
