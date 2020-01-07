@@ -29,15 +29,58 @@ body {
 
 }
 
-h2, h3, h4, h5, h6, p, a {
+h3, h4, h5, h6, p, a {
     font-family: "mazzardLight";
     color: #2c2c2c;
 
 }
 
-.baja {
-    padding-top: 10%;
-    padding-left: 10%;
-    padding-right: 30%;
-    background-color: #d6d5d8;
+.header {
+    padding-bottom: 5%;
 }
+
+.bajaPhotos {
+    padding-top: 5%;
+    
+    background-color: #d6d5d8;
+    display: inline-flex;
+}
+
+
+.column-left {
+    width: 40%;
+    
+}
+
+.column-right {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.row {
+    display: inline-flex;
+}
+
+.spacer {
+    height: 200px;
+}
+
+
+.zoom {
+    transition: transform .5s;
+    width: 50%;
+  }  
+.zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
