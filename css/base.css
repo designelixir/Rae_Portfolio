@@ -125,10 +125,10 @@ canvas {
 
 .hallwayDecor {
 	width: 150px;
-	top: 70%;
+	padding-top: 70%;
 	right: 10%;
 	
-	left: 100px;
+	padding-left: 100px;
 	z-index: 6;
 	position: fixed;
 }
@@ -149,7 +149,8 @@ canvas {
 	position: fixed;
 	padding-left: 15%;
 	padding-bottom: 15px;
-	max-width:60%;
+	max-width:40%;
+	
 }
 
 .page1Logos { 
@@ -159,6 +160,17 @@ canvas {
 	padding-left: 15%;
 	padding-bottom: 15px;
 	max-width:60%;
+}
+
+.Notif {
+	width: 30%;
+	bottom: 65%;
+	opacity: 1;
+	padding-right: 6%;
+	
+	z-index: 6;
+	position: fixed;
+	max-width: 30%;
 }
 
 
