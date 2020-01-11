@@ -25,7 +25,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
-	min-height: 50000px;
+	min-height: 20000px;
 }
 
 @font-face {
@@ -52,6 +52,15 @@ body {
 
 }
 
+@font-face {
+    font-family: 'meganschalkboardregular';
+    src: url('fonts/meganschalkboardbold-webfont.woff2') format('woff2'),
+         url('fonts/meganschalkboardbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 h2, h3, h4, h5, h6, p, a {
 	font-family: "mazzardLight";
 }
@@ -62,6 +71,23 @@ canvas {
 	left: 0;
 	background-color: #2E345B;
 }
+
+
+.progress-container {
+	width: 100%;
+	height: 8px;
+	background: #ccc;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+  }
+  
+  .progress-bar {
+	height: 8px;
+	background: #394172;
+	width: 0%;
+  }
 
 .frame {
 	/* padding: 3rem 5vw; */
