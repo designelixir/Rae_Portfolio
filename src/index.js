@@ -266,6 +266,14 @@ uos(0.07, 0.6, p => (logoFinder.style.width = (p * updatedProgress*10)*10+"%"));
 // uos(0.09, 0.091, p => (notif.style.width = (p * updatedProgress*10)*10+"%"));
 uos(0.3, 0.4, p => (logoFinder.style.width = (p * updatedProgress*10)*10+"%"));
 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
 
 // const step = 1 / instances.length;
 // for (let i = 0; i < instances.length; i += 1) {
