@@ -80,7 +80,7 @@ canvas {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	z-index: 10;
+	z-index: 12;
   }
   
   .progress-bar {
@@ -98,6 +98,32 @@ canvas {
 
 .frame__demos {
 	/* margin: 1rem 0; */
+}
+
+.black {
+	z-index: 11;
+	width: 1000%;
+	opacity: 1;
+	position: fixed;
+	top: 0;
+}
+
+.stars {
+	width: 800%;
+	z-index: 11;
+	animation: rotateStars 10s infinite;
+}
+
+
+
+@keyframes rotateStars {
+	0%, 100% {
+		transform: translateY(0);
+	  }
+	  50% {
+		transform: translateY(-15px);
+	  }
+	
 }
 
 /* entire canvas frame is housed within  */
@@ -123,14 +149,26 @@ canvas {
 }
 
 .logo {
-	z-index: 5;
-	width: 25%;
+	z-index: 12;
+	width: 40%;
 	position: absolute;
-	top: 5%;
-	animation: bounce 10s infinite;
+	top: 20%;
+	/* animation: bounce 10s infinite; */
 
 }
 
+.social {
+	position: absolute;
+	z-index: 12;
+	display: flex;
+	bottom: 2%;
+	justify-items: center;
+}
+
+.socialIcons {
+	padding-right: 10px;
+	width: 50px;
+}
 
 .desk {
 	z-index: -1;
@@ -221,8 +259,9 @@ canvas {
 }
 
 .downArrow{
-	z-index: 3;
-	bottom: 1%;
+	z-index: 12;
+	bottom: 3%;
+	right: 2%;
 	position: fixed;
 	
 	
