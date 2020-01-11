@@ -109,7 +109,7 @@ canvas {
 }
 
 .stars {
-	width: 800%;
+	width: 100%;
 	z-index: 11;
 	animation: rotateStars 10s infinite;
 }
@@ -146,6 +146,7 @@ canvas {
 	z-index: 1;
 	will-change: width;
 	opacity: 0;
+	width: 100%;
 }
 
 .logo {
