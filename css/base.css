@@ -96,9 +96,6 @@ canvas {
 	z-index: 1000;
 }
 
-.frame__demos {
-	/* margin: 1rem 0; */
-}
 
 .black {
 	z-index: 11;
@@ -176,7 +173,7 @@ canvas {
 	transform: translateY(10%);
 	min-width: 100%;
 	position: fixed;
-	max-width:556%;
+	max-width:700%;
 	
 	
 }
@@ -205,17 +202,16 @@ canvas {
 	position: fixed;
 	padding-bottom: 11%;
 	
-	max-width:87%;
+	max-width:105%;
 }
 
-/* logoFinder */
-.logoFinder { 
+.resume { 
 	z-index: 5;
 	width: 0%;
 	position: fixed;
-	padding-left: 15%;
-	padding-bottom: 15px;
-	max-width:40%;
+	padding-left: 5%;
+	bottom: 235px;
+	max-width:65%;
 }
 
 .page1Logos { 
@@ -227,15 +223,24 @@ canvas {
 	max-width:60%;
 }
 
-.Notif {
-	width: 30%;
-	bottom: 65%;
-	opacity: 1;
-	padding-right: 6%;
+.sticky {
 	
-	z-index: 6;
 	position: fixed;
-	max-width: 30%;
+	width: 0%;
+	max-width: 15%;
+	right: 5%;
+	bottom: 25%;
+	z-index: 10;
+
+}
+
+#stickyText {
+	top: -50%;
+	z-index: 11;
+	position: absolute;
+	top: 40%;
+	left: 15%;
+	color: #2c2c2c;
 }
 
 
