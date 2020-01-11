@@ -243,32 +243,34 @@ const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
 const desktop = document.querySelector('.desktop');
 const elixir = document.querySelector('.logo');
-// const plant = document.querySelector('.hallwayDecor');
-const logoFinder = document.querySelector('.logoFinder');
-// const notif = document.querySelector('.Notif');
+const resume = document.querySelector('.resume');
 const square = document.querySelector('.black');
 const social = document.querySelector('.social');
 const stars = document.querySelector('.stars');
-//updateOnScroll between 0 and 1 px, progress is render 
-// uos(0, 1, p => render());
+const sticky = document.querySelector('.sticky');
+const stickyText = document.querySelector('#stickyText');
+
 
 var updatedProgress = window.innerWidth/100;
 
+// var journalStart = new Date("05/26/2013");
+// var journalCurrent = getDate();
+// var journalTime = journalCurrent.getTime() - journalStart.getTime();
+// var journalDate = journalTime / (1000 * 3600 * 24);
 
 uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*800)) / (updatedProgress) )));
 uos(0, 1, p => (stars.style.opacity = ((updatedProgress-(p*900)) / (updatedProgress) )));
 uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
-uos(0.02, 0.2, p => (desk.style.width = (p * updatedProgress*15)*10+"%")); 
-// uos(0.01, 0.6, p => (plant.style.left = -(p * updatedProgress*150)*20+"px"));
+uos(0.02, 0.2, p => (desk.style.width = (p * updatedProgress*18)*9+"%")); 
 uos(0.02, 0.14, p => (doorway.style.width = (p * updatedProgress*13)*10+"%"));
-// uos(0.3, 0.9, p => (elixir.style.left = (p * updatedProgress*2)*10+"%"));
 
-uos(0.06, 0.28, p => (desktop.style.width = (p * updatedProgress*12)*10+"%"));
-uos(0.09, 0.6, p => (logoFinder.style.width = (p * updatedProgress*10)*10+"%"));
-// uos(0.08, 0.3, p => (notif.style.right = (p * updatedProgress*2)*10+"%"));
-// uos(0.09, 0.091, p => (notif.style.width = (p * updatedProgress*10)*10+"%"));
-uos(0.32, 0.4, p => (logoFinder.style.width = (p * updatedProgress*10)*10+"%"));
+uos(0.06, 0.28, p => (desktop.style.width = (p * updatedProgress*10)*10+"%"));
+uos(0.1, 0.6, p => (resume.style.width = (p * updatedProgress*10)*10+"%"));
+uos(0.1, 0.6, p => (sticky.style.width = (p * updatedProgress*10)*10+"%"));
+uos(0.1, 0.6, p => (stickyText.innerHTML = ("tits")));
+
+
 
 window.onscroll = function() {scrollProgress()};
 
@@ -277,6 +279,7 @@ function scrollProgress() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
+  document.getElementById("percentage").innerHTML = ""+ scrolled + "";
 }
 
 // const step = 1 / instances.length;
