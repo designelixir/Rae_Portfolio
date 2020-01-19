@@ -106,7 +106,7 @@ canvas {
 }
 
 .stars {
-	width: 100%;
+	width: 150%;
 	z-index: 11;
 	animation: rotateStars 10s infinite;
 }
@@ -156,10 +156,10 @@ canvas {
 }
 
 .social {
-	position: absolute;
+	
 	z-index: 12;
 	display: flex;
-	bottom: 2%;
+	transform: translateY(-200%);
 	justify-items: center;
 }
 
@@ -170,10 +170,13 @@ canvas {
 
 .desk {
 	z-index: -1;
-	transform: translateY(10%);
+	transform: translateY(15%);
+	
 	min-width: 100%;
+	max-width: 600%;
 	position: fixed;
-	max-width:700%;
+	
+	
 	
 	
 }
@@ -195,54 +198,6 @@ canvas {
 	z-index: 6;
 	position: fixed;
 }
-
-.desktop {
-	z-index: 5;
-	width: 0%;
-	position: fixed;
-	padding-bottom: 11%;
-	
-	max-width:105%;
-}
-
-.resume { 
-	z-index: 5;
-	width: 0%;
-	position: fixed;
-	padding-left: 5%;
-	bottom: 235px;
-	max-width:65%;
-}
-
-.page1Logos { 
-	z-index: 5;
-	width: 0%;
-	position: fixed;
-	padding-left: 15%;
-	padding-bottom: 15px;
-	max-width:60%;
-}
-
-.sticky {
-	
-	position: fixed;
-	width: 0%;
-	max-width: 15%;
-	right: 5%;
-	bottom: 25%;
-	z-index: 10;
-
-}
-
-#stickyText {
-	top: -50%;
-	z-index: 11;
-	position: absolute;
-	top: 40%;
-	left: 15%;
-	color: #2c2c2c;
-}
-
 
 
 .heading {
@@ -274,6 +229,31 @@ canvas {
 	
 }
 
+.launch {
+	height: 1px;
+	max-width: 2000%;
+	position: fixed;
+	padding-bottom: 35%;
+	
+}
+
+
+.spinny { 
+	position: fixed;
+	transform: translateY(-300%) translateX(-50%);
+	max-width: 5%;
+	z-index: 10;
+	width: 0%;
+}
+
+.on { 
+	position: fixed;
+	transform: translateY(-25%) translateX(-0.5%);
+	max-width: 97%;
+	z-index: 8;
+	width: 97%;
+	opacity:0;
+}
 
 .bounce {
 	-moz-animation: bounce 3s infinite;
@@ -330,10 +310,8 @@ canvas {
 }
 
 
-@media screen and (min-width: 53em) {
-	.message {
-		display: none;
-	}
+@media screen and (max-width: 600px) {
+	
 	.frame {
 		position: fixed;
 		text-align: left;
@@ -386,4 +364,6 @@ canvas {
 		line-height: 1.2;
 		font-size: 2.5vw;
 	}
+
+	
 }
