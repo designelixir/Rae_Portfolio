@@ -106,9 +106,9 @@ canvas {
 }
 
 .stars {
-	width: 150%;
+	width: 100%;
 	z-index: 11;
-	animation: rotateStars 10s infinite;
+	animation: rotateStars 5s infinite;
 }
 
 
@@ -152,11 +152,11 @@ canvas {
 	position: absolute;
 	top: 20%;
 	/* animation: bounce 10s infinite; */
+	animation: rotateStars 10s infinite;
 
 }
 
 .social {
-	
 	z-index: 12;
 	display: flex;
 	transform: translateY(-200%);
@@ -170,15 +170,9 @@ canvas {
 
 .desk {
 	z-index: -1;
-	transform: translateY(15%);
-	
+	transform: translateY(18%);
 	min-width: 100%;
-	max-width: 600%;
 	position: fixed;
-	
-	
-	
-	
 }
 
 .doorway {
@@ -189,70 +183,51 @@ canvas {
 	
 }
 
-.hallwayDecor {
-	width: 150px;
-	padding-top: 70%;
-	right: 10%;
-	
-	padding-left: 100px;
-	z-index: 6;
-	position: fixed;
-}
-
-
-.heading {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	position: fixed;
-	z-index: 0;
-	will-change: opacity;
-	opacity: 0;
-	line-height: 1.2;
-	
-	text-align: center;
-	color: white;
-	max-width: calc(10% - 80px);
-	left: 50%;
-	transform: translateX(-10%);
-	
-}
 
 .downArrow{
 	z-index: 12;
 	bottom: 3%;
 	right: 2%;
 	position: fixed;
-	
-	
-	
 }
-
-.launch {
-	height: 1px;
-	max-width: 2000%;
-	position: fixed;
-	padding-bottom: 35%;
-	
-}
-
 
 .spinny { 
 	position: fixed;
-	transform: translateY(-300%) translateX(-50%);
-	max-width: 5%;
+	transform: translateY(-100%);
+	/* max-width: 500%; */
 	z-index: 10;
-	width: 0%;
+	width: 5%;
+	opacity: 0%;
 }
 
 .on { 
 	position: fixed;
-	transform: translateY(-25%) translateX(-0.5%);
+	max-width: 970%;
+	z-index: 8;
+	height: 150%;
+	opacity:0;
+}
+
+.toolbar {
+	
+	position: fixed;
+	transform: translateY(-26%) translateX(-0.5%);
 	max-width: 97%;
 	z-index: 8;
 	width: 97%;
+	height: 90%;
 	opacity:0;
+
+}
+
+.dock {
+	position: fixed;
+	max-width: 70%;
+	z-index: 8;
+	width: 97%;
+	
+	opacity:0;
+
 }
 
 .bounce {
@@ -365,5 +340,9 @@ canvas {
 		font-size: 2.5vw;
 	}
 
+	.toolbars {
+		position: fixed;
+		transform: translateY(-700%) translateX(-0.5%);
+	}
 	
 }
