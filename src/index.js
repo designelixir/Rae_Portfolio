@@ -243,32 +243,40 @@ const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
 const desktop = document.querySelector('.desktop');
 const elixir = document.querySelector('.logo');
-const resume = document.querySelector('.resume');
+
 const square = document.querySelector('.black');
 const social = document.querySelector('.social');
 const stars = document.querySelector('.stars');
-const sticky = document.querySelector('.sticky');
-const stickyText = document.querySelector('#stickyText');
+
+const spinny = document.querySelector('.spinny');
+const on = document.querySelector('.on');
 
 
 var updatedProgress = window.innerWidth/100;
+var updatedProgressHeight = window.innerHeight/100;
 
-// var journalStart = new Date("05/26/2013");
-// var journalCurrent = getDate();
-// var journalTime = journalCurrent.getTime() - journalStart.getTime();
-// var journalDate = journalTime / (1000 * 3600 * 24);
 
-uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*800)) / (updatedProgress) )));
+uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*700)) / (updatedProgress) )));
 uos(0, 1, p => (stars.style.opacity = ((updatedProgress-(p*900)) / (updatedProgress) )));
 uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
-uos(0.02, 0.2, p => (desk.style.width = (p * updatedProgress*18)*9+"%")); 
-uos(0.02, 0.14, p => (doorway.style.width = (p * updatedProgress*13)*10+"%"));
+uos(0, 0.4, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
+uos(0.01, 0.2, p => (doorway.style.width = (p * updatedProgress*25)*10+"%"));
 
-uos(0.06, 0.28, p => (desktop.style.width = (p * updatedProgress*10)*10+"%"));
-uos(0.1, 0.6, p => (resume.style.width = (p * updatedProgress*10)*10+"%"));
-uos(0.1, 0.6, p => (sticky.style.width = (p * updatedProgress*10)*10+"%"));
-uos(0.1, 0.6, p => (stickyText.innerHTML = ("tits")));
+uos(0.28, 0.3, p => (spinny.style.width = (p * updatedProgress*2)*9+"%")); 
+uos(0.28, 0.3, p => (spinny.style.width = (p * updatedProgress*2)*9+"%")); 
+
+
+uos(0.25, 0.41, p => (on.style.width = (p * updatedProgress*2)*900+"%")); 
+uos(0.25, 0.41, p => (on.style.opacity =  (0.1+(p/updatedProgress*100)) ));
+
+
+// uos(0.1, 0.5, p => (launch.style.height = (p * updatedProgress*30)+"%")); 
+
+// uos(0.06, 0.28, p => (desktop.style.width = (p * updatedProgress*10)*10+"%"));
+// uos(0.1, 0.6, p => (resume.style.width = (p * updatedProgress*10)*10+"%"));
+// uos(0.1, 0.6, p => (sticky.style.width = (p * updatedProgress*10)*10+"%"));
+// uos(0.1, 0.6, p => (stickyText.innerHTML = ("tits")));
 
 
 
@@ -279,21 +287,8 @@ function scrollProgress() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
-  document.getElementById("percentage").innerHTML = ""+ scrolled + "";
+  
 }
-
-// const step = 1 / instances.length;
-// for (let i = 0; i < instances.length; i += 1) {
-//   const transitionBegin = i * step;
-//   const transitionEnd = transitionBegin + step * 0.5;
-//   const textEnd = (i + 1) * step;
-//   uos(transitionBegin, transitionEnd, p => (instances[i].uniforms.time.value = p));
-//   uos(transitionEnd, textEnd, p => {
-//     let np = p * 2.0 - 1.0;
-//     np = 1.0 - np * np;
-//     headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
-//   });
-// }
 
 
 
