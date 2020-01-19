@@ -251,6 +251,8 @@ const stars = document.querySelector('.stars');
 const spinny = document.querySelector('.spinny');
 const on = document.querySelector('.on');
 
+const dock = document.querySelector('.dock');
+
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
@@ -260,23 +262,26 @@ uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*700)) / (updatedProg
 uos(0, 1, p => (stars.style.opacity = ((updatedProgress-(p*900)) / (updatedProgress) )));
 uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
-uos(0, 0.4, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
+uos(0, 0.3, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
 uos(0.01, 0.2, p => (doorway.style.width = (p * updatedProgress*25)*10+"%"));
 
-uos(0.28, 0.3, p => (spinny.style.width = (p * updatedProgress*2)*9+"%")); 
-uos(0.28, 0.3, p => (spinny.style.width = (p * updatedProgress*2)*9+"%")); 
+uos(0.25, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
+
+uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
 
 
-uos(0.25, 0.41, p => (on.style.width = (p * updatedProgress*2)*900+"%")); 
-uos(0.25, 0.41, p => (on.style.opacity =  (0.1+(p/updatedProgress*100)) ));
+
+// uos(0.4, 0.41, p => (dock.style.opacity =  (0+(p/updatedProgress*100)) ));
+
+// uos(0.4, 0.41, p => (on.style.width = (p * updatedProgress*2)*900+"%")); 
 
 
-// uos(0.1, 0.5, p => (launch.style.height = (p * updatedProgress*30)+"%")); 
 
-// uos(0.06, 0.28, p => (desktop.style.width = (p * updatedProgress*10)*10+"%"));
-// uos(0.1, 0.6, p => (resume.style.width = (p * updatedProgress*10)*10+"%"));
-// uos(0.1, 0.6, p => (sticky.style.width = (p * updatedProgress*10)*10+"%"));
-// uos(0.1, 0.6, p => (stickyText.innerHTML = ("tits")));
+
+
+
+
+
 
 
 
