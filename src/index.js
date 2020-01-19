@@ -269,6 +269,7 @@ uos(0.25, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
 
+uos(0.32, 0.4, p => (dock.style.opacity =  ((p*10/updatedProgress)) ));
 
 
 // uos(0.4, 0.41, p => (dock.style.opacity =  (0+(p/updatedProgress*100)) ));

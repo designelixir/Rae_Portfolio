@@ -218,17 +218,58 @@ canvas {
 	height: 90%;
 	opacity:0;
 
+	text-align: left;
+
 }
 
 .dock {
 	position: fixed;
-	max-width: 70%;
-	z-index: 8;
-	width: 97%;
-	
+	top: 0%;
+	left: 0%;
+	z-index: 13;
+	width: 100%;
+	background-color: #2E345B;
+	height: 50px;
 	opacity:0;
 
 }
+nav {    
+    display: block;
+	text-align: left;
+	
+  }
+
+nav ul { 
+  margin: 0;
+  padding:0;
+  list-style: none;
+  display:block; 
+  color:#e8e8e8;
+  padding-right: 15px;
+}
+
+.nav li{padding-left: 15px;}
+.nav > li {float:left; } 
+   
+.nav ul {
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  left: -99999em;
+  background-color: #2c2c2c;
+}
+.nav > li:hover > ul {
+  left: auto;
+}
+
+.nav > li li:hover > ul { 
+  left: 100%;
+  top: 0px;
+}
+
+
+
+
 
 .bounce {
 	-moz-animation: bounce 3s infinite;
