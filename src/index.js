@@ -285,21 +285,25 @@ function clock(){
 setInterval(clock, 1000);
 
 const current = new Date();
-const year = current.getFullYear();
 const day = current.getDate();
+
 const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
 const monthGet = current.getMonth();
 const monthName = monthArray[monthGet];
 const hours = current.getHours();
 if (hours > 0 && hours <= 12) {
   timeValue= "" + hours;
+  nd = "AM";
 } else if (hours > 12) {
   timeValue= "" + (hours - 12);
+  nd="PM";
 } else if (hours == 0) {
   timeValue= "12";
 }
+
+
 const minutes = current.getMinutes();
-document.getElementById("time").innerHTML = monthName +" "+ day+" " +year+"  "+timeValue+":"+minutes;
+document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+minutes+" "+nd;
 
 
 

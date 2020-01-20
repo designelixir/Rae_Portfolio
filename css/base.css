@@ -224,7 +224,7 @@ canvas {
 
   .toolRight {
 	  float: right;
-	  padding-right: 25px;
+	  padding-right: 15px;
 	  padding-top: 15px;
 
   }
@@ -252,6 +252,16 @@ canvas {
 	padding-left: 5px;
 	padding-right: 10px;
   }
+
+  .nav a{
+	  color: #e8e8e8;
+	  text-decoration: none;
+  }
+
+  .nav a:hover{
+	cursor:alias;
+
+  }
   
   /* sub menu */
   .nav ul {
@@ -260,10 +270,10 @@ canvas {
 	left: -99999em;
 	background-color: rgba(44, 44, 44, 0.75);
 	padding-right: 20px;
-	padding-left: 25px;
+	padding-left: 20px;
 	transform: translateX(-20px) translateY(-4px);
 	line-height: 10px;
-	border: thin red;
+	
   }
   
   /* sub sub menu */
@@ -285,6 +295,8 @@ canvas {
 
   .bold {
 	  font-family: "mazzardBold";
+	  font-size: 15px;
+	  transform: translateY(-3px);
   }
   
 
@@ -402,9 +414,8 @@ canvas {
 		font-size: 2.5vw;
 	}
 
-	.toolbars {
-		position: fixed;
-		transform: translateY(-700%) translateX(-0.5%);
+	#toolIcons {
+		display: none;
 	}
 	
 }
