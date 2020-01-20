@@ -137,15 +137,6 @@ camera.position.set(0, 20 * 1, 35 * 1);
 camera.lookAt(scene.position);
 scene.add(camera);
 
-//transparent light 
-// const ambientLight = new THREE.AmbientLight('red', 0.1);
-// scene.add(ambientLight);
-
-// const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
-// light.position.set(4, 4, 4);
-
-// scene.add(light);
-
 function render() {
   renderer.render(scene, camera);
 }
@@ -236,6 +227,8 @@ const instances = [
   }),
 ];
 
+
+//query selectors for scrolling behavior
 const headings = document.querySelectorAll('.heading');
 const header = document.querySelector('.header');
 const desk = document.querySelector('.desk');
@@ -243,6 +236,7 @@ const doorway = document.querySelector('.doorway');
 const circle = document.querySelector('.circle');
 const desktop = document.querySelector('.desktop');
 const elixir = document.querySelector('.logo');
+const downArrow = document.querySelector('.downArrow');
 
 const square = document.querySelector('.black');
 const social = document.querySelector('.social');
@@ -250,37 +244,63 @@ const stars = document.querySelector('.stars');
 
 const spinny = document.querySelector('.spinny');
 const on = document.querySelector('.on');
+const wallpaper = document.querySelector('.wallpaper');
 
+const toolbar = document.querySelector('.toolbar');
 const dock = document.querySelector('.dock');
-
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
-
+//scrolling behavior for SVGS 
 uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*700)) / (updatedProgress) )));
 uos(0, 1, p => (stars.style.opacity = ((updatedProgress-(p*900)) / (updatedProgress) )));
 uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
+uos(0.3, 1, p => (downArrow.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
+
 
 uos(0, 0.3, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
 uos(0.01, 0.2, p => (doorway.style.width = (p * updatedProgress*25)*10+"%"));
 
-uos(0.25, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
+uos(0.2, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
 
 
+uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*20/updatedProgress)) ));
+uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
+uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*20/updatedProgress)) ));
 
-// uos(0.4, 0.41, p => (dock.style.opacity =  (0+(p/updatedProgress*100)) ));
-
-// uos(0.4, 0.41, p => (on.style.width = (p * updatedProgress*2)*900+"%")); 
-
-
-
+uos(0.35, 0.4, p => (spinny.style.width = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
 
 
 
+//calculate time 
+const current = new Date();
+const day = current.getDate();
+
+const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+const monthGet = current.getMonth();
+const monthName = monthArray[monthGet];
+
+const hours = current.getHours();
+if (hours > 0 && hours <= 12) {
+  timeValue= "" + hours;
+} else if (hours > 12) {
+  timeValue= "" + (hours - 12);
+} else if (hours == 0) {
+  timeValue= "12";
+}
+
+if (hours >0 && hours <= 11) {nd="AM";}
+else {nd = "PM"}
+
+const minutes = current.getMinutes();
+if (minutes < 10){space ="0";}
+else {space=""};
+
+document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd;
 
 
 
@@ -291,8 +311,10 @@ function scrollProgress() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
+  var truncScroll = Math.trunc(scrolled);
   document.getElementById("myBar").style.width = scrolled + "%";
-  
+  document.getElementById("updatedProgress").innerHTML = truncScroll +"%";
+
 }
 
 
