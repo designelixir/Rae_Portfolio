@@ -251,7 +251,7 @@ const stars = document.querySelector('.stars');
 const spinny = document.querySelector('.spinny');
 const on = document.querySelector('.on');
 
-const dock = document.querySelector('.dock');
+const toolbar = document.querySelector('.toolbar');
 
 
 var updatedProgress = window.innerWidth/100;
@@ -269,7 +269,7 @@ uos(0.25, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
 
-uos(0.32, 0.4, p => (dock.style.opacity =  ((p*10/updatedProgress)) ));
+uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*20/updatedProgress)) ));
 
 
 // uos(0.4, 0.41, p => (dock.style.opacity =  (0+(p/updatedProgress*100)) ));
@@ -279,9 +279,27 @@ uos(0.32, 0.4, p => (dock.style.opacity =  ((p*10/updatedProgress)) ));
 
 
 
+function clock(){
 
+}
+setInterval(clock, 1000);
 
-
+const current = new Date();
+const year = current.getFullYear();
+const day = current.getDate();
+const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+const monthGet = current.getMonth();
+const monthName = monthArray[monthGet];
+const hours = current.getHours();
+if (hours > 0 && hours <= 12) {
+  timeValue= "" + hours;
+} else if (hours > 12) {
+  timeValue= "" + (hours - 12);
+} else if (hours == 0) {
+  timeValue= "12";
+}
+const minutes = current.getMinutes();
+document.getElementById("time").innerHTML = monthName +" "+ day+" " +year+"  "+timeValue+":"+minutes;
 
 
 
