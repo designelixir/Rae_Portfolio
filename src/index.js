@@ -259,8 +259,8 @@ uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedPro
 uos(0.3, 1, p => (downArrow.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
 
-uos(0, 0.3, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
-uos(0.01, 0.2, p => (doorway.style.width = (p * updatedProgress*25)*10+"%"));
+uos(0.02, 0.5, p => (desk.style.width = (p * updatedProgress*20)*9+"%")); 
+uos(0.03, 0.2, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
 
 uos(0.2, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
 
