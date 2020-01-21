@@ -11,6 +11,7 @@ html {
 	height: 100%;
 	cursor: url('src/cursor.svg'), auto;
 	overflow-x: hidden;
+	
 }
 
 #pixels {
@@ -161,6 +162,7 @@ canvas {
 	display: flex;
 	transform: translateY(2000px);
 	justify-items: center;
+	bottom: 0;
 }
 
 .socialIcons {
@@ -209,7 +211,7 @@ canvas {
 }
 
 .wallpaper {
-	z-index: 10;
+	z-index: 9;
 	height: 100%;
 	position: fixed;
 	opacity: 0;
@@ -253,6 +255,49 @@ canvas {
 	animation: bounce 2s infinite;
 	
 }
+
+.notif {
+	position: fixed;
+	z-index: 25;
+	width: 400px;
+	right: -200%;
+}
+
+
+
+.desktopFiles {
+	z-index: 30; 
+	position: fixed; 
+	width: 100px;
+	opacity: 1;
+}
+
+#icon1 {transform: translate(-400%, -100%);}
+#icon2 {transform: translate(-200%, -200%);}
+#icon3 {transform: translate(-100%, -300%);}
+#icon4 {transform: translate(-250%, -400%);}
+#icon5 {transform: translate(200%, -500%);}
+#icon6 {transform: translate(250%, -600%);}
+#icon7 {transform: translate(-260%, -700%);}
+#icon8 {transform: translate(300%, -800%);}
+#icon9 {transform: translate(500%, -100%);}
+#icon10 {transform: translate(70%, 100%);}
+#icon11 {transform: translate(20%, 100%);}
+#icon12 {transform: translate(80%, 100%);}
+#icon13 {transform: translate(90%, 100%);}
+#icon14 {transform: translate(175%, 100%);}
+#icon15 {transform: translate(210%, 100%);}
+
+
+
+.finder {
+	width: 400px;
+	transform: translate(-50%, -60%);
+	position: fixed;
+	opacity: 1;
+	z-index: 40;
+}
+
 
 
 .toolbar {
@@ -349,6 +394,7 @@ canvas {
 	  font-size: 15px;
 	  transform: translateY(-3px);
   }
+
   
 
 
@@ -409,6 +455,11 @@ canvas {
   }
 }
 
+@media screen and (max-width: 1000px) {
+	.finder {
+		max-width: 70%;
+	}
+}
 
 @media screen and (max-width: 600px) {
 	
@@ -465,7 +516,11 @@ canvas {
 		font-size: 2.5vw;
 	}
 
-	#toolIcons {
+	.time {
+		display: none;
+	}
+
+	.updatedProgress {
 		display: none;
 	}
 

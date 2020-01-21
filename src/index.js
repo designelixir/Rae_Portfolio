@@ -248,6 +248,27 @@ const wallpaper = document.querySelector('.wallpaper');
 
 const toolbar = document.querySelector('.toolbar');
 const dock = document.querySelector('.dock');
+const finder = document.querySelector('.finder');
+const notif = document.querySelector('.notif');
+
+
+const file1 = document.querySelector('#icon1');
+const file2 = document.querySelector('#icon2');
+const file3 = document.querySelector('#icon3');
+const file4 = document.querySelector('#icon4');
+const file5 = document.querySelector('#icon5');
+const file6 = document.querySelector('#icon6');
+const file7 = document.querySelector('#icon7');
+const file8 = document.querySelector('#icon8');
+const file9 = document.querySelector('#icon9');
+const file10 = document.querySelector('#icon10');
+const file11 = document.querySelector('#icon11');
+const file12 = document.querySelector('#icon12');
+const file13 = document.querySelector('#icon13');
+const file14 = document.querySelector('#icon14');
+const file15 = document.querySelector('#icon15');
+
+
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
@@ -271,9 +292,34 @@ uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*20/updatedProgress)) ));
 
-uos(0.35, 0.4, p => (spinny.style.width = ((updatedProgress-(p*1000)) / (updatedProgress) )));
+uos(0.4, 0.45, p => (finder.style.opacity =  ((p*10/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file1.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file2.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file3.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file4.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file5.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file6.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file7.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file8.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file9.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file10.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file11.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file12.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file13.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file14.style.opacity =  ((p*5/updatedProgress)) ));
+// uos(0.4, 0.45, p => (file15.style.opacity =  ((p*5/updatedProgress)) ));
 
 
+
+uos(0.36, 0.4, p => (notif.style.right = (updatedProgress+0)*p +"%"));
+
+
+
+
+//scroll to positions
+function scrollFinder() {
+  window.scrollTo(0,50);
+}
 
 
 //calculate time 
