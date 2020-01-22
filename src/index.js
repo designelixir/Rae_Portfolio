@@ -278,6 +278,8 @@ var updatedProgressHeight = window.innerHeight/100;
 //scrolling behavior for SVGS 
 uos(0, .1, p => (square.style.opacity = ((updatedProgress-(p*70)) / (updatedProgress) )));
 uos(0, .1, p => (logo.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+uos(0, .1, p => (social.style.paddingBottom= (((p)) * (updatedProgress) +"%" )));
+
 uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 
 // uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));

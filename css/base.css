@@ -145,7 +145,7 @@ canvas {
 .logo {
 	z-index: 12;
 	width: 40%;
-	position: absolute;
+	position: fixed;
 	
 	/* animation: bounce 10s infinite; */
 	animation: rotateStars 10s infinite;
@@ -154,7 +154,7 @@ canvas {
 
 
 .social {
-	transform: translateY(700%);
+	
 	z-index: 12;
 	position: fixed;
 	justify-items: center;
@@ -582,7 +582,7 @@ canvas {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 479px) {
 	
 	.html {
 		overflow: none;
