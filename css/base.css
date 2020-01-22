@@ -489,7 +489,7 @@ canvas {
 	position: absolute;
 	white-space: nowrap;
 	left: -99999em;
-	background-color: rgba(47, 53, 89, 0.75);
+	background-color: rgba(47, 53, 89, 0.92);
 	padding-right: 20px;
 	padding-left: 20px;
 	transform: translateX(-20px) translateY(-5px);
@@ -501,7 +501,7 @@ canvas {
   .nav ul ul {
 	transform: translateY(-48px);
 	position: absolute;
-	background-color: rgba(47, 53, 89, 0.70);
+	background-color: rgba(47, 53, 89, 0.92);
 	border: solid rgba(44, 44, 44, 0.3) 2px;
   }
   
@@ -582,7 +582,7 @@ canvas {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 479px) {
 	
 	.html {
 		overflow: none;
