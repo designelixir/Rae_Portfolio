@@ -13,6 +13,10 @@ html {
 
 }
 
+svg {
+	font-family: 'mazzardBold';
+}
+
 body {
 	height: 100%;
 	color: #e8e6e6;
