@@ -56,7 +56,7 @@
       .cls-13 {
         font-size: 34px;
         fill: #e8e8e8;
-        font-family: MazzardH-Bold, Mazzard;
+        font-family: mazzardLight, Mazzard;
         font-weight: 700;
       }
 

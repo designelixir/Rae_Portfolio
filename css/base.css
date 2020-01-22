@@ -13,6 +13,10 @@ html {
 
 }
 
+svg {
+	font-family: 'mazzardBold';
+}
+
 body {
 	height: 100%;
 	color: #e8e6e6;
@@ -145,7 +149,7 @@ canvas {
 .logo {
 	z-index: 12;
 	width: 40%;
-	position: absolute;
+	position: fixed;
 	
 	/* animation: bounce 10s infinite; */
 	animation: rotateStars 10s infinite;
@@ -154,7 +158,7 @@ canvas {
 
 
 .social {
-	transform: translateY(700%);
+	
 	z-index: 12;
 	position: fixed;
 	justify-items: center;
