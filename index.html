@@ -7,6 +7,16 @@
 	<title>Megan Rae Byers</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<script>
+
+function openFinder() {
+  var x = document.getElementsByClassName("finder");
+  if (x.style.display === "none") {
+    x.style.display= "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 		document.documentElement.className = 'js';
 		var supportsCssVars = function () {
 			var e,
@@ -35,41 +45,33 @@
 
 			<div class="header">
 				<div class="progress-container">
-
 					<div class="progress-bar" id="myBar"></div>
-
-
 				</div>
-				<!-- <h1 class="header__title">Megan Rae Byers</h1> -->
-				<div class="logo">
-					<img src="src/design_elixir.svg">
-				</div>
+
+				
+				<img class="logo" src="src/design_elixir.svg">
+				
 
 				<img class="black" src="src/square.svg">
 				<img class="stars" src="src/stars.svg">
 
 				<div class="social">
-					<a href="https://www.behance.net/colouradical" target="_blank"><img class="socialIcons"
-							src="src/icons/behance.svg"></a>
-					<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img class="socialIcons"
-							src="src/icons/instagram.svg"></a>
-					<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img class="socialIcons"
-							src="src/icons/linked.svg"></a>
-					<a href="https://github.com/coloradical" target="_blank"><img class="socialIcons"
-							src="src/icons/github.svg"></a>
-
+					<a href="https://www.behance.net/colouradical" target="_blank"><img class="socialIcons"src="src/icons/behance.svg"></a>
+					<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img class="socialIcons"src="src/icons/instagram.svg"></a>
+					<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img class="socialIcons"src="src/icons/linked.svg"></a>
+					<a href="https://github.com/coloradical" target="_blank"><img class="socialIcons"src="src/icons/github.svg"></a>
 				</div>
 
-				<img class="desk" src="src/desk_v7.svg">
-				<!-- <img class="calendar" src="src/calendar.svg"> -->
-				<img class="doorway" src="src/doorway2.svg">
+				<!-- <img class="desk" src="src/desk7.svg"> -->
+				<img class="desk" src="https://ik.imagekit.io/coloradical/desk7_simplified_BQ4ApGy_-.svg">
+				
+				<img class="doorway" src="src/doorway6.svg">
 
 				<img class="spinny" src="src/spinny.svg">
 
 				<img class="on" src="src/on.svg">
 				<img class="wallpaper" src="src/wallpaper.svg">
 
-				<!-- Top Navigation Tool Bar -->
 				<div class="toolbar">
 						<nav class="toolLeft">
 							<ul class="nav">
@@ -221,21 +223,21 @@
 												
 											</ul>
 										</li>
-										<li><h4><a href="src/megan_byers_resume_2020.pdf" download target="_blank">Download PDF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</a></h4></li>
+										<li><h4><a href="src/megan_byers_resume_2020.pdf" download target="_blank">Download PDF...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</a></h4></li>
 									</ul>
 								</li>
 						</nav>
 						<nav>
 							<h4 class="toolRight" id="time">time</h4>
 							<h4 class="toolRight" id="updatedProgress">progress</h4>
-							<h4 class="toolRight" id="updatedProgress">p</h4>
+							
 							<img class="toolRight" id="toolIcons" style="width: 60px; padding-top: 34px;"src="src/toolIcons.svg">
 						</nav>
 				</div>
 
 				<div class="dock">
-					<a></a>
-					<img class="dockIcons dockBounce" src="src/dockIcons/finder.svg">
+					<a href="javascript: openFinder();"><img class="dockIcons dockBounce" id="finderIcon" src="src/dockIcons/finder.svg"></a>
+					
 					<img class="dockIcons" src="src/dockIcons/messages.svg">
 					<img class="dockIcons dockBounce" src="src/dockIcons/mail.svg">
 					<img class="dockIcons" src="src/dockIcons/music.svg">
@@ -247,17 +249,71 @@
 					<img class="dockIcons" src="src/dockIcons/terminal.svg">
 				</div>
 
-				<div class="pages">
+				<div id="desktopFileContainer">
+					<img class="desktopFiles slide-fwd-center" id="icon2" src="src/fileIcons/baja.svg">
+					<img class="desktopFiles" id="icon3" src="src/fileIcons/brut.svg">
+					<img class="desktopFiles" id="icon4" src="src/fileIcons/civico.svg">
+					<img class="desktopFiles" id="icon5" src="src/fileIcons/futura.svg">
+					<img class="desktopFiles" id="icon6" src="src/fileIcons/menu.svg">
+					<img class="desktopFiles" id="icon7" src="src/fileIcons/mucca.svg">
+					<img class="desktopFiles" id="icon8" src="src/fileIcons/renu.svg">
+					<img class="desktopFiles" id="icon10" src="src/fileIcons/selfport.svg">
+					<img class="desktopFiles" id="icon11" src="src/fileIcons/summitplan.svg">
+					<img class="desktopFiles" id="icon12" src="src/fileIcons/symphony.svg">
+					<img class="desktopFiles" id="icon13" src="src/fileIcons/wordpress.svg">
+					<img class="desktopFiles" id="icon14" src="src/fileIcons/worldhashtag.svg">
+					<img class="desktopFiles" id="icon15" src="src/fileIcons/killanilla.svg">
+				</div>
 
+				<div class="notifContainer">
+						<img class="notifs" src="src/notif.svg">
+				</div>
+				
+				<div id="finder" class="finder">
+					<a href="javascript: closeFinder();"><img style="width: 20px; transform: translate(50%,510%);" class="close" src="src/close.svg"></a>
+					<div id="finderLinks">
+							<a href="index.html"> Home </a><br>
+							<a href="index.html"> My Computer </a><br>
+							<a href="index.html"> Desktop </a> <br>
+							<a href="index.html"> Spotlight Pages </a><br>
+							<a href="index.html"> Illustrator </a><br>
+							<a href="index.html"> Photoshop </a><br>
+							<a href="index.html"> InDesign </a><br>
+							<a href="index.html"> Terminal </a><br>
+					</div>
+					<div id="finderFolders">
+						<a><figure style="transform: translate(45%, -320%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption style="padding-left: 14px;">logos</figcaption>
+						</figure></a>
+						<a><figure style="transform: translate(70%, -480%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption style="padding-left: 10px;">posters</figcaption>
+						</figure>
+						<a><figure style="transform: translate(45%, -420%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption >print media</figcaption>
+						</figure></a>
+						<a><figure style="transform: translate(90%, -500%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption style="padding-left: 12px;">photos</figcaption>
+						</figure></a>
+						<a><figure style="transform: translate(90%, -750%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption style="padding-left: 14px;">code</figcaption>
+						</figure></a>
+						<a><figure style="transform: translate(70%, -800%)">
+								<img style="width: 60px;" src ="src/folder.svg">
+								<figcaption>illustrations</figcaption>
+						</figure></a>
+					
+					</div>
+						
 				</div>
 
 				<img class="downArrow bounce" width="40" height="40" alt="developed by Codeconvey.com"
 					src="src/arrow.svg" />
 			</div>
-
-
-
-
 		</div>
 	</main>
 

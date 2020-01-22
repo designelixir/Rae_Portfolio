@@ -1,16 +1,10 @@
-/* article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-} */
-
 
 
 html {
 	height: 100%;
-	cursor: url('src/cursor.svg'), auto;
+	/* scroll-behavior: smooth; */
 	overflow-x: hidden;
+	
 }
 
 #pixels {
@@ -111,7 +105,9 @@ canvas {
 	width: 100%;
 	z-index: 11;
 	animation: rotateStars 5s infinite;
+	position: fixed;
 }
+
 
 @keyframes rotateStars {
 	0%, 100% {
@@ -141,7 +137,7 @@ canvas {
 	align-items: center;
 	flex-direction: column;
 	z-index: 1;
-	will-change: width;
+	
 	opacity: 0;
 	width: 100%;
 }
@@ -150,42 +146,64 @@ canvas {
 	z-index: 12;
 	width: 40%;
 	position: absolute;
-	top: 20%;
+	
 	/* animation: bounce 10s infinite; */
 	animation: rotateStars 10s infinite;
 
 }
 
+
 .social {
+	transform: translateY(700%);
 	z-index: 12;
-	display: flex;
-	transform: translateY(2000px);
+	position: fixed;
 	justify-items: center;
 }
 
 .socialIcons {
 	padding-right: 10px;
 	width: 50px;
+	
+	animation: pulsate-bck 5s ease-in-out infinite both;
 }
+
+.pulsate-bck {
+	animation: pulsate-bck 5s ease-in-out infinite both;
+}
+
+@keyframes pulsate-bck {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(0.9);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+  
 
 .desk {
 	z-index: -1;
-	transform: translateY(18%);
-	min-width: 100%;
+	transform: translateY(20%);
+	max-width: 2750%;
+	min-width: 90%;
 	position: fixed;
+	
 }
 
 .doorway {
 	z-index: 1;
-	min-width: 100%;
 	transform: translateY(10%);
+	min-width: 100%;
 	position: fixed;
 }
 
 
 .downArrow{
 	z-index: 12;
-	bottom: 3%;
+	bottom: 5%;
 	right: 2%;
 	position: fixed;
 }
@@ -193,13 +211,15 @@ canvas {
 .spinny { 
 	position: fixed;
 	transform: translateY(-100%);
-	z-index: 10;
-	width: 3%;
+	z-index: 7;
+	width: 0px;
+	max-width: 40px;
 	opacity: 0;
+	
 }
 
 .on { 
-	cursor: url('src/cursor.svg'), auto;		
+		
 	position: fixed;
 	max-width: 970%;
 	z-index: 8;
@@ -208,13 +228,12 @@ canvas {
 }
 
 .wallpaper {
-	z-index: 10;
+	z-index: 9;
 	height: 100%;
 	position: fixed;
 	opacity: 0;
 	animation: rotateStars 20s infinite;
 }
-
 
 
 .dock {
@@ -243,27 +262,179 @@ canvas {
 	padding-right: 22px;
 	object-position: center;
 	z-index: 19;
-	
+	opacity: 1;
 
 	
 }
 
-.dockBounce:hover {
-	animation: bounce 2s infinite;
+.desktopFiles {
+	z-index: 30; 
+	position: fixed; 
+	width: 100px;
+	animation: pulsate-bck 10s ease-in-out infinite both;
+	opacity: 0;
+}
+
+.notifContainer {
+	
+	top: 50px;
+	z-index: 25; 
+	position: fixed; 
+	width: 400px; 
+	right: 0;
 	
 }
 
+.notifs {
+	padding-left: 100%;
+	width: 400px;
+	
+}
+
+.slide-in-right {
+	animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-right {
+	0% {
+	  transform: translateX(1000px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  
+
+
+#icon2 {left: 4%; top: 25%; opacity: 0; } /* baja */
+#icon3 {left: 24%; top: 24%;} /* brut */
+#icon7 {left: 12%; top: 15%;} /* mucca */
+#icon8 {left: 20%; top: 33%;} /* renu */
+#icon15 {left: 31%; top: 16%;} /* killanilla */
+
+#icon4 {left: 75%; top: 26%;} /* civico */
+#icon5 {left: 56%; top: 40%;}  /* futura */
+#icon6 {left: 59%; top: 31%;}  /* menu */
+#icon12 {left: 76%; top: 35%;} /* symphony */
+
+#icon10 {left: 15%; top: 45%;}  /* selfport */
+
+#icon11 {left: 40%; top: 53%;} /* summmitplan */
+#icon13 {left: 60%; top: 58%;}  /* wordpress */
+#icon14 {left: 43%; top: 63%;}  /*  world hashtag*/
+
+.slide-fwd-center {
+	-webkit-animation: slide-fwd-center 5s ease-in-out infinite alternate-reverse both;
+	        animation: slide-fwd-center 5s ease-in-out infinite alternate-reverse both;
+}
+
+ @-webkit-keyframes slide-fwd-center {
+	0% {
+	  -webkit-transform: translateZ(0);
+			  transform: translateZ(0);
+	}
+	100% {
+	  -webkit-transform: translateZ(160px);
+			  transform: translateZ(160px);
+	}
+  }
+  @keyframes slide-fwd-center {
+	0% {
+	  -webkit-transform: translateZ(0);
+			  transform: translateZ(0);
+	}
+	100% {
+	  -webkit-transform: translateZ(160px);
+			  transform: translateZ(160px);
+	}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-1-21 20:18:40
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-fwd-center
+ * ----------------------------------------
+ */
+  }
+  
+
+
+
+
+
+  #finderIcon {animation: bounce 2s 6;}
+
+
+.finder {
+	width: 450px;
+	height: 500px;
+	background-image: url("../src/finder.svg");
+	background-size: 100% 100%;
+	bottom: 30%;
+	left: 5%;
+	position: fixed;
+	opacity: 1;
+	z-index: 99;
+	display: none;
+	
+}
+
+#finderLinks {
+	padding-top: 130px;
+	padding-left: 40px;
+	text-decoration: none;
+	line-height: 26.5px;
+}
+
+.finder a {
+	
+	text-decoration: none;
+	font-size: 12px;
+	color: #ccc;
+}
+
+.finder a:hover {
+	color: #2E345B;
+}
+
+#finderFolders figcaption {
+	font-size: 12px;
+}
+
+.scale-in-bottom {
+	animation: scale-in-bottom 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-bottom {
+	0% {
+	  transform: scale(0);
+	  transform-origin: 50% 100%;
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(1);
+	  transform-origin: 50% 100%;
+	  opacity: 1;
+	}
+  }
+  
 
 .toolbar {
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	z-index: 13;
+	z-index: 100;
 	width: 100%;
 	background-color: #2e345b;
-	
 	height: 45px;
-	opacity: 1;
+	opacity: 0;
   }
 
   .toolLeft {
@@ -349,6 +520,7 @@ canvas {
 	  font-size: 15px;
 	  transform: translateY(-3px);
   }
+
   
 
 
@@ -410,8 +582,12 @@ canvas {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
 	
+	.html {
+		overflow: none;
+	}
+
 	.frame {
 		position: fixed;
 		text-align: left;
@@ -465,12 +641,14 @@ canvas {
 		font-size: 2.5vw;
 	}
 
-	#toolIcons {
+	.time {
 		display: none;
 	}
 
-	.spinny { 
-		width: 30px;
+	.updatedProgress {
+		display: none;
 	}
+
 	
+
 }

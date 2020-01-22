@@ -241,6 +241,7 @@ const downArrow = document.querySelector('.downArrow');
 const square = document.querySelector('.black');
 const social = document.querySelector('.social');
 const stars = document.querySelector('.stars');
+const logo = document.querySelector('.logo');
 
 const spinny = document.querySelector('.spinny');
 const on = document.querySelector('.on');
@@ -248,30 +249,101 @@ const wallpaper = document.querySelector('.wallpaper');
 
 const toolbar = document.querySelector('.toolbar');
 const dock = document.querySelector('.dock');
+const finder = document.querySelector('.finder');
+const notif = document.querySelector('.notif');
+
+
+const file2 = document.querySelector('#icon2');
+const file3 = document.querySelector('#icon3');
+const file4 = document.querySelector('#icon4');
+const file5 = document.querySelector('#icon5');
+const file6 = document.querySelector('#icon6');
+const file7 = document.querySelector('#icon7');
+const file8 = document.querySelector('#icon8');
+const file9 = document.querySelector('#icon9');
+const file10 = document.querySelector('#icon10');
+const file11 = document.querySelector('#icon11');
+const file12 = document.querySelector('#icon12');
+const file13 = document.querySelector('#icon13');
+const file14 = document.querySelector('#icon14');
+const file15 = document.querySelector('#icon15');
+
+const notifs = document.querySelector('.notifs');
+const notifContainer = document.querySelector('.notifContainer');
+
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
 //scrolling behavior for SVGS 
-uos(0, 1, p => (square.style.opacity = ((updatedProgress-(p*700)) / (updatedProgress) )));
-uos(0, 1, p => (stars.style.opacity = ((updatedProgress-(p*900)) / (updatedProgress) )));
-uos(0, 1, p => (social.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
+uos(0, .1, p => (square.style.opacity = ((updatedProgress-(p*70)) / (updatedProgress) )));
+uos(0, .1, p => (logo.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+
+// uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0.3, 1, p => (downArrow.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
 
+uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress) +"%" )));
 
-uos(0, 0.3, p => (desk.style.width = (p * updatedProgress*22)*9+"%")); 
-uos(0.01, 0.2, p => (doorway.style.width = (p * updatedProgress*25)*10+"%"));
 
-uos(0.2, 0.3, p => (spinny.style.opacity = (0.0+(p/updatedProgress*100)) ));
+// uos(0.02, 0.52, p => (desk.style.width = (p * updatedProgress*20)*10+"%")); 
+uos(0.02, 0.6, p => (desk.style.width = ((p*2500)+"%"))); 
+uos(0.022, 0.45, p => (doorway.style.width = ((p*3000)+"%"))); 
+
+// uos(0.03, 0.2, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
+
 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
 
 
-uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*20/updatedProgress)) ));
+uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*25/updatedProgress)) ));
 uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
-uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*20/updatedProgress)) ));
+uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
 
-uos(0.35, 0.4, p => (spinny.style.width = ((updatedProgress-(p*1000)) / (updatedProgress) )));
+// uos(0.4, 0.45, p => (finder.style.opacity =  ((p*10/updatedProgress)) ));
+
+uos(0.4, 0.42, p => (file2.style.opacity =  ((p*20/updatedProgress)) )); //baja
+uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //mucca
+uos(0.4, 0.42, p => (file7.style.opacity =  ((p*20/updatedProgress)) )); //mucca
+uos(0.4, 0.42, p => (file8.style.opacity =  ((p*20/updatedProgress)) )); //renu
+uos(0.4, 0.42, p => (file15.style.opacity =  ((p*20/updatedProgress)) )); //killanilla
+
+uos(0.4, 0.43, p => (file4.style.opacity =  ((p*20/updatedProgress)) )); //civico
+uos(0.4, 0.43, p => (file5.style.opacity =  ((p*20/updatedProgress)) )); //futura
+uos(0.4, 0.43, p => (file6.style.opacity =  ((p*20/updatedProgress)) )); //menu
+
+uos(0.4, 0.43, p => (file12.style.opacity =  ((p*20/updatedProgress)) )); //symphony
+
+uos(0.4, 0.44, p => (file10.style.opacity =  ((p*20/updatedProgress)) )); //selfport
+
+uos(0.4, 0.45, p => (file11.style.opacity =  ((p*20/updatedProgress)) )); //summitplan
+uos(0.4, 0.45, p => (file13.style.opacity =  ((p*20/updatedProgress)) )); //wordpress
+uos(0.4, 0.45, p => (file14.style.opacity =  ((p*20/updatedProgress)) )); //world hashtag
+
+// uos(0.2, 0.3, p => (spinny.style.width = (p * updatedProgress)/5+"%")); 
+uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
+uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
+
+
+
+
+
+uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
+uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
+
+
+function openFinder() {
+  document.getElementById('finder').style.display = "block";
+  document.getElementById('finder').style.animation = "scale-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+  document.getElementById('finderIcon').style.animation = "none";
+  document.getElementById('desktopFileContainer').style.opacity = 0.75;
+}
+
+function closeFinder() {
+  document.getElementById('finder').style.display = "none";
+  document.getElementById('desktopFileContainer').style.opacity = 1;
+}
 
 
 
