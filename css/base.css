@@ -97,20 +97,6 @@ canvas {
 }
 
 
-.black {
-	z-index: 11;
-	width: 1000%;
-	opacity: 1;
-	position: fixed;
-	top: 0;
-}
-
-.stars {
-	width: 100%;
-	z-index: 11;
-	animation: rotateStars 5s infinite;
-	position: fixed;
-}
 
 
 @keyframes rotateStars {
@@ -146,29 +132,57 @@ canvas {
 	width: 100%;
 }
 
-.logo {
-	z-index: 12;
-	width: 40%;
-	position: fixed;
+.welcome {
+	height: 80%;
+	width: 100%;
 	
-	/* animation: bounce 10s infinite; */
-	animation: rotateStars 10s infinite;
+	z-index: 12;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+}
 
+.logo {
+	width: 400px;
+	animation: rotateStars 10s infinite;
 }
 
 
+.stars {
+	position: fixed;
+	top: 0;
+	z-index: 11;
+	background-color: #394172;
+	animation: rotateStars 5s infinite;
+	height: 100vh;
+	width: 100%;
+}
+
+.starsimg {
+	
+	height: 100vh;
+}
+
 .social {
+	height: 20%;
+	width: 100%;
 	
 	z-index: 12;
 	position: fixed;
-	justify-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	
 }
 
 .socialIcons {
 	padding-right: 10px;
 	width: 50px;
-	
 	animation: pulsate-bck 5s ease-in-out infinite both;
+	bottom: 0;
 }
 
 .pulsate-bck {
@@ -271,6 +285,7 @@ canvas {
 	
 }
 
+
 .desktopFiles {
 	z-index: 30; 
 	position: fixed; 
@@ -310,24 +325,24 @@ canvas {
 	}
   }
   
+  #icon2 {left: 4%; top: 25%;  } /* baja */
+  #icon3 {left: 24%; top: 24%;} /* brut */
+  #icon7 {left: 12%; top: 15%;} /* mucca */
+  #icon8 {left: 20%; top: 33%;} /* renu */
+  #icon15 {left: 31%; top: 16%;} /* killanilla */
+  
+  #icon4 {left: 75%; top: 26%;} /* civico */
+  #icon5 {left: 56%; top: 40%;}  /* futura */
+  #icon6 {left: 59%; top: 31%;}  /* menu */
+  #icon12 {left: 76%; top: 35%;} /* symphony */
+  
+  #icon10 {left: 15%; top: 45%;}  /* selfport */
+  
+  #icon11 {left: 40%; top: 53%;} /* summmitplan */
+  #icon13 {left: 60%; top: 58%;}  /* wordpress */
+  #icon14 {left: 43%; top: 63%;}  /*  world hashtag*/
 
 
-#icon2 {left: 4%; top: 25%; opacity: 0; } /* baja */
-#icon3 {left: 24%; top: 24%;} /* brut */
-#icon7 {left: 12%; top: 15%;} /* mucca */
-#icon8 {left: 20%; top: 33%;} /* renu */
-#icon15 {left: 31%; top: 16%;} /* killanilla */
-
-#icon4 {left: 75%; top: 26%;} /* civico */
-#icon5 {left: 56%; top: 40%;}  /* futura */
-#icon6 {left: 59%; top: 31%;}  /* menu */
-#icon12 {left: 76%; top: 35%;} /* symphony */
-
-#icon10 {left: 15%; top: 45%;}  /* selfport */
-
-#icon11 {left: 40%; top: 53%;} /* summmitplan */
-#icon13 {left: 60%; top: 58%;}  /* wordpress */
-#icon14 {left: 43%; top: 63%;}  /*  world hashtag*/
 
 .slide-fwd-center {
 	-webkit-animation: slide-fwd-center 5s ease-in-out infinite alternate-reverse both;
