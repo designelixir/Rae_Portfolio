@@ -238,8 +238,9 @@ const desktop = document.querySelector('.desktop');
 const elixir = document.querySelector('.logo');
 const downArrow = document.querySelector('.downArrow');
 
-const square = document.querySelector('.black');
+// const square = document.querySelector('.black');
 const social = document.querySelector('.social');
+const welcome= document.querySelector('.welcome');
 const stars = document.querySelector('.stars');
 const logo = document.querySelector('.logo');
 
@@ -276,9 +277,8 @@ var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
 //scrolling behavior for SVGS 
-uos(0, .1, p => (square.style.opacity = ((updatedProgress-(p*70)) / (updatedProgress) )));
-uos(0, .1, p => (logo.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
-uos(0, .1, p => (social.style.paddingBottom= (((p)) * (updatedProgress) +"%" )));
+uos(0, .1, p => (welcome.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+uos(0, .1, p => (social.style.paddingBottom= (((p)) / (updatedProgress) +"%" )));
 
 uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 
@@ -303,7 +303,7 @@ uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*25/updatedProgress)) ));
 uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
 
-// uos(0.4, 0.45, p => (finder.style.opacity =  ((p*10/updatedProgress)) ));
+
 
 uos(0.4, 0.42, p => (file2.style.opacity =  ((p*20/updatedProgress)) )); //baja
 uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //mucca
@@ -323,13 +323,8 @@ uos(0.4, 0.45, p => (file11.style.opacity =  ((p*20/updatedProgress)) )); //summ
 uos(0.4, 0.45, p => (file13.style.opacity =  ((p*20/updatedProgress)) )); //wordpress
 uos(0.4, 0.45, p => (file14.style.opacity =  ((p*20/updatedProgress)) )); //world hashtag
 
-// uos(0.2, 0.3, p => (spinny.style.width = (p * updatedProgress)/5+"%")); 
 uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
-
-
-
-
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
 uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
