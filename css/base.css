@@ -135,7 +135,7 @@ canvas {
 .welcome {
 	height: 80%;
 	width: 100%;
-	
+	left: 0;
 	z-index: 12;
 	position: fixed;
 	display: flex;
@@ -145,7 +145,7 @@ canvas {
 }
 
 .logo {
-	width: 400px;
+	width: 350px;
 	animation: rotateStars 10s infinite;
 }
 
@@ -161,6 +161,7 @@ canvas {
 }
 
 .starsimg {
+	left: -10px;
 	
 	height: 100vh;
 }
@@ -259,7 +260,7 @@ canvas {
 	bottom: 0%;
 	width: 80%;
 	height: 160px;
-	z-index: 13;
+	z-index: 200;
 	background: linear-gradient(180deg, #00000000 50%, #2e345b 50%);
 	padding-left: 20px;
 	padding-right: 20px;
@@ -297,7 +298,7 @@ canvas {
 .notifContainer {
 	
 	top: 50px;
-	z-index: 25; 
+	z-index: 125; 
 	position: fixed; 
 	width: 400px; 
 	right: 0;
@@ -388,8 +389,8 @@ canvas {
 
 
 
-  #finderIcon {animation: bounce 2s 6;}
-
+#finderIcon {animation: bounce 2s;}
+#INDicon {animation: none;}
 
 .finder {
 	width: 450px;
@@ -427,23 +428,127 @@ canvas {
 	font-size: 12px;
 }
 
-.scale-in-bottom {
-	animation: scale-in-bottom 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.window {
+	background-image: url("../src/indesign2.svg");
+	background-repeat: no-repeat;
+	border: 2px solid #384173;
+	border-radius: 4px 4px 4px 4px; 
+
+	width: 88%;
+	height: 80%;
+	position: fixed; 
+	z-index: 100;
+	
+	
+	
+	vertical-align: middle;
 }
 
-@keyframes scale-in-bottom {
-	0% {
-	  transform: scale(0);
-	  transform-origin: 50% 100%;
-	  opacity: 1;
-	}
-	100% {
-	  transform: scale(1);
-	  transform-origin: 50% 100%;
-	  opacity: 1;
-	}
+
+
+.grid{
+	color: #000;
+	background-color: #ededed;
+	background-image: url("../src/grid.svg");
+	margin-left: 75px;
+	height: 80%;
+	width: 80%;
+	overflow: scroll;
+	scroll-behavior: smooth;
+}
+
+.hero {
+	padding-top: 3rem;
+	padding-left: 40px;
+	/* Grid styles */
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
-  
+
+.hero h1 {
+	font-size: 36px;
+}
+
+.hero p {
+	padding-right: 20px;
+	font-size: 13px;
+}
+
+.sidekick {
+	padding-top: 10%;
+}
+
+.tabBar button {
+	float: left;
+	background-color: #384173;
+	border: none;
+	color: #ededed;
+	font-size: 13px;
+	transform: translate(80px, 80px);
+	padding: 10px;
+	margin-right: 5px;
+	
+}
+
+.tabBar button:hover {
+	background-color: #5c6693;
+}
+
+
+
+.tabBar:after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+.boulderBAJA {
+	display: block;
+}
+
+/* 
+.col1 {
+	display: flex;
+	flex-direction: column;
+	vertical-align: center;
+	flex-basis: 100%;
+	padding-right: 5%;
+	flex: 1;
+	width: 40%;
+	
+	
+	
+  }
+
+.col2 {
+	width: 60%;
+	
+}   */
+
+
+#mouseTrack {
+	padding-left: 2px;
+	left:0;
+	bottom: 0;
+	font-size: 9px;
+	color: red;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	vertical-align: center;
+
+  }
+
+
+
+
+
+
+
 
 .toolbar {
 	position: fixed;
@@ -544,8 +649,6 @@ canvas {
 
 
 
-
-
 .bounce {
 	-moz-animation: bounce 3s infinite;
 	-webkit-animation: bounce 3s infinite;
@@ -600,6 +703,9 @@ canvas {
   }
 }
 
+@media (min-width: 900px) {
+	.col { grid-template-columns: repeat(3, 1fr); }
+  }
 
 @media screen and (max-width: 479px) {
 	
@@ -667,6 +773,8 @@ canvas {
 	.updatedProgress {
 		display: none;
 	}
+
+	.col { grid-template-columns: repeat(2, 1fr); }
 
 	
 

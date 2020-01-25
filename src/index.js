@@ -342,8 +342,27 @@ function closeFinder() {
   document.getElementById('desktopFileContainer').style.opacity = 1;
 }
 
+function openIndesign() {
+  updatedProgress = 0.55;
+}
+
+function closeIndesign() {
+  document.getElementById('window').style.display = "none";
+  document.getElementById('desktopFileContainer').style.opacity = 1;
+  document.getElementById('INDicon').animation = "bounce 2s 6;";
+}
 
 
+function myFunction(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coor = "(" + x + "," + y + ")";
+  document.getElementById("mouseTrack").innerHTML = coor;
+}
+
+function clearCoor() {
+  document.getElementById("demo").innerHTML = "";
+}
 
 //calculate time 
 const current = new Date();

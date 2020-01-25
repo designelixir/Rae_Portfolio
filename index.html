@@ -249,7 +249,7 @@ function openFinder() {
 					<img class="dockIcons" src="src/dockIcons/stickies.svg">
 					<img class="dockIcons" src="src/dockIcons/photoshop.svg">
 					<img class="dockIcons" src="src/dockIcons/illustrator.svg">
-					<img class="dockIcons" src="src/dockIcons/indesign.svg">
+					<a href="javascript: openFinder();"><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
 					<img class="dockIcons" src="src/dockIcons/premier.svg">
 					<img class="dockIcons" src="src/dockIcons/terminal.svg">
 				</div>
@@ -315,7 +315,50 @@ function openFinder() {
 						</figure></a>
 					
 					</div>
+				</div>
+
+				<div class="window" id="window" onmousemove="myFunction(event)" onmouseout="clearCoor()">
+					<!-- <img class="indesign" src="src/indesign.svg"> -->
+					<a href="javascript: closeIndesign();"><img style="width: 20px; transform: translate(60%,30%); " class="close2" src="src/close.svg"></a>
+					<h5 style="text-align: center; transform: translateY(-250%);" > Select Cases</h5>
+					
+					<div class="grid">
+							<section class="hero">
+								<article >
+										<h1>Boulder Baja</h1>
+										<h2 style="opacity: 50%;">May 2019</h2>
+										<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
+												assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
+										<br><img style="width: 30px;" src="src/dockIcons/indesign.svg">
+										<img style="width: 30px;" src="src/dockIcons/indesign.svg">
+								</article>
+								<article>
+									<img id="baja" src="src/logos/baja_nocolor.svg">
+									
+								</article>
+							</section>
+							<!-- <section class="sidekick boulderBAJA">
+								<br>
+									<img style="padding-left: 40px; width: 70%;" src="src/logos/BAJATEAM.jpeg">
+							</section> -->
+					</div>
+					<div class="tabBar">
+						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
+						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
+						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
+						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
+						<div class="tabs"><button>+</button></div>
+					</div>
+					
 						
+							
+							
+						
+						
+					</div>
+					<p id="mouseTrack"> x,y </p>
+					
+
 				</div>
 
 				<img class="downArrow bounce" width="40" height="40" alt="developed by Codeconvey.com"
