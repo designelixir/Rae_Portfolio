@@ -428,133 +428,117 @@ canvas {
 	font-size: 12px;
 }
 
-.window {
-	background-image: url("../src/indesign2.svg");
+.indesign {
+	background-image: url("../src/indesign4.svg");
 	background-repeat: no-repeat;
 	border: 2px solid #384173;
 	border-radius: 4px 4px 4px 4px; 
-
-	width: 88%;
-	height: 80%;
+	
+	width: 90%;
+	height: 70%;
 	position: fixed; 
 	z-index: 100;
-	
-	
+	opacity: 0;
 	
 	vertical-align: middle;
 }
 
 
 
-.grid{
-	color: #000;
-	background-color: #ededed;
-	background-image: url("../src/grid.svg");
-	margin-left: 75px;
-	height: 80%;
-	width: 80%;
-	overflow: scroll;
-	scroll-behavior: smooth;
-}
 
-.hero {
-	padding-top: 3rem;
-	padding-left: 40px;
-	/* Grid styles */
-	display: grid;
+
+.inDesignToolBar {
+	width: 100%;
+	transform: translate(1%, -80%);
 	
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-
-.hero h1 {
-	font-size: 36px;
 }
 
-.hero p {
-	padding-right: 20px;
-	font-size: 13px;
+.indesignContent {
+	padding-top: 65px;
+	padding-left: 156px;
+	color: #2c2c2c;
+	overflow: scroll;
+	
+	
 }
 
-.sidekick {
-	padding-top: 10%;
+.baja {
+	width: 70%;
+	position: fixed;
+	z-index: 200;
+	overflow: scroll;
+}
+
+.secleft {
+	float: left;
+	width: 30%;
+	padding-left: 20px; 
+}
+
+
+.secright {
+	max-width: 600px;
+	width: 60%;
+	float: left;
+	padding-left: 20px;
+	padding-top: 50px;
+}
+
+
+
+.grid {
+	background-image: url("../src/grid.svg");
+	background-repeat: no-repeat;
+	position: fixed;
+	padding: 40px;
+	
+	z-index: 200;
+	width: 70%;
+	height: 50%;
+	color: #2c2c2c;
+}
+
+
+.tabBar {
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	display: inline-flex;
+	float: left;
+	
 }
 
 .tabBar button {
-	float: left;
 	background-color: #384173;
 	border: none;
 	color: #ededed;
 	font-size: 13px;
-	transform: translate(80px, 80px);
+	display: inline;
+	z-index: 200;
 	padding: 10px;
 	margin-right: 5px;
+	
 	
 }
 
 .tabBar button:hover {
-	background-color: #5c6693;
+	background-color: #ededed;
+	color: #2c2c2c;
 }
 
 
 
-.tabBar:after {
-	content: "";
-	clear: both;
-	display: table;
-  }
 
 .boulderBAJA {
 	display: block;
 }
-
-/* 
-.col1 {
-	display: flex;
-	flex-direction: column;
-	vertical-align: center;
-	flex-basis: 100%;
-	padding-right: 5%;
-	flex: 1;
-	width: 40%;
-	
-	
-	
-  }
-
-.col2 {
-	width: 60%;
-	
-}   */
-
-
-#mouseTrack {
-	padding-left: 2px;
-	left:0;
-	bottom: 0;
-	font-size: 9px;
-	color: red;
-}
-.row {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	vertical-align: center;
-
-  }
-
-
-
-
-
-
 
 
 .toolbar {
 	position: fixed;
 	top: 0%;
 	left: 0%;
-	z-index: 100;
+	z-index: 300;
 	width: 100%;
 	background-color: #2e345b;
 	height: 45px;

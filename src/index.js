@@ -272,53 +272,42 @@ const file15 = document.querySelector('#icon15');
 const notifs = document.querySelector('.notifs');
 const notifContainer = document.querySelector('.notifContainer');
 
+const baja = document.querySelector('.baja');
+const indesign = document.querySelector('.indesign');
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
+
+
 //scrolling behavior for SVGS 
 uos(0, .1, p => (welcome.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingBottom= (((p)) / (updatedProgress) +"%" )));
-
 uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
-
-// uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0.3, 1, p => (downArrow.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
-
 uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress) +"%" )));
 
-
-// uos(0.02, 0.52, p => (desk.style.width = (p * updatedProgress*20)*10+"%")); 
+//desk and wall elements scrolling behavior
 uos(0.02, 0.6, p => (desk.style.width = ((p*2500)+"%"))); 
 uos(0.022, 0.45, p => (doorway.style.width = ((p*3000)+"%"))); 
 
-// uos(0.03, 0.2, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
-
-
+//desktop elements scrolling behavior 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
-
-
 uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*25/updatedProgress)) ));
 uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
-
-
 
 uos(0.4, 0.42, p => (file2.style.opacity =  ((p*20/updatedProgress)) )); //baja
 uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //mucca
 uos(0.4, 0.42, p => (file7.style.opacity =  ((p*20/updatedProgress)) )); //mucca
 uos(0.4, 0.42, p => (file8.style.opacity =  ((p*20/updatedProgress)) )); //renu
 uos(0.4, 0.42, p => (file15.style.opacity =  ((p*20/updatedProgress)) )); //killanilla
-
 uos(0.4, 0.43, p => (file4.style.opacity =  ((p*20/updatedProgress)) )); //civico
 uos(0.4, 0.43, p => (file5.style.opacity =  ((p*20/updatedProgress)) )); //futura
 uos(0.4, 0.43, p => (file6.style.opacity =  ((p*20/updatedProgress)) )); //menu
-
 uos(0.4, 0.43, p => (file12.style.opacity =  ((p*20/updatedProgress)) )); //symphony
-
 uos(0.4, 0.44, p => (file10.style.opacity =  ((p*20/updatedProgress)) )); //selfport
-
 uos(0.4, 0.45, p => (file11.style.opacity =  ((p*20/updatedProgress)) )); //summitplan
 uos(0.4, 0.45, p => (file13.style.opacity =  ((p*20/updatedProgress)) )); //wordpress
 uos(0.4, 0.45, p => (file14.style.opacity =  ((p*20/updatedProgress)) )); //world hashtag
@@ -328,6 +317,9 @@ uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
 uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
+// uos(0.6, 0.65, p => (baja.style.opacity= ((p*12/updatedProgress)) ));
+uos(0.55, 0.6, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
+
 
 
 function openFinder() {
@@ -343,7 +335,8 @@ function closeFinder() {
 }
 
 function openIndesign() {
-  updatedProgress = 0.55;
+  window.scrollTo(0,18600);
+  
 }
 
 function closeIndesign() {
@@ -353,6 +346,21 @@ function closeIndesign() {
 }
 
 
+
+
+// function scrollTo(position){
+//   if (position === 1000){
+//     window.scrollTo(0,1000);
+//   }
+//   else {
+//     window.scrollTo(0,0);
+//   }
+
+// }
+
+
+
+//mouse tracking 
 function myFunction(e) {
   var x = e.clientX;
   var y = e.clientY;

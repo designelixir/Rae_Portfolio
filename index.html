@@ -8,14 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<script>
 
-function openFinder() {
-  var x = document.getElementsByClassName("finder");
-  if (x.style.display === "none") {
-    x.style.display= "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+
+
 
 		document.documentElement.className = 'js';
 		var supportsCssVars = function () {
@@ -249,7 +243,7 @@ function openFinder() {
 					<img class="dockIcons" src="src/dockIcons/stickies.svg">
 					<img class="dockIcons" src="src/dockIcons/photoshop.svg">
 					<img class="dockIcons" src="src/dockIcons/illustrator.svg">
-					<a href="javascript: openFinder();"><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
+					<a href="javascript: openIndesign();"><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
 					<img class="dockIcons" src="src/dockIcons/premier.svg">
 					<img class="dockIcons" src="src/dockIcons/terminal.svg">
 				</div>
@@ -317,46 +311,76 @@ function openFinder() {
 					</div>
 				</div>
 
-				<div class="window" id="window" onmousemove="myFunction(event)" onmouseout="clearCoor()">
-					<!-- <img class="indesign" src="src/indesign.svg"> -->
-					<a href="javascript: closeIndesign();"><img style="width: 20px; transform: translate(60%,30%); " class="close2" src="src/close.svg"></a>
-					<h5 style="text-align: center; transform: translateY(-250%);" > Select Cases</h5>
+		
 					
-					<div class="grid">
-							<section class="hero">
-								<article >
-										<h1>Boulder Baja</h1>
-										<h2 style="opacity: 50%;">May 2019</h2>
-										<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
-												assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
-										<br><img style="width: 30px;" src="src/dockIcons/indesign.svg">
-										<img style="width: 30px;" src="src/dockIcons/indesign.svg">
-								</article>
-								<article>
-									<img id="baja" src="src/logos/baja_nocolor.svg">
+					
+				<div class="indesign">
+					<div class="inDesignToolBar" style="top: 0;">
+							<a href="javascript: closeIndesign();"><img style="width: 20px; float: left;" class="close2" src="src/close.svg"></a>
+							<h5 style="text-align: center;"> Select Cases</h5>
+					</div>
+				
+					<div class="indesignContent">
+						<!-- <div class="baja">
+							<section class="secleft">
+									<h1>Boulder Baja</h1>
+									<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
+											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
+											<br><img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
 									
-								</article>
 							</section>
-							<!-- <section class="sidekick boulderBAJA">
-								<br>
-									<img style="padding-left: 40px; width: 70%;" src="src/logos/BAJATEAM.jpeg">
-							</section> -->
-					</div>
-					<div class="tabBar">
-						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
-						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
-						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
-						<div class="tabs"><button>boulder_baja_logo.ai</button></div>
-						<div class="tabs"><button>+</button></div>
+							<section class="secright">
+									<img src="src/logos/baja_nocolor.svg">
+									
+							</section>		
+							<section class="secPhotos">
+								
+								<img style="width: 30%; padding-top: 10%;" src="src/logos/bajaCarRacer.jpg">
+							</section>
+						</div> -->
 					</div>
 					
-						
+					
+					<div class="tabBar">
+							<div class="tabs"><a href="javascript: reveal();"><button>boulder_baja_logo.ai</button></a></div>
+							<div class="tabs"><button>brut_ipa_poster.ai</button></div>
+							<div class="tabs"><button>mucca_poster.ai</button></div>
+							<div class="tabs"><button><a href="javascript: showRenu();">renu_logo.ai</button></a></div>
+							<div class="tabs"><button>+</button></div>
+					</div>
+
+				</div>	
+
+				<div class="grid">
+						<div class="baja">
+							<section class="secleft">
+									<h1 style="font-size: 36px;">Boulder Baja</h1>
+									<p style="font-size: 13px;"> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
+											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
+									<br><img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
+									
+							</section>
 							
+							
+							<section class="secright">
+									<img src="src/logos/baja_nocolor.svg">
+							</section>		
+								
+						</div>
+		
+				</div>
+				
+				
+
+
+					
 							
 						
 						
 					</div>
-					<p id="mouseTrack"> x,y </p>
+					
 					
 
 				</div>
