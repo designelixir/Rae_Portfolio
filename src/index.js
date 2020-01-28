@@ -358,10 +358,19 @@ function openSpotify(onoff){
   }
 }
 
+function openMail(onoff){
+  if (onoff === 1) {
+    document.getElementById('mailWindow').style.display = "block";
+  }
+  else {
+    document.getElementById('mailWindow').style.display = "none";
+  }
+}
+
 //tab bar reveal buttons 
 function reveal(slide) {
   var active = slide;
-  var slides = ['bajaSlide', 'brutSlide', 'killaSlide','renuSlide', 'menuSlide', 'civicoSlide', 'portraitSlide' ];
+  var slides = ['menuSlide', 'brutSlide', 'killaSlide','renuSlide', 'bajaSlide', 'civicoSlide', 'portraitSlide' ];
   var tabs = ['tab0','tab1','tab2','tab3','tab4','tab5','tab6']
  
   var i;
