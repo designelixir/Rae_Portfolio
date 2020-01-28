@@ -235,15 +235,15 @@
 				</div>
 
 				<div class="dock">
-					<a href="javascript: openFinder();"><img class="dockIcons dockBounce" id="finderIcon" src="src/dockIcons/finder.svg"></a>
+					<a href="javascript: openFinder(1);"><img class="dockIcons dockBounce" id="finderIcon" src="src/dockIcons/finder.svg"></a>
 					
 					<img class="dockIcons" src="src/dockIcons/messages.svg">
 					<img class="dockIcons dockBounce" src="src/dockIcons/mail.svg">
-					<img class="dockIcons" src="src/dockIcons/music.svg">
+					<a href="javascript: openSpotify(1)"><img class="dockIcons" src="src/dockIcons/music.svg"></a>
 					<img class="dockIcons" src="src/dockIcons/stickies.svg">
 					<img class="dockIcons" src="src/dockIcons/photoshop.svg">
 					<img class="dockIcons" src="src/dockIcons/illustrator.svg">
-					<a href="javascript: openIndesign();"><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
+					<a href="javascript: openIndesign(1);"><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
 					<img class="dockIcons" src="src/dockIcons/premier.svg">
 					<img class="dockIcons" src="src/dockIcons/terminal.svg">
 				</div>
@@ -262,6 +262,11 @@
 					<img class="desktopFiles" id="icon13" src="src/fileIcons2/wordpress.svg">
 					<img class="desktopFiles" id="icon14" src="src/fileIcons2/worldhash.svg">
 					<img class="desktopFiles" id="icon15" src="src/fileIcons2/traffic.svg">
+
+					<div id="spotify"> 
+						<a href="javascript: openSpotify(0);"><img style="width: 20px; transform: translate(-10%, -300%)" class="close" src="src/close.svg"></a>
+						<iframe src="https://open.spotify.com/embed/playlist/0XkzNsCSq93wZdwU4gYgAc" width="500" height="80" frameborder="0"allow="encrypted-media"></iframe> 
+					</div>
 				</div>
 				
 
@@ -271,7 +276,7 @@
 				</div>
 				
 				<div id="finder" class="finder">
-					<a href="javascript: closeFinder();"><img style="width: 20px; transform: translate(50%,510%);" class="close" src="src/close.svg"></a>
+					<a href="javascript: openFinder(0);"><img style="width: 20px; transform: translate(50%,510%);" class="close" src="src/close.svg"></a>
 					<div id="finderLinks">
 							<a href="index.html"> Home </a><br>
 							<a href="index.html"> My Computer </a><br>
@@ -316,28 +321,27 @@
 					
 				<div class="indesign" id="window">
 					<div class="inDesignToolBar" style="top: 0;">
-							<a href="javascript: closeIndesign();"><img style="width: 20px; float: left;" class="close2" src="src/close.svg"></a>
+							<a href="javascript: openIndesign(0);"><img style="width: 20px; float: left;" class="close2" src="src/close.svg"></a>
 							<h5 style="text-align: center;"> Select Cases</h5>
 					</div>
 					<div class="tabBar">
-							<div class="tabs"><a href="javascript: reveal(0);"><button>boulder_baja_logo.ai</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(1);"><button>brut_ipa_poster.ai</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(2);"><button>traffic_album_art.ai</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(3);"><button>renu_logo.ai</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(4);"><button>wf_brewery_menu.indd</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(5);"><button>civico_brochure.indd</button></a></div>
-							<div class="tabs"><a href="javascript: reveal(6);"><button>self_portrait.psd</button></a></div>
-
-							<div class="tabs"><button>+</button></div>
+							<a href="javascript: reveal(0);"><button id="tab0">boulder_baja_logo.ai</button></a>
+							<a href="javascript: reveal(1);"><button id="tab1">brut_ipa_poster.ai</button></a>
+							<a href="javascript: reveal(2);"><button id="tab2">traffic_album_art.ai</button></a>
+							<a href="javascript: reveal(3);"><button id="tab3">renu_logo.ai</button></a>
+							<a href="javascript: reveal(4);"><button id="tab4">wf_brewery_menu.indd</button></a>
+							<a href="javascript: reveal(5);"><button id="tab5">civico_brochure.indd</button></a>
+							<a href="javascript: reveal(6);"><button id="tab6">self_portrait.psd</button></a>
 					</div>
 				</div>	
 
-				<div class="grid">
+				<div class="grid" id="gridWindow">
 						<div class="activeCase" id="bajaSlide">
 							<section class="secleft">
 									<h1>Boulder Baja</h1>
 									<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
 											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
+									<br><p> Tools used:</p>
 									<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
 									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
 									
@@ -359,6 +363,7 @@
 										<h1>Brut IPA Poster</h1>
 										<h3>West Flanders Brewery</h3>
 										<p> A release poster for West Flanders Brewing Company's new "Brut-ster" IPA. This beer was named in honor of our very own "brewster" (female brewing scientist) Erin, who epitomizes bad-ass women. Inspired by Rosy the Riveter, I created a release poster with a portrait of our tattooed, bad-ass head brewer. </p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
 										<img style="width: 40px;" src="src/dockIcons/indesign.svg">
 										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
@@ -372,10 +377,10 @@
 						</div>
 						<div class="activeCase" id="killaSlide" style="display: none;">
 								<section class="secleft">
-										<h1>Traffic Album Artwork</h1>
+										<h1>"Traffic" Album Artwork</h1>
 										<h3>Killa Nilla</h3>
-										<p>Given complete creative freedom with these projects, I developed two album artworks for Dubstep artist and friend Killa Nilla. Driven by the hypnotic and space-inspired style of Dubstep culture, I used Adobe Draw on the iPad to develop two abstract works to showcase his tracks.</p>
-										
+										<p>Given complete creative freedom, I developed two album artworks for Dubstep artist and friend Killa Nilla. Driven by the hypnotic and space-inspired style of Dubstep culture, I used Adobe Draw on the iPad to develop two abstract works to showcase his tracks.</p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"> <br>
 										<iframe style="padding-top: 25%; height: 80px; width: 100%; float: left;" src="https://open.spotify.com/embed/album/3C4rouATWyKA6Oju3EOppq" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 									</section>
@@ -389,6 +394,7 @@
 								<section class="secleft">
 										<h1>Renu Cosmetics Logo</h1>
 										<p>Renu Cosmetics is a small, natural brand of beauty products designed by Paige Johns out of Salt Lake City, Utah. Her career as an esthetician has inspired her to launch her own line of hand-crafted natural beauty products. In order to promote a minimalist and natural look, I provided paige with several options. Packaging was meant to be home-made looking and authentic.</p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
 										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"><br>
 								</section>
@@ -408,6 +414,7 @@
 										<h1>Menu Rework</h1>
 										<h3>West Flanders Brewing Co.</h3>
 										<p>Create a menu that clearly organizes each food category, as well as make a la carte options both easier to find, and more clearly explain the additional price charge for ordering them. Other design goals included reducing page size, improving menu flow by organizing sections, and incorporating our brand. I started by drawing some digital elements, hops, as decoration for the menu.</p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
 										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
 										<img style="width: 100%; float: center; padding-top: 30px;" src="src/cases/blackHopDecor.png">
@@ -429,6 +436,7 @@
 										<h1>Membership Brochure</h1>
 										<h3>CiviCO</h3>
 										<p>Contracted work for the rebranding of then Quarterly Forum to Civico. Given brand standards, I was assigned to recreate the information in Quarterly Forum's previous membership brochure following new typefaces, color standards and brand attributes while reducing the number of pages in half.</p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
 										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
 										
@@ -439,11 +447,11 @@
 										<img class="caseimg" src="src/cases/civico.png">
 								</section>	
 								<section class="seccenter">
-									<h3> Brochure Pages</h3>
-										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page1.png">
-										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page2.png"><br>
-										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page3.png">
-										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page4.png"><br>
+									<h3 style="text-align: center;"> Brochure Pages</h3>
+									<div class="slide"><img src="src/cases/civico_page1.png"></div>
+									<div class="slide"><img src="src/cases/civico_page2.png"></div>
+									<div class="slide"><img src="src/cases/civico_page3.png"></div>
+									<div class="slide"><img src="src/cases/civico_page4.png"></div>
 								</section>			
 						</div>
 
@@ -454,6 +462,7 @@
 										<p>Using ten photos, I created a self-portrait montage that exhibited an emotion for a photography class. All photos used were captured during a month long backpacking trip of the Colorado Trail.
 												After create a dozen layers, I traced each layer with my mouse to give a hand-drawn, euphoric vibe. I hoped to express how I feel while in Mother Nature - specifically during my backpacking trip.  
 												 </p>
+										<br><p> Tools used:</p>
 										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
 										
 										

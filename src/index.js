@@ -310,41 +310,59 @@ uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
-uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
+uos(0.55, 0.6, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
 // uos(0.6, 0.65, p => (baja.style.opacity= ((p*12/updatedProgress)) ));
 uos(0.55, 0.6, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
 uos(0.55, 0.6, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
 
 
 
-function openFinder() {
-  document.getElementById('finder').style.display = "block";
-  document.getElementById('finder').style.animation = "scale-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
-  document.getElementById('finderIcon').style.animation = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 0.75;
-}
+function openFinder(onoff) {
 
-function closeFinder() {
-  document.getElementById('finder').style.display = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 1;
-}
-
-function openIndesign() {
-  window.scrollTo(0,18600);
+  if (onoff === 1) {
+    document.getElementById('finder').style.display = "block";
+    document.getElementById('finder').style.animation = "scale-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+    document.getElementById('finderIcon').style.animation = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 0.75;
+  } else {
+    document.getElementById('finder').style.display = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 1;
+  }
   
 }
 
-function closeIndesign() {
-  document.getElementById('window').style.display = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 1;
-  document.getElementById('INDicon').animation = "bounce 2s 6;";
+
+function openIndesign(onoff) {
+
+  if (onoff === 1){
+    document.getElementById('window').style.display = "block";
+    document.getElementById('gridWindow').style.display = "block";
+    document.getElementById('INDicon').style.animation = "none";
+  } else {
+    document.getElementById('window').style.display = "none";
+    document.getElementById('gridWindow').style.display = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 1;
+    document.getElementById('INDicon').style.animation = "bounce 2s infinite";
+  }
+
+  
+}
+
+
+function openSpotify(onoff){
+  if (onoff === 1) {
+    document.getElementById('spotify').style.display = "block";
+  }
+  else {
+    document.getElementById('spotify').style.display = "none";
+  }
 }
 
 //tab bar reveal buttons 
 function reveal(slide) {
   var active = slide;
   var slides = ['bajaSlide', 'brutSlide', 'killaSlide','renuSlide', 'menuSlide', 'civicoSlide', 'portraitSlide' ];
-  
+  var tabs = ['tab0','tab1','tab2','tab3','tab4','tab5','tab6']
  
   var i;
   
@@ -352,8 +370,13 @@ function reveal(slide) {
     if (i === active) {
       document.getElementById(slides[active]).style.display= "block";
       document.getElementById(slides[active]).style.animation = "slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+      document.getElementById(tabs[active]).style.backgroundColor = "#ededed";
+      document.getElementById(tabs[active]).style.color = "#2c2c2c";
+     
     } else {
       document.getElementById(slides[i]).style.display = "none";
+      document.getElementById(tabs[i]).style.backgroundColor = '#384173';
+      document.getElementById(tabs[i]).style.color = '#ededed';
     }
   }
 

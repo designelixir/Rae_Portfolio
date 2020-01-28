@@ -296,6 +296,16 @@ canvas {
 	opacity: 0;
 }
 
+#spotify {
+	z-index: 300; 
+	position: fixed;
+	padding: 10px;
+	transform: translate(-140%, 300%);
+	background-color: #2c2c2c;
+	display: none;
+	
+}
+
 .notifContainer {
 	
 	top: 50px;
@@ -372,7 +382,10 @@ canvas {
   
 
 #finderIcon {animation: bounce 2s;}
-#INDicon {animation: none;}
+#tab0 {
+	background-color: #ededed;
+	color: #2c2c2c;
+}
 
 .finder {
 	width: 450px;
@@ -383,7 +396,7 @@ canvas {
 	left: 5%;
 	position: fixed;
 	opacity: 1;
-	z-index: 99;
+	z-index: 299;
 	display: none;
 	
 }
@@ -434,58 +447,6 @@ canvas {
 	
 }
 
-
-.secleft {
-	float: left;
-	width:20%;
-	min-width: 250px;
-	padding-left: 20px; 
-	padding-right: 20px;
-	background-color: red;
-	
-}
-
-.secleft p {
-	font-size: 13px;
-}
-
-.secleft h1 {
-	font-size: 36px;
-	line-height: 34px;
-}
-
-.secright {
-	background-color: green;
-	width: 60%;
-	float: center;
-	align-content: center;
-	padding-top: 100px;
-	
-	
-}
-
-.seccenter {
-	padding-left: 20px; 
-	width: 100%;
-	float: left;
-	padding-top: 100px;
-	vertical-align: middle;
-}
-
-.caseimg {
-	
-	float: right;
-	width: 100%;
-	animation: heartbeat 90s ease-in-out infinite both;
-	
-}
-
-
-.caseimg:hover {
-	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
-
-
 .grid {
 	background-image: url("../src/grid.svg");
 	background-repeat: no-repeat;
@@ -498,7 +459,71 @@ canvas {
 	color: #2c2c2c;
 	opacity: 0;
 	max-width: 1000px;
+	display: inline-block;
 }
+
+.activeCase {
+	width: 100%;
+
+}
+
+.secleft {
+	width: 35%;
+	padding-right: 5%;
+	padding-left: 20px;
+	float: left;
+}
+
+.secleft p {
+	font-size: 13px;
+}
+
+.secleft h1 {
+	font-size: 36px;
+	line-height: 34px;
+}
+
+.secright {
+	min-width: 300px;
+	width: 55%;
+	padding-top: 30px;
+	float: right;
+	
+	
+	
+}
+
+.seccenter {
+	padding-left: 20px; 
+	width: 100%;
+	float: left;
+	padding-top: 100px;
+	vertical-align: middle;
+	overflow: scroll;
+    white-space:nowrap;
+}
+
+.seccenter .slide {
+	display: inline-block;
+}
+
+.seccenter .slide img {
+	width: 100%;
+}
+.caseimg {
+	
+	width: 100%;
+	animation: heartbeat 90s ease-in-out infinite both;
+	
+}
+
+
+.caseimg:hover {
+	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+
+
 
 
 .tabBar {
@@ -507,7 +532,10 @@ canvas {
 	left: 50px;
 	display: inline-flex;
 	float: left;
-	overflow: scroll;
+	overflow: visible;
+	white-space: nowrap;
+	width: 100%;
+	
 }
 
 .tabBar button {
@@ -823,20 +851,7 @@ canvas {
   }
 }
 
-@media (min-width: 900px) {
-	
-
-  .secright {
-	background-color: green;
-	width: 100%;
-	float: center;
-	align-content: center;
-	padding-top: 100px;
-	
-	
-}
-
-@media screen and (max-width: 479px) {
+@media only screen and (max-width: 768px) {
 	
 	.html {
 		overflow: none;
@@ -895,15 +910,27 @@ canvas {
 		font-size: 2.5vw;
 	}
 
-	.time {
+	#time {
 		display: none;
 	}
 
-	.updatedProgress {
+	#updatedProgress {
 		display: none;
 	}
 
-	.col { grid-template-columns: repeat(2, 1fr); }
+	.secleft {
+		width: 100%;
+	}
+	.secright {
+		width: 100%;
+		padding-top: 30px;
+		
+	}
+
+	.tabBar {
+		overflow-x: clip;
+		white-space: nowrap;
+	}
 
 	
 
