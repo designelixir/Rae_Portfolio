@@ -253,18 +253,14 @@ const dock = document.querySelector('.dock');
 const finder = document.querySelector('.finder');
 const notif = document.querySelector('.notif');
 
-
 const file2 = document.querySelector('#icon2');
 const file3 = document.querySelector('#icon3');
 const file4 = document.querySelector('#icon4');
-const file5 = document.querySelector('#icon5');
 const file6 = document.querySelector('#icon6');
-const file7 = document.querySelector('#icon7');
 const file8 = document.querySelector('#icon8');
 const file9 = document.querySelector('#icon9');
 const file10 = document.querySelector('#icon10');
 const file11 = document.querySelector('#icon11');
-const file12 = document.querySelector('#icon12');
 const file13 = document.querySelector('#icon13');
 const file14 = document.querySelector('#icon14');
 const file15 = document.querySelector('#icon15');
@@ -274,6 +270,7 @@ const notifContainer = document.querySelector('.notifContainer');
 
 const baja = document.querySelector('.baja');
 const indesign = document.querySelector('.indesign');
+const grid = document.querySelector('.grid');
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
@@ -299,14 +296,11 @@ uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
 
 uos(0.4, 0.42, p => (file2.style.opacity =  ((p*20/updatedProgress)) )); //baja
-uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //mucca
-uos(0.4, 0.42, p => (file7.style.opacity =  ((p*20/updatedProgress)) )); //mucca
+uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //brut
 uos(0.4, 0.42, p => (file8.style.opacity =  ((p*20/updatedProgress)) )); //renu
 uos(0.4, 0.42, p => (file15.style.opacity =  ((p*20/updatedProgress)) )); //killanilla
 uos(0.4, 0.43, p => (file4.style.opacity =  ((p*20/updatedProgress)) )); //civico
-uos(0.4, 0.43, p => (file5.style.opacity =  ((p*20/updatedProgress)) )); //futura
 uos(0.4, 0.43, p => (file6.style.opacity =  ((p*20/updatedProgress)) )); //menu
-uos(0.4, 0.43, p => (file12.style.opacity =  ((p*20/updatedProgress)) )); //symphony
 uos(0.4, 0.44, p => (file10.style.opacity =  ((p*20/updatedProgress)) )); //selfport
 uos(0.4, 0.45, p => (file11.style.opacity =  ((p*20/updatedProgress)) )); //summitplan
 uos(0.4, 0.45, p => (file13.style.opacity =  ((p*20/updatedProgress)) )); //wordpress
@@ -319,6 +313,7 @@ uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
 uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
 // uos(0.6, 0.65, p => (baja.style.opacity= ((p*12/updatedProgress)) ));
 uos(0.55, 0.6, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
+uos(0.55, 0.6, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
 
 
 
@@ -345,7 +340,24 @@ function closeIndesign() {
   document.getElementById('INDicon').animation = "bounce 2s 6;";
 }
 
+//tab bar reveal buttons 
+function reveal(slide) {
+  var active = slide;
+  var slides = ['bajaSlide', 'brutSlide', 'killaSlide','renuSlide', 'menuSlide', 'civicoSlide', 'portraitSlide' ];
+  
+ 
+  var i;
+  
+  for (i=0; i<30; i++){
+    if (i === active) {
+      document.getElementById(slides[active]).style.display= "block";
+      document.getElementById(slides[active]).style.animation = "slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+    } else {
+      document.getElementById(slides[i]).style.display = "none";
+    }
+  }
 
+}
 
 
 // function scrollTo(position){

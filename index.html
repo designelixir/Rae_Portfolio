@@ -252,16 +252,16 @@
 					<img class="desktopFiles slide-fwd-center" id="icon2" src="src/fileIcons2/baja.svg">
 					<img class="desktopFiles" id="icon3" src="src/fileIcons2/brut.svg">
 					<img class="desktopFiles" id="icon4" src="src/fileIcons2/civico.svg">
-					<img class="desktopFiles" id="icon5" src="src/fileIcons2/futura.svg">
+					
 					<img class="desktopFiles" id="icon6" src="src/fileIcons2/menu.svg">
-					<img class="desktopFiles" id="icon7" src="src/fileIcons2/mucca.svg">
+					
 					<img class="desktopFiles" id="icon8" src="src/fileIcons2/renu.svg">
 					<img class="desktopFiles" id="icon10" src="src/fileIcons2/selfport.svg">
 					<img class="desktopFiles" id="icon11" src="src/fileIcons2/summitplan.svg">
-					<img class="desktopFiles" id="icon12" src="src/fileIcons2/symphony.svg">
+				
 					<img class="desktopFiles" id="icon13" src="src/fileIcons2/wordpress.svg">
 					<img class="desktopFiles" id="icon14" src="src/fileIcons2/worldhash.svg">
-					<img class="desktopFiles" id="icon15" src="src/fileIcons2/killanilla.svg">
+					<img class="desktopFiles" id="icon15" src="src/fileIcons2/traffic.svg">
 				</div>
 				
 
@@ -314,61 +314,159 @@
 		
 					
 					
-				<div class="indesign">
+				<div class="indesign" id="window">
 					<div class="inDesignToolBar" style="top: 0;">
 							<a href="javascript: closeIndesign();"><img style="width: 20px; float: left;" class="close2" src="src/close.svg"></a>
 							<h5 style="text-align: center;"> Select Cases</h5>
 					</div>
-				
-					<div class="indesignContent">
-						<!-- <div class="baja">
+					<div class="tabBar">
+							<div class="tabs"><a href="javascript: reveal(0);"><button>boulder_baja_logo.ai</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(1);"><button>brut_ipa_poster.ai</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(2);"><button>traffic_album_art.ai</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(3);"><button>renu_logo.ai</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(4);"><button>wf_brewery_menu.indd</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(5);"><button>civico_brochure.indd</button></a></div>
+							<div class="tabs"><a href="javascript: reveal(6);"><button>self_portrait.psd</button></a></div>
+
+							<div class="tabs"><button>+</button></div>
+					</div>
+				</div>	
+
+				<div class="grid">
+						<div class="activeCase" id="bajaSlide">
 							<section class="secleft">
 									<h1>Boulder Baja</h1>
 									<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
 											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
-											<br><img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+									<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
 									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
 									
 							</section>
+							
+							
 							<section class="secright">
-									<img src="src/logos/baja_nocolor.svg">
-									
-							</section>		
-							<section class="secPhotos">
+									<img class="caseimg" src="src/logos/baja_nocolor.svg">
+							</section>	
+							<section class="seccenter">
 								
-								<img style="width: 30%; padding-top: 10%;" src="src/logos/bajaCarRacer.jpg">
-							</section>
-						</div> -->
-					</div>
-					
-					
-					<div class="tabBar">
-							<div class="tabs"><a href="javascript: reveal();"><button>boulder_baja_logo.ai</button></a></div>
-							<div class="tabs"><button>brut_ipa_poster.ai</button></div>
-							<div class="tabs"><button>mucca_poster.ai</button></div>
-							<div class="tabs"><button><a href="javascript: showRenu();">renu_logo.ai</button></a></div>
-							<div class="tabs"><button>+</button></div>
-					</div>
-
-				</div>	
-
-				<div class="grid">
-						<div class="baja">
-							<section class="secleft">
-									<h1 style="font-size: 36px;">Boulder Baja</h1>
-									<p style="font-size: 13px;"> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
-											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
-									<br><img style="width: 40px;" src="src/dockIcons/illustrator.svg">
-									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
-									
-							</section>
-							
-							
-							<section class="secright">
-									<img src="src/logos/baja_nocolor.svg">
-							</section>		
+								<img style="width: 30%; padding-right: 20px;" src="src/logos/bajaCarRacer.jpg">
+								<img style="width: 57%; min-width: 500px; " src="src/logos/BAJATEAM.jpeg">
+							</section>	
 								
 						</div>
+						<div class="activeCase" id="brutSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Brut IPA Poster</h1>
+										<h3>West Flanders Brewery</h3>
+										<p> A release poster for West Flanders Brewing Company's new "Brut-ster" IPA. This beer was named in honor of our very own "brewster" (female brewing scientist) Erin, who epitomizes bad-ass women. Inspired by Rosy the Riveter, I created a release poster with a portrait of our tattooed, bad-ass head brewer. </p>
+										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+										<img style="width: 40px;" src="src/dockIcons/indesign.svg">
+										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
+										
+								</section>
+								
+								
+								<section class="secright" >
+										<img class="caseimg" src="src/cases/brut_ipa_v1.jpg">
+								</section>			
+						</div>
+						<div class="activeCase" id="killaSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Traffic Album Artwork</h1>
+										<h3>Killa Nilla</h3>
+										<p>Given complete creative freedom with these projects, I developed two album artworks for Dubstep artist and friend Killa Nilla. Driven by the hypnotic and space-inspired style of Dubstep culture, I used Adobe Draw on the iPad to develop two abstract works to showcase his tracks.</p>
+										
+										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"> <br>
+										<iframe style="padding-top: 25%; height: 80px; width: 100%; float: left;" src="https://open.spotify.com/embed/album/3C4rouATWyKA6Oju3EOppq" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+									</section>
+								
+								
+								<section class="secright">
+										<img class="caseimg" src="src/cases/max_album_traffic_v1.jpg">
+								</section>			
+						</div>
+						<div class="activeCase" id="renuSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Renu Cosmetics Logo</h1>
+										<p>Renu Cosmetics is a small, natural brand of beauty products designed by Paige Johns out of Salt Lake City, Utah. Her career as an esthetician has inspired her to launch her own line of hand-crafted natural beauty products. In order to promote a minimalist and natural look, I provided paige with several options. Packaging was meant to be home-made looking and authentic.</p>
+										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"><br>
+								</section>
+								
+								
+								<section class="secright">
+										<img class="caseimg" src="src/cases/renu_bottle.png">
+								</section>	
+								<section class="seccenter">
+										<img style="width: 99%;" src="src/cases/renu_lineup.png">
+										
+								</section>			
+						</div>
+					
+						<div class="activeCase" id="menuSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Menu Rework</h1>
+										<h3>West Flanders Brewing Co.</h3>
+										<p>Create a menu that clearly organizes each food category, as well as make a la carte options both easier to find, and more clearly explain the additional price charge for ordering them. Other design goals included reducing page size, improving menu flow by organizing sections, and incorporating our brand. I started by drawing some digital elements, hops, as decoration for the menu.</p>
+										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
+										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
+										<img style="width: 100%; float: center; padding-top: 30px;" src="src/cases/blackHopDecor.png">
+										
+								</section>
+								
+								
+								<section class="secright">
+										<img class="caseimg" src="src/cases/menu_closeup copy.jpg">
+								</section>	
+								<section class="seccenter">
+										
+										<img style="width: 100%;" src="src/cases/menu_overview.jpg">
+								</section>			
+						</div>
+
+						<div class="activeCase" id="civicoSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Membership Brochure</h1>
+										<h3>CiviCO</h3>
+										<p>Contracted work for the rebranding of then Quarterly Forum to Civico. Given brand standards, I was assigned to recreate the information in Quarterly Forum's previous membership brochure following new typefaces, color standards and brand attributes while reducing the number of pages in half.</p>
+										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
+										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
+										
+								</section>
+								
+								
+								<section class="secright">
+										<img class="caseimg" src="src/cases/civico.png">
+								</section>	
+								<section class="seccenter">
+									<h3> Brochure Pages</h3>
+										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page1.png">
+										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page2.png"><br>
+										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page3.png">
+										<img style="width: 49%; min-width: 350px;" src="src/cases/civico_page4.png"><br>
+								</section>			
+						</div>
+
+						<div class="activeCase" id="portraitSlide" style="display: none;">
+								<section class="secleft">
+										<h1>Self Portrait</h1>
+							
+										<p>Using ten photos, I created a self-portrait montage that exhibited an emotion for a photography class. All photos used were captured during a month long backpacking trip of the Colorado Trail.
+												After create a dozen layers, I traced each layer with my mouse to give a hand-drawn, euphoric vibe. I hoped to express how I feel while in Mother Nature - specifically during my backpacking trip.  
+												 </p>
+										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
+										
+										
+								</section>
+								
+								
+								<section class="secright">
+										<img class="caseimg" src="src/cases/selfport.jpg">
+								</section>	
+									
+						</div>
+						
+						
 		
 				</div>
 				
