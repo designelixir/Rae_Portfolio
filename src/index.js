@@ -253,18 +253,14 @@ const dock = document.querySelector('.dock');
 const finder = document.querySelector('.finder');
 const notif = document.querySelector('.notif');
 
-
 const file2 = document.querySelector('#icon2');
 const file3 = document.querySelector('#icon3');
 const file4 = document.querySelector('#icon4');
-const file5 = document.querySelector('#icon5');
 const file6 = document.querySelector('#icon6');
-const file7 = document.querySelector('#icon7');
 const file8 = document.querySelector('#icon8');
 const file9 = document.querySelector('#icon9');
 const file10 = document.querySelector('#icon10');
 const file11 = document.querySelector('#icon11');
-const file12 = document.querySelector('#icon12');
 const file13 = document.querySelector('#icon13');
 const file14 = document.querySelector('#icon14');
 const file15 = document.querySelector('#icon15');
@@ -272,53 +268,40 @@ const file15 = document.querySelector('#icon15');
 const notifs = document.querySelector('.notifs');
 const notifContainer = document.querySelector('.notifContainer');
 
+const baja = document.querySelector('.baja');
+const indesign = document.querySelector('.indesign');
+const grid = document.querySelector('.grid');
 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
+
+
 //scrolling behavior for SVGS 
 uos(0, .1, p => (welcome.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingBottom= (((p)) / (updatedProgress) +"%" )));
-
 uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
-
-// uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0.3, 1, p => (downArrow.style.opacity = ((updatedProgress-(p*1000)) / (updatedProgress) )));
-
 uos(0, .1, p => (social.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress) +"%" )));
 
-
-// uos(0.02, 0.52, p => (desk.style.width = (p * updatedProgress*20)*10+"%")); 
+//desk and wall elements scrolling behavior
 uos(0.02, 0.6, p => (desk.style.width = ((p*2500)+"%"))); 
 uos(0.022, 0.45, p => (doorway.style.width = ((p*3000)+"%"))); 
 
-// uos(0.03, 0.2, p => (doorway.style.width = (p * updatedProgress*20)*10+"%"));
-
-
+//desktop elements scrolling behavior 
 uos(0.28, 0.4, p => (on.style.opacity =  ((p*10/updatedProgress)) ));
-
-
 uos(0.32, 0.4, p => (toolbar.style.opacity =  ((p*25/updatedProgress)) ));
 uos(0.32, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 uos(0.32, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
 
-
-
 uos(0.4, 0.42, p => (file2.style.opacity =  ((p*20/updatedProgress)) )); //baja
-uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //mucca
-uos(0.4, 0.42, p => (file7.style.opacity =  ((p*20/updatedProgress)) )); //mucca
+uos(0.4, 0.42, p => (file3.style.opacity =  ((p*20/updatedProgress)) )); //brut
 uos(0.4, 0.42, p => (file8.style.opacity =  ((p*20/updatedProgress)) )); //renu
 uos(0.4, 0.42, p => (file15.style.opacity =  ((p*20/updatedProgress)) )); //killanilla
-
 uos(0.4, 0.43, p => (file4.style.opacity =  ((p*20/updatedProgress)) )); //civico
-uos(0.4, 0.43, p => (file5.style.opacity =  ((p*20/updatedProgress)) )); //futura
 uos(0.4, 0.43, p => (file6.style.opacity =  ((p*20/updatedProgress)) )); //menu
-
-uos(0.4, 0.43, p => (file12.style.opacity =  ((p*20/updatedProgress)) )); //symphony
-
 uos(0.4, 0.44, p => (file10.style.opacity =  ((p*20/updatedProgress)) )); //selfport
-
 uos(0.4, 0.45, p => (file11.style.opacity =  ((p*20/updatedProgress)) )); //summitplan
 uos(0.4, 0.45, p => (file13.style.opacity =  ((p*20/updatedProgress)) )); //wordpress
 uos(0.4, 0.45, p => (file14.style.opacity =  ((p*20/updatedProgress)) )); //world hashtag
@@ -327,32 +310,92 @@ uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
-uos(0.5, 0.55, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
+uos(0.55, 0.6, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
+// uos(0.6, 0.65, p => (baja.style.opacity= ((p*12/updatedProgress)) ));
+uos(0.55, 0.6, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
+uos(0.55, 0.6, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
 
 
-function openFinder() {
-  document.getElementById('finder').style.display = "block";
-  document.getElementById('finder').style.animation = "scale-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
-  document.getElementById('finderIcon').style.animation = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 0.75;
-}
 
-function closeFinder() {
-  document.getElementById('finder').style.display = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 1;
-}
+function openFinder(onoff) {
 
-function openIndesign() {
-  updatedProgress = 0.55;
-}
-
-function closeIndesign() {
-  document.getElementById('window').style.display = "none";
-  document.getElementById('desktopFileContainer').style.opacity = 1;
-  document.getElementById('INDicon').animation = "bounce 2s 6;";
+  if (onoff === 1) {
+    document.getElementById('finder').style.display = "block";
+    document.getElementById('finder').style.animation = "scale-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+    document.getElementById('finderIcon').style.animation = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 0.75;
+  } else {
+    document.getElementById('finder').style.display = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 1;
+  }
+  
 }
 
 
+function openIndesign(onoff) {
+
+  if (onoff === 1){
+    document.getElementById('window').style.display = "block";
+    document.getElementById('gridWindow').style.display = "block";
+    document.getElementById('INDicon').style.animation = "none";
+  } else {
+    document.getElementById('window').style.display = "none";
+    document.getElementById('gridWindow').style.display = "none";
+    document.getElementById('desktopFileContainer').style.opacity = 1;
+    document.getElementById('INDicon').style.animation = "bounce 2s infinite";
+  }
+
+  
+}
+
+
+function openSpotify(onoff){
+  if (onoff === 1) {
+    document.getElementById('spotify').style.display = "block";
+  }
+  else {
+    document.getElementById('spotify').style.display = "none";
+  }
+}
+
+//tab bar reveal buttons 
+function reveal(slide) {
+  var active = slide;
+  var slides = ['bajaSlide', 'brutSlide', 'killaSlide','renuSlide', 'menuSlide', 'civicoSlide', 'portraitSlide' ];
+  var tabs = ['tab0','tab1','tab2','tab3','tab4','tab5','tab6']
+ 
+  var i;
+  
+  for (i=0; i<30; i++){
+    if (i === active) {
+      document.getElementById(slides[active]).style.display= "block";
+      document.getElementById(slides[active]).style.animation = "slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+      document.getElementById(tabs[active]).style.backgroundColor = "#ededed";
+      document.getElementById(tabs[active]).style.color = "#2c2c2c";
+     
+    } else {
+      document.getElementById(slides[i]).style.display = "none";
+      document.getElementById(tabs[i]).style.backgroundColor = '#384173';
+      document.getElementById(tabs[i]).style.color = '#ededed';
+    }
+  }
+
+}
+
+
+// function scrollTo(position){
+//   if (position === 1000){
+//     window.scrollTo(0,1000);
+//   }
+//   else {
+//     window.scrollTo(0,0);
+//   }
+
+// }
+
+
+
+//mouse tracking 
 function myFunction(e) {
   var x = e.clientX;
   var y = e.clientY;
