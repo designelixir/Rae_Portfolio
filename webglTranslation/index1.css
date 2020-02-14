@@ -1,0 +1,97 @@
+body {
+	overflow-x: hidden;
+    overflow-y: scroll;
+	padding: 0;
+	margin: 0;
+  
+}
+
+#viewport {
+	width: 100%;
+	position: fixed;
+}
+
+.page-wrapper {
+	padding: 0px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	
+  height: 4000vh;
+}
+#container {
+	height: 4000vh;
+	position: fixed;
+}
+
+.progress-container {
+	width: 100%;
+	height: 8px;
+	background: #ccc;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 25;
+  }
+  
+  .progress-bar {
+	height: 8px;
+	background: #2e345b;
+	width: 0%;
+  }
+
+.starsDiv {
+	background-color: #2E345B;
+	background-image: url("src/stars3.svg");
+	background-size: cover;
+	background-repeat: repeat-y;
+	animation: rotateStars 10s infinite;
+	height: 180vh;
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.logo {
+	width: 40%;
+	max-width: 500px;
+	animation: rotateStars 15s infinite;
+	position: fixed; 
+	padding-bottom: 90vh;
+	
+
+}
+
+.social {
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+}
+
+.socialIcons {
+	padding-right: 10px;
+	height: 50px;
+	/* animation: pulsate-bck 5s ease-in-out infinite both; */
+	bottom: 0;
+}
+
+
+
+
+/* animations  */
+
+@keyframes rotateStars {
+	0%, 100% {
+		transform: translateY(0);
+	  }
+	  50% {
+		transform: translateY(-15px);
+	  }
+	
+}
