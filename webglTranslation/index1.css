@@ -41,45 +41,69 @@ body {
 	width: 0%;
   }
 
-.starsDiv {
+.header {
 	background-color: #2E345B;
-	background-image: url("src/stars3.svg");
+	background-image: url("../src/stars3.svg");
 	background-size: cover;
 	background-repeat: repeat-y;
 	animation: rotateStars 10s infinite;
-	height: 180vh;
+    height: 180vh;
+    width: 100%;
 	opacity: 1;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+    align-items: center;
+    position: fixed;
 
 }
 
+
 .logo {
 	width: 40%;
-	max-width: 500px;
+	max-width: 450px;
 	animation: rotateStars 15s infinite;
-	position: fixed; 
-	padding-bottom: 90vh;
+    position: absolute; 
+    z-index: 3;
+    padding-bottom: 90vh;
+	
 	
 
 }
 
+.social {
+	
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    bottom: 20px;
+    padding-top: 10%;
+	
+}
+
+.socialIcons {
+	padding-right: 10px;
+	width: 60px;
+	bottom: 0;
+}
+/* 
 .social {
 	height: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	
+    padding-top: 1%; 
+    
+    bottom: 50%;
 }
 
 .socialIcons {
 	padding-right: 10px;
 	height: 50px;
-	/* animation: pulsate-bck 5s ease-in-out infinite both; */
 	bottom: 0;
-}
+} */
 
 
 

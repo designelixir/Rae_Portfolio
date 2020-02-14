@@ -6,59 +6,53 @@ var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
-let renderer;
-let camera;
-//let controls;
-
 let scene = new THREE.Scene();
-camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50);
+let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50);
 
-renderer = new THREE.WebGLRenderer({
+let renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.getElementById("viewport")
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(new THREE.Color(0x3030875, 0));
+renderer.setClearColor(new THREE.Color(0x3030875, 1));
 // document.body.appendChild(renderer.domElement);
 
 camera.position.x = 0;
 camera.position.y = 1; //change to 0 when finished 
 camera.position.z = 18;
 
-
-//controls = new THREE.OrbitControls(camera);
-
-// white spotlight shining from the side, casting a shadow
-
-
-let light = new THREE.AmbientLight(0xFFFFFF);
+let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from the side, casting a shadow
 scene.add(light);
 
 let gridHelper = new THREE.GridHelper(50, 50);
 scene.add(gridHelper);
 
-// canvas OBJECTS 
 var loader = new THREE.TextureLoader();
 
 
+// canvas OBJECTS 
 var cubeMaterials = [
-    new THREE.MeshLambertMaterial({ color: 0x2E345B}),
-    
-    new THREE.MeshLambertMaterial({ color: 0x2E345B}),
-    new THREE.MeshLambertMaterial({    map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
-
-    new THREE.MeshLambertMaterial({    map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
-
-    new THREE.MeshBasicMaterial({color: 0x2E345B}),
-
-    
+    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
+    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
+    new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true, wireframe_linewidth: 10})
   ];
-  cubeMaterials = new THREE.MeshFaceMaterial( cubeMaterials );
+  
+cubeMaterials = new THREE.MeshFaceMaterial( cubeMaterials);
 
-  var cubeGeometry = new THREE.BoxGeometry(50,0,50);
-  var floor = new THREE.Mesh(cubeGeometry,cubeMaterials);
-  var ceiling = new THREE.Mesh(cubeGeometry,cubeMaterials);
+var cubeGeometry = new THREE.BoxGeometry(80,0,70);
+var floor = new THREE.Mesh(cubeGeometry,cubeMaterials);
+var ceiling = new THREE.Mesh(cubeGeometry,cubeMaterials);
+
+var wallGeometry = new THREE.PlaneGeometry(80,40);
+var wall2Geometry = new THREE.PlaneGeometry(18,180);
+var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578c, side: THREE.DoubleSide});
+var wall2Material = new THREE.MeshBasicMaterial( {color: 0x2E3456, side: THREE.DoubleSide} );
+
+var wall = new THREE.Mesh( wallGeometry, wallMaterial );
+var wall2 = new THREE.Mesh( wallGeometry, wall2Material );
+var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
 
 
 //loaders
@@ -73,7 +67,7 @@ doorway.transparent=true;
  
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
-var doorGeometry = new THREE.PlaneGeometry(40, 18);
+var doorGeometry = new THREE.PlaneGeometry(60, 24);
 
 
 // combine our image geometry and material into a mesh
@@ -83,12 +77,19 @@ var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
 
 
 // set the position of the image mesh in the x,y,z dimensions
-doorwayMesh.position.set(0,0,-12);
-floor.position.set (-1,-10,2);
-ceiling.position.set(-1,10,2)
+doorwayMesh.position.set(-1,0,-14);
+floor.position.set (-1,-14,-30);
+ceiling.position.set(-1,14,-30)
+wall.position.set(0,0,-45);
+
+wall2.rotateY(180);
+wall2.position.set(-25,0,-40);
+
+wall3.rotateY(-180);
+wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling); 
+scene.add(doorwayMesh, floor, ceiling, wall, wall2, wall3); 
 
 
 
@@ -119,8 +120,12 @@ function scrollProgress() {
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
-const stars = document.querySelector('.starsDiv');
-uos(0, .1, p => (stars.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+const header = document.querySelector('.header');
+const social = document.querySelector('.social');
+
+uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
+uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress*10) +"%" )));
+
 
 //////////////////
 animate();
