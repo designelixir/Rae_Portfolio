@@ -227,6 +227,13 @@ const instances = [
   }),
 ];
 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+try {
+  var pageTracker = _gat._getTracker("UA-16288001-1");
+  pageTracker._trackPageview();
+  } catch(err) {};
 
 //query selectors for scrolling behavior
 const headings = document.querySelectorAll('.heading');
@@ -312,12 +319,14 @@ uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
 uos(0.55, 0.6, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
-
-uos(0.62, 0.7, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
-uos(0.65, 0.67, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
-uos(0.60, 0.64, p => (desktopFileContainer.style.zIndex =  303-p));
+uos(0.6, 0.65, p => (file2.style.height= ((p*2)) +"%"));
 
 
+// uos(0.62, 0.7, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
+// uos(0.65, 0.67, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
+// uos(0.60, 0.64, p => (desktopFileContainer.style.zIndex =  303-p));
+
+uos(0.6, 0.7, p => (desktopFileContainer.style.width = ((p*2500)+"%"))); 
 
 
 function openFinder(onoff) {
@@ -335,22 +344,22 @@ function openFinder(onoff) {
 }
 
 
-function openIndesign(onoff) {
+// function openIndesign(onoff) {
 
-  if (onoff === 1){
-    document.getElementById('window').style.display = "block";
-    document.getElementById('gridWindow').style.display = "block";
-    document.getElementById('INDicon').style.animation = "none";
-    document.getElementById('desktopFileContainer').style.zIndex=300;
-  } else {
-    document.getElementById('window').style.display = "none";
-    document.getElementById('gridWindow').style.display = "none";
-    document.getElementById('desktopFileContainer').style.opacity = 1;
+//   if (onoff === 1){
+//     document.getElementById('window').style.display = "block";
+//     document.getElementById('gridWindow').style.display = "block";
+//     document.getElementById('INDicon').style.animation = "none";
+//     document.getElementById('desktopFileContainer').style.zIndex=300;
+//   } else {
+//     document.getElementById('window').style.display = "none";
+//     document.getElementById('gridWindow').style.display = "none";
+//     document.getElementById('desktopFileContainer').style.opacity = 1;
     
-  }
+//   }
 
   
-}
+// }
 
 
 function openSpotify(onoff){
@@ -362,14 +371,14 @@ function openSpotify(onoff){
   }
 }
 
-function openMail(onoff){
-  if (onoff === 1) {
-    document.getElementById('mailWindow').style.display = "block";
-  }
-  else {
-    document.getElementById('mailWindow').style.display = "none";
-  }
-}
+// function openMail(onoff){
+//   if (onoff === 1) {
+//     document.getElementById('mailWindow').style.display = "block";
+//   }
+//   else {
+//     document.getElementById('mailWindow').style.display = "none";
+//   }
+// }
 
 //tab bar reveal buttons 
 function reveal(slide, position) {
@@ -400,7 +409,6 @@ function reveal(slide, position) {
 
 }
 
-
 // function scrollTo(position){
 //   if (position === 1000){
 //     window.scrollTo(0,1000);
@@ -410,7 +418,6 @@ function reveal(slide, position) {
 //   }
 
 // }
-
 
 
 //mouse tracking 

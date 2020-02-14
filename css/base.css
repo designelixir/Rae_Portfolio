@@ -276,6 +276,8 @@ canvas {
 
 
 
+
+
 .dockIcons {
 	height: 60px;
 	padding-top: 90px;
@@ -293,6 +295,11 @@ canvas {
 	height: 90px;
 	animation: pulsate-bck 10s ease-in-out infinite both;
 	opacity: 0;
+}
+
+.desktopWindow {
+	position: fixed; 
+	z-index: 999;
 }
 
 
@@ -339,7 +346,7 @@ canvas {
 	}
   }
   
-  #icon2 {left: 14%; top: 25%;  } /* baja */
+  #icon2 {left: 14%; top: 25%; min-width: 90px;  } /* baja */
   #icon3 {left: 34%; top: 22%;} /* brut */
   #icon8 {left: 40%; top: 33%;} /* renu */
   #icon15 {left: 40%; top: 12%;} /* killanilla */
@@ -424,6 +431,10 @@ canvas {
 	font-size: 12px;
 }
 
+
+
+
+
 .indesign {
 	background-image: url("../src/indesign4.svg");
 	background-repeat: no-repeat;
@@ -438,8 +449,6 @@ canvas {
 	
 	vertical-align: middle;
 }
-
-
 
 
 
