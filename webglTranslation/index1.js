@@ -68,7 +68,7 @@ var doorway = new THREE.MeshLambertMaterial({
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/deskchair2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/deskchair3.png')
 });
 
 deskchair.transparent=true;
@@ -78,7 +78,7 @@ deskchair.transparent=true;
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
 var doorGeometry = new THREE.PlaneGeometry(60, 24);
-var deskGeometry = new THREE.PlaneGeometry(20, 24);
+var deskGeometry = new THREE.PlaneGeometry(21, 23);
 
 
 
@@ -92,7 +92,7 @@ var deskMesh = new THREE.Mesh(deskGeometry, deskchair);
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(-1,0,-14);
-deskMesh.position.set(-1,-3,-34);
+deskMesh.position.set(0,-5,-30);
 floor.position.set (-1,-14,-30);
 ceiling.position.set(-1,14,-30)
 wall.position.set(-1,0,-40);
