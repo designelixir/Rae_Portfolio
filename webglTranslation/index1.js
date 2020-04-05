@@ -151,9 +151,18 @@ var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.header');
 const social = document.querySelector('.social');
+const spinny = document.querySelector('.spinny');
+const wallpaper = document.querySelector('.wallpaper');
+const profile = document.querySelector('.profile');
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress*10) +"%" )));
+uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
+uos(0.3, 0.38, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
+uos(0.35, 0.38, p => (profile.style.opacity =  ((p*8/updatedProgress)) ));
+
+
 
 
 //////////////////
