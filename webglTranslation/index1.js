@@ -62,7 +62,7 @@ var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/doorway.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/doorway2.png')
 });
 
 doorway.transparent=true;
