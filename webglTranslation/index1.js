@@ -69,33 +69,41 @@ doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
   map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/desk_1@600x.png')
-});
-
+}); 
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/chair@600x.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/chair.png')
 
+}); 
+chair.transparent=true;
+
+var rug = new THREE.MeshLambertMaterial({
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/rug.png')
 });
  
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
 var doorGeometry = new THREE.PlaneGeometry(60, 24);
 var deskGeometry = new THREE.PlaneGeometry(20, 18.75);
-
-
+var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
+var rugGeometry = new THREE.PlaneGeometry(10, 1.46);
 
 
 // combine our image geometry and material into a mesh
 var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
 var deskMesh = new THREE.Mesh(deskGeometry, deskchair);
-
-
+var chairMesh = new THREE.Mesh(chairGeometry, chair);
+var rugMesh = new THREE.Mesh(rugGeometry, rug);
 
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(-1,0,-14);
 deskMesh.position.set(0,-3,-30);
+chairMesh.position.set(0,-6.5,-28);
+rugMesh.position.set(0,-6.5,-28);
+
+
 floor.position.set (-1,-14,-30);
 ceiling.position.set(-1,14,-30)
 wall.position.set(-1,0,-40);
@@ -109,7 +117,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling, wall, deskMesh); 
+scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, rugMesh); 
 
 
 
