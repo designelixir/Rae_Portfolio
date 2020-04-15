@@ -68,18 +68,18 @@ var doorway = new THREE.MeshLambertMaterial({
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/desk_1@600x.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/desk_1@600x.png')
 }); 
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/chair.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/chair.png')
 
 }); 
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/posters.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/posters2.png')
 });
  
 posters.transparent=true;
@@ -88,7 +88,7 @@ posters.transparent=true;
 var doorGeometry = new THREE.PlaneGeometry(60, 24);
 var deskGeometry = new THREE.PlaneGeometry(20, 18.75);
 var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
-var posterGeometry = new THREE.PlaneGeometry(22,14);
+var posterGeometry = new THREE.PlaneGeometry(24,22);
 
 
 // combine our image geometry and material into a mesh
@@ -102,7 +102,7 @@ var posterMesh = new THREE.Mesh(posterGeometry,posters);
 doorwayMesh.position.set(-1,0,-14);
 deskMesh.position.set(0,-5,-30);
 chairMesh.position.set(0,-8.5,-28);
-posterMesh.position.set(3,3.5,-32);
+posterMesh.position.set(0,0,-32);
 
 
 floor.position.set (-1,-16,-30);
@@ -152,15 +152,23 @@ var updatedProgressHeight = window.innerHeight/100;
 const header = document.querySelector('.header');
 const social = document.querySelector('.social');
 const spinny = document.querySelector('.spinny');
+// const wallpaper = document.querySelector('.wallpaper');
+const moto = document.querySelector('.moto');
+const on = document.querySelector('.on');
 const wallpaper = document.querySelector('.wallpaper');
-const profile = document.querySelector('.profile');
+const dock = document.querySelector('.dock');
+
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
 uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress*10) +"%" )));
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.25, 0.3, p => (spinny.style.width = (100-(p*100)) +"%"));
-uos(0.3, 0.38, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
-uos(0.35, 0.38, p => (profile.style.opacity =  ((p*8/updatedProgress)) ));
+uos(0.25, 0.35, p => (spinny.style.width = (100-(p*100)) +"%"));
+// uos(0.3, 0.38, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
+uos(0.25, 0.3, p => (moto.style.opacity =  ((p*10/updatedProgress)) ));
+uos(0.3, 0.35, p => (moto.style.paddingRight = (100-(p*300)) +"%"));
+uos(0.35, 0.5, p => (on.style.opacity =  ((p*100/updatedProgress)) ));
+uos(0.38, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
+uos(0.38, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 
 
 
