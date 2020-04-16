@@ -25,8 +25,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-let gridHelper = new THREE.GridHelper(50, 50);
-scene.add(gridHelper);
+// let gridHelper = new THREE.GridHelper(50, 50);
+// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -139,7 +139,6 @@ function scrollProgress() {
   var scrolled = (winScroll / height) * 100;
   var truncScroll = Math.trunc(scrolled);
   document.getElementById("myBar").style.width = scrolled + "%";
-//   document.getElementById("updatedProgress").innerHTML = truncScroll +"%";
 
 }
 
@@ -150,24 +149,22 @@ var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.header');
-const social = document.querySelector('.social');
 const spinny = document.querySelector('.spinny');
-// const wallpaper = document.querySelector('.wallpaper');
-const moto = document.querySelector('.moto');
 const on = document.querySelector('.on');
-const wallpaper = document.querySelector('.wallpaper');
 const dock = document.querySelector('.dock');
+const login = document.querySelector('.login');
+
+uos(0.03, .1, p => (header.style.opacity = ((updatedProgress-(p*30)) / (updatedProgress) )));
 
 
-uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*90)) / (updatedProgress) )));
-uos(0, .1, p => (social.style.paddingTop= (((p)) * (updatedProgress*10) +"%" )));
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.25, 0.35, p => (spinny.style.width = (100-(p*100)) +"%"));
-// uos(0.3, 0.38, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
-uos(0.25, 0.3, p => (moto.style.opacity =  ((p*10/updatedProgress)) ));
-uos(0.3, 0.35, p => (moto.style.paddingRight = (100-(p*300)) +"%"));
+uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
+uos(0.25, 0.35, p => (login.style.opacity =  ((p*50/updatedProgress)) ));
+
+uos(0.35, 0.38, p => (login.style.width = (100-(p*1000)) +"%")); //FIX !!!!!!!!!!!!!!
+
+
 uos(0.35, 0.5, p => (on.style.opacity =  ((p*100/updatedProgress)) ));
-uos(0.38, 0.4, p => (wallpaper.style.opacity =  ((p*8/updatedProgress)) ));
 uos(0.38, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 
 

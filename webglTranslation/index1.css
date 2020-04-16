@@ -6,7 +6,7 @@ body {
 	font-family: "mazzardBold", "mazzardLight", sans-serif;
 	
 }
-
+/* 
 @font-face {
     font-family: 'mazzardBold';
     src: url('../fonts/mazzardh-bold-webfont.eot');
@@ -29,7 +29,7 @@ body {
     font-weight: normal;
     font-style: normal;
 
-}
+} */
 
 #viewport {
 	width: 100%;
@@ -50,6 +50,32 @@ body {
 	position: fixed;
 }
 
+.downArrow{
+	z-index: 12;
+	bottom: 5%;
+	right: 50%;
+	position: fixed;
+}
+
+.socials {
+	width: 150px;
+	left: -2px;
+	position: absolute;
+}
+
+.socials:hover {transform: rotate(10deg);}
+
+.shortcuts {
+	width: 150px;
+	right: -2px; 
+	top: 50px; 
+	position: absolute;
+}
+
+.shortcuts:hover {
+	transform: rotate(10deg);
+}
+
 .progress-container {
 	width: 100%;
 	height: 8px;
@@ -68,49 +94,43 @@ body {
 
 .header {
 	background-color: #2E345B;
-	background-image: url("../src/stars3.svg");
-	background-size: cover;
+	background-image: url("../src/stars4.svg");
+	background-size: contain;
 	background-repeat: repeat-y;
-	animation: rotateStars 10s infinite;
     height: 180vh;
     width: 100%;
 	opacity: 1;
 	display: flex;
 	justify-content: center;
     align-items: center;
-    position: fixed;
+	position: fixed;
+	z-index: 20;
 
 }
 
 
 .logo {
-	width: 40%;
-	max-width: 450px;
+	width: 35%;
+	max-width: 315px;
 	animation: rotateStars 15s infinite;
     position: absolute; 
     z-index: 3;
-    padding-bottom: 90vh;
-	
-	
-
-}
-
-.social {
-	
-	width: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    bottom: 20px;
-    padding-top: 10%;
-	
-}
-
-.socialIcons {
+	padding-bottom: 90vh;
 	padding-right: 10px;
-	width: 60px;
-	bottom: 0;
+
+	
+}
+
+.entry_moto {
+	max-width: 650px;
+	width: 75%;
+	padding-bottom: 86vh;
+	animation: rotateStars 10s infinite;
+	padding-right: 50px;
+	position: absolute;
+	
+	
+	
 
 }
 
@@ -129,14 +149,7 @@ body {
 	opacity: 0;
 }
 
-.wallpaper {
-	z-index: 9;
-	height: 100%;
-	top: 0;
-	position: fixed;
-	opacity: 0;
-	
-}
+
 
 
 
@@ -169,13 +182,32 @@ h1 {
 	top: 0;
 }
 
-.wallpaper {
-	z-index: 12;
+.login {
+	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: fixed;
+	z-index: 20;
 	opacity: 0;
-	top: 0;
 }
+
+.profile {
+	width: 100px; 
+	
+	position: absolute;
+
+}
+
+.bio {
+	width: 500px;
+	z-index: 12; 
+	position: absolute;
+	padding-top: 250px;
+}
+
+
 
 .dock {
 	position: fixed; 
@@ -208,7 +240,7 @@ h1 {
 }
 	
 
-/* 
+
 .social {
 	height: 30px;
 	display: flex;
@@ -216,7 +248,7 @@ h1 {
 	align-items: center;
 	text-align: center;
     padding-top: 1%; 
-    
+    z-index: 15;
     bottom: 50%;
 }
 
@@ -224,7 +256,15 @@ h1 {
 	padding-right: 10px;
 	height: 50px;
 	bottom: 0;
-} */
+}
+
+/* 
+@media only screen and (min-width: 400px) {
+	
+	
+  } */
+
+
 
 
 
@@ -239,4 +279,59 @@ h1 {
 		transform: translateY(-15px);
 	  }
 	
+}
+
+
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
 }
