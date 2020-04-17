@@ -25,8 +25,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-// let gridHelper = new THREE.GridHelper(50, 50);
-// scene.add(gridHelper);
+let gridHelper = new THREE.GridHelper(50, 50);
+scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -154,7 +154,7 @@ const on = document.querySelector('.on');
 const dock = document.querySelector('.dock');
 const login = document.querySelector('.login');
 
-uos(0.03, .1, p => (header.style.opacity = ((updatedProgress-(p*30)) / (updatedProgress) )));
+uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));

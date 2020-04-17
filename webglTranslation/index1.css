@@ -52,13 +52,14 @@ body {
 
 .downArrow{
 	z-index: 12;
-	bottom: 5%;
+	bottom: 1%;
 	right: 50%;
+	height: 20px;
 	position: fixed;
 }
 
 .socials {
-	width: 150px;
+	width: 250px;
 	left: -2px;
 	position: absolute;
 }
@@ -66,7 +67,7 @@ body {
 .socials:hover {transform: rotate(10deg);}
 
 .shortcuts {
-	width: 150px;
+	width: 250px;
 	right: -2px; 
 	top: 50px; 
 	position: absolute;
@@ -117,6 +118,7 @@ body {
     z-index: 3;
 	padding-bottom: 90vh;
 	padding-right: 10px;
+	padding-top: 50px;
 
 	
 }
@@ -125,9 +127,10 @@ body {
 	max-width: 650px;
 	width: 75%;
 	padding-bottom: 86vh;
-	animation: rotateStars 10s infinite;
+	animation: rotateStars 15s infinite;
 	padding-right: 50px;
 	position: absolute;
+	padding-top: 50px;
 	
 	
 	
