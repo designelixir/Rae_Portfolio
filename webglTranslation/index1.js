@@ -25,8 +25,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-let gridHelper = new THREE.GridHelper(50, 50);
-scene.add(gridHelper);
+// let gridHelper = new THREE.GridHelper(50, 50);
+// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 

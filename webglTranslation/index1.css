@@ -62,6 +62,7 @@ body {
 	width: 250px;
 	left: -2px;
 	position: absolute;
+	bottom: 5%;
 }
 
 .socials:hover {transform: rotate(10deg);}
@@ -69,7 +70,7 @@ body {
 .shortcuts {
 	width: 250px;
 	right: -2px; 
-	top: 50px; 
+	top: 5%;
 	position: absolute;
 }
 
@@ -98,7 +99,7 @@ body {
 	background-image: url("../src/stars4.svg");
 	background-size: contain;
 	background-repeat: repeat-y;
-    height: 180vh;
+    height: 100%;
     width: 100%;
 	opacity: 1;
 	display: flex;
@@ -111,26 +112,26 @@ body {
 
 
 .logo {
-	width: 35%;
-	max-width: 315px;
+	width: 20%;
+	max-width: 215px;
 	animation: rotateStars 15s infinite;
     position: absolute; 
     z-index: 3;
-	padding-bottom: 90vh;
+	
 	padding-right: 10px;
-	padding-top: 50px;
+	
 
 	
 }
 
 .entry_moto {
-	max-width: 650px;
-	width: 75%;
-	padding-bottom: 86vh;
+	max-width: 550px;
+	width: 45%;
+	padding-top: 6vh;
 	animation: rotateStars 15s infinite;
 	padding-right: 50px;
 	position: absolute;
-	padding-top: 50px;
+	
 	
 	
 	
@@ -250,9 +251,8 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-    padding-top: 1%; 
     z-index: 15;
-    bottom: 50%;
+    bottom: 5%;
 }
 
 .socialIcons {
@@ -262,10 +262,12 @@ h1 {
 }
 
 /* 
-@media only screen and (min-width: 400px) {
+@media only screen and (max-width: 300px) {
+	.logo {width: 60%; max-width: 60%;}
+	.entry_moto {width: 100%; padding-bottom: 2vh; 	max-width: 100%;
+	}
 	
-	
-  } */
+  }  */
 
 
 

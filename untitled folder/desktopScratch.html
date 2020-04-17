@@ -1,0 +1,326 @@
+<style> 
+
+.desktop {
+	background-image: url("wallpaper.svg");
+	background-size: cover;
+	background-color: #494f7a;
+	width: 100%;
+	height: 100%;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/ /*this brings items to center horizontally & vertically */
+
+}
+
+.toolbar {
+	height: 4%;
+	width: 100%;
+	background-color: #2d2d2d;
+	color: white;
+	font-size: 10px;
+	align-items: center;
+	top: 0;
+	position: fixed;
+}
+
+
+.dock_container {display: flex;
+	justify-content: center;
+	align-items: center;}
+
+.dock {
+	bottom: 0;
+	height: 100px;
+	background-color: #2e345b;
+	position: fixed;
+}
+
+
+.dockIcons {
+	height: 70px;
+	padding: 15px;
+	opacity: 1;
+}
+
+.tooltip {position: relative; display: inline-block;}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #c7ccde;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%;}
+
+.tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
+
+#projectSynopsis{
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+
+#email{
+  display: none;
+  text-align: center;
+  margin: 100px;
+
+}
+
+#email p { padding:15px; }
+
+#testies{
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+
+#stats{
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+  display: none;
+}
+.closeBtn {
+	width: 20px; 
+	position: absolute; 
+	top: 12px;
+	left: 12px;
+	
+}
+.closeBtn:hover {width: 22px;}
+
+
+.window {
+	width: 60%;
+	height: 40%;
+	background-color: #c7ccde;
+	border: 2px solid #384173;
+	border-radius: 4px 4px 4px 4px; 
+	position: absolute;
+
+
+}
+
+/*#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}*/
+
+#closeBar {
+  padding: 16px;
+  cursor: move;
+  z-index: 10;
+  background-color: #48588d;
+  color: #fff;
+}
+
+#email_social_icons img {width: 50px;}
+
+button {
+	background-color: #00000000;
+	border: none;
+
+}
+
+button:focus {text-decoration: none; outline: none; border: none;
+}
+
+* {font-family: 'Rubik', sans-serif; text-decoration: none;
+}
+
+a {text-decoration: none;}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+<div class="desktop">
+
+	<div class="toolbar"> <h1> Megan Rae Byers </h1> </div>
+
+	<div class="dock_container"><div class="dock">
+					
+
+					
+					
+					<div class="tooltip">   
+						<span class="tooltiptext">All Projects Synopses</span> 
+						<button onclick="openSynopsis()"><img class="dockIcons tooltip" id="finderIcon" src="finder.svg"></button>
+ 					</div>
+
+ 					<div class="tooltip">   
+						<span class="tooltiptext">Email Me!</span> 
+						<button onclick="openEmail()"><img class="dockIcons tooltip" src="mail.svg"></button>
+ 					</div>
+
+ 					<div class="tooltip">   
+						<span class="tooltiptext">Testimonials</span> 
+						<button onclick="openTesties()"><img class="dockIcons tooltip" src="stickies.svg"></button>
+ 					</div>
+
+ 					<div class="tooltip">   
+						<span class="tooltiptext">Website Stats</span> 
+						<button onclick="openStats()"><img class="dockIcons" src="terminal.svg"></button>
+ 					</div>
+					
+					
+					
+					
+					
+					
+	</div></div>
+
+	<div id="projectSynopsis">
+This is my DIV element.
+</div>
+
+<!-- <div class="window" id="email">
+ 	<div id="mydiv">
+  		<div id="mydivheader">Click here to move</div>
+	
+	<button onclick="openEmail()"><img src="close.svg" style="width: 30px; top: 4px;"></button>
+
+	</div>
+</div> -->
+<div id="email">
+<div class="window" id="windowToolbar">
+  <div id="closeBar" style="text-align: center;"> Let's get in touch</div>
+  <button onclick="openEmail()"><img class="closeBtn" src="close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+  	 Contact me! </p>
+  <h2> megan@designelixir.studio </h2>
+  <div id="email_social_icons"> 
+    <a href="https://www.behance.net/colouradical" target="_blank"><img src="behance.svg"></a>
+	<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="instagram.svg"></a>
+	<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="linked.svg"></a>
+	<a href="https://github.com/coloradical" target="_blank"><img src="github.svg"></a>
+  </div>
+
+
+  
+</div></div>
+
+<div id="testies">
+	testies
+</div>
+
+<div id="stats">
+	stats
+</div>
+
+<div> 
+
+<script>
+function openSynopsis() {
+  var x = document.getElementById("projectSynopsis");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openEmail() {
+  var x = document.getElementById("email");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openTesties() {
+  var x = document.getElementById("testies");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openStats() {
+  var x = document.getElementById("stats");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
+dragElement(document.getElementById("windowToolbar"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+</script>
