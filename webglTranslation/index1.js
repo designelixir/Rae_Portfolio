@@ -127,7 +127,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling, wall, skill, deskMesh, chairMesh, posterMesh); 
+scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); //took out skill
 
 
 
@@ -140,17 +140,17 @@ let animate = function() {
 
 
 //scroll BAR
-window.onscroll = function() {scrollProgress()};
+// window.onscroll = function() {scrollProgress()};
 
-function scrollProgress() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  var truncScroll = Math.trunc(scrolled);
-  document.getElementById("myBar").style.width = scrolled + "%";
-    // document.getElementById("updatedProgress").innerHTML = truncScroll +"%"; scroll shows infinite? 
+// function scrollProgress() {
+//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   var scrolled = (winScroll / height) * 100;
+//   var truncScroll = Math.trunc(scrolled);
+//   document.getElementById("myBar").style.width = scrolled + "%";
+//     // document.getElementById("updatedProgress").innerHTML = truncScroll +"%"; scroll shows infinite? 
 
-}
+// }
 
 
 
@@ -158,29 +158,35 @@ function scrollProgress() {
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
-const header = document.querySelector('.header');
+const header = document.querySelector('.headerOverview');
 const spinny = document.querySelector('.spinny');
-const wallpaper = document.querySelector('.wallpaper');
+// const wallpaper = document.querySelector('.wallpaper');
 const dock = document.querySelector('.dock');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
 const delay_attribute = document.querySelector('.delay_attribute')
 const profile_description = document.querySelector('.profile_description');
 const profile_description_wrapper = document.querySelector('.profile_description_wrapper');
-
+const desktop = document.querySelector('.desktop');
+const toolbar = document.querySelector('.toolbar');
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 
+uos(0.15, 0.25, p => (header.style.left = (p*100)+"%"));
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.34, 0.38, p => (login.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.34, 0.38, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+
 uos(0.29, 0.33, p => (profile.style.width= ((p*16))+"%"));
 
+uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 
 
 
-uos(0.37, 0.39, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
+
+uos(0.4, 0.44, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.30, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.38, .4, p => (profile_description_wrapper.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
@@ -189,10 +195,121 @@ uos(0.38, .4, p => (profile.style.opacity = ((updatedProgress-(p*20)) / (updated
 
 uos(0.3, 0.46, p => (spinny.style.width = (100-(p*100)) +"%"));
 
+uos(0.4, 0.44, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
-uos(0.4, 0.5, p => (wallpaper.style.opacity =  ((p*100/updatedProgress)) ));
 
+function openSocials() {
+  var x = document.getElementById("social_banners");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openShortcuts() {
+  var x = document.getElementById("shortcut_banners");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+function openSynopsis() {
+  var x = document.getElementById("projectSynopsis");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openEmail() {
+  var x = document.getElementById("email");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+    
+  }
+}
+
+function openTesties() {
+  var x = document.getElementById("testies");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function openStats() {
+  var x = document.getElementById("stats");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
+dragElement(document.getElementById("windowToolbar"));
+dragElement(document.getElementById("windowToolbar2"));
+dragElement(document.getElementById("windowToolbar3"));
+dragElement(document.getElementById("windowToolbar4"));
+dragElement(document.getElementById("windowToolbar5"));
+dragElement(document.getElementById("windowToolbar6"));
+
+
+
+
+
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
 
 //calculate time 
 const current = new Date();

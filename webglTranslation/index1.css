@@ -62,27 +62,68 @@ a {text-decoration: none;}
 }
 
 .social_banner {
-	width: 250px;
+	width: 175px;
 	left: 0px;
 	position: absolute;
-	bottom: 5%;
+	bottom: -25px;
+	padding-bottom: 8%;
 	z-index: 20;
 }
 
-.social_banner:hover {transform: rotate(10deg); cursor: pointer;}
+#social_banners {display: none;}
+
+.social_banner:hover {transform: rotate(5deg); cursor: pointer;}
+
+.social_banner_small {
+	position: absolute;
+	width: 150px;
+	left: 0px;
+	padding-bottom: 8%;
+	bottom: 5%;
+}
+
+.social_banner_small:hover {
+	transform: rotate(5deg);
+	cursor: pointer; 
+}
+
+
+
+
+
 
 .shortcut_banner {
-	width: 250px;
+	width: 175px;
 	right: -2px; 
 	top: 5%;
 	position: absolute;
 }
 
-.shortcut_banner:hover {
-	transform: rotate(10deg);
+
+.shortcut_banner_small {
+	width: 125px;
+	position: fixed;
+	right: 0;
+	top: 0;
 }
 
-.progress-container {
+#shortcut_banners {
+	display: none;
+}
+
+.shortcut_banner_small:hover {
+	transform: rotate(5deg);
+	cursor: pointer;
+}
+
+.shortcut_banner:hover {
+	transform: rotate(5deg);
+	cursor: pointer;
+}
+
+
+
+/*.progress-container {
 	width: 100%;
 	height: 8px;
 	background: #ccc;
@@ -96,9 +137,9 @@ a {text-decoration: none;}
 	height: 8px;
 	background: #2e345b;
 	width: 0%;
-  }
+  }*/
 
-.header {
+.headerOverview {
 	background-color: #2E345B;
 	background-image: url("../src/stars4.svg");
 	background-size: contain;
@@ -135,16 +176,6 @@ a {text-decoration: none;}
 	animation: rotateStars 15s infinite;
 	padding-right: 50px;
 	position: absolute;
-}
-
-.wallpaper {
-	width: 100%; 
-	height: 100%; 
-	background-image: url("../src/wallpaper.svg");
-	position: fixed; 
-	background-size: cover;
-	top: 0;
-	opacity: 0;
 }
 
 #spinnyBox { 
@@ -198,12 +229,12 @@ h1 {
 .login {
 	width: 100%;
 	height: 100%;
-	display: flex;
+	display: block;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
+	position: absolute;
 	z-index: 20;
-	opacity: 0;
+	opacity: 1;
 }
 
 .toolbar {
@@ -214,10 +245,22 @@ h1 {
 	position: fixed;
 	display: table;
 	align-items: center;
+	z-index: 15;
+	opacity: 0;
 }
 
 .toolbar_attribute { display: table-cell; color: #f4f4f4; padding: 10px; }
 .delay_attribute {opacity: 0;}
+
+#profile_wrapper {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100%; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .profile {
 	width: 50%;
@@ -230,7 +273,7 @@ h1 {
 	width: 50%;
 	opacity: 0;
 	padding-top: 80px;
-	postion: absolute;
+	
 
 }
 
@@ -259,6 +302,211 @@ h1 {
 }
 
 
+.desktop {
+	background-image: url("../src/wallpaper.svg");
+	background-size: cover;
+	
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 14;
+	position: fixed;
+	top: 0;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/ /*this brings items to center horizontally & vertically */
+
+}
+
+
+
+.dock_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1600;
+}
+
+.dock {
+	bottom: 0;
+	height: 100px;
+	background-color: #2e345b;
+	position: fixed;
+	z-index: 2000;
+}
+
+
+.dockIcons {
+	height: 70px;
+	padding: 15px;
+	opacity: 1;
+}
+
+.dockIcons:hover {
+  cursor: pointer;
+}
+
+.tooltip {position: relative; display: inline-block;}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #c7ccde;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%;}
+
+.tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
+
+#projectSynopsis{
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  
+  margin-top: 20px;
+  display: none;
+}
+
+#email{
+  display: none;
+  text-align: center;
+  margin: 100px;
+  padding:15px;
+
+
+}
+
+#email p {  }
+
+#testies{
+  width: 100px;
+  padding: 50px 0;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 40px;
+  display: none; 
+  
+
+}
+
+#stats {display: none;}
+
+
+.closeBtn {
+	width: 20px; 
+	position: absolute; 
+	top: 12px;
+	left: 12px;
+	
+}
+.closeBtn:hover {width: 22px; cursor: pointer;}
+
+
+.window {
+	width: 70%;
+	height: 40%;
+	background-color: #c7ccde;
+	border: 2px solid #384173;
+	border-radius: 4px 4px 4px 4px; 
+	position: absolute;
+  text-align: center;
+
+
+}
+
+p {
+   font-size: 14px;
+   padding: 5%;
+}
+
+
+
+#closeBar {
+  padding: 16px;
+  cursor: move;
+  z-index: 10;
+  background-color: #48588d;
+  color: #fff;
+  height: 15px;
+}
+
+#email_social_icons img {width: 50px;}
+
+button {
+	background-color: #00000000;
+	border: none;
+
+}
+
+button:focus {text-decoration: none; outline: none; border: none;
+}
+
+* {font-family: 'Rubik', sans-serif; text-decoration: none;
+}
+
+a {text-decoration: none;}
+
+#terminal_text p {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2px 2px 2px 8px;
+  line-height: 12px;
+  text-align: left;
+  
+  white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+
+
+
+.fade-in {
+	-webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
 
 /* 
 @media only screen and (max-width: 300px) {
@@ -284,7 +532,6 @@ h1 {
 	  }
 	
 }
-
 
 .bounce {
 	-moz-animation: bounce 3s infinite;
