@@ -1,4 +1,4 @@
-<style> 
+ <style> 
 
 .desktop {
 	background-image: url("wallpaper.svg");
@@ -90,12 +90,14 @@
 #email p { padding:15px; }
 
 #testies{
-  width: 100%;
+  width: 100px;
   padding: 50px 0;
   text-align: center;
-  background-color: lightblue;
-  margin-top: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
   display: none;
+  
+
 }
 
 #stats{
@@ -117,7 +119,7 @@
 
 
 .window {
-	width: 60%;
+	width: 70%;
 	height: 40%;
 	background-color: #c7ccde;
 	border: 2px solid #384173;
@@ -125,6 +127,11 @@
 	position: absolute;
 
 
+}
+
+p {
+   font-size: 14px;
+   padding: 5%;
 }
 
 /*#mydiv {
@@ -223,16 +230,44 @@ This is my DIV element.
     <a href="https://www.behance.net/colouradical" target="_blank"><img src="behance.svg"></a>
 	<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="instagram.svg"></a>
 	<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="linked.svg"></a>
-	<a href="https://github.com/coloradical" target="_blank"><img src="github.svg"></a>
-  </div>
+	<a href="https://github.com/coloradical" target="_blank"><img src="github.svg"></a><br>
+    <a href="https://github.com/coloradical" target="_blank"><img src="unsplash.svg"></a>
+  <a href="https://github.com/coloradical" target="_blank"><img src="etsy.svg"></a>
 
-
-  
-</div></div>
+  </div>  
+</div>
+</div>
 
 <div id="testies">
-	testies
+
+<div class="window" id="windowToolbar2" style="width: 250px; height: 250px; left: 10%; font-size: 14px; bottom: 35%;">
+  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
 </div>
+
+<div class="window" id="windowToolbar3" style="width: 250px; height: 250px; left: 20%; font-size: 14px; bottom: 25%;">
+  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+</div>
+
+<div class="window" id="windowToolbar4" style="width: 250px; height: 250px; font-size: 14px; left: 30%; bottom: 15%;">
+  <div id="closeBar" style="text-align: center;"> Testimonial - Bob Mathes</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+  
+
+</div>
+</div>
+
+
 
 <div id="stats">
 	stats
@@ -256,6 +291,7 @@ function openEmail() {
     x.style.display = "block";
   } else {
     x.style.display = "none";
+    
   }
 }
 
@@ -281,6 +317,12 @@ function openStats() {
 
 
 dragElement(document.getElementById("windowToolbar"));
+dragElement(document.getElementById("windowToolbar2"));
+dragElement(document.getElementById("windowToolbar3"));
+dragElement(document.getElementById("windowToolbar4"));
+
+
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
