@@ -1,554 +1,223 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
+    <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
+    <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Megan Rae Byers</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css" />
-	
+    
+    <body>
+      <canvas id="viewport"></canvas> 
+        <div class="page-wrapper" >
+          
+          <!-- Begin Header -->
+          <div class="headerOverview">
+            
+            <img class="logo" src="../src/designelixir6.svg">
+            <img class="entry_moto" src="../src/entry6.svg">
+            <img class="downArrow bounce" width="40" height="40" src="../src/arrow.svg" />
+                    
+            <!-- Socials -->
+            <div id="social_banners"> 
+              <button onclick="openSocials()"><img class="social_banner_small" style=" bottom: 339px; left: 35px;" src="../src/close_banner2.svg"></button>
+               <a target="_blank" href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 270px;" src="../src/instagram_banner.svg"></a>
+              <a target="_blank" href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style=" bottom: 200px;" src="../src/unsplash_banner.svg"></a>
+              <a target="_blank" href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 135px;" src="../src/github_banner.svg"></a>
+              <a target="_blank" href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="../src/linkedin_banner.svg"></a>
+            </div>
 
-	<script>
+            <button onclick="openSocials()"><img class="social_banner" src="../src/socials.svg"></button>
 
-		document.documentElement.className = 'js';
-		var supportsCssVars = function () {
-			var e,
-				t = document.createElement('style');
-			return (
-				(t.innerHTML = 'root: { --tmp-var: bold; }'),
-				document.head.appendChild(t),
-				(e = !!(
-					window.CSS &&
-					window.CSS.supports &&
-					window.CSS.supports('font-weight', 'var(--tmp-var)')
-				)),
-				t.parentNode.removeChild(t),
-				e
-			);
-		};
-		supportsCssVars() ||
-			alert('Please view this demo in a modern browser that supports CSS Variables.');
-	</script>
-	
+            <!-- Shortcuts -->
+            <button onclick="openShortcuts()"><img class="shortcut_banner" src="../src/shortcuts.svg"></button>
+            <div id="shortcut_banners">
+              <a><img class="shortcut_banner_small" style="top: 120px;"src="../src/about_banner.svg"></a>
+              <a><img class="shortcut_banner_small" style="top: 180px;"src="../src/work_banner.svg"></a>
+              <a><img class="shortcut_banner_small" style="top: 235px;"src="../src/store_banner.svg"></a>
+              <a><img class="shortcut_banner_small" style="top: 290px;"src="../src/contact_banner.svg"></a>
+               <button onclick="openShortcuts()"><img class="shortcut_banner_small" style="top: 345px; right: 30px;"src="../src/close_banner.svg"></button>
+            </div>
+          </div> 
+    <!-- End Header  -->
 
-	
-	
-</head>
+    <!-- Begin Login Screen -->
+                  
+          
 
-<body>
-	<main>
+            <!-- Basic Toolbar -->
+            <div class="toolbar"> 
+              <div style="float:left; padding-top: 6px;" class="delay_attribute" >
+                <a href="#"><h4 class="toolbar_attribute"> <bold>Design Elixir </bold></h4></a>
+                <a><p class="toolbar_attribute"> Project Synopses </p></a>
+                <a><p class="toolbar_attribute"> Contact </p></a>
+                <a><p class="toolbar_attribute"> Store </p></a>
+              </div>
+              <!-- Time Toolbar -->
+              <div style="float:right; padding-top: 6px;"> <p class="toolbar_attribute" id="time">time</p></div>     
+            </div>
 
-		<div class="content content--canvas">
+            <!-- Profile Login -->
+          <div class="login"> 
+            <div id="profile_wrapper">
+              <img class="profile" src="../src/profile+name.svg">
+              <div class="profile_description_wrapper"><img class="profile_description" src="../src/login_description.svg"></div>
+            </div>
+            
+            
+          </div>
+    <!-- End Login -->
 
-			<div class="header">
+          <div id="spinnyBox"> <img class="spinny" src="../pngSRC/spinny.svg"> </div>
 
+    <!-- Begin Desktop  -->
+       <div class="desktop">
 
-				<div class="progress-container">
-					<div class="progress-bar" id="myBar"></div>
-				</div>
-				
-				<div class="stars">
-					<img class="starsimg" src="src/stars3.svg">
-				</div>
+          <!-- Begin Dock  -->
+          <div class="dock_container"><div class="dock">
+          
+          <div class="tooltip">   
+            <span class="tooltiptext">All Projects Synopses</span> 
+            <button onclick="openSynopsis()"><img class="dockIcons tooltip" id="finderIcon" src="../src/finder.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Email Me!</span> 
+            <button onclick="openEmail()"><img class="dockIcons tooltip" src="../src/mail.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Testimonials</span> 
+            <button onclick="openTesties()"><img class="dockIcons tooltip" src="../src/stickies.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Website Stats</span> 
+            <button onclick="openStats()"><img class="dockIcons" src="../src/terminal.svg"></button>
+          </div>
+          
+        </div>
 
-				<div class="welcome">
-					<img class="logo" src="src/design_elixir.svg">
-				</div>
-				
-				
-
-				<div class="social">
-					<a href="https://www.behance.net/colouradical" target="_blank"><img class="socialIcons"src="src/icons/behance.svg"></a>
-					<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img class="socialIcons"src="src/icons/instagram.svg"></a>
-					<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img class="socialIcons"src="src/icons/linked.svg"></a>
-					<a href="https://github.com/coloradical" target="_blank"><img class="socialIcons"src="src/icons/github.svg"></a>
-				</div>
-
-				<!-- <img class="desk" src="src/desk7.svg"> -->
-				<img class="desk" src="https://ik.imagekit.io/coloradical/desk7_simplified_BQ4ApGy_-.svg">
-				
-				<img class="doorway" src="src/doorway6.svg">
-
-				<img class="spinny" src="src/spinny.svg">
-
-				<img class="on" src="src/on.svg">
-				<img class="wallpaper" src="src/wallpaper.svg">
-
-				<div class="toolbar">
-						<nav class="toolLeft">
-							<ul class="nav">
-								<li><h4 class="bold">Megan Byers</h4></li>
-				  				<li><h4>About</h4>
-									<ul>
-										<li>
-											<h4>Education&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">University of Colorado at Boulder</h4></li>
-												<li><h4>Bachelor of Arts in Computer Science</h4</li> 
-												<li><h4>Minor in Graphic Design</h4></li>
-												<li><h4>Class of 2019</h4></li>
-												<li>_______________________________</li>
-												<li><h4 class="bold">Broomfield High School</h4></li>
-												<li><h4>Honors Student</h4></li>
-												<li><h4>Class of 2015</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Volunteer Work&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">Colorado Trail Foundation</h4></li>
-												<li><h4>Trail Crew </h4</li> 
-												<li><h4>2018-current</h4></li>
-												<li><h4>_______________</h4></li>
-												<li><h4 class="bold">Leadville Lake County Fire Department</h4></li>
-												<li><h4>Reserve Firefighter</h4></li>
-												<li><h4>2020-current</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Hobbies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4>Skiing</h4></li>
-												<li><h4>Mountaineering</h4</li> 
-												<li><h4>Backpacking</h4></li>
-												<li><h4>Fly Fishing</h4></li>
-												<li><h4>Paddleboarding</h4></li>
-												<li><h4>Camping</h4></li>
-												<li><h4>_______________</h4></li>
-												<li><h4>Cooking</h4></li>
-												<li><h4>Painting & Drawing</h4></li>
-												<li><h4>Videography</h4></li>
-												<li><h4>Journaling</h4></li>
-												<li><h4>Gardening</h4></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-	
-	
-								<li>
-									<h4>Skills</h4>
-									<ul>
-										<li>
-											<h4>Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4>HTML5</h4></li>
-												<li><h4>CSS</h4</li> 
-												<li><h4>Javascript</h4></li>
-												<li><h4>Python</h4></li>
-												<li><h4>R</h4></li>
-												<li><h4>MySQL</h4></li>
-												<li><h4>_______________</h4></li>
-												<li><h4>React.js</h4></li>
-												<li><h4>Pandas</h4></li>
-												<li><h4>Git</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Design&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4>Photoshop</h4></li>
-												<li><h4>Illustrator</h4</li> 
-												<li><h4>InDesign</h4></li>
-												<li><h4>XD</h4></li>
-												<li><h4>Premier</h4></li>
-												<li><h4>Lightroom</h4></li>
-												<li><h4>_______________</h4></li>
-												<li><h4>Wordpress</h4></li>
-												<li><h4>Squarespace</h4></li>
-												<li><h4>_______________</h4></li>
-												<li><h4>Microsoft Office</h4></li>
-												<li><h4>Google Suite</h4></li>
-												<li><h4>ArcGIS</h4></li>
-											</ul>
-										</li>
-										<li>
-												<h4>Industry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-												<ul>
-													<li><h4>Website Design</h4></li>
-													<li><h4>Logo Design</h4></li>
-													<li><h4>Posters</h4</li> 
-													<li><h4>Brochures / Newsletters</h4></li>
-													<li><h4>Illustrations</h4></li>
-													<li><h4>Product Photos</h4></li>
-													<li><h4>Advertising</h4></li>
-													
-												</ul>
-											</li>
-									</ul>
-								</li>
-
-								<li><h4>Resume</h4>
-									<ul>
-										<li>
-											<h4>Freelance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">West Flanders Brewing Company</h4></li>
-												<li><h4>August 2018 - Present</h4</li> 
-												<li><h4>Brand &amp; content designer </h4></li>
-												<li>____________________________________________________</li>
-												<li><h4 class="bold">Quarterly Forum</h4></li>
-												<li><h4>December 2018 - April 2019</h4></li>
-												<li><h4>Freelancer</h4></li>
-												<li>____________________________________________________</li>
-												<li><h4 class="bold">Flint &amp; Tinder</h4></li>
-												<li><h4>December 2018 - April 2019</h4></li>
-												<li><h4>Freelancer</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Specialist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">Apple</h4></li>
-												<li><h4>September 2019 - January 2020</h4</li> 
-												<li><h4>Product sales and customer support</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Ambassador&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">Vans</h4></li>
-												<li><h4>March 2017 - December 2018</h4</li> 
-												<li><h4>UltraRange&copy; Project photographer &amp; videographer</h4></li>
-											</ul>
-										</li>
-										<li>
-											<h4>Internships&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8227;</h4>
-											<ul>
-												<li><h4 class="bold">University of Colorado</h4></li>
-												<li><h4>January 2017 - May 2017</h4</li> 
-												<li><h4>Website manager & content editor</h4></li>
-												<li>____________________________________________________________</li>
-												<li><h4 class="bold">University of Colorado</h4></li>
-												<li><h4>July 2016 - September 2016</h4</li> 
-												<li><h4>Advertisement designer</h4></li>
-												
-											</ul>
-										</li>
-										<li><h4><a href="src/megan_byers_resume_2020.pdf" download target="_blank">Download PDF...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</a></h4></li>
-									</ul>
-								</li>
-						</nav>
-						<nav>
-							<h4 class="toolRight" id="time">time</h4>
-							<h4 class="toolRight" id="updatedProgress">progress</h4>
-							
-							<img class="toolRight" id="toolIcons" style="width: 60px; padding-top: 34px;"src="src/toolIcons.svg">
-						</nav>
-				</div>
-
-				<div class="dock">
-					<a href="javascript: openFinder(1);"><img class="dockIcons dockBounce" id="finderIcon" src="src/dockIcons/finder.svg"></a>
-					
-					
-					<a><img class="dockIcons dockBounce" src="src/dockIcons/mail.svg"></a>
-					<a href="javascript: openSpotify(1)"><img class="dockIcons" src="src/dockIcons/music.svg"></a>
-					<img class="dockIcons" src="src/dockIcons/stickies.svg">
-					<a><img class="dockIcons" id="INDicon" src="src/dockIcons/indesign.svg"></a>
-					<img class="dockIcons" src="src/dockIcons/illustrator.svg">
-					
-					<img class="dockIcons" src="src/dockIcons/premier.svg">
-					<img class="dockIcons" src="src/dockIcons/terminal.svg">
-				</div>
-
-			
-				
-				<div id="desktopFileContainer" >
-						<img class="desktopFiles" id="icon2" src="src/fileIcons2/baja.svg">
-						<img class="desktopFiles" id="icon3" src="src/fileIcons2/brut.svg">
-						<img class="desktopFiles" id="icon4" src="src/fileIcons2/civico.svg">
-						
-						<a><img class="desktopFiles" id="icon6" src="src/fileIcons2/menu.svg"></a>
-						
-						<img class="desktopFiles" id="icon8" src="src/fileIcons2/renu.svg">
-						<img class="desktopFiles" id="icon10" src="src/fileIcons2/selfport.svg">
-						<img class="desktopFiles" id="icon11" src="src/fileIcons2/summitplan.svg">
-					
-						<img class="desktopFiles" id="icon13" src="src/fileIcons2/wordpress.svg">
-						<img class="desktopFiles" id="icon14" src="src/fileIcons2/worldhash.svg">
-						<img class="desktopFiles" id="icon15" src="src/fileIcons2/traffic.svg">
-	
-						<div id="spotify"> 
-							<a href="javascript: openSpotify(0);"><img style="width: 20px; transform: translate(-10%, -300%)" class="close" src="src/close.svg"></a>
-							<iframe src="https://open.spotify.com/embed/playlist/0XkzNsCSq93wZdwU4gYgAc" width="300" height="80" frameborder="0"allow="encrypted-media"></iframe> 
-						</div>
-					</div>
-				
-
-			
-				<div class="notifContainer">
-						<img class="notifs" src="src/notif.svg">
-				</div>
-				
-				<div id="finder" class="finder">
-					<a href="javascript: openFinder(0);"><img style="width: 20px; transform: translate(50%,510%);" class="close" src="src/close.svg"></a>
-					<div id="finderLinks">
-							<a href="index.html"> Home </a><br>
-							<a href="index.html"> My Computer </a><br>
-							<a href="index.html"> Desktop </a> <br>
-							<a href="index.html"> Spotlight Pages </a><br>
-							<a href="index.html"> Illustrator </a><br>
-							<a href="index.html"> Photoshop </a><br>
-							<a href="index.html"> InDesign </a><br>
-							<a href="index.html"> Terminal </a><br>
-					</div>
-					<div id="finderFolders">
-						<a><figure style="transform: translate(45%, -320%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption style="padding-left: 14px;">logos</figcaption>
-						</figure></a>
-						<a><figure style="transform: translate(70%, -480%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption style="padding-left: 10px;">posters</figcaption>
-						</figure>
-						<a><figure style="transform: translate(45%, -420%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption >print media</figcaption>
-						</figure></a>
-						<a><figure style="transform: translate(90%, -500%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption style="padding-left: 12px;">photos</figcaption>
-						</figure></a>
-						<a><figure style="transform: translate(90%, -750%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption style="padding-left: 14px;">code</figcaption>
-						</figure></a>
-						<a><figure style="transform: translate(70%, -800%)">
-								<img style="width: 60px;" src ="src/folder.svg">
-								<figcaption>illustrations</figcaption>
-						</figure></a>
-					
-					</div>
-				</div>
-
-		
-					
-<!-- 					
-				<div class="indesign" id="window">
-					<div class="inDesignToolBar" style="top: 0;">
-							<a href="javascript: openIndesign(0,10000);"><img style="width: 20px; float: left;" class="close2" src="src/close.svg"></a>
-							<h5 style="text-align: center;"> Select Cases</h5>
-					</div>
-					<div class="tabBar">
-							<a href="javascript: reveal(0, 5000);"><button id="tab0">wf_brewery_menu.indd</button></a>
-							<a href="javascript: reveal(1, 5000));"><button id="tab1">brut_ipa_poster.ai</button></a>
-							<a href="javascript: reveal(2, 5000));"><button id="tab2">traffic_album_art.ai</button></a>
-							<a href="javascript: reveal(3, 5000));"><button id="tab3">renu_logo.ai</button></a>
-							<a href="javascript: reveal(4, 5000));"><button id="tab4">boulder_baja_logo.ai</button></a>
-							
-							<a href="javascript: reveal(5, 5000));"><button id="tab5">civico_brochure.indd</button></a>
-							<a href="javascript: reveal(6, 5000));"><button id="tab6">self_portrait.psd</button></a>
-					</div>
-				</div>	 -->
-<!-- 
-				<div class="grid" id="gridWindow">
-						<div class="activeCase" id="bajaSlide" style="display: none;">
-							<section class="secleft">
-									<h1>Boulder Baja</h1>
-									<p> Commissioned logo redesign for the Society of Automotive Engineeers (SAE) team of seniors at University of Colorado Boulder. The team was 
-											assigned with the task of building an off-road vehicle and wanted a logo that represented the rugged racing culture of the club while still representing the University of Colorado Buffaloes. </p>
-									<br><p> Tools used:</p>
-									<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
-									<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
-									
-							</section>
-							
-							
-							<section class="secright">
-									<img class="caseimg" src="src/logos/baja_nocolor.svg">
-							</section>	
-							<section class="seccenter">
-								
-								<img style="width: 30%; padding-right: 20px;" src="src/logos/bajaCarRacer.jpg">
-								<img style="width: 57%; min-width: 500px; " src="src/logos/BAJATEAM.jpeg">
-							</section>	
-								
-						</div>
-						<div class="activeCase" id="brutSlide" style="display: none;">
-								<section class="secleft">
-										<h1>Brut IPA Poster</h1>
-										<h3>West Flanders Brewing Co.</h3>
-										<p> A release poster for West Flanders Brewing Company's new "Brut-ster" IPA. This beer was named in honor of our very own "brewster" (female brewing scientist) Erin, who epitomizes bad-ass women. Inspired by Rosy the Riveter, I created a release poster with a portrait of our tattooed, bad-ass head brewer. </p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
-										<img style="width: 40px;" src="src/dockIcons/indesign.svg">
-										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg">
-										
-								</section>
-								
-								
-								<section class="secright" >
-										<img class="caseimg" src="src/cases/brut_ipa_v1.jpg">
-								</section>			
-						</div>
-						<div class="activeCase" id="killaSlide" style="display: none;">
-								<section class="secleft">
-										<h1>"Traffic" Album Artwork</h1>
-										<h3>Killa Nilla</h3>
-										<p>Given complete creative freedom, I developed two album artworks for Dubstep artist and friend Killa Nilla. Driven by the hypnotic and space-inspired style of Dubstep culture, I used Adobe Draw on the iPad to develop two abstract works to showcase his tracks.</p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"> <br>
-										<iframe style="padding-top: 25%; height: 80px; width: 100%; float: left;" src="https://open.spotify.com/embed/album/3C4rouATWyKA6Oju3EOppq" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-									</section>
-								
-								
-								<section class="secright">
-										<img class="caseimg" src="src/cases/max_album_traffic_v1.jpg">
-								</section>			
-						</div>
-						<div class="activeCase" id="renuSlide" style="display: none;">
-								<section class="secleft">
-										<h1>Renu Cosmetics Logo</h1>
-										<p>Renu Cosmetics is a small, natural brand of beauty products designed by Paige Johns out of Salt Lake City, Utah. Her career as an esthetician has inspired her to launch her own line of hand-crafted natural beauty products. In order to promote a minimalist and natural look, I provided paige with several options. Packaging was meant to be home-made looking and authentic.</p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
-										<img style="width: 40px;" src="src/dockIcons/adobedraw.svg"><br>
-								</section>
-								
-								
-								<section class="secright">
-										<img class="caseimg" src="src/cases/renu_1.svg">
-								</section>	
-								<section class="seccenter">
-										<img style="width: 99%;" src="src/cases/renu_lineup.png"><br>
-										<img style="height: 400px;" src="src/cases/renu_bottle.png">
-										
-								</section>			
-						</div>
-					
-						<div class="activeCase" id="menuSlide">
-								<section class="secleft">
-										<h1>Menu Rework</h1>
-										<h3>West Flanders Brewing Co.</h3>
-										<p>Create a menu that clearly organizes each food category, as well as make a la carte options both easier to find, and more clearly explain the additional price charge for ordering them. Other design goals included reducing page size, improving menu flow by organizing sections, and incorporating our brand. I started by drawing some digital elements, hops, as decoration for the menu.</p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/illustrator.svg">
-										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
-										<img style="width: 100%; float: center; padding-top: 30px;" src="src/cases/blackHopDecor.png">
-										
-								</section>
-								
-								
-								<section class="secright">
-										<img class="caseimg" src="src/cases/menu_closeup copy.jpg">
-								</section>	
-								<section class="seccenter">
-										
-										<img style="width: 100%;" src="src/cases/menu_overview.jpg">
-								</section>			
-						</div>
-
-						<div class="activeCase" id="civicoSlide" style="display: none;">
-								<section class="secleft">
-										<h1>Membership Brochure</h1>
-										<h3>CiviCO</h3>
-										<p>Contracted work for the rebranding of then Quarterly Forum to Civico. Given brand standards, I was assigned to recreate the information in Quarterly Forum's previous membership brochure following new typefaces, color standards and brand attributes while reducing the number of pages in half.</p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
-										<img style="width: 40px;" src="src/dockIcons/indesign.svg"><br>
-										
-								</section>
-								
-								
-								<section class="secright">
-										<img class="caseimg" src="src/cases/civico.png">
-								</section>	
-								<section class="seccenter">
-									<h3 style="text-align: center;"> Brochure Pages</h3>
-									<div class="slide"><img src="src/cases/civico_page1.png"></div>
-									<div class="slide"><img src="src/cases/civico_page2.png"></div>
-									<div class="slide"><img src="src/cases/civico_page3.png"></div>
-									<div class="slide"><img src="src/cases/civico_page4.png"></div>
-								</section>			
-						</div>
-
-						<div class="activeCase" id="portraitSlide" style="display: none;">
-								<section class="secleft">
-										<h1>Self Portrait</h1>
-							
-										<p>Using ten photos, I created a self-portrait montage that exhibited an emotion for a photography class. All photos used were captured during a month long backpacking trip of the Colorado Trail.
-												After creating a dozen layers, I traced each layer with my mouse to give a hand-drawn, euphoric vibe. I hoped to express how I feel while in Mother Nature - specifically during my backpacking trip.  
-												 </p>
-										<br><p> Tools used:</p>
-										<img style="width: 40px;" src="src/dockIcons/photoshop.svg">
-										
-										
-								</section>
-								
-								
-								<section class="secright">
-										<img class="caseimg" src="src/cases/selfport.jpg">
-								</section>	
-								<section class="photogrid">
-									<div class="photorow"> 
-										<div class="photocolumn">
-											<img src="src/portrait_pics/1.JPG" style="width:100%">
-											<img src="src/portrait_pics/3.JPG" style="width:100%">
-											<img src="src/portrait_pics/2.JPG" style="width:100%">
-											
-										</div>
-										<div class="photocolumn">
-											<img src="src/portrait_pics/4.JPG" style="width:100%">
-											<img src="src/portrait_pics/5.JPG" style="width:100%">
-											<img src="src/portrait_pics/6.JPG" style="width:100%">
-											<img src="src/portrait_pics/10.JPG" style="width:100%">
-											
-										</div>  
-										<div class="photocolumn">
-											<img src="src/portrait_pics/9.JPG" style="width:100%">
-											<img src="src/portrait_pics/7.JPG" style="width:100%">
-											<img src="src/portrait_pics/8.JPG" style="width:100%">
-											
-											
-										</div>
-									</div>
-								</section>		
-						</div>  activeCase 
-				</div> grid --> 
+        <!-- End Dock -->
 
 
-				<!-- <div id="mailWindow">
-					<div style="top: 0; justify-content: inline; transform: translateY(-15px); max-width: 450px;">
-							<a href="javascript: openMail(0);"><img style="width: 15px; padding-left: 10px; float: left;" src="src/close.svg"></a>
-							<h5 style="text-align: center; float: center;"> Contact me!</h5>
-					</div>	
-					
-					<div id="mailto">
-						<h4>You</h4>
-						<h4>hi@meganraebyers.com</h4>
-						<h4>Thanks for checking me out!</h4>
-					</div>
-					<div id="emailField">
-						<p>Hi! <br> <br> I'm open to work of all mediums, projects ranging from a few hours to a few months, and eager to try new styles! I'd love to get in touch with you.
-							<br><br> You can reach me at <a style="color: #ededed" href="mailto: hi@meganraebyers.com">hi@meganraebyers.com</a> or drop me a line at <bold>(303)-960-1941,</bold> or find me on the web!
-							<br><br> Thanks for checking out my portfolio, <br> - &#x1f37b; Megan Rae Byers
-							<br> 
-						</p>
-						<div class="socialEmail">
-								<a href="https://www.behance.net/colouradical" target="_blank"><img src="src/icons/behance.svg"></a>
-								<a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="src/icons/instagram.svg"></a>
-								<a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="src/icons/linked.svg"></a>
-								<a href="https://github.com/coloradical" target="_blank"><img src="src/icons/github.svg"></a>
-							</div>
-					</div>
+  <div id="projectSynopsis">
+    <div class="window" id="windowToolbar6" style="width: 80%; height: 80%; font-size: 14px; left: 10%; bottom: 15%;">
+      <div id="closeBar" style="text-align: center;"> Project Synopses</div>
+      <button onclick="openSynopsis()"><img class="closeBtn" src="../src/close.svg" ></button>
+      
+      <div id="synopsis_col1" style="width: 25%; text-align: left; height: calc(100% - 47px); color: white; background-color: #3A4172; bottom: 0; position: absolute;">
+        <h3> Websites </h3>
+        
 
-				</div> -->
-			</div> <!-- header -->
-		</div> <!-- canvas -->
+        <a href="#logosTag"><h3>Logos</h3></a>
+       
+      </div>
+      <div id="synopsis_col2" style="width: 75%; right: 0;height: calc(100% - 47px); bottom: 0; position: absolute; overflow: scroll;" >
+        <p> Scroll to view a brief synopsis of projects by Design Elixir, or use the navigation to speed to exactly what you're looking for!  </p>
+        <h1> Websites </h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
 
-				<img class="downArrow bounce" width="40" height="40" alt="developed by Codeconvey.com"
-					src="src/arrow.svg" />
-			</div>
-		
-		</div>
-	</main>
+        <h1 id="logosTag" > Logos</h1>
+      </div>
+      
+    </div>
+    </div>
+  
 
-	
 
-	<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
+
+
+<div id="email">
+<div class="window" id="windowToolbar">
+  <div id="closeBar" style="text-align: center;"> Let's get in touch</div>
+  <button onclick="openEmail()"><img class="closeBtn" src="../src/close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+  <h2> megan@designelixir.studio </h2>
+  <div id="email_social_icons"> 
+    <a href="https://www.behance.net/colouradical" target="_blank"><img src="../src/behance.svg"></a>
+  <a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="../src/instagram.svg"></a>
+  <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="../src/linked.svg"></a>
+  <a href="https://github.com/coloradical" target="_blank"><img src="../src/github.svg"></a><br>
+    <a href="https://github.com/coloradical" target="_blank"><img src="../src/unsplash.svg"></a>
+  <a href="https://github.com/coloradical" target="_blank"><img src="../src/etsy.svg"></a>
+
+  </div>  
+</div>
+</div>
+
+<div id="testies">
+
+<div class="window" id="windowToolbar2" style="width: 250px; height: 250px; left: 10%; font-size: 14px; bottom: 35%;">
+  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="../src/close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+</div>
+
+<div class="window" id="windowToolbar3" style="width: 250px; height: 250px; left: 20%; font-size: 14px; bottom: 25%;">
+  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="../src/close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+</div>
+
+<div class="window" id="windowToolbar4" style="width: 250px; height: 250px; font-size: 14px; left: 30%; bottom: 15%;">
+  <div id="closeBar" style="text-align: center;"> Testimonial - Bob Mathes</div>
+  <button onclick="openTesties()"><img class="closeBtn" src="../src/close.svg" ></button>
+
+  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+     Contact me! </p>
+  
+
+</div>
+</div>
+
+
+
+<div id="stats">
+  <div class="window" id="windowToolbar5" style="width: 60%; height: 450px; font-size: 14px; left: 30%; bottom: 15%; background-color: #3a4172; color: white;">
+    <div id="closeBar" style="text-align: center;"> Terminal &#10148; Design_Elixir_Portfolio &mdash; -bash </div>
+    <button onclick="openStats()"><img class="closeBtn" src="../src/close.svg" ></button>
+  <div id="terminal_text">
+    <p id="line"> Last login:  </p>
+    <p id="line">megan-byers:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
+    <p id="line"style="animation-delay: 2s;">Cloning into 'Rae_Portfolio"...</p>
+    <p id="line">remote: Loading website illustrations: 172 objects, done.</p>
+    <p id="line">remote: Counting objects: 100% (172/172) done.</p>
+  </div>
+    
+  </div>
+  </div>
+
+</div></div>
+                  
+
+                  
+
+               
+
+
+                </div>
+
+                
+
+            
+    </body>
+    <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 	<script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 	<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-	<script src="src/index.js"></script>
-</body>
+	<script src="index.js"></script>
+    
 
 </html>
