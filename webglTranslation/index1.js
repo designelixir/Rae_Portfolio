@@ -160,7 +160,7 @@ var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.header');
 const spinny = document.querySelector('.spinny');
-// const on = document.querySelector('.on');
+const wallpaper = document.querySelector('.wallpaper');
 const dock = document.querySelector('.dock');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
@@ -189,10 +189,9 @@ uos(0.38, .4, p => (profile.style.opacity = ((updatedProgress-(p*20)) / (updated
 
 uos(0.3, 0.46, p => (spinny.style.width = (100-(p*100)) +"%"));
 
-// uos(0.35, 0.38, p => (login.style.width = (100-(p*1000)) +"%")); //FIX !!!!!!!!!!!!!!
 
 
-// uos(0.35, 0.5, p => (on.style.opacity =  ((p*100/updatedProgress)) ));
+uos(0.4, 0.5, p => (wallpaper.style.opacity =  ((p*100/updatedProgress)) ));
 
 
 //calculate time 

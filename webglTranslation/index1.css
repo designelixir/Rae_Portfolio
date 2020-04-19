@@ -31,6 +31,8 @@ body {
 
 } */
 
+a {text-decoration: none;}
+
 #viewport {
 	width: 100%;
 	position: fixed;
@@ -56,25 +58,27 @@ body {
 	right: 50%;
 	height: 20px;
 	position: fixed;
+
 }
 
-.socials {
+.social_banner {
 	width: 250px;
-	left: -2px;
+	left: 0px;
 	position: absolute;
 	bottom: 5%;
+	z-index: 20;
 }
 
-.socials:hover {transform: rotate(10deg);}
+.social_banner:hover {transform: rotate(10deg); cursor: pointer;}
 
-.shortcuts {
+.shortcut_banner {
 	width: 250px;
 	right: -2px; 
 	top: 5%;
 	position: absolute;
 }
 
-.shortcuts:hover {
+.shortcut_banner:hover {
 	transform: rotate(10deg);
 }
 
@@ -131,11 +135,16 @@ body {
 	animation: rotateStars 15s infinite;
 	padding-right: 50px;
 	position: absolute;
-	
-	
-	
-	
+}
 
+.wallpaper {
+	width: 100%; 
+	height: 100%; 
+	background-image: url("../src/wallpaper.svg");
+	position: fixed; 
+	background-size: cover;
+	top: 0;
+	opacity: 0;
 }
 
 #spinnyBox { 
@@ -229,47 +238,6 @@ h1 {
 	width: 80%;
 	text-align: center;
 }
-
-.bio {
-	width: 500px;
-	z-index: 12; 
-	position: absolute;
-	padding-top: 250px;
-}
-
-
-
-.dock {
-	position: fixed; 
-	bottom: 9px;
-	width: 80%;
-	height: 160px;
-	z-index: 303;
-	background: linear-gradient(180deg, #00000000 50%, #2e345b 50%);
-	padding-left: 20px;
-	padding-right: 200px;
-	overflow: hidden;
-	display: flex;
-	margin-top: 40px;
-	justify-content: space-between;
-	border-radius: 5px;
-	vertical-align: bottom;
-	opacity: 0;
-	max-width: 1000px;
-}
-
-.dockIcons {
-	height: 60px;
-	padding-top: 90px;
-	padding-right: 22px;
-	object-position: center;
-	z-index: 19;
-	opacity: 1;
-
-	
-}
-	
-
 
 .social {
 	height: 30px;
