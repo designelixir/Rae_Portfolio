@@ -7,14 +7,14 @@ canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50);
+let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
 
 let renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.getElementById("viewport")
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x2e345B);
+renderer.setClearColor(0x47578a); //back wall
 // document.body.appendChild(renderer.domElement);
 
 camera.position.x = 0;
@@ -25,8 +25,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-// let gridHelper = new THREE.GridHelper(50, 50);
-// scene.add(gridHelper);
+let gridHelper = new THREE.GridHelper(50, 50);
+scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -50,15 +50,21 @@ var ceiling = new THREE.Mesh(cubeGeometry,cubeMaterials);
 
 var wallGeometry = new THREE.PlaneGeometry(80,80);
 
+var skillGeometry = new THREE.PlaneGeometry(6,3);
+
+
 
 var wall2Geometry = new THREE.PlaneGeometry(18,180);
 var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578a, side: THREE.DoubleSide});
 var wall2Material = new THREE.MeshBasicMaterial( {color: 0x2E3456, side: THREE.DoubleSide} );
 
+var skillMaterial = new THREE.MeshBasicMaterial ( {color: 0xFF0000, side: THREE.DoubleSide});
+
 var wall = new THREE.Mesh( wallGeometry, wallMaterial );
 var wall2 = new THREE.Mesh( wallGeometry, wall2Material );
 var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
 
+var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
@@ -107,7 +113,10 @@ posterMesh.position.set(0,0,-32);
 
 floor.position.set (-1,-16,-30);
 ceiling.position.set(-1,16,-30)
-wall.position.set(-1,0,-40);
+
+wall.position.set(0,1,-40);
+
+skill.position.set(0,1,-50);
 
 
 
@@ -118,7 +127,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); 
+scene.add(doorwayMesh, floor, ceiling, wall, skill, deskMesh, chairMesh, posterMesh); 
 
 
 
@@ -139,6 +148,7 @@ function scrollProgress() {
   var scrolled = (winScroll / height) * 100;
   var truncScroll = Math.trunc(scrolled);
   document.getElementById("myBar").style.width = scrolled + "%";
+    // document.getElementById("updatedProgress").innerHTML = truncScroll +"%"; scroll shows infinite? 
 
 }
 
@@ -150,23 +160,66 @@ var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.header');
 const spinny = document.querySelector('.spinny');
-const on = document.querySelector('.on');
+// const on = document.querySelector('.on');
 const dock = document.querySelector('.dock');
 const login = document.querySelector('.login');
+const profile = document.querySelector('.profile');
+const delay_attribute = document.querySelector('.delay_attribute')
+const profile_description = document.querySelector('.profile_description');
+const profile_description_wrapper = document.querySelector('.profile_description_wrapper');
+
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
-uos(0.25, 0.35, p => (login.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.34, 0.38, p => (login.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.29, 0.33, p => (profile.style.width= ((p*16))+"%"));
 
-uos(0.35, 0.38, p => (login.style.width = (100-(p*1000)) +"%")); //FIX !!!!!!!!!!!!!!
 
 
-uos(0.35, 0.5, p => (on.style.opacity =  ((p*100/updatedProgress)) ));
-uos(0.38, 0.4, p => (dock.style.opacity =  ((p*20/updatedProgress)) ));
 
+uos(0.37, 0.39, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.30, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
+
+uos(0.38, .4, p => (profile_description_wrapper.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
+uos(0.38, .4, p => (profile.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
+
+
+uos(0.3, 0.46, p => (spinny.style.width = (100-(p*100)) +"%"));
+
+// uos(0.35, 0.38, p => (login.style.width = (100-(p*1000)) +"%")); //FIX !!!!!!!!!!!!!!
+
+
+// uos(0.35, 0.5, p => (on.style.opacity =  ((p*100/updatedProgress)) ));
+
+
+//calculate time 
+const current = new Date();
+const day = current.getDate();
+
+const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+const monthGet = current.getMonth();
+const monthName = monthArray[monthGet];
+
+const hours = current.getHours();
+if (hours > 0 && hours <= 12) {
+  timeValue= "" + hours;
+} else if (hours > 12) {
+  timeValue= "" + (hours - 12);
+} else if (hours == 0) {
+  timeValue= "12";
+}
+
+if (hours >0 && hours <= 11) {nd="AM";}
+else {nd = "PM"}
+
+const minutes = current.getMinutes();
+if (minutes < 10){space ="0";}
+else {space=""};
+
+document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd;
 
 
 
