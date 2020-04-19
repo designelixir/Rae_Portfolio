@@ -227,6 +227,13 @@ const instances = [
   }),
 ];
 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+try {
+  var pageTracker = _gat._getTracker("UA-16288001-1");
+  pageTracker._trackPageview();
+  } catch(err) {};
 
 //query selectors for scrolling behavior
 const headings = document.querySelectorAll('.heading');
@@ -264,6 +271,7 @@ const file11 = document.querySelector('#icon11');
 const file13 = document.querySelector('#icon13');
 const file14 = document.querySelector('#icon14');
 const file15 = document.querySelector('#icon15');
+const desktopFileContainer = document.querySelector('#desktopFileContainer');
 
 const notifs = document.querySelector('.notifs');
 const notifContainer = document.querySelector('.notifContainer');
@@ -311,10 +319,14 @@ uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.47, 0.48, p => (notifs.style.paddingLeft= (100-(p*100)) +"%"));
 uos(0.55, 0.6, p => (notifContainer.style.opacity= (100-(p*100)) +"%"));
-// uos(0.6, 0.65, p => (baja.style.opacity= ((p*12/updatedProgress)) ));
-uos(0.55, 0.6, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
-uos(0.55, 0.6, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
+uos(0.6, 0.65, p => (file2.style.height= ((p*2)) +"%"));
 
+
+// uos(0.62, 0.7, p => (indesign.style.opacity= ((p*20/updatedProgress)) ));
+// uos(0.65, 0.67, p => (grid.style.opacity= ((p*20/updatedProgress)) ));
+// uos(0.60, 0.64, p => (desktopFileContainer.style.zIndex =  303-p));
+
+uos(0.6, 0.7, p => (desktopFileContainer.style.width = ((p*2500)+"%"))); 
 
 
 function openFinder(onoff) {
@@ -332,21 +344,22 @@ function openFinder(onoff) {
 }
 
 
-function openIndesign(onoff) {
+// function openIndesign(onoff) {
 
-  if (onoff === 1){
-    document.getElementById('window').style.display = "block";
-    document.getElementById('gridWindow').style.display = "block";
-    document.getElementById('INDicon').style.animation = "none";
-  } else {
-    document.getElementById('window').style.display = "none";
-    document.getElementById('gridWindow').style.display = "none";
-    document.getElementById('desktopFileContainer').style.opacity = 1;
-    document.getElementById('INDicon').style.animation = "bounce 2s infinite";
-  }
+//   if (onoff === 1){
+//     document.getElementById('window').style.display = "block";
+//     document.getElementById('gridWindow').style.display = "block";
+//     document.getElementById('INDicon').style.animation = "none";
+//     document.getElementById('desktopFileContainer').style.zIndex=300;
+//   } else {
+//     document.getElementById('window').style.display = "none";
+//     document.getElementById('gridWindow').style.display = "none";
+//     document.getElementById('desktopFileContainer').style.opacity = 1;
+    
+//   }
 
   
-}
+// }
 
 
 function openSpotify(onoff){
@@ -358,30 +371,43 @@ function openSpotify(onoff){
   }
 }
 
+// function openMail(onoff){
+//   if (onoff === 1) {
+//     document.getElementById('mailWindow').style.display = "block";
+//   }
+//   else {
+//     document.getElementById('mailWindow').style.display = "none";
+//   }
+// }
+
 //tab bar reveal buttons 
-function reveal(slide) {
+function reveal(slide, position) {
   var active = slide;
-  var slides = ['bajaSlide', 'brutSlide', 'killaSlide','renuSlide', 'menuSlide', 'civicoSlide', 'portraitSlide' ];
+  
+  var slides = ['menuSlide', 'brutSlide', 'killaSlide','renuSlide', 'bajaSlide', 'civicoSlide', 'portraitSlide' ];
   var tabs = ['tab0','tab1','tab2','tab3','tab4','tab5','tab6']
- 
+  window.scrollTo(position, position);
   var i;
   
   for (i=0; i<30; i++){
     if (i === active) {
+      
       document.getElementById(slides[active]).style.display= "block";
       document.getElementById(slides[active]).style.animation = "slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
       document.getElementById(tabs[active]).style.backgroundColor = "#ededed";
       document.getElementById(tabs[active]).style.color = "#2c2c2c";
-     
+      document.getElementById(tabs[active]).style.opacity = 1;
+      
+      
     } else {
       document.getElementById(slides[i]).style.display = "none";
       document.getElementById(tabs[i]).style.backgroundColor = '#384173';
       document.getElementById(tabs[i]).style.color = '#ededed';
+      document.getElementById('desktopFileContainer').style.display = "block";
     }
   }
 
 }
-
 
 // function scrollTo(position){
 //   if (position === 1000){
@@ -392,7 +418,6 @@ function reveal(slide) {
 //   }
 
 // }
-
 
 
 //mouse tracking 
