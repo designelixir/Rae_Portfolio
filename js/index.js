@@ -1,4 +1,25 @@
-var canvas = document.getElementById("viewport");
+// (function(global) {
+  var canvas = document.getElementById("viewport");
+//   gl = glUtils.checkWebGL(canvas);
+  
+//   function resizer(){
+  
+//     //callback for when screen is resized 
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight; 
+//     gl.viewport(0,0,gl.canvas.width, gl.canvas.height);
+//     console.log('window resized');
+    
+//   }
+  
+//   window.addEventListener('resize', resizer);
+//   resizer();
+
+
+
+// })(window || this);
+
+
  
 /* Rresize the canvas to occupy the full page, 
    by getting the widow width and height and setting it to canvas*/
@@ -160,42 +181,31 @@ var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.headerOverview');
 const spinny = document.querySelector('.spinny');
-// const wallpaper = document.querySelector('.wallpaper');
-const dock = document.querySelector('.dock');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
 const delay_attribute = document.querySelector('.delay_attribute')
 const profile_description = document.querySelector('.profile_description');
-const profile_description_wrapper = document.querySelector('.profile_description_wrapper');
-const desktop = document.querySelector('.desktop');
 const toolbar = document.querySelector('.toolbar');
+// const desktop = document.querySelector('.desktop');
+const dock = document.querySelector('.dock');
+
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-
-uos(0.15, 0.25, p => (header.style.left = (p*100)+"%"));
+uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
-uos(0.34, 0.38, p => (login.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.34, 0.38, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 
-uos(0.29, 0.33, p => (profile.style.width= ((p*16))+"%"));
 
+uos(0.39, 0.40, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
+uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
+uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
 
-
-
-uos(0.4, 0.44, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.30, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
-
-uos(0.38, .4, p => (profile_description_wrapper.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-uos(0.38, .4, p => (profile.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-
-
-uos(0.3, 0.46, p => (spinny.style.width = (100-(p*100)) +"%"));
-
-uos(0.4, 0.44, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+// uos(0.44, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 

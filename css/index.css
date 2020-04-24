@@ -226,16 +226,7 @@ h1 {
 	top: 0;
 }
 
-.login {
-	width: 100%;
-	height: 100%;
-	display: block;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	z-index: 20;
-	opacity: 1;
-}
+
 
 .toolbar {
 	height: 50px;
@@ -252,35 +243,49 @@ h1 {
 .toolbar_attribute { display: table-cell; color: #f4f4f4; padding: 10px; }
 .delay_attribute {opacity: 0;}
 
+
+.login {
+	 width: 100%; 
+	 height: 100%;
+	 position: fixed;
+	 top: 0;
+	 display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
 #profile_wrapper {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 100%; 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 }
 
 .profile {
-	width: 50%;
-	max-width: 100%;
+	width: 0%;
+	max-width: 300px;
 	position: absolute;
 	padding-top: 25px;
+	opacity: 1;
+	z-index: 10;
 }
 
 .profile_description {
 	width: 50%;
-	opacity: 0;
+	opacity:1;
 	padding-top: 80px;
 	
 
 }
 
-.profile_description_wrapper {
-	width: 80%;
-	text-align: center;
-}
+
+
 
 .social {
 	height: 30px;
