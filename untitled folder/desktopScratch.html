@@ -129,7 +129,7 @@ b {
 	background-color: #c7ccde;
 	border: 2px solid #384173;
 	border-radius: 4px 4px 4px 4px; 
-	position: absolute;
+	position: fixed;
   text-align: center;
   
 
@@ -242,16 +242,24 @@ a {text-decoration: none;}
   padding-top: 20px;
 }
 
+#desktop_container {
+  position: fixed;
+}
+
 .desktopFileIcons {
   height: 80px;
   padding: 5%;
-  position: absolute;
+  position: fixed;
+  
 }
 
 .desktopFileIcons:hover {
   height: 100px;
   cursor: pointer;
+  position: fixed;
 }
+
+
 
 
 
@@ -293,6 +301,24 @@ a {text-decoration: none;}
  
 }
 
+.inDesignArtboard2 {
+  background-color: #e8e8e8; 
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 3%;
+  text-align: left;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:stretch;
+  
+  
+  padding-left: 40px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
 .inDesign-left {order:1;  flex-basis:100%; padding-right: 30px;}
 
 
@@ -314,6 +340,13 @@ a {text-decoration: none;}
   .inDesign-center { order: 3;}
 }
 
+#folderFileIcons img {
+  height: 80px;
+  padding: 20px;
+  
+
+}
+
 
 
 </style>
@@ -323,17 +356,17 @@ a {text-decoration: none;}
 
 <div class="desktop">
 
-  <button onclick="openIndesign(millerBrosArtboard)"><img id="bajaIcon" class="desktopFileIcons" style="left: 10%; top:15%;" src="../src/desktopFiles/baja.svg"></button>
-          <img id="brutIcon" class="desktopFileIcons" style="left: 35%; top:25%;" src="../src/desktopFiles/brut.svg">
-          <img id="menuIcon" class="desktopFileIcons" style="left: 20%; top:40%;" src="../src/desktopFiles/menu.svg">
-          <img id="renuIcon" class="desktopFileIcons" style="left: 60%; top:60%;" src="../src/desktopFiles/renu.svg">
-          <img id="trafficIcon" class="desktopFileIcons" style="left:35% ; top:65%;" src="../src/desktopFiles/traffic.svg">
-          <img id="wordpressIcon" class="desktopFileIcons" style="left: 50%; top:10%;" src="../src/desktopFiles/wordpress.svg">
-          <img id="summitplanIcon" class="desktopFileIcons" style="left: 80%; top:45%;" src="../src/desktopFiles/summitplan.svg">
+  <div id="desktop_container">
+  <button onclick="openIndesignFile(bajaArtboard)"><img id="bajaIcon" class="desktopFileIcons" style="left: 10%; top:15%;" src="../src/desktopFiles/baja.svg"></button>
+  <button onclick="openIndesignFile(westflandersArtboard)"><img id="menuIcon" class="desktopFileIcons" style="left: 20%; top:40%;" src="../src/desktopFiles/menu.svg"></button>
+  <button onclick="openIndesignFile(renuArtboard)"><img id="renuIcon" class="desktopFileIcons" style="left: 60%; top:60%;" src="../src/desktopFiles/renu.svg"></button>
+  <button onclick="openIndesignFile(killanillaArtboard)"><img id="trafficIcon" class="desktopFileIcons" style="left:35% ; top:65%;" src="../src/desktopFiles/traffic.svg"></button>
+  <button onclick="openIndesignFile(civicoArtboard)"><img id="civicoIcon" class="desktopFileIcons" style="left: 50%; top:10%;" src="../src/desktopFiles/civico.svg"></button>
+          <!-- <img id="summitplanIcon" class="desktopFileIcons" style="left: 80%; top:45%;" src="../src/desktopFiles/summitplan.svg">
           <img id="muccaIcon" class="desktopFileIcons" style="left: 80%; top:15%;" src="../src/desktopFiles/mucca.svg">
           <img id="symphonyIcon" class="desktopFileIcons" style="left: 60%; top:35%;" src="../src/desktopFiles/symphony.svg">
-          <img id="symphonyIcon" class="desktopFileIcons" style="left: 10%; top:55%;" src="../src/desktopFiles/killanilla.svg">
-
+          <img id="symphonyIcon" class="desktopFileIcons" style="left: 10%; top:55%;" src="../src/desktopFiles/killanilla.svg"> -->
+        </div>
 
 	<div class="dock_container"><div class="dock">
 					<div class="tooltip">   
@@ -353,18 +386,33 @@ a {text-decoration: none;}
 
  					<div class="tooltip">   
 						<span class="tooltiptext">Website Stats</span> 
-						<button onclick="openStats()"><img class="dockIcons" src="terminal.svg"></button>
+						<button onclick="openIndesign()"><img class="dockIcons" src="terminal.svg"></button>
  					</div>
 	</div></div>
 
   <div id="inDesign">
     <div class="window" id="inDesignWindowToolbar"> 
-      <div id="closeBar" style="text-align: center;"> Design Elixir Project Preview</div>
-      <button onclick="openIndesign(millerBrosArtboard)"><img class="closeBtn" src="close.svg" ></button>
+      <div id="closeBar" style="text-align: center;"> Case Studies</div>
+      <button onclick="openIndesign()"><img class="closeBtn" src="close.svg" ></button>
 
+      
       
 
       <div id="inDesign_content">
+
+        <div class="inDesignArtboard2" id="inDesignWelcome" style="background:#48588d">
+          <h1 style="color: white;">Recent</h1>
+          <p style="color: white;">Check out the case studies for Design Elixir projects </p><br>
+          <div id="folderFileIcons"> 
+            <button onclick="openIndesignFile(bajaArtboard)"><img src="../src/desktopFiles/baja.svg"></button>
+            <button onclick="openIndesignFile(westflandersArtboard)"><img src="../src/desktopFiles/menu.svg"></button>
+            <button onclick="openIndesignFile(renuArtboard)"><img src="../src/desktopFiles/renu.svg"></button>
+            <button onclick="openIndesignFile(killanillaArtboard)"><img src="../src/desktopFiles/traffic.svg"></button>
+            <button onclick="openIndesignFile(civicoArtboard)"><img src="../src/desktopFiles/civico.svg"></button>
+          </div>
+          
+
+        </div>
         
         <div class="inDesignArtboard" id="millerBrosArtboard" style="display: none;">
           <div class="inDesign-left">
@@ -384,7 +432,7 @@ a {text-decoration: none;}
             </div>
         </div>
 
-        <div class="inDesignArtboard" id="renuArtboard">
+        <div class="inDesignArtboard" id="renuArtboard" style="display: none;">
           <div class="inDesign-left">
             <h1>Renu Cosmetics</h1>
             <p style="font-size: 18px;"><em>December '19</em></p>
@@ -403,7 +451,7 @@ a {text-decoration: none;}
             </div>
         </div>
 
-        <div class="inDesignArtboard" id="bajaArtboard">
+        <div class="inDesignArtboard" id="bajaArtboard" style="display: none;">
           <div class="inDesign-left">
             <h1>CU Boulder SAE </h1>
             <p style="font-size: 18px;"><em>April '19</em></p>
@@ -422,7 +470,7 @@ a {text-decoration: none;}
             </div>
         </div>
 
-        <div class="inDesignArtboard" id="westflandersArtboard">
+        <div class="inDesignArtboard" id="westflandersArtboard" style="display: none;">
           <div class="inDesign-left">
             <h1>West Flanders Brewing Co. </h1>
             <p style="font-size: 18px;"><em>2019</em></p>
@@ -434,6 +482,47 @@ a {text-decoration: none;}
           <div class="inDesign-right">
             <p><em> Using existing brand standards, create a clean and consistent graphical style across all content            </em></p>
             <p>Located in Boulder on Pearl Street, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic. Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content, while still utilizing pre-established colors and typography. I drew inspiration from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line strokes that mimicked the various chalkboard murals around the brewery. </p>
+          </div>
+
+          <div class="inDesign-center">
+            <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+            </div>
+        </div>
+
+        <div class="inDesignArtboard" id="killanillaArtboard" style="display: none;">
+          <div class="inDesign-left">
+            <h1>Killa Nilla </h1>
+            <p style="font-size: 18px;"><em>2019</em></p>
+            <p> <b>Services:</b> Illustration </p>
+            <p> <b>Deliverables:</b> Album Covers</p>
+            
+          </div>
+    
+          <div class="inDesign-right">
+            <p><em> Design an abstract and psychedelic album cover to match the kaleidoscopic sounds of a dubstep song.  </em></p>
+            <p>Given complete creative freedom, I developed two album artworks for electronic artist “Killa Nilla”. Driven by the hypnotic and space-inspired culture of the dubstep, I created album covers based on the titles of the singles, “Traffic” and “Love Me Now”. The albums both feature bold contrast between subject and background and bright colors to parallel the nature and aesthetic of electronic music. 
+            </p>
+          </div>
+
+          <div class="inDesign-center">
+            <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+            </div>
+        </div>
+
+        <div class="inDesignArtboard" id="civicoArtboard" style="display: none;">
+          <div class="inDesign-left">
+            <h1>Civico | Quarterly Forum </h1>
+            <p style="font-size: 18px;"><em>2019</em></p>
+            <p> <b>Services:</b> Graphic Design </p>
+            <p> <b>Deliverables:</b> Digital / Print Media, Brochures </p>
+            
+          </div>
+    
+          <div class="inDesign-right">
+            <p><em> Using new standards from rebranding, design brochures and flyers with a clean, professional aesthetic.  </em></p>
+            <p>After the rebranding to Civico, a Colorado leadership group, I helped rework existing materials to complement the fresh new face of then Quarterly Forum. I created bright, easy-to-navigate layouts for brochures and flyers in both digital and print form while following new brand standards. 
+ 
+            </p>
           </div>
 
           <div class="inDesign-center">
@@ -493,31 +582,9 @@ a {text-decoration: none;}
 
 
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
         
         <h1> Websites </h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-
         <h1 id="logosTag" > Logos</h1>
       </div>
       
@@ -607,17 +674,60 @@ function openSynopsis() {
   }
 }
 
-function openIndesign(inDesignTab) {
+//reserved for close buttons 
+function openIndesign() {
   var x = document.getElementById("inDesign");
-  var tab = document.getElementById(inDesignTab)
+  var welcome = document.getElementById('inDesignWelcome');
+  var tab = document.getElementsByClassName('inDesignArtboard');
+
+
+//window isnt open
   if (x.style.display === "none") {
-    inDesignTab.style.display="block";
     x.style.display = "block";
-  } else {
+    tab.style.display = "none";
+  } 
+ 
+  else {
+    
     x.style.display = "none";
-    inDesignTab.style.display = "none";
+    welcome.style.display = "block";
+    tab.style.display = "none";
+    inDesignArtboard.style.display = "none";
+    
+    
   }
 }
+
+function openIndesignFile (tab) {
+  var indesignWindow = document.getElementById('inDesign');
+  var tabWindow = document.getElementById(tab);
+  var welcome = document.getElementById('inDesignWelcome');
+  var inDesignTabs = document.getElementsByClassName('inDesignArtboard');
+
+  if (indesignWindow.style.display === "block") {
+    welcome.style.display = "none";
+    tabWindow.style.display = "block";
+  }
+
+  else if (welcome.style.display === "block"){
+    
+    welcome.style.display = "none";
+    tab.style.display = "block";
+  }
+
+  else if (indesignWindow.style.display === "none") {
+    indesignWindow.style.display = "block";
+    tab.style.display = "block";
+  }
+
+  else {
+    
+    indesignWindow.style.display = "block";
+    welcome.style.display = "none";
+    tab.style.display = "block";
+  }
+}
+
 
 function openEmail() {
   var x = document.getElementById("email");
