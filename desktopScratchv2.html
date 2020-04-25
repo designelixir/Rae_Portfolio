@@ -12,7 +12,7 @@
 h1 {
   font-family: 'Poppins', sans-serif, bold;
   font-size: 36px;
-  line-height: 24px;
+  line-height: 36px;
 }
 
 h2 {
@@ -199,8 +199,51 @@ button:hover {cursor: pointer;}
 #testimonial_window2 {top: 45%; left: 45%; background-image: url("src/quotes2.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
 #testimonial_window3 {top: 50%; left: 50%; background-image: url("src/quotes3.svg"); background-size: 100% 80%; background-position: 0% 50%; background-repeat: no-repeat;}
 .sticky_textbox h5{display: flex; justify-content: center; align-items: center; padding-top: 10%; } 
-.sticky_textbox button {background: #3A4172;color: white; }
+.sticky_textbox button {background: #3A4172; color: white; }
 .sticky_textbox button:hover {background:white; color: #3A4172;}
+
+.case {width: 90%; height: 80%; background-image: url('src/grid+ruler.svg'); background-size: cover; background-repeat: no-repeat;}
+.case_content { padding: 5%; overflow: scroll; overflow-x: hidden;  }
+
+
+.artboard {
+  background-color: #e8e8e8; 
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 3%;
+  text-align: left;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:stretch;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+  padding-left: 40px;
+  padding-right: 20px;
+  padding-top: 10px;
+ 
+}
+
+.artboard_left {order:1;  flex-basis:100%; padding-right: 30px;}
+.artboard_right {order:2; flex-basis:100%; padding-top: 10px; }
+.artboard_center {width: 95%; order: 3; }
+.artboard_center p { padding-top: 10px;}
+.artboard a {color: black;}
+.artboard a:hover {color: gray;}
+
+
+@media screen and (min-width:600px) {
+  .container {flex-wrap:nowrap;} 
+  .artboard_left {flex-basis:30%; order:1;}
+  .artboard_right {flex-basis:65%; order:2;}
+  .artboard_center { order: 3;}
+}
+
+.desktop_container img {width: 80px; position: fixed;}
+.desktop_container img:hover {transform: rotate(5deg);}
+
+
+
 </style> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -209,6 +252,19 @@ button:hover {cursor: pointer;}
 <html> 
 
 <div class="desktop"> 
+    <div class="desktop_container">
+        <button onclick="toggleOpenClose('miller_project')"><img class="desktopFileIcons" style="left: 80%; top:15%;" src="src/desktopFiles/millerbrosfile.svg"></button>
+        <button onclick="toggleOpenClose('')"><img id="bajaIcon" class="desktopFileIcons" style="left: 10%; top:15%;" src="src/desktopFiles/baja.svg"></button>
+        <button onclick="toggleOpenClose()"><img id="menuIcon" class="desktopFileIcons" style="left: 20%; top:40%;" src="src/desktopFiles/menu.svg"></button>
+        <button onclick="toggleOpenClose()"><img id="renuIcon" class="desktopFileIcons" style="left: 60%; top:60%;" src="src/desktopFiles/renu.svg"></button>
+        <button onclick="toggleOpenClose()"><img id="trafficIcon" class="desktopFileIcons" style="left:35% ; top:65%;" src="src/desktopFiles/traffic.svg"></button>
+        <button onclick="toggleOpenClose()"><img id="civicoIcon" class="desktopFileIcons" style="left: 50%; top:10%;" src="src/desktopFiles/civico.svg"></button>
+                <!-- <img id="summitplanIcon" class="desktopFileIcons" style="left: 80%; top:45%;" src="../src/desktopFiles/summitplan.svg">
+                <img id="muccaIcon" class="desktopFileIcons" style="left: 80%; top:15%;" src="../src/desktopFiles/mucca.svg">
+                <img id="symphonyIcon" class="desktopFileIcons" style="left: 60%; top:35%;" src="../src/desktopFiles/symphony.svg">
+                <img id="symphonyIcon" class="desktopFileIcons" style="left: 10%; top:55%;" src="../src/desktopFiles/killanilla.svg"> -->
+              </div>
+
     <div class="desktop_toolbar">
         <div id="desktop_toolbar_left"> 
             <a href="#"><p><b>Design Elixir</b></p></a>
@@ -361,17 +417,45 @@ button:hover {cursor: pointer;}
                 <h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
                 <button onclick="toggleOpenClose('miller_project')">View Project Case</button>
             </div>
+    </div>
+
+    <div id="testimonial_window2" class="window sticky" style="display: none;">
+        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
+            <p> big ASS TITTIES!!!!!!!!!!! 
+    </div>
+
+    <div id="testimonial_window3" class="window sticky" style="display: none;">
+        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
+            <p> big ASS TITTIES!!!!!!!!!!! 
+    </div>
+
+    <div id="miller_project" class="window case" style="display: none;">
+        <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')"><img class="close_btn" src="src/close.svg"></button><p>miller_bros_stickers.ai</p></div>
+        
+        <div class="case_content">
+            <div class="artboard" id="millerBrosArtboard">
+                <div class="artboard_left">
+                  <h1>The Miller Bros</h1>
+                  <p style="font-size: 18px;"><em>March '20</em></p>
+                  <p> <b>Services:</b> Graphic Design, Illustration </p>
+                  <p> <b>Deliverables:</b> Logos, Multiple Sticker Designs, Shirt Designs</p>
+                </div>
+          
+                <div class="artboard_right">
+                  <p><em>Design a colorful, authentic brand to compliment the adventures of two brothers & their VW Westfalia.</em></p>
+                  <p>Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted organic, hand-drawn illustrations based around the places visited in their blue Volkswagen bus, Lars. These designs were refined and narrowed down for logo use as well as for print production on stickers & t-shirts. </p>
+                </div>
+      
+                <div class="artboard_center">
+                  <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+                  </div>
+              </div>
+
         </div>
 
-        <div id="testimonial_window2" class="window sticky" style="display: none;">
-            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
-              <p> big ASS TITTIES!!!!!!!!!!! 
-            </div>
-
-            <div id="testimonial_window3" class="window sticky" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
-                  <p> big ASS TITTIES!!!!!!!!!!! 
-                </div>
+        </div>
+        
+        </div>
     
 
 
@@ -446,6 +530,8 @@ dragElement(document.getElementById("finder_window"));
 dragElement(document.getElementById("testimonial_window1"));
 dragElement(document.getElementById("testimonial_window2"));
 dragElement(document.getElementById("testimonial_window3"));
+dragElement(document.getElementById("miller_project"));
+
 
 
 
