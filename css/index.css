@@ -214,6 +214,7 @@ h1 {
 	align-items: center;
 	z-index: 15;
 	opacity: 0;
+	
 }
 
 .toolbar_attribute { display: table-cell; color: #f4f4f4; padding: 10px; }

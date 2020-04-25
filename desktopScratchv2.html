@@ -1,0 +1,506 @@
+<style>
+.desktop {
+	background-image: url("src/wallpaper.svg");
+	background-size: cover;
+	background-color: #494f7a;
+	width: 100%;
+    height: 100%;
+    
+
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif, bold;
+  font-size: 36px;
+  line-height: 24px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif, normal;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+hr {background-color: #2c2c2c;}
+
+h3 {
+    font-family: 'Poppins', sans-serif, normal;
+    font-size: 18px;
+    font-weight: 400;
+}
+/* quotations */
+h5 {
+    font-family: 'Poppins', sans-serif, thin;
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+
+
+p {
+  font-family: 'Poppins', sans-serif, normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+h6 {
+    font-family: 'Poppins', sans-serif, normal ;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 12px
+}
+
+em {
+  font-family: 'Poppins', sans-serif, italic;
+
+}
+
+b {
+  font-family: 'Poppins', sans-serif, 400;
+}
+
+a {
+    color: white; 
+    text-decoration: none;
+}
+a:hover {color: #9aa4bd;}
+
+.desktopToolbar {
+    width: 100%; 
+    background: #2c2c2c; 
+    height: 50px; 
+    top: 0; 
+    color: #f4f4f4; 
+}
+
+.dock_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1600;
+}
+
+.dock {
+	bottom: 0;
+	height: 100px;
+	background-color: #2e345b;
+	position: fixed;
+	z-index: 2000;
+}
+
+
+.dockIcons {
+	height: 70px;
+	padding: 15px;
+	opacity: 1;
+}
+
+.dockIcons:hover {
+cursor: pointer;
+}
+
+.tooltip {position: relative; display: inline-block;}
+/* for large screens */
+@media all and (min-width: 800px) { 
+    #about_window_content > *{ flex: 1 auto;}  /* We tell both sidebars to share a row */
+    .about_links {text-align:center;}
+    
+}   
+@keyframes typing {from { width: 0;}to {width: 100%;}}
+@-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #c7ccde;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%;}
+
+.tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
+
+button {background-color: #00000000; border: none;}
+button:hover {cursor: pointer;}
+
+.desktop_toolbar {width: 100%; top: 0; background-color: #2c2c2c; height: 50px; color: white; display: inline-block; overflow: hidden; position: fixed;}
+.desktop_toolbar p {display: inline-block; padding-left: 15px; }
+#desktop_toolbar_left { float: left; width: 65%; padding-right: 10px; }
+#desktop_toolbar_right {float:right; padding-right: 20px; padding-top: 5px; }
+#desktop_toolbar_right img {height: 18px; padding-right: 5px; padding-top: 5px;}
+.desktop_toolbar button {color: white; font-size: 14px; } 
+.desktop_toolbar a {color: white;}
+
+.window {background-color: #9aa4bd; top: 10%; left: 5%; position: absolute; border:  #3A4172 1px solid; border-radius: 4px 4px 4px 4px; }
+.window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center;}
+.window p {padding-left: 5%; padding-right: 5%;}
+.window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
+.close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
+
+#about_window_content {height: 550px; width: 85vw; display:flex; flex-flow: row wrap; max-width: 800px; }
+#about_window_content > * {flex: 1 100%;} /* for the wrapping of the flexbox, built for mobile first  */
+#about_window_content_col1 { width: 30%; background: #3A4172;  order:1;  padding-top: 20px; color: white; }
+#about_window_content_col2 { width: 70%; height: 550px;order:2; position: relative; overflow: scroll; overflow-x: hidden;}
+.about_links { vertical-align: middle; display: inline; }
+.about_links:hover {color: #9aa4bd;}
+.about_links img {height: 24px; padding-left: 20px; padding-right: 10px; vertical-align: middle; } 
+.about_links h6 { font-size: 12px; display: inline;}
+#about_basic {text-align: center; }
+#about_basic img {height: 150px;}
+#question_btn {position: absolute; bottom: 20px;}
+#question_btn:hover {height: 30px; cursor: pointer}
+#about_window_content_col2 >* {padding-left: 30px;}
+.about_window_mission {margin: 20px; padding: 20px;background: #f4f4f4;height: 85%; width: 85%; }
+
+#contact_window_content {top: 40%;height: 550px; width: 400px; }
+#contact_window_sendbar button {bottom: 20px; position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
+#contact_window_content img {height: 80px; padding-left: 20px; animation: slide-in-right 1s cubic-bezier(.25,.46,.45,.94) none; }
+
+#notification {right: 0px; z-index: 20; width: 500px; padding-top: 50px; position: fixed; display: none; animation: slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both;}     
+
+#terminal_window {height: 400px; width: 80vw; max-width: 650px; background-color: #3A4172; top: 30%; }
+.done {display: block !important;}
+.terminal {padding-top: 20px;}
+#terminal_text p {display: none; font-family:'Courier New', Courier, monospace; color: white;}
+.line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
+
+#finder_window {width: 90%; height: 80%; max-height: 700px; max-width: 90%; }
+#finder_window_col1 {float: left; background: #3A4172; color: white;  width: 250px; height:95%; padding-left: 10px; overflow: scroll; overflow-x: hidden;}
+#finder_window_col1 p {color: lightgray;} 
+#finder_window_col1 p:hover {color: white; cursor: pointer;}
+#finder_window_col2 {float: right; width: calc(100% - 260px); }
+
+#finder_window_col2_recents img {height: 90px; padding: 30px;}
+#finder_window_col2_recents img:hover {transform: rotate(5deg); }
+
+.hide { display: none;}
+
+.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center;  }
+.sticky h6 {padding-top: 20%; }
+#testimonial_window1 {top: 40%; left: 40%; background-image: url("src/quotes1.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;};
+#testimonial_window2 {top: 45%; left: 45%; background-image: url("src/quotes2.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window3 {top: 50%; left: 50%; background-image: url("src/quotes3.svg"); background-size: 100% 80%; background-position: 0% 50%; background-repeat: no-repeat;}
+.sticky_textbox h5{display: flex; justify-content: center; align-items: center; padding-top: 10%; } 
+.sticky_textbox button {background: #3A4172;color: white; }
+.sticky_textbox button:hover {background:white; color: #3A4172;}
+</style> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<html> 
+
+<div class="desktop"> 
+    <div class="desktop_toolbar">
+        <div id="desktop_toolbar_left"> 
+            <a href="#"><p><b>Design Elixir</b></p></a>
+            <button onclick="toggleOpenClose('about_window')"><p>About</p></button>
+            <a onclick="toggleOpenClose('contact_window')"><p>Contact</p></a>
+            <a onclick="toggleOpenClose('notification')"><p>Store</p></a>
+            
+        </div>
+        <div id="desktop_toolbar_right">
+            <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src= "src/linkedIn_simple.svg"></a>
+            <a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src= "src/instagram_simple.svg"></a>
+            <a href="https://github.com/coloradical" target="_blank"><img src= "src/github_simple.svg"></a>
+            <a href="https://unsplash.com/@designelixir" target="_blank"><img src= "src/unsplash_simple.svg"></a>
+            <p id="time" class="delay_attribute" id="time">time</p>
+        </div>
+
+    </div>
+    <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/notif2.svg"></a>
+    
+    <div id="about_window" class="window" style="display: none;">
+    <div class="window_closebar"><button onclick="toggleOpenClose('about_window')"><img class="close_btn" src="src/close.svg"></button><p>About</p></div>
+        <div id="about_window_content">
+            <div id="about_window_content_col1">
+                <div id="about_basic">
+                    <img src="src/portrait.svg">
+                    <h2> Design Elixir </h2>
+                    <a href="mailto:megan@designelixir.studio"><p>megan@designelixir.studio</p></a><br><br>
+                </div>
+                <div class="about_links"><a><img src="src/mission.svg"> <h6>Our Mission</h6></a></div><br><br>
+                <div class="about_links"> <a onclick="toggleOpenClose('contact_window')"><img src="src/contact.svg"> <h6>Send a Message</h6></a></div><br>
+                
+                <div class="about_links"> <a onclick="toggleOpenClose('terminal_window')"><img id="question_btn" src="src/question.svg"> </a></div><br><br>
+
+
+            </div>
+            <div id="about_window_content_col2">
+
+                <div class="about_window_mission" style="height: 100%;">
+                    <h3><em>Design Elixir houses the creative vision of Megan Byers, and her quest to provide a personable, <br>all-in-one creative consultant for passionate small businesses and entrepreneurs. </em></h3>
+                    <img src="src/jpegs/artistShot.png" style=" width: 100%;">
+                </div>
+
+                <div class="about_window_mission"><p>Megan Byers strives to learn a little something about everything, (sometimes to a point where she loses sleep meticulously watching how-tos and collecting inspiration) and eagerly embraces any challenge with open arms. Raised on the Rockies, you can find her on alpine trails crying about how much she loves wildflowers and dancing like no one’s watching. When the seed of an idea is planted in her mind,  the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now.  I mean, at this point, how could she quit? The world is forever interesting! Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p></div>
+            
+            </div>
+        </div>
+    </div>
+
+    <div id="contact_window" class="window" style="display: none;">
+    <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')"><img class="close_btn" src="src/close.svg"></button><p>Contact Us</p></div>
+    
+    <div id="contact_window_content">
+        <p> <b>To:</b> yourbeautifulface@email.com</p> <hr>
+        <p> <b>From:</b> megan@designelixir.studio</p> <hr>
+        <p> <b>Subject:</b> Let's Chat!</p> <hr>
+        <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+            Contact me at megan@designelixir.studio for any questions or inquiries.  </p>
+        <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
+        <a href="https://www.behance.net/colouradical" target="_blank"><img src="src/unsplash_file.svg"></a>
+        <a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="src/instagram_file.svg"></a>
+        <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="src/linkedin_file.svg"></a>
+        <a href="https://github.com/coloradical" target="_blank"><img src="src/github_file.svg"></a><br>
+        <div id="contact_window_sendbar"><button><a target="_blank" href="mailto:megan@designelixir.studio">Send</a></button></div>
+    </div>
+    </div>
+
+    <div id="terminal_window" class="window" style="display: none;">
+    <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')"><img class="close_btn" src="src/close.svg"></button><p>About This Site</p></div>
+    
+        <div class="terminal">
+            <div id="terminal_text">
+            <p class="line"> Last login: </p>
+            <p>megan-byers:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
+            <p>Cloning into 'Rae_Portfolio"...</p>
+            <p>remote: Loading website illustrations: 172 objects, done.</p>
+            <p>remote: Counting objects: 100% (172/172) done.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="finder_window" class="window" style="display: none;">
+        <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')"><img class="close_btn" src="src/close.svg"></button><p>Finder</p></div>
+        <div id="finder_window_col1" class="finder_nav">
+            <div id="menu" class="menu" >
+                <a data-page="recent_projects" href="#"><h3> Project Cases</h3> </a>
+                <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+
+                
+                <a data-page="web_design" href="#"><h3> Web Design </h3> </a>
+                <a><p>&#8227; Wordpress</p></a>
+                <a><p>&#8227; Webpage Development</p></a>
+                <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+
+                <a data-page="graphic_design" href="#"><h3> Graphic Design </h3> </a>
+                <a><p>&#8227; Print Media</p></a>
+                <a><p>&#8227; Posters</p></a>
+                <a><p>&#8227; Branding</p></a>
+                <a><p>&#8227; Typography</p></a>
+                <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+
+                <a data-page="illustration" href="#"><h3> Illustration</h3> </a>
+                <a><p>&#8227; Murals / Infographics</p></a>
+                <a><p>&#8227; Stickers</p></a>
+                <a><p>&#8227; Album Artwork</p></a>
+                <a><p>&#8227; Digital Art</p></a>
+                <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+            </div>
+
+            
+        </div>
+        <div id="finder_window_col2">
+           
+            <div id="pages">
+                <div id="recent_projects" class="page" data-page="recent_projects">
+                  
+                  <p> Click to view a project case.  </p>
+                  <div id="finder_window_col2_recents" > 
+                    <img src="src/desktopFiles/baja.svg">
+                    <img src="src/desktopFiles/brut.svg">
+                    <img src="src/desktopFiles/menu.svg">
+                    <img src="src/desktopFiles/renu.svg">
+                    <img src="src/desktopFiles/traffic.svg">
+                    <img src="src/desktopFiles/wordpress.svg">
+                    <img src="src/desktopFiles/summitplan.svg">
+                </div>
+                 
+                </div>
+                <div id="web_design" class="page hide" data-page="web_design">
+                            <h1> Web Design </h1>
+                            
+                </div>
+                <div id="graphic_design" class="page hide" data-page="graphic_design">
+                            <h1> Graphic Design </h1>
+                </div>
+                <div id="illustration" class="page hide" data-page="illustration">
+                            <h1> Illustration </h1>
+                </div>
+            </div>
+             
+        </div>
+        
+        
+
+    </div>
+
+    <div id="testimonial_window1" class="window sticky" style="display: none;">
+        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Miller Bros</p></div>
+          
+            <div class="sticky_textbox">
+                <h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
+                <button onclick="toggleOpenClose('miller_project')">View Project Case</button>
+            </div>
+        </div>
+
+        <div id="testimonial_window2" class="window sticky" style="display: none;">
+            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
+              <p> big ASS TITTIES!!!!!!!!!!! 
+            </div>
+
+            <div id="testimonial_window3" class="window sticky" style="display: none;">
+                <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
+                  <p> big ASS TITTIES!!!!!!!!!!! 
+                </div>
+    
+
+
+
+</div>
+
+
+      <!-- Begin Dock  -->
+      <div class="dock_container"><div class="dock">
+          
+        <div class="tooltip">   
+          <span class="tooltiptext">All Projects Synopses</span> 
+          <button onclick="toggleOpenClose('finder_window')"><img class="dockIcons tooltip" src="src/finder.svg"></button>
+        </div>
+        <div class="tooltip">   
+          <span class="tooltiptext">Email Me!</span> 
+          <button onclick="toggleOpenClose('contact_window')"><img class="dockIcons tooltip" src="src/mail.svg"></button>
+        </div>
+        <div class="tooltip">   
+          <span class="tooltiptext">Testimonials</span> 
+          <button onclick="toggleOpenClose('testimonial_window1'); toggleOpenClose('testimonial_window2'); toggleOpenClose('testimonial_window3')"><img class="dockIcons tooltip" src="src/stickies.svg"></button>
+        </div>
+        <div class="tooltip">   
+          <span class="tooltiptext">Website Stats</span> 
+          <button onclick="toggleOpenClose('terminal_window')"><img class="dockIcons" src="src/terminal.svg"></button>
+        </div>
+        
+        </div>
+
+        </div>
+
+
+</html>
+
+<script> 
+
+function print_terminal() {
+  $("p.line")
+    .removeClass("line")
+    .addClass("done")
+    .next()
+    .addClass("line")
+    .on("animationend", function () {
+      print_terminal();
+    });
+}
+
+$("#terminal_text p.line").on("animationend", function () {
+  print_terminal();
+});
+
+function toggleOpenClose(window_id) {
+  var x = window_id.toString();
+  var tab = document.getElementById(x);
+
+  if (tab.style.display === "block") {
+    tab.style.display = "none";
+  }
+
+  else {
+    tab.style.display = "block";
+
+  }
+
+}
+
+
+dragElement(document.getElementById("about_window"));
+dragElement(document.getElementById("contact_window"));
+dragElement(document.getElementById("terminal_window"));
+dragElement(document.getElementById("finder_window"));
+dragElement(document.getElementById("testimonial_window1"));
+dragElement(document.getElementById("testimonial_window2"));
+dragElement(document.getElementById("testimonial_window3"));
+
+
+
+$(document).ready(function() {
+    $("#menu a").on('click', function(e) {
+        e.preventDefault()
+        var page = $(this).data('page');
+        $("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
+            $(this).addClass('hide');
+            $('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');
+        });
+    });
+});
+
+
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+</script>

@@ -400,7 +400,7 @@ a {text-decoration: none;}
 
       <div id="inDesign_content">
 
-        <div class="inDesignArtboard2" id="inDesignWelcome" style="background:#48588d">
+        <!-- <div class="inDesignArtboard2" id="inDesignWelcome" style="background:#48588d">
           <h1 style="color: white;">Recent</h1>
           <p style="color: white;">Check out the case studies for Design Elixir projects </p><br>
           <div id="folderFileIcons"> 
@@ -412,7 +412,7 @@ a {text-decoration: none;}
           </div>
           
 
-        </div>
+        </div> -->
         
         <div class="inDesignArtboard" id="millerBrosArtboard" style="display: none;">
           <div class="inDesign-left">
@@ -684,46 +684,41 @@ function openIndesign() {
 //window isnt open
   if (x.style.display === "none") {
     x.style.display = "block";
-    tab.style.display = "none";
+    
   } 
  
   else {
-    
     x.style.display = "none";
-    welcome.style.display = "block";
-    tab.style.display = "none";
-    inDesignArtboard.style.display = "none";
-    
     
   }
 }
 
 function openIndesignFile (tab) {
-  var indesignWindow = document.getElementById('inDesign');
-  var tabWindow = document.getElementById(tab);
-  var welcome = document.getElementById('inDesignWelcome');
-  var inDesignTabs = document.getElementsByClassName('inDesignArtboard');
+  var x = document.getElementById('inDesign');
+  // var tabWindow = document.getElementById(tab);
+  // var welcome = document.getElementById('inDesignWelcome');
+  // var inDesignTabs = document.getElementsByClassName('inDesignArtboard');
 
-  if (indesignWindow.style.display === "block") {
-    welcome.style.display = "none";
-    tabWindow.style.display = "block";
-  }
-
-  else if (welcome.style.display === "block"){
-    
-    welcome.style.display = "none";
+  if (x.style.display === "block") {
+    // welcome.style.display = "none";
     tab.style.display = "block";
   }
 
-  else if (indesignWindow.style.display === "none") {
-    indesignWindow.style.display = "block";
+  // else if (welcome.style.display === "block"){
+    
+  //   welcome.style.display = "none";
+  //   tab.style.display = "block";
+  // }
+
+  else if (x.style.display === "none") {
+    x.style.display = "block";
     tab.style.display = "block";
   }
 
   else {
     
     indesignWindow.style.display = "block";
-    welcome.style.display = "none";
+    // welcome.style.display = "none";
     tab.style.display = "block";
   }
 }

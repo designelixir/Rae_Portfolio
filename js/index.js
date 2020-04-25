@@ -346,7 +346,7 @@ const minutes = current.getMinutes();
 if (minutes < 10){space ="0";}
 else {space=""};
 
-document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd;
+document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
 
 
 
