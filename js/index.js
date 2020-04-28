@@ -47,8 +47,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-let gridHelper = new THREE.GridHelper(50, 50);
-scene.add(gridHelper);
+// let gridHelper = new THREE.GridHelper(50, 50);
+// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -90,7 +90,7 @@ var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/doorway2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/doorway2.png')
 });
 
 doorway.transparent=true;
@@ -101,7 +101,7 @@ var deskchair = new THREE.MeshLambertMaterial({
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/chair.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/chair.png')
 
 }); 
 chair.transparent=true;
@@ -116,7 +116,7 @@ posters.transparent=true;
 var doorGeometry = new THREE.PlaneGeometry(60, 24);
 var deskGeometry = new THREE.PlaneGeometry(31, 19.18);
 var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
-var posterGeometry = new THREE.PlaneGeometry(19.3,13.1);
+var posterGeometry = new THREE.PlaneGeometry(19.30,13.10);
 
 
 // combine our image geometry and material into a mesh
@@ -161,21 +161,6 @@ let animate = function() {
 };
 
 
-//scroll BAR
-// window.onscroll = function() {scrollProgress()};
-
-// function scrollProgress() {
-//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//   var scrolled = (winScroll / height) * 100;
-//   var truncScroll = Math.trunc(scrolled);
-//   document.getElementById("myBar").style.width = scrolled + "%";
-//     // document.getElementById("updatedProgress").innerHTML = truncScroll +"%"; scroll shows infinite? 
-
-// }
-
-
-
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
@@ -192,7 +177,7 @@ const dock = document.querySelector('.dock');
 
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
+uos(0.15, 0.25, p => (header.style.left = (p*450)+"%")); //move header out of the way of desktop 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
@@ -322,33 +307,37 @@ function dragElement(elmnt) {
   }
 }
 
-//calculate time 
-const current = new Date();
-const day = current.getDate();
 
-const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
-const monthGet = current.getMonth();
-const monthName = monthArray[monthGet];
 
-const hours = current.getHours();
-if (hours > 0 && hours <= 12) {
-  timeValue= "" + hours;
-} else if (hours > 12) {
-  timeValue= "" + (hours - 12);
-} else if (hours == 0) {
-  timeValue= "12";
+function changeTime(){
+  const current = new Date();
+  const day = current.getDate();
+
+  const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+  const monthGet = current.getMonth();
+  const monthName = monthArray[monthGet];
+
+  const hours = current.getHours();
+  if (hours > 0 && hours <= 12) {
+    timeValue= "" + hours;
+  } else if (hours > 12) {
+    timeValue= "" + (hours - 12);
+  } else if (hours == 0) {
+    timeValue= "12";
+  }
+
+  if (hours >0 && hours <= 11) {nd="AM";}
+  else {nd = "PM"}
+
+  const minutes = current.getMinutes();
+  if (minutes < 10){space ="0";}
+  else {space=""};
+  document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+  document.getElementById("timeLogin").innerHTML = "Last Login: " + monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+
+
 }
-
-if (hours >0 && hours <= 11) {nd="AM";}
-else {nd = "PM"}
-
-const minutes = current.getMinutes();
-if (minutes < 10){space ="0";}
-else {space=""};
-
-document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
-
-
+window.addEventListener("scroll", changeTime);
 
 //////////////////
 animate();
