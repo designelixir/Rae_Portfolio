@@ -1,4 +1,5 @@
 // (function(global) {
+
   var canvas = document.getElementById("viewport");
 //   gl = glUtils.checkWebGL(canvas);
   
@@ -55,7 +56,7 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://i.ibb.co/x7b5YvZ/flooring8.png')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true, wireframe_linewidth: 10})
 
@@ -183,7 +184,7 @@ const header = document.querySelector('.headerOverview');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
-const delay_attribute = document.querySelector('.delay_attribute')
+// const delay_attribute = document.querySelector('.delay_attribute')
 const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.toolbar');
 // const desktop = document.querySelector('.desktop');
@@ -201,7 +202,7 @@ uos(0.39, 0.40, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedP
 uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
-uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) ));
+// uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
 
@@ -345,7 +346,7 @@ const minutes = current.getMinutes();
 if (minutes < 10){space ="0";}
 else {space=""};
 
-document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd;
+document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
 
 
 
