@@ -56,7 +56,7 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://i.ibb.co/x7b5YvZ/flooring8.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/flooring8.png')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true, wireframe_linewidth: 10})
 
@@ -96,7 +96,7 @@ var doorway = new THREE.MeshLambertMaterial({
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/desk_1@600x.png')
+  map: loader.load('https://i.ibb.co/7zJwpzN/desk10.png')
 }); 
 deskchair.transparent=true;
 
@@ -107,16 +107,16 @@ var chair = new THREE.MeshLambertMaterial({
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/posters2.png')
+  map: loader.load('https://i.ibb.co/VTGP1CX/posters2.png')
 });
  
 posters.transparent=true;
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
 var doorGeometry = new THREE.PlaneGeometry(60, 24);
-var deskGeometry = new THREE.PlaneGeometry(20, 18.75);
+var deskGeometry = new THREE.PlaneGeometry(31, 19.18);
 var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
-var posterGeometry = new THREE.PlaneGeometry(24,22);
+var posterGeometry = new THREE.PlaneGeometry(19.3,13.1);
 
 
 // combine our image geometry and material into a mesh
@@ -128,9 +128,9 @@ var posterMesh = new THREE.Mesh(posterGeometry,posters);
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(-1,0,-14);
-deskMesh.position.set(0,-5,-30);
-chairMesh.position.set(0,-8.5,-28);
-posterMesh.position.set(0,0,-32);
+deskMesh.position.set(-1.5,-3.5,-31);
+chairMesh.position.set(5,-8.5,-28);
+posterMesh.position.set(2,5,-32);
 
 
 floor.position.set (-1,-16,-30);
