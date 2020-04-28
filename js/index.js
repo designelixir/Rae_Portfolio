@@ -57,7 +57,7 @@ var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/flooring8.png')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/ceiling.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true, wireframe_linewidth: 10})
 
   ];
@@ -96,7 +96,7 @@ var doorway = new THREE.MeshLambertMaterial({
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://i.ibb.co/7zJwpzN/desk10.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/desk10.png')
 }); 
 deskchair.transparent=true;
 
@@ -107,7 +107,7 @@ var chair = new THREE.MeshLambertMaterial({
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://i.ibb.co/VTGP1CX/posters2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/posters2.png')
 });
  
 posters.transparent=true;
@@ -130,7 +130,7 @@ var posterMesh = new THREE.Mesh(posterGeometry,posters);
 doorwayMesh.position.set(-1,0,-14);
 deskMesh.position.set(-1.5,-3.5,-31);
 chairMesh.position.set(5,-8.5,-28);
-posterMesh.position.set(2,5,-32);
+posterMesh.position.set(2,4.5,-32);
 
 
 floor.position.set (-1,-16,-30);
@@ -198,7 +198,7 @@ uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 
 
-uos(0.39, 0.40, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
+uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
