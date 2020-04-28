@@ -57,7 +57,7 @@ var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true, wireframe_linewidth: 10}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v9/pngSRC/flooring.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v13/src/flooring2.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true, wireframe_linewidth: 10})
 
   ];
