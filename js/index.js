@@ -47,8 +47,8 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 //remove grid when finished 
-let gridHelper = new THREE.GridHelper(50, 50);
-scene.add(gridHelper);
+// let gridHelper = new THREE.GridHelper(50, 50);
+// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -160,22 +160,6 @@ let animate = function() {
     renderer.render(scene, camera);
 };
 
-
-//scroll BAR
-// window.onscroll = function() {scrollProgress()};
-
-// function scrollProgress() {
-//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//   var scrolled = (winScroll / height) * 100;
-//   var truncScroll = Math.trunc(scrolled);
-//   document.getElementById("myBar").style.width = scrolled + "%";
-//     // document.getElementById("updatedProgress").innerHTML = truncScroll +"%"; scroll shows infinite? 
-
-// }
-
-
-
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
@@ -186,10 +170,14 @@ const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
 // const delay_attribute = document.querySelector('.delay_attribute')
 const profile_description = document.querySelector('.profile_description');
-const toolbar = document.querySelector('.toolbar');
-// const desktop = document.querySelector('.desktop');
+// const toolbar = document.querySelector('.toolbar');
+const desktop = document.querySelector('.desktop');
 const dock = document.querySelector('.dock');
+const webDevelopmentSplash = document.querySelector('#web_development_splash');
+const graphic_design_splash = document.querySelector('#graphic_design_splash');
 
+const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
+const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
@@ -199,82 +187,36 @@ uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 
 
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
-uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+// uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 // uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
+uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
 
-// uos(0.44, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+
+uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+
+
+uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
 
 
-function openSocials() {
-  var x = document.getElementById("social_banners");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+function toggleOpenClose(window_id) {
+  var x = window_id.toString();
+  var tab = document.getElementById(x);
+  if (tab.style.display === "block") {
+    tab.style.display = "none";
+  }
+
+  else {
+    tab.style.display = "block";
   }
 }
 
-function openShortcuts() {
-  var x = document.getElementById("shortcut_banners");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-
-function openSynopsis() {
-  var x = document.getElementById("projectSynopsis");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-function openEmail() {
-  var x = document.getElementById("email");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-    
-  }
-}
-
-function openTesties() {
-  var x = document.getElementById("testies");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-function openStats() {
-  var x = document.getElementById("stats");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-
-
-
-dragElement(document.getElementById("windowToolbar"));
-dragElement(document.getElementById("windowToolbar2"));
-dragElement(document.getElementById("windowToolbar3"));
-dragElement(document.getElementById("windowToolbar4"));
-dragElement(document.getElementById("windowToolbar5"));
-dragElement(document.getElementById("windowToolbar6"));
 
 
 
@@ -321,32 +263,6 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-
-//calculate time 
-const current = new Date();
-const day = current.getDate();
-
-const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
-const monthGet = current.getMonth();
-const monthName = monthArray[monthGet];
-
-const hours = current.getHours();
-if (hours > 0 && hours <= 12) {
-  timeValue= "" + hours;
-} else if (hours > 12) {
-  timeValue= "" + (hours - 12);
-} else if (hours == 0) {
-  timeValue= "12";
-}
-
-if (hours >0 && hours <= 11) {nd="AM";}
-else {nd = "PM"}
-
-const minutes = current.getMinutes();
-if (minutes < 10){space ="0";}
-else {space=""};
-
-document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
 
 
 
