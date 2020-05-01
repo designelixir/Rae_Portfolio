@@ -264,6 +264,36 @@ function dragElement(elmnt) {
   }
 }
 
+function changeTime(){
+  const current = new Date();
+  const day = current.getDate();
+
+  const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+  const monthGet = current.getMonth();
+  const monthName = monthArray[monthGet];
+
+  const hours = current.getHours();
+  if (hours > 0 && hours <= 12) {
+    timeValue= "" + hours;
+  } else if (hours > 12) {
+    timeValue= "" + (hours - 12);
+  } else if (hours == 0) {
+    timeValue= "12";
+  }
+
+  if (hours >0 && hours <= 11) {nd="AM";}
+  else {nd = "PM"}
+
+  const minutes = current.getMinutes();
+  if (minutes < 10){space ="0";}
+  else {space=""};
+  document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+  document.getElementById("timeLogin").innerHTML = "Last Login: " + monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+
+}
+window.addEventListener("scroll", changeTime);
+
+
 
 
 //////////////////
