@@ -196,8 +196,14 @@ uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgres
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+
 
 uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+
+
+uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
 
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
@@ -263,6 +269,36 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+function changeTime(){
+  const current = new Date();
+  const day = current.getDate();
+
+  const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+  const monthGet = current.getMonth();
+  const monthName = monthArray[monthGet];
+
+  const hours = current.getHours();
+  if (hours > 0 && hours <= 12) {
+    timeValue= "" + hours;
+  } else if (hours > 12) {
+    timeValue= "" + (hours - 12);
+  } else if (hours == 0) {
+    timeValue= "12";
+  }
+
+  if (hours >0 && hours <= 11) {nd="AM";}
+  else {nd = "PM"}
+
+  const minutes = current.getMinutes();
+  if (minutes < 10){space ="0";}
+  else {space=""};
+  document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+  document.getElementById("timeLogin").innerHTML = "Last Login: " + monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+
+}
+window.addEventListener("scroll", changeTime);
+
 
 
 
