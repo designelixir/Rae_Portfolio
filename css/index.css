@@ -3,14 +3,27 @@ body {
     overflow-y: scroll;
 	padding: 0;
 	margin: 0;
-	font-family: "mazzardBold", "mazzardLight", sans-serif;
+	font-family: 'Poppins', sans-serif, normal; 
+	
 	
 }
 
-a {text-decoration: none;}
+h1 {font-family: 'Poppins', sans-serif, bold; font-size: 36px; line-height: 36px;}
+h2 {font-family: 'Poppins', sans-serif, normal; font-size: 24px; line-height: 24px;}
+h3 {font-family: 'Poppins', sans-serif, normal; font-size: 18px; font-weight: 400;}
+h5 {font-family: 'Poppins', sans-serif, thin; font-size: 12px; font-weight: 300; padding-left: 10px; padding-right: 10px;}
+h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 12px; line-height: 12px}
+p {font-family: 'Poppins', sans-serif, normal; font-size: 14px; line-height: 16px;}
+
+em {font-family: 'Poppins', sans-serif, italic;}
+b {font-family: 'Poppins', sans-serif, 400;}
+a {color: white; text-decoration: none;}
+a:hover {color: #9aa4bd;}
+
 
 #viewport {
 	width: 100%;
+	height: 100%;
 	position: fixed;
 }
 
@@ -21,7 +34,7 @@ a {text-decoration: none;}
 	top: 0;
 	width: 100%;
 	
-  height: 4000vh;
+  	height: 4000vh;
 }
 #container {
 	height: 4000vh;
@@ -287,220 +300,20 @@ h1 {
 .desktop {
 	background-image: url("../src/wallpaper.svg");
 	background-size: cover;
-	
+	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	z-index: 14;
 	position: fixed;
 	top: 0;
-	/*display: flex;
-	justify-content: center;
-	align-items: center;*/ /*this brings items to center horizontally & vertically */
-
-}
-
-
-
-.dock_container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1600;
-}
-
-.dock {
-	bottom: 0;
-	height: 100px;
-	background-color: #2e345b;
-	position: fixed;
-	z-index: 2000;
-}
-
-
-.dockIcons {
-	height: 70px;
-	padding: 15px;
-	opacity: 1;
-}
-
-.dockIcons:hover {
-  cursor: pointer;
-}
-
-.tooltip {position: relative; display: inline-block;}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #c7ccde;
-  color: #000;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Tooltip arrow */
-.tooltip .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%;}
-
-.tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
-
-#projectSynopsis{
-  width: 100%;
-  padding: 50px 0;
-  text-align: center;
-  
-  margin-top: 20px;
-  display: none;
-}
-
-#email{
-  display: none;
-  text-align: center;
-  margin: 100px;
-  padding:15px;
-
-
-}
-
-#email p {  }
-
-#testies{
-  width: 100px;
-  padding: 50px 0;
-  text-align: center;
-  margin-left: 20px;
-  margin-top: 40px;
-  display: none; 
-  
-
-}
-
-#stats {display: none;}
-
-
-.closeBtn {
-	width: 20px; 
-	position: absolute; 
-	top: 12px;
-	left: 12px;
 	
 }
-.closeBtn:hover {width: 22px; cursor: pointer;}
 
-
-.window {
-	width: 70%;
-	height: 40%;
-	background-color: #c7ccde;
-	border: 2px solid #384173;
-	border-radius: 4px 4px 4px 4px; 
-	position: absolute;
-  text-align: center;
-
-
-}
-
-p {
-   font-size: 14px;
-   padding: 5%;
-}
-
-
-
-#closeBar {
-  padding: 16px;
-  cursor: move;
-  z-index: 10;
-  background-color: #48588d;
-  color: #fff;
-  height: 15px;
-}
-
-#email_social_icons img {width: 50px;}
-
-button {
-	background-color: #00000000;
-	border: none;
-
-}
-
-button:focus {text-decoration: none; outline: none; border: none;
-}
-
-* {font-family: 'Rubik', sans-serif; text-decoration: none;
-}
-
-a {text-decoration: none;}
-
-#terminal_text p {
-  font-family: 'Courier New', Courier, monospace;
-  padding: 2px 2px 2px 8px;
-  line-height: 12px;
-  text-align: left;
-  
-  white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-
-
-
-.fade-in {
-	-webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-
-
-/* 
-@media only screen and (max-width: 300px) {
-	.logo {width: 60%; max-width: 60%;}
-	.entry_moto {width: 100%; padding-bottom: 2vh; 	max-width: 100%;
-	}
-	
-  }  */
-
-
-
-
+#splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
+.splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
+#splash_context_text {width: 100%;  max-height: 75%; position: absolute;}
+.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute;}
+.loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
 /* animations  */

@@ -4,6 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
     <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     
@@ -20,23 +21,23 @@
                     
             <!-- Socials -->
             <div id="social_banners"> 
-              <button onclick="openSocials()"><img class="social_banner_small" style=" bottom: 339px; left: 35px;" src="src/close_banner2.svg"></button>
+              <button onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style=" bottom: 339px; left: 35px;" src="src/close_banner2.svg"></button>
                <a target="_blank" href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 270px;" src="src/instagram_banner.svg"></a>
               <a target="_blank" href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style=" bottom: 200px;" src="src/unsplash_banner.svg"></a>
               <a target="_blank" href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 135px;" src="src/github_banner.svg"></a>
               <a target="_blank" href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
             </div>
 
-            <button onclick="openSocials()"><img class="social_banner" src="src/socials.svg"></button>
+            <button onclick="toggleOpenClose('social_banners')"><img class="social_banner" src="src/socials.svg"></button>
 
             <!-- Shortcuts -->
-            <button onclick="openShortcuts()"><img class="shortcut_banner" src="src/shortcuts.svg"></button>
+            <button onclick="toggleOpenClose('shortcut_banners')"><img class="shortcut_banner" src="src/shortcuts.svg"></button>
             <div id="shortcut_banners">
               <a><img class="shortcut_banner_small" style="top: 120px;"src="src/about_banner.svg"></a>
               <a><img class="shortcut_banner_small" style="top: 180px;"src="src/work_banner.svg"></a>
               <a><img class="shortcut_banner_small" style="top: 235px;"src="src/store_banner.svg"></a>
               <a><img class="shortcut_banner_small" style="top: 290px;"src="src/contact_banner.svg"></a>
-               <button onclick="openShortcuts()"><img class="shortcut_banner_small" style="top: 345px; right: 30px;"src="src/close_banner.svg"></button>
+               <button onclick="toggleOpenClose('shortcut_banners')"><img class="shortcut_banner_small" style="top: 345px; right: 30px;"src="src/close_banner.svg"></button>
             </div>
           </div> 
     <!-- End Header  -->
@@ -46,16 +47,7 @@
           
 
             <!-- Basic Toolbar -->
-            <div class="toolbar"> 
-              <div style="float:left; padding-top: 6px;" class="delay_attribute" >
-                <a href="#"><h4 class="toolbar_attribute"> <bold>Design Elixir </bold></h4></a>
-                <a><p class="toolbar_attribute"> Project Synopses </p></a>
-                <a><p class="toolbar_attribute"> Contact </p></a>
-                <a><p class="toolbar_attribute"> Store </p></a>
-              </div>
-              <!-- Time Toolbar -->
-              <div style="float:right; padding-top: 6px;"> <p class="toolbar_attribute" id="time">time</p></div>     
-            </div>
+          
 
             <!-- Profile Login -->
               <div class="login"> 
@@ -66,139 +58,39 @@
                 </div>
             <!-- End Login -->
 
+            <div id="splash_pages">
+
+              <div class="splash_page_wrapper">
+                <img id="splash_context_text" src="src/splash_context.svg">
+                
+                  <img class="splash_img" id="web_development_splash" src="src/webDevelopment_splash.svg">
+                  <img class="splash_img" id="graphic_design_splash" src="src/webDevelopment_splash.svg" style="transform: rotate(180deg);">
+                  <!-- <img class="splash_img" id="web_development_splash" src="src/webDevelopment_splash.svg"> -->
+          
+                </div>      
+                  <div class="loading_scroller"></div>
+          
+            </div>
+            
+            
+
            
 
           
 
     <!-- Begin Desktop  -->
        <div class="desktop">
-
-          <!-- Begin Dock  -->
-          <div class="dock_container"><div class="dock">
-          
-          <div class="tooltip">   
-            <span class="tooltiptext">All Projects Synopses</span> 
-            <button onclick="openSynopsis()"><img class="dockIcons tooltip" id="finderIcon" src="src/finder.svg"></button>
-          </div>
-          <div class="tooltip">   
-            <span class="tooltiptext">Email Me!</span> 
-            <button onclick="openEmail()"><img class="dockIcons tooltip" src="src/mail.svg"></button>
-          </div>
-          <div class="tooltip">   
-            <span class="tooltiptext">Testimonials</span> 
-            <button onclick="openTesties()"><img class="dockIcons tooltip" src="src/stickies.svg"></button>
-          </div>
-          <div class="tooltip">   
-            <span class="tooltiptext">Website Stats</span> 
-            <button onclick="openStats()"><img class="dockIcons" src="src/terminal.svg"></button>
-          </div>
-          
+         <p> big bobs</p>
         </div>
 
         <!-- End Dock -->
 
 
-  <div id="projectSynopsis">
-    <div class="window" id="windowToolbar6" style="width: 80%; height: 80%; font-size: 14px; left: 10%; bottom: 15%;">
-      <div id="closeBar" style="text-align: center;"> Project Synopses</div>
-      <button onclick="openSynopsis()"><img class="closeBtn" src="src/close.svg" ></button>
-      
-      <div id="synopsis_col1" style="width: 25%; text-align: left; height: calc(100% - 47px); color: white; background-color: #3A4172; bottom: 0; position: absolute;">
-        <h3> Websites </h3>
-        
-
-        <a href="#logosTag"><h3>Logos</h3></a>
-       
-      </div>
-      <div id="synopsis_col2" style="width: 75%; right: 0;height: calc(100% - 47px); bottom: 0; position: absolute; overflow: scroll;" >
-        <p> Scroll to view a brief synopsis of projects by Design Elixir, or use the navigation to speed to exactly what you're looking for!  </p>
-        <h1> Websites </h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus velit distinctio reiciendis vitae a, eaque repudiandae sequi fugit accusamus optio beatae dolor, molestiae excepturi quibusdam incidunt voluptatem aliquid natus accusantium!</p>
-
-        <h1 id="logosTag" > Logos</h1>
-      </div>
-      
-    </div>
-    </div>
-  
 
 
 
 
-<div id="email">
-<div class="window" id="windowToolbar">
-  <div id="closeBar" style="text-align: center;"> Let's get in touch</div>
-  <button onclick="openEmail()"><img class="closeBtn" src="src/close.svg" ></button>
 
-  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-     Contact me! </p>
-  <h2> megan@designelixir.studio </h2>
-  <div id="email_social_icons"> 
-    <a href="https://www.behance.net/colouradical" target="_blank"><img src="src/behance.svg"></a>
-  <a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="src/instagram.svg"></a>
-  <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="src/linked.svg"></a>
-  <a href="https://github.com/coloradical" target="_blank"><img src="src/github.svg"></a><br>
-    <a href="https://github.com/coloradical" target="_blank"><img src="src/unsplash.svg"></a>
-  <a href="https://github.com/coloradical" target="_blank"><img src="src/etsy.svg"></a>
-
-  </div>  
-</div>
-</div>
-
-<div id="testies">
-
-<div class="window" id="windowToolbar2" style="width: 250px; height: 250px; left: 10%; font-size: 14px; bottom: 35%;">
-  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
-  <button onclick="openTesties()"><img class="closeBtn" src="src/close.svg" ></button>
-
-  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-     Contact me! </p>
-</div>
-
-<div class="window" id="windowToolbar3" style="width: 250px; height: 250px; left: 20%; font-size: 14px; bottom: 25%;">
-  <div id="closeBar" style="text-align: center;"> Customer Testimonial</div>
-  <button onclick="openTesties()"><img class="closeBtn" src="src/close.svg" ></button>
-
-  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-     Contact me! </p>
-</div>
-
-<div class="window" id="windowToolbar4" style="width: 250px; height: 250px; font-size: 14px; left: 30%; bottom: 15%;">
-  <div id="closeBar" style="text-align: center;"> Testimonial - Bob Mathes</div>
-  <button onclick="openTesties()"><img class="closeBtn" src="src/close.svg" ></button>
-
-  <p>I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-     Contact me! </p>
-  
-
-</div>
-</div>
-
-
-
-<div id="stats">
-  <div class="window" id="windowToolbar5" style="width: 60%; height: 450px; font-size: 14px; left: 30%; bottom: 15%; background-color: #3a4172; color: white;">
-    <div id="closeBar" style="text-align: center;"> Terminal &#10148; Design_Elixir_Portfolio &mdash; -bash </div>
-    <button onclick="openStats()"><img class="closeBtn" src="src/close.svg" ></button>
-  <div id="terminal_text">
-    <p id="line"> Last login:  </p>
-    <p id="line">megan-byers:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
-    <p id="line"style="animation-delay: 2s;">Cloning into 'Rae_Portfolio"...</p>
-    <p id="line">remote: Loading website illustrations: 172 objects, done.</p>
-    <p id="line">remote: Counting objects: 100% (172/172) done.</p>
-  </div>
-    
-  </div>
-  </div>
 
 </div></div>
                   
