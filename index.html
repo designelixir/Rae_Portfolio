@@ -28,7 +28,7 @@
               <a target="_blank" href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
             </div>
 
-            <button onclick="toggleOpenClose('social_banners')"><img class="social_banner" src="src/socials.svg"></button>
+            <button onclick="toggleOpenClose('social_banners')"><img class="social_banner social_banner_small" src="src/socials.svg"></button>
 
             <!-- Shortcuts -->
             <button onclick="toggleOpenClose('shortcut_banners')"><img class="shortcut_banner" src="src/shortcuts.svg"></button>
@@ -43,13 +43,8 @@
     <!-- End Header  -->
 
     <!-- Begin Login Screen -->
-                  
-          
-
-            <!-- Basic Toolbar -->
-          
-
-            <!-- Profile Login -->
+  
+          <!-- Profile Login -->
               <div class="login"> 
                   <img class="spinny" src="src/spinny.svg"> 
                   <img class="profile" src="src/profile+name.svg">
@@ -68,40 +63,329 @@
                   <!-- <img class="splash_img" id="web_development_splash" src="src/webDevelopment_splash.svg"> -->
           
                 </div>      
-                  <div class="loading_scroller"></div>
-          
+                <div class="loading_scroller"></div>
             </div>
             
-            
-
-           
+            <div class="desktop_toolbar">
+                <div id="desktop_toolbar_left"> 
+                    <a href="#"><p><b>Design Elixir</b></p></a>
+                    <button onclick="toggleOpenClose('about_window')"><p>About</p></button>
+                    <a onclick="toggleOpenClose('contact_window')"><p>Contact</p></a>
+                    <a onclick="toggleOpenClose('notification')"><p>Store</p></a>
+                    
+                </div>
+                <div id="desktop_toolbar_right">
+                    <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src= "src/linkedIn_simple.svg"></a>
+                    <a  href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src= "src/instagram_simple.svg"></a>
+                    <a  href="https://github.com/coloradical" target="_blank"><img src= "src/github_simple.svg"></a>
+                    <a  href="https://unsplash.com/@designelixir" target="_blank"><img src= "src/unsplash_simple.svg"></a>
+                    <p id="time">time</p>
+                </div>
+        
+            </div>
 
           
 
     <!-- Begin Desktop  -->
-       <div class="desktop">
-         <p> big bobs</p>
-         <p> big boooooooos</p>
+    <div class="desktop"> 
+      
+      <div class="desktop_container">
+          <button onclick="toggleOpenClose('miller_project')"><img style="left: 80%; top:15%;" src="src/desktopFiles/millerbrosfile.svg"></button>
+          <button onclick="toggleOpenClose('baja_project')"><img style="left: 10%; top:15%;" src="src/desktopFiles/baja.svg"></button>
+          <button onclick="toggleOpenClose('menu_project')"><img style="left: 20%; top:40%;" src="src/desktopFiles/menu.svg"></button>
+          <button onclick="toggleOpenClose('renu_project')"><img style="left: 60%; top:60%;" src="src/desktopFiles/renu.svg"></button>
+          <button onclick="toggleOpenClose()"><img style="left:35% ; top:65%;" src="src/desktopFiles/traffic.svg"></button>
+          <button onclick="toggleOpenClose()"><img  style="left: 50%; top:10%;" src="src/desktopFiles/civico.svg"></button>
+                  
+      </div>
+  
+      
+      <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/notif2.svg"></a>
+      
+      <div id="about_window" class="window" style="display: none;">
+      <div class="window_closebar"><button onclick="toggleOpenClose('about_window')"><img class="close_btn" src="src/close.svg"></button><p>About</p></div>
+          <div id="about_window_content">
+              
+              <div id="about_window_content_col2">
+
+                  <div id="about_basic">
+                      <img src="src/portrait.svg">
+                      <h2> Megan Rae Byers </h2>
+                      <a href="mailto:megan@designelixir.studio"><p>megan@designelixir.studio</p></a><br><br>
+                  </div>
+  
+                  <div class="about_window_mission" style="height: 100%;">
+                      <em style="font-size: 28px;">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user experience.</em> <br>
+                      <img style="width: 100%;" src="src/jpegs/artistShot.png">
+                      <p>I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables us to build powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. </p>
+                      <h1>Our Mission</h1>
+                      <p>The foundation of Design Elixir is a combination of the lifelong insatiable urge to create while wielding the infinite power of computers. </p>
+                      <p>We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic - we specialize in catering our artistic tools to your creative vision. The foundation of our work is focused on functionality and excellent user experience, and framed by an authentic, one of a kind approach expressing your ideality to the world. Through all mediums, Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. Like you!</p>
+                      <h6>A Lil Something About Megan:</h6>
+                      <img src="jpgs/portrait.jpg" style="width: 50%;">
+                      <p>Megan Byers strives to learn a little something about everything, sometimes to a point where she loses sleep obsessively watching how-tos and learning new skills. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. Megan finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind,  the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                        </p>
+                    </div>
+  
+                  
+              
+              </div>
+          </div>
+      </div>
+  
+      <div id="contact_window" class="window" style="display: none;">
+      <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')"><img class="close_btn" src="src/close.svg"></button><p>Contact Us</p></div>
+      
+      <div id="contact_window_content">
+          <p> <b>To:</b> yourbeautifulface@email.com</p> <hr>
+          <p> <b>From:</b> megan@designelixir.studio</p> <hr>
+          <p> <b>Subject:</b> Let's Chat!</p> <hr>
+          <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+              Contact me at megan@designelixir.studio for any questions or inquiries.  </p>
+          <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
+          <a href="https://www.behance.net/colouradical" target="_blank"><img src="src/unsplash_file.svg"></a>
+          <a href="https://www.instagram.com/meganbyers.jpeg/" target="_blank"><img src="src/instagram_file.svg"></a>
+          <a href="https://www.linkedin.com/in/meganraebyers/" target="_blank"><img src="src/linkedin_file.svg"></a>
+          <a href="https://github.com/coloradical" target="_blank"><img src="src/github_file.svg"></a><br>
+          <div id="contact_window_sendbar"><button><a target="_blank" href="mailto:megan@designelixir.studio">Send a Message</a></button></div>
+      </div>
+      </div>
+  
+      <div id="terminal_window" class="window" style="display: none;">
+      <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')"><img class="close_btn" src="src/close.svg"></button><p>About This Site</p></div>
+      
+          <div class="terminal">
+              <div id="terminal_text">
+              <p id="timeLogin" class="line"> Last login: </p>
+              <p>megan-byers:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
+              <p>Cloning into 'Rae_Portfolio"...</p>
+              <p>remote: Loading website illustrations: 172 objects, done.</p>
+              <p>remote: Counting objects: 100% (172/172) done.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div id="finder_window" class="window" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')"><img class="close_btn" src="src/close.svg"></button><p>Finder</p></div>
+          <div id="finder_window_col1" class="finder_nav">
+              <div id="menu" class="menu" >
+                  <a data-page="recent_projects" href="#"><h3> Project Cases</h3> </a>
+                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+  
+                  
+                  <a data-page="web_design" href="#"><h3> Web Design </h3> </a>
+                  <a><p>&#8227; Wordpress</p></a>
+                  <a><p>&#8227; Webpage Development</p></a>
+                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+  
+                  <a data-page="graphic_design" href="#"><h3> Graphic Design </h3> </a>
+                  <a><p>&#8227; Print Media</p></a>
+                  <a><p>&#8227; Posters</p></a>
+                  <a><p>&#8227; Branding</p></a>
+                  <a><p>&#8227; Typography</p></a>
+                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+  
+                  <a data-page="illustration" href="#"><h3> Illustration</h3> </a>
+                  <a><p>&#8227; Murals / Infographics</p></a>
+                  <a><p>&#8227; Stickers</p></a>
+                  <a><p>&#8227; Album Artwork</p></a>
+                  <a><p>&#8227; Digital Art</p></a>
+                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
+              </div>
+  
+              
+          </div>
+          <div id="finder_window_col2">
+             
+              <div id="pages">
+                  <div id="recent_projects" class="page" data-page="recent_projects">
+                    
+                    <p> Click to view a project case.  </p>
+                    <div id="finder_window_col2_recents" > 
+                      <a onclick="toggleOpenClose('baja_project')"><img src="src/desktopFiles/baja.svg"></a>
+                      <a onclick="toggleOpenClose('miller_project')"><img src="src/desktopFiles/millerbrosfile.svg"></a>
+                      <img src="src/desktopFiles/brut.svg">
+                      <a onclick="toggleOpenClose('menu_project')"><img src="src/desktopFiles/menu.svg"></a>
+                      <a onclick="toggleOpenClose('renu_project')"><img src="src/desktopFiles/renu.svg"></a>
+                      <img src="src/desktopFiles/traffic.svg">
+                      <img src="src/desktopFiles/wordpress.svg">
+                      <img src="src/desktopFiles/summitplan.svg">
+                  </div>
+                   
+                  </div>
+                  <div id="web_design" class="page hide" data-page="web_design">
+                              <h1> Web Design </h1>
+                              
+                  </div>
+                  <div id="graphic_design" class="page hide" data-page="graphic_design">
+                              <h1> Graphic Design </h1>
+                  </div>
+                  <div id="illustration" class="page hide" data-page="illustration">
+                              <h1> Illustration </h1>
+                  </div>
+              </div>
+               
+          </div>
+          
+          
+  
+      </div>
+  
+      <div id="testimonial_window1" class="window sticky" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Miller Bros</p></div>
+            
+              <div class="sticky_textbox">
+                  <h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
+                  <button onclick="toggleOpenClose('miller_project')">View Project Case</button>
+              </div>
+      </div>
+  
+      <div id="testimonial_window2" class="window sticky" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
+              <p> big ASS TITTIES!!!!!!!!!!! 
+      </div>
+  
+      <div id="testimonial_window3" class="window sticky" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
+              <p> big ASS TITTIES!!!!!!!!!!! 
+      </div>
+  
+      <div id="miller_project" class="window case" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')"><img class="close_btn" src="src/close.svg"></button><p>miller_bros_stickers.ai</p></div>
+          
+          <div class="case_content">
+              <div class="artboard" id="millerBrosArtboard">
+                  <div class="artboard_left">
+                    <h1>The Miller Bros</h1>
+                    <p style="font-size: 18px;"><em>March '20</em></p>
+                    <p> <b>Services:</b> Graphic Design, Illustration </p>
+                    <p> <b>Deliverables:</b> Logos, Multiple Sticker Designs, Shirt Designs</p>
+                  </div>
+            
+                  <div class="artboard_right">
+                    <p><em>Design a colorful, authentic brand to compliment the adventures of two brothers & their VW Westfalia.</em></p>
+                    <p>Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted organic, hand-drawn illustrations based around the places visited in their blue Volkswagen bus, Lars. These designs were refined and narrowed down for logo use as well as for print production on stickers & t-shirts. </p>
+                  </div>
+        
+                  <div class="artboard_center">
+                    <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+                    </div>
+                </div>
+  
+          </div>
+  
+          </div>
+
+      <div id="baja_project" class="window case" style="display: none;">
+          <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg"></button><p>boulder_baja_logo.ai</p></div>
+          
+          <div class="case_content">
+              <div class="artboard" id="bajaArtboard">
+                  <div class="artboard_left">
+                    <h1>Boulder SAE Baja </h1>
+                    <p style="font-size: 18px;"><em>April '19</em></p>
+                    <p> <b>Services:</b> Illustration </p>
+                    <p> <b>Deliverables:</b> Logo, Vector Art</p>
+                  </div>
+            
+                  <div class="artboard_right">
+                    <p><em>Designing a logo that aligned with the vision of University of Colorado’s Baja Racing Team 
+                      </em></p>
+                    <p>Assigned with the task of building an off-road vehicle to compete in the Society of Automotive Engineers (SAE) Baja competition, the University of Colorado’s racing team aspired to stand out with a custom logo to embellish their finished car and team gear. Pulling inspiration from sports team logos and racing culture, the logo represents the school’s mascot (the Buffs) while utilizing the rough and tough nature of off-road racing. The logo was designed as a vector and was later embroidered onto hats and shirts. 
+                      </p>
+                  </div>
+        
+                  <div class="artboard_center">
+                    <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+                    </div>
+                </div>
+  
+          </div>
+  
         </div>
 
+        <div id="menu_project" class="window case" style="display: none;">
+            <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')"><img class="close_btn" src="src/close.svg"></button><p>West Flanders Menu Rework</p></div>
+            
+            <div class="case_content">
+                <div class="artboard" id="menuArtboard">
+                    <div class="artboard_left">
+                      <h1>West Flanders Brewing Company </h1>
+                      <p style="font-size: 18px;"><em>August '18 - current</em></p>
+                      <p> <b>Services:</b> Graphic Design, Illustration </p>
+                      <p> <b>Deliverables:</b> Print Advertisements, Posters, Menu Redesign, Mural, Brand Development</p>
+                    </div>
+              
+                    <div class="artboard_right">
+                      <p><em>Using existing brand standards, create a clean and consistent graphical style across all content.</em></p>
+                      <p>Located in Boulder on Pearl Street, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic. Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content, while still utilizing pre-established colors and typography. I drew inspiration from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line strokes that mimicked the various chalkboard murals around the brewery. </p>
+                    </div>
+          
+                    <div class="artboard_center">
+                      <img src="jpgs/MEG_9757.jpg">
+                    </div>
+                  </div>
+    
+            </div>
+    
+          </div>
+
+          <div id="renu_project" class="window case" style="display: none;">
+              <div class="window_closebar"><button onclick="toggleOpenClose('renu_project')"><img class="close_btn" src="src/close.svg"></button><p>West Flanders Menu Rework</p></div>
+              
+              <div class="case_content">
+                  <div class="artboard" id="renuArtboard">
+                      <div class="artboard_left">
+                        <h1>Renu Cosmetics </h1>
+                        <p style="font-size: 18px;"><em>December '18</em></p>
+                        <p> <b>Services:</b> Graphic Design, Illustration </p>
+                        <p> <b>Deliverables:</b> Logo, Packaging</p>
+                      </div>
+                
+                      <div class="artboard_right">
+                        <p><em>Design packaging and logos that convey a natural and organic demeanor for a brand of homemade beauty products. </em></p>
+                        <p>Inspired by the healing power of nature, Renu Cosmetics is a natural, hand-crafted line of beauty products by esthetician Paige Johns out of Salt Lake City, Utah. Inspired by the short and sweet list of ingredients, I focused on designing a minimalist style to express the simplicity of the products. Thin line drawings of flowers paired with simple and concise product details allowed the product to emanate a home-made, authentic look.                           </p>
+                      </div>
+            
+                      <div class="artboard_center">
+                        <img src="jpgs/renu_lineup.png">
+                      </div>
+                    </div>
+      
+              </div>
+      
+            </div>
+          
+  </div>
+
         <!-- End Dock -->
+        <div class="dock_container"><div class="dock">
+          
+          <div class="tooltip">   
+            <span class="tooltiptext">All Projects Synopses</span> 
+            <button onclick="toggleOpenClose('finder_window')"><img class="dockIcons tooltip" src="src/finder.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Email Me!</span> 
+            <button onclick="toggleOpenClose('contact_window')"><img class="dockIcons tooltip" src="src/mail.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Testimonials</span> 
+            <button onclick="toggleOpenClose('testimonial_window1'); toggleOpenClose('testimonial_window2'); toggleOpenClose('testimonial_window3')"><img class="dockIcons tooltip" src="src/stickies.svg"></button>
+          </div>
+          <div class="tooltip">   
+            <span class="tooltiptext">Website Stats</span> 
+            <button onclick="toggleOpenClose('terminal_window')"><img class="dockIcons" src="src/terminal.svg"></button>
+          </div>
+          
+          </div>
+        </div>
 
 
+</div>
+     
 
-
-
-
-
-
-</div></div>
-                  
-
-                  
-
-               
-
-
-                </div>
+                
 
                 
 
