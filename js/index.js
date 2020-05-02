@@ -168,14 +168,16 @@ const header = document.querySelector('.headerOverview');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
-// const delay_attribute = document.querySelector('.delay_attribute')
+// const delay_attribute = document.querySelector('.delay_attribute');
 const profile_description = document.querySelector('.profile_description');
-// const toolbar = document.querySelector('.toolbar');
+const toolbar = document.querySelector('.desktop_toolbar');
+// const toolbar_left = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const dock = document.querySelector('.dock');
+const dock = document.querySelector('.dock_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const graphic_design_splash = document.querySelector('#graphic_design_splash');
 
+const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 const loading_bar = document.querySelector('.loading_scroller');
 
@@ -187,21 +189,23 @@ uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 
 
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
-// uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
-// uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
+// uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
+uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-
 uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
-
 uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
+uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 
-uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.92, 0.94, p => (dock.style.opacity =  ((p*50/updatedProgress)) ));
+
+
 
 
 
@@ -210,14 +214,27 @@ function toggleOpenClose(window_id) {
   var tab = document.getElementById(x);
   if (tab.style.display === "block") {
     tab.style.display = "none";
+    
   }
 
   else {
     tab.style.display = "block";
+
   }
+
 }
 
 
+dragElement(document.getElementById("about_window"));
+dragElement(document.getElementById("contact_window"));
+dragElement(document.getElementById("terminal_window"));
+dragElement(document.getElementById("finder_window"));
+dragElement(document.getElementById("testimonial_window1"));
+dragElement(document.getElementById("testimonial_window2"));
+dragElement(document.getElementById("testimonial_window3"));
+dragElement(document.getElementById("miller_project"));
+dragElement(document.getElementById("baja_project"));
+dragElement(document.getElementById("menu_project"));
 
 
 
@@ -264,9 +281,51 @@ function dragElement(elmnt) {
   }
 }
 
+function print_terminal() {
+  $("p.line")
+    .removeClass("line")
+    .addClass("done")
+    .next()
+    .addClass("line")
+    .on("animationend", function () {
+      print_terminal();
+    });
+}
+
+$("#terminal_text p.line").on("animationend", function () {
+  print_terminal();
+});
+
+function changeTime(){
+  const current = new Date();
+  const day = current.getDate();
+
+  const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+  const monthGet = current.getMonth();
+  const monthName = monthArray[monthGet];
+
+  const hours = current.getHours();
+  if (hours > 0 && hours <= 12) {
+    timeValue= "" + hours;
+  } else if (hours > 12) {
+    timeValue= "" + (hours - 12);
+  } else if (hours == 0) {
+    timeValue= "12";
+  }
+
+  if (hours >0 && hours <= 11) {nd="AM";}
+  else {nd = "PM"}
+
+  const minutes = current.getMinutes();
+  if (minutes < 10){space ="0";}
+  else {space=""};
+  document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
+  document.getElementById("timeLogin").innerHTML = "Last Login: "+timeValue+":"+space+minutes+" "+nd;
+
+}
+window.addEventListener("scroll", changeTime);
 
 
-//////////////////
 animate();
 
 
