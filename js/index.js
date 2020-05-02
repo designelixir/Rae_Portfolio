@@ -200,12 +200,19 @@ uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgres
 uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
+
+uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.92, 0.94, p => (dock.style.opacity =  ((p*50/updatedProgress)) ));
 
 
+
+
+uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
 
 
