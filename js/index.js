@@ -311,6 +311,20 @@ $(document).on('click', 'a[href^="#"]', function (event) {
   }, 500);
 });
 
+
+// scroller function for About Window 
+function scrollRight_scroller(direction) {
+  if (direction === 1) {
+    document.getElementById('scroller_container').scrollLeft += 700;
+  }
+  else {
+    document.getElementById('scroller_container').scrollLeft -= 700;
+  }
+  
+};
+
+
+
 function changeTime(){
   const current = new Date();
   const day = current.getDate();

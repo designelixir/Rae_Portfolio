@@ -164,18 +164,42 @@ button:hover {cursor: pointer;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
 
-#about_window {top: 15%; left: 10%;}
-#about_window_content { width: 65vw; max-width: 1400px; max-height: 800px; overflow-y: scroll; contain: content; }
-#about_window_content_col1 {  background: #3A4172; padding-top: 20px; color: white;  }
-#about_window_content_col2 {  overflow: scroll; overflow-x: hidden;}
+#about_window {top: 5%; left: 20%;}
+#about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
+div.scroll {
+  max-width: 700px;
+  background: url('../src/grid.svg') no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  
+}
 
-#about_basic {text-align: center; background: #3A4172; padding-top: 20px; color: white;}
+#scroller_container {scroll-behavior: smooth;}
 
-#about_window_content_col2 >* {padding-left: 30px;}
+div.scroll div {
+  display: inline-block;
+  align-items: top;
+justify-content: center;
+position: relative;
+  
+  
+}
+
+
+
+.about_slide img {max-width: 100%; padding-bottom: 10px;}
+.scroll * {color: black;}
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; }
+
+.about_slide {max-width: 600px; position: relative; top: 0;  top: 0px;  white-space:normal; padding: 50px; }
+
+/* #about_window_conten >* {padding-left: 30px;} */
 .about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
 /* .about_window_mission p {font-size: 24px; line-height: 28px;} */
 .about_window h1 {font-weight: 100; }
-#h1_border {border-left: 5px red solid;}
+
 
 
 #contact_window {top: 10%; left: 50%;}
