@@ -303,6 +303,14 @@ $("#terminal_text p.line").on("animationend", function () {
   print_terminal();
 });
 
+$(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
+
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 500);
+});
+
 function changeTime(){
   const current = new Date();
   const day = current.getDate();

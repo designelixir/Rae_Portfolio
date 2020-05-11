@@ -4,16 +4,18 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Poppins', sans-serif, normal; 
-	
+  font-family: 'fatfrank', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 	
 }
 
-h1 {font-family: 'Poppins', sans-serif, bold; font-size: 36px; line-height: 36px;}
+h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 36px; line-height: 36px;}
 h2 {font-family: 'Poppins', sans-serif, normal; font-size: 24px; line-height: 24px;}
 h3 {font-family: 'Poppins', sans-serif, normal; font-size: 18px; font-weight: 400;}
 h5 {font-family: 'Poppins', sans-serif, thin; font-size: 12px; font-weight: 300; padding-left: 10px; padding-right: 10px;}
 h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 12px; line-height: 12px}
-p {font-family: 'Poppins', sans-serif, normal; font-size: 14px; line-height: 16px;}
+p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.2rem;}
 
 em {font-family: 'Poppins', sans-serif, italic;}
 b {font-family: 'Poppins', sans-serif, 400;}
@@ -54,10 +56,10 @@ a:hover {color: #9aa4bd;}
 
 }
 
+/* max-width: 215px */
+.logo { width: 25%; max-width: 225px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
 
-.logo {width: 20%; max-width: 215px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
-
-.entry_moto {max-width: 550px; width: 45%; padding-top: 6vh; animation: rotateStars 15s infinite; padding-right: 50px; position: absolute;}
+.entry_moto {max-width: 650px; width: 90%; animation: rotateStars 15s infinite;  position: absolute;}
 #spinnyBox { display: flex; justify-content: center; align-items: center; padding-top: 50vh;} 
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 .moto { position: fixed; opacity: 0; top: 0; width: 100%; align-self: center; z-index: 10;}
@@ -163,15 +165,17 @@ button:hover {cursor: pointer;}
 
 
 #about_window {top: 15%; left: 10%;}
-#about_window_content { width: 85vw; max-width: 800px; max-height: 550px; overflow-y: scroll; contain: content; }
+#about_window_content { width: 65vw; max-width: 1400px; max-height: 800px; overflow-y: scroll; contain: content; }
 #about_window_content_col1 {  background: #3A4172; padding-top: 20px; color: white;  }
 #about_window_content_col2 {  overflow: scroll; overflow-x: hidden;}
 
 #about_basic {text-align: center; background: #3A4172; padding-top: 20px; color: white;}
 
 #about_window_content_col2 >* {padding-left: 30px;}
-.about_window_mission {margin: 20px; padding: 20px;background: #f4f4f4;height: 85%; width: 85%; }
-.about_window h1 {font-weight: 100;}
+.about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
+/* .about_window_mission p {font-size: 24px; line-height: 28px;} */
+.about_window h1 {font-weight: 100; }
+#h1_border {border-left: 5px red solid;}
 
 
 #contact_window {top: 10%; left: 50%;}
