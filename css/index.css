@@ -4,16 +4,19 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Poppins', sans-serif, normal; 
-	
+  font-family: 'fatfrank', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 	
 }
 
-h1 {font-family: 'Poppins', sans-serif, bold; font-size: 36px; line-height: 36px;}
-h2 {font-family: 'Poppins', sans-serif, normal; font-size: 24px; line-height: 24px;}
-h3 {font-family: 'Poppins', sans-serif, normal; font-size: 18px; font-weight: 400;}
-h5 {font-family: 'Poppins', sans-serif, thin; font-size: 12px; font-weight: 300; padding-left: 10px; padding-right: 10px;}
-h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 12px; line-height: 12px}
-p {font-family: 'Poppins', sans-serif, normal; font-size: 14px; line-height: 16px;}
+
+h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 2rem; }
+h2 {font-family: 'Poppins', sans-serif, normal; font-size: 1.33rem; }
+h3 {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; font-weight: 400;}
+h5 {font-family: 'Poppins', sans-serif, thin; font-size: 0.66rem; font-weight: 300; padding-left: 10px; padding-right: 10px;}
+h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 0.66rem; }
+p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.25rem;}
 
 em {font-family: 'Poppins', sans-serif, italic;}
 b {font-family: 'Poppins', sans-serif, 400;}
@@ -54,10 +57,10 @@ a:hover {color: #9aa4bd;}
 
 }
 
+/* max-width: 215px */
+.logo { width: 25%; max-width: 225px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
 
-.logo {width: 20%; max-width: 215px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
-
-.entry_moto {max-width: 550px; width: 45%; padding-top: 6vh; animation: rotateStars 15s infinite; padding-right: 50px; position: absolute;}
+.entry_moto {max-width: 650px; width: 90%; animation: rotateStars 15s infinite;  position: absolute;}
 #spinnyBox { display: flex; justify-content: center; align-items: center; padding-top: 50vh;} 
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 .moto { position: fixed; opacity: 0; top: 0; width: 100%; align-self: center; z-index: 10;}
@@ -162,16 +165,42 @@ button:hover {cursor: pointer;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
 
-#about_window {top: 15%; left: 10%;}
-#about_window_content { width: 85vw; max-width: 800px; max-height: 550px; overflow-y: scroll; contain: content; }
-#about_window_content_col1 {  background: #3A4172; padding-top: 20px; color: white;  }
-#about_window_content_col2 {  overflow: scroll; overflow-x: hidden;}
+#about_window {top: 5%; left: 20%;}
+#about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
+div.scroll {
+  max-width: 700px;
+  background: url('../src/grid.svg') no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  
+}
 
-#about_basic {text-align: center; background: #3A4172; padding-top: 20px; color: white;}
+#scroller_container {scroll-behavior: smooth;}
 
-#about_window_content_col2 >* {padding-left: 30px;}
-.about_window_mission {margin: 20px; padding: 20px;background: #f4f4f4;height: 85%; width: 85%; }
-.about_window h1 {font-weight: 100;}
+div.scroll div {
+  display: inline-block;
+  align-items: top;
+justify-content: center;
+position: relative;
+  
+  
+}
+
+
+
+.about_slide img {max-width: 100%; padding-bottom: 10px;}
+.scroll * {color: black;}
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; }
+
+.about_slide {max-width: 600px; position: relative; top: 0;  top: 0px;  white-space:normal; padding: 50px; }
+
+/* #about_window_conten >* {padding-left: 30px;} */
+.about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
+/* .about_window_mission p {font-size: 24px; line-height: 28px;} */
+.about_window h1 {font-weight: 100; }
+
 
 
 #contact_window {top: 10%; left: 50%;}
@@ -200,14 +229,14 @@ button:hover {cursor: pointer;}
 
 .hide { display: none;}
 
-.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center;  }
-.sticky h6 {padding-top: 20%; }
-#testimonial_window1 {top: 40%; right: 15%; background-image: url("../src/quotes1.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window2 {top: 45%; right: 10%; background-image: url("../src/quotes2.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window3 {top: 50%; right: 5%; background-image: url("../src/quotes3.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-.sticky_textbox h5{display: flex; justify-content: center; align-items: center; padding-top: 10%; } 
-.sticky_textbox button {background: #3A4172; color: white; }
-.sticky_textbox button:hover {background:white; color: #3A4172;}
+.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center; display: flex; justify-content: center; align-items: center; }
+
+#testimonial_window1 {top: 45%; left: 50%; background-image: url("../src/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window2 { top: 50%; left: 55%; background-image: url("../src/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
+#testimonial_window3 { top: 55%; left: 60%; background-image: url("../src/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+.sticky h5{padding-left: 30px; padding-right: 30px;  padding-top: 10%; } 
+#sticky_button {background: #3A4172; color: white; }
+#sticky_button button:hover {background:white; color: #3A4172;}
 
 .case {width: 90%; height: 75%; background-image: url('../src/blue_grid.svg'); background-size: cover; background-repeat: no-repeat; overflow: auto;}
 .case_content { contain:content; }
@@ -256,6 +285,10 @@ button:hover {cursor: pointer;}
 @keyframes typing {from { width: 0;}to {width: 100%;}}
 @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
+.fade-out{-webkit-animation:fade-out .25s ease-out both;animation:fade-out .25s ease-out both}
+@-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
+.fade-in{-webkit-animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
 .desktop_container img {width: 8%; position: fixed; max-width: 100px;}
 .desktop_container img:hover {transform: rotate(5deg);}

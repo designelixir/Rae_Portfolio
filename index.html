@@ -5,6 +5,9 @@
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
     <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rkj0ohr.css">
+
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     
@@ -16,7 +19,7 @@
           <div class="headerOverview">
             
             <img class="logo" src="src/designelixir6.svg">
-            <img class="entry_moto" src="src/entry6.svg">
+            <img class="entry_moto" src="src/login_moto_v2.svg">
             <img class="downArrow bounce" width="40" height="40" src="src/arrow.svg" />
                     
             <!-- Socials -->
@@ -95,7 +98,6 @@
           <button onclick="toggleOpenClose('menu_project')"><img style="left: 20%; top:40%;" src="src/desktopFiles/menu.svg"></button>
           <button onclick="toggleOpenClose('renu_project')"><img style="left: 60%; top:60%;" src="src/desktopFiles/renu.svg"></button>
           <button onclick="toggleOpenClose()"><img style="left:35% ; top:65%;" src="src/desktopFiles/traffic.svg"></button>
-          <button onclick="toggleOpenClose()"><img  style="left: 50%; top:10%;" src="src/desktopFiles/civico.svg"></button>
                   
       </div>
   
@@ -106,26 +108,56 @@
       <div class="window_closebar"><button onclick="toggleOpenClose('about_window')"><img class="close_btn" src="src/close.svg"></button><p>About</p></div>
           <div id="about_window_content">
               
-              <div id="about_window_content_col2">
+              <div id="about_window_content">
+                  <div class="scroll" id="scroller_container">
+                      <div id="slide_1" class="about_slide">
+                              <h6><a onclick="scrollRight_scroller(1)"><strong style="float:right;">OUR MISSION &rsaquo;</strong></a> </h6><br><br>
+                              <img src="jpgs/IMG_8290.JPG"> 
+                                  <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate <br>user-experience.</h1>
+                                  
+                                  <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. 
+                                  </p><br>
+                      </div>  
+                      <div id="slide_2" class="about_slide">
+                              <h6><strong><a onclick="scrollRight_scroller(0)"> &lsaquo; ABOUT DESIGN ELIXIR</a></strong> <strong style="float:right;"><a onclick="scrollRight_scroller(1)">ABOUT MEGAN &rsaquo;</a></strong></h6>
+                                  <h1>We specialize in catering our artistic tools to your creative vision.</h1>
+                                  
+                                  <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                                  <br><br>
+                                  <h1>Skills &amp; Services</h1>
+                                  <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                          <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                          Branding Materials • Illustrations • Product Photos • Murals <br>
+                                          Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                          
+                                      Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                  </p>
+                                  
+                                  <p class="blu"><strong>Web Development</strong><br>
+                                      <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                      Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                      E-Commerce • SEO </i> <br><br>
+                                     
+                                      From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                      web presence that covers all the bases. 
+                              </p><br>
+                              
+                                  
+              
+                      </div>  
+                      <div id="slide_3" class="about_slide">
+                              <h6 style="float: left;"><strong><a onclick="scrollRight_scroller(0)">&lsaquo; OUR MISSION</a></strong> </h6>
+                              <img src="jpgs/decorated_portrait.jpg"> 
+                                  <h1>A lil' something about Megan:</h1>
+                                  
+                                  <p class="blu"> 
+                                          Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                  </p>
+                                  <br><br>
+                      </div>  
+              </div>
 
-                  <div id="about_basic">
-                      <img src="src/portrait.svg">
-                      <h2> Megan Rae Byers </h2>
-                      <a href="mailto:megan@designelixir.studio"><p>megan@designelixir.studio</p></a><br><br>
-                  </div>
-  
-                  <div class="about_window_mission" style="height: 100%;">
-                      <em style="font-size: 28px;">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user experience.</em> <br>
-                      <img style="width: 100%;" src="src/jpegs/artistShot.png">
-                      <p>I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables us to build powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. </p>
-                      <h1>Our Mission</h1>
-                      <p>The foundation of Design Elixir is a combination of the lifelong insatiable urge to create while wielding the infinite power of computers. </p>
-                      <p>We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic - we specialize in catering our artistic tools to your creative vision. The foundation of our work is focused on functionality and excellent user experience, and framed by an authentic, one of a kind approach expressing your ideality to the world. Through all mediums, Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. Like you!</p>
-                      <h6>A Lil Something About Megan:</h6>
-                      <img src="jpgs/portrait.jpg" style="width: 50%;">
-                      <p>Megan Byers strives to learn a little something about everything, sometimes to a point where she loses sleep obsessively watching how-tos and learning new skills. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. Megan finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind,  the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
-                        </p>
-                    </div>
+              
   
                   
               
@@ -204,12 +236,10 @@
                     <div id="finder_window_col2_recents" > 
                       <a onclick="toggleOpenClose('baja_project')"><img src="src/desktopFiles/baja.svg"></a>
                       <a onclick="toggleOpenClose('miller_project')"><img src="src/desktopFiles/millerbrosfile.svg"></a>
-                      <img src="src/desktopFiles/brut.svg">
                       <a onclick="toggleOpenClose('menu_project')"><img src="src/desktopFiles/menu.svg"></a>
                       <a onclick="toggleOpenClose('renu_project')"><img src="src/desktopFiles/renu.svg"></a>
                       <img src="src/desktopFiles/traffic.svg">
                       <img src="src/desktopFiles/wordpress.svg">
-                      <img src="src/desktopFiles/summitplan.svg">
                   </div>
                    
                   </div>
@@ -235,19 +265,26 @@
           <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Miller Bros</p></div>
             
               <div class="sticky_textbox">
-                  <h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
-                  <button onclick="toggleOpenClose('miller_project')">View Project Case</button>
+                  <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
               </div>
       </div>
   
       <div id="testimonial_window2" class="window sticky" style="display: none;">
           <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
-              <p> big ASS TITTIES!!!!!!!!!!! 
+             <br> <h5> <em>Megan was again extremely responsive in listening to my objectives and
+                  redesigning that page in my site. I recommend Megan as a creative, collaborative, and
+                  professional young web designer and I’m so delighted with both my website and the technical
+                  capacity I gained by working with Megan.</em> </h5><br><br>
       </div>
   
       <div id="testimonial_window3" class="window sticky" style="display: none;">
           <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
-              <p> big ASS TITTIES!!!!!!!!!!! 
+             <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
+                from an out-of-date website and social media we inherited from former owners.  
+                From great concept and design, tech fixes and consulting, art, photography, and helping 
+                get an online shopping platform built. I’ve never seen someone be so engaged and work so 
+                hard, and recommend her for any sized project! </em>  </h5>
+
       </div>
   
       <div id="miller_project" class="window case" style="display: none;">
@@ -268,7 +305,8 @@
                   </div>
         
                   <div class="artboard_center">
-                    <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
+                    <br>
+                   <img src="jpgs/miller_project/miller_poster.png">
                     </div>
                 </div>
   

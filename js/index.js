@@ -220,13 +220,14 @@ function toggleOpenClose(window_id) {
   var x = window_id.toString();
   var tab = document.getElementById(x);
   if (tab.style.display === "block") {
+    tab.style.animation = "fade-out .25s ease-out both";
     tab.style.display = "none";
     
   }
 
   else {
     tab.style.display = "block";
-
+    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
   }
 
 }
@@ -302,6 +303,28 @@ function print_terminal() {
 $("#terminal_text p.line").on("animationend", function () {
   print_terminal();
 });
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
+
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 500);
+});
+
+
+// scroller function for About Window 
+function scrollRight_scroller(direction) {
+  if (direction === 1) {
+    document.getElementById('scroller_container').scrollLeft += 700;
+  }
+  else {
+    document.getElementById('scroller_container').scrollLeft -= 700;
+  }
+  
+};
+
+
 
 function changeTime(){
   const current = new Date();
