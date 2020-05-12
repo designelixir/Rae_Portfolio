@@ -220,13 +220,14 @@ function toggleOpenClose(window_id) {
   var x = window_id.toString();
   var tab = document.getElementById(x);
   if (tab.style.display === "block") {
+    tab.style.animation = "fade-out .25s ease-out both";
     tab.style.display = "none";
     
   }
 
   else {
     tab.style.display = "block";
-
+    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
   }
 
 }

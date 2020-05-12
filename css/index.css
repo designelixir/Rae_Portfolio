@@ -10,12 +10,13 @@ body {
 	
 }
 
-h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 36px; line-height: 36px;}
-h2 {font-family: 'Poppins', sans-serif, normal; font-size: 24px; line-height: 24px;}
-h3 {font-family: 'Poppins', sans-serif, normal; font-size: 18px; font-weight: 400;}
-h5 {font-family: 'Poppins', sans-serif, thin; font-size: 12px; font-weight: 300; padding-left: 10px; padding-right: 10px;}
-h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 12px; line-height: 12px}
-p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.2rem;}
+
+h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 2rem; }
+h2 {font-family: 'Poppins', sans-serif, normal; font-size: 1.33rem; }
+h3 {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; font-weight: 400;}
+h5 {font-family: 'Poppins', sans-serif, thin; font-size: 0.66rem; font-weight: 300; padding-left: 10px; padding-right: 10px;}
+h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 0.66rem; }
+p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.25rem;}
 
 em {font-family: 'Poppins', sans-serif, italic;}
 b {font-family: 'Poppins', sans-serif, 400;}
@@ -228,14 +229,14 @@ position: relative;
 
 .hide { display: none;}
 
-.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center;  }
-.sticky h6 {padding-top: 20%; }
-#testimonial_window1 {top: 40%; right: 15%; background-image: url("../src/quotes1.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window2 {top: 45%; right: 10%; background-image: url("../src/quotes2.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window3 {top: 50%; right: 5%; background-image: url("../src/quotes3.svg"); background-size: 100% 80%; background-position: 0% 60%; background-repeat: no-repeat;}
-.sticky_textbox h5{display: flex; justify-content: center; align-items: center; padding-top: 10%; } 
-.sticky_textbox button {background: #3A4172; color: white; }
-.sticky_textbox button:hover {background:white; color: #3A4172;}
+.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center; display: flex; justify-content: center; align-items: center; }
+
+#testimonial_window1 {top: 45%; left: 50%; background-image: url("../src/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window2 { top: 50%; left: 55%; background-image: url("../src/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
+#testimonial_window3 { top: 55%; left: 60%; background-image: url("../src/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+.sticky h5{padding-left: 30px; padding-right: 30px;  padding-top: 10%; } 
+#sticky_button {background: #3A4172; color: white; }
+#sticky_button button:hover {background:white; color: #3A4172;}
 
 .case {width: 90%; height: 75%; background-image: url('../src/blue_grid.svg'); background-size: cover; background-repeat: no-repeat; overflow: auto;}
 .case_content { contain:content; }
@@ -284,6 +285,10 @@ position: relative;
 @keyframes typing {from { width: 0;}to {width: 100%;}}
 @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
+.fade-out{-webkit-animation:fade-out .25s ease-out both;animation:fade-out .25s ease-out both}
+@-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
+.fade-in{-webkit-animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
 .desktop_container img {width: 8%; position: fixed; max-width: 100px;}
 .desktop_container img:hover {transform: rotate(5deg);}
