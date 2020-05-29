@@ -12,7 +12,7 @@
 
     
     <body>
-      <canvas id="viewport"></canvas> 
+      <canvas id="viewport" width="100%" height="100%"></canvas> 
         <div class="page-wrapper" >
           
           <!-- Begin Header -->
@@ -70,11 +70,11 @@
             </div>
             
             <div class="desktop_toolbar">
+                <a href="#" style="float: left; padding-left: 10px;"><p><b> Design Elixir</b></p></a>
                 <div id="desktop_toolbar_left"> 
-                    <a href="#"><p><b>Design Elixir</b></p></a>
-                    <button onclick="toggleOpenClose('about_window')"><p>About</p></button>
-                    <a onclick="toggleOpenClose('contact_window')"><p>Contact</p></a>
-                    <a onclick="toggleOpenClose('notification')"><p>Store</p></a>
+                    <button onclick="toggleOpenClose('about_window')"><p class="toolbar_hide">About</p></button>
+                    <a onclick="toggleOpenClose('contact_window')"><p class="toolbar_hide">Contact</p></a>
+                    <a onclick="toggleOpenClose('notification')"><p class="toolbar_hide">Store</p></a>
                     
                 </div>
                 <div id="desktop_toolbar_right">
@@ -296,18 +296,41 @@
                     <h1>The Miller Bros</h1>
                     <p style="font-size: 18px;"><em>March '20</em></p>
                     <p> <b>Services:</b> Graphic Design, Illustration </p>
-                    <p> <b>Deliverables:</b> Logos, Multiple Sticker Designs, Shirt Designs</p>
+                    <p> <b>Deliverables:</b> Logo, Sticker Designs</p>
+                    
                   </div>
             
                   <div class="artboard_right">
-                    <p><em>Design a colorful, authentic brand to compliment the adventures of two brothers & their VW Westfalia.</em></p>
-                    <p>Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted organic, hand-drawn illustrations based around the places visited in their blue Volkswagen bus, Lars. These designs were refined and narrowed down for logo use as well as for print production on stickers & t-shirts. </p>
+                    <h2><em>Design a colorful, authentic brand to compliment the adventures of two brothers & their VW Westfalia.</em></h2>
+                    <p>Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted organic, hand-drawn illustrations based around the places visited in their blue Volkswagen bus, Lars. </p>
+                    <br>
+                    
                   </div>
         
                   <div class="artboard_center">
                     <br>
-                   <img src="jpgs/miller_project/miller_poster.png">
+                      <img style="width: 80%;  float: left;" src="src/cases/cam_spence.png">
+                      <img style="width: 17%; float: right;" src="src/cases/miller_photo_stack.png">
+
+                  </div>
+
+                      <div class="artboard_center">
+                      <p style="color: gray;">Camden and Spencer Miller sit in their baby blue Volkswagen Westfalia, Lars.</p>
+  
+                    <br><br><br>
+                    <h2><em>The Miller Bros requested a bright color palette that utilized flowers, mountains and other natural elements from their travels.</em> </h2>
+                    <img src="src/cases/miller_sticker_layout.png">
+                    <p style="color: gray;"></p>
+                    
+                    <p style="width: 25%; float: left;">
+                        Testimonial<br><br>
+                        <em style="color: gray;">"Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! We will be using Design Elixir for any design needs in the future, and wholeheartedly recommend her to anyone looking to add a distinct character to their brand.
+                            "</em>
+                    </p>        
+                    <img style="float: right; width: 40%;"src="src/cases/miller_diamond_stickers.gif">
                     </div>
+
+                    
                 </div>
   
           </div>
@@ -333,9 +356,7 @@
                       </p>
                   </div>
         
-                  <div class="artboard_center">
-                    <p>Lorem ipsum dolor sit amet, vix no novum legere adversarium, ea mel ludus graece eleifend. Atqui eligendi reformidans id est, id modo alterum euripidis sit. Eam ei ullum maluisset. Epicuri assentior sit ex, eos ex delenit dolorem recteque.</p>
-                    </div>
+                  
                 </div>
   
           </div>
