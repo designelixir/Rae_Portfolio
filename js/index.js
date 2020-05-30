@@ -1,32 +1,10 @@
-// (function(global) {
 
   var canvas = document.getElementById("viewport");
-//   gl = glUtils.checkWebGL(canvas);
-  
-//   function resizer(){
-  
-//     //callback for when screen is resized 
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight; 
-//     gl.viewport(0,0,gl.canvas.width, gl.canvas.height);
-//     console.log('window resized');
-    
-//   }
-  
-//   window.addEventListener('resize', resizer);
-//   resizer();
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
 
 
 
-// })(window || this);
-
-
- 
-/* Rresize the canvas to occupy the full page, 
-   by getting the widow width and height and setting it to canvas*/
- 
-canvas.width  = window.innerWidth;
-canvas.height = window.innerHeight;
 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
@@ -90,7 +68,7 @@ var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/doorway2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v16/src/doorway_final.png')
 });
 
 doorway.transparent=true;
@@ -168,14 +146,16 @@ const header = document.querySelector('.headerOverview');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
-// const delay_attribute = document.querySelector('.delay_attribute')
+// const delay_attribute = document.querySelector('.delay_attribute');
 const profile_description = document.querySelector('.profile_description');
-// const toolbar = document.querySelector('.toolbar');
+const toolbar = document.querySelector('.desktop_toolbar');
+const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const dock = document.querySelector('.dock');
+const dock = document.querySelector('.dock_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const graphic_design_splash = document.querySelector('#graphic_design_splash');
 
+const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 const loading_bar = document.querySelector('.loading_scroller');
 
@@ -187,23 +167,28 @@ uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 
 
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
-// uos(0.38, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
+
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
-// uos(0.44, 0.46, p => (delay_attribute.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
+// uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
+uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-
 uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
 
 uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
+uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 
-uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.92, 0.94, p => (dock.style.opacity =  ((p*50/updatedProgress)) ));
+
+
 
 
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
@@ -215,15 +200,29 @@ function toggleOpenClose(window_id) {
   var x = window_id.toString();
   var tab = document.getElementById(x);
   if (tab.style.display === "block") {
+    tab.style.animation = "fade-out .25s ease-out both";
     tab.style.display = "none";
+    
   }
 
   else {
     tab.style.display = "block";
+    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
   }
+
 }
 
 
+dragElement(document.getElementById("about_window"));
+dragElement(document.getElementById("contact_window"));
+dragElement(document.getElementById("terminal_window"));
+dragElement(document.getElementById("finder_window"));
+dragElement(document.getElementById("testimonial_window1"));
+dragElement(document.getElementById("testimonial_window2"));
+dragElement(document.getElementById("testimonial_window3"));
+dragElement(document.getElementById("miller_project"));
+dragElement(document.getElementById("baja_project"));
+dragElement(document.getElementById("menu_project"));
 
 
 
@@ -270,6 +269,43 @@ function dragElement(elmnt) {
   }
 }
 
+function print_terminal() {
+  $("p.line")
+    .removeClass("line")
+    .addClass("done")
+    .next()
+    .addClass("line")
+    .on("animationend", function () {
+      print_terminal();
+    });
+}
+
+$("#terminal_text p.line").on("animationend", function () {
+  print_terminal();
+});
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
+
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 500);
+});
+
+
+// scroller function for About Window 
+function scrollRight_scroller(direction) {
+  if (direction === 1) {
+    document.getElementById('scroller_container').scrollLeft += 700;
+  }
+  else {
+    document.getElementById('scroller_container').scrollLeft -= 700;
+  }
+  
+};
+
+
+
 function changeTime(){
   const current = new Date();
   const day = current.getDate();
@@ -293,16 +329,13 @@ function changeTime(){
   const minutes = current.getMinutes();
   if (minutes < 10){space ="0";}
   else {space=""};
-  document.getElementById("time").innerHTML = monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
-  document.getElementById("timeLogin").innerHTML = "Last Login: " + monthName +" "+ day+" - "+timeValue+":"+space+minutes+" "+nd+" MST";
+  document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
+  document.getElementById("timeLogin").innerHTML = "Last Login: "+timeValue+":"+space+minutes+" "+nd;
 
 }
 window.addEventListener("scroll", changeTime);
 
 
-
-
-//////////////////
 animate();
 
 
@@ -313,3 +346,7 @@ function updateCamera(ev) {
 }
 
 window.addEventListener("scroll", updateCamera);
+window.addEventListener("resize", function resizeWEBGL(){
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
