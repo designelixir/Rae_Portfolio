@@ -1,32 +1,10 @@
-// (function(global) {
 
   var canvas = document.getElementById("viewport");
-//   gl = glUtils.checkWebGL(canvas);
-  
-//   function resizer(){
-  
-//     //callback for when screen is resized 
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight; 
-//     gl.viewport(0,0,gl.canvas.width, gl.canvas.height);
-//     console.log('window resized');
-    
-//   }
-  
-//   window.addEventListener('resize', resizer);
-//   resizer();
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
 
 
 
-// })(window || this);
-
-
- 
-/* Rresize the canvas to occupy the full page, 
-   by getting the widow width and height and setting it to canvas*/
- 
-canvas.width  = window.innerWidth;
-canvas.height = window.innerHeight;
 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
@@ -90,7 +68,7 @@ var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v11/pngSRC/doorway2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/v16/src/doorway_final.png')
 });
 
 doorway.transparent=true;
@@ -171,7 +149,7 @@ const profile = document.querySelector('.profile');
 // const delay_attribute = document.querySelector('.delay_attribute');
 const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
-// const toolbar_left = document.querySelector('#desktop_toolbar_left');
+const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
 const dock = document.querySelector('.dock_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
@@ -190,6 +168,8 @@ uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
+
 uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 // uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
@@ -366,3 +346,7 @@ function updateCamera(ev) {
 }
 
 window.addEventListener("scroll", updateCamera);
+window.addEventListener("resize", function resizeWEBGL(){
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+});

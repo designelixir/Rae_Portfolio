@@ -9,7 +9,18 @@ body {
   font-style: normal;
 	
 }
+/* 
+html, body {
+  width: 100%; 
+  height: 100%; 
+  margin: 0; 
+}
 
+canvas {
+  width: 100vw; 
+  height: 100vh; 
+  display: block;
+} */
 
 h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 2rem; }
 h2 {font-family: 'Poppins', sans-serif, normal; font-size: 1.33rem; }
@@ -117,9 +128,12 @@ a:hover {color: #9aa4bd;}
 .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
-.desktop {background-image: url("../src/wallpaper.svg"); top: 50px; background-color: #47578a; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%; position: fixed; z-index: 0;}
+.desktop {background-image: url("../src/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
 
 .desktopToolbar {width: 100%; background: #2c2c2c; height: 50px; top: 0; color: #f4f4f4; z-index: 100000; opacity: 0;}
+.desktop_toolbar_left {opacity: 0;}
+
+
 
 .dock_container {display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0;}
 
@@ -239,47 +253,45 @@ position: relative;
 #sticky_button button:hover {background:white; color: #3A4172;}
 
 .case {width: 90%; height: 75%; background-image: url('../src/blue_grid.svg'); background-size: cover; background-repeat: no-repeat; overflow: auto;}
-.case_content { contain:content; }
+.case_content { contain:content; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain;}
 
 
-.artboard {
-  background-color: #e8e8e8; 
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 3%;
-  text-align: left;
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction:row;
-  justify-content:flex-start;
-  align-items:stretch;
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
-  padding-left: 40px;
-  padding-right: 20px;
-  padding-top: 10px;
- 
-}
+.artboard{height: 650px; padding: 50px; }
 
-.artboard_left {order:1;  flex-basis:100%; padding-right: 30px; text-align: left;}
-.artboard_right {order:2; flex-basis:100%; padding-top: 10px; }
-.artboard_center {width: 95%; order: 3; contain: content;}
-.artboard_center img {width: 100%;}
-
-.artboard a {color: black;}
+.artboard_center {width: 100%;}
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; }
+.artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
+.artboard h1 {font-size: 42px; }
+.artboard_date {font-style: italic; font-size: 20px;}
+.artboard img { box-shadow: 5px 5px 5px grey; margin: 1%;}
+.caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
+.artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
+.artboard_left, .artboard_even_left {float: left;}
+.artboard_right, .artboard_even_right {float: right;}
+.artboard_even_right, .artboard_even_left {margin: 50px 0px 50px 0px;}
+.artboard_even_right p {text-align: center; padding: 0px 30px 0px 30px}
+.artboard_nav {padding-bottom: 100px;}
 
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px ) {
+  .artboard_left { width: 30%; }
+  .artboard_right {  right: 0; width: 63%;} 
+  .artboard_even_left {width: 45%;}
+  .artboard_even_right {right: 0; width: 50%; margin-top: 100px;}  
+
+}
 
 @media screen and (min-width:600px) {
   .container {flex-wrap:nowrap;} 
-  .artboard_left {flex-basis:30%; order:1;}
-  .artboard_right {flex-basis:65%; order:2;}
-  .artboard_center { order: 3;}
+  
 }
 
 /* for large screens */
 @media all and (min-width: 800px) { 
     #about_window_content > *{ flex: 1 auto;}  /* We tell both sidebars to share a row */
     .about_links {text-align:center;}
+    
     
 }   
 @keyframes typing {from { width: 0;}to {width: 100%;}}
