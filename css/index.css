@@ -41,7 +41,7 @@ a:hover {color: #9aa4bd;}
 #container {height: 4000vh; position: fixed;}
 .downArrow{z-index: 12; bottom: 1%; right: 50%; height: 20px; position: fixed;}
 
-.social_banner {width: 175px; left: 0px; position: absolute; bottom: -25px; padding-bottom: 8%; z-index: 20;}
+.social_banner {width: 225px; left: 0px; position: absolute; bottom: -25px; padding-bottom: 8%; z-index: 20;}
 #social_banners {display: none;}
 .social_banner:hover {transform: rotate(5deg); cursor: pointer;}
 .social_banner_small {position: absolute; width: 150px; left: 0px; padding-bottom: 8%; bottom: 5%;}
