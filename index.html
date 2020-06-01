@@ -42,10 +42,10 @@
               <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
             </div>
 <br>
-            <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner social_banner_small" src="src/socials.svg"></button>
+            <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner social_banner_small" src="src/socials.svg" alt="open social media menu"></button>
 
             <!-- Shortcuts -->
-            <button onclick="toggleOpenClose('shortcut_banners')"><img class="shortcut_banner" src="src/shortcuts.svg"></button>
+            <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img class="shortcut_banner" src="src/shortcuts.svg" alt="open shortcuts menu"></button>
             <div id="shortcut_banners">
               <a><img class="shortcut_banner_small" style="top: 120px;"src="src/about_banner.svg" alt="About Shortcut"></a>
               <a><img class="shortcut_banner_small" style="top: 180px;"src="src/work_banner.svg" alt="Work Shortcut"></a>
@@ -89,10 +89,10 @@
                     
                 </div>
                 <div id="desktop_toolbar_right">
-                    <a href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank" aria-label="Open Megan's LinkedIn"><img src= "src/linkedIn_simple.svg"></a>
-                    <a  href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank" aria-label="Open Megan's Instagram"><img src= "src/instagram_simple.svg"></a>
-                    <a  href="https://github.com/coloradical" rel='noopener' target="_blank" aria-label="Open Megan's Github"><img src= "src/github_simple.svg"></a>
-                    <a  href="https://unsplash.com/@designelixir" rel='noopener' target="_blank" aria-label="Open Megan's Unsplash"><img src= "src/unsplash_simple.svg"></a>
+                    <a href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank" aria-label="Open Megan's LinkedIn"><img src= "src/linkedIn_simple.svg" alt="linked in icon"></a>
+                    <a  href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank" aria-label="Open Megan's Instagram"><img src= "src/instagram_simple.svg" alt="instagram icon"></a>
+                    <a  href="https://github.com/coloradical" rel='noopener' target="_blank" aria-label="Open Megan's Github"><img src= "src/github_simple.svg" alt="github icon"></a>
+                    <a  href="https://unsplash.com/@designelixir" rel='noopener' target="_blank" aria-label="Open Megan's Unsplash"><img src= "src/unsplash_simple.svg" alt="unsplash icon"></a>
                     <p id="time">time</p>
                 </div>
         
@@ -104,26 +104,26 @@
     <div class="desktop"> 
       
       <div class="desktop_container">
-          <button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktopFiles/miller_bros_icon.svg"></button>
-          <button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktopFiles/boulder_baja_icon.svg"></button>
-          <button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktopFiles/west_flanders_icon.svg"></button>
-          <button onclick="toggleOpenClose('renu_project')" aria-label="open/close Renu Project"><img style="left: 60%; top:60%;" src="src/desktopFiles/renu_icon.svg"></button>
-          <button onclick="toggleOpenClose()" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktopFiles/killa_nilla_icon.svg"></button>
+          <button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktopFiles/miller_bros_icon.svg" alt='Miller Bros Project Icon'></button>
+          <button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktopFiles/boulder_baja_icon.svg" alt='Boulder Baja Project Icon'></button>
+          <button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktopFiles/west_flanders_icon.svg" alt='West Flanders Project Icon'></button>
+          <button onclick="toggleOpenClose('renu_project')" aria-label="open/close Renu Project"><img style="left: 60%; top:60%;" src="src/desktopFiles/renu_icon.svg" alt="Renu Beauty Project Icon"></button>
+          <button onclick="toggleOpenClose()" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktopFiles/killa_nilla_icon.svg" alt="Killa Nilla Project Icon"></button>
                   
       </div>
   
       
-      <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/notif2.svg"></a>
+      <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/notif2.svg" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>
       
       <div id="about_window" class="window" style="display: none;">
-      <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>About</p></div>
+      <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
           <div id="about_window_content">
               
               <div id="about_window_content">
                   <div class="scroll" id="scroller_container">
                       <div id="slide_1" class="about_slide">
                               <h6><a onclick="scrollRight_scroller(1)"><strong style="float:right;">OUR MISSION &rsaquo;</strong></a> </h6><br><br>
-                              <img src="src/IMG_8290.JPG"> 
+                              <img src="src/IMG_8290.JPG" alt="Portrait of Megan"> 
                                   <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
                                   
                                   <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. 
@@ -158,7 +158,7 @@
                       </div>  
                       <div id="slide_3" class="about_slide">
                               <h6 style="float: left;"><strong><a onclick="scrollRight_scroller(0)">&lsaquo; OUR MISSION</a></strong> </h6>
-                              <img src="src/decorated_portrait.jpg"> 
+                              <img src="src/decorated_portrait.jpg" alt="close up of Megan"> 
                                   <h1>A lil' something about Megan:</h1>
                                   
                                   <p class="blu"> 
@@ -177,7 +177,7 @@
       </div>
   
       <div id="contact_window" class="window" style="display: none;">
-      <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>Contact Us</p></div>
+      <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Us</p></div>
       
       <div id="contact_window_content">
           <p> <b>To:</b> yourbeautifulface@email.com</p> <hr>
@@ -195,7 +195,7 @@
       </div>
   
       <div id="terminal_window" class="window" style="display: none;">
-      <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>About This Site</p></div>
+      <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
       
           <div class="terminal">
               <div id="terminal_text">
@@ -209,7 +209,7 @@
       </div>
   
       <div id="finder_window" class="window" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>Finder</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
           <div id="finder_window_col1" class="finder_nav">
               <div id="menu" class="menu" >
                   <a data-page="recent_projects" href="#"><h3> Project Cases</h3> </a>
@@ -273,7 +273,7 @@
       </div>
   
       <div id="testimonial_window1" class="window sticky" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Miller Bros</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
             
               <div class="sticky_textbox">
                   <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
@@ -281,7 +281,7 @@
       </div>
   
       <div id="testimonial_window2" class="window sticky" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Debra Austin</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')"aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
              <br> <h5> <em>Megan was again extremely responsive in listening to my objectives and
                   redesigning that page in my site. I recommend Megan as a creative, collaborative, and
                   professional young web designer and I’m so delighted with both my website and the technical
@@ -289,7 +289,7 @@
       </div>
   
       <div id="testimonial_window3" class="window sticky" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>Testimonial - Bob Mathes</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
              <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
                 from an out-of-date website and social media we inherited from former owners.  
                 From great concept and design, tech fixes and consulting, art, photography, and helping 
@@ -299,7 +299,7 @@
       </div>
   
       <div id="miller_project" class="window case" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>miller_bros_stickers.ai</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miller_bros_stickers.ai</p></div>
           <div class="case_content">
             <div class="artboard">
 
@@ -355,7 +355,7 @@
   
 
       <div id="baja_project" class="window case" style="display: none;">
-          <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg"></button><p>boulder_baja_logo.ai</p></div>
+          <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>boulder_baja_logo.ai</p></div>
           
           <div class="case_content">
               <div class="artboard" id="bajaArtboard">
@@ -381,7 +381,7 @@
         </div>
 
         <div id="menu_project" class="window case" style="display: none;">
-            <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>West Flanders Menu Rework</p></div>
+            <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>West Flanders Menu Rework</p></div>
             
             <div class="case_content">
                 <div class="artboard" id="menuArtboard">
@@ -407,7 +407,7 @@
           </div>
 
           <div id="renu_project" class="window case" style="display: none;">
-              <div class="window_closebar"><button onclick="toggleOpenClose('renu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg"></button><p>West Flanders Menu Rework</p></div>
+              <div class="window_closebar"><button onclick="toggleOpenClose('renu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>West Flanders Menu Rework</p></div>
               
               <div class="case_content">
                   <div class="artboard" id="renuArtboard">
