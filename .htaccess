@@ -50,6 +50,30 @@ ExpiresDefault "access plus 2 days"
   </FilesMatch>
 </IfModule>
 
+# The following header prevents modification of your code over 3G on some European providers
+# This is the official 'bypass' suggested by O2 in the UK
+
+# <IfModule mod_headers.c>
+# Header set Cache-Control "no-transform"
+# </IfModule>
+
+
+
+# ----------------------------------------------------------------------
+# ETag removal
+# ----------------------------------------------------------------------
+
+# FileETag None is not enough for every server.
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+
+# Since we're sending far-future expires, we don't need ETags for
+# static content.
+#   developer.yahoo.com/performance/rules.html#etags
+FileETag None
+
+
 
 # ----------------------------------------------------------------------
 # Proper MIME type for all files
