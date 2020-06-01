@@ -1,9 +1,7 @@
 
-  var canvas = document.getElementById("viewport");
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-
+var canvas = document.getElementById("viewport");
+canvas.width  = window.innerWidth;
+canvas.height = window.innerHeight;
 
 
 let scene = new THREE.Scene();
