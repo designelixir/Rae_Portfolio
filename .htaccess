@@ -134,9 +134,22 @@ AddType application/x-shockwave-flash       swf
 
 # If you don't use filenames to version, lower the CSS  and JS to something like
 #   "access plus 1 week" or so.
+ExpiresActive On
+ExpiresByType image/gif A2592000
+ExpiresByType image/jpeg A2592000
+ExpiresByType image/jpg A2592000
+ExpiresByType image/png A2592000
+ExpiresByType image/x-icon A2592000
+ExpiresByType text/css A86400
+ExpiresByType text/javascript A86400
+ExpiresByType application/x-shockwave-flash A2592000
+#
+<FilesMatch "\.(gif¦jpe?g¦png¦ico¦css¦js¦swf)$">
+Header set Cache-Control "public"
+</FilesMatch> 
 
 <IfModule mod_expires.c>
-  ExpiresActive on
+  ExpiresActive On
 
 # Perhaps better to whitelist expires rules? Perhaps.
   ExpiresDefault                          "access plus 1 month"
