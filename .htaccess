@@ -182,9 +182,9 @@ AddType application/x-shockwave-flash       swf
 # Be aware of possible disadvantages of this setting. Turn on if you serve a lot of
 # static content.
 
-# <IfModule mod_headers.c>
-#   Header set Connection Keep-Alive
-# </IfModule>
+<IfModule mod_headers.c>
+   Header set Connection Keep-Alive
+ </IfModule>
 
 # Block access to "hidden" directories or files whose names begin with a period. This
 # includes directories used by version control systems such as Subversion or Git.
