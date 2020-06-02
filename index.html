@@ -2,20 +2,18 @@
     <head>
       <title>Design Elixir - A Creative Studio by Megan Byers</title>
       <meta charset="utf-8">
-      <meta http-equiv="last-modified" content="Sat, 30 May 2020 04:16:46 MST " />
-      <meta http-equiv="cache-control" content="Private" />
-      <meta http-equiv="Expires" content="600" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Portfolio for Megan Rae Byers's Design Elixir Studio."/>
 
-      <script type="text/plain" src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
-      <script type="text/plain" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>      <script type="text/plain" src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
-      <script type="text/plain" src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
+      <script type="text/javascript" src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>      
+      <script type="text/javascript" src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
+      <script type="text/javascript" src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
      
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" rel="preload" href="https://use.typekit.net/rkj0ohr.css"> 
-      <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" type="text/css" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="https://use.typekit.net/rkj0ohr.css"> 
+      <link rel="preload" href="css/index.css" as="style" type="text/css"/>
 
     </head>
     <body>
@@ -32,21 +30,21 @@
             
 
             <div id="social_banners"> 
-                <a onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style="bottom: 290px; width: 150px; left: 35px;" src="src/close_banner2.svg"></a>
-                 <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 235px;" src="src/instagram_banner.svg"></a>
-                <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style=" bottom: 175px;" src="src/unsplash_banner.svg"></a>
-                <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 120px;" src="src/github_banner.svg"></a>
-                <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
+                <a onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style="bottom: 290px; width: 150px; left: 35px;" src="src/close_banner2.svg" alt="toggle open close social media menu"></a>
+                 <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 235px;" src="src/instagram_banner.svg" alt="instagram"></a>
+                <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style="bottom: 175px;" src="src/unsplash_banner.svg" alt="unsplash"></a>
+                <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 120px;" src="src/github_banner.svg" alt="github"></a>
+                <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;" src="src/linkedin_banner.svg" alt="linkedin"></a>
           </div>
           <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner" src="src/socials.svg" alt="open social media menu"></button>
             <!-- Shortcuts -->
             <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img class="shortcut_banner" src="src/shortcuts.svg" alt="open shortcuts menu"></button>
             <div id="shortcut_banners">
-              <a><img class="shortcut_banner_small" style="top: 120px;"src="src/about_banner.svg" alt="About Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 180px;"src="src/work_banner.svg" alt="Work Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 235px;"src="src/store_banner.svg" alt="Store Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 290px;"src="src/contact_banner.svg" alt="contact shortcut"></a>
-               <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img class="shortcut_banner_small" style="top: 345px; right: 30px;"src="src/close_banner.svg" alt="toggle open close"></button>
+              <a><img class="shortcut_banner_small" style="top: 120px;" src="src/about_banner.svg" alt="About Shortcut"></a>
+              <a><img class="shortcut_banner_small" style="top: 180px;" src="src/work_banner.svg" alt="Work Shortcut"></a>
+              <a><img class="shortcut_banner_small" style="top: 235px;" src="src/store_banner.svg" alt="Store Shortcut"></a>
+              <a><img class="shortcut_banner_small" style="top: 290px;" src="src/contact_banner.svg" alt="Contact shortcut"></a>
+               <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img class="shortcut_banner_small" style="top: 345px; right: 30px;"src="src/close_banner.svg" alt="toggle open close shortcut menu"></button>
             </div>
           </div> 
     <!-- End Header  -->
