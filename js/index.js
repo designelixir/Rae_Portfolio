@@ -32,8 +32,8 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/flooring8.png')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/ceiling.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('../src/flooring8.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('../src/ceiling.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
   ];
