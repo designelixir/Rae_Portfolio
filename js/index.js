@@ -1,5 +1,4 @@
 
-
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -33,8 +32,8 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('../src/flooring8.png')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('../src/ceiling.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/flooring8.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/ceiling.png')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
   ];
@@ -268,28 +267,31 @@ function dragElement(elmnt) {
   }
 }
 
-function print_terminal() {
-  $("p.line")
-    .removeClass("line")
-    .addClass("done")
-    .next()
-    .addClass("line")
-    .on("animationend", function () {
-      print_terminal();
-    });
-}
+// translate this to JAVASCRIPT 
 
-$("#terminal_text p.line").on("animationend", function () {
-  print_terminal();
-});
 
-$(document).on('click', 'a[href^="#"]', function (event) {
-  event.preventDefault();
+// function print_terminal() {
+//   $("p.line")
+//     .removeClass("line")
+//     .addClass("done")
+//     .next()
+//     .addClass("line")
+//     .on("animationend", function () {
+//       print_terminal();
+//     });
+// }
 
-  $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top
-  }, 500);
-});
+// $("#terminal_text p.line").on("animationend", function () {
+//   print_terminal();
+// });
+
+// $(document).on('click', 'a[href^="#"]', function (event) {
+//   event.preventDefault();
+
+//   $('html, body').animate({
+//       scrollTop: $($.attr(this, 'href')).offset().top
+//   }, 500);
+// });
 
 
 // scroller function for About Window 
@@ -307,12 +309,6 @@ function scrollRight_scroller(direction) {
 
 function changeTime(){
   const current = new Date();
-  const day = current.getDate();
-
-  const monthArray = [ 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
-  const monthGet = current.getMonth();
-  const monthName = monthArray[monthGet];
-
   const hours = current.getHours();
   if (hours > 0 && hours <= 12) {
     timeValue= "" + hours;

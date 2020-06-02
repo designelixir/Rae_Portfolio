@@ -37,8 +37,8 @@ Content-Security-Policy: default-src 'self'
   Header set X-XSS-Protection "1; mode=block" 
 </IfModule>
 
-<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-    Header set Cache-Control "max-age=84600, public"
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|svg)$">
+    Header set Cache-Control "max-age=4000, public"
 </filesMatch>
 Nginx
 
