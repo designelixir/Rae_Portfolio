@@ -21,7 +21,7 @@
 ###
 
 #Strict Transport Security
-Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
 
 #X Content Type Options 
 X-Content-Type-Options: nosniff
@@ -349,6 +349,7 @@ FileETag None
 
 # <IfModule mod_headers.c>
 #   Header set Connection Keep-Alive
+    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 # </IfModule>
 
 
