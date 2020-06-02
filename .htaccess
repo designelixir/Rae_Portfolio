@@ -20,6 +20,24 @@
 ### the permalinks are flushed or set
 ###
 
+#Strict Transport Security
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+#X Content Type Options 
+X-Content-Type-Options: nosniff
+
+#X Frame options 
+X-Frame-Options: SAMEORIGIN
+
+#Content Security Policy 
+Content-Security-Policy: default-src 'self'
+
+#X XSS Protection 
+<IfModule mod_headers.c> 
+  Header set X-XSS-Protection "1; mode=block" 
+</IfModule>
+
+
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users
