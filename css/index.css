@@ -187,7 +187,7 @@ button:hover {cursor: pointer;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {background-color: #9aa4bd;  position: fixed; border:  #3A4172 1px solid; border-radius: 4px 4px 4px 4px; top: 10%; left: 5%;}
+.window {background-color: #9aa4bd;  position: fixed; border:  #3A4172 1px solid; border-radius: 4px 4px 4px 4px; top: 10%; left: calc((100% - 1100px)/2);}
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
@@ -224,9 +224,7 @@ position: relative;
 
 .about_slide {max-width: 600px; position: relative; top: 0;  top: 0px;  white-space:normal; padding: 50px; }
 
-/* #about_window_conten >* {padding-left: 30px;} */
 .about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
-/* .about_window_mission p {font-size: 24px; line-height: 28px;} */
 .about_window h1 {font-weight: 100; }
 
 

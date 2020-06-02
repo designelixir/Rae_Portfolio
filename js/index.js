@@ -221,6 +221,9 @@ dragElement(document.getElementById("testimonial_window3"));
 dragElement(document.getElementById("miller_project"));
 dragElement(document.getElementById("baja_project"));
 dragElement(document.getElementById("menu_project"));
+dragElement(document.getElementById("killa_nilla_project"));
+dragElement(document.getElementById("tlgs_project"));
+
 
 
 
