@@ -45,12 +45,12 @@ a:hover {color: #9aa4bd;}
 .social_banner {width: 15%; max-width: 175px; left: 0px; position: absolute; bottom: 0px; padding-bottom: 9%; z-index: 20;}
  #social_banners {display: none;} 
 .social_banner:hover {transform: rotate(5deg); cursor: pointer;}
-.social_banner_small {position: absolute; width: 150px; left: 0px; padding-bottom: 10%; bottom: 5%;}
+.social_banner_small {position: absolute; width: 12%; max-width: 125px; left: 0px; padding-bottom: 10%; bottom: 5%;}
 .social_banner_small:hover {transform: rotate(5deg); cursor: pointer; }
 
 
 .shortcut_banner {width: 15%; max-width: 175px; right: -2px; top: 5%; position: absolute;}
-.shortcut_banner_small {width: 125px; position: fixed; right: 0; top: 0;}
+.shortcut_banner_small {width: 12%; max-width: 125px; position: fixed; right: 0; top: 0;}
 #shortcut_banners {display: none;}
 .shortcut_banner_small:hover {transform: rotate(5deg); cursor: pointer;}
 .shortcut_banner:hover {transform: rotate(5deg); cursor: pointer;}
@@ -255,8 +255,7 @@ position: relative;
 #sticky_button {background: #3A4172; color: white; }
 #sticky_button button:hover {background:white; color: #3A4172;}
 
-.case {width: 90%; height: 75%; background-image: url('../src/blue_grid.svg'); background-size: cover; background-repeat: no-repeat; overflow: auto;}
-.case_content { contain:content; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain;}
+.case {width: 90%; height: 75%; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
 
 
 .artboard{height: 650px; padding: 50px; }
