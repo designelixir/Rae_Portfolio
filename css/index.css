@@ -267,34 +267,22 @@ position: relative;
 #sticky_button {background: #3A4172; color: white; }
 #sticky_button button:hover {background:white; color: #3A4172;}
 
-.case {width: 90%; height: 75%; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
+.case {width: 90%; max-width: 1100px; height: 75%; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
 
 
-.artboard{height: 650px; padding: 50px; }
-
-.artboard_center {width: 100%;}
+.artboard{height: 100%; padding: 50px; margin: 20px;  }
+.artboard_center {width: 100%; padding-top: 50px;}
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; }
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
 .artboard h1 {font-size: 42px; }
 .artboard_date {font-style: italic; font-size: 20px;}
-.artboard img { box-shadow: 5px 5px 5px grey; margin: 1%;}
-.caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
+ .artboard img { box-shadow: 5px 5px 5px grey; margin: 1%;}
 .artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
-.artboard_left, .artboard_even_left {float: left;}
-.artboard_right, .artboard_even_right {float: right;}
-.artboard_even_right, .artboard_even_left {margin: 50px 0px 50px 0px;}
-.artboard_even_right p {text-align: center; padding: 0px 30px 0px 30px}
-/* .artboard_nav {margin: 400px; position: relative; bottom: 0; } */
+.caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
+.artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
+.artboard_column {float: left; width: 48%;  margin-right: 10px;}
 
-/* MEDIA QUERIES */
-@media screen and (min-width: 1000px ) {
-  .artboard_left { width: 30%; }
-  .artboard_right {  right: 0; width: 63%;} 
-  .artboard_even_left {width: 45%;}
-  .artboard_even_right {right: 0; width: 50%; margin-top: 100px;}  
-
-}
 
 @media screen and (min-width:600px) {
   .container {flex-wrap:nowrap;} 
