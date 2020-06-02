@@ -1,19 +1,18 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
-      <title>DE 3:35pm</title>
+      <title>Design Elixir - A Creative Studio by Megan Byers</title>
       <meta charset="utf-8">
       <meta http-equiv="last-modified" content="Sat, 30 May 2020 04:16:46 MST " />
       <meta http-equiv="cache-control" content="Private" />
       <meta http-equiv="Expires" content="600" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Portfolio for Megan Rae Byers's Design Elixir Studio."/>
-      <!-- <script src="https://gist.github.com/tomkao/1229382.js"></script> -->
 
       <script type="text/plain" src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
       <script type="text/plain" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>      <script type="text/plain" src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
       <script type="text/plain" src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
+     
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
       <link rel="stylesheet" rel="preload" href="https://use.typekit.net/rkj0ohr.css"> 
       <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
@@ -21,29 +20,25 @@
     </head>
     <body>
       <canvas id="viewport" ></canvas> 
-        <div class="page-wrapper" >
+        <div class="page-wrapper">
           
           <!-- Begin Header -->
           <div class="headerOverview">
-            
             <img class="logo" src="src/designelixir6.svg" alt="Design Elixir Logo">
             <img class="entry_moto" src="src/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
-            <img class="downArrow bounce" width=5%; src="src/arrow.svg" alt="Scroll down indicator"/>
+            <img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/>
                     
             <!-- Socials -->
-
             
 
             <div id="social_banners"> 
-              <a onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style="bottom: 300px; width: 150px; left: 35px;" src="src/close_banner2.svg"></a>
-               <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 270px;" src="src/instagram_banner.svg"></a>
-              <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style=" bottom: 200px;" src="src/unsplash_banner.svg"></a>
-              <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 135px;" src="src/github_banner.svg"></a>
-              <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
-            </div>
-<br>
-            <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner social_banner_small" src="src/socials.svg" alt="open social media menu"></button>
-
+                <a onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style="bottom: 340px; width: 150px; left: 35px;" src="src/close_banner2.svg"></a>
+                 <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 270px;" src="src/instagram_banner.svg"></a>
+                <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style=" bottom: 200px;" src="src/unsplash_banner.svg"></a>
+                <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 135px;" src="src/github_banner.svg"></a>
+                <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;"src="src/linkedin_banner.svg"></a>
+          </div>
+          <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner" src="src/socials.svg" alt="open social media menu"></button>
             <!-- Shortcuts -->
             <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img class="shortcut_banner" src="src/shortcuts.svg" alt="open shortcuts menu"></button>
             <div id="shortcut_banners">
@@ -57,18 +52,15 @@
     <!-- End Header  -->
 
     <!-- Begin Login Screen -->
-  
-          <!-- Profile Login -->
-              <div class="login"> 
+            <div class="login"> 
                   <img class="spinny" src="src/spinny.svg" alt="spinny loading wheel"> 
                   <img class="profile" src="src/profile+name.svg" alt="Login Icon of Megan Rae Byers">
                   <img class="profile_description" src="src/login_description.svg" alt="Design Elixir is run by Megan Byers, a zealous artist coder.">
 
-                </div>
-            <!-- End Login -->
+            </div>
+            
 
             <div id="splash_pages">
-
               <div class="splash_page_wrapper">
                 <img id="splash_context_text" src="src/splash_context.svg" alt="What I can Offer you">
                 
@@ -117,7 +109,6 @@
       
       <div id="about_window" class="window" style="display: none;">
       <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
-          
               
               <div id="about_window_content">
                   <div class="scroll" id="scroller_container">
@@ -175,6 +166,7 @@
               </div>
           
       </div>
+
   
       <div id="contact_window" class="window" style="display: none;">
       <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Us</p></div>
@@ -318,21 +310,21 @@
                 </div>
 
                 <div class="artboard_right">
-                  <!-- <img style="margin-top: 25px" src="src/cases/miller_bros/cam_spence.png"> -->
+                  <img style="margin-top: 25px; width: 100%;" src="src/cases/miller_bros/cam_spence.png">
                   <p class="caption">Camden and Spencer sit in their 1983 Volkswagen Westfalia, "Lars". </p>
                 </div>
           </div>
 
           <div class="artboard">
             <div class="artboard_center">
-              <!-- <img width=54%; src="src/cases/miller_bros/lars_sketches.jpg"> -->
-              <!-- <img width=40%; src="src/cases/miller_bros/miller_diamond_stickers.gif"> -->
-              <!-- <img width=97%; src="src/cases/miller_bros/miller_sticker_layout.png"> -->
+              <img width=54%; src="src/cases/miller_bros/lars_sketches.jpg">
+              <img width=40%; src="src/cases/miller_bros/miller_diamond_stickers.gif">
+              <img width=97%; src="src/cases/miller_bros/miller_sticker_layout.png">
 
             </div>
 
             <div class="artboard_even_left" width=50%;>
-              <!-- <img width=100%; src="src/cases/miller_bros/miller_imac_closeup.jpg"> -->
+              <img width=100%; src="src/cases/miller_bros/miller_imac_closeup.jpg">
             </div>
 
             <div class="artboard_even_right">
@@ -345,9 +337,9 @@
               
             </div>
 
-            <div class="artboard_nav">
+            <!-- <div class="artboard_nav">
                 <h6><strong><a onclick="toggleOpenClose('west_flanders'); toggleOpenClose('miller_project')"> &lsaquo; WEST FLANDERS BREWING CO. BRANDING</a></strong> <strong style="float:right;"><a onclick="toggleOpenClose('renu_case'); toggleOpenClose('miller_project')">RENU COSMETICS LOGO &rsaquo;</a></strong></h6>
-            </div>
+            </div> -->
             
           </div>
         </div>
