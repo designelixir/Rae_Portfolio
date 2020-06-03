@@ -6,43 +6,84 @@
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
 .artboard h1 {font-size: 42px; }
 .artboard_date {font-style: italic; font-size: 20px;}
- .artboard img { box-shadow: 5px 5px 5px grey; margin: 1%;}
+ .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 1%;}
 .artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
 .caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
 .artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
+.artboard_button {width: 100%; background: #2f335c; border: none;padding: 15px; margin-top: 20px;}
+.artboard_button a {color: white; text-decoration: none; font-family: 'Poppins', sans-serif;}
+.artboard_button:hover {background-color: #384272; cursor: pointer;}
 
 .artboard_column {float: left; width: 48%;  margin-right: 10px;}
+.artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
+/* .artboard_columntwothird {float: left; width: 100%; }
+.artboard_columnforty {float: left; width: 100%;} */
 
+@media screen and (min-width: 1200px ) {
+  .artboard_columnthird{ width: 30%; }
+  .artboard_columntwothird {right: 0; width: 66%;} 
 
+   
+
+}
 
 </style>
 
 <div class="case_content">
     <div class="artboard">
         <div>
-            <h1> Killa Nilla </h1>
-            <h2> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </h2>	
+            <h1> Twin Lakes General Store </h1>
+            <h2> Revamp the website for a mountain general store with straightforward layout and information while expressing the character of the Twin Lakes, Colorado and the 141 year-old general store. </h2>	
         </div>
-        <div>
-            <p class="artboard_date">June '19</p>
-            <p class="blu"><b>Services:</b> Illustration <br>
-                <b>Deliverables:</b> Album Artworks<br><br>
-                Given complete creative freedom, I developed two album artworks for electronic artist “Killa Nilla”. Driven by the hypnotic and space-inspired culture of the dubstep, I created album covers based on the titles of the singles, “Traffic” and “Love Me Now”. The albums both feature bold contrast between subject and background and bright colors to parallel the nature and aesthetic of electronic music. 
+        <div class="artboard_columnthird" style="margin-right: 25px;">
+            <p class="artboard_date">February '20</p>
+            <p class="blu"><b>Services:</b> Web Development, Graphic Design, Illustration <br>
+                <b>Deliverables:</b> Website, Graphic Elements, Online Store, Product Photos<br><br>
+                Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop for travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
             </p>
+            <button class="artboard_button" aria-label="view website"><a href="www.twinlakesgs.com" rel="noopener" target="_blank">View Website</a></button>
+        </div>
+
+        <div class="artboard_columntwothird">
+                <img style="width: 100%; margin: 25px 0px 50px 0px;" src="src/cases/tlgs/ipad_website copy.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+        </div>
+
+        <div style="margin-top: 50px;"> 
+            <img src="src/cases/tlgs/pages_layout.jpg" style="width: 97%; margin-bottom: 50px;">
+        </div>
+
+        <div class="artboard_columnthird">
+                <h2>As a popular resupply spot for backpackers, hikers and campers, the general store needed a website that could convey information to future mountain adventurers about provided services, as well as give insight into the spectacles of a 60-person town.</h2>
+                <p class="blu">Featuring hand-illustrated touches, paired with striking images and bold red elements to parallel the bright red doors that welcome you upon arrival, the site is intended to exude the personality of a historically rich spot while providing a modern, youthful approach to business. </p>
+               
+    
+            </div>
+            <div class="artboard_columntwothird">
+                <img src="src/cases/tlgs/scroll_website_shor.gif" style="width: 100%; "> 
+            </div>
+
+        <div style="margin-top: 50px;">
+                <img src="src/cases/tlgs/page_illustrations_banner.svg" style="width: 100%; margin: 50px 0px 50px 0px; box-shadow: none !important;">
+                <img src="src/cases/tlgs/indypass_overlay.jpg" style="width: 40%;">
+                <img src="src/cases/tlgs/twins_overlay.jpg" style="width: 54%; ">
+                <p class="caption">Illustrations of the general store, Colorado &amp; Continental Divide Trails sign, and Independence Pass, used for decoration on the website.</p>
         </div>
 
         <div class="artboard_column">
-                <img style="width: 100%;" src="src/cases/killa_nilla/max_album_traffic_v1_medium_res.jpg" loading="lazy" alt="team photo with off-road vehicle">
+            <img src="src/cases/tlgs/bob_motu.jpg" style="width: 70%; margin-top: 50px;">
+            <p class="caption">Bob &amp; his golden retriever, Motu, pose behind the counter.</p>
+            
         </div>
-        <div class="artboard_column">
-                <img style="width: 100%; " src="src/cases/killa_nilla/love_me_now.svg" loading="lazy" alt="hat with baja logo">
-        </div>
-        <img src="src/cases/killa_nilla/traffic_closeup copy.jpg" style="width: 60%;">
-            <img src="src/cases/killa_nilla/phone_love_me_now.jpg" style="width: 33%;">
 
-        <p style="text-align: center">Find Killa Nilla's tracks <i>Love Me Now</i> and <i>Traffic on his <a target="_blank" rel="noopener" href="https://open.spotify.com/artist/56fkl9znFBq2U82hEWyZNR?si=I10aXE5hQcaKEZ83_zsy4w">Spotify page.</a></i></p>
-        
+        <div class="artboard_column" style=" margin-top: 100px;  text-align: center;">
+                <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
+                <p> Megan Byers has been a great asset to my small business by helping us transition away from out of out-of-date websites and social media we inherited from former owners.  From great concept and design, tech fixes and consulting, art, photography, and helping get an online shopping platform built.  I’ve never seen someone be so engaged and work so hard, and recommend her for any sized project!   </p>
+                <p><i>-Bob Mathes, Twin Lakes General Store & Mercantile 
+                        Twin Lakes, Colorado</i></p>
+                <br>
+                <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+        </div>
     </div>
 
 </div>
