@@ -197,15 +197,19 @@ uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 function toggleOpenClose(window_id) {
   var x = window_id.toString();
   var tab = document.getElementById(x);
+  var desktop_icons = document.getElementsByClassName('desktop_icons');
   if (tab.style.display === "block") {
     tab.style.animation = "fade-out .25s ease-out both";
     tab.style.display = "none";
+    // desktop_icons.style.display ="block";
+
     
   }
 
   else {
     tab.style.display = "block";
     tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
+    // desktop_icons.style.display = "none";
   }
 
 }

@@ -67,7 +67,7 @@ a:hover {color: #9aa4bd;}
 
 .headerOverview {
 	background-color: #2E345B;
-	background-image: url("../src/stars5.svg");
+	background-image: url("../src/splash+contexts/stars_wallpaper.svg");
 	background-size: contain;
 	background-repeat: repeat-y;
     height: 100%;
@@ -141,7 +141,7 @@ a:hover {color: #9aa4bd;}
 .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
-.desktop {background-image: url("../src/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
+.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
 
 .desktopToolbar {width: 100%; background: #2c2c2c; height: 50px; top: 0; color: #f4f4f4; z-index: 100000; opacity: 0; }
 .desktop_toolbar_left {opacity: 0;}
@@ -197,7 +197,7 @@ button:hover {cursor: pointer;}
 #about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
 div.scroll {
   max-width: 700px;
-  background: url('../src/grid.svg') no-repeat;
+  background: url('../src/desktop_items/grid.svg') no-repeat;
   background-size: cover;
   white-space: nowrap;
   overflow-y: scroll;
@@ -258,30 +258,44 @@ position: relative;
 
 .sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center; display: flex; justify-content: center; align-items: center; }
 
-#testimonial_window1 {top: 45%; left: 50%; background-image: url("../src/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window2 { top: 50%; left: 55%; background-image: url("../src/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
-#testimonial_window3 { top: 55%; left: 60%; background-image: url("../src/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window1 {top: 45%; left: 50%; background-image: url("../src/desktop_items/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window2 { top: 50%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
+#testimonial_window3 { top: 55%; left: 60%; background-image: url("../src/desktop_items/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
 .sticky h5{padding-left: 30px; padding-right: 30px;  padding-top: 10%; } 
 #sticky_button {background: #3A4172; color: white; }
 #sticky_button button:hover {background:white; color: #3A4172;}
 
-.case {width: 90%; max-width: 1100px; height: 75%; background-image: url('../src/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
+.case {width: 90%; max-width: 1100px; height: 75%; background-image: url('../src/desktop_items/_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
 
 
-.artboard{height: 100%; padding: 50px; margin: 20px;  }
+
+.artboard{height: 100%; padding: 50px; }
 .artboard_center {width: 100%; padding-top: 50px;}
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; }
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
 .artboard h1 {font-size: 42px; }
 .artboard_date {font-style: italic; font-size: 20px;}
- .artboard img { box-shadow: 5px 5px 5px grey; margin: 1%;}
+ .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 1%;}
 .artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
 .caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
 .artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
-.artboard_column {float: left; width: 48%;  margin-right: 10px;}
+.artboard_button {width: 100%; background: #2f335c; border: none; padding: 15px; margin-top: 7%; margin-bottom: 20px;}
+.artboard_button a {color: white; text-decoration: none; font-family: 'Poppins', sans-serif;}
+.artboard_button:hover {background-color: #384272; cursor: pointer;}
 
+.artboard_column {float: left; width: 100%;  margin-right: 10px;}
+.artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
+/* .artboard_columntwothird {float: left; width: 100%; }
+.artboard_columnforty {float: left; width: 100%;} */
 
+@media screen and (min-width: 1200px ) {
+  .artboard_columnthird{ width: 30%; }
+  .artboard_columntwothird {right: 0; width: 66%;} 
+  .artboard_column {width: 48%;}
+   
+
+}
 @media screen and (min-width:600px) {
   .container {flex-wrap:nowrap;} 
   
@@ -304,8 +318,8 @@ position: relative;
 
 .desktop_container img {width: 8%; position: fixed; max-width: 100px;}
 .desktop_container img:hover {transform: rotate(5deg);}
-
-
+/* .desktop_icons img:hover {cursor: url("../src/spinny.svg"), crosshair;} */
+.desktop_icons button{border: none; box-shadow: none;}
 
 /* animations  */
 
