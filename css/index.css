@@ -283,14 +283,13 @@ position: relative;
 .caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
 .artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
 .artboard_button {width: 50%; background: #2f335c; border: none; padding: 15px; margin-top: 7%; margin-bottom: 20px;}
-.artboard_button a {color: white; text-decoration: none; font-family: 'Poppins', sans-serif;}
+.artboard_button {color: white; text-decoration: none; font-family: 'Poppins', sans-serif;}
 .artboard_button:hover {background-color: #384272; cursor: pointer;}
 .bob_motu img {width: 50%; vertical-align: middle;}
 
 .artboard_column {float: left; width: 100%;  margin-right: 10px;}
 .artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
 #vans_hide {display: none;}
-
 
 @media screen and (min-width: 1200px ) {
   .artboard_columnthird{ width: 30%; }
