@@ -8,7 +8,9 @@ font-display:swap;font-style:normal;font-weight:400;
 
 .tk-fatfrank { font-family: "fatfrank",sans-serif; }
 
-
+* {
+  box-sizing: border-box;
+}
 
 body {
 	overflow-x: hidden;
@@ -277,7 +279,7 @@ position: relative;
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
 .artboard h1 {font-size: 42px; }
 .artboard_date {font-style: italic; font-size: 20px;}
- .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 1%;}
+.artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 1%;}
 .artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
 .caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
@@ -289,7 +291,7 @@ position: relative;
 
 .artboard_column {float: left; width: 100%;  margin-right: 10px;}
 .artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
-#vans_hide {display: none;}
+
 
 @media screen and (min-width: 1200px ) {
   .artboard_columnthird{ width: 30%; }
@@ -302,10 +304,8 @@ position: relative;
 @media screen and (min-width: 1000px) {
   .artboard_response_row {display: -ms-flexbox; /* IE10 */ display: flex; -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
   .artboard_response_column {-ms-flex: 50%; /* IE10 */ flex: 50%; max-width: 50%; padding-right: 1%}
-  .artboard_response_column img {margin: 1% 1% 0% 1%; vertical-align: middle; width: 100%;}
-  * {
-    box-sizing: border-box;
-  }
+  .artboard_response_column img {margin: 2% 2% 0% 2%; vertical-align: middle; width: 100%;}
+  
   #vans_hide {display: block;}
    
 }
