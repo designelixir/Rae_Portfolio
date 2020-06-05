@@ -237,12 +237,23 @@ dragElement(document.getElementById("vans_project"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var window = document.getElementsByClassName('window');
   if (document.getElementById(elmnt.id + "header")) {
     /* if present, the header is where you move the DIV from:*/
+    window.style.position = "fixed";
+    window.style.left = "initial";
+    window.style.right = "initial";
+    window.style.top = "initial";
+    window.style.bottom = "initial";
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
+    
+    // window.style.position = "fixed";
+
     elmnt.onmousedown = dragMouseDown;
+    
+    
   }
 
   function dragMouseDown(e) {
