@@ -291,8 +291,8 @@ AddType application/x-shockwave-flash       swf
   ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
 
 # CSS and JavaScript
-  ExpiresByType text/css                  "access plus 1 week"
-  ExpiresByType application/javascript    "access plus 1 week"
+  ExpiresByType text/css                  "access plus 1 minute"
+  ExpiresByType application/javascript    "access plus 1 minute"
 
 </IfModule>
 
