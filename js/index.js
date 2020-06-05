@@ -83,7 +83,7 @@ var chair = new THREE.MeshLambertMaterial({
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.svg')
 });
  
 posters.transparent=true;
