@@ -77,7 +77,7 @@ var deskchair = new THREE.MeshLambertMaterial({
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/webGL_elements/chair.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')
 
 }); 
 chair.transparent=true;

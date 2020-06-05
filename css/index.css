@@ -156,7 +156,7 @@ a:hover {color: #9aa4bd;}
 .dock_container {display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0;}
 
 .dock {bottom: 0; height: 100px; background-color: #2e345b; position: fixed; z-index: 200;}
-.dock img {height: 70px; padding: 15px; opacity: 1;}
+.dock img {height: 100px; padding: 15px; opacity: 1;}
 .dock img:hover {transform: rotate(5deg);}
 
 .tooltip {position: relative; display: inline-block;}
@@ -187,7 +187,7 @@ button:hover {cursor: pointer;}
 .desktop_toolbar p {display: inline-block; padding-left: 15px; }
 #desktop_toolbar_left { float: left; width: 65%; padding-right: 10px; }
 #desktop_toolbar_right {float:right; padding-right: 20px; padding-top: 5px; }
-#desktop_toolbar_right img {height: 16px; padding-right: 5px; padding-top: 5px;}
+#desktop_toolbar_right img {height: 20px; padding-right: 5px; padding-top: 5px;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
@@ -269,7 +269,7 @@ position: relative;
 #sticky_button {background: #3A4172; color: white; }
 #sticky_button button:hover {background:white; color: #3A4172;}
 
-.case {width: 90%; max-width: 1100px; height: 75%; background-image: url('../src/desktop_items/_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
+.case {width: 90%; max-width: 1100px; height: 75%; background-image: url('../src/desktop_items/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
 
 
 
