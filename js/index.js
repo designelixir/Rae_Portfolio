@@ -83,7 +83,7 @@ var chair = new THREE.MeshLambertMaterial({
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.svg')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.png')
 });
  
 posters.transparent=true;
@@ -234,17 +234,16 @@ dragElement(document.getElementById("vans_project"));
 
 
 
-
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var window = document.getElementsByClassName('window');
   if (document.getElementById(elmnt.id + "header")) {
     /* if present, the header is where you move the DIV from:*/
-    window.style.position = "fixed";
-    window.style.left = "initial";
-    window.style.right = "initial";
-    window.style.top = "initial";
-    window.style.bottom = "initial";
+    // window.style.position = "fixed";
+    // window.style.left = "initial";
+    // window.style.right = "initial";
+    // window.style.top = "initial";
+    // window.style.bottom = "initial";
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
@@ -290,28 +289,28 @@ function dragElement(elmnt) {
 // translate this to JAVASCRIPT 
 
 
-// function print_terminal() {
-//   $("p.line")
-//     .removeClass("line")
-//     .addClass("done")
-//     .next()
-//     .addClass("line")
-//     .on("animationend", function () {
-//       print_terminal();
-//     });
-// }
+function print_terminal() {
+  $("p.line")
+    .removeClass("line")
+    .addClass("done")
+    .next()
+    .addClass("line")
+    .on("animationend", function () {
+      print_terminal();
+    });
+}
 
-// $("#terminal_text p.line").on("animationend", function () {
-//   print_terminal();
-// });
+$("#terminal_text p.line").on("animationend", function () {
+  print_terminal();
+});
 
-// $(document).on('click', 'a[href^="#"]', function (event) {
-//   event.preventDefault();
+$(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
 
-//   $('html, body').animate({
-//       scrollTop: $($.attr(this, 'href')).offset().top
-//   }, 500);
-// });
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 500);
+});
 
 
 // scroller function for About Window 
@@ -322,6 +321,17 @@ function scrollRight_scroller(direction) {
   else {
     document.getElementById('scroller_container').scrollLeft -= 700;
   }
+  
+};
+
+function scrollDown_scroller(direction) {
+  if (direction === 3) {
+    document.getElementById('#desktopDIV').scrollIntoView();
+  }
+  else {
+    document.getElementById('scroller_container').scrollLeft -= 700;
+  }
+  console.log(direction)
   
 };
 

@@ -191,13 +191,13 @@ button:hover {cursor: pointer;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {background-color: #9aa4bd; position: fixed; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px; top: 0; left: 0; right: 0; bottom: 0; margin: auto;}
+.window {background-color: #9aa4bd; position: fixed; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;  }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
 
-#about_window {top: 5%; left: 20%;}
+#about_window {max-width: 700px; max-height: 925px; }
 #about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
 div.scroll {
   max-width: 700px;
