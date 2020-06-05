@@ -278,6 +278,7 @@ AddType application/x-shockwave-flash       swf
   ExpiresByType audio/ogg                 "access plus 1 minute"
   ExpiresByType video/mp4                 "access plus 1 minute"
   ExpiresByType video/webm                "access plus 1 minute"
+  ExpiresByType image/svg                 "access plus 1 minute"
 
 # HTC files  (css3pie)
   ExpiresByType text/x-component          "access plus 1 month"
