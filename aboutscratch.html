@@ -1,0 +1,94 @@
+<style>
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 50px; }
+
+#about_window {max-width: 700px; max-height: 925px; }
+#about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
+div.scroll {
+  max-width: 700px;
+  background: url('../src/desktop_items/grid.svg') no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  
+}
+
+#scroller_container {scroll-behavior: smooth;}
+
+div.scroll div {
+  display: inline-block;
+  align-items: top;
+justify-content: center;
+position: relative;
+  
+  
+}
+
+
+
+.about_slide img {max-width: 100%; padding-bottom: 10px;}
+.scroll * {color: black;}
+
+.about_slide {max-width: 600px; position: fixed; top: 0; white-space: normal; padding: 50px; }
+
+.about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
+.about_window h1 {font-weight: 100; }
+
+
+</style>
+
+<div id="about_window_content">
+       
+                  <div class="scroll" id="scroller_container">
+                      <div id="slide_1" class="about_slide">
+                              <h6><a onclick="scrollRight_scroller(1)"><strong style="float:right;">OUR MISSION &rsaquo;</strong></a> </h6><br><br>
+                              <img src="src/cases/about_me/IMG_8290.JPG" loading="lazy" alt="Portrait of Megan" > 
+                                  <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
+                                  
+                                  <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. 
+                                  </p><br>
+                      </div>  
+                      <div id="slide_2" class="about_slide">
+                              <h6><strong><a onclick="scrollRight_scroller(0)"> &lsaquo; ABOUT DESIGN ELIXIR</a></strong> <strong style="float:right;"><a onclick="scrollRight_scroller(1)">ABOUT MEGAN &rsaquo;</a></strong></h6>
+                                  <h1>We specialize in catering our artistic tools to your creative vision.</h1>
+                                  
+                                  <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                                  <br><br>
+                                  <h1>Skills &amp; Services</h1>
+                                  <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                          <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                          Branding Materials • Illustrations • Product Photos • Murals <br>
+                                          Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                          
+                                      Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                  </p>
+                                  
+                                  <p class="blu"><strong>Web Development</strong><br>
+                                      <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                      Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                      E-Commerce • SEO </i> <br><br>
+                                     
+                                      From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                      web presence that covers all the bases. 
+                              </p><br>
+                              
+                                  
+              
+                      </div>  
+                      <div id="slide_3" class="about_slide">
+                              <h6 style="float: left;"><strong><a onclick="scrollRight_scroller(0)">&lsaquo; OUR MISSION</a></strong> </h6>
+                              <img src="src/cases/about_me/decorated_portrait.jpg" loading="lazy" alt="close up of Megan"> 
+                                  <h1>A lil' something about Megan:</h1>
+                                  
+                                  <p class="blu"> 
+                                          Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                  </p>
+                                  <br><br>
+                      </div>  
+              </div>
+
+              
+  
+                  
+              
+              </div>

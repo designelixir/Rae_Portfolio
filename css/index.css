@@ -42,7 +42,7 @@ h2 {font-family: 'Poppins', sans-serif, normal; font-size: 1.33rem; }
 h3 {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; font-weight: 400;}
 h5 {font-family: 'Poppins', sans-serif, thin; font-size: 0.66rem; font-weight: 300; padding-left: 10px; padding-right: 10px;}
 h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 0.66rem; }
-p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.25rem;}
+p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.2px;}
 
 em {font-family: 'Poppins', sans-serif, italic;}
 b {font-family: 'Poppins', sans-serif, 400;}
@@ -146,15 +146,15 @@ a:hover {color: #9aa4bd;}
 
 
 .desktop {background-image: url("../src/desktop_items/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
+.desktop_container img {width: 7%;  position: fixed; min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
+.desktop_container img:hover {transform: rotate(5deg);}
+.desktop_icons button{border: none; box-shadow: none; outline: none; }
 
 .desktopToolbar {width: 100%; background: #2c2c2c; height: 50px; top: 0; color: #f4f4f4; z-index: 100000; opacity: 0; }
 .desktop_toolbar_left {opacity: 0;}
-
 .toolbar_hide, .toolbar_design_elixir {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 3rem; padding-right: 10px;}
 
-
-.dock_container {display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0;}
-
+.dock_container {display: flex; justify-content: center; align-items: center; z-index: 100; } 
 .dock {bottom: 0; height: 100px; background-color: #2e345b; position: fixed; z-index: 200;}
 .dock img {height: 100px; padding: 15px; opacity: 1;}
 .dock img:hover {transform: rotate(5deg);}
@@ -180,18 +180,18 @@ a:hover {color: #9aa4bd;}
 .tooltip .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%;}
 .tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
 
-button {background-color: #00000000; border: none;}
+button {background-color: #00000000; border: none; outline: none;}
 button:hover {cursor: pointer;}
 
-.desktop_toolbar {width: 100%; top: 0; background-color: #2c2c2c; height: 50px; color: white; display: inline-block; overflow: hidden; position: fixed;}
-.desktop_toolbar p {display: inline-block; padding-left: 15px; }
-#desktop_toolbar_left { float: left; width: 65%; padding-right: 10px; }
-#desktop_toolbar_right {float:right; padding-right: 20px; padding-top: 5px; }
-#desktop_toolbar_right img {height: 20px; padding-right: 5px; padding-top: 5px;}
+.desktop_toolbar {width: 100%;  background-color: #2c2c2c; height: 50px; color: white; display: inline-block; overflow: hidden; position: fixed;}
+.desktop_toolbar p {display: inline-block; padding-left: 15px;}
+#desktop_toolbar_left { float: left; width: 65%; padding-left: 20px; }
+#desktop_toolbar_right {float:right; padding-right: 20px; }
+#desktop_toolbar_right img {height: 15px; padding-right: 5px; }
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {background-color: #9aa4bd; position: fixed; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;  }
+.window {background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px; margin: auto;  }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
@@ -211,9 +211,8 @@ div.scroll {
 
 #scroller_container {scroll-behavior: smooth;}
 
-div.scroll div {
-  display: inline-block;
-  align-items: top;
+.scroll div {
+display: inline-table;
 justify-content: center;
 position: relative;
   
@@ -224,17 +223,15 @@ position: relative;
 
 .about_slide img {max-width: 100%; padding-bottom: 10px;}
 .scroll * {color: black;}
-.blu {border-left: 10px solid #3a4172; padding-left: 20px; }
 
 .about_slide {max-width: 600px; position: relative; top: 0;  top: 0px;  white-space:normal; padding: 50px; }
 
-.about_window_mission {margin: 20px; padding: 50px;background: #f4f4f4;  max-height: 500px;}
 .about_window h1 {font-weight: 100; }
 
 
 
-#contact_window {top: 10%; left: 50%;}
-#contact_window_content {top: 40%;height: 550px; width: 400px; }
+#contact_window {position: fixed; left: 35%; top: 15%;}
+#contact_window_content {top: 40%; height: 550px; max-width: 400px; }
 #contact_window_content p {padding-left: 5%; padding-right: 5%;}
 #contact_window_sendbar button {bottom: 20px; position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
 #contact_window_content img {height: 80px; padding-left: 20px; }
@@ -275,26 +272,27 @@ position: relative;
 
 .artboard{height: 100%; padding: 50px; }
 .artboard_center {width: 100%; padding-top: 50px;}
-.blu {border-left: 10px solid #3a4172; padding-left: 20px; }
-.artboard h2 {font-size: 24px; font-style: italic; line-height: 30px;  opacity: 0.5; font-weight: 100;}
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 50px; }
+.artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}
 .artboard h1 {font-size: 42px; }
 .artboard_date {font-style: italic; font-size: 20px;}
-.artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 1%;}
+.artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 0%;}
 .artboard a {color: #2d2d2d;}
 .artboard a:hover {color: gray;}
 .caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
+.artboard_bottom {margin-top: 100px; margin-bottom: 50px;}
 .artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
 .artboard_button {width: 50%; background: #2f335c; border: none; padding: 15px; margin-top: 7%; margin-bottom: 20px;}
 .artboard_button {color: white; text-decoration: none; font-family: 'Poppins', sans-serif;}
 .artboard_button:hover {background-color: #384272; cursor: pointer;}
 .bob_motu img {width: 50%; vertical-align: middle;}
 
-.artboard_column {float: left; width: 100%;  margin-right: 10px;}
+.artboard_column {float: left; width: 100%; }
 .artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
 
 
 @media screen and (min-width: 1200px ) {
-  .artboard_columnthird{ width: 30%; }
+  .artboard_columnthird{ width: 30%; margin-right: 2%; }
   .artboard_columntwothird {right: 0; width: 66%;} 
   
   
@@ -304,7 +302,7 @@ position: relative;
 @media screen and (min-width: 1000px) {
   .artboard_response_row {display: -ms-flexbox; /* IE10 */ display: flex; -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
   .artboard_response_column {-ms-flex: 50%; /* IE10 */ flex: 50%; max-width: 50%; padding-right: 1%}
-  .artboard_response_column img {margin: 2% 2% 0% 2%; vertical-align: middle; width: 100%;}
+  .artboard_response_column img {margin: 2% 2% 0% 0%; vertical-align: middle; width: 100%;}
   
   #vans_hide {display: block;}
    
@@ -330,10 +328,6 @@ position: relative;
 .fade-in{-webkit-animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both}
 @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
-.desktop_container img {width: 8%;  position: fixed; min-width: 80px; max-width: 120px;}
-.desktop_container img:hover {transform: rotate(5deg);}
-/* .desktop_icons img:hover {cursor: url("../src/spinny.svg"), crosshair;} */
-.desktop_icons button{border: none; box-shadow: none;}
 
 /* animations  */
 
