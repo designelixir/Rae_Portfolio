@@ -11,7 +11,6 @@
       <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
       <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
-
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" type="text/css" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="https://use.typekit.net/rkj0ohr.css"> 
@@ -22,32 +21,34 @@
         <div class="page-wrapper">
           
           <!-- Begin Header -->
-          <div class="headerOverview">
+        <div class="headerOverview">
             <img class="logo" src="src/design_elixir_logo.svg" alt="Design Elixir Logo">
             <img class="entry_moto" src="src/splash+contexts/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
             <img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/>
                     
-            <!-- Socials -->
-            
-
-            <div id="social_banners"> 
-                <a onclick="toggleOpenClose('social_banners')"><img class="social_banner_small" style="bottom: 290px; width: 150px; left: 35px;" src="src/social_media/close_banner2.svg" alt="toggle open close social media menu"></a>
-                 <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img class="social_banner_small" style=" bottom: 235px;" src="src/social_media/instagram_banner.svg" alt="instagram"></a>
-                <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img class="social_banner_small" style="bottom: 175px;" src="src/social_media/unsplash_banner.svg" alt="unsplash"></a>
-                <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img class="social_banner_small" style=" bottom: 120px;" src="src/social_media/github_banner.svg" alt="github"></a>
-                <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img class="social_banner_small"  style="bottom: 60px;" src="src/social_media/linkedin_banner.svg" alt="linkedin"></a>
-          </div>
-          <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img class="social_banner" src="src/social_media/socials.svg" alt="open social media menu"></button>
-            <!-- Shortcuts -->
-            <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img class="shortcut_banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
-            <div id="shortcut_banners">
-              <a><img class="shortcut_banner_small" style="top: 120px;" src="src/social_media/about_banner.svg" alt="About Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 180px;" src="src/social_media/work_banner.svg" alt="Work Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 235px;" src="src/social_media/store_banner.svg" alt="Store Shortcut"></a>
-              <a><img class="shortcut_banner_small" style="top: 290px;" src="src/social_media/contact_banner.svg" alt="Contact shortcut"></a>
-               <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img class="shortcut_banner_small" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
+            <div class="social_banners_wrapper">
+                    <div id="social_banners"> 
+                            <a onclick="toggleOpenClose('social_banners')"><img src="src/social_media/close_banner2.svg" id="close_banner" alt="toggle open close social media menu"></a>
+                             <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img src="src/social_media/instagram_banner.svg" class="banner" alt="instagram"></a>
+                            <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img src="src/social_media/unsplash_banner.svg" class="banner" alt="unsplash"></a>
+                            <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img src="src/social_media/github_banner.svg" class="banner" alt="github"></a>
+                            <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img src="src/social_media/linkedin_banner.svg" class="banner"  alt="linkedin"></a>
+                      </div>
+                      <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img id="social_banner" class="banner"  src="src/social_media/socials.svg" alt="open social media menu"></button>
             </div>
-          </div> 
+    
+            <div class="shortcut_banners_wrapper">
+                    <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
+                    <div id="shortcut_banners">
+                      <a><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
+                      <a><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
+                      <a><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
+                      <a><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
+                       <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img id="close_banner2" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
+                    </div> 
+            </div>
+
+        </div> 
     <!-- End Header  -->
 
     <!-- Begin Login Screen -->

@@ -56,18 +56,18 @@ a:hover {color: #9aa4bd;}
 #container {height: 4000vh; position: fixed;}
 .downArrow{z-index: 12; bottom: 1%; right: 50%; height: 3%; position: fixed;}
 
-.social_banner {width: 15%; max-width: 175px; left: 0px; position: absolute; bottom: 0px; padding-bottom: 9%; z-index: 20;}
- #social_banners {display: none;} 
-.social_banner:hover {transform: rotate(5deg); cursor: pointer;}
-.social_banner_small {position: absolute; width: 12%; max-width: 125px; left: 0px; padding-bottom: 10%; bottom: 5%;}
-.social_banner_small:hover {transform: rotate(5deg); cursor: pointer; }
+.social_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; bottom: 5%; left: 0; position: fixed;}
+.social_banners_wrapper img {width: 55%; margin-bottom: -3%}
+#social_banner {width: 80%; margin: 10px 0px 0px -30%;}
+#close_banner {margin-left: 30px; margin-bottom: -3%;}
+#social_banners, #shortcut_banners {display: none;}
 
+.shortcut_banners_wrapper { width: 30%; max-width: 250px;  top: 5%; right: 0; position: fixed;}
+.shortcut_banners_wrapper img {width: 55%; float: right; margin-bottom: -3%}
+.banner:hover {transform: rotate(5deg); cursor: pointer;}
+#shortcut_banner {width: 80%; top: 0; margin: 0px -2% 0px 0px; }
+#close_banner2 {margin-right: 30px; cursor: pointer; }
 
-.shortcut_banner {width: 15%; max-width: 175px; right: -2px; top: 5%; position: absolute;}
-.shortcut_banner_small {width: 12%; max-width: 125px; position: fixed; right: 0; top: 0;}
-#shortcut_banners {display: none;}
-.shortcut_banner_small:hover {transform: rotate(5deg); cursor: pointer;}
-.shortcut_banner:hover {transform: rotate(5deg); cursor: pointer;}
 
 .headerOverview {
 	background-color: #2E345B;
