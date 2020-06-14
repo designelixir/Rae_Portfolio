@@ -149,13 +149,15 @@ const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const dock = document.querySelector('.dock_container');
+const desktop_icons = document.querySelector('.desktop_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const graphic_design_splash = document.querySelector('#graphic_design_splash');
+const illustration_splash = document.querySelector('#illustration_splash');
+
 
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
-const loading_bar = document.querySelector('.loading_scroller');
+// const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
@@ -173,24 +175,25 @@ uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 // uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
-uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+// uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.5, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.46, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.55, 0.65, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.65, 0.75, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
 
-uos(0.6, 0.65, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+// uos(0.6, 0.65, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.92, 0.94, p => (dock.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 
 
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+// uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
 
 

@@ -42,7 +42,7 @@
                     <div id="shortcut_banners">
                       <a><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
                       <a><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
-                      <a><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
+                      <a target="_blank" rel='noopener' href="https://www.etsy.com/shop/DesignElixirStudio"><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
                       <a><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
                        <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img id="close_banner2" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
                     </div> 
@@ -65,11 +65,11 @@
                 <img id="splash_context_text" src="src/splash+contexts/splash_context.svg" alt="What I can Offer you">
                 
                   <img class="splash_img" id="web_development_splash" src="src/splash+contexts/webDevelopment_splash.svg" alt="Web Development: From graphic design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
-                  <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/illustration_splash.svg" alt="to be filled in">
-                  <!-- <img class="splash_img" id="web_development_splash" src="src/webDevelopment_splash.svg"> -->
+                  <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustration_splash.svg" alt="to be filled in">
+                  <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/webDevelopment_splash.svg" style="rotate: 180deg;">
           
                 </div>      
-                <div class="loading_scroller"></div>
+                <!-- <div class="loading_scroller"></div> -->
             </div>
             
             
@@ -93,21 +93,19 @@
                 
                 </div>
                 
+               
                 
                 <div class="desktop" id="desktopDIV"> 
+                        <div class="desktop_container">
+                                <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
+                                <!-- <button class="desktop_icons" onclick="toggleOpenClose('renu_project')" aria-label="open/close Renu Project"><img style="left: 60%; top:60%;" src="src/desktop_items/renu_icon.svg" loading="lazy" alt="Renu Beauty Project Icon"></button> -->
+                                <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img style="left:50% ; top:30%;" src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:10% ; top:40%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
                       
-                      <div class="desktop_container" >
-                          <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
-                          <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
-                          <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
-                          <!-- <button class="desktop_icons" onclick="toggleOpenClose('renu_project')" aria-label="open/close Renu Project"><img style="left: 60%; top:60%;" src="src/desktop_items/renu_icon.svg" loading="lazy" alt="Renu Beauty Project Icon"></button> -->
-                          <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
-                          <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img style="left:50% ; top:30%;" src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
-                          <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:10% ; top:40%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
-                
-                      </div>
-                  
-                      
+                            </div>
                       <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>
                       
                       <div id="about_window" class="window" style="display: none;" >
@@ -590,16 +588,7 @@
                         
                 
                                     </div>
-                                 
-                                <!-- <div style="margin-top: 50px;">
-                                        <img src="src/cases/tlgs/page_illustrations_banner.svg" style="width: 100%; margin: 50px 0px 50px 0px; box-shadow: none !important;" loading="lazy" alt="illustrations for web page">
-                                        <img src="src/cases/tlgs/indypass_overlay.jpg" style="width: 40%;" loading="lazy" alt="Independence pass image with illustration overlay">
-                                        <img src="src/cases/tlgs/twins_overlay.jpg" style="width: 54%;" loading="lazy" alt="twin lakes image with illustration overlay">
-                                        <p class="caption">Illustrations of the general store, Colorado &amp; Continental Divide Trails sign, and Independence Pass, used for decoration on the website.</p>
-                                </div> -->
-                
-                
-                
+                    
                                 <div class="artboard_response_row"> 
                                     <div class="artboard_response_column">
                                         <img class="bob_motu" src="src/cases/tlgs/bob_motu.jpg" style="width: 95%; margin: 50px 50px 0px 0px;" loading="lazy" alt="bob mathes and his golden retriever motu">
@@ -620,54 +609,44 @@
                                         <button class="artboard_button" type="button" onclick="window.open('https://twinlakesgs.com/', '_blank')" aria-label="view website">View Website</button>
                                     </div>  
                                     
-                            </div>
-                        
-                                <div class="artboard_column" >
-                                    
-                                    
                                 </div>
                         
-                                <div class="artboard_column" style=" margin-top: 50px;  text-align: center;">
-                                        
-                                </div>
+                               
                             </div>
                         
                         </div>
                 
                     </div>
+
+                    <div class="dock_container"><div class="dock">
                           
-                  </div>
-                
-                  <div class="dock_container"><div class="dock">
+                            <div class="tooltip">   
+                              <span class="tooltiptext">All Projects Synopses</span> 
+                              <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
+                            </div>
+                            <div class="tooltip">   
+                              <span class="tooltiptext">Email Me!</span> 
+                              <button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Contact Me Icon"></button>
+                            </div>
+                            <div class="tooltip">   
+                              <span class="tooltiptext">Testimonials</span> 
+                              <button onclick="toggleOpenClose('testimonial_window1'); toggleOpenClose('testimonial_window2'); toggleOpenClose('testimonial_window3')" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+                            </div>
+                            <div class="tooltip">   
+                              <span class="tooltiptext">Website Stats</span> 
+                              <button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close terminal window"><img class="dockIcons tooltip" src="src/desktop_items/terminal.svg" alt="Open Terminal Icon"></button>
+                            </div>
+                            
+                            </div>
+                          </div>
                           
-                    <div class="tooltip">   
-                      <span class="tooltiptext">All Projects Synopses</span> 
-                      <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
-                    </div>
-                    <div class="tooltip">   
-                      <span class="tooltiptext">Email Me!</span> 
-                      <button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Contact Me Icon"></button>
-                    </div>
-                    <div class="tooltip">   
-                      <span class="tooltiptext">Testimonials</span> 
-                      <button onclick="toggleOpenClose('testimonial_window1'); toggleOpenClose('testimonial_window2'); toggleOpenClose('testimonial_window3')" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
-                    </div>
-                    <div class="tooltip">   
-                      <span class="tooltiptext">Website Stats</span> 
-                      <button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close terminal window"><img class="dockIcons tooltip" src="src/desktop_items/terminal.svg" alt="Open Terminal Icon"></button>
-                    </div>
-                    
-                    </div>
-                  </div>
-          
-
-    <!-- Begin Desktop  -->
-    
-        <!-- End Dock -->
-        
+                        
+                  </div><!-- desktop div -->
+                 
 
 
-</div>
+
+</div><!-- page wrapper div -->
      
 
                 

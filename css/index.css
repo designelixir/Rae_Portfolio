@@ -62,10 +62,10 @@ a:hover {color: #9aa4bd;}
 #close_banner {margin-left: 30px; margin-bottom: -3%;}
 #social_banners, #shortcut_banners {display: none;}
 
-.shortcut_banners_wrapper { width: 30%; max-width: 250px;  top: 5%; right: 0; position: fixed;}
+.shortcut_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; top: 5%; right: 0; position: fixed;}
 .shortcut_banners_wrapper img {width: 55%; float: right; margin-bottom: -3%}
 .banner:hover {transform: rotate(5deg); cursor: pointer;}
-#shortcut_banner {width: 80%; top: 0; margin: 0px -2% 0px 0px; }
+#shortcut_banner {width: 80%; top: 0; margin: 0px -5% 0px 0px; }
 #close_banner2 {margin-right: 30px; cursor: pointer; }
 
 
@@ -141,12 +141,13 @@ a:hover {color: #9aa4bd;}
 #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
 .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
 #splash_context_text {width: 100%;  max-height: 75%; position: absolute;}
-.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute;}
+.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute; }
 .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
-.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
-.desktop_container img {width: 7%;  position: fixed; min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
+.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); display: flex; justify-content: center; align-items: center; background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
+
+.desktop_container img {width: 7%; position: fixed; min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
 .desktop_container img:hover {transform: rotate(5deg);}
 .desktop_icons button{border: none; box-shadow: none; outline: none; }
 
@@ -191,7 +192,7 @@ button:hover {cursor: pointer;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px; margin: auto;  }
+.window {position: fixed; background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;  z-index: 15 !important; }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
