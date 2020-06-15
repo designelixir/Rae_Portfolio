@@ -273,11 +273,10 @@ position: relative;
 
 
 
-.artboard{height: 100%; padding: 50px;  }
-.artboard_center {width: 100%; padding-top: 50px;}
-.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 50px; }
+.artboard{height: 100%; padding: 50px;   }
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}
-.artboard h1 {font-size: 42px; }
+.artboard h1 {font-size: 42px; line-height: 10px; }
 .artboard_date {font-style: italic; font-size: 20px;}
 .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 0%;}
 .artboard a {color: #2d2d2d;}
