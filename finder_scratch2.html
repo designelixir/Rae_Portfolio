@@ -1,0 +1,290 @@
+<style>
+
+.finder_window {background: #c6cadf; height: 80%; width: 80%; max-width: 1250px; contain: content; position: absolute; }
+#finder_nav {height: 30px; width: 100%;  top: 0; position: absolute; z-index: 2; display: flex; justify-content: center;}
+#finder_nav button {height: 30px; margin-right: 1%; background: #12193b; color: white; width:29%; border: 1px solid #2f335c; border-top: none; outline: none; cursor: pointer; }
+#finder_nav button:focus {background: #c6cadf; border: none;}
+#finder_content {width: 100%; overflow-y: scroll; display: flex; justify-content: center; align-items: center;  contain: content; position: absolute; height: calc(100% - 30px);  color: black; bottom: 0; }
+.finder_frame {  height: 95%; position: absolute; width: calc(100% - 100px); display: flex; justify-content: center; align-items: center;}
+
+
+/* Home */
+#finder_content_home img {max-width: 100px; width: 100%; margin-right: 20px; }
+
+
+/* About */
+
+#finder_content_about {left: 0; position: absolute;  width: 300%; max-height: 100%; overflow-x: scroll; }
+.about_slide { width: 100%; height: 100%; margin: 50px 50px 50px 50px; padding: 50px;  background: url('src/desktop_items/grid.svg') no-repeat;  background-size: cover; background-position-x: 50%; contain: content;}
+.about_nav_button {position: fixed;  height: 98%; top: 0; border: none; background:none; color: black; cursor: pointer; outline: none; }
+.about_nav_button:hover {background: #2f335c; color: white; border: none; outline: none;  }
+
+/*Projects */
+#finder_content_projects {width: 100% !important; margin-top: 20px; text-align: center; }
+#finder_content_nav {height: 100px; white-space: nowrap; overflow-x: scroll;  background: #707ba5; border: 1px solid #2f335c; bottom: 0; position: absolute; width: 100%; display: flex;  align-items: center;}
+#finder_content_nav button{background: none; outline: none; border: none; padding: 20px; } 
+#finder_content_nav button:hover {transform: scale(1.1); cursor: pointer; } 
+#finder_content_nav button:focus {transform: scale(1.1); cursor: pointer;  } 
+
+
+
+.mySlides {display:none; overflow-y: scroll; height: 100%; margin: 0px 20px 0px 20px; contain: content; display: flex; justify-content: center; align-items: center;}
+.mySlides img {height: calc(100% - 300px); box-shadow: 5px 5px 5px grey; }
+.mySlides p {padding: 20px;}
+.mySlides button {background: #2f334c; border: 1px solid #2f334c; color: white; outline: none; height: 30px; }
+.mySlides button:hover {background: #707ba5; color: white; border: none; height: 30px; cursor: pointer;}
+
+.project_nav_btn img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; }
+.project_nav_btn button {padding-right: 20px;}
+.slideshow_button { z-index: 2; width: 50px;  height:calc(100% - 200px); top: 0; position: fixed; border: none; background: #c6cadf; outline: none; border: none; cursor: pointer;}
+.slideshow_button:hover {transform: scale(1.2)}
+
+</style> 
+ 
+ <body>
+
+        <div class="finder_window">
+            <div id="finder_nav">
+                <button id="finder_nav_home" onclick="switchFinderFrames(0)"> Home</button>
+                <button id="finder_nav_about" onclick="switchFinderFrames(1)"> About</button>
+                <button id="finder_nav_projects" onclick="switchFinderFrames(2)">Projects</button>
+            </div>
+
+            <div id="finder_content">
+
+                <!-- HOME -->
+                <div id="finder_content_home"style="display: none;" class="finder_frame" >
+                        <h1>Projects</h1>
+                        <h3>2020</h3>
+                        <button class="finder_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
+                        <button class="finder_icons"  onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img style="left:50% ; top:30%;" src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
+
+                        <hr>
+                        <h3> 2019</h3>
+                        <button class="finder_icons"  onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                        <button class="finder_icons"  onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
+                        <button class="finder_icons"  onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
+
+                        <hr>
+                        <h3>2018</h3>
+                        <button class="finder_icons"  onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:10% ; top:40%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
+                </div>
+                <!-- ABOUT -->
+                <div id="finder_content_about" class="finder_frame" >
+                        <div id="slide_1" class="about_slide">
+                                <img src="src/cases/about_me/IMG_8290.JPG" style="width: 100%" loading="lazy" alt="Portrait of Megan" > 
+                                <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
+                                    
+                                <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character.</p>
+                                <button class="about_nav_button" style="right: 0" onclick="scrollRight_scroller(1)">&rarr;</button>
+                        </div>  
+                        <div id="slide_2" class="about_slide">
+                                <button class="about_nav_button" style="left: 0" onclick="scrollRight_scroller(0)">&larr;</button>
+                                    <h1>We specialize in catering our artistic tools to your creative vision.</h1>
+                                    
+                                    <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                                    <br><br>
+                                    <h1>Skills &amp; Services</h1>
+                                    <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                            <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                            Branding Materials • Illustrations • Product Photos • Murals <br>
+                                            Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                            
+                                        Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                    </p>
+                                    
+                                    <p class="blu"><strong>Web Development</strong><br>
+                                        <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                        Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                        E-Commerce • SEO </i> <br><br>
+                                       
+                                        From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                        web presence that covers all the bases. 
+                                </p>
+                                
+                                <button class="about_nav_button" style="right: 0" onclick="scrollRight_scroller(1)">&rarr;</button>
+
+                
+                        </div>
+                        <div id="slide_3" class="about_slide">
+                                <button class="about_nav_button" style="left: 0;" onclick="scrollRight_scroller(0)">&larr;</button>
+
+                                <img src="src/cases/about_me/decorated_portrait.jpg" style="width: 100%; " loading="lazy" alt="close up of Megan"> 
+                                    <h1>A lil' something about Megan:</h1>
+                                    
+                                    <p class="blu"> 
+                                            Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                    </p>
+                                    <br><br>
+                        </div>  
+
+                </div>
+                <!-- PROJECTS -->
+                <div id="finder_content_projects" style="display: none;" class="finder_frame" >
+                        
+                                
+                                <button class="slideshow_button" style="left: 0;" onclick="plusDivs(-1)"><h1>❮</h1> </button>
+                                
+                                <div class="center_column">
+                                    <div class="w3-content" >
+                                            <div class="mySlides">
+                                                <img src="src/cases/miller_bros/miller_sticker_layout.png" loading="lazy" alt="All Stickers">
+                                                <h3>The Miller Bros - Sticker &amp; Logo Design</h3>                                     
+                                                <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                                <button>View full Case Study</button>
+                            
+                                            </div>
+                            
+                                            <div class="mySlides">
+                                                <img src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                                <h3>Twin Lakes General Store - Website Development</h3>
+                                                <p> Revamp the website for a historic, 141-year old mountain general store with straightforward layout and information  while expressing the character of the Twin Lakes, Colorado. </p>
+                                                <button>View full Case Study</button>
+                            
+                                            </div>  
+                            
+                                            <div class="mySlides">
+                                                    <!-- <img src="src/cases/finder_extras/happiness_kat.jpg"  loading="lazy"  alt="kat's script font over image"> -->
+                                                    <img src="src/cases/finder_extras/kats_script2.jpg" loading="lazy" alt="kat script sample">
+                                                    <h3>Kat's Script - Custom Typography</h3>
+                                                    <p> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
+                                            </div> 
+                            
+                                            <div class="mySlides">
+                                                    <img src="src/cases/vans/vans_post_v2.webp" loading="lazy"  alt="megan on skateboard">
+                                                    <h3>Vans Ultrarange Project - Product Photos &amp; Videos</h3>
+                                                    <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                                    <button>View full Case Study</button>
+                            
+                                            </div> 
+                            
+                                            <div class="mySlides">
+                                                    <!-- <img src="src/cases/killa_nilla/max_album_traffic_v1_medium_res.jpg"  alt="Love Me Now album cover on phone"> -->
+                                                    <img src="src/cases/killa_nilla/love_me_now.svg" loading="lazy"  alt="love me now album cover">
+                                                    
+                            
+                                                    <h3>Killa Nilla - Album Artworks</h3>
+                                                    <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                                    <button>View full Case Study</button>
+                                            </div> 
+                                            <div class="mySlides">
+                                                    <img src="src/cases/finder_extras/debra.jpg" alt="Love Me Now album cover on phone">
+                                                    
+                                                    
+                            
+                                                    <h3>Debra Austin, JD, PhD - Personal Website</h3>
+                                                    <p> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                                    <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
+                                            </div> 
+                                            <div class="mySlides">
+                                                    <img src="src/cases/west_flanders/wf_ad_layout.jpg" alt="Love Me Now album cover on phone">
+                                                    
+                                                    
+                            
+                                                    <h3>West Flanders Brewing Company - Brand Development </h3>
+                                                    <p> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
+                                                    <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
+                                            </div> 
+                                            <div class="mySlides">
+                                                    <img src="src/cases/finder_extras/cuMech.png" alt="Love Me Now album cover on phone">
+                                                    
+                                                    
+                            
+                                                    <h3>University of Colorado Boulder Mechanical Engineering - Graduation Website </h3>
+                                                    <p> Using existing brand standards, design a celebratory website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery for over 300 students. </p>
+                                                    <button onclick="window.open('https://www.meclassof2020.wpcomstaging.com/', '_blank')">Visit the Website</button>
+                                            </div> 
+                                            <div class="mySlides">
+                                                    <img src="src/cases/finder_extras/northern.jpg" alt="Love Me Now album cover on phone">
+                                                    
+                                                    
+                            
+                                                    <h3>Northern Wild - Stickers </h3>
+                                                    <p> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
+                                            </div>
+                            
+                            
+                            
+                                    </div>
+                                </div>
+                                   
+                                <button class="slideshow_button" style="right:0;" onclick="plusDivs(1)"><h1>❯</h1></button>
+                            
+                                   
+                            
+                    <div id="finder_content_nav">
+
+                        <button class="project_nav_btn" onclick="currentDiv(1)"><img src="src/cases/miller_bros/miller_sticker_layout.png"  alt="miller bro stickers "></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(2)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(3)"><img src="src/cases/finder_extras/happiness_kat.jpg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(4)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(5)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(6)"><img src="src/cases/finder_extras/brain.png" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(7)"><img src="src/cases/west_flanders/lightbulbs.jpg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(8)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(9)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
+
+
+
+                    </div>
+
+
+
+
+                </div>
+                
+            </div>
+
+
+        </div>
+
+ </body>
+ 
+ <script>
+ 
+ var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("project_nav_btn");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
+
+ function switchFinderFrames(frameNumber){
+     var homeFrame = document.getElementById("finder_content_home");
+     var aboutFrame = document.getElementById("finder_content_about");
+     var projectFrame = document.getElementById("finder_content_projects");
+
+   
+   
+     switch (frameNumber) {
+         case 0: aboutFrame.style.display = "none"; projectFrame.style.display = "none"; homeFrame.style.display = "block";    
+  break;
+         case 1: homeFrame.style.display = "none"; projectFrame.style.display = "none"; aboutFrame.style.display = "block";  break;
+         case 2: projectFrame.style.display = "none"; aboutFrame.style.display = "none"; projectFrame.style.display = "block";   break;
+
+     }
+ }
+ 
+ 
+ </script>
+

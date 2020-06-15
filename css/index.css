@@ -52,22 +52,23 @@ a:hover {color: #9aa4bd;}
 
 #viewport {width: 100%; height: 100%; position: fixed;}
 
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh;}
+.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh;   scroll-behavior: smooth;
+}
 #container {height: 4000vh; position: fixed;}
 .downArrow{z-index: 12; bottom: 1%; right: 50%; height: 3%; position: fixed;}
 
-.social_banner {width: 15%; max-width: 175px; left: 0px; position: absolute; bottom: 0px; padding-bottom: 9%; z-index: 20;}
- #social_banners {display: none;} 
-.social_banner:hover {transform: rotate(5deg); cursor: pointer;}
-.social_banner_small {position: absolute; width: 12%; max-width: 125px; left: 0px; padding-bottom: 10%; bottom: 5%;}
-.social_banner_small:hover {transform: rotate(5deg); cursor: pointer; }
+.social_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; bottom: 5%; left: 0; position: fixed;}
+.social_banners_wrapper img {width: 55%; margin-bottom: -3%}
+#social_banner {width: 80%; margin: 10px 0px 0px -30%;}
+#close_banner {margin-left: 30px; margin-bottom: -3%;}
+#social_banners, #shortcut_banners {display: none;}
 
+.shortcut_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; top: 5%; right: 0; position: fixed;}
+.shortcut_banners_wrapper img {width: 55%; float: right; margin-bottom: -3%}
+.banner:hover {transform: rotate(5deg); cursor: pointer;}
+#shortcut_banner {width: 80%; top: 0; margin: 0px -5% 0px 0px; }
+#close_banner2 {margin-right: 30px; cursor: pointer; }
 
-.shortcut_banner {width: 15%; max-width: 175px; right: -2px; top: 5%; position: absolute;}
-.shortcut_banner_small {width: 12%; max-width: 125px; position: fixed; right: 0; top: 0;}
-#shortcut_banners {display: none;}
-.shortcut_banner_small:hover {transform: rotate(5deg); cursor: pointer;}
-.shortcut_banner:hover {transform: rotate(5deg); cursor: pointer;}
 
 .headerOverview {
 	background-color: #2E345B;
@@ -92,7 +93,8 @@ a:hover {color: #9aa4bd;}
 #spinnyBox { display: flex; justify-content: center; align-items: center; padding-top: 50vh;} 
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 .moto { position: fixed; opacity: 0; top: 0; width: 100%; align-self: center; z-index: 10;}
-
+#scroll_tracker_wrapper {width: 100vw; background: red; position: fixed; bottom: 0; left: 0; height: 10px; z-index: 10000;}
+#scroll_tracker { background: green; width: 0%; }
 
 .login {
 	 width: 100%; 
@@ -141,12 +143,13 @@ a:hover {color: #9aa4bd;}
 #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
 .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
 #splash_context_text {width: 100%;  max-height: 75%; position: absolute;}
-.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute;}
+.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute; }
 .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
-.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
-.desktop_container img {width: 7%;  position: fixed; min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
+.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); display: flex; justify-content: center; align-items: center; background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
+
+.desktop_container img {width: 7%; position: fixed; min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
 .desktop_container img:hover {transform: rotate(5deg);}
 .desktop_icons button{border: none; box-shadow: none; outline: none; }
 
@@ -191,13 +194,13 @@ button:hover {cursor: pointer;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px; margin: auto;  }
+.window {position: fixed; bottom: 200px; background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;   }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
 
-#about_window {max-width: 700px; max-height: 925px; }
+#about_window {max-width: 700px; width: 100%; max-height: 925px; }
 #about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
 div.scroll {
   max-width: 700px;
@@ -229,8 +232,47 @@ position: relative;
 .about_window h1 {font-weight: 100; }
 
 
+.finder_window {background: #c6cadf; height: 100%; width: 100%; overflow-y: scroll; contain: content; position: absolute; }
+#finder_nav {height: 30px; width: 100%;  top: 0; position: absolute; z-index: 2; display: flex; justify-content: center;}
+#finder_nav button {height: 30px; margin-right: 1%; background: #12193b; color: white; width:29%; border: 1px solid #2f335c; border-top: none; outline: none; cursor: pointer; }
+#finder_nav button:focus {background: #c6cadf; border: none;}
+#finder_content {width: 100%; height: calc(100% - 30px);  display: flex; justify-content: center; align-items: center;  contain: content; position: absolute;  color: black; bottom: 0; }
+.finder_frame {  height: 100%; position: absolute; width: calc(100% - 100px); display: flex; justify-content: center; align-items: center;}
 
-#contact_window {position: fixed; left: 35%; top: 15%;}
+
+/* Home */
+#finder_content_home img {max-width: 100px; width: 100%; margin-right: 20px; }
+
+
+/* About */
+
+#finder_content_about {left: 0; position: absolute;  width: 100%; max-height: 100%; overflow-x: scroll; }
+.about_slide { height: 100%; margin: 50px 50px 50px 50px; padding: 50px;  background: url('src/desktop_items/grid.svg') no-repeat;  background-size: cover; background-position-x: 50%; contain: content;}
+.about_nav_button {position: fixed;  height: 98%; top: 0; border: none; background:none; color: black; cursor: pointer; outline: none; }
+.about_nav_button:hover {background: #2f335c; color: white; border: none; outline: none;  }
+
+/*Projects */
+#finder_content_projects {width: 100% !important; margin-top: 20px; text-align: center; }
+#finder_content_nav {height: 100px; white-space: nowrap; overflow-x: scroll;  background: #707ba5; border: 1px solid #2f335c; bottom: 0; position: absolute; width: 100%; display: flex;  align-items: center;}
+#finder_content_nav button{background: none; outline: none; border: none; padding: 20px; } 
+#finder_content_nav button:hover {transform: scale(1.1); cursor: pointer; } 
+#finder_content_nav button:focus {transform: scale(1.1); cursor: pointer;  } 
+
+
+
+.mySlides {display:none; overflow-y: scroll; height: 100%; margin: 0px 20px 0px 20px; contain: content; display: flex; justify-content: center; align-items: center;}
+.mySlides img {height: calc(100% - 300px); box-shadow: 5px 5px 5px grey; }
+.mySlides p {padding: 20px;}
+.mySlides button {background: #2f334c; border: 1px solid #2f334c; color: white; outline: none; height: 30px; }
+.mySlides button:hover {background: #707ba5; color: white; border: none; height: 30px; cursor: pointer;}
+
+.project_nav_btn img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; }
+.project_nav_btn button {padding-right: 20px;}
+.slideshow_button { z-index: 2; width: 50px;  height:calc(100% - 200px); top: 0; position: fixed; border: none; background: #c6cadf; outline: none; border: none; cursor: pointer;}
+.slideshow_button:hover {transform: scale(1.2)}
+
+
+#contact_window {position: fixed; }
 #contact_window_content {top: 40%; height: 550px; max-width: 400px; }
 #contact_window_content p {padding-left: 5%; padding-right: 5%;}
 #contact_window_sendbar button {bottom: 20px; position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
@@ -246,7 +288,7 @@ position: relative;
 #terminal_text p {display: none; font-family:'Courier New', Courier, monospace; color: white; padding-left: 2%;}
 .line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
 
-#finder_window {width: 90%; height: 80%; max-height: 700px; max-width: 90%; contain: content;  }
+#finder_window {width: 100%; height: 80%;  max-width: 1000px; contain: content;  }
 #finder_window_col1 {float: left; background: #3A4172; color: white;  width: 250px; height:100%; padding-left: 10px;  overflow: auto;}
 #finder_window_col1 p {color: lightgray;} 
 #finder_window_col1 p:hover {color: white; cursor: pointer;}
@@ -270,11 +312,10 @@ position: relative;
 
 
 
-.artboard{height: 100%; padding: 50px; }
-.artboard_center {width: 100%; padding-top: 50px;}
-.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 50px; }
+.artboard{height: 100%; padding: 50px;   }
+.blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}
-.artboard h1 {font-size: 42px; }
+.artboard h1 {font-size: 42px; line-height: 10px; }
 .artboard_date {font-style: italic; font-size: 20px;}
 .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 0%;}
 .artboard a {color: #2d2d2d;}
