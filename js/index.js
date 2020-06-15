@@ -317,27 +317,30 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 
 // scroller function for About Window 
-function scrollRight_scroller(direction) {
-  if (direction === 1) {
-    document.getElementById('scroller_container').scrollLeft += 700;
-  }
-  else {
-    document.getElementById('scroller_container').scrollLeft -= 700;
-  }
+// function scrollRight_scroller(direction) {
+//   if (direction === 1) {
+//     document.getElementById('scroller_container').scrollLeft += 700;
+//   }
+//   else {
+//     document.getElementById('scroller_container').scrollLeft -= 700;
+//   }
   
-};
+// };
 
-function scrollDown_scroller(direction) {
-  if (direction === 3) {
-    document.getElementById('#desktopDIV').scrollIntoView();
-  }
-  else {
-    document.getElementById('scroller_container').scrollLeft -= 700;
-  }
-  console.log(direction)
+// function scrollDown_scroller(direction) {
+//   if (direction === 3) {
+//     document.getElementById('#desktopDIV').scrollIntoView();
+//   }
+//   else {
+//     document.getElementById('scroller_container').scrollLeft -= 700;
+//   }
+//   console.log(direction)
   
-};
+// };
 
+function scrollToPosition(value){
+  window.scrollTo(0,value);
+}
 
 
 function changeTime(){

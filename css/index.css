@@ -52,7 +52,8 @@ a:hover {color: #9aa4bd;}
 
 #viewport {width: 100%; height: 100%; position: fixed;}
 
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh;}
+.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh;   scroll-behavior: smooth;
+}
 #container {height: 4000vh; position: fixed;}
 .downArrow{z-index: 12; bottom: 1%; right: 50%; height: 3%; position: fixed;}
 
@@ -92,7 +93,8 @@ a:hover {color: #9aa4bd;}
 #spinnyBox { display: flex; justify-content: center; align-items: center; padding-top: 50vh;} 
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 .moto { position: fixed; opacity: 0; top: 0; width: 100%; align-self: center; z-index: 10;}
-
+#scroll_tracker_wrapper {width: 100vw; background: red; position: fixed; bottom: 0; left: 0; height: 10px; z-index: 10000;}
+#scroll_tracker { background: green; width: 0%; }
 
 .login {
 	 width: 100%; 
@@ -192,13 +194,13 @@ button:hover {cursor: pointer;}
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
 
-.window {position: fixed; background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;  z-index: 15 !important; }
+.window {position: fixed; bottom: 200px; background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;   }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
 
-#about_window {max-width: 700px; max-height: 925px; }
+#about_window {max-width: 700px; width: 100%; max-height: 925px; }
 #about_window_content { width: 60vw; max-width: 700px; max-height: 925px; overflow-x: hidden; overflow-y: hidden; contain: content; }
 div.scroll {
   max-width: 700px;
@@ -231,7 +233,7 @@ position: relative;
 
 
 
-#contact_window {position: fixed; left: 35%; top: 15%;}
+#contact_window {position: fixed; }
 #contact_window_content {top: 40%; height: 550px; max-width: 400px; }
 #contact_window_content p {padding-left: 5%; padding-right: 5%;}
 #contact_window_sendbar button {bottom: 20px; position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
@@ -271,7 +273,7 @@ position: relative;
 
 
 
-.artboard{height: 100%; padding: 50px; }
+.artboard{height: 100%; padding: 50px;  }
 .artboard_center {width: 100%; padding-top: 50px;}
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 50px; }
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}

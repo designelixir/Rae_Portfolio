@@ -18,8 +18,11 @@
     </head>
     <body>
       <canvas id="viewport" ></canvas> 
-        <div class="page-wrapper">
-          
+        <div class="page-wrapper" id="portfolio_page_wrapper">
+            <!-- <h1 id="scroll_tracker" style="position: fixed; bottom: 5%; z-index: 100000; color: white;">percentage scrolled:</h1> -->
+          <!-- <div id="scroll_tracker_wrapper">
+                <div id="scroll_tracker"></div>
+          </div> -->
           <!-- Begin Header -->
         <div class="headerOverview">
             <img class="logo" src="src/design_elixir_logo.svg" alt="Design Elixir Logo">
@@ -40,10 +43,10 @@
             <div class="shortcut_banners_wrapper">
                     <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
                     <div id="shortcut_banners">
-                      <a><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
-                      <a><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
+                      <a onclick="scrollToPosition(46683), toggleOpenClose('about_window')" id="about_shortcut" ><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
+                      <a onclick="scrollToPosition(46683), toggleOpenClose('finder_window')"><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
                       <a target="_blank" rel='noopener' href="https://www.etsy.com/shop/DesignElixirStudio"><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
-                      <a><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
+                      <a onclick="scrollToPosition(46683), toggleOpenClose('contact_window')"><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
                        <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img id="close_banner2" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
                     </div> 
             </div>
@@ -77,7 +80,7 @@
             <div class="desktop_toolbar">
         
                     <div id="desktop_toolbar_left"> 
-                        <a href="#" class="toolbar_design_elixir"><b> Design Elixir</b></a>
+                        <a onclick="scrollToPosition(0)" class="toolbar_design_elixir"><b> Design Elixir</b></a>
                         <a onclick="toggleOpenClose('about_window')" class="toolbar_hide">About</a>
                         <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide">Contact</a>
                         <a onclick="toggleOpenClose('notification')" class="toolbar_hide">Store</a>
@@ -482,17 +485,17 @@
                         </div>
                     </div>
                 
-                          <div id="renu_project" class="window case" style="display: none;">
-                              <div class="window_closebar"><button onclick="toggleOpenClose('renu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Renu Beauty - Logo and Packaging Design</p></div>
-                              
-                              <div class="case_content">
-                                  <div class="artboard" id="renuArtboard">
-                                      
-                                    </div>
-                      
-                              </div>
-                      
+                    <div id="renu_project" class="window case" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('renu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Renu Beauty - Logo and Packaging Design</p></div>
+                        
+                        <div class="case_content">
+                            <div class="artboard" id="renuArtboard">
+                                
                             </div>
+                
+                        </div>
+                
+                    </div>
                 
                     <div id="killa_nilla_project" class="window case" style="display: none;">
                         <div class="window_closebar"><button onclick="toggleOpenClose('killa_nilla_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Killa Nilla - Album Artwork</p></div>
@@ -638,7 +641,7 @@
                             </div>
                             
                             </div>
-                          </div>
+                        </div>
                           
                         
                   </div><!-- desktop div -->
