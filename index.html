@@ -206,61 +206,201 @@
                   
                       <div id="finder_window" class="window" style="display: none;">
                           <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
-                          <div id="finder_window_col1" class="finder_nav">
-                              <div id="menu" class="menu" >
-                                  <a data-page="recent_projects" href="#"><h3> Project Cases</h3> </a>
-                                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
-                  
-                                  
-                                  <a data-page="web_design" href="#"><h3> Web Design </h3> </a>
-                                  <a><p>&#8227; Wordpress</p></a>
-                                  <a><p>&#8227; Webpage Development</p></a>
-                                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
-                  
-                                  <a data-page="graphic_design" href="#"><h3> Graphic Design </h3> </a>
-                                  <a><p>&#8227; Print Media</p></a>
-                                  <a><p>&#8227; Posters</p></a>
-                                  <a><p>&#8227; Branding</p></a>
-                                  <a><p>&#8227; Typography</p></a>
-                                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
-                  
-                                  <a data-page="illustration" href="#"><h3> Illustration</h3> </a>
-                                  <a><p>&#8227; Murals / Infographics</p></a>
-                                  <a><p>&#8227; Stickers</p></a>
-                                  <a><p>&#8227; Album Artwork</p></a>
-                                  <a><p>&#8227; Digital Art</p></a>
-                                  <hr style="border: lightgray .5px solid; left: 0; opacity: 0.5">
-                              </div>
-                  
-                              
-                          </div>
-                          <div id="finder_window_col2">
-                             
-                              <div id="pages">
-                                  <div id="recent_projects" class="page" data-page="recent_projects">
+                          
+                          <div class="finder_window">
+                                <div id="finder_nav">
+                                    <button id="finder_nav_home" onclick="switchFinderFrames(0)"> Home</button>
+                                    <button id="finder_nav_about" onclick="switchFinderFrames(1)"> About</button>
+                                    <button id="finder_nav_projects" onclick="switchFinderFrames(2)">Projects</button>
+                                </div>
+                    
+                                <div id="finder_content">
+                    
+                                    <!-- HOME -->
+                                    <div id="finder_content_home"style="display: none;" class="finder_frame" >
+                                            <h1>Projects</h1>
+                                            <h3>2020</h3>
+                                            <button class="finder_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="left: 80%; top:15%;" src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
+                                            <button class="finder_icons"  onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img style="left:50% ; top:30%;" src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
+                    
+                                            <hr>
+                                            <h3> 2019</h3>
+                                            <button class="finder_icons"  onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="left: 10%; top:15%;" src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                                            <button class="finder_icons"  onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="left: 20%; top:40%;" src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
+                                            <button class="finder_icons"  onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img style="left:35% ; top:65%;" src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
+                    
+                                            <hr>
+                                            <h3>2018</h3>
+                                            <button class="finder_icons"  onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:10% ; top:40%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
+                                    </div>
+                                    <!-- ABOUT -->
+                                    <div id="finder_content_about" class="finder_frame" >
+                                            <div id="slide_1" class="about_slide">
+                                                    <img src="src/cases/about_me/IMG_8290.JPG" style="width: 100%" loading="lazy" alt="Portrait of Megan" > 
+                                                    <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
+                                                        
+                                                    <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character.</p>
+                                                    <button class="about_nav_button" style="right: 0" onclick="scrollRight_scroller(1)">&rarr;</button>
+                                            </div>  
+                                            <div id="slide_2" class="about_slide">
+                                                    <button class="about_nav_button" style="left: 0" onclick="scrollRight_scroller(0)">&larr;</button>
+                                                        <h1>We specialize in catering our artistic tools to your creative vision.</h1>
+                                                        
+                                                        <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                                                        <br><br>
+                                                        <h1>Skills &amp; Services</h1>
+                                                        <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                                                <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                                                Branding Materials • Illustrations • Product Photos • Murals <br>
+                                                                Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                                                
+                                                            Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                                        </p>
+                                                        
+                                                        <p class="blu"><strong>Web Development</strong><br>
+                                                            <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                                            Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                                            E-Commerce • SEO </i> <br><br>
+                                                           
+                                                            From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                                            web presence that covers all the bases. 
+                                                    </p>
+                                                    
+                                                    <button class="about_nav_button" style="right: 0" onclick="scrollRight_scroller(1)">&rarr;</button>
+                    
                                     
-                                    <p> Click to view a project case.  </p>
-                                    <div id="finder_window_col2_recents" > 
-                                      <!-- <a onclick="toggleOpenClose('baja_project')"><img src="src/desktop_items/baja.svg"></a>
-                                      <a onclick="toggleOpenClose('miller_project')"><img src="src/desktop_items/millerbrosfile.svg"></a>
-                                      <a onclick="toggleOpenClose('menu_project')"><img src="src/desktop_items/menu.svg"></a>
-                                      <a onclick="toggleOpenClose('renu_project')"><img src="src/desktop_items/renu.svg"></a>
-                                      <img src="src/desktop_items/traffic.svg">
-                                      <img src="src/desktop_items/wordpress.svg"> -->
-                                  </div>
-                                   
-                                  </div>
-                                  <div id="web_design" class="page hide" data-page="web_design">
-                                              <h1> Web Design </h1>
-                                              
-                                  </div>
-                                  <div id="graphic_design" class="page hide" data-page="graphic_design">
-                                              <h1> Graphic Design </h1>
-                                  </div>
-                                  <div id="illustration" class="page hide" data-page="illustration">
-                                              <h1> Illustration </h1>
-                                  </div>
-                              </div>
+                                            </div>
+                                            <div id="slide_3" class="about_slide">
+                                                    <button class="about_nav_button" style="left: 0;" onclick="scrollRight_scroller(0)">&larr;</button>
+                    
+                                                    <img src="src/cases/about_me/decorated_portrait.jpg" style="width: 100%; " loading="lazy" alt="close up of Megan"> 
+                                                        <h1>A lil' something about Megan:</h1>
+                                                        
+                                                        <p class="blu"> 
+                                                                Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                                        </p>
+                                                        <br><br>
+                                            </div>  
+                    
+                                    </div>
+                                    <!-- PROJECTS -->
+                                    <div id="finder_content_projects" style="display: none;" class="finder_frame" >
+                                            
+                                                    
+                                                    <button class="slideshow_button" style="left: 0;" onclick="plusDivs(-1)"><h1>❮</h1> </button>
+                                                    
+                                                    <div class="center_column">
+                                                        <div class="w3-content" >
+                                                                <div class="mySlides">
+                                                                    <img src="src/cases/miller_bros/miller_sticker_layout.png" loading="lazy" alt="All Stickers">
+                                                                    <h3>The Miller Bros - Sticker &amp; Logo Design</h3>                                     
+                                                                    <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                                                    <button>View full Case Study</button>
+                                                
+                                                                </div>
+                                                
+                                                                <div class="mySlides">
+                                                                    <img src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                                                    <h3>Twin Lakes General Store - Website Development</h3>
+                                                                    <p> Revamp the website for a historic, 141-year old mountain general store with straightforward layout and information  while expressing the character of the Twin Lakes, Colorado. </p>
+                                                                    <button>View full Case Study</button>
+                                                
+                                                                </div>  
+                                                
+                                                                <div class="mySlides">
+                                                                        <!-- <img src="src/cases/finder_extras/happiness_kat.jpg"  loading="lazy"  alt="kat's script font over image"> -->
+                                                                        <img src="src/cases/finder_extras/kats_script2.jpg" loading="lazy" alt="kat script sample">
+                                                                        <h3>Kat's Script - Custom Typography</h3>
+                                                                        <p> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
+                                                                </div> 
+                                                
+                                                                <div class="mySlides">
+                                                                        <img src="src/cases/vans/vans_post_v2.webp" loading="lazy"  alt="megan on skateboard">
+                                                                        <h3>Vans Ultrarange Project - Product Photos &amp; Videos</h3>
+                                                                        <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                                                        <button>View full Case Study</button>
+                                                
+                                                                </div> 
+                                                
+                                                                <div class="mySlides">
+                                                                        <!-- <img src="src/cases/killa_nilla/max_album_traffic_v1_medium_res.jpg"  alt="Love Me Now album cover on phone"> -->
+                                                                        <img src="src/cases/killa_nilla/love_me_now.svg" loading="lazy"  alt="love me now album cover">
+                                                                        
+                                                
+                                                                        <h3>Killa Nilla - Album Artworks</h3>
+                                                                        <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                                                        <button>View full Case Study</button>
+                                                                </div> 
+                                                                <div class="mySlides">
+                                                                        <img src="src/cases/finder_extras/debra.jpg" alt="Love Me Now album cover on phone">
+                                                                        
+                                                                        
+                                                
+                                                                        <h3>Debra Austin, JD, PhD - Personal Website</h3>
+                                                                        <p> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                                                        <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
+                                                                </div> 
+                                                                <div class="mySlides">
+                                                                        <img src="src/cases/west_flanders/wf_ad_layout.jpg" alt="Love Me Now album cover on phone">
+                                                                        
+                                                                        
+                                                
+                                                                        <h3>West Flanders Brewing Company - Brand Development </h3>
+                                                                        <p> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
+                                                                        <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
+                                                                </div> 
+                                                                <div class="mySlides">
+                                                                        <img src="src/cases/finder_extras/cuMech.png" alt="Love Me Now album cover on phone">
+                                                                        
+                                                                        
+                                                
+                                                                        <h3>University of Colorado Boulder Mechanical Engineering - Graduation Website </h3>
+                                                                        <p> Using existing brand standards, design a celebratory website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery for over 300 students. </p>
+                                                                        <button onclick="window.open('https://www.meclassof2020.wpcomstaging.com/', '_blank')">Visit the Website</button>
+                                                                </div> 
+                                                                <div class="mySlides">
+                                                                        <img src="src/cases/finder_extras/northern.jpg" alt="Love Me Now album cover on phone">
+                                                                        
+                                                                        
+                                                
+                                                                        <h3>Northern Wild - Stickers </h3>
+                                                                        <p> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
+                                                                </div>
+                                                
+                                                
+                                                
+                                                        </div>
+                                                    </div>
+                                                       
+                                                    <button class="slideshow_button" style="right:0;" onclick="plusDivs(1)"><h1>❯</h1></button>
+                                                
+                                                       
+                                                
+                                        <div id="finder_content_nav">
+                    
+                                            <button class="project_nav_btn" onclick="currentDiv(1)"><img src="src/cases/miller_bros/miller_sticker_layout.png"  alt="miller bro stickers "></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(2)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(3)"><img src="src/cases/finder_extras/happiness_kat.jpg" ></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(4)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(5)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(6)"><img src="src/cases/finder_extras/brain.png" ></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(7)"><img src="src/cases/west_flanders/lightbulbs.jpg" ></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(8)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
+                                            <button class="project_nav_btn" onclick="currentDiv(9)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
+                    
+                    
+                    
+                                        </div>
+                    
+                    
+                    
+                    
+                                    </div>
+                                    
+                                </div>
+                    
+                    
+                            </div>
                                
                           </div>
                           
@@ -505,7 +645,7 @@
                         
                         <div class="case_content">
                             <div class="artboard">
-                                <!-- <h2> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </h2>	 -->
+                              
                                 <h1> Killa Nilla </h1>
                                 <p class="artboard_date">June '19</p>
                             
@@ -556,7 +696,6 @@
 
 
                                 <div class="artboard_columnthird" style="margin-right: 25px; ">
-                                    <!-- <h2> Revamp the website for a historic, 141-year old mountain general store with straightforward layout and information while expressing the character of the Twin Lakes, Colorado. </h2>	 -->
                                     <p class="blu"><b>Tools:</b> Wordpress, WooCommerce, HTML/CSS <br><br>
                                         <b>Deliverables:</b> Website, Graphic Art, Product Photos, Social Media Management<br><br>
                                         Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop for travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 

@@ -232,6 +232,45 @@ position: relative;
 .about_window h1 {font-weight: 100; }
 
 
+.finder_window {background: #c6cadf; height: 100%; width: 100%; overflow-y: scroll; contain: content; position: absolute; }
+#finder_nav {height: 30px; width: 100%;  top: 0; position: absolute; z-index: 2; display: flex; justify-content: center;}
+#finder_nav button {height: 30px; margin-right: 1%; background: #12193b; color: white; width:29%; border: 1px solid #2f335c; border-top: none; outline: none; cursor: pointer; }
+#finder_nav button:focus {background: #c6cadf; border: none;}
+#finder_content {width: 100%; height: calc(100% - 30px);  display: flex; justify-content: center; align-items: center;  contain: content; position: absolute;  color: black; bottom: 0; }
+.finder_frame {  height: 100%; position: absolute; width: calc(100% - 100px); display: flex; justify-content: center; align-items: center;}
+
+
+/* Home */
+#finder_content_home img {max-width: 100px; width: 100%; margin-right: 20px; }
+
+
+/* About */
+
+#finder_content_about {left: 0; position: absolute;  width: 100%; max-height: 100%; overflow-x: scroll; }
+.about_slide { height: 100%; margin: 50px 50px 50px 50px; padding: 50px;  background: url('src/desktop_items/grid.svg') no-repeat;  background-size: cover; background-position-x: 50%; contain: content;}
+.about_nav_button {position: fixed;  height: 98%; top: 0; border: none; background:none; color: black; cursor: pointer; outline: none; }
+.about_nav_button:hover {background: #2f335c; color: white; border: none; outline: none;  }
+
+/*Projects */
+#finder_content_projects {width: 100% !important; margin-top: 20px; text-align: center; }
+#finder_content_nav {height: 100px; white-space: nowrap; overflow-x: scroll;  background: #707ba5; border: 1px solid #2f335c; bottom: 0; position: absolute; width: 100%; display: flex;  align-items: center;}
+#finder_content_nav button{background: none; outline: none; border: none; padding: 20px; } 
+#finder_content_nav button:hover {transform: scale(1.1); cursor: pointer; } 
+#finder_content_nav button:focus {transform: scale(1.1); cursor: pointer;  } 
+
+
+
+.mySlides {display:none; overflow-y: scroll; height: 100%; margin: 0px 20px 0px 20px; contain: content; display: flex; justify-content: center; align-items: center;}
+.mySlides img {height: calc(100% - 300px); box-shadow: 5px 5px 5px grey; }
+.mySlides p {padding: 20px;}
+.mySlides button {background: #2f334c; border: 1px solid #2f334c; color: white; outline: none; height: 30px; }
+.mySlides button:hover {background: #707ba5; color: white; border: none; height: 30px; cursor: pointer;}
+
+.project_nav_btn img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; }
+.project_nav_btn button {padding-right: 20px;}
+.slideshow_button { z-index: 2; width: 50px;  height:calc(100% - 200px); top: 0; position: fixed; border: none; background: #c6cadf; outline: none; border: none; cursor: pointer;}
+.slideshow_button:hover {transform: scale(1.2)}
+
 
 #contact_window {position: fixed; }
 #contact_window_content {top: 40%; height: 550px; max-width: 400px; }
@@ -249,7 +288,7 @@ position: relative;
 #terminal_text p {display: none; font-family:'Courier New', Courier, monospace; color: white; padding-left: 2%;}
 .line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
 
-#finder_window {width: 90%; height: 80%; max-height: 700px; max-width: 90%; contain: content;  }
+#finder_window {width: 100%; height: 80%;  max-width: 1000px; contain: content;  }
 #finder_window_col1 {float: left; background: #3A4172; color: white;  width: 250px; height:100%; padding-left: 10px;  overflow: auto;}
 #finder_window_col1 p {color: lightgray;} 
 #finder_window_col1 p:hover {color: white; cursor: pointer;}
