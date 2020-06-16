@@ -195,48 +195,8 @@ uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 // uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("project_nav_btn");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-red", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-red";
-}
-
- function switchFinderFrames(frameNumber){
-     var homeFrame = document.getElementById("finder_content_home");
-     var aboutFrame = document.getElementById("finder_content_about");
-     var projectFrame = document.getElementById("finder_content_projects");
-
-   
-   
-     switch (frameNumber) {
-         case 0: aboutFrame.style.display = "none"; projectFrame.style.display = "none"; homeFrame.style.display = "block";    
-  break;
-         case 1: homeFrame.style.display = "none"; projectFrame.style.display = "none"; aboutFrame.style.display = "block";  break;
-         case 2: projectFrame.style.display = "none"; aboutFrame.style.display = "none"; projectFrame.style.display = "block";   break;
-
-     }
- }
 
 
 function toggleOpenClose(window_id) {
@@ -384,6 +344,32 @@ function scrollToPosition(value){
   window.scrollTo(0,value);
 }
 
+var slideIndex = 1;
+       showDivs(slideIndex);
+       
+       function plusDivs(n) {
+         showDivs(slideIndex += n);
+       }
+       
+       function currentDiv(n) {
+         showDivs(slideIndex = n);
+       }
+       
+       function showDivs(n) {
+         var i;
+         var x = document.getElementsByClassName("mySlides");
+         var dots = document.getElementsByClassName("project_nav_btn");
+         if (n > x.length) {slideIndex = 1}    
+         if (n < 1) {slideIndex = x.length}
+         for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+         }
+         for (i = 0; i < dots.length; i++) {
+           dots[i].className = dots[i].className.replace(" w3-red", "");
+         }
+         x[slideIndex-1].style.display = "block";  
+         dots[slideIndex-1].className += " w3-red";
+       }
 
 function changeTime(){
   const current = new Date();
