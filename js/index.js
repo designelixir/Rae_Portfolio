@@ -197,27 +197,44 @@ uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 
+var open = [];
 
 
 function toggleOpenClose(window_id) {
   var x = window_id.toString();
   var tab = document.getElementById(x);
-  var desktop_icons = document.getElementsByClassName('desktop_icons');
   if (tab.style.display === "block") {
     tab.style.animation = "fade-out .25s ease-out both";
     tab.style.display = "none";
-    // desktop_icons.style.display ="block";
-
+    open.pop(tab);
     
   }
-
+  
   else {
+    
     tab.style.display = "block";
     tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
-    // desktop_icons.style.display = "none";
+    
+    if (open.length > 0) {
+
+      for (i = 0; i < open.length; i++ ){
+        var closeThis = open[i];
+        closeThis.style.display= "none";
+        open.splice(i);
+        
+      }
+      
+    }
+    
+    open.push(tab);
   }
+  
+console.log(open.length + "array has " + open);
 
 }
+
+
+
 
 
 dragElement(document.getElementById("about_window"));
