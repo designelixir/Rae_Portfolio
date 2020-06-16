@@ -157,8 +157,8 @@ a:hover {color: #9aa4bd;}
 .desktop_toolbar_left {opacity: 0;}
 .toolbar_hide, .toolbar_design_elixir {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 3rem; padding-right: 10px;}
 
-.dock_container {display: flex; justify-content: center; align-items: center; z-index: 100; } 
-.dock {bottom: 0; height: 100px; background-color: #2e345b; position: fixed; z-index: 200;}
+.dock_container {position: fixed; bottom: 0;  z-index: 100; } 
+.dock {bottom: 0; height: 100px; background-color: #2e345b; display: flex; justify-content: center; align-items: center; z-index: 200;}
 .dock img {height: 100px; padding: 15px; opacity: 1;}
 .dock img:hover {transform: rotate(5deg);}
 
@@ -199,15 +199,16 @@ button:hover {cursor: pointer;}
 .window_closebar p {display: inline-block;  position: relative;bottom: 8px;}
 .close_btn {top: 5px; height: 20px; left: 10px; float: left; position: absolute;}
 
-#contact_window {position: fixed; }
-#contact_window_content {top: 40%; height: 550px; max-width: 400px; }
+#contact_window {position: fixed; height: 600px; max-width: 400px; contain: content; overflow: hidden;}
+#contact_window_content {top: 40%; height: 100%; }
 #contact_window_content p {padding-left: 5%; padding-right: 5%;}
 #contact_window_sendbar button {bottom: 20px; position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
 #contact_window_content img {height: 80px; padding-left: 20px; }
-#contact_window_content img:hover {transform: rotate(5deg); cursor: pointer;}
+#contact_window_content img:hover {transform: scale(1.1); cursor: alias;}
 .mail_button {background: #2f335c; font-family: 'Poppins', sans-serif; padding: 10px; margin-left: 55%;}
 
 #notification {right: 0px; z-index: 20; width: 500px; top: 53px; position: fixed; display: none; animation: slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both;}     
+#notification:hover {cursor: pointer;}
 
 #terminal_window {height: 400px; width: 80vw; max-width: 650px; background-color: #3A4172; top: 30%; }
 .done {display: block !important;}
@@ -228,7 +229,7 @@ button:hover {cursor: pointer;}
 .finder_content_nav button:focus {transform: scale(1.1); cursor: pointer; }  
 .slide_caption button {background: #2f335c; color: white; border: none; padding: 10px; }
 
-.slideshow_nav_btn { height: 80%; position: fixed; top: 0; font-size: 48px; color: #2f335c;}
+.slideshow_nav_btn { height: 80%; position: fixed; padding: 0px 1% 0px 1%; top: 0; font-size: 48px; color: #2f335c;}
 .slideshow_nav_btn:hover { transform: scale(1.3); cursor: pointer;}
 
 .hide { display: none;}
@@ -249,7 +250,7 @@ button:hover {cursor: pointer;}
 .artboard{height: 100%; padding: 50px;   }
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 .artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}
-.artboard h1 {font-size: 42px; line-height: 10px; }
+.artboard h1 {font-size: 2.5rem; line-height: 10px; }
 .artboard_date {font-style: italic; font-size: 20px;}
 .artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 0%;}
 .artboard a {color: #2d2d2d;}
@@ -281,6 +282,11 @@ button:hover {cursor: pointer;}
   
   #vans_hide {display: block;}
    
+}
+
+@media screen and (max-width: 650px) {
+  .artboard h1 {line-height: 2.5rem;}
+
 }
 
 @media screen and (min-width:600px) {
