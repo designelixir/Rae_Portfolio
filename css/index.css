@@ -144,14 +144,8 @@ a:hover {color: #9aa4bd;}
 .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
 #splash_context_text {width: 100%;  max-height: 75%; position: absolute;}
 .splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute; }
-.loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 20%; z-index: 200; background: #ededed; height: 10px; max-width: 68%; width: 0%; position: absolute;}
 
 
-.desktop {background-image: url("../src/desktop_items/wallpaper.svg"); display: flex; justify-content: center; align-items: center; background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;}
-
-.desktop_container img {width: 7%; position: fixed;  min-width: 70px; max-width: 110px; right: 25px; top: 75px; }
-.desktop_container img:hover {transform: rotate(5deg);}
-.desktop_icons button{border: none; box-shadow: none; outline: none; }
 
 .desktopToolbar {width: 100%; background: #2c2c2c; height: 50px; top: 0; color: #f4f4f4; z-index: 100000; opacity: 0; }
 .desktop_toolbar_left {opacity: 0;}
@@ -186,13 +180,24 @@ a:hover {color: #9aa4bd;}
 button {background-color: #00000000; border: none; outline: none;}
 button:hover {cursor: pointer;}
 
-.desktop_toolbar {width: 100%;  background-color: #2c2c2c; height: 50px; color: white; display: inline-block; overflow: hidden; position: fixed;}
+
+.desktop {display: flex; justify-content: center; align-items: center; }
+#desktopDIV{width: 100%; height: calc(100% - 250px); position: fixed; content: contain; top: 100px; z-index: 10000;}
+#desktop_wrapper {height: 100%; top: 50px; width: 100%; position: fixed; background-image: url("../src/desktop_items/wallpaper.svg");  background-size: cover; background-color: #47578a; background-repeat: no-repeat; top: 50px;  width: 100%; height: 100%; position: fixed; z-index: 0;};
+
+.desktop_toolbar { width: 100%; background-color: #2c2c2c; height: 50px; color: white; display: inline-block; overflow: hidden; position: fixed;}
 .desktop_toolbar p {display: inline-block; padding-left: 15px;}
 #desktop_toolbar_left { float: left; width: 65%; padding-left: 20px; }
 #desktop_toolbar_right {float:right; padding-right: 20px; }
 #desktop_toolbar_right img {height: 15px; padding-right: 5px; }
 .desktop_toolbar button {color: white; font-size: 14px; } 
 .desktop_toolbar a {color: white;}
+
+.desktop_container {position: fixed; right: 10px; top: 15%; bottom: 15%; max-width: 120px; }
+.desktop_container img {width: 80%;  min-width: 70px; max-width: 110px; padding-top: 10%; }
+.desktop_container img:hover {transform: rotate(5deg);}
+.desktop_icons button{border: none; box-shadow: none; outline: none; }
+
 
 .window {position: fixed; bottom: 200px; background-color: #9aa4bd; border:#3A4172 2px solid; box-shadow: 15px 15px 50px black; border-radius: 4px 4px 4px 4px;   }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
@@ -234,12 +239,12 @@ button:hover {cursor: pointer;}
 
 .hide { display: none;}
 
-.sticky {width: 300px; height: 300px; background: #9aa4bd; position: absolute; z-index: 20; text-align: center; display: flex; justify-content: center; align-items: center; }
+.sticky {width: 300px; height: 300px; background: #9aa4bd;  z-index: 20; text-align: center;  }
 
-#testimonial_wrapper {display: none; width: 100%; height: 100%; position: fixed;}
+/* #testimonial_wrapper {width: 100%; height: 100%; } */
 #testimonial_window1 {top: 45%; left: 50%; background-image: url("../src/desktop_items/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window2 { top: 50%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
-#testimonial_window3 { top: 55%; left: 60%; background-image: url("../src/desktop_items/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
+#testimonial_window2 {top: 50%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
+#testimonial_window3 {top: 55%; left: 60%; background-image: url("../src/desktop_items/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
 .sticky h5{padding-left: 30px; padding-right: 30px;  padding-top: 10%; } 
 #sticky_button {background: #3A4172; color: white; }
 #sticky_button button:hover {background:white; color: #3A4172;}

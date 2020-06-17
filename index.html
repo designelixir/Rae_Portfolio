@@ -72,11 +72,11 @@
                   <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/webDevelopment_splash.svg" style="rotate: 180deg;">
           
                 </div>      
-                <!-- <div class="loading_scroller"></div> -->
             </div>
             
             
             <!-- Begin Toolbar -->
+            
             <div class="desktop_toolbar">
         
                     <div id="desktop_toolbar_left"> 
@@ -95,17 +95,15 @@
                     </div>
                 
                 </div>
-                
-               
-                
+                <div id="desktop_wrapper">
                 <div class="desktop" id="desktopDIV"> 
                         <div class="desktop_container">
-                                <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img style="right:3%; top: 15%;" src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
-                                <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img style="right:3%; top: 25%;" src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
-                                <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img style="right:3%; top: 35%;" src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
-                                <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img style="right:3%;top: 47%;" src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
-                                <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img style="right:3%; top: 57%;" src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
-                                <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:3%; top: 68%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
+                                <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
                       
                             </div>
                         <!-- <div class="desktop_container">
@@ -117,86 +115,85 @@
                                 <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img style="right:10% ; top:40%;" src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
                       
                             </div> -->
-                      <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>
+                    <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>
                       
-                      <div id="about_window" class="window" style="display: none;" >
-                      <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
-                              
-                              <div id="about_window_content">
-                                  <div class="scroll" id="scroller_container">
-                                      <div id="slide_1" class="about_slide">
-                                              <h6><a onclick="scrollRight_scroller(1)"><strong style="float:right;">OUR MISSION &rsaquo;</strong></a> </h6><br><br>
-                                              <img src="src/cases/about_me/IMG_8290.JPG" loading="lazy" alt="Portrait of Megan" > 
-                                                  <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
-                                                  
-                                                  <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. 
-                                                  </p><br>
-                                      </div>  
-                                      <div id="slide_2" class="about_slide">
-                                              <h6><strong><a onclick="scrollRight_scroller(0)"> &lsaquo; ABOUT DESIGN ELIXIR</a></strong> <strong style="float:right;"><a onclick="scrollRight_scroller(1)">ABOUT MEGAN &rsaquo;</a></strong></h6>
-                                                  <h1>We specialize in catering our artistic tools to your creative vision.</h1>
-                                                  
-                                                  <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
-                                                  <br><br>
-                                                  <h1>Skills &amp; Services</h1>
-                                                  <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
-                                                          <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
-                                                          Branding Materials • Illustrations • Product Photos • Murals <br>
-                                                          Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
-                                                          
-                                                      Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
-                                                  </p>
-                                                  
-                                                  <p class="blu"><strong>Web Development</strong><br>
-                                                      <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
-                                                      Page Development & Maintenance •  Custom Wordpress Themes <br>
-                                                      E-Commerce • SEO </i> <br><br>
-                                                     
-                                                      From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
-                                                      web presence that covers all the bases. 
-                                              </p><br>
-                                              
-                                                  
-                              
-                                      </div>  
-                                      <div id="slide_3" class="about_slide">
-                                              <h6 style="float: left;"><strong><a onclick="scrollRight_scroller(0)">&lsaquo; OUR MISSION</a></strong> </h6>
-                                              <img src="src/cases/about_me/decorated_portrait.jpg" loading="lazy" alt="close up of Megan"> 
-                                                  <h1>A lil' something about Megan:</h1>
-                                                  
-                                                  <p class="blu"> 
-                                                          Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
-                                                  </p>
-                                                  <br><br>
-                                      </div>  
-                              </div>
+                    <div id="about_window" class="window" style="display: none;" >
+                    <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
+                            
+                            <div id="about_window_content">
+                                <div class="scroll" id="scroller_container">
+                                    <div id="slide_1" class="about_slide">
+                                            <h6><a onclick="scrollRight_scroller(1)"><strong style="float:right;">OUR MISSION &rsaquo;</strong></a> </h6><br><br>
+                                            <img src="src/cases/about_me/IMG_8290.JPG" loading="lazy" alt="Portrait of Megan" > 
+                                                <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
+                                                
+                                                <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. 
+                                                </p><br>
+                                    </div>  
+                                    <div id="slide_2" class="about_slide">
+                                            <h6><strong><a onclick="scrollRight_scroller(0)"> &lsaquo; ABOUT DESIGN ELIXIR</a></strong> <strong style="float:right;"><a onclick="scrollRight_scroller(1)">ABOUT MEGAN &rsaquo;</a></strong></h6>
+                                                <h1>We specialize in catering our artistic tools to your creative vision.</h1>
+                                                
+                                                <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                                                <br><br>
+                                                <h1>Skills &amp; Services</h1>
+                                                <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                                        <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                                        Branding Materials • Illustrations • Product Photos • Murals <br>
+                                                        Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                                        
+                                                    Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                                </p>
+                                                
+                                                <p class="blu"><strong>Web Development</strong><br>
+                                                    <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                                    Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                                    E-Commerce • SEO </i> <br><br>
+                                                    
+                                                    From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                                    web presence that covers all the bases. 
+                                            </p><br>
+                                            
+                                                
+                            
+                                    </div>  
+                                    <div id="slide_3" class="about_slide">
+                                            <h6 style="float: left;"><strong><a onclick="scrollRight_scroller(0)">&lsaquo; OUR MISSION</a></strong> </h6>
+                                            <img src="src/cases/about_me/decorated_portrait.jpg" loading="lazy" alt="close up of Megan"> 
+                                                <h1>A lil' something about Megan:</h1>
+                                                
+                                                <p class="blu"> 
+                                                        Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                                </p>
+                                                <br><br>
+                                    </div>  
+                            </div>
+            
+                            
                 
-                              
+                                
+                            
+                            </div>
+                        
+                    </div>
                   
-                                  
-                              
-                              </div>
-                          
-                      </div>
-                
-                  
-                      <div id="contact_window" class="window" style="display: none;">
-                      <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Me</p></div>
-                      
-                      <div id="contact_window_content">
-                          <p> <b>To:</b> yourbeautifulface@email.com</p> <hr>
-                          <p> <b>From:</b> megan@designelixir.studio</p> <hr>
-                          <p> <b>Subject:</b> Let's Chat!</p> <hr>
-                          <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-                              Contact me at megan@designelixir.studio for any questions or inquiries.  </p>
-                          <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
-                          <a href="https://unsplash.com/@designelixir" rel='noopener' target="_blank"><img src="src/social_media/unsplash_file.svg" alt="unsplash.com shortcut"></a>
-                          <a href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank"><img src="src/social_media/instagram_file.svg" alt="Megans instagram shortcut"></a>
-                          <a href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank"><img src="src/social_media/linkedin_file.svg" alt="megan's linkedin shortcut"></a>
-                          <a href="https://github.com/coloradical" rel='noopener' target="_blank"><img src="src/social_media/github_file.svg" alt="megan's github shortcut"></a><br><br><br>
-                          <div id="contact_window_sendbar"><a class="mail_button" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Send a Message</a></div>
-                      </div>
-                      </div>
+                    <div id="contact_window" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Me</p></div>
+                    
+                    <div id="contact_window_content">
+                        <p> <b>To:</b> yourbeautifulface@email.com</p> <hr>
+                        <p> <b>From:</b> megan@designelixir.studio</p> <hr>
+                        <p> <b>Subject:</b> Let's Chat!</p> <hr>
+                        <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
+                            Contact me at megan@designelixir.studio for any questions or inquiries.  </p>
+                        <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
+                        <a href="https://unsplash.com/@designelixir" rel='noopener' target="_blank"><img src="src/social_media/unsplash_file.svg" alt="unsplash.com shortcut"></a>
+                        <a href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank"><img src="src/social_media/instagram_file.svg" alt="Megans instagram shortcut"></a>
+                        <a href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank"><img src="src/social_media/linkedin_file.svg" alt="megan's linkedin shortcut"></a>
+                        <a href="https://github.com/coloradical" rel='noopener' target="_blank"><img src="src/social_media/github_file.svg" alt="megan's github shortcut"></a><br><br><br>
+                        <div id="contact_window_sendbar"><a class="mail_button" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Send a Message</a></div>
+                    </div>
+                    </div>
                   
                     <div id="terminal_window" class="window" style="display: none;">
                     <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
@@ -331,34 +328,33 @@
                         </div>
                             
                     </div>
-                  
                     
-                        <div id="testimonial_window1" class="window sticky" style="display: none;">
-                            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
-                                
-                                <div class="sticky_textbox">
-                                    <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
-                                </div>
-                        </div>
-                    
-                        <div id="testimonial_window2" class="window sticky" style="display: none;">
-                            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window2')" aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
-                                <br> <h5> <em>Megan was extremely responsive in listening to my objectives and
-                                    redesigning that page in my site. I recommend Megan as a creative, collaborative, and
-                                    professional young web designer and I’m so delighted with both my website and the technical
-                                    capacity I gained by working with Megan.</em> </h5><br><br>
-                        </div>
-                    
-                        <div id="testimonial_window3" class="window sticky" style="display: none;">
-                            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_window3')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
-                                <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
-                                    from an out-of-date website and social media we inherited from former owners.  
-                                    From great concept and design, tech fixes and consulting, art, photography, and helping 
-                                    get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                    hard, and recommend her for any sized project! </em>  </h5>
-                    
-                        </div>
-         
+                    <div id="testimonial_window1" class="window sticky" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(1)" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
+                            
+                            <div class="sticky_textbox">
+                                <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
+                            </div>
+                    </div>
+                
+                    <div id="testimonial_window2" class="window sticky" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(2)"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
+                            <br> <h5> <em>Megan was extremely responsive in listening to my objectives and
+                                redesigning that page in my site. I recommend Megan as a creative, collaborative, and
+                                professional young web designer and I’m so delighted with both my website and the technical
+                                capacity I gained by working with Megan.</em> </h5><br><br>
+                    </div>
+                
+                    <div id="testimonial_window3" class="window sticky" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(3)"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
+                            <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
+                                from an out-of-date website and social media we inherited from former owners.  
+                                From great concept and design, tech fixes and consulting, art, photography, and helping 
+                                get an online shopping platform built. I’ve never seen someone be so engaged and work so 
+                                hard, and recommend her for any sized project! </em>  </h5>
+                
+                    </div>
+
                     <div id="miller_project" class="window case" style="display: none;">
                         <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Miller Bros - Logo and Sticker Design</p></div>
                         <div class="case_content">
@@ -701,7 +697,7 @@
                             </div>
                             <div class="tooltip">   
                               <span class="tooltiptext">Testimonials</span> 
-                              <button onclick="toggleOpenClose('testimonial_window2');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+                              <button onclick="toggleOpenCloseTestimonial(0);" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
                             </div>
                             <div class="tooltip">   
                               <span class="tooltiptext">Website Stats</span> 
@@ -709,10 +705,11 @@
                             </div>
                             
                             </div>
-                        </div>
+                    </div>
                           
                         
                   </div><!-- desktop div -->
+                </div>
                  
 
 

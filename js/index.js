@@ -195,18 +195,74 @@ uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 // uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
-
+var testimonial1 = document.getElementById("testimonial_window1");
+var testimonial2 = document.getElementById("testimonial_window2");
+var testimonial3 = document.getElementById("testimonial_window3");
 
 var open = [];
+var testimonialWindows = [testimonial1, testimonial2, testimonial3];
 
+function toggleOpenCloseTestimonial(testimonialWindow) {
+  var status = testimonialWindow;
+  console.log(testimonialWindows);
+
+  
+  if (status === 0 && open.length === 0){
+    
+    testimonial1.style.display="block";
+    testimonial2.style.display="block";
+    testimonial3.style.display="block";
+    open.push(testimonial1, testimonial2, testimonial3);
+    console.log(open);
+  }
+
+  else if (status === 0 && open.length === 1) {
+    var closeThis = open[0];
+        closeThis.style.display = "none";
+        console.log ("array: "+open + "took off " + open[0]);
+        open.splice(0);
+        testimonial1.style.display="block";
+        testimonial2.style.display="block";
+        testimonial3.style.display="block";
+        open.push(testimonial1, testimonial2, testimonial3);
+    
+  }
+
+  else if (status === 0 && open.length > 1){
+    testimonial1.style.display="none";
+    testimonial2.style.display="none";
+    testimonial3.style.display="none";
+    open.pop(testimonial1);
+    open.pop(testimonial2);
+    open.pop(testimonial3);
+    console.log("after clicking terminal a second time " + open);
+  }
+
+  else if (status === 1) {
+    testimonial1.style.display="none";
+    open.pop(testimonial1);
+    console.log(open);
+  }
+  else if (status === 2) {
+    testimonial2.style.display="none";
+    open.pop(testimonial2);
+    console.log(open);
+  }
+  else if (status === 3 ){
+    testimonial3.style.display="none";
+    open.pop(testimonial3);
+    console.log(open);
+  }
+
+  console.log("length is" + open.length);
+}
 
 function toggleOpenClose(window_id) {
-  var x = window_id.toString();
-  var tab = document.getElementById(x);
+  var tab = document.getElementById(window_id);
+
   if (tab.style.display === "block") {
-    tab.style.animation = "fade-out .25s ease-out both";
-    tab.style.display = "none";
     open.pop(tab);
+    tab.style.display = "none";
     
   }
   
@@ -215,13 +271,17 @@ function toggleOpenClose(window_id) {
     tab.style.display = "block";
     tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
     
-    if (open.length > 0) {
+    var openWindow = open.length;
+    console.log ("variable openWindow is "+ openWindow);
 
-      for (i = 0; i < open.length; i++ ){
+    if (open.length > 0) {
+      console.log ("the length before the for loop is "+ open.length);
+      for (i = 0; i < openWindow ; i++ ){
         var closeThis = open[i];
-        closeThis.style.display= "none";
-        open.splice(i);
+        closeThis.style.display = "none";
         
+        console.log ("closing "+ closeThis);
+        open.pop(closeThis);
       }
       
     }
@@ -229,7 +289,7 @@ function toggleOpenClose(window_id) {
     open.push(tab);
   }
   
-console.log(open.length + "array has " + open);
+
 
 }
 
@@ -335,58 +395,36 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 
-// scroller function for About Window 
-// function scrollRight_scroller(direction) {
-//   if (direction === 1) {
-//     document.getElementById('scroller_container').scrollLeft += 700;
-//   }
-//   else {
-//     document.getElementById('scroller_container').scrollLeft -= 700;
-//   }
-  
-// };
-
-// function scrollDown_scroller(direction) {
-//   if (direction === 3) {
-//     document.getElementById('#desktopDIV').scrollIntoView();
-//   }
-//   else {
-//     document.getElementById('scroller_container').scrollLeft -= 700;
-//   }
-//   console.log(direction)
-  
-// };
-
 function scrollToPosition(value){
   window.scrollTo(0,value);
 }
 
-var slideIndex = 1;
-       showDivs(slideIndex);
+// var slideIndex = 1;
+//        showDivs(slideIndex);
        
-       function plusDivs(n) {
-         showDivs(slideIndex += n);
-       }
+//        function plusDivs(n) {
+//          showDivs(slideIndex += n);
+//        }
        
-       function currentDiv(n) {
-         showDivs(slideIndex = n);
-       }
+//        function currentDiv(n) {
+//          showDivs(slideIndex = n);
+//        }
        
-       function showDivs(n) {
-         var i;
-         var x = document.getElementsByClassName("mySlides");
-         var dots = document.getElementsByClassName("project_nav_btn");
-         if (n > x.length) {slideIndex = 1}    
-         if (n < 1) {slideIndex = x.length}
-         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-         }
-         for (i = 0; i < dots.length; i++) {
-           dots[i].className = dots[i].className.replace(" w3-red", "");
-         }
-         x[slideIndex-1].style.display = "block";  
-         dots[slideIndex-1].className += " w3-red";
-       }
+//        function showDivs(n) {
+//          var i;
+//          var x = document.getElementsByClassName("mySlides");
+//          var dots = document.getElementsByClassName("project_nav_btn");
+//          if (n > x.length) {slideIndex = 1}    
+//          if (n < 1) {slideIndex = x.length}
+//          for (i = 0; i < x.length; i++) {
+//            x[i].style.display = "none";  
+//          }
+//          for (i = 0; i < dots.length; i++) {
+//            dots[i].className = dots[i].className.replace(" w3-red", "");
+//          }
+//          x[slideIndex-1].style.display = "block";  
+//          dots[slideIndex-1].className += " w3-red";
+//        }
 
 function changeTime(){
   const current = new Date();
