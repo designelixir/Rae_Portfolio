@@ -149,7 +149,7 @@ const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const desktop_icons = document.querySelector('.desktop_container');
+const desktop_icons = document.querySelector('.desktop_icon_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const graphic_design_splash = document.querySelector('#graphic_design_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
@@ -195,6 +195,36 @@ uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 // uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
+
+
+
+
+
+
+
+
+
+dragElement(document.getElementById("about_window"));
+dragElement(document.getElementById("contact_window"));
+dragElement(document.getElementById("terminal_window"));
+dragElement(document.getElementById("finder_window"));
+dragElement(document.getElementById("testimonial_window1"));
+dragElement(document.getElementById("testimonial_window2"));
+dragElement(document.getElementById("testimonial_window3"));
+dragElement(document.getElementById("miller_project"));
+dragElement(document.getElementById("baja_project"));
+dragElement(document.getElementById("menu_project"));
+dragElement(document.getElementById("killa_nilla_project"));
+dragElement(document.getElementById("tlgs_project"));
+dragElement(document.getElementById("vans_project"));
+
+
+
+function about_scroller(direction) {
+  if (direction === 1) {document.getElementById('about_content').scrollLeft += 620;}
+  else {document.getElementById('about_content').scrollLeft -= 620;}
+};
+
 var testimonial1 = document.getElementById("testimonial_window1");
 var testimonial2 = document.getElementById("testimonial_window2");
 var testimonial3 = document.getElementById("testimonial_window3");
@@ -202,60 +232,6 @@ var testimonial3 = document.getElementById("testimonial_window3");
 var open = [];
 var testimonialWindows = [testimonial1, testimonial2, testimonial3];
 
-function toggleOpenCloseTestimonial(testimonialWindow) {
-  var status = testimonialWindow;
-  console.log(testimonialWindows);
-
-  
-  if (status === 0 && open.length === 0){
-    
-    testimonial1.style.display="block";
-    testimonial2.style.display="block";
-    testimonial3.style.display="block";
-    open.push(testimonial1, testimonial2, testimonial3);
-    console.log(open);
-  }
-
-  else if (status === 0 && open.length === 1) {
-    var closeThis = open[0];
-        closeThis.style.display = "none";
-        console.log ("array: "+open + "took off " + open[0]);
-        open.splice(0);
-        testimonial1.style.display="block";
-        testimonial2.style.display="block";
-        testimonial3.style.display="block";
-        open.push(testimonial1, testimonial2, testimonial3);
-    
-  }
-
-  else if (status === 0 && open.length > 1){
-    testimonial1.style.display="none";
-    testimonial2.style.display="none";
-    testimonial3.style.display="none";
-    open.pop(testimonial1);
-    open.pop(testimonial2);
-    open.pop(testimonial3);
-    console.log("after clicking terminal a second time " + open);
-  }
-
-  else if (status === 1) {
-    testimonial1.style.display="none";
-    open.pop(testimonial1);
-    console.log(open);
-  }
-  else if (status === 2) {
-    testimonial2.style.display="none";
-    open.pop(testimonial2);
-    console.log(open);
-  }
-  else if (status === 3 ){
-    testimonial3.style.display="none";
-    open.pop(testimonial3);
-    console.log(open);
-  }
-
-  console.log("length is" + open.length);
-}
 
 function toggleOpenClose(window_id) {
   var tab = document.getElementById(window_id);
@@ -265,7 +241,8 @@ function toggleOpenClose(window_id) {
     tab.style.display = "none";
     
   }
-  
+
+ 
   else {
     
     tab.style.display = "block";
@@ -296,45 +273,126 @@ function toggleOpenClose(window_id) {
 
 
 
+function finder_filter(filterbutton, filterbuttonName) {
+    var allButtons = document.getElementsByClassName("finder_filter_btn");
+    for (i = 0; i < allButtons.length; i++){
+        var deactivate = allButtons[i];
+        deactivate.style.background="#384272";
+        deactivate.style.color = "#c7ccde";
+        
+    }
+    var activeButton = document.getElementById(filterbuttonName);
+    activeButton.style.background = "#2f335c";
+    activeButton.style.color = "white";
 
-dragElement(document.getElementById("about_window"));
-dragElement(document.getElementById("contact_window"));
-dragElement(document.getElementById("terminal_window"));
-dragElement(document.getElementById("finder_window"));
-dragElement(document.getElementById("testimonial_window1"));
-dragElement(document.getElementById("testimonial_window2"));
-dragElement(document.getElementById("testimonial_window3"));
-dragElement(document.getElementById("miller_project"));
-dragElement(document.getElementById("baja_project"));
-dragElement(document.getElementById("menu_project"));
-dragElement(document.getElementById("killa_nilla_project"));
-dragElement(document.getElementById("tlgs_project"));
-dragElement(document.getElementById("vans_project"));
+    var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];
+    var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon"];
+    
+    for (i = 0; i < all.length; i++){
+    var showElement = document.getElementById(all[i]);
+    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
+    }
+    
+    for (i=0; i<allIcons.length; i++){
+        var showIcon = document.getElementById(allIcons[i]);
+        showIcon.style.display = "block";
+        
+    }
+    
+
+
+    if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
+    else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
+    else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
+    else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
 
 
 
+   for (i = 0; i < hideThis.length; i++){
+       var hide = document.getElementById(hideThis[i]);
+       hide.style.display = "none";
+       hide.className = hide.className.replace('mySlides', "hiddenMySlides");
+   }
 
+   var mySlides = document.getElementsByClassName("mySlides");
+   mySlides[0].style.display = "block";
+   
+
+
+
+}
+
+
+function scaleCarouselButton(buttonName, buttonPosition){
+    var openbuttons = [];
+    var activeButton = document.getElementsByClassName('active_carousel_button');
+    openbuttons.push(buttonName);
+    console.log(openbuttons);
+   
+    for (i = 0; i<openbuttons.length; i++){
+            var scaleDown = document.getElementById(openbuttons[i]);
+            scaleDown.classList.remove('active_carousel_button');
+            openbuttons.pop(openbuttons[i]);
+        }
+    
+    if (buttonPosition === 1){
+        
+        var scaleThisButton = document.getElementById(buttonName);
+        scaleThisButton.classList.add("active_carousel_button");
+        
+    } 
+
+    
+}
+
+
+console.log(slideIndex);
+
+var x = document.getElementsByClassName("mySlides");                    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+console.log(x.length);
+showDivs(slideIndex += n);
+}
+
+
+function currentDiv(n, filteredSlideIndex) {
+var buttons = document.getElementById('finder_carousel_container').getElementsByClassName('project_nav_btn');
+console.log("currentDiv status: " + buttons[0] );
+if (x.length <= 4){slideIndex = filteredSlideIndex;}
+else {slideIndex = n;}
+
+
+
+showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("project_nav_btn");
+  
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";  
+  
+  }
+  
+  x[slideIndex-1].style.display = "block";  
+  
+  }
 
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var window = document.getElementsByClassName('window');
   if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    // window.style.position = "fixed";
-    // window.style.left = "initial";
-    // window.style.right = "initial";
-    // window.style.top = "initial";
-    // window.style.bottom = "initial";
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    
-    // window.style.position = "fixed";
-
     elmnt.onmousedown = dragMouseDown;
-    
-    
   }
 
   function dragMouseDown(e) {
@@ -368,8 +426,6 @@ function dragElement(elmnt) {
   }
 }
 
-// translate this to JAVASCRIPT 
-
 
 function print_terminal() {
   $("p.line")
@@ -398,33 +454,6 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 function scrollToPosition(value){
   window.scrollTo(0,value);
 }
-
-// var slideIndex = 1;
-//        showDivs(slideIndex);
-       
-//        function plusDivs(n) {
-//          showDivs(slideIndex += n);
-//        }
-       
-//        function currentDiv(n) {
-//          showDivs(slideIndex = n);
-//        }
-       
-//        function showDivs(n) {
-//          var i;
-//          var x = document.getElementsByClassName("mySlides");
-//          var dots = document.getElementsByClassName("project_nav_btn");
-//          if (n > x.length) {slideIndex = 1}    
-//          if (n < 1) {slideIndex = x.length}
-//          for (i = 0; i < x.length; i++) {
-//            x[i].style.display = "none";  
-//          }
-//          for (i = 0; i < dots.length; i++) {
-//            dots[i].className = dots[i].className.replace(" w3-red", "");
-//          }
-//          x[slideIndex-1].style.display = "block";  
-//          dots[slideIndex-1].className += " w3-red";
-//        }
 
 function changeTime(){
   const current = new Date();
