@@ -1,179 +1,223 @@
 <style>
-body {background: teal;}
+
+.window {width: 100%; border: #3A4172 1px solid; height: 100%; width: 100%; background: #c6cadf; margin: 10px; contain: content;}
+.window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
+.window_closebar p {display: inline-block; position: relative; bottom: 5px;}
+.close_btn {top: 5px; height: 20px; left: 8px; float: left; position: fixed; }
+.window_closebar img:hover {cursor: pointer; transform: scale(1.2)}
+
+#finder_window {width: 95%; height: 85%;  max-width: 1000px; contain: content;  }
+.finder_content { width: 100%; height: calc(100% - 120px); background: #c6cADF; display: flex; justify-content: center; align-items: center;}
+
+.slideshow_nav_btn { height: 80px; position: fixed; padding: 0px 1% 0px 1%; top: 0; font-size: 48px; color: #2f335c;}
+.slideshow_nav_btn:hover { transform: scale(1.3); cursor: pointer;}
 
 
-.finder_content { width: 100%; height: calc(100% - 150px); background: #c6cADF; display: flex; justify-content: center; align-items: center;}
-.finder_content_nav{background: #707BA5; border: 1px solid #2f335c; width: 100%; height: 150px; display: flex;  align-items: center; overflow-x: scroll;}
-.slide_container { width: 90%; height: 95%; text-align: center; contain: content;  }
-.slide_caption {bottom: 0; position: absolute; width: 100%; background: #c6cADF;}
 
+.finder_slide {
+  
+  background: none;
+  border: none; 
+  height: 50%;
+  text-align: center;
+  display: none;
+  
+}
 
-.mySlides img { height: 100%; vertical-align: middle; }
+.show {
+  display: block;
+}
 
+.hide {
+    display: none;
+}
 
-.finder_content_nav img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; background: none; }
-.finder_content_nav button {padding-right: 20px; outline: none; border: none; background: none;}
-.finder_content_nav button:hover {transform: scale(1.1); cursor: pointer; } 
-.finder_content_nav button:focus {transform: scale(1.1); cursor: pointer; }  
+/* filter top bar  */
+.finder_topbar {width: 100%; height: 50px; position: fixed; top: 30px; box-shadow: 5px 5px 5px gray; border-bottom: 1px solid #2f335c; background: #707ba5; z-index: 1; contain: content; display: flex; justify-content: center; align-items: center;}
+.finder_topbar button {padding: 0px 10px 0px 10px; margin-right: 20px;}
 
+/*finder content */
+.finder_content {width: 100%;   height: calc(100% - 200px); bottom: 110px;  background-image: url('src/desktop_items/grid_simple.svg'); position: fixed; display: flex; justify-content: center; align-items: center; }
+.finder_slides {height: 95%;  width: 100%; contain: content;}
+
+.slide_content {display: flex; justify-content: center;}
+
+/* 
+.slide {width: (100% - 40px);  background-color: green; height: calc(100% - 150px); top: 0px; contain: content; position: fixed; left: 0; right: 0; color: black;   }
+*/
+.slide_caption {bottom: 0; width: 100%; position: fixed; background: #c6cadf; padding: 20px;} 
 .slide_caption button {background: #2f335c; color: white; border: none; padding: 10px; }
+
+/* finder_bottom_nav */
+.container { box-shadow: 0px -4px 7px gray; border-top: 1px solid #2f335c;  width: 100%; overflow-x: scroll; height: 100px; position: fixed; bottom: 0; contain: content;  }
+.container button {width: 100px; padding-right: 50px; outline: none; border: none; background: none;}
+.container img {width: 100px;}
+
+
+
 
 
 </style>
 
 <body>
-
-<div class="finder_wrapper">
-    
-    <div class="finder_content">
-            
-
-        <div class="slide_container">
-                <div class="mySlides">
-                        <img class="wide_slide" src="src/cases/miller_bros/miller_sticker_layout.png" loading="lazy" alt="Miller Bros Sticker layout">
-                        <div class="slide_caption">
-                            <h3>The Miller Bros - Sticker &amp; Logo Design</h3>                                     
-                            <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
-                            <button onclick="toggleOpenClose('miller_project'), toggleOpenClose('finder_window')">View Full Project</button>
-                        </div>
+        <div id="finder_window" class="window">
+                <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
+                <div class="finder_topbar">
                         
-                </div>
-
-                <div class="mySlides">
-                        <img class="wide_slide" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
-                        <div class="slide_caption">
-                            <h3>Twin Lakes General Store - Website Development</h3>
-                            <p> Revamp the website for a historic, 141-year old mountain general store with straightforward layout and information  while expressing the character of the Twin Lakes, Colorado. </p>
-                            <button onclick="toggleOpenClose('tlgs_project'), toggleOpenClose('finder_window')">View Full Project</button>
-                        </div>
-                </div> 
-
-                <div class="mySlides">
-                        <!-- <img src="src/cases/finder_extras/happiness_kat.jpg"  loading="lazy"  alt="kat's script font over image"> -->
-                        <img src="src/cases/finder_extras/kats_script2.jpg" loading="lazy" alt="kat script sample">
-                        <div class="slide_caption">
-                            <h3>Kat's Script - Custom Typography</h3>
-                            <p> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
-                        </div>
-                        
-                </div> 
-
-                <div class="mySlides">
-                    <img src="src/cases/vans/vans_post_v2.webp" loading="lazy"  alt="megan on skateboard">
-                    <div class="slide_caption">
-                            <h3>Vans Ultrarange Project - Product Photos &amp; Videos</h3>
-                            <p> Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
-                            <button onclick="toggleOpenClose('vans_project'), toggleOpenClose('finder_window')">View full Case Study</button>
+                        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                        <button class="btn" onclick="filterSelection('websites')"> websites</button>
+                        <button class="btn" onclick="filterSelection('graphic_design')"> Graphic Design</button>
+                        <button class="btn" onclick="filterSelection('illustration')"> Illustration</button>
                     </div>
-                </div> 
+                <div class="finder_content">
+                    <div class="finder_slides">
+                        <div class="show finder_slide illustration slide" >
+                            <div class="slide_content">
+                                <img class="wide_slide" src="src/cases/miller_bros/miller_sticker_layout.png" style="width: 100%" loading="lazy" alt="Miller Bros Sticker layout">
+                                <div class="slide_caption">
+                                    <p><b>The Miller Bros</b></p>                                  
+                                    <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                    <button onclick="toggleOpenClose('miller_project')">View Full Project</button>
+                                </div>
 
-                <div class="mySlides">
-                        <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
-                        <div class="slide_caption">
-                                <h3>Killa Nilla - Album Artwork</h3>
-                                <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
-                                <button onclick="toggleOpenClose('killa_nilla_project'), toggleOpenClose('finder_window')">View full Case Study</button>
-                        </div>
-                </div> 
+                            </div>
+                            
 
-                <div class="mySlides">
-                        <img src="src/cases/finder_extras/debra.jpg" alt="Debra Austin Website">
-                        <div class="slide_caption">
-                            <h3>Debra Austin, JD, PhD - Personal Website</h3>
-                            <p> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
-                            <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
-                        </div>
-                        
-                </div> 
-
-                <div class="mySlides">
-                        <img src="src/cases/west_flanders/wf_ad_layout.jpg" alt="West Flanders ad layout">
-                        
-                        
-                        <div class="slide_caption">
-                            <h3>West Flanders Brewing Company - Brand Development </h3>
-                            <p> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
-                            <button onclick="toggleOpenClose('menu_project'), toggleOpenClose('finder_window')">View Project Case Study</button>
-                        </div>
-                        
-                </div> 
-
-                <div class="mySlides">
-                        <img src="src/cases/finder_extras/cuMech.png" alt="University of Colorado Class of 2020 Mechanical Engineers website">
-                        
-                        <div class="slide_caption">
-                            <h3>University of Colorado Boulder Mechanical Engineering - Graduation Website </h3>
-                            <p> Using existing brand standards, design a celebratory website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery for over 300 students. </p>
-                            <button onclick="window.open('https://www.meclassof2020.wpcomstaging.com/', '_blank')">Visit the Website</button>
                         </div>
 
-                        
-                </div> 
-
-                <div class="mySlides">
-                        <img src="src/cases/finder_extras/northern.jpg" alt="Northern Wild Stickers">
-                        <div class="slide_caption">
-                            <h3>Northern Wild - Stickers </h3>
-                            <p> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
+                        <div class="finder_slide websites slide hide"  >
+                                <img src="src/cases/finder_extras/debra.jpg" style="width: 100%"  alt="Debra Austin Website">
+                                    <div class="slide_caption">
+                                        <p><b>Debra Austin, JD, PhD</b></p>
+                                        <p> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                        <button onclick="window.open('https://www.debraaustin.com', '_blank')">Visit the Website</button>
+                                    </div>
+    
                         </div>
-                        
+
+                        <div class="finder_slide graphic_design slide hide"  >
+                                <img src="src/cases/west_flanders/wf_ad_layout.jpg" style="width: 100%"  alt="West Flanders ad layout">
+                                    
+                                    
+                                    <div class="slide_caption">
+                                        <p><b>West Flanders Brewing Company</b></p>
+                                        <p> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
+                                        <button onclick="toggleOpenClose('menu_project')">View Project Case Study</button>
+                                    </div>
+    
+                        </div>
+                
+                    
+            
                 </div>
 
-        </div>
-        
-
-    </div>
-    <div class="finder_content_nav">
-            <button class="project_nav_btn" onclick="currentDiv(1)"><img src="src/cases/miller_bros/miller_sticker_layout.png"  alt="miller bro stickers "></button> 
-            <button class="project_nav_btn" onclick="currentDiv(2)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
-            <button class="project_nav_btn" onclick="currentDiv(3)"><img src="src/cases/finder_extras/happiness_kat.jpg" ></button> 
-            <button class="project_nav_btn" onclick="currentDiv(4)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
-            <button class="project_nav_btn" onclick="currentDiv(5)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
-            <button class="project_nav_btn" onclick="currentDiv(6)"><img src="src/cases/finder_extras/brain.png" ></button> 
-            <button class="project_nav_btn" onclick="currentDiv(7)"><img src="src/cases/west_flanders/lightbulbs.jpg" ></button> 
-            <button class="project_nav_btn" onclick="currentDiv(8)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
-            <button class="project_nav_btn" onclick="currentDiv(9)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
-
-
-    </div>
+                <div class="container">
+                        
+                        <button class="project_nav_btn" onclick="currentDiv(1)"><img src="src/cases/miller_bros/miller_sticker_layout.png"  alt="miller bro stickers "></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(2)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(3)"><img src="src/cases/finder_extras/happiness_kat.jpg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(4)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(5)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(6)"><img src="src/cases/finder_extras/brain.png" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(7)"><img src="src/cases/west_flanders/lightbulbs.jpg" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(8)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
+                        <button class="project_nav_btn" onclick="currentDiv(9)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
+            
+            
+                </div>
 
 
-</div>
+                <!-- <div class="container">
+                    
+                        <button class="finder_slide illustration" onclick="currentDiv(1)"><img src="src/cases/miller_bros/miller_sticker_layout.png"  alt="miller bro stickers "></button> 
+                        <button class="finder_slide websites" onclick="currentDiv(2)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
+                        <button class="finder_slide illustration" onclick="currentDiv(3)"><img src="src/cases/finder_extras/happiness_kat.jpg" ></button> 
+                        <button class="finder_slide graphic_design" onclick="currentDiv(4)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
+                        <button class="finder_slide graphic_design" onclick="currentDiv(5)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
+                        <button class="finder_slide websites" onclick="currentDiv(6)"><img src="src/cases/finder_extras/brain.png" ></button> 
+                        <button class="finder_slide graphic_design" onclick="currentDiv(7)"><img src="src/cases/west_flanders/lightbulbs.jpg" ></button> 
+                        <button class="finder_slide websites" onclick="currentDiv(8)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
+                        <button class="finder_slide illustration" onclick="currentDiv(9)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
+            
+            
+                </div> -->
+                    
+            </div>
 
 </body> 
 
 <script>
  
-        var slideIndex = 1;
-       showDivs(slideIndex);
-       
-       function plusDivs(n) {
-         showDivs(slideIndex += n);
-       }
-       
-       function currentDiv(n) {
-         showDivs(slideIndex = n);
-       }
-       
-       function showDivs(n) {
-         var i;
-         var x = document.getElementsByClassName("mySlides");
-         var dots = document.getElementsByClassName("project_nav_btn");
-         if (n > x.length) {slideIndex = 1}    
-         if (n < 1) {slideIndex = x.length}
-         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-         }
-         for (i = 0; i < dots.length; i++) {
-           dots[i].className = dots[i].className.replace(" w3-red", "");
-         }
-         x[slideIndex-1].style.display = "block";  
-         dots[slideIndex-1].className += " w3-red";
-       }
-       
-        
-        
-        
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function plusDivs(n) {
+//     showDivs(slideIndex += n);
+// }
+
+// function currentDiv(n) {
+//     showDivs(slideIndex = n);
+// }
+
+// function showDivs(n) {
+//     var i;
+//     var x = document.getElementsByClassName("container");
+//     var dots = document.getElementsByClassName("finder_slide");
+//     if (n > x.length) {slideIndex = 1}    
+//     if (n < 1) {slideIndex = x.length}
+//     for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//     }
+//     for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" w3-red", "");
+//     }
+//     x[slideIndex-1].style.display = "block";  
+//     dots[slideIndex-1].className += " w3-red";
+// }
+
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("finder_slide");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("finder_topbar");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
         </script>
        
        

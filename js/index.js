@@ -149,7 +149,7 @@ const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const desktop_icons = document.querySelector('.desktop_container');
+const desktop_icons = document.querySelector('.desktop_icon_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const graphic_design_splash = document.querySelector('#graphic_design_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
@@ -197,41 +197,8 @@ uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 
-var open = [];
 
 
-function toggleOpenClose(window_id) {
-  var x = window_id.toString();
-  var tab = document.getElementById(x);
-  if (tab.style.display === "block") {
-    tab.style.animation = "fade-out .25s ease-out both";
-    tab.style.display = "none";
-    open.pop(tab);
-    
-  }
-  
-  else {
-    
-    tab.style.display = "block";
-    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
-    
-    if (open.length > 0) {
-
-      for (i = 0; i < open.length; i++ ){
-        var closeThis = open[i];
-        closeThis.style.display= "none";
-        open.splice(i);
-        
-      }
-      
-    }
-    
-    open.push(tab);
-  }
-  
-console.log(open.length + "array has " + open);
-
-}
 
 
 
@@ -253,28 +220,179 @@ dragElement(document.getElementById("vans_project"));
 
 
 
+function about_scroller(direction) {
+  if (direction === 1) {document.getElementById('about_content').scrollLeft += 620;}
+  else {document.getElementById('about_content').scrollLeft -= 620;}
+};
 
+var testimonial1 = document.getElementById("testimonial_window1");
+var testimonial2 = document.getElementById("testimonial_window2");
+var testimonial3 = document.getElementById("testimonial_window3");
+
+var open = [];
+var testimonialWindows = [testimonial1, testimonial2, testimonial3];
+
+
+function toggleOpenClose(window_id) {
+  var tab = document.getElementById(window_id);
+
+  if (tab.style.display === "block") {
+    open.pop(tab);
+    tab.style.display = "none";
+    
+  }
+
+ 
+  else {
+    
+    tab.style.display = "block";
+    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
+    
+    var openWindow = open.length;
+    console.log ("variable openWindow is "+ openWindow);
+
+    if (open.length > 0) {
+      console.log ("the length before the for loop is "+ open.length);
+      for (i = 0; i < openWindow ; i++ ){
+        var closeThis = open[i];
+        closeThis.style.display = "none";
+        
+        console.log ("closing "+ closeThis);
+        open.pop(closeThis);
+      }
+      
+    }
+    
+    open.push(tab);
+  }
+  
+
+
+}
+
+
+
+
+function finder_filter(filterbutton, filterbuttonName) {
+    var allButtons = document.getElementsByClassName("finder_filter_btn");
+    for (i = 0; i < allButtons.length; i++){
+        var deactivate = allButtons[i];
+        deactivate.style.background="#384272";
+        deactivate.style.color = "#c7ccde";
+        
+    }
+    var activeButton = document.getElementById(filterbuttonName);
+    activeButton.style.background = "#2f335c";
+    activeButton.style.color = "white";
+
+    var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];
+    var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon"];
+    
+    for (i = 0; i < all.length; i++){
+    var showElement = document.getElementById(all[i]);
+    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
+    }
+    
+    for (i=0; i<allIcons.length; i++){
+        var showIcon = document.getElementById(allIcons[i]);
+        showIcon.style.display = "block";
+        
+    }
+    
+
+
+    if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
+    else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
+    else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
+    else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
+
+
+
+   for (i = 0; i < hideThis.length; i++){
+       var hide = document.getElementById(hideThis[i]);
+       hide.style.display = "none";
+       hide.className = hide.className.replace('mySlides', "hiddenMySlides");
+   }
+
+   var mySlides = document.getElementsByClassName("mySlides");
+   mySlides[0].style.display = "block";
+   
+
+
+
+}
+
+
+function scaleCarouselButton(buttonName, buttonPosition){
+    var openbuttons = [];
+    var activeButton = document.getElementsByClassName('active_carousel_button');
+    openbuttons.push(buttonName);
+    console.log(openbuttons);
+   
+    for (i = 0; i<openbuttons.length; i++){
+            var scaleDown = document.getElementById(openbuttons[i]);
+            scaleDown.classList.remove('active_carousel_button');
+            openbuttons.pop(openbuttons[i]);
+        }
+    
+    if (buttonPosition === 1){
+        
+        var scaleThisButton = document.getElementById(buttonName);
+        scaleThisButton.classList.add("active_carousel_button");
+        
+    } 
+
+    
+}
+
+
+console.log(slideIndex);
+
+var x = document.getElementsByClassName("mySlides");                    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+console.log(x.length);
+showDivs(slideIndex += n);
+}
+
+
+function currentDiv(n, filteredSlideIndex) {
+var buttons = document.getElementById('finder_carousel_container').getElementsByClassName('project_nav_btn');
+console.log("currentDiv status: " + buttons[0] );
+if (x.length <= 4){slideIndex = filteredSlideIndex;}
+else {slideIndex = n;}
+
+
+
+showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("project_nav_btn");
+  
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";  
+  
+  }
+  
+  x[slideIndex-1].style.display = "block";  
+  
+  }
 
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var window = document.getElementsByClassName('window');
   if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    // window.style.position = "fixed";
-    // window.style.left = "initial";
-    // window.style.right = "initial";
-    // window.style.top = "initial";
-    // window.style.bottom = "initial";
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    
-    // window.style.position = "fixed";
-
     elmnt.onmousedown = dragMouseDown;
-    
-    
   }
 
   function dragMouseDown(e) {
@@ -308,8 +426,6 @@ function dragElement(elmnt) {
   }
 }
 
-// translate this to JAVASCRIPT 
-
 
 function print_terminal() {
   $("p.line")
@@ -335,58 +451,9 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 
-// scroller function for About Window 
-// function scrollRight_scroller(direction) {
-//   if (direction === 1) {
-//     document.getElementById('scroller_container').scrollLeft += 700;
-//   }
-//   else {
-//     document.getElementById('scroller_container').scrollLeft -= 700;
-//   }
-  
-// };
-
-// function scrollDown_scroller(direction) {
-//   if (direction === 3) {
-//     document.getElementById('#desktopDIV').scrollIntoView();
-//   }
-//   else {
-//     document.getElementById('scroller_container').scrollLeft -= 700;
-//   }
-//   console.log(direction)
-  
-// };
-
 function scrollToPosition(value){
   window.scrollTo(0,value);
 }
-
-var slideIndex = 1;
-       showDivs(slideIndex);
-       
-       function plusDivs(n) {
-         showDivs(slideIndex += n);
-       }
-       
-       function currentDiv(n) {
-         showDivs(slideIndex = n);
-       }
-       
-       function showDivs(n) {
-         var i;
-         var x = document.getElementsByClassName("mySlides");
-         var dots = document.getElementsByClassName("project_nav_btn");
-         if (n > x.length) {slideIndex = 1}    
-         if (n < 1) {slideIndex = x.length}
-         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-         }
-         for (i = 0; i < dots.length; i++) {
-           dots[i].className = dots[i].className.replace(" w3-red", "");
-         }
-         x[slideIndex-1].style.display = "block";  
-         dots[slideIndex-1].className += " w3-red";
-       }
 
 function changeTime(){
   const current = new Date();
