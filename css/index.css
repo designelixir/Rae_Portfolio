@@ -171,7 +171,7 @@ button:hover {cursor: pointer;}
 #notification:hover {cursor: pointer;}
 
 .window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; height: 100%; background: #c6cadf;  box-shadow: 5px 5px 5px #2c2c2c; position: fixed; contain: content; z-index: 10;}
-.window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
+.window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block; position: relative; bottom: 9px; color: #c6cadf;}
 .close_btn {top: 5px; height: 20px; left: 8px; float: left; position: fixed; } 
 .window_closebar img:hover {cursor: pointer; transform: scale(1.2)}
