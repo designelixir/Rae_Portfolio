@@ -159,8 +159,8 @@ const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 // const loading_bar = document.querySelector('.loading_scroller');
 
-uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
+uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
+uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
