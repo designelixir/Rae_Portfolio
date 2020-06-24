@@ -32,8 +32,8 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.png')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.png')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpg')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
   ];
@@ -53,7 +53,7 @@ var skillGeometry = new THREE.PlaneGeometry(6,3);
 
 
 var wall2Geometry = new THREE.PlaneGeometry(18,180);
-var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578a, side: THREE.DoubleSide});
+var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578a, side: THREE.DoubleSide}); //back wall
 var wall2Material = new THREE.MeshBasicMaterial( {color: 0x2E3456, side: THREE.DoubleSide} );
 
 var skillMaterial = new THREE.MeshBasicMaterial ( {color: 0xFF0000, side: THREE.DoubleSide});
@@ -197,27 +197,30 @@ uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 
-
-
-
-
-
-
-
 dragElement(document.getElementById("about_window"));
 dragElement(document.getElementById("contact_window"));
 dragElement(document.getElementById("terminal_window"));
-dragElement(document.getElementById("finder_window"));
 dragElement(document.getElementById("testimonial_window1"));
 dragElement(document.getElementById("testimonial_window2"));
 dragElement(document.getElementById("testimonial_window3"));
-dragElement(document.getElementById("miller_project"));
-dragElement(document.getElementById("baja_project"));
-dragElement(document.getElementById("menu_project"));
-dragElement(document.getElementById("killa_nilla_project"));
-dragElement(document.getElementById("tlgs_project"));
-dragElement(document.getElementById("vans_project"));
 
+
+var desktop_icons_array = document.getElementsByClassName("desktop_icons");
+  console.log(desktop_icons_array);
+  const top_padding = [ "10%","15%", "20%","25%", "30%","35%", "40%", "50%", "60%", "70%"];
+  const left_padding =["20%","40%", "10%", "60%","80%","85%"];
+  for (i=0; i<desktop_icons_array.length; i++){
+      var x = Math.floor( Math.random()*top_padding.length );
+      var y = Math.floor( Math.random()*left_padding.length );
+      var icon = desktop_icons_array[i];
+      var icon_top = top_padding[x];
+      var icon_left = left_padding[y];
+      
+      left_padding.splice(y,1);
+      icon.style.top = icon_top;
+      icon.style.left = icon_left;
+              
+}
 
 
 function about_scroller(direction) {
@@ -233,12 +236,16 @@ var open = [];
 var testimonialWindows = [testimonial1, testimonial2, testimonial3];
 
 
+
 function toggleOpenClose(window_id) {
+  var icons = document.getElementById("desktop_icon_container");
   var tab = document.getElementById(window_id);
 
   if (tab.style.display === "block") {
     open.pop(tab);
     tab.style.display = "none";
+    icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
+
     
   }
 
@@ -246,7 +253,7 @@ function toggleOpenClose(window_id) {
   else {
     
     tab.style.display = "block";
-    tab.style.animation = "fade-in .25s cubic-bezier(.39,.575,.565,1.000) both";
+    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
     
     var openWindow = open.length;
     console.log ("variable openWindow is "+ openWindow);
@@ -264,6 +271,9 @@ function toggleOpenClose(window_id) {
     }
     
     open.push(tab);
+    // icons.style.opacity = 0.5;
+
+    icons.style.animation="fade-out2 .5s ease-out both";
   }
   
 

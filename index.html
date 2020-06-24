@@ -60,14 +60,17 @@
             <div class="splash_page_wrapper">
             <img id="splash_context_text" src="src/splash+contexts/splash_context.svg" alt="What I can Offer you">
             
-                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/webDevelopment_splash.svg" alt="Web Development: From graphic design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
-                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustration_splash.svg" alt="to be filled in">
-                <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/webDevelopment_splash.svg" style="rotate: 180deg;">
+                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/web_splash.jpg" alt="Web Development: From graphic design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
+                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustrator_splash.jpg" alt="to be filled in">
+                <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/web_splash.jpg" style="rotate: 180deg;">
         
             </div>      
         </div>
             
         <div class="desktop">
+                <img src="src/desktop_items/stars_wallpaper1.svg" class="star_wallpaper" id="wallpaper1">
+                <img src="src/desktop_items/stars_wallpaper2.svg" class="star_wallpaper" id="wallpaper2">
+                <img src="src/desktop_items/stars_wallpaper3.svg" class="star_wallpaper" id="wallpaper3">
         <div class="desktop_toolbar">
         
                 <div id="desktop_toolbar_left"> 
@@ -87,7 +90,10 @@
             
         </div>
         <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>   
+       
+        
         <div id="desktop_window_wrapper">
+                
     
             <div class="desktop_icon_container" id="desktop_icon_container">
                     <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
@@ -102,12 +108,15 @@
             <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
                 <div id="about_wrapper">   
                     <div id="about_content">
+                        
                             
                         <div class="slide">
-                            <img src="src/cases/about_me/desk.JPG" loading="lazy" style="width: 90%;" alt="Portrait of Megan" > 
-                            <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
-                            <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. </p>
-                            
+                            <div class="about_copy">
+                                    <img src="src/cases/about_me/desk.JPG" loading="lazy" style="width: 90%;" alt="Portrait of Megan" > 
+                                    <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and deliberate user-experience.</h1>
+                                    <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. </p>
+                                
+                            </div>
                             <div class="about_nav">
                                 <h6> Welcome to Design Elixir </h6>
                                 <button class="about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
@@ -115,9 +124,12 @@
                                     
                         </div>
                         <div class="slide">
+                            <div class="about_copy">
+                                    <h1>We specialize in catering our artistic tools to your creative vision.</h1>       
+                                    <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                            </div>
                                 
-                                <h1>We specialize in catering our artistic tools to your creative vision.</h1>       
-                                <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
+                               
                                 <div class="about_nav">
                                     <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
                                     <h6> Our Mission</h6>
@@ -127,41 +139,49 @@
                                 
                         </div>
                         <div class="slide">
-                                <h1>Skills &amp; Services</h1>
-                                <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
-                                        <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
-                                        Branding Materials • Illustrations • Product Photos • Murals <br>
-                                        Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
-                                        
-                                    Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
-                                </p>
-                                
-                                <p class="blu"><strong>Web Development</strong><br>
-                                    <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
-                                    Page Development & Maintenance •  Custom Wordpress Themes <br>
-                                    E-Commerce • SEO </i> <br><br>
+                            <div class="about_copy">
+                                    <h1>Skills &amp; Services</h1>
+                                    <p class="blu"><strong>Graphic Design &amp; Illustration</strong><br><br>
+                                            <i style="color: gray;">Logos • Flyers • Posters • Advertising • Infographics • Brochures <br>
+                                            Branding Materials • Illustrations • Product Photos • Murals <br>
+                                            Stickers • Packaging Typography • Digital  / Vector Art </i><br><br>
+                                            
+                                        Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. 
+                                    </p>
                                     
-                                    From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
-                                    web presence that covers all the bases. 
-                            </p>
+                                    <p class="blu"><strong>Web Development</strong><br>
+                                        <i style="color: gray;">Wordpress • Wix • Squarespace • Weebly • Webs • Page Design<br>
+                                        Page Development & Maintenance •  Custom Wordpress Themes <br>
+                                        E-Commerce • SEO </i> <br><br>
+                                        
+                                        From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
+                                        web presence that covers all the bases. 
+                                </p>
+
+                            </div>
+                                
                             <div class="about_nav">
                                     <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
                                     <h6> Our Services</h6>
-                                    <button class="about_about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
+                                    <button class="about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
                                 </div>
 
 
 
                         </div>
                         <div class="slide" >
-                                <img src="src/cases/about_me/decorated_portrait.jpg" style="width: 100%" loading="lazy" alt="close up of Megan"> 
-                                <h1>A lil' something about Megan:</h1>
+                            <div class="about_copy">
+                                    <img src="src/cases/about_me/decorated_portrait.jpg" height="40%" loading="lazy" alt="close up of Megan"> 
+                                    <h1>A lil' something about Megan:</h1>
+                                    
+                                    <p class="blu"> 
+                                            Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
+                                    </p>
+
+                            </div>
                                 
-                                <p class="blu"> 
-                                        Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
-                                </p>
                                 <div class="about_nav">
-                                        <button class="btn_left" onclick="about_scroller(0)"> &larr; </button>
+                                        <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
                                         <h6> About Megan</h6>
                                 </div>
                         </div>
@@ -215,17 +235,22 @@
 
                                 
                             <div class="mySlides illustration" id="millerslide">
+                                <div class="slide_image">
                                     <img src="src/cases/miller_bros/miller_sticker_layout.png"  loading="lazy" alt="Miller Bros Sticker layout">
-                                    <div class="slide_caption">
-                                            <p><b>The Miller Bros</b></p>                                  
-                                            <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
-                                            <button onclick="toggleOpenClose('miller_project')">View Full Project</button>
-                                    </div>
+
+                                </div>
+                                <div class="slide_caption">
+                                        <p><b>The Miller Bros</b></p>                                  
+                                        <p>Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                        <button onclick="toggleOpenClose('miller_project')">View Full Project</button>
+                                </div>
                                     
                             </div>
             
                             <div class="mySlides website" id="tlgsslide">
-                                    <img class="wide_slide" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy"  alt="twin lakes general store website on an ipad">
+                                    <div class="slide_image">
+                                        <img class="wide_slide" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy"  alt="twin lakes general store website on an ipad">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>Twin Lakes General Store</b></p>
                                         <p> Revamp the website for a historic, 141-year old mountain general store with straightforward layout and information  while expressing the character of the Twin Lakes, Colorado. </p>
@@ -234,7 +259,9 @@
                             </div> 
 
                             <div class="mySlides graphic_design" id="vansslide">
-                                <img src="src/cases/vans/vans_post_v2.webp" loading="lazy"  alt="megan on skateboard">
+                                <div class="slide_image">
+                                    <img src="src/cases/vans/vans_post_v2.webp" loading="lazy"  alt="megan on skateboard">
+                                </div>
                                 <div class="slide_caption">
                                         <p><b>Vans Ultrarange Project</b></p>
                                         <p> Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
@@ -243,8 +270,9 @@
                             </div> 
             
                             <div class="mySlides illustration" id="katslide" >
-                                    <!-- <img src="src/cases/finder_extras/happiness_kat.jpg"  loading="lazy"  alt="kat's script font over image"> -->
-                                    <img src="src/cases/finder_extras/kats_script2.jpg"  loading="lazy" alt="kat script sample">
+                                    <div class="slide_image">
+                                        <img src="src/cases/finder_extras/kats_script2.jpg"  loading="lazy" alt="kat script sample">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>Kat's Script</b></p>
                                         <p> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
@@ -254,7 +282,9 @@
                             </div> 
             
                             <div class="mySlides website" id="debraslide" >
-                                    <img src="src/cases/finder_extras/debra.jpg" alt="Debra Austin Website">
+                                    <div class="slide_image">
+                                        <img src="src/cases/finder_extras/debra.jpg" alt="Debra Austin Website">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>Debra Austin, JD, PhD</b></p>
                                         <p> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
@@ -264,9 +294,9 @@
                             </div> 
                             
                             <div class="mySlides graphic_design" id="wfslide" >
-                                    <img src="src/cases/west_flanders/wf_ad_layout.jpg" alt="West Flanders ad layout">
-                                    
-                                    
+                                    <div class="slide_image">
+                                        <img src="src/cases/west_flanders/wf_ad_layout.jpg" alt="West Flanders ad layout">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>West Flanders Brewing Company</b></p>
                                         <p> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
@@ -275,8 +305,10 @@
                                     
                             </div>
 
-                            <div class="mySlides illustration" id="northernslide" >
-                                    <img src="src/cases/finder_extras/northern.jpg" alt="Northern Wild Stickers">
+                            <div class="mySlides illustration" id="northernslide">
+                                    <div class="slide_image">
+                                        <img src="src/cases/finder_extras/northern.jpg" alt="Northern Wild Stickers">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>Northern Wild </b></p>
                                         <p> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
@@ -286,8 +318,9 @@
                             </div>
 
                             <div class="mySlides website" id="mechslide" >
-                                    <img src="src/cases/finder_extras/cuMech.png" alt="University of Colorado Class of 2020 Mechanical Engineers website">
-                                    
+                                    <div class="slide_image">
+                                        <img src="src/cases/finder_extras/cuMech.png" alt="University of Colorado Class of 2020 Mechanical Engineers website">    
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>University of Colorado Mechanical Engineering Class of 2020 </b></p>
                                         <p> Using existing brand standards, design a celebratory website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery for over 300 students. </p>
@@ -298,7 +331,9 @@
                             </div>
 
                             <div class="mySlides graphic_design" id="civico_slide" >
-                                    <img src="src/cases/finder_extras/civico_wide.png" alt="Northern Wild Stickers">
+                                    <div class="slide_image">
+                                        <img src="src/cases/finder_extras/civico_wide.png" alt="Northern Wild Stickers">
+                                    </div>
                                     <div class="slide_caption">
                                         <p><b>Civico </b></p>
                                         <p> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
@@ -308,7 +343,9 @@
                             </div>
 
                             <div class="mySlides illustration" id="killanillaslide">
-                                    <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+                                    <div class="slide_image">
+                                        <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+                                    </div>
                                     <div class="slide_caption">
                                             <p><b>Killa Nilla</b></p>
                                             <p> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
@@ -349,30 +386,33 @@
     
             </div>
 
-            <div id="testimonial_window1" class="window sticky" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(1)" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
-                        
-                        <div class="sticky_textbox">
-                            <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
-                        </div>
-            </div>
-            
-            <div id="testimonial_window2" class="window sticky" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(2)"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
-                    <br> <h5> <em>Megan was extremely responsive in listening to my objectives and
-                        redesigning that page in my site. I recommend Megan as a creative, collaborative, and
-                        professional young web designer and I’m so delighted with both my website and the technical
-                        capacity I gained by working with Megan.</em> </h5><br><br>
-            </div>
-            
-            <div id="testimonial_window3" class="window sticky" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenCloseTestimonial(3)"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
-                    <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
-                        from an out-of-date website and social media we inherited from former owners.  
-                        From great concept and design, tech fixes and consulting, art, photography, and helping 
-                        get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                        hard, and recommend her for any sized project! </em>  </h5>
-        
+            <div id="testimonial_wrapper" style="display: none;">
+                    <div id="testimonial_window1" class="window sticky" >
+                            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
+                                
+                                <div class="sticky_textbox">
+                                    <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
+                                </div>
+                    </div>
+                    
+                    <div id="testimonial_window2" class="window sticky">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
+                            <br> <h5> <em>Megan was extremely responsive in listening to my objectives and
+                                redesigning that page in my site. I recommend Megan as a creative, collaborative, and
+                                professional young web designer and I’m so delighted with both my website and the technical
+                                capacity I gained by working with Megan.</em> </h5><br><br>
+                    </div>
+                    
+                    <div id="testimonial_window3" class="window sticky">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
+                            <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
+                                from an out-of-date website and social media we inherited from former owners.  
+                                From great concept and design, tech fixes and consulting, art, photography, and helping 
+                                get an online shopping platform built. I’ve never seen someone be so engaged and work so 
+                                hard, and recommend her for any sized project! </em>  </h5>
+                
+                    </div>
+
             </div>
 
             <div id="miller_project" class="window case" style="display: none;">
@@ -680,7 +720,7 @@
                                         Twin Lakes, Colorado</i></p>
                                 <br>
                                 <img style="float: right; box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
-                                <button class="artboard_button" type="button" onclick="window.open('https://twinlakesgs.com/', '_blank')" aria-label="view website">View Website</button>
+                                <button class="artboard_button" ><a href="https://www.twinlakesgs.com" target="_blank">View Website</a></button>
                             </div>  
                             
                         </div>
@@ -705,7 +745,7 @@
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">Testimonials</span> 
-                        <button  onclick="toggleOpenClose('sticky');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+                        <button onclick="toggleOpenClose('testimonial_wrapper');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">Website Stats</span> 
