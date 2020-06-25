@@ -1,4 +1,148 @@
-@import url("https://p.typekit.net/p.css?s=1&k=rkj0ohr&ht=tk&f=25163&a=12755813&app=typekit&e=css");
+/**
+ * @license
+ * MyFonts Webfont Build ID 3917525, 2020-06-23T03:35:32-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: GreycliffCF-Thin by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/thin/
+ * 
+ * Webfont: GreycliffCF-ThinOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/thin-oblique/
+ * 
+ * Webfont: GreycliffCF-ExtraLight by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/extra-light/
+ * 
+ * Webfont: GreycliffCF-ExtraLightOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/extra-light-oblique/
+ * 
+ * Webfont: GreycliffCF-Light by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/light/
+ * 
+ * Webfont: GreycliffCF-LightOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/light-oblique/
+ * 
+ * Webfont: GreycliffCF-Regular by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/regular/
+ * 
+ * Webfont: GreycliffCF-RegularOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/regular-oblique/
+ * 
+ * Webfont: GreycliffCF-Medium by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/medium/
+ * 
+ * Webfont: GreycliffCF-MediumOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/medium-oblique/
+ * 
+ * Webfont: GreycliffCF-DemiBold by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/demi-bold/
+ * 
+ * Webfont: GreycliffCF-DemiBoldOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/demi-bold-oblique/
+ * 
+ * Webfont: GreycliffCF-Bold by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/bold/
+ * 
+ * Webfont: GreycliffCF-BoldOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/bold-oblique/
+ * 
+ * Webfont: GreycliffCF-ExtraBold by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/extra-bold/
+ * 
+ * Webfont: GreycliffCF-ExtraBoldOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/extra-bold-oblique/
+ * 
+ * Webfont: GreycliffCF-Heavy by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/heavy/
+ * 
+ * Webfont: GreycliffCF-HeavyOblique by Connary Fagen
+ * URL: https://www.myfonts.com/fonts/connary-fagen/greycliff-cf/heavy-oblique/
+ * 
+ * 
+ * Webfonts copyright: Copyright © 2020 by Connary Fagen. All rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+  
+@font-face {
+  font-family: 'GreycliffCF-ThinOblique';
+  src: url('webFonts/GreycliffCF-ThinOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ThinOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Thin';
+  src: url('webFonts/GreycliffCF-Thin/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Thin/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraLightOblique';
+  src: url('webFonts/GreycliffCF-ExtraLightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLightOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraLight';
+  src: url('webFonts/GreycliffCF-ExtraLight/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLight/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-HeavyOblique';
+  src: url('webFonts/GreycliffCF-HeavyOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-HeavyOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Light';
+  src: url('webFonts/GreycliffCF-Light/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Light/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Heavy';
+  src: url('webFonts/GreycliffCF-Heavy/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Heavy/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraBoldOblique';
+  src: url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Bold';
+  src: url('webFonts/GreycliffCF-Bold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Bold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraBold';
+  src: url('webFonts/GreycliffCF-ExtraBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-BoldOblique';
+  src: url('webFonts/GreycliffCF-BoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-BoldOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-DemiBold';
+  src: url('webFonts/GreycliffCF-DemiBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-DemiBoldOblique';
+  src: url('webFonts/GreycliffCF-DemiBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBoldOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Regular';
+  src: url('webFonts/GreycliffCF-Regular/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Regular/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-LightOblique';
+  src: url('webFonts/GreycliffCF-LightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-LightOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Medium';
+  src: url('webFonts/GreycliffCF-Medium/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Medium/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-RegularOblique';
+  src: url('webFonts/GreycliffCF-RegularOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-RegularOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-MediumOblique';
+  src: url('webFonts/GreycliffCF-MediumOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-MediumOblique/font.woff') format('woff');
+}
+
+/* @import url("https://p.typekit.net/p.css?s=1&k=rkj0ohr&ht=tk&f=25163&a=12755813&app=typekit&e=css"); */
 
 @font-face {
 font-family:"fatfrank";
@@ -7,6 +151,7 @@ font-display:swap;font-style:normal;font-weight:400;
 }
 
 .tk-fatfrank { font-family: "fatfrank",sans-serif; }
+
 
 * {
   box-sizing: border-box;
@@ -19,44 +164,31 @@ body {
   overflow-y: scroll;
 	padding: 0;
 	margin: 0;
-	font-family: 'Poppins', sans-serif, normal; 
-  font-family: 'fatfrank', sans-serif;
-  font-weight: 400;
+	font-family: 'GreycliffCF-Regular',  sans-serif, normal; 
   font-style: normal;
   font-display: swap; 
   background: #2E345B;
 	
 }
-/* 
-html, body {
-  width: 100%; 
-  height: 100%; 
-  margin: 0; 
-}
 
-canvas {
-  width: 100vw; 
-  height: 100vh; 
-  display: block;
-} */
-
-h1 {font-family: 'fatfrank', sans-serif, bold; font-size: 2rem; }
-h2 {font-family: 'Poppins', sans-serif, normal; font-size: 1.33rem; }
-h3 {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; font-weight: 400;}
-h5 {font-family: 'Poppins', sans-serif, thin; font-size: 0.66rem; font-weight: 300; padding-left: 10px; padding-right: 10px;}
-h6 {font-family: 'Poppins', sans-serif, normal; font-weight: 300; font-size: 0.66rem; }
-p {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.2px;}
-
-em {font-family: 'Poppins', sans-serif, italic;}
-b {font-family: 'Poppins', sans-serif, 400;}
-a {color: white; text-decoration: none;}
-a:hover {color: #ececec; cursor: pointer;}
-
+h1 {font-family: 'GreycliffCF-Heavy', sans-serif; font-size: 3rem; margin: 0px; }
+h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 20px; color: gray; }
+h3 {font-family: 'GreycliffCF-DemiBoldOblique', sans-serif; font-size: 1.5rem; line-height: 1.7rem; }
+h4 {font-family: 'GreycliffCF-RegularOblique', sans-serif; font-size: 1.5rem; color: gray; margin: 0px;}
+h5 {font-family: 'GreycliffCF-ExtraThin', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
+h6 {font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.75rem; color: gray;}
+p {font-family: 'GreycliffCF-Regular', sans-serif; font-size: 1rem;   }
+/* letter-spacing: 0.5px; */
+i {font-family: 'GreycliffCF-MediumOblique', sans-serif;  }
+em {font-family: 'GreycliffCF-MediumOblique', sans-serif, italic; color: gray;}
+b {font-family: 'GreycliffCF-DemiBold', sans-serif; font-size: 1rem;}
+a { color: white; text-decoration: none; font-family: 'GreycliffCF-Medium', sans-serif;}
+a:hover { cursor: pointer;}
+button {font-family: 'GreycliffCF-Regular', sans-serif;}
 
 #viewport {width: 100%; height: 100%; position: fixed;}
 
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh;   scroll-behavior: smooth;
-}
+.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
 #container {height: 4000vh; position: fixed;}
 .downArrow{z-index: 12; bottom: 1%; right: 50%; height: 3%; position: fixed;}
 
@@ -106,13 +238,13 @@ a:hover {color: #ececec; cursor: pointer;}
 #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
 .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
 #splash_context_text {width: 100%;  max-height: 75%; position: absolute;}
-.splash_img {width: 85%; max-height: 45%; margin-top: 2%; opacity: 1; position: absolute; }
+.splash_img {max-width: 1200px; height: 50%; margin-top: 2%; opacity: 1; position: absolute; }
 
 
 
 .desktopToolbar {width: 100%; background: #2c2c2c; height: 50px; top: 0; color: #f4f4f4; z-index: 100000; opacity: 0; }
 .desktop_toolbar_left {opacity: 0;}
-.toolbar_hide, .toolbar_design_elixir {font-family: 'Poppins', sans-serif, normal; font-size: 1rem; line-height: 3rem; padding-right: 10px;}
+.toolbar_hide, .toolbar_design_elixir {font-size: 1rem; line-height: 3rem; padding-right: 10px;}
 
 .tooltip {position: relative; display: inline-block;}
 .tooltip .tooltiptext {
@@ -146,6 +278,8 @@ button:hover {cursor: pointer;}
 #desktop_toolbar_left { float: left; width: 95%; padding-left: 20px; }
 #desktop_toolbar_right {width: 175px; float: right;  }
 #desktop_toolbar_right img {height: 30%; padding-right: 5px; }
+#time {font-family: 'GreycliffCF-Light', sans-serif;}
+#desktop_toolbar_right img:hover {transform: scale(1.2);}
 
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
 .dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; background-color: #2e345b; display: flex; justify-content: center; align-items: center; z-index: 200;}
@@ -164,7 +298,7 @@ button:hover {cursor: pointer;}
 .desktop_icons {position: fixed;}
 .desktop_icon_container button:hover {transform: rotate(5deg); cursor: pointer;}
 
-.star_wallpaper {height: calc(100% - 50px); bottom: 0; margin: auto; position: fixed; z-index: 0; }
+.star_wallpaper {width: 100%; top: 50px; margin: auto; position: fixed; z-index: 0; }
 #wallpaper1 {animation: fadeInFromNone 4s ease-out infinite both;}
 #wallpaper2 {animation: fadeInFromNone 10s ease-out infinite both; animation-delay: 5s;}
 #wallpaper3 {animation: fadeInFromNone 8s ease-out infinite both; animation-delay: 10s}
@@ -172,7 +306,7 @@ button:hover {cursor: pointer;}
 #notification {right: 0px; z-index: 20; width: 500px; position: fixed; top: 50px; display: none; -webkit-animation:slide-in-right 15s cubic-bezier(.25,.46,.45,.94) both; animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both !important}     
 #notification:hover {cursor: pointer;}
 
-.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; height: 100%; background: #c6cadf;  box-shadow: 5px 5px 5px #2c2c2c; position: fixed; contain: content; z-index: 10;}
+.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; height: 100%; background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed; contain: content; z-index: 10;}
 .window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block; position: relative; bottom: 9px; color: #c6cadf;}
 .close_btn {top: 5px; height: 20px; left: 8px; float: left; position: fixed; } 
@@ -181,16 +315,14 @@ button:hover {cursor: pointer;}
 
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 
-#about_window {width: 60%; max-height: 800px;  background: #ececec; background-image: url('../src/desktop_items/grid_simple.svg'); }
+#about_window {max-width: 600px; width: 100%; height: 100%;  background: #ececec; background-image: url('../src/desktop_items/grid_simple.svg'); }
 #about_wrapper {justify-content: center; align-items: center; contain: content; width: 100%; height: calc(100% - 30px);}
 #about_content {height: 95%; margin-top: 2.5%; display: flex; scroll-behavior: smooth; flex-wrap: nowrap; overflow-x: auto; width: 100%;}
 .slide {left: 0; padding: 50px 50px 0px 50px; flex: 0 0 auto;  display: inline-block; height: 100%; width: 100%; margin-right: 20px;  max-width: 610px; contain: content; }
 #about_content::-webkit-scrollbar {display: none;}
-.about_copy {height: calc(100% - 60px); contain: content; overflow-y: scroll; }
+.about_copy {height: calc(100% - 60px); contain: content; overflow-y: scroll; overflow-x: hidden; }
 .about_nav {width: 85%; height: 60px; bottom: 0; position: fixed; display: flex; justify-content: center; align-items: center;  contain: content; background: #ececec;}
-#about_window h1 {font-size: 24px; }
 
-.about_nav h6 {text-transform: uppercase; font-size: 12px; font-weight: 400; color: gray;}
 .about_nav button:hover {transform: scale(1.5); cursor: pointer;}
 .about_btn_left {float: left; position: fixed; left: 10px;}
 .about_btn_right {float: right;  position: fixed; right: 10px; }
@@ -200,7 +332,7 @@ button:hover {cursor: pointer;}
 #contact_window_sendbar button {bottom: 20px;  position: absolute; background: #49588b; width: 100px; height: 30px; float: right; right: 20px;}
 #contact_window_content img {height: 80px; padding-left: 20px; }
 #contact_window_content img:hover {transform: scale(1.1); cursor: alias;}
-.mail_button {background: #2f335c; font-family: 'Poppins', sans-serif; padding: 10px; bottom: 20px; position: fixed; margin-left: 55%;}
+.mail_button {background: #2f335c; padding: 10px; bottom: 20px; position: fixed; margin-left: 55%;}
 
 #terminal_window {height: 400px; width: 80vw; max-width: 650px; background-color: #3A4172; top: 30%; }
 .done {display: block !important;}
@@ -208,14 +340,16 @@ button:hover {cursor: pointer;}
 #terminal_text p {display: none; font-family:'Courier New', Courier, monospace; color: white; padding-left: 2%;}
 .line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
 
-#finder_window {max-height: 98%; width: 80%; max-width: 1200px;}
+#finder_window {max-height: 98%; width: 70%; max-width: 1200px;}
 #finder_window .window_closebar {border-bottom: none;}
 #finder_filter {box-shadow: 0px 5px 5px gray; width: 100%; height: 35px; background: #4c5987; border-bottom: 1px solid #2f335c; display: flex; justify-content: center; align-items: center;}
 #finder_filter button {background:#384272; border: none; border-right: 1px solid #2c2c2c;  color: #c7ccde;  padding: 5px 20px;}
 #finder_filter button:focus {background: #2f335c; color: white;}
-.slide_container {contain: content; content: contain; height: calc(100% - 250px); margin: 50px;}
-.slide_container img {height: 100%;  animation: fade-in .75s cubic-bezier(.39,.575,.565,1.000) both; box-shadow: 5px 5px 5px gray;}
-.slide_image {height:100%; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; }
+.slide_container {contain: content; height: calc(100% - 200px); margin: 25px; display: flex; justify-content: center; align-items: center;}
+.slide_image {width: calc(100%-200px); margin: 10px; contain: content; display: flex; justify-content: center; align-items: center;  }
+.slide_image img {margin: 100px; width: 90%;-webkit-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);}
 
 .finder_carousel{background: #707BA5; box-shadow: 0px -4px 7px gray; border-top: 1px solid #2f335c; width: 100%; height: 100px; position: absolute; bottom: 0; display: flex;  align-items: center; overflow-y: hidden; overflow-x: scroll;}
 .finder_carousel img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; background: none; }
@@ -223,15 +357,16 @@ button:hover {cursor: pointer;}
 .finder_carousel button:focus {transform: scale(1.3);}
 
 /* .active_carousel_button {transform: scale(1.3);}   */
-.slideshow_btn_left {position: fixed; left: 0; bottom: 50%; height: 105px; z-index: 20; font-size: 72px; cursor: pointer;}
-.slideshow_btn_right {position: fixed; right: 0; bottom: 50%; height: 105px; font-size: 72px; cursor: pointer;}
+.slideshow_btn_left {position: fixed; left: 0; bottom: 50%; height: 105px; z-index: 20; font-size: 72px; cursor: pointer; color: #2f335c;}
+.slideshow_btn_right {position: fixed; right: 0; bottom: 50%; height: 105px; font-size: 72px; cursor: pointer; color: #2f335c;}
 .slideshow_btn_right:hover {transform: scale(1.1); color: #707Ba5;}
 .slideshow_btn_left:hover {transform: scale(1.1); color: #707Ba5;}
 
-.slide_caption {bottom: 0; position: fixed; text-align: center; background: #c6cADF; width: 100%; }
-.slide_caption button {background: #2f335c; color: white; border: none; padding: 10px; }
-.slide_caption button:hover {transform: scale(1.1); cursor: alias;}
-
+.slide_caption_wrapper {bottom: 0; font-family: 'GreycliffCF-Thin', sans-serif !important; position: fixed; text-align: center !important; background: #c6cADF; height: 100px; width: 100%; z-index: 2; padding: 10px 15% 0px 15%; }
+.slide_caption_wrapper button {background: #2f335c; color: white; border: none; padding: 10px; }
+.slide_caption_wrapper button:hover {transform: scale(1.1); cursor: alias;}
+.slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 0px; padding: 5px; font-size: 0.9rem;}
+.slide_caption_wrapper p {margin: 8px 0px 0px 0px;}
 
 #testimonial_window1 {bottom: 35%; left: 50%; background-image: url("../src/desktop_items/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
 #testimonial_window2 {bottom: 25%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
@@ -242,32 +377,41 @@ button:hover {cursor: pointer;}
 .sticky {width: 300px; height: 300px; background: #9aa4bd; position: fixed; z-index: 20; text-align: center;  }
 #testimonial_wrapper {z-index: 20;}
 
-.artboard{height: 100%; padding: 50px;}
-.case {width: 90%; max-width: 1100px; height: 98%; background-image: url('../src/desktop_items/grid_simple.svg'); background-color: #ececec; background-size: contain; overflow: auto;}
-
-.artboard h2 {font-size: 24px; font-style: italic; line-height: 30px; opacity: 0.5; font-weight: 100; margin-right: 50px;}
-.artboard h1 {font-size: 2.5rem; line-height: 10px; }
-.artboard_date {font-style: italic; font-size: 20px;}
-.artboard img { box-shadow: 5px 5px 5px grey; margin: 1% 1% 0% 0%;}
-.artboard a {color: #2d2d2d;}
-.artboard a:hover {color: gray;}
-.caption {font-style: italic; opacity: 0.75; margin-left: 1%;}
+.artboard{height: 500px; padding: 50px;}
+.case {width: 90%; max-width: 1100px; height: 760px;  background-color: #ececec; background-size: contain; overflow: auto;}
+.artboard img {  margin: 0% 1% 1% 0%;}
+.caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 0px 0px 100px 0px; font-size: 1rem; }
 .artboard_bottom {margin-top: 100px; margin-bottom: 50px;}
 .artboard_bottom p {text-align: center; padding: 0px 30px 0px 30px} 
-.artboard_button {width: 50%; background: #2f335c !important; border: none; padding: 15px; margin-top: 7%; margin-bottom: 20px;}
-.artboard_button a{color: white!important; text-decoration: none; font-family: 'Poppins', sans-serif;}
+.artboard_button {width: 50%; background: #2f335c !important; color: white; border: none; padding: 15px; margin-top: 7%; margin-bottom: 20px;}
+.artboard_button a{color: white!important; text-decoration: none; }
 .artboard_button:hover {background-color: #384272!important; cursor: pointer;}
 .bob_motu img {width: 50%; vertical-align: middle;}
-
+.artboard_navigation {width: 100%; height: 50px; display: flex; justify-content: center; align-items: middle;}
+.case_nav_button h6 {color: black !important; font-size: 1rem; }
+.case_nav_button h6:hover {color: gray!important;}
 .artboard_column {float: left; width: 100%; }
-.artboard_columnthird, .artboard_columntwothird {float: left; right: 0; width: 100%;}
+.artboard_columnthird {float: left; right: 0; margin: 0px 25px 50px 0px; width: 100%;}
+.artboard_columntwothird {float: left; right: 0; margin: 0px; width: 100%;}
+.artboard_columnfifty {float: left; right: 0; margin: 0px; width: 100%;}
+#overlap_tlgs_img { transform: translateX(0px)}
+
+#tlgs_section_h3 {margin: 0px 0px 50px 0px}
+#tlgs_section_h3 h3 {margin-top: 25px;}
+.artboard_columnthird p {margin-top: 0px; margin-bottom: 0px;}
+.artboard a {font-family: 'GreycliffCF-DemiBold', sans-serif; color: black; font-size: 1rem;  }
+.artboard a:hover {color: gray;  }
 
 
 @media screen and (min-width: 1200px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
   .artboard_columntwothird {right: 0; width: 66%;} 
-  
-  
+  #overlap_tlgs_img { transform: translateX(-50px)}
+  .artboard_columnfifty {float: left; right: 0; margin: 0px; width: 50%;}
+  .caption {text-align: left;}
+  #tlgs_section_h3 {margin: 0px 0px 50px 50px}
+  #tlgs_section_h3 h3 {margin-top: 0px;}
+
 
 }
 
