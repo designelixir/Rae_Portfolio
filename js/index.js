@@ -32,8 +32,8 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpg')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpgF')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpgF')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
   ];
@@ -66,24 +66,24 @@ var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_finalF.png')
 });
 
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk10.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk10F.png')
 }); 
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chairF.png')
 
 }); 
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2F.png')
 });
  
 posters.transparent=true;
@@ -159,8 +159,8 @@ const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 // const loading_bar = document.querySelector('.loading_scroller');
 
-uos(0.03, .15, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
-uos(0.15, 0.25, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
+uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
+uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
 
 uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
@@ -462,6 +462,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 
 function scrollToPosition(value){
+  
   window.scrollTo(0,value);
 }
 
