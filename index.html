@@ -96,12 +96,12 @@
                 
     
             <div class="desktop_icon_container" id="desktop_icon_container">
-                    <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_bros_icon.svg" loading="lazy" alt='Miller Bros Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/boulder_baja_icon.svg" loading="lazy" alt='Boulder Baja Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/west_flanders_icon.svg" loading="lazy" alt='West Flanders Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_nilla_icon.svg" loading="lazy" alt="Killa Nilla Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_icon.svg" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_icon.svg" loading="lazy" alt="Vans Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_desk_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/baja_desk_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_desk_icon.png" loading="lazy" alt='West Flanders Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_desk_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button>
             </div>
 
             <div id="about_window" class="window" style="display: none;">
@@ -392,25 +392,25 @@
                             <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
                                 
                                 <div class="sticky_textbox">
-                                    <br><h5><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </h5>
+                                    <br><p><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </p>
                                 </div>
                     </div>
                     
                     <div id="testimonial_window2" class="window sticky">
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
-                            <br> <h5> <em>Megan was extremely responsive in listening to my objectives and
+                            <br> <p> <em>Megan was extremely responsive in listening to my objectives and
                                 redesigning that page in my site. I recommend Megan as a creative, collaborative, and
                                 professional young web designer and I’m so delighted with both my website and the technical
-                                capacity I gained by working with Megan.</em> </h5><br><br>
+                                capacity I gained by working with Megan.</em> </p><br><br>
                     </div>
                     
                     <div id="testimonial_window3" class="window sticky">
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
-                            <br><h5> <em>Megan has been a great asset to my small business by helping us transition away 
+                            <br><p> <em>Megan has been a great asset to my small business by helping us transition away 
                                 from an out-of-date website and social media we inherited from former owners.  
                                 From great concept and design, tech fixes and consulting, art, photography, and helping 
                                 get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                hard, and recommend her for any sized project! </em>  </h5>
+                                hard, and recommend her for any sized project! </em>  </p>
                 
                     </div>
 
@@ -773,7 +773,14 @@
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 <script src="https://unpkg.com/three.phenomenon@1.1.0/dist/three.phenomenon.umd.js"></script>
 <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-<script src="js/index.js"></script>         
+<script src="js/index.js"></script>   
+<!-- <script type="text/javascript">
+
+    if (screen.width <= 699) {
+    document.location = "mobile.html";
+    }
+    
+    </script>       -->
 
             
 </body>
