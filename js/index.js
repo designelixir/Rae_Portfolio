@@ -4,6 +4,7 @@ canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
 
+
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
 
