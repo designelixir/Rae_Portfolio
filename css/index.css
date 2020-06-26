@@ -190,7 +190,8 @@ button {font-family: 'GreycliffCF-Regular', sans-serif;}
 
 .page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
 #container {height: 4000vh; position: fixed;}
-.downArrow{z-index: 12; bottom: 1%; right: 50%; height: 3%; position: fixed;}
+.downArrow{height: 20px;}
+#bounce_arrow_button {height: 50px; width: 100%; z-index: 12; position: fixed; bottom: 0; display: flex; justify-content: center; align-items: center; }
 
 .social_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; bottom: 5%; left: 0; position: fixed;}
 .social_banners_wrapper img {width: 55%; margin-bottom: -3%}
@@ -345,11 +346,9 @@ button:hover {cursor: pointer;}
 #finder_filter {box-shadow: 0px 5px 5px gray; width: 100%; height: 35px; background: #4c5987; border-bottom: 1px solid #2f335c; display: flex; justify-content: center; align-items: center;}
 #finder_filter button {background:#384272; border: none; border-right: 1px solid #2c2c2c;  color: #c7ccde;  padding: 5px 20px;}
 #finder_filter button:focus {background: #2f335c; color: white;}
-.slide_container {contain: content; height: calc(100% - 200px); margin: 25px; display: flex; justify-content: center; align-items: center;}
-.slide_image {width: calc(100%-200px); margin: 10px; contain: content; display: flex; justify-content: center; align-items: center;  }
-.slide_image img {margin: 100px; width: 90%;-webkit-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);}
+.slide_container {contain: content; height: calc(100% - 200px); margin: 25px; }
+.slide_image {width: calc(100%-200px); height: 80%; margin: 10px; contain: content; display: flex; justify-content: center; align-items: center;  }
+.slide_image img {margin: 100px; height: 80%; width: unset; -webkit-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);-moz-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);}
 
 .finder_carousel{background: #707BA5; box-shadow: 0px -4px 7px gray; border-top: 1px solid #2f335c; width: 100%; height: 100px; position: absolute; bottom: 0; display: flex;  align-items: center; overflow-y: hidden; overflow-x: scroll;}
 .finder_carousel img {height: 80px; border: 1px solid #2f335c; box-shadow: 2px 2px 2px black; background: none; }
@@ -362,11 +361,13 @@ button:hover {cursor: pointer;}
 .slideshow_btn_right:hover {transform: scale(1.1); color: #707Ba5;}
 .slideshow_btn_left:hover {transform: scale(1.1); color: #707Ba5;}
 
-.slide_caption_wrapper {bottom: 0; font-family: 'GreycliffCF-Thin', sans-serif !important; position: fixed; text-align: center !important; background: #c6cADF; height: 100px; width: 100%; z-index: 2; padding: 10px 15% 0px 15%; }
+.slide_caption_wrapper {bottom: 0; font-family: 'GreycliffCF-Thin', sans-serif !important; position: fixed; text-align: center !important; background: #c6cadf; height: 15%; width: 100%; z-index: 2; padding: 10px 10% 0px 10%; }
 .slide_caption_wrapper button {background: #2f335c; color: white; border: none; padding: 10px; }
 .slide_caption_wrapper button:hover {transform: scale(1.1); cursor: alias;}
 .slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 0px; padding: 5px; font-size: 0.9rem;}
 .slide_caption_wrapper p {margin: 8px 0px 0px 0px;}
+
+.mySlides {min-width: 100%; min-height: 100%; left: 0; content: contain;}
 
 #testimonial_window1 {bottom: 35%; left: 50%; background-image: url("../src/desktop_items/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
 #testimonial_window2 {bottom: 25%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
@@ -411,7 +412,7 @@ button:hover {cursor: pointer;}
   .caption {text-align: left;}
   #tlgs_section_h3 {margin: 0px 0px 50px 50px}
   #tlgs_section_h3 h3 {margin-top: 0px;}
-
+  .slide_image img { width: 85%; height: unset;}
 
 }
 
