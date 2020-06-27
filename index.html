@@ -14,37 +14,44 @@
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
 
     </head>
-    <body onload="safariTweaks()">
+    <!-- onload="safariTweaks()" -->
+    <body > 
       <canvas id="viewport" ></canvas> 
         <div class="page-wrapper" id="portfolio_page_wrapper">
-        <div class="headerOverview">
-            <img class="logo" src="src/design_elixir_logo.svg" alt="Design Elixir Logo">
-            <img class="entry_moto" src="src/splash+contexts/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
-            <button id="bounce_arrow_button" onclick="scrollToPosition(3000)"><img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/></button>
+            <div class="homepage">
+                    <div class="homepage_context">
+                        <img id="logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
+                        <img id="entry_moto" src="src/splash+contexts/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
+                    </div>
                     
-            <div class="social_banners_wrapper">
-                    <div id="social_banners"> 
-                            <a onclick="toggleOpenClose('social_banners')"><img src="src/social_media/close_banner2.svg" id="close_banner" alt="toggle open close social media menu"></a>
-                             <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img src="src/social_media/instagram_banner.svg" class="banner" alt="instagram"></a>
-                            <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img src="src/social_media/unsplash_banner.svg" class="banner" alt="unsplash"></a>
-                            <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img src="src/social_media/github_banner.svg" class="banner" alt="github"></a>
-                            <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img src="src/social_media/linkedin_banner.svg" class="banner"  alt="linkedin"></a>
-                      </div>
-                      <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img id="social_banner" class="banner"  src="src/social_media/socials.svg" alt="open social media menu"></button>
-            </div>
-    
-            <div class="shortcut_banners_wrapper">
-                    <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
-                    <div id="shortcut_banners">
-                      <a onclick="scrollToPosition(46683), toggleOpenClose('about_window')" id="about_shortcut" ><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
-                      <a onclick="scrollToPosition(46683), toggleOpenClose('finder_window')"><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
-                      <a target="_blank" rel='noopener' href="https://www.etsy.com/shop/DesignElixirStudio"><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
-                      <a onclick="scrollToPosition(46683), toggleOpenClose('contact_window')"><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
-                       <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img id="close_banner2" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
-                    </div> 
-            </div>
+                    <button id="bounce_arrow_button" onclick="scrollToPosition(3000)"><img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/></button>
+                    <div id="deskTest">
+                        <img src="src/webGL_elements/messages.svg">
 
-        </div> 
+                    </div>
+                    <div class="social_banners_wrapper">
+                            <div id="social_banners"> 
+                                    <a onclick="toggleOpenClose('social_banners')"><img src="src/social_media/close_banner2.svg" id="close_banner" alt="toggle open close social media menu"></a>
+                                    <a target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/"><img src="src/social_media/instagram_banner.svg" class="banner" alt="instagram"></a>
+                                    <a target="_blank" rel='noopener' href="https://unsplash.com/@designelixir"> <img src="src/social_media/unsplash_banner.svg" class="banner" alt="unsplash"></a>
+                                    <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img src="src/social_media/github_banner.svg" class="banner" alt="github"></a>
+                                    <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img src="src/social_media/linkedin_banner.svg" class="banner"  alt="linkedin"></a>
+                                </div>
+                                <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img id="social_banner" class="banner"  src="src/social_media/socials.svg" alt="open social media menu"></button>
+                    </div>
+            
+                    <div class="shortcut_banners_wrapper">
+                            <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
+                            <div id="shortcut_banners">
+                                <a onclick="scrollToPosition(46683), toggleOpenClose('about_window')" id="about_shortcut" ><img src="src/social_media/about_banner.svg" class="banner" alt="About Shortcut"></a>
+                                <a onclick="scrollToPosition(46683), toggleOpenClose('finder_window')"><img src="src/social_media/work_banner.svg" class="banner" alt="Work Shortcut"></a>
+                                <a target="_blank" rel='noopener' href="https://www.etsy.com/shop/DesignElixirStudio"><img src="src/social_media/store_banner.svg" class="banner" alt="Store Shortcut"></a>
+                                <a onclick="scrollToPosition(46683), toggleOpenClose('contact_window')"><img src="src/social_media/contact_banner.svg" class="banner" alt="Contact shortcut"></a>
+                                <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open/Close Shortcuts Links"><img id="close_banner2" style="top: 345px; right: 30px;" src="src/social_media/close_banner.svg" alt="toggle open close shortcut menu"></button>
+                            </div> 
+                    </div>
+        
+                </div> 
    
         <div class="login"> 
                 <img class="spinny" src="src/desktop_items/spinny.svg" alt="spinny loading wheel"> 
@@ -220,7 +227,7 @@
                         </div>
             </div>
 
-            <div id="finder_window" class="window" >
+            <div id="finder_window" class="window" style="display: none;" >
                 <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
                 
                 <div id="finder_filter">
@@ -370,23 +377,20 @@
                 </div>
 
                 <button class="slideshow_btn" id="big_nav_left" style="left: 0;" onclick="plusDivs(-1)" >&lsaquo;</button>
-
-                    <div class="finder_carousel" id="finder_carousel_container">
-                            <button class="project_nav_btn graphic_design" id="renu_icon" onclick="currentDiv(1,1)"><img src="src/cases/finder_extras/renu_bottle.png" ></button> 
-                            <button class="project_nav_btn website" id="tlgs_icon" onclick="currentDiv(2,1)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
-                            <button class="project_nav_btn graphic_design" id="vans_icon" onclick="currentDiv(3,2)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
-                            <button class="project_nav_btn illustration" id="kattype_icon" onclick="currentDiv(4,1)"><img src="src/cases/finder_extras/kats_script2.jpg" ></button> 
-                            <button class="project_nav_btn website" id="debra_icon" onclick="currentDiv(5,2)"><img src="src/cases/finder_extras/brain.png" ></button> 
-                            <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,3)"><img src="src/cases/west_flanders/brut.jpg" ></button> 
-                            <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(7,2)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
-                            <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(8,3)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
-                            <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(9,4)"><img src="src/cases/finder_extras/civico_tall.jpg" ></button> 
-                            <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(10,3)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
-                            <button class="project_nav_btn illustration active_carousel_button" id="miller_icon" onclick="currentDiv(11,4)"><img src="src/cases/miller_bros/miller_sticker_layout.jpg"  alt="miller bro stickers "></button> 
-
-                    </div>
-                    <!-- <button class="content_nav_btn_right" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button> -->
-                    <button class="slideshow_btn" style="right: 0;" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button>
+                <div class="finder_carousel" id="finder_carousel_container">
+                        <button class="project_nav_btn illustration" id="renu_icon" onclick="currentDiv(1,1)"><img src="src/cases/finder_extras/renu_bottle.png" loading="lazy" alt="Renu Project Button Toggle"></button> 
+                        <button class="project_nav_btn website" id="tlgs_icon" onclick="currentDiv(2,1)"><img src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="Twin Lakes Button Toggle"></button> 
+                        <button class="project_nav_btn graphic_design" id="vans_icon" onclick="currentDiv(3,2)"><img src="src/cases/vans/vans_post_v2.webp" loading="lazy" alt="Vans Button Toggle"></button> 
+                        <button class="project_nav_btn illustration" id="kattype_icon" onclick="currentDiv(4,2)"><img src="src/cases/finder_extras/kats_script2.jpg" loading="lazy" alt="Kats Script Button Toggle" ></button> 
+                        <button class="project_nav_btn website" id="debra_icon" onclick="currentDiv(5,2)"><img src="src/cases/finder_extras/brain.png" loading="lazy" alt="Debra Austin Website Button Toggle"></button> 
+                        <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,3)"><img src="src/cases/west_flanders/brut.jpg" loading="lazy" alt = "West Flanders Button Toggle"></button> 
+                        <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(7,3)"><img src="src/cases/finder_extras/northern_icon.png" loading="lazy" alt="Northern Wild Button Toggle" ></button> 
+                        <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(8,3)"><img src="src/cases/finder_extras/cuMech.png" loading="lazy" alt="CU Website Button Toggle"></button> 
+                        <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(9,4)"><img src="src/cases/finder_extras/civico_tall.jpg" loading="lazy" alt="Civico Button Toggle" ></button> 
+                        <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(10,3)"><img src="src/cases/killa_nilla/love_me_now.svg" loading="lazy" alt="Killa Nilla Button Toggle" ></button> 
+                        <button class="project_nav_btn illustration active_carousel_button" id="miller_icon" onclick="currentDiv(11,4)"><img src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="Miller Bros Button Toggle "></button> 
+                </div>
+                <button class="slideshow_btn" style="right: 0;" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button>
 
 
         </div>
@@ -394,27 +398,29 @@
             <div id="testimonial_wrapper" style="display: none;">
                     <div id="testimonial_window1" class="window sticky" >
                             <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
-                                
-                                <div class="sticky_textbox">
-                                    <br><p><em>Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table.</em> </p>
+                            <div class="sticky_textbox">
+                                    <img style="float: left;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br>
+                                    <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! We will be using Design Elixir for any design needs in the future, and wholeheartedly recommend her to anyone looking to add a distinct character to their brand.</p>
+                                    <p>-Camden and Spencer Miller, The Miller Bros</p>
+                                    <img style="float: right;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">
                                 </div>
                     </div>
                     
                     <div id="testimonial_window2" class="window sticky">
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
-                            <br> <p> <em>Megan was extremely responsive in listening to my objectives and
+                            <br> <p>Megan was extremely responsive in listening to my objectives and
                                 redesigning that page in my site. I recommend Megan as a creative, collaborative, and
                                 professional young web designer and I’m so delighted with both my website and the technical
-                                capacity I gained by working with Megan.</em> </p><br><br>
+                                capacity I gained by working with Megan. </i></p><br><br>
                     </div>
                     
                     <div id="testimonial_window3" class="window sticky">
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
-                            <br><p> <em>Megan has been a great asset to my small business by helping us transition away 
+                            <br><p>Megan has been a great asset to my small business by helping us transition away 
                                 from an out-of-date website and social media we inherited from former owners.  
                                 From great concept and design, tech fixes and consulting, art, photography, and helping 
                                 get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                hard, and recommend her for any sized project! </em>  </p>
+                                hard, and recommend her for any sized project!  </p>
                 
                     </div>
 

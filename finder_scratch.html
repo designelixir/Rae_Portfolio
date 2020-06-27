@@ -31,7 +31,7 @@
                             <div class="mySlides website" id="tlgsslide">
 
                                     <div class="slide_image">
-                                        <a onclick="toggleOpenClose('renu_project')"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" ></a>
+                                        <a onclick="toggleOpenClose('renu_project')" style="left: -301px !important;"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" ></a>
 
                                         <img src="src/cases/tlgs/ipad_tlgs.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="twin lakes general store website on an ipad">
                                     </div>
@@ -172,4 +172,120 @@
 
     
             </div>
-            <script src="js/index.js"></script>   
+<script>
+
+function finder_filter(filterbutton, filterbuttonName) {
+    var allButtons = document.getElementsByClassName("finder_filter_btn");
+    for (i = 0; i < allButtons.length; i++){
+        var deactivate = allButtons[i];
+        deactivate.style.background="#384272";
+        deactivate.style.color = "#c7ccde";
+        
+    }
+    var activeButton = document.getElementById(filterbuttonName);
+    activeButton.style.background = "#2f335c";
+    activeButton.style.color = "white";
+
+    var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "renu_slide", "renu_icon"];
+    var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon", "renu_icon"];
+    
+    for (i = 0; i < all.length; i++){
+    var showElement = document.getElementById(all[i]);
+    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
+    }
+    
+    for (i=0; i<allIcons.length; i++){
+        var showIcon = document.getElementById(allIcons[i]);
+        showIcon.style.display = "block";
+        
+    }
+    
+
+
+
+    if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+    else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
+    else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+    else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
+
+
+
+   for (i = 0; i < hideThis.length; i++){
+       var hide = document.getElementById(hideThis[i]);
+       hide.style.display = "none";
+       hide.className = hide.className.replace('mySlides', "hiddenMySlides");
+   }
+
+   var mySlides = document.getElementsByClassName("mySlides");
+   mySlides[0].style.display = "block";
+   
+
+
+
+}
+
+
+function scaleCarouselButton(buttonName, buttonPosition){
+    var openbuttons = [];
+    var activeButton = document.getElementsByClassName('active_carousel_button');
+    openbuttons.push(buttonName);
+    console.log(openbuttons);
+   
+    for (i = 0; i<openbuttons.length; i++){
+            var scaleDown = document.getElementById(openbuttons[i]);
+            scaleDown.classList.remove('active_carousel_button');
+            openbuttons.pop(openbuttons[i]);
+        }
+    
+    if (buttonPosition === 1){
+        
+        var scaleThisButton = document.getElementById(buttonName);
+        scaleThisButton.classList.add("active_carousel_button");
+        
+    } 
+
+    
+}
+
+
+
+var x = document.getElementsByClassName("mySlides");                    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+console.log(x.length);
+showDivs(slideIndex += n);
+}
+
+
+function currentDiv(n, filteredSlideIndex) {
+var buttons = document.getElementById('finder_carousel_container').getElementsByClassName('project_nav_btn');
+console.log("currentDiv status: " + buttons[0] );
+if (x.length <= 4){slideIndex = filteredSlideIndex;}
+else {slideIndex = n;}
+
+
+
+showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("project_nav_btn");
+  
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";  
+  
+  }
+  
+  x[slideIndex-1].style.display = "block";  
+  
+  }
+
+
+
+</script>

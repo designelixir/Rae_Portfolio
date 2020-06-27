@@ -190,6 +190,14 @@ button {font-family: 'GreycliffCF-Regular', sans-serif;}
 
 .page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
 #container {height: 4000vh; position: fixed;}
+
+
+/* Homepage CSS ----------------------------------------------------------- */
+.homepage {background-color: #2E345B; background-image: url("../src/splash+contexts/stars_wallpaper.svg"); background-size: contain; background-repeat: repeat-y; height: 100%; width: 100%; opacity: 1; display: flex; justify-content: center; align-items: center; position: fixed; z-index: 20;}
+.homepage_context {width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;}
+#logo { width: 30%; max-width: 225px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
+#entry_moto {max-width: 650px; width: 80%; animation: rotateStars 15s infinite;  position: absolute;}
+
 .downArrow{height: 20px;}
 #bounce_arrow_button {height: 50px; width: 100%; z-index: 12; position: fixed; bottom: 0; display: flex; justify-content: center; align-items: center; }
 
@@ -206,26 +214,10 @@ button {font-family: 'GreycliffCF-Regular', sans-serif;}
 #close_banner2 {margin-right: 30px; cursor: pointer; }
 
 
-.headerOverview {
-	background-color: #2E345B;
-	background-image: url("../src/splash+contexts/stars_wallpaper.svg");
-	background-size: contain;
-	background-repeat: repeat-y;
-  height: 100%;
-  width: 100%;
-	opacity: 1;
-	display: flex;
-	justify-content: center;
-  align-items: center;
-	position: fixed;
-	z-index: 20;
-
-}
 
 /* max-width: 215px */
-.logo { width: 25%; max-width: 225px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
 
-.entry_moto {max-width: 650px; width: 90%; animation: rotateStars 15s infinite;  position: absolute;}
+
 #spinnyBox { display: flex; justify-content: center; align-items: center; padding-top: 50vh;} 
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 .moto { position: fixed; opacity: 0; top: 0; width: 100%; align-self: center; z-index: 10;}
@@ -367,7 +359,8 @@ button:hover {cursor: pointer;}
 
 
 .slide_caption_wrapper.safari {bottom: 100px; background: orange;}
-.slide_caption_wrapper {margin: auto; left: 0; right: 0; bottom: 0px; font-family: 'GreycliffCF-Thin', sans-serif !important; position: absolute;  background: red; height: 15%;  z-index: 2; }
+
+.slide_caption_wrapper {margin: auto; left: 0; right: 0; bottom: 0px; font-family: 'GreycliffCF-Thin', sans-serif !important; position: absolute; height: 100px;  z-index: 2; }
 .slide_caption_wrapper button {background: #2f335c; color: white; border: none; padding: 10px; }
 .slide_caption_wrapper button:hover {transform: scale(1.1); cursor: alias;}
 .slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 0px; padding: 5px; font-size: 0.9rem;}
@@ -375,14 +368,10 @@ button:hover {cursor: pointer;}
 
 .mySlides {min-width: 100%; min-height: 100%;  display: flex; justify-content: center; text-align: center;}
 
-#testimonial_window1 {bottom: 35%; left: 50%; background-image: url("../src/desktop_items/quotes1.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
-#testimonial_window2 {bottom: 25%; left: 55%; background-image: url("../src/desktop_items/quotes2.svg"); background-size: 90% 75%; background-position: 5% 50%; background-repeat: no-repeat;}
-#testimonial_window3 {bottom: 15%; left: 60%; background-image: url("../src/desktop_items/quotes3.svg"); background-size: 100% 75%; background-position: 0% 60%; background-repeat: no-repeat;}
-.sticky h5{padding-left: 30px; padding-right: 30px;  padding-top: 10%; } 
-#sticky_button {background: #3A4172; color: white; }
-#sticky_button button:hover {background:white; color: #3A4172;}
-.sticky {width: 300px; height: 300px; background: #9aa4bd; position: fixed; z-index: 20; text-align: center;  }
-#testimonial_wrapper {z-index: 20;}
+.sticky {width: 300px; height: 300px; background: teal;  text-align: center; }
+.sticky_textbox {height: 290px; width: 290px; }
+.sticky_textboxt p { font-size: 2px !important; padding: 5px;}
+#testimonial_wrapper {z-index: 20; height: 80%; width: 50%;}
 
 .artboard{height: 500px; padding: 50px;}
 .case {width: 90%; max-width: 1100px; height: 760px;  background-color: #ececec; background-size: contain; overflow: auto;}

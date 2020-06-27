@@ -1,12 +1,7 @@
 
-
-
-
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
-
-
 
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
@@ -15,7 +10,9 @@ let renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.getElementById("viewport")
 });
-renderer.setSize(window.innerWidth, window.innerHeight);
+// const renderer = new THREE.WebGLRenderer();
+
+// renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x47578a); //back wall
 // document.body.appendChild(renderer.domElement);
 
@@ -26,9 +23,6 @@ camera.position.z = 18;
 let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from the side, casting a shadow
 scene.add(light);
 
-//remove grid when finished 
-// let gridHelper = new THREE.GridHelper(50, 50);
-// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -36,7 +30,7 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpg')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
@@ -128,23 +122,49 @@ wall2.position.set(-25,0,-40);
 wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
+function resizeCanvasToDisplaySize(force) {
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (force || canvas.width !== width ||canvas.height !== height) {
+    // you must pass false here or three.js sadly fights the browser
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+
+    // set render target sizes here
+    var doorGeometry = new THREE.PlaneGeometry(90, 124);
+
+  }
+}
+
+window.addEventListener('resize', resizeCanvasToDisplaySize(true));
+
+function animate(time) {
+  time *= 0.001;  // seconds
+
+  resizeCanvasToDisplaySize();
+
+  
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+
+
+
+resizeCanvasToDisplaySize(true);
+requestAnimationFrame(animate);
+
 // add the image to the scene
 scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); //took out skill
 
-
-
-let animate = function() {
-    requestAnimationFrame(animate);
-
-    //controls.update();
-    renderer.render(scene, camera);
-};
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
-const header = document.querySelector('.headerOverview');
+const header = document.querySelector('.homepage');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
@@ -275,8 +295,6 @@ function toggleOpenClose(window_id) {
     }
     
     open.push(tab);
-    // icons.style.opacity = 0.5;
-
     icons.style.animation="fade-out2 .5s ease-out both";
   }
   
