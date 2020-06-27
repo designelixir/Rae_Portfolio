@@ -3,8 +3,6 @@ var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
-
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
 
@@ -12,7 +10,9 @@ let renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.getElementById("viewport")
 });
-renderer.setSize(window.innerWidth, window.innerHeight);
+// const renderer = new THREE.WebGLRenderer();
+
+// renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x47578a); //back wall
 // document.body.appendChild(renderer.domElement);
 
@@ -23,9 +23,6 @@ camera.position.z = 18;
 let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from the side, casting a shadow
 scene.add(light);
 
-//remove grid when finished 
-// let gridHelper = new THREE.GridHelper(50, 50);
-// scene.add(gridHelper);
 
 var loader = new THREE.TextureLoader();
 
@@ -33,7 +30,7 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpg')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
@@ -125,23 +122,49 @@ wall2.position.set(-25,0,-40);
 wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
+function resizeCanvasToDisplaySize(force) {
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (force || canvas.width !== width ||canvas.height !== height) {
+    // you must pass false here or three.js sadly fights the browser
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+
+    // set render target sizes here
+    var doorGeometry = new THREE.PlaneGeometry(90, 124);
+
+  }
+}
+
+window.addEventListener('resize', resizeCanvasToDisplaySize(true));
+
+function animate(time) {
+  time *= 0.001;  // seconds
+
+  resizeCanvasToDisplaySize();
+
+  
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+
+
+
+resizeCanvasToDisplaySize(true);
+requestAnimationFrame(animate);
+
 // add the image to the scene
 scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); //took out skill
 
-
-
-let animate = function() {
-    requestAnimationFrame(animate);
-
-    //controls.update();
-    renderer.render(scene, camera);
-};
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
-const header = document.querySelector('.headerOverview');
+const header = document.querySelector('.homepage');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
@@ -272,8 +295,6 @@ function toggleOpenClose(window_id) {
     }
     
     open.push(tab);
-    // icons.style.opacity = 0.5;
-
     icons.style.animation="fade-out2 .5s ease-out both";
   }
   
@@ -282,52 +303,54 @@ function toggleOpenClose(window_id) {
 }
 
 
-
+// ------------------------------------------------------------------------  
+//START finder functions
 
 function finder_filter(filterbutton, filterbuttonName) {
-    var allButtons = document.getElementsByClassName("finder_filter_btn");
-    for (i = 0; i < allButtons.length; i++){
-        var deactivate = allButtons[i];
-        deactivate.style.background="#384272";
-        deactivate.style.color = "#c7ccde";
-        
-    }
-    var activeButton = document.getElementById(filterbuttonName);
-    activeButton.style.background = "#2f335c";
-    activeButton.style.color = "white";
+  var allButtons = document.getElementsByClassName("finder_filter_btn");
+  for (i = 0; i < allButtons.length; i++){
+      var deactivate = allButtons[i];
+      deactivate.style.background="#384272";
+      deactivate.style.color = "#c7ccde";
+      
+  }
+  var activeButton = document.getElementById(filterbuttonName);
+  activeButton.style.background = "#2f335c";
+  activeButton.style.color = "white";
 
-    var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];
-    var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon"];
-    
-    for (i = 0; i < all.length; i++){
-    var showElement = document.getElementById(all[i]);
-    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
-    }
-    
-    for (i=0; i<allIcons.length; i++){
-        var showIcon = document.getElementById(allIcons[i]);
-        showIcon.style.display = "block";
-        
-    }
-    
-
-
-    if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
-    else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
-    else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
-    else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
+  var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "renu_slide", "renu_icon"];
+  var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon", "renu_icon"];
+  
+  for (i = 0; i < all.length; i++){
+  var showElement = document.getElementById(all[i]);
+  showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
+  }
+  
+  for (i=0; i<allIcons.length; i++){
+      var showIcon = document.getElementById(allIcons[i]);
+      showIcon.style.display = "block";
+      
+  }
+  
 
 
 
-   for (i = 0; i < hideThis.length; i++){
-       var hide = document.getElementById(hideThis[i]);
-       hide.style.display = "none";
-       hide.className = hide.className.replace('mySlides', "hiddenMySlides");
-   }
+  if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+  else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
+  else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+  else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
 
-   var mySlides = document.getElementsByClassName("mySlides");
-   mySlides[0].style.display = "block";
-   
+
+
+ for (i = 0; i < hideThis.length; i++){
+     var hide = document.getElementById(hideThis[i]);
+     hide.style.display = "none";
+     hide.className = hide.className.replace('mySlides', "hiddenMySlides");
+ }
+
+ var mySlides = document.getElementsByClassName("mySlides");
+ mySlides[0].style.display = "block";
+ 
 
 
 
@@ -335,29 +358,28 @@ function finder_filter(filterbutton, filterbuttonName) {
 
 
 function scaleCarouselButton(buttonName, buttonPosition){
-    var openbuttons = [];
-    var activeButton = document.getElementsByClassName('active_carousel_button');
-    openbuttons.push(buttonName);
-    console.log(openbuttons);
-   
-    for (i = 0; i<openbuttons.length; i++){
-            var scaleDown = document.getElementById(openbuttons[i]);
-            scaleDown.classList.remove('active_carousel_button');
-            openbuttons.pop(openbuttons[i]);
-        }
-    
-    if (buttonPosition === 1){
-        
-        var scaleThisButton = document.getElementById(buttonName);
-        scaleThisButton.classList.add("active_carousel_button");
-        
-    } 
+  var openbuttons = [];
+  var activeButton = document.getElementsByClassName('active_carousel_button');
+  openbuttons.push(buttonName);
+  console.log(openbuttons);
+ 
+  for (i = 0; i<openbuttons.length; i++){
+          var scaleDown = document.getElementById(openbuttons[i]);
+          scaleDown.classList.remove('active_carousel_button');
+          openbuttons.pop(openbuttons[i]);
+      }
+  
+  if (buttonPosition === 1){
+      
+      var scaleThisButton = document.getElementById(buttonName);
+      scaleThisButton.classList.add("active_carousel_button");
+      
+  } 
 
-    
+  
 }
 
 
-console.log(slideIndex);
 
 var x = document.getElementsByClassName("mySlides");                    
 var slideIndex = 1;
@@ -381,20 +403,25 @@ showDivs(slideIndex);
 }
 
 function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("project_nav_btn");
-  
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-  x[i].style.display = "none";  
-  
-  }
-  
-  x[slideIndex-1].style.display = "block";  
-  
-  }
+var i;
+var x = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("project_nav_btn");
+
+if (n > x.length) {slideIndex = 1}    
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+
+}
+
+x[slideIndex-1].style.display = "block";  
+
+}
+
+
+
+// ------------------------------------------------------------------------  
+// END finder functions
 
 
 function dragElement(elmnt) {
@@ -467,7 +494,20 @@ function scrollToPosition(value){
   window.scrollTo(0,value);
 }
 
+function safariTweaks(){
+  if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) 
+{
+  alert("Browser is Safari");      
+   var slide_caption_wrapper_tweaks = document.getElementsByClassName("slide_caption_wrapper");
+   console.log(slide_caption_wrapper_tweaks);
+}
+}
+
+
+
 function changeTime(){
+
+ 
   const current = new Date();
   const hours = current.getHours();
   if (hours > 0 && hours <= 12) {
