@@ -1,4 +1,7 @@
 
+
+
+
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -282,52 +285,54 @@ function toggleOpenClose(window_id) {
 }
 
 
-
+// ------------------------------------------------------------------------  
+//START finder functions
 
 function finder_filter(filterbutton, filterbuttonName) {
-    var allButtons = document.getElementsByClassName("finder_filter_btn");
-    for (i = 0; i < allButtons.length; i++){
-        var deactivate = allButtons[i];
-        deactivate.style.background="#384272";
-        deactivate.style.color = "#c7ccde";
-        
-    }
-    var activeButton = document.getElementById(filterbuttonName);
-    activeButton.style.background = "#2f335c";
-    activeButton.style.color = "white";
+  var allButtons = document.getElementsByClassName("finder_filter_btn");
+  for (i = 0; i < allButtons.length; i++){
+      var deactivate = allButtons[i];
+      deactivate.style.background="#384272";
+      deactivate.style.color = "#c7ccde";
+      
+  }
+  var activeButton = document.getElementById(filterbuttonName);
+  activeButton.style.background = "#2f335c";
+  activeButton.style.color = "white";
 
-    var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];
-    var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon"];
-    
-    for (i = 0; i < all.length; i++){
-    var showElement = document.getElementById(all[i]);
-    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
-    }
-    
-    for (i=0; i<allIcons.length; i++){
-        var showIcon = document.getElementById(allIcons[i]);
-        showIcon.style.display = "block";
-        
-    }
-    
-
-
-    if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
-    else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
-    else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
-    else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
+  var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "renu_slide", "renu_icon"];
+  var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon", "renu_icon"];
+  
+  for (i = 0; i < all.length; i++){
+  var showElement = document.getElementById(all[i]);
+  showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
+  }
+  
+  for (i=0; i<allIcons.length; i++){
+      var showIcon = document.getElementById(allIcons[i]);
+      showIcon.style.display = "block";
+      
+  }
+  
 
 
 
-   for (i = 0; i < hideThis.length; i++){
-       var hide = document.getElementById(hideThis[i]);
-       hide.style.display = "none";
-       hide.className = hide.className.replace('mySlides', "hiddenMySlides");
-   }
+  if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+  else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
+  else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
+  else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
 
-   var mySlides = document.getElementsByClassName("mySlides");
-   mySlides[0].style.display = "block";
-   
+
+
+ for (i = 0; i < hideThis.length; i++){
+     var hide = document.getElementById(hideThis[i]);
+     hide.style.display = "none";
+     hide.className = hide.className.replace('mySlides', "hiddenMySlides");
+ }
+
+ var mySlides = document.getElementsByClassName("mySlides");
+ mySlides[0].style.display = "block";
+ 
 
 
 
@@ -335,29 +340,28 @@ function finder_filter(filterbutton, filterbuttonName) {
 
 
 function scaleCarouselButton(buttonName, buttonPosition){
-    var openbuttons = [];
-    var activeButton = document.getElementsByClassName('active_carousel_button');
-    openbuttons.push(buttonName);
-    console.log(openbuttons);
-   
-    for (i = 0; i<openbuttons.length; i++){
-            var scaleDown = document.getElementById(openbuttons[i]);
-            scaleDown.classList.remove('active_carousel_button');
-            openbuttons.pop(openbuttons[i]);
-        }
-    
-    if (buttonPosition === 1){
-        
-        var scaleThisButton = document.getElementById(buttonName);
-        scaleThisButton.classList.add("active_carousel_button");
-        
-    } 
+  var openbuttons = [];
+  var activeButton = document.getElementsByClassName('active_carousel_button');
+  openbuttons.push(buttonName);
+  console.log(openbuttons);
+ 
+  for (i = 0; i<openbuttons.length; i++){
+          var scaleDown = document.getElementById(openbuttons[i]);
+          scaleDown.classList.remove('active_carousel_button');
+          openbuttons.pop(openbuttons[i]);
+      }
+  
+  if (buttonPosition === 1){
+      
+      var scaleThisButton = document.getElementById(buttonName);
+      scaleThisButton.classList.add("active_carousel_button");
+      
+  } 
 
-    
+  
 }
 
 
-console.log(slideIndex);
 
 var x = document.getElementsByClassName("mySlides");                    
 var slideIndex = 1;
@@ -381,20 +385,25 @@ showDivs(slideIndex);
 }
 
 function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("project_nav_btn");
-  
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-  x[i].style.display = "none";  
-  
-  }
-  
-  x[slideIndex-1].style.display = "block";  
-  
-  }
+var i;
+var x = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("project_nav_btn");
+
+if (n > x.length) {slideIndex = 1}    
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+
+}
+
+x[slideIndex-1].style.display = "block";  
+
+}
+
+
+
+// ------------------------------------------------------------------------  
+// END finder functions
 
 
 function dragElement(elmnt) {
@@ -467,7 +476,20 @@ function scrollToPosition(value){
   window.scrollTo(0,value);
 }
 
+function safariTweaks(){
+  if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) 
+{
+  alert("Browser is Safari");      
+   var slide_caption_wrapper_tweaks = document.getElementsByClassName("slide_caption_wrapper");
+   console.log(slide_caption_wrapper_tweaks);
+}
+}
+
+
+
 function changeTime(){
+
+ 
   const current = new Date();
   const hours = current.getHours();
   if (hours > 0 && hours <= 12) {

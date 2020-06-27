@@ -12,11 +12,9 @@
       <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" type="text/css" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="https://use.typekit.net/rkj0ohr.css"> 
 
     </head>
-    <body>
+    <body onload="safariTweaks()">
       <canvas id="viewport" ></canvas> 
         <div class="page-wrapper" id="portfolio_page_wrapper">
         <div class="headerOverview">
@@ -222,170 +220,176 @@
                         </div>
             </div>
 
-            <div id="finder_window" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
-                    
-                    <div id="finder_filter">
-                            <button class="finder_filter_btn" id="all" style="background: #2f335c; color: white;" onclick="finder_filter(0, 'all')">All</button>
-                            <button class="finder_filter_btn" id="websites_filter" onclick="finder_filter(1, 'websites_filter')">Websites</button>
-                            <button class="finder_filter_btn" id="graphicdesign_filter" onclick="finder_filter(2, 'graphicdesign_filter')">Graphic Design</button>
-                            <button class="finder_filter_btn" id="illustrations_filter" style="border-right: none;" onclick="finder_filter(3, 'illustrations_filter')" >Illustrations</button>
-                    </div> 
+            <div id="finder_window" class="window" >
+                <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
+                
+                <div id="finder_filter">
+                        <button class="finder_filter_btn" id="all" style="background: #2f335c; color: white;" onclick="finder_filter(0, 'all')">All</button>
+                        <button class="finder_filter_btn" id="websites_filter" onclick="finder_filter(1, 'websites_filter')">Websites</button>
+                        <button class="finder_filter_btn" id="graphicdesign_filter" onclick="finder_filter(2, 'graphicdesign_filter')">Graphic Design</button>
+                        <button class="finder_filter_btn" id="illustrations_filter" style="border-right: none;" onclick="finder_filter(3, 'illustrations_filter')" >Illustrations</button>
+                </div> 
 
-                    <div class="slide_container">
-
-                                
-                            <div class="mySlides illustration" id="millerslide">
-                                <div class="slide_image">
-                                    <img src="src/cases/miller_bros/miller_sticker_layout.jpg"  loading="lazy" alt="Miller Bros Sticker layout">
-
-                                </div>
-                                <a onclick="toggleOpenClose('miller_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" style="width: 150px; position: fixed; top: 80px; right: 8px; z-index: 3;"></a>
-
-                                <div class="slide_caption_wrapper">
-                                        <p><b>The Miller Bros</b>-Sticker &amp; Logo Designs</p>                                  
-                                        <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
-                                        <!-- <button onclick="toggleOpenClose('miller_project')">View Full Project</button> -->
-                                </div>
-                                    
-                            </div>
-            
-                            <div class="mySlides website" id="tlgsslide">
-                                    <div class="slide_image">
-                                        <img src="src/cases/tlgs/ipad_tlgs.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="twin lakes general store website on an ipad">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>Twin Lakes General Store</b>-Website Development</p>
-                                        <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
-                                    </div>
-                            </div> 
-
-                            <div class="mySlides graphic_design" id="vansslide">
-                                <div class="slide_image">
-                                    <img src="src/cases/vans/vans_post_v2.webp" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="megan on skateboard">
-                                </div>
-                                <div class="slide_caption_wrapper">
-                                        <p><b>Vans Ultrarange Project</b>-Product Photos</p>
-                                        <p class="slide_caption" > Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
-                                        <!-- <button onclick="toggleOpenClose('vans_project')">View full Case Study</button> -->
-                                </div>
-                            </div> 
-            
-                            <div class="mySlides illustration" id="katslide" >
-                                    <div class="slide_image">
-                                        <img src="src/cases/finder_extras/happiness_kat.jpg" style="box-shadow: 5px 5px 5px gray;"  loading="lazy" alt="kat script sample">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>Kat's Script</b>-Custom Typography</p>
-                                        <p class="slide_caption"> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
-                                     
-                                    </div>
-                                    
-                            </div> 
-            
-                            <div class="mySlides website" id="debraslide" >
-                                    <div class="slide_image">
-                                        <img src="src/cases/finder_extras/debra_website.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="Debra Austin Website">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>Debra Austin, JD, PhD</b>-Website Development</p>
-                                        <p class="slide_caption"> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
-                                        <!-- <button><a href="https://www.debraaustin.com" target="_blank">Visit the Website</a></button> -->
-                                    </div>
-                                    
-                            </div> 
-                            
-                            <div class="mySlides graphic_design" id="wfslide" >
-                                    <div class="slide_image">
-                                            <img src="src/cases/west_flanders/brick_posters.jpg" loading="lazy" style="box-shadow: 0px 5px 5px gray;"  alt="brut ipa poster">
-                                            
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>West Flanders Brewing Company</b>-Brand & Marketing Materials</p>
-                                        <p class="slide_caption"> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
-                                        <!-- <button onclick="toggleOpenClose('menu_project')">View Project Case Study</button> -->
-                                    </div>
-                                    
-                            </div>
-
-                            <div class="mySlides illustration" id="northernslide">
-                                    <div class="slide_image">
-                                        <img src="src/cases/finder_extras/northern_stickers.jpg" alt="Northern Wild Stickers">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>Northern Wild </b>-Sticker Designs</p>
-                                        <p class="slide_caption"> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
-                                    </div>
-                                    
-                            </div>
-
-                            <div class="mySlides website" id="mechslide" >
-                                    <div class="slide_image">
-                                        <img src="src/cases/finder_extras/mech_computer.jpg" alt="University of Colorado Class of 2020 Mechanical Engineers website">    
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>University of Colorado</b>-Website Development</p>
-                                        <p class="slide_caption"> Using existing brand standards, design a graduate website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery of 300+ students. </p>
-                                        <!-- <button><a href="https://www.meclassof2020.wpcomstaging.com" target="_blank">Visit the Website</a></button> -->
-                                    </div>
-            
-                                    
-                            </div>
-
-                            <div class="mySlides graphic_design" id="civico_slide" >
-                                    <div class="slide_image">
-                                        <img src="src/cases/finder_extras/civico_layout2.jpg" loading="lazy" alt="Northern Wild Stickers">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                        <p><b>Civico </b>-Brochure Designs</p>
-                                        <p class="slide_caption"> Help transition a political group's brand from old to new with fresh layouts for informational brochures.  </p>
-                                    </div>
-                                    
-                            </div>
-
-                            <div class="mySlides illustration" id="killanillaslide">
-                                    <div class="slide_image">
-                                        <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
-                                    </div>
-                                    <div class="slide_caption_wrapper">
-                                            <p><b>Killa Nilla</b>-Album Artworks</p>
-                                            <p class="slide_caption"> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
-                                            <!-- <button onclick="toggleOpenClose('killa_nilla_project')">View full Case Study</button> -->
-                                    </div>
-                            </div> 
-            
-                            
-            
-                                
-            
-                                
-            
-                            
-
-                            
-            
-                    </div>
-
-                    <button class="slideshow_btn_left" id="big_nav_left" onclick="plusDivs(-1)" >&lsaquo;</button>
-                        <div class="finder_carousel" id="finder_carousel_container">
-
-                                <button class="project_nav_btn illustration active_carousel_button" id="miller_icon" onclick="currentDiv(1,1)"><img src="src/cases/miller_bros/miller_sticker_layout.jpg"  alt="miller bro stickers "></button> 
-                                <button class="project_nav_btn website" id="tlgs_icon" onclick="currentDiv(2,1)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
-                                <button class="project_nav_btn graphic_design" id="vans_icon" onclick="currentDiv(3,1)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
-                                <button class="project_nav_btn illustration" id="kattype_icon" onclick="currentDiv(4,2)"><img src="src/cases/finder_extras/kats_script2.jpg" ></button> 
-                                <button class="project_nav_btn website" id="debra_icon" onclick="currentDiv(5,2)"><img src="src/cases/finder_extras/brain.png" ></button> 
-                                <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,2)"><img src="src/cases/west_flanders/brut.jpg" ></button> 
-                                <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(7,3)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
-                                <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(8,3)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
-                                <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(9,3)"><img src="src/cases/finder_extras/civico_tall.jpg" ></button> 
-                                <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(10,4)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
-
+                <div class="slide_container">
+                    <div class="mySlides illustration" id="renu_slide">
+                        <div class="slide_image">
+                            <img src="src/cases/finder_extras/renu_layout.jpg" loading="lazy" alt="renu logo layout">
                         </div>
-                        <!-- <button class="content_nav_btn_right" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button> -->
-                        <button class="slideshow_btn_right" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button>
+                        <div class="slide_caption_wrapper">
+                                <p><b>Renu Cosmetics</b>-Logo &amp; Packaging</p>
+                                <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
+                        </div>
+                </div>
+                            
+                        
+        
+                        <div class="mySlides website" id="tlgsslide">
+                                <div class="slide_image">
+                                        <a onclick="toggleOpenClose('tlgs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
 
-    
-            </div>
+                                    <img src="src/cases/tlgs/ipad_tlgs.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="twin lakes general store website on an ipad">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>Twin Lakes General Store</b>-Website Development</p>
+                                    <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
+                                </div>
+                        </div> 
+
+                        <div class="mySlides graphic_design" id="vansslide">
+                            <div class="slide_image">
+                                    <a onclick="toggleOpenClose('vans_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+
+                                <img src="src/cases/vans/vans_post_v2.webp" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="megan on skateboard">
+                            </div>
+                            <div class="slide_caption_wrapper">
+                                    <p><b>Vans Ultrarange Project</b>-Product Photos</p>
+                                    <p class="slide_caption" > Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
+                            </div>
+                        </div> 
+        
+                        <div class="mySlides illustration" id="katslide" >
+                                <div class="slide_image">
+                                    <img src="src/cases/finder_extras/happiness_kat.jpg" style="box-shadow: 5px 5px 5px gray;"  loading="lazy" alt="kat script sample">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>Kat's Script</b>-Custom Typography</p>
+                                    <p class="slide_caption"> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
+                                 
+                                </div>
+                                
+                        </div> 
+        
+                        <div class="mySlides website" id="debraslide" >
+                                <div class="slide_image">
+                                    <a href="https://www.debraaustin.com" target="_blank" rel="noopener"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" alt="View Website"></a>
+                                    <img src="src/cases/finder_extras/debra_website.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="Debra Austin Website">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>Debra Austin, JD, PhD</b>-Website Development</p>
+                                    <p class="slide_caption"> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                </div>
+                                
+                        </div> 
+                        
+                        <div class="mySlides graphic_design" id="wfslide" >
+                                <div class="slide_image">
+                                        <a onclick="toggleOpenClose('menu_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <img src="src/cases/finder_extras/west_flanders_layout.jpg" loading="lazy" style="box-shadow: 0px 5px 5px gray;"  alt="brut ipa poster">
+                                        
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>West Flanders Brewing Company</b>-Brand & Marketing Materials</p>
+                                    <p class="slide_caption"> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
+                                </div>
+                                
+                        </div>
+
+                        <div class="mySlides illustration" id="northernslide">
+                                <div class="slide_image">
+                                    <img src="src/cases/finder_extras/northern_stickers.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>Northern Wild </b>-Sticker Designs</p>
+                                    <p class="slide_caption"> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
+                                </div>
+                                
+                        </div>
+
+                        <div class="mySlides website" id="mechslide" >
+                                <div class="slide_image">
+                                    <a href="https://meclassof2020.wpcomstaging.com/" target="_blank" rel="noopener"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" alt="View Website"></a>
+                                    <img src="src/cases/finder_extras/mech_computer.jpg" loading="lazy"  alt="University of Colorado Class of 2020 Mechanical Engineers website">    
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>University of Colorado</b>-Website Development</p>
+                                    <p class="slide_caption"> Using existing brand standards, design a graduate website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery of 300+ students. </p>
+                                </div>
+        
+                                
+                        </div>
+
+                        <div class="mySlides graphic_design" id="civico_slide" >
+                                <div class="slide_image">
+                                    <img src="src/cases/finder_extras/civico_layout2.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                    <p><b>Civico </b>-Brochure Designs</p>
+                                    <p class="slide_caption"> Help transition a political group's brand from old to new with fresh layouts for informational brochures.  </p>
+                                </div>
+                                
+                        </div>
+
+                        <div class="mySlides illustration" id="killanillaslide">
+                                <div class="slide_image">
+                                    <a onclick="toggleOpenClose('killa_nilla_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+
+                                    <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+                                </div>
+                                <div class="slide_caption_wrapper">
+                                        <p><b>Killa Nilla</b>-Album Artworks</p>
+                                        <p class="slide_caption"> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                </div>
+                        </div>   
+                        <div class="mySlides graphic_design" id="millerslide">
+                            <div class="slide_image">
+                                <a onclick="toggleOpenClose('miller_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                <img src="src/cases/miller_bros/miller_sticker_layout.jpg"  loading="lazy" alt="Miller Bros Sticker layout">
+
+                            </div>
+                            <a onclick="toggleOpenClose('miller_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" style="width: 150px; position: fixed; top: 80px; right: 8px; z-index: 3;"></a>
+
+                            <div class="slide_caption_wrapper">
+                                    <p><b>The Miller Bros</b>-Sticker Designs</p>                                  
+                                    <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                            </div>
+                                
+                        </div>
+                        
+                        
+
+                </div>
+
+                <button class="slideshow_btn" id="big_nav_left" style="left: 0;" onclick="plusDivs(-1)" >&lsaquo;</button>
+
+                    <div class="finder_carousel" id="finder_carousel_container">
+                            <button class="project_nav_btn graphic_design" id="renu_icon" onclick="currentDiv(1,1)"><img src="src/cases/finder_extras/renu_bottle.png" ></button> 
+                            <button class="project_nav_btn website" id="tlgs_icon" onclick="currentDiv(2,1)"><img src="src/cases/tlgs/ipad_tlgs.jpg"  alt="twin lakes general store website on an ipad"></button> 
+                            <button class="project_nav_btn graphic_design" id="vans_icon" onclick="currentDiv(3,2)"><img src="src/cases/vans/vans_post_v2.webp"   alt="Love Me Now album cover on phone"></button> 
+                            <button class="project_nav_btn illustration" id="kattype_icon" onclick="currentDiv(4,1)"><img src="src/cases/finder_extras/kats_script2.jpg" ></button> 
+                            <button class="project_nav_btn website" id="debra_icon" onclick="currentDiv(5,2)"><img src="src/cases/finder_extras/brain.png" ></button> 
+                            <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,3)"><img src="src/cases/west_flanders/brut.jpg" ></button> 
+                            <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(7,2)"><img src="src/cases/finder_extras/northern_icon.png" ></button> 
+                            <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(8,3)"><img src="src/cases/finder_extras/cuMech.png" ></button> 
+                            <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(9,4)"><img src="src/cases/finder_extras/civico_tall.jpg" ></button> 
+                            <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(10,3)"><img src="src/cases/killa_nilla/love_me_now.svg" ></button> 
+                            <button class="project_nav_btn illustration active_carousel_button" id="miller_icon" onclick="currentDiv(11,4)"><img src="src/cases/miller_bros/miller_sticker_layout.jpg"  alt="miller bro stickers "></button> 
+
+                    </div>
+                    <!-- <button class="content_nav_btn_right" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button> -->
+                    <button class="slideshow_btn" style="right: 0;" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button>
+
+
+        </div>
 
             <div id="testimonial_wrapper" style="display: none;">
                     <div id="testimonial_window1" class="window sticky" >
