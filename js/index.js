@@ -24,13 +24,42 @@ let light = new THREE.AmbientLight(0xFFFFFF); // white spotlight shining from th
 scene.add(light);
 
 
+function resizeCanvasToDisplaySize(force) {
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (force || canvas.width !== width ||canvas.height !== height) {
+    // you must pass false here or three.js sadly fights the browser
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+
+    // set render target sizes here
+  }
+}
+
+function animate(time) {
+  time *= 0.001;  // seconds
+
+  resizeCanvasToDisplaySize();
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+
+resizeCanvasToDisplaySize(true);
+requestAnimationFrame(animate);
+
+//remove grid when finished 
+// let gridHelper = new THREE.GridHelper(50, 50);
+// scene.add(gridHelper);
+
 var loader = new THREE.TextureLoader();
 
 // canvas OBJECTS 
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring8.jpg')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.jpg')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
@@ -70,7 +99,7 @@ var doorway = new THREE.MeshLambertMaterial({
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk10.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk12.png')
 }); 
 deskchair.transparent=true;
 
@@ -122,43 +151,17 @@ wall2.position.set(-25,0,-40);
 wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
-function resizeCanvasToDisplaySize(force) {
-  const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (force || canvas.width !== width ||canvas.height !== height) {
-    // you must pass false here or three.js sadly fights the browser
-    renderer.setSize(width, height, false);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-
-    // set render target sizes here
-    var doorGeometry = new THREE.PlaneGeometry(90, 124);
-
-  }
-}
-
-window.addEventListener('resize', resizeCanvasToDisplaySize(true));
-
-function animate(time) {
-  time *= 0.001;  // seconds
-
-  resizeCanvasToDisplaySize();
-
-  
-
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
-}
-
-
-
-resizeCanvasToDisplaySize(true);
-requestAnimationFrame(animate);
-
 // add the image to the scene
 scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); //took out skill
 
+
+
+// let animate = function() {
+//     requestAnimationFrame(animate);
+
+//     //controls.update();
+//     renderer.render(scene, camera);
+// };
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
@@ -181,7 +184,7 @@ const illustration_splash = document.querySelector('#illustration_splash');
 
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
-// const loading_bar = document.querySelector('.loading_scroller');
+const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
@@ -194,34 +197,29 @@ uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedP
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
 
-uos(0.33, 0.37, p => (profile.style.width= ((p*16))+"%"));
+uos(0.33, 0.37, p => (profile.style.width= ((p*25))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 // uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
-// uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+uos(0.43, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.46, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.55, 0.65, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.65, 0.75, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
-
-
-// uos(0.6, 0.65, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 
-
-
-
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-// uos(0.5, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 
 
 
 dragElement(document.getElementById("about_window"));
+dragElement(document.getElementById("finder_window"));
+
 dragElement(document.getElementById("contact_window"));
 dragElement(document.getElementById("terminal_window"));
 dragElement(document.getElementById("testimonial_window1"));
@@ -231,25 +229,25 @@ dragElement(document.getElementById("testimonial_window3"));
 
 var desktop_icons_array = document.getElementsByClassName("desktop_icons");
   console.log(desktop_icons_array);
-  const top_padding = [ "10%","15%", "20%","25%", "30%","35%", "40%", "50%", "60%", "70%"];
-  const left_padding =["20%","40%", "10%", "60%","80%","85%"];
+  const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
+  // const left_padding =["20%","40%", "10%", "60%","80%","85%"];
   for (i=0; i<desktop_icons_array.length; i++){
-      var x = Math.floor( Math.random()*top_padding.length );
-      var y = Math.floor( Math.random()*left_padding.length );
+      var y = Math.floor( Math.random()*top_padding.length );
+      // var x = Math.floor( Math.random()*left_padding.length );
       var icon = desktop_icons_array[i];
-      var icon_top = top_padding[x];
-      var icon_left = left_padding[y];
+      var icon_top = top_padding[y];
+      // var icon_left = left_padding[x];
       
-      left_padding.splice(y,1);
+      top_padding.splice(y,1);
       icon.style.top = icon_top;
-      icon.style.left = icon_left;
+      // icon.style.left = icon_left;
               
 }
 
 
 function about_scroller(direction) {
-  if (direction === 1) {document.getElementById('about_content').scrollLeft += 620;}
-  else {document.getElementById('about_content').scrollLeft -= 620;}
+  if (direction === 1) {document.getElementById('about_content').scrollLeft += 590;}
+  else {document.getElementById('about_content').scrollLeft -= 590;}
 };
 
 var testimonial1 = document.getElementById("testimonial_window1");
@@ -338,7 +336,7 @@ function finder_filter(filterbutton, filterbuttonName) {
   if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
   else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
   else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
-  else {var hideThis = []; scaleCarouselButton('miller_icon', 1);}
+  else {var hideThis = []; scaleCarouselButton('renu_icon', 1);}
 
 
 
@@ -499,6 +497,9 @@ function safariTweaks(){
 {
   alert("Browser is Safari");      
    var slide_caption_wrapper_tweaks = document.getElementsByClassName("slide_caption_wrapper");
+
+   document.getElementById('viewport').addClass('safari');
+
    console.log(slide_caption_wrapper_tweaks);
 }
 }
