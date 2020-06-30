@@ -341,29 +341,14 @@ function dragElement(elmnt) {
   }
 }
 
-
-function print_terminal() {
-  $("p.line")
-    .removeClass("line")
-    .addClass("done")
-    .next()
-    .addClass("line")
-    .on("animationend", function () {
-      print_terminal();
-    });
+var terminal_lines = document.getElementsByClassName('line');
+for (i=0; i<terminal_lines.length; i++) {
+  console.log(terminal_lines[i]);
+  var thisLine = terminal_lines[i];
+  thisLine.style.animation = "typing " + i+2 +"s steps(30, end);"
 }
 
-$("#terminal_text p.line").on("animationend", function () {
-  print_terminal();
-});
 
-$(document).on('click', 'a[href^="#"]', function (event) {
-  event.preventDefault();
-
-  $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top
-  }, 700);
-});
 
 function scrollToPosition(value){
   var doc = document.getElementById('viewport');
