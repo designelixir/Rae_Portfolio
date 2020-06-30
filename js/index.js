@@ -67,7 +67,6 @@ var cubeMaterials = [
 
 
   
-cubeMaterials = new THREE.MeshFaceMaterial(cubeMaterials);
 
 var cubeGeometry = new THREE.BoxGeometry(80,0,70);
 var floor = new THREE.Mesh(cubeGeometry,cubeMaterials);
@@ -223,7 +222,6 @@ dragElement(document.getElementById("thankyou_note"));
 dragElement(document.getElementById("mia1"));
 dragElement(document.getElementById("mia2"));
 dragElement(document.getElementById("mia3"));
-dragElement(document.getElementById("selfport"));
 
 dragElement(document.getElementById("contact_window"));
 dragElement(document.getElementById("terminal_window"));
@@ -234,19 +232,14 @@ dragElement(document.getElementById("testimonial_window3"));
 
 var desktop_icons_array = document.getElementsByClassName("desktop_icons");
 
-  console.log(desktop_icons_array);
   const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
-  // const left_padding =["20%","40%", "10%", "60%","80%","85%"];
   for (i=0; i<desktop_icons_array.length; i++){
       var y = Math.floor( Math.random()*top_padding.length );
-      // var x = Math.floor( Math.random()*left_padding.length );
       var icon = desktop_icons_array[i];
       var icon_top = top_padding[y];
-      // var icon_left = left_padding[x];
       
       top_padding.splice(y,1);
       icon.style.top = icon_top;
-      // icon.style.left = icon_left;
               
 }
 
@@ -279,29 +272,19 @@ function toggleOpenClose(window_id) {
 
  
   else {
-    
     tab.style.display = "block";
     tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
-    
     var openWindow = open.length;
-    console.log ("variable openWindow is "+ openWindow);
-
     if (open.length > 0) {
-      console.log ("the length before the for loop is "+ open.length);
       for (i = 0; i < openWindow ; i++ ){
         var closeThis = open[i];
         closeThis.style.display = "none";
-        
-        console.log ("closing "+ closeThis);
         open.pop(closeThis);
       }
-      
     }
-    
     open.push(tab);
     icons.style.animation="fade-out2 .5s ease-out both";
   }
-
 }
 
 function trashOpenClose(window_id) {
@@ -309,18 +292,11 @@ function trashOpenClose(window_id) {
 
   if (trash.style.display === "block") {
     trash.style.display = "none";
-
-    
   }
 
- 
   else {
-    
     trash.style.display = "block";
     trash.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
-  
-
-
 }
 }
 
