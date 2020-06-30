@@ -70,75 +70,75 @@
 
   
 @font-face {
-  font-family: 'GreycliffCF-ThinOblique';
+  font-family: 'GreycliffCF-ThinOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-ThinOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ThinOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Thin';
+  font-family: 'GreycliffCF-Thin'; font-display: swap;
   src: url('webFonts/GreycliffCF-Thin/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Thin/font.woff') format('woff');
 }
-@font-face {
-  font-family: 'GreycliffCF-ExtraLightOblique';
+/* @font-face {
+  font-family: 'GreycliffCF-ExtraLightOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-ExtraLightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLightOblique/font.woff') format('woff');
-}
+} */
 @font-face {
-  font-family: 'GreycliffCF-ExtraLight';
+  font-family: 'GreycliffCF-ExtraLight'; font-display: swap;
   src: url('webFonts/GreycliffCF-ExtraLight/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLight/font.woff') format('woff');
 }
-@font-face {
-  font-family: 'GreycliffCF-HeavyOblique';
+/* @font-face {
+  font-family: 'GreycliffCF-HeavyOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-HeavyOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-HeavyOblique/font.woff') format('woff');
-}
+} */
 @font-face {
-  font-family: 'GreycliffCF-Light';
+  font-family: 'GreycliffCF-Light'; font-display: swap;
   src: url('webFonts/GreycliffCF-Light/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Light/font.woff') format('woff');
 }
-@font-face {
-  font-family: 'GreycliffCF-Heavy';
+/* @font-face {
+  font-family: 'GreycliffCF-Heavy'; font-display: swap;
   src: url('webFonts/GreycliffCF-Heavy/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Heavy/font.woff') format('woff');
-}
-@font-face {
-  font-family: 'GreycliffCF-ExtraBoldOblique';
+} */
+/* @font-face {
+  font-family: 'GreycliffCF-ExtraBoldOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff') format('woff');
-}
+} */
 @font-face {
-  font-family: 'GreycliffCF-Bold';
+  font-family: 'GreycliffCF-Bold'; font-display: swap;
   src: url('webFonts/GreycliffCF-Bold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Bold/font.woff') format('woff');
 }
-@font-face {
-  font-family: 'GreycliffCF-ExtraBold';
+/* @font-face {
+  font-family: 'GreycliffCF-ExtraBold'; font-display: swap;
   src: url('webFonts/GreycliffCF-ExtraBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBold/font.woff') format('woff');
-}
-@font-face {
-  font-family: 'GreycliffCF-BoldOblique';
+} */
+/* @font-face {
+  font-family: 'GreycliffCF-BoldOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-BoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-BoldOblique/font.woff') format('woff');
-}
+} */
 @font-face {
-  font-family: 'GreycliffCF-DemiBold';
+  font-family: 'GreycliffCF-DemiBold'; font-display: swap;
   src: url('webFonts/GreycliffCF-DemiBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBold/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-DemiBoldOblique';
+  font-family: 'GreycliffCF-DemiBoldOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-DemiBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBoldOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Regular';
+  font-family: 'GreycliffCF-Regular'; font-display: swap;
   src: url('webFonts/GreycliffCF-Regular/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Regular/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-LightOblique';
+  font-family: 'GreycliffCF-LightOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-LightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-LightOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Medium';
+  font-family: 'GreycliffCF-Medium'; font-display: swap;
   src: url('webFonts/GreycliffCF-Medium/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Medium/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-RegularOblique';
+  font-family: 'GreycliffCF-RegularOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-RegularOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-RegularOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-MediumOblique';
+  font-family: 'GreycliffCF-MediumOblique'; font-display: swap;
   src: url('webFonts/GreycliffCF-MediumOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-MediumOblique/font.woff') format('woff');
 }
 
@@ -179,7 +179,7 @@ h1 {font-family: 'GreycliffCF-Heavy', sans-serif; font-size: 3rem; margin: 0px; 
 h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 20px; color: gray; }
 h3 {font-family: 'GreycliffCF-DemiBoldOblique', sans-serif; font-size: 1.5rem; margin-bottom: 10px; line-height: 1.7rem; }
 h4 {font-family: 'GreycliffCF-RegularOblique', sans-serif; font-size: 1.5rem; color: gray; margin: 0px;}
-h5 {font-family: 'GreycliffCF-ExtraThin', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
+h5 {font-family: 'GreycliffCF-ExtraLight', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
 h6 {font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.75rem; color: gray;}
 p {font-family: 'GreycliffCF-Regular', sans-serif; font-size: 1rem;   }
 /* letter-spacing: 0.5px; */
