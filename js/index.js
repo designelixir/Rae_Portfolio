@@ -171,17 +171,14 @@ const header = document.querySelector('.homepage');
 const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
-// const delay_attribute = document.querySelector('.delay_attribute');
+const scrollArrow = document.querySelector('#bounce_arrow_button');
 const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
 const desktop_icons = document.querySelector('.desktop_icon_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
-const graphic_design_splash = document.querySelector('#graphic_design_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
-
-
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 const loading_bar = document.querySelector('.loading_scroller');
@@ -197,18 +194,18 @@ uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedP
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
 
-uos(0.33, 0.37, p => (profile.style.width= ((p*25))+"%"));
+uos(0.33, 0.37, p => (profile.style.width= ((p*30))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 // uos(0.9, 0.99, p => (toolbar_left.style.opacity =  ((p*50/updatedProgress)) )); //add towards end 
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.43, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.46, 0.55, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.55, 0.65, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.65, 0.75, p => (graphic_design_splash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.46, 0.6, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.6, 0.75, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
 
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
+uos(0.8, 0.85, p => (scrollArrow.style.left = (p*200)+"%"));
 
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
@@ -219,6 +216,14 @@ uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 dragElement(document.getElementById("about_window"));
 dragElement(document.getElementById("finder_window"));
+dragElement(document.getElementById("thankyou_note"));
+dragElement(document.getElementById("extras_window"));
+dragElement(document.getElementById("mucca"));
+dragElement(document.getElementById("thankyou_note"));
+dragElement(document.getElementById("mia1"));
+dragElement(document.getElementById("mia2"));
+dragElement(document.getElementById("mia3"));
+dragElement(document.getElementById("selfport"));
 
 dragElement(document.getElementById("contact_window"));
 dragElement(document.getElementById("terminal_window"));
@@ -228,6 +233,7 @@ dragElement(document.getElementById("testimonial_window3"));
 
 
 var desktop_icons_array = document.getElementsByClassName("desktop_icons");
+
   console.log(desktop_icons_array);
   const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
   // const left_padding =["20%","40%", "10%", "60%","80%","85%"];
@@ -295,11 +301,28 @@ function toggleOpenClose(window_id) {
     open.push(tab);
     icons.style.animation="fade-out2 .5s ease-out both";
   }
+
+}
+
+function trashOpenClose(window_id) {
+  var trash = document.getElementById(window_id);
+
+  if (trash.style.display === "block") {
+    trash.style.display = "none";
+
+    
+  }
+
+ 
+  else {
+    
+    trash.style.display = "block";
+    trash.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
   
 
 
 }
-
+}
 
 // ------------------------------------------------------------------------  
 //START finder functions
@@ -483,13 +506,15 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
   $('html, body').animate({
       scrollTop: $($.attr(this, 'href')).offset().top
-  }, 500);
+  }, 700);
 });
 
 
 function scrollToPosition(value){
-  
-  window.scrollTo(0,value);
+  var doc = document.getElementById('viewport');
+  var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+  var scrollFrom = top + value;
+  window.scrollTo(0,scrollFrom);
 }
 
 function safariTweaks(){

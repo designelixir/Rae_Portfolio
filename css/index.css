@@ -192,7 +192,7 @@ button:hover {cursor: pointer; }
 
 #viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
 .page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
-#container {height: 4000vh; position: fixed;}
+#container {height: 2000vh; position: fixed;}
 canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B; }
 
 
@@ -203,7 +203,7 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #entry_moto {max-width: 650px; width: 80%; animation: rotateStars 15s infinite;  position: absolute;}
 
 .downArrow{height: 20px;}
-#bounce_arrow_button {height: 50px; width: 100%; z-index: 12; position: fixed; bottom: 0; display: flex; justify-content: center; align-items: center; }
+#bounce_arrow_button {height: 50px; width: 100%; z-index: 1200; position: fixed; bottom: 20px; display: flex; justify-content: center; align-items: center; }
 
 .social_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; bottom: 5%; left: 0; position: fixed;}
 .social_banners_wrapper img {width: 55%; margin-bottom: -3%}
@@ -217,7 +217,7 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 
 /* Login CSS ------------------------------------------------------------------------------------------ */
 .login {width: 100%; height: 100%;  position: fixed; top: 0; display: flex; justify-content: center;	align-items: center;}
-.profile {width: 0%; max-width: 200px; position: absolute; padding-top: 25px; opacity: 1; z-index: 10;}
+.profile {width: 0%; max-width: 250px; position: absolute; padding-top: 25px; opacity: 1; z-index: 10;}
 .profile_description {width: 90%; max-width: 500px; opacity:1; padding-top: 80px;}
 .spinny {position: fixed; z-index: 7; max-width: 40px; opacity: 0;}
 
@@ -225,9 +225,9 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 /* Splash Pages CSS ------------------------------------------------------------------------------------ */
 
  #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
- .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%;}
- #splash_context_text {width: 95%; max-height: 900px; position: absolute;}
- .splash_img { width: 80%; max-width:1100px; margin-top: 2%; opacity: 1; position: absolute;}
+ .splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%; }
+ #splash_context_text {width: 95%; max-height: 900px; position: absolute; animation: rotateStars 15s infinite;}
+ .splash_img {background: linear-gradient(0deg, rgba(47,51,92,1) 0%, rgba(198,202,223,1) 100%); width: 80%; max-width:1100px; margin-top: 2%; opacity: 1; position: absolute;}
  .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 10%; z-index: 200; background: #ededed; height: 25px; max-width: 68%; width: 0%; position: absolute;}
  
 
@@ -239,13 +239,13 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #desktop_toolbar_left { float: left; width: 95%; padding-left: 20px; }
 #desktop_toolbar_left a {padding-right: 10px;}
 #desktop_toolbar_right {width: 175px; float: right;  }
-#desktop_toolbar_right img {height: 30%; padding-right: 5px; }
+#desktop_toolbar_right img {height: 15px; padding-right: 5px; }
 #time {font-family: 'GreycliffCF-Light', sans-serif;}
 #desktop_toolbar_right img:hover {transform: scale(1.2);}
 
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
-.dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; background-color: #2e345b; display: flex; justify-content: center; align-items: center; z-index: 200;}
-.dock img {height: 100px; padding: 15px; opacity: 1;}
+.dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; background-color: #707Ba5; display: flex; justify-content: center; align-items: center; z-index: 200;}
+.dock img {height: 100px; padding: 15px; opacity: 1; }
 .dock button:hover {transform: rotate(5deg); cursor: pointer;}
 
 .tooltip {position: relative; display: inline-block;}
@@ -304,13 +304,31 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #terminal_window {height: 400px; width: 80vw; max-width: 650px; background-color: #3A4172; top: 30%; }
 .done {display: block !important;}
 .terminal {padding-top: 20px;}
-#terminal_text p {display: none; font-family:'Courier New', Courier, monospace; color: white; padding-left: 2%;}
+.code p {display: none; font-family:'Courier New', Courier, monospace;  padding-left: 2%; line-height: 24px;}
 .line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
+
+
+
+
+#extras_window {height: 500px; width: 400px; position: fixed; right: 10%; bottom: 10%;}
+#extras_window_content {height: 490px; width: 375px; padding: 10%; }
+#extras_window_content button {position: fixed; padding: 5%; width: 80px;}
+#extras_window_content button:hover {transform: rotate(5deg); cursor: pointer;}
+
+#thankyou_note {height: 600px; width: 400px; background: #ececec; }
+#thankyou_note_content {padding: 20px; }
+
+#mucca {width: 300px; height: 850px; top: 10%; left: 20%; position: fixed; background: url('../src/desktop_items/mucca.jpg'); background-size: cover;}
+#mia1 {width: 300px; height: 275px; top: 5%; right: 10%; background: url('../src/desktop_items/mia.webp'); background-size: cover;}
+#mia2 {width: 300px; height: 275px; top: 50%; right: 40%; background: url('../src/desktop_items/mia.jpg'); background-size: cover;}
+#mia3 {width: 600px; height: 475px; top: 10%; right: 30%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
+
+#selfport {width: 400px; height: 300px; position: fixed; right: 5%; top: 50%; background: url('../src/desktop_items/selfport.jpg'); background-size: cover;}
 
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
 
 
-#finder_window {height: calc(100% - 200px);  width: 95%; max-width: 900px; max-height: 750px; overflow: hidden;}
+#finder_window {height: calc(100% - 200px);  width: 800px; max-width: 800px; max-height: 750px; overflow: hidden;}
 #finder_window .window_closebar {border-bottom: none;}
 #finder_filter {box-shadow: 0px 5px 5px gray; width: 100%; height: 35px; background: #4c5987; border-bottom: 1px solid #2f335c; display: flex; justify-content: center; align-items: center;}
 #finder_filter button {background:#384272; border: none; border-right: 1px solid #2c2c2c;  color: #c7ccde;  padding: 5px 20px;}
@@ -342,9 +360,8 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 .sticky {width: 300px; height: 300px;  text-align: center; }
 .sticky_textbox {height: 300px; width: 300px; padding: 15px; }
 .sticky_textbox p {font-size: 13px !important;}
+.sticky_textbox img {height: 25px;}
 #testimonial_wrapper {z-index: 20; height: 80%; width: 50%;}
-
-
 
 
 .artboard{height: 500px; padding: 50px;}

@@ -1,4 +1,4 @@
-<!-- DOCTYPE="html" -->
+
 <html lang="en">
     <head>
       <title>Design Elixir - A Creative Studio by Megan Byers</title>
@@ -14,22 +14,18 @@
     <!-- onload="safariTweaks()" -->
     <body> 
 
-            <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>      
-            <script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
-            <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
+
       <canvas id="viewport" ></canvas> 
         <div class="page-wrapper" id="portfolio_page_wrapper">
         
-        
+        <button id="bounce_arrow_button" onclick="scrollToPosition(3500)"><img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/></button>
+
         <div class="homepage">
                 <div class="homepage_context">
                     <img id="logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
                     <img id="entry_moto" src="src/splash+contexts/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
                 </div>
                 
-                <button id="bounce_arrow_button" onclick="scrollToPosition(3000)"><img class="downArrow bounce" src="src/arrow.svg" alt="Scroll down indicator"/></button>
                 
                 <div class="social_banners_wrapper">
                         <div id="social_banners"> 
@@ -66,13 +62,9 @@
 
         <div id="splash_pages">
             <div class="splash_page_wrapper">
-            <img id="splash_context_text" class="rotateStars" src="src/splash+contexts/splash_context.svg" alt="What I can Offer you">
-                
-                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/web_splash.jpg" alt="Web Development: From graphic design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
-                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustrator_splash.jpg" alt="to be filled in">
-
-                <img class="splash_img" id="graphic_design_splash" src="src/splash+contexts/web_splash.jpg" style="rotate: 180deg;" alt="to be filled in ">
-                
+            <img id="splash_context_text" src="src/splash+contexts/splash_context.svg" alt="What I can Offer you">
+                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/web.png" alt="Web Development: From page design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
+                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/graphicdesign.png" alt="Graphic Design & Illustration: We create clean and concise graphic design content that makes your brand stand out. Combined with illustrations, ranging from decorative elements for websites, logos, digital art, or even posters, add a custom and unique touch to all types of media. Services: Branding & Logo Design, Marketing Materials, Digital / Vector Art, Print and Digital Advertsiements">
             </div>    
             <div class="loading_scroller"></div>
   
@@ -228,21 +220,79 @@
                 </div>
             </div>
 
-            <div id="terminal_window" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
+                   
+            <div id="extras_window" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('extras_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Trash</p></div>
+                    <div id="extras_window_content">
+
+                        <button class="trash_icon" onclick="trashOpenClose('selfport'); " style="top: 60%; right: 35%;"><img src="src/desktop_items/selfport.svg" style="width: 80px;"></button>
+                        <button class="trash_icon" onclick="trashOpenClose('mia1'); onclick=trashOpenClose('mia2'); onclick=trashOpenClose('mia3');"  style="bottom: 15%; left: 5%;"><img src="src/desktop_items/mia.svg" style="width: 80px;"></button>
+                        <button class="trash_icon" onclick="trashOpenClose('terminal_window'); " style="top: 15%; right: 15%;"><img src="src/desktop_items/terminal.svg" style="width: 80px;"></button>
+                        <button class="trash_icon" onclick="trashOpenClose('mucca'); " style="top: 35%; left: 20%;"><img  src="src/desktop_items/mucca.svg" style="width: 80px;"></button>
+                        <button class="trash_icon" onclick="trashOpenClose('thankyou_note'); " style="top: 45%; left: 70%;"><img  src="src/desktop_items/ode.svg" style="width: 80px;"></button>
+                        <a href="https://www.youtube.com/watch?v=v0mCY80knCU" target="_blank" rel="noopener" style="cursor: alias;"><img src="src/desktop_items/youtube.svg" style="width: 80px; top: 50%; right: 5%;" ></a>
+
+                    </div>
+            </div>
+
+            <div id="terminal_window" class="window"style="display:  none;" >
+                    <div class="window_closebar"><button onclick="trashOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
                     
                         <div class="terminal">
-                            <div id="terminal_text">
+                            <div class="code" style="color: white;" id="terminal_text">
                             <p id="timeLogin" class="line"> Last login: </p>
                             <p>megan-byers:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
                             <p>Cloning into 'Rae_Portfolio"...</p>
-                            <p>remote: Loading website illustrations: 172 objects, done.</p>
-                            <p>remote: Counting objects: 100% (172/172) done.</p>
+                            <p>This website contains over X hand-drawn illustrations.</p>
+                            <p>This site could not have completed without the help of my best </p>
+                            <p> friend, Korey, my right hand woman for brainstorming. </p>
+                            <p>A special thanks to Hudson, for teaching me how to properly use </p>
+                            <p> GitHub (kinda), to Nikka, for polishing out my designs, and to </p>
+                            <p> Spencer, for motivating me through the 7 months this project took.</p>
+                            <p>Hello World, I'm Megan Byers and this is Design Elixir! </p>
+                            
                             </div>
                         </div>
             </div>
 
-            <div id="finder_window" class="window" style="display: none;" >
+
+            <div id="thankyou_note" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('thankyou_note')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>thank_you.txt</p></div>
+                    <div id="thankyou_note_content" class="code" style="font-family: 'Courier New', Courier, monospace">
+                        <p> A special thanks to these people </p>
+                    </div>
+                       
+            </div>
+
+            <div id="mucca" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('mucca')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>muccaPoster.jpeg</p></div>
+                    <div id="thankyou_note_content" class="code" style="font-family: 'Courier New', Courier, monospace">
+                        <p> COCK </p>
+                    </div>
+                       
+            </div>
+            <div id="mia1" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('mia1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miaSnow.gif</p></div>
+                       
+            </div>
+            <div id="mia2" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('mia2')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>fatMia.jpg</p></div>
+                       
+            </div>
+
+            <div id="mia3" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('mia3')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miaAndI.jpg</p></div>
+   
+            </div>
+            <div id="selfport" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="trashOpenClose('selfport')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>self_portrait.psd</p></div>
+                       
+            </div>
+
+
+           
+
+            <div id="finder_window" class="window" style="display: none;">
                 <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
                 
                 <div id="finder_filter">
@@ -413,21 +463,22 @@
                     <div id="testimonial_window1" class="window sticky" style="top: 45%; left: 50%;" >
                             <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
                             <div class="sticky_textbox">
-                                    <img style="float: left;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br> <br>
+                                    <img style="float: left;" src="src/desktop_items/quotes1left.svg" alt="left quote mark"> <br> <br>
                                     <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! </p>
-                                    <img style="float: right;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">
+                                    <br>
+                                    <img style="float: right;" src="src/desktop_items/quotes1.svg" alt="right quote mark">
                                 </div>
                     </div>
                     
                     <div id="testimonial_window2" class="window sticky" style="top: 50%; left: 55%;" >
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
                         <div class="sticky_textbox">
-                            <img style="float: left;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
+                            <img style="float: left;" src="src/desktop_items/quotes2.svg" alt="left quote mark"> <br><br>
                             <p>Megan was extremely responsive in listening to my objectives and
                                     redesigning that page in my site. I recommend Megan as a creative, collaborative, and
                                     professional young web designer and I’m so delighted with both my website and the technical
                                     capacity I gained by working with Megan.</p><br><br>
-                            <img style="float: right;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">
+                            <img style="float: right;" src="src/desktop_items/quotes2.svg" alt="right quote mark">
 
 
                         </div>
@@ -437,14 +488,14 @@
                     <div id="testimonial_window3" class="window sticky" style="top: 55%; left: 60%;">
                         <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
                         <div class="sticky_textbox">
-                            <img style="float: left;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br> <br>
+                            <img style="float: left;" src="src/desktop_items/quotes3left.svg" alt="left quote mark"> <br> <br>
 
                             <p>Megan has been a great asset to my small business by helping us transition away 
                                     from an out-of-date website and social media we inherited from former owners.  
                                     From great concept and design, tech fixes and consulting, art, photography, and helping 
                                     get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                    hard, and recommend her for any sized project!  </p>
-                            <img style="float: right;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">
+                                    hard, and recommend her for any sized project!  </p><br>
+                            <img style="float: right;" src="src/desktop_items/quotes3.svg" alt="right quote mark">
     
                         </div>
                     </div>
@@ -471,7 +522,7 @@
                             </div>
                                 
                             <h3>The Miller Bros requested a bright color palette that utilized flowers, mountains and other natural elements from their travels illustrated in an organic style. </h3>
-                            <p class="blu">The first steps of my creative process revolved around developing a sense of the environments visited in Lars. I could sum the majority of their travels to deserts, mountains, coasts and forests. These environments naturally aligned with their goal for eye-catching, colorful stickers to commemorate their travels. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
+                            <p class="blu">The first steps of my creative process revolved around developing a sense of the environments visited in Lars. After collaborating with the Miller Bros and pulling scenes from photos and videos of their trip, I could sum the majority of their travels to deserts, mountains, coasts and forests. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
                             <div class="artboard_response_row"> 
                                 <div class="artboard_response_column">
                                     <img style="width: 100%" src="src/cases/miller_bros/lars_sketches.jpg" loading="lazy" alt="Sketches of Lars, the VW Westfalia">
@@ -481,8 +532,9 @@
                                 </div>     
                             </div>
                             <div>
-                                <h3>The diverse travels through the deserts, mountains and coasts of the West made it easy to create multiple options for the Miller Bros to choose from.                         </h3>
-                                <p class="blu">I hand-drew over 20 designs to choose from showcasing different subjects and environments that I found within their footage. Some were selected as sticker designs, some are used as variations of their logo. </p>
+                                <h3>When creating mockups for the Miller Bros, I hand-drew over 20 designs which allowed multiple options for both a brand logo and stickers. </h3>
+                                <!-- <h3>The Miller Bros requested multiple design options for both a brand logo and stickers, so I hand-drew over 20 options for them to choose from.</h3> -->
+                                <p class="blu">The variations were developed in SVG format, so that the designs could be scaled to any size without losing quality. This allow them to use any design for not only their logo and stickers, but in the future for t-shirts and embroidered hats.  </p>
                                 <br>
                                 <img style="width: 100%; " src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="All Stickers">
                                 <img style="width: 100%" src="src/cases/miller_bros/sticker_stack.jpg" loading="lazy" alt="printed stickers">
@@ -565,7 +617,7 @@
 
                         <div>
                             <h3>Design a brand with the core values of the restaurant: local, authentic, cozy, high quality and hand-crafted. </h3>
-                            <p class="blu">Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content, while still utilizing pre-established colors and typography. I drew inspiration from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line strokes that mimicked the various chalkboard murals around the brewery.</p>
+                            <p class="blu">Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content. I drew inspiration from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line strokes that mimicked the various chalkboard murals around the brewery.</p>
                             <br>
                             <img src="src/cases/west_flanders/wf_ad_layout.jpg" style="width: 98.5%" loading="lazy" alt="sampling of graphic design work">
                             <img class="wf_poster" src="src/cases/west_flanders/brut.jpg" loading="lazy" style="width: 32%;" alt="brut ipa poster">
@@ -595,6 +647,7 @@
                         <div class="artboard_bottom">
                                 <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
                                 <p> Megan played many roles at West Flanders, from busser to waitress, and finally as our graphic designer. Her involvement with every day operations gave her great insight into customer user experience, and she took the initiative to redesign our menu after seeing the flaws in our current layout. She helped our restaurant find an identity after 5 years of unorganized marketing, and designed an aesthetic that helped us stand out in a state with hundreds of craft breweries. We could count on her to meet deadlines and create content, often with only a few days notice. I highly recommend Megan for all graphic design needs.</p>
+                                <br>
                                 <p><i>-Malcolm Emison, General Manager at West Flanders Brewing Company</i></p>
                                 <br>
                                 <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
@@ -667,8 +720,9 @@
                         <h2>Album Artworks</h2>
                         <br>
                         <div class="blu">
-                                <p><b>June '19</b><br>
+                                <p><b>December '18</b><br>
                                 <b>Tools: </b>Illustrator</p>
+                                <br>
                                 <p>
                                     Given complete creative freedom, I developed two album artworks for singles from electronic artist “Killa Nilla”. Driven by the hypnotic and space-inspired culture of the dubstep, I created album covers based on the titles of the singles, “Traffic” and “Love Me Now”. The albums both feature bold contrast between subject and background and bright colors to parallel the nature and aesthetic of electronic music. 
                                 </p>
@@ -718,7 +772,7 @@
                 
                         <div class="artboard_columntwothird">
                                 <img style="width: 100%;" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
-                                <p class='caption'>The Twin Lakes General Store website is responsive for all devices.</p>
+                                <p class='caption'>The Twin Lakes General Store website is responsive on all devices.</p>
                         </div>
                        
                         <div class="artboard_columnfifty">
@@ -744,6 +798,7 @@
                         <div class="artboard_response_row"> 
                             <div class="artboard_response_column">
                                 <img class="bob_motu" src="src/cases/tlgs/bob_motu.jpg" style="width: 95%; margin: 50px 50px 0px 0px;" loading="lazy" alt="bob mathes and his golden retriever motu">
+                                
                                 <p class="caption" style="padding-top: 10px">Bob &amp; his golden retriever, Motu.</p>
                             </div>
                             <div class="artboard_response_column" style="margin-top: 50px; text-align: center;">
@@ -754,6 +809,7 @@
                                     From great concept and design, tech fixes and consulting, art, photography, and helping 
                                     get an online shopping platform built. I’ve never seen someone be so engaged and work so 
                                     hard, and recommend her for any sized project!</p>
+                                    <br>
                                 <p><i>-Bob Mathes, Twin Lakes General Store & Mercantile 
                                         Twin Lakes, Colorado</i></p>
                                 <br>
@@ -789,8 +845,8 @@
                         <button onclick="toggleOpenClose('testimonial_wrapper');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
                     </div>
                     <div class="tooltip">   
-                        <span class="tooltiptext">Website Stats</span> 
-                        <button onclick="toggleOpenClose('terminal_window')" aria-label="toggle open/close terminal window"><img class="dockIcons tooltip" src="src/desktop_items/terminal.svg" alt="Open Terminal Icon"></button>
+                        <span class="tooltiptext">Trash</span> 
+                        <button onclick="toggleOpenClose('extras_window')" aria-label="toggle open/close terminal window"><img class="dockIcons tooltip" src="src/desktop_items/trash.svg" alt="Open Terminal Icon"></button>
                     </div>
                     
                     </div>
@@ -801,7 +857,11 @@
 
 </div><!-- page wrapper div -->
      
-
+<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>      
+<script src="https://cdn.rawgit.com/mrdoob/three.js/r68/examples/js/loaders/SVGLoader.js"></script>
+<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/renderers/SVGRenderer.js"></script>
                 
 
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
