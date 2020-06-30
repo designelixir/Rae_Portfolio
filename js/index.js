@@ -59,8 +59,8 @@ var loader = new THREE.TextureLoader();
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling3.jpg')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring.webp')}),
+    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling.webp')}),
     new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
 
   ];
@@ -92,24 +92,24 @@ var skill = new THREE.Mesh( skillGeometry, skillMaterial);
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway.webp')
 });
 
 doorway.transparent=true;
 
 var deskchair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk12.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk13.webp')
 }); 
 deskchair.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.webp')
 
 }); 
 chair.transparent=true;
 
 var posters = new THREE.MeshLambertMaterial({
-  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.png')
+  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters.webp')
 });
  
 posters.transparent=true;
