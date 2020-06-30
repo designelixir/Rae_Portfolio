@@ -70,75 +70,75 @@
 
   
 @font-face {
-  font-family: 'GreycliffCF-ThinOblique'; font-display: swap;
+  font-family: 'GreycliffCF-ThinOblique';
   src: url('webFonts/GreycliffCF-ThinOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ThinOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Thin'; font-display: swap;
+  font-family: 'GreycliffCF-Thin';
   src: url('webFonts/GreycliffCF-Thin/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Thin/font.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'GreycliffCF-ExtraLightOblique'; font-display: swap;
-  src: url('webFonts/GreycliffCF-ExtraLightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLightOblique/font.woff') format('woff');
-} */
 @font-face {
-  font-family: 'GreycliffCF-ExtraLight'; font-display: swap;
+  font-family: 'GreycliffCF-ExtraLightOblique';
+  src: url('webFonts/GreycliffCF-ExtraLightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLightOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraLight';
   src: url('webFonts/GreycliffCF-ExtraLight/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraLight/font.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'GreycliffCF-HeavyOblique'; font-display: swap;
-  src: url('webFonts/GreycliffCF-HeavyOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-HeavyOblique/font.woff') format('woff');
-} */
 @font-face {
-  font-family: 'GreycliffCF-Light'; font-display: swap;
+  font-family: 'GreycliffCF-HeavyOblique';
+  src: url('webFonts/GreycliffCF-HeavyOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-HeavyOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Light';
   src: url('webFonts/GreycliffCF-Light/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Light/font.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'GreycliffCF-Heavy'; font-display: swap;
-  src: url('webFonts/GreycliffCF-Heavy/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Heavy/font.woff') format('woff');
-} */
-/* @font-face {
-  font-family: 'GreycliffCF-ExtraBoldOblique'; font-display: swap;
-  src: url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff') format('woff');
-} */
 @font-face {
-  font-family: 'GreycliffCF-Bold'; font-display: swap;
+  font-family: 'GreycliffCF-Heavy';
+  src: url('webFonts/GreycliffCF-Heavy/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Heavy/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-ExtraBoldOblique';
+  src: url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBoldOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-Bold';
   src: url('webFonts/GreycliffCF-Bold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Bold/font.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'GreycliffCF-ExtraBold'; font-display: swap;
-  src: url('webFonts/GreycliffCF-ExtraBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBold/font.woff') format('woff');
-} */
-/* @font-face {
-  font-family: 'GreycliffCF-BoldOblique'; font-display: swap;
-  src: url('webFonts/GreycliffCF-BoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-BoldOblique/font.woff') format('woff');
-} */
 @font-face {
-  font-family: 'GreycliffCF-DemiBold'; font-display: swap;
+  font-family: 'GreycliffCF-ExtraBold';
+  src: url('webFonts/GreycliffCF-ExtraBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-ExtraBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-BoldOblique';
+  src: url('webFonts/GreycliffCF-BoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-BoldOblique/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'GreycliffCF-DemiBold';
   src: url('webFonts/GreycliffCF-DemiBold/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBold/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-DemiBoldOblique'; font-display: swap;
+  font-family: 'GreycliffCF-DemiBoldOblique';
   src: url('webFonts/GreycliffCF-DemiBoldOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-DemiBoldOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Regular'; font-display: swap;
+  font-family: 'GreycliffCF-Regular';
   src: url('webFonts/GreycliffCF-Regular/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Regular/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-LightOblique'; font-display: swap;
+  font-family: 'GreycliffCF-LightOblique';
   src: url('webFonts/GreycliffCF-LightOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-LightOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-Medium'; font-display: swap;
+  font-family: 'GreycliffCF-Medium';
   src: url('webFonts/GreycliffCF-Medium/font.woff2') format('woff2'), url('webFonts/GreycliffCF-Medium/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-RegularOblique'; font-display: swap;
+  font-family: 'GreycliffCF-RegularOblique';
   src: url('webFonts/GreycliffCF-RegularOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-RegularOblique/font.woff') format('woff');
 }
 @font-face {
-  font-family: 'GreycliffCF-MediumOblique'; font-display: swap;
+  font-family: 'GreycliffCF-MediumOblique';
   src: url('webFonts/GreycliffCF-MediumOblique/font.woff2') format('woff2'), url('webFonts/GreycliffCF-MediumOblique/font.woff') format('woff');
 }
 
@@ -160,7 +160,6 @@ font-display:swap;font-style:normal;font-weight:400;
   padding: 0; 
 }
 
-
 body {
 	overflow-x: hidden;
   overflow-y: scroll;
@@ -179,7 +178,7 @@ h1 {font-family: 'GreycliffCF-Heavy', sans-serif; font-size: 3rem; margin: 0px; 
 h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 20px; color: gray; }
 h3 {font-family: 'GreycliffCF-DemiBoldOblique', sans-serif; font-size: 1.5rem; margin-bottom: 10px; line-height: 1.7rem; }
 h4 {font-family: 'GreycliffCF-RegularOblique', sans-serif; font-size: 1.5rem; color: gray; margin: 0px;}
-h5 {font-family: 'GreycliffCF-ExtraLight', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
+h5 {font-family: 'GreycliffCF-ExtraThin', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
 h6 {font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.75rem; color: gray;}
 p {font-family: 'GreycliffCF-Regular', sans-serif; font-size: 1rem;   }
 /* letter-spacing: 0.5px; */
@@ -191,7 +190,7 @@ a:hover { cursor: pointer;}
 button {font-family: 'GreycliffCF-Regular', sans-serif; background: none; outline: none; border: none; }
 button:hover {cursor: pointer; }
 
-#viewport {width: 100%; height: 100%; position: fixed; display: block;}
+#viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
 .page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
 #container {height: 2000vh; position: fixed;}
 canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B; }
@@ -211,7 +210,7 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #social_banner {width: 80%; margin: 10px 0px 0px -30%;}
 #social_banners, #shortcut_banners {display: none;}
 
-.shortcut_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; top: 5%; right: 10px; position: fixed;}
+.shortcut_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; top: 5%; right: 0; position: fixed;}
 .shortcut_banners_wrapper img {width: 55%; float: right; margin-bottom: -3%}
 .banner:hover {transform: rotate(5deg); cursor: pointer;}
 #shortcut_banner {width: 80%; top: 0; margin: 0px -5% 0px 0px; }
@@ -319,12 +318,9 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #thankyou_note {height: 600px; width: 400px; background: #ececec; }
 #thankyou_note_content {padding: 20px; }
 
-#mucca {width: 300px; height: 850px; top: 10%; left: 20%; position: fixed; background: url('../src/desktop_items/mucca.jpg'); background-size: cover;}
 #mia1 {width: 300px; height: 275px; top: 5%; right: 10%; background: url('../src/desktop_items/mia.webp'); background-size: cover;}
 #mia2 {width: 300px; height: 275px; top: 50%; right: 40%; background: url('../src/desktop_items/mia.jpg'); background-size: cover;}
 #mia3 {width: 600px; height: 475px; top: 10%; right: 30%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
-
-#selfport {width: 400px; height: 300px; position: fixed; left: 5%; top: 50%; background: url('../src/desktop_items/selfport.jpg'); background-size: cover;}
 
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
 

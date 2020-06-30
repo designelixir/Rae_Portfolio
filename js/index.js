@@ -5,6 +5,10 @@ canvas.height = window.innerHeight;
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
+camera.position.set(0, 1, 18);
+camera.aspect = window.innerWidth / window.innerHeight;
+camera.updateProjectionMatrix();
+
 
 let renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -12,37 +16,27 @@ let renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setClearColor(0x47578a); //back wall
-camera.position.set(0, 1, 18);
+renderer.setSize(window.innerWidth, window.innerHeight, false);
+
 
 let light = new THREE.AmbientLight(0xFFFFFF); 
 scene.add(light);
 
-function resizeCanvasToDisplaySize(force) {
-  const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (force || canvas.width !== width ||canvas.height !== height) {
-    // you must pass false here or three.js sadly fights the browser
-    renderer.setSize(width, height, false);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
 
-    // set render target sizes here
-  }
-}
+    
 
+    
 function animate(time) {
   time *= 0.001;  // seconds
-  resizeCanvasToDisplaySize();
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
 
-resizeCanvasToDisplaySize(true);
 requestAnimationFrame(animate);
 
 
 var loader = new THREE.TextureLoader();
+loader.minFilter = THREE.LinearFilter;
 
 // canvas OBJECTS 
 var cubeMaterials = [
@@ -73,6 +67,7 @@ var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
 //loaders
 var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')});
 doorway.transparent=true;
+
 var deskchair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk12.png')}); 
 deskchair.transparent=true;
 var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
