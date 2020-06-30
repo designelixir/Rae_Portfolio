@@ -354,7 +354,11 @@ function scrollToPosition(value){
   var doc = document.getElementById('viewport');
   var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
   var scrollFrom = top + value;
-  window.scrollTo(0,scrollFrom);
+  if (value === 0){
+    window.scrollTo(0,0);
+  } else {
+  
+  window.scrollTo(0,scrollFrom);}
 }
 
 function changeTime(){
