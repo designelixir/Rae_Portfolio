@@ -170,6 +170,7 @@ font-display:swap;font-style:normal;font-weight:400;
 
 .tk-fatfrank { font-family: "fatfrank",sans-serif; }
 
+html {width: 100%; height: 100%;}
 
 * {
   box-sizing: border-box;
@@ -319,14 +320,104 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 .mail_button {background: #2f335c; padding: 10px; bottom: 0px; margin-left: 55%;}
 
 /* terminal Window.... maybe going to scratch tho  */
-#terminal_window {height: 400px; width: 80vw; max-width: 650px; background-color: #3A4172; top: 30%; }
+#terminal_window {height: 400px; width: 80vw; max-width: 700px; background-color: #3A4172; top: 30%; }
 .done {display: block !important;}
 .terminal {padding-top: 20px;}
 .code p {display: none; font-family:'Courier New', Courier, monospace;  padding-left: 2%; line-height: 24px;}
-.line {white-space: nowrap; overflow: hidden; transform: translateY(-50%); animation: typing 2.5s steps(30, end); display: block !important;}
+.line {white-space: nowrap; overflow: hidden; animation: typing 2.5s steps(30, end); transform: translateY(-50%); display: block !important;}
+#line1 {animation: typing 3s steps(30, end);}
+
+.css-typing p {
+  border-right: .15em solid #c6cADF;
+  font-family: "Courier";
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+  padding-left: 10px;
+}
 
 
 
+.css-typing p:nth-child(1) {
+  width: 46em;
+  -webkit-animation: type 4s steps(40, end);
+  animation: type 4s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(2) {
+  width: 50em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 4.1s;
+  animation-delay: 4.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(3) {
+  width: 46em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 8.1s;
+  animation-delay: 8.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(4) {
+  width: 32em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 12.1s;
+  animation-delay: 12.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(5) {
+  width: 43em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 16.1s;
+  animation-delay: 16.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(6) {
+  width: 40em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 20.1s;
+  animation-delay: 20.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(7) {
+  width: 36em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end);
+  -webkit-animation-delay: 24.1s;
+  animation-delay: 24.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.css-typing p:nth-child(8) {
+  width: 36em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 4s steps(40, end), blink .5s step-end infinite alternate; 
+  -webkit-animation-delay: 28.1s;
+  animation-delay: 28.1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 
 #extras_window {height: 500px; width: 400px; position: fixed; right: 10%; bottom: 10%;}
 #extras_window_content {height: 490px; width: 375px; padding: 10%; }
@@ -340,29 +431,29 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 #mia2 {width: 300px; height: 275px; top: 50%; right: 40%; background: url('../src/desktop_items/mia.jpg'); background-size: cover;}
 #mia3 {width: 600px; height: 475px; top: 10%; right: 30%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
 
+
+
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
 
 
-#finder_window {height: calc(100% - 200px);  width: 800px; max-width: 800px; max-height: 750px; overflow: hidden;}
+#finder_window {height: calc(100% - 200px);  width: 100%; max-width: 1000px; max-height: 750px; overflow: hidden;}
 #finder_window .window_closebar {border-bottom: none;}
 #finder_filter {box-shadow: 0px 5px 5px gray; width: 100%; height: 35px; background: #4c5987; border-bottom: 1px solid #2f335c; display: flex; justify-content: center; align-items: center;}
 #finder_filter button {background:#384272; border: none; border-right: 1px solid #2c2c2c;  color: #c7ccde;  padding: 5px 20px;}
 #finder_filter button:focus {background: #2f335c; color: white;}
 
-.slide_container { height: calc(100% - 200px); margin: 25px; }
+.slide_container { height: calc(100% - 120px); margin: 25px;  }
 .slide_image {width: 100%; height: 80%;  }
 .slide_image img { height: 90%;  width: auto; max-height: 500px; margin: 25px; -webkit-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);-moz-box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75);box-shadow: 2px 2px 6px -3px rgba(0,0,0,0.75); -webkit-animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both}
-.slideshow_btn { position: absolute; top: 100px; width: 35px;  height: calc(100% - 300px);  font-size: 72px; cursor: pointer;  color: #2f335c; background: #c6cadf;}
+.slideshow_btn { position: absolute; top: 75px; width: 35px;  height: calc(100% - 250px);  font-size: 72px; cursor: pointer;  color: #2f335c; background: #c6cadf;}
 .slideshow_btn:hover {transform: scale(1.1); color: #707Ba5;}
 .mySlides {min-width: 100%; min-height: 100%;  display: flex; justify-content: center; text-align: center;}
 
 .slide_caption_wrapper {margin: auto; left: 25px; right: 25px; bottom: 100px; font-family: 'GreycliffCF-Thin', sans-serif !important; position: absolute; height: 100px;  z-index: 2; }
-.slide_caption_wrapper button {background: #2f335c; color: white; border: none; padding: 10px; }
-.slide_caption_wrapper button:hover {transform: scale(1.1); cursor: alias;}
 .slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; background: #c6cadf; margin: 0px; padding: 5px; font-size: 0.9rem;}
 .slide_caption_wrapper p {margin: 8px 0px 0px 0px;}
 
-.case_study_btn {position: absolute; top: 82px !important; width: 150px !important; z-index: 3000; height: unset !important; box-shadow: none !important; margin: 1px ! important;}
+.case_study_btn {position: absolute; top: 48px !important; width: 150px !important; z-index: 3000; height: unset !important; box-shadow: none !important; margin: 1px ! important;}
 .case_study_btn:hover {transform: scale(1.05); cursor: alias;}
 
 .finder_carousel{background: #707BA5; box-shadow: 0px -4px 7px gray; border-top: 1px solid #2f335c; width: 100%; height: 100px; position: absolute; bottom: 0; display: flex;  align-items: center; overflow-y: hidden; overflow-x: scroll;}
@@ -406,8 +497,8 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 
 
 
-  /* .slide_caption_wrapper.safari {bottom: 100px; background: orange;}
-#viewport.safari {height: 3000vh !important; } */
+
+
 
 
 @media screen and (min-width: 1200px ) {
@@ -458,6 +549,50 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 
 
 /* animations  */
+
+
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid #c6cADF;
+  }
+  100% {
+    border: none;
+  }
+}
+
+
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid #c6cADF;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
+
 
 @keyframes typing {from { width: 0;}to {width: 100%;}}
 @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}

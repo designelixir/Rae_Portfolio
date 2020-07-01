@@ -1,16 +1,13 @@
-
 <html lang="en">
     <head>
       <title>Design Elixir - A Creative Studio by Megan Byers</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Portfolio website for Design Elixir Studio out of Boulder, Colorado. Owned and operated by graphic designer, illustrator, and web developer Megan Rae Byers"/>
-      <meta name="theme-color" content="#2f335c">
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
 
     </head>
-    <!-- onload="safariTweaks()" -->
     <body> 
 
 
@@ -223,35 +220,27 @@
             <div id="extras_window" class="window" style="display: none;">
                     <div class="window_closebar"><button onclick="trashOpenClose('extras_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Trash</p></div>
                     <div id="extras_window_content">
-
-                        <!-- <button class="trash_icon" onclick="trashOpenClose('selfport'); " style="top: 60%; right: 35%;"><img src="src/desktop_items/selfport.svg" style="width: 80px;" loading="lazy" alt="Selfportrait button"></button> -->
                         <button class="trash_icon" onclick="trashOpenClose('mia1'); onclick=trashOpenClose('mia2'); onclick=trashOpenClose('mia3');" style="bottom: 15%; left: 5%;"><img src="src/desktop_items/mia.svg" loading="lazy" style="width: 80px;" alt="Mia folder button" ></button>
                         <button class="trash_icon" onclick="trashOpenClose('terminal_window'); " style="top: 15%; right: 15%;"><img src="src/desktop_items/terminal.svg" style="width: 80px;" loading="lazy" alt="Website Stats Button"></button>
-                        <!-- <button class="trash_icon" onclick="trashOpenClose('mucca'); " style="top: 35%; left: 20%;"><img  src="src/desktop_items/mucca.svg" style="width: 80px;" loading="lazy" alt="Mucca Image Button"></button> -->
                         <button class="trash_icon" onclick="trashOpenClose('thankyou_note'); " style="top: 45%; left: 70%;"><img  src="src/desktop_items/ode.svg" style="width: 80px;" loading="lazy" alt="ode to this website button"></button>
                         <a href="https://www.youtube.com/watch?v=v0mCY80knCU" target="_blank" rel="noopener" style="cursor: alias;"><img src="src/desktop_items/youtube.svg" alt ="youtube video button" loading="lazy" style="width: 80px; top: 50%; right: 5%;" ></a>
-
                     </div>
             </div>
 
-            <div id="terminal_window" class="window" style="display: none;" >
-                    <div class="window_closebar"><button onclick="trashOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
-                    
-                        <div class="terminal">
-                            <div class="code" style="color: white;" id="terminal_text">
-                            <p id="timeLogin" class="line"> Last login: </p>
-                            <p class="line">meg:~ designelixir$ git clone https://github.com/coloradical/Rae_Portfolio.git </p>
-                            <p class="line">Cloning into 'Rae_Portfolio"...</p>
-                            <p class="line">This website contains over X hand-drawn illustrations.</p>
-                            <p class="line">This site could not have completed without the help of my best </p>
-                            <p class="line"> friend, Korey, my right hand woman for brainstorming. </p>
-                            <p class="line">A special thanks to Hudson, for teaching me how to properly use </p>
-                            <p class="line"> GitHub (kinda), to Nikka, for polishing out my designs, and to </p>
-                            <p class="line"> Spencer, for motivating me through the 7 months this project took.</p>
-                            <p class="line">Hello World, I'm Megan Byers and this is Design Elixir! </p>
-                            
-                            </div>
+            <div id="terminal_window" class="window" style="display: none;">
+                <div class="window_closebar"><button onclick="trashOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
+                <div class="terminal">
+                        <div class="css-typing">
+                            <p>Every piece of this website is hand-drawn, and contains X illustrations.</p>
+                            <p>Some website stat here<br><br></p>
+                            <p>This site couldn't have been completed without the help of my best friend </p>
+                            <p>Korey, my right hand woman for brainstorming. <br><br></p>
+                            <p>A special thanks to Hudson for teaching me how to properly use GitHub </p>
+                            <p>(kinda), to Nikka, for polishing my designs, and to Spencer, for  </p>
+                            <p>motivating me throughout the 7 months this project took.<br><br></p>
+                            <p>Hello World, I'm Megan Byers and this is Design Elixir!</p>
                         </div>
+                </div>
             </div>
 
 
@@ -263,11 +252,6 @@
                        
             </div>
 
-            <!-- <div id="mucca" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="trashOpenClose('mucca')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>muccaPoster.jpeg</p></div>
-                    
-                       
-            </div> -->
             <div id="mia1" class="window" style="display: none;" >
                     <div class="window_closebar"><button onclick="trashOpenClose('mia1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miaSnow.gif</p></div>
                        
@@ -281,24 +265,10 @@
                     <div class="window_closebar"><button onclick="trashOpenClose('mia3')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miaAndI.jpg</p></div>
    
             </div>
-            <!-- <div id="selfport" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="trashOpenClose('selfport')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>self_portrait.psd</p></div>
-                       
-            </div> -->
 
-
-           
 
             <div id="finder_window" class="window" style="display: none;">
                 <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
-                
-                <div id="finder_filter">
-                        <button class="finder_filter_btn" id="all" style="background: #2f335c; color: white;" onclick="finder_filter(0, 'all')">All</button>
-                        <button class="finder_filter_btn" id="websites_filter" onclick="finder_filter(1, 'websites_filter')">Websites</button>
-                        <button class="finder_filter_btn" id="graphicdesign_filter" onclick="finder_filter(2, 'graphicdesign_filter')">Graphic Design</button>
-                        <button class="finder_filter_btn" id="illustrations_filter" style="border-right: none;" onclick="finder_filter(3, 'illustrations_filter')" >Illustrations</button>
-                </div> 
-
                 <div class="slide_container">
                     <div class="mySlides graphic_design" id="renu_slide">
                         <div class="slide_image">
@@ -309,9 +279,7 @@
                                 <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
                         </div>
                 </div>
-                            
-                        
-        
+
                         <div class="mySlides website" id="tlgsslide">
                                 <div class="slide_image">
                                         <a onclick="toggleOpenClose('tlgs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
@@ -363,12 +331,12 @@
                         <div class="mySlides graphic_design" id="wfslide" >
                                 <div class="slide_image">
                                         <a onclick="toggleOpenClose('menu_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
-                                        <img src="src/cases/finder_extras/west_flanders_layout.jpg" loading="lazy" style="box-shadow: 0px 5px 5px gray;"  alt="brut ipa poster">
+                                        <img src="src/cases/west_flanders/menu_closeup.jpg" loading="lazy" style="box-shadow: 0px 5px 5px gray;"  alt="Menu Rework Closeup">
                                         
                                 </div>
                                 <div class="slide_caption_wrapper">
-                                    <p><b>West Flanders Brewing Company</b>-Brand & Marketing Materials</p>
-                                    <p class="slide_caption"> Using an existing logo, create distinct and eye-catching brand elements for a variety of print media and advertisements. </p>
+                                    <p><b>West Flanders Brewing Company</b>-Menu Redesign</p>
+                                    <p class="slide_caption">Design a new menu layout focused on user-experience and clean design, while utilizing new brand elements. </p>
                                 </div>
                                 
                         </div>
@@ -444,7 +412,7 @@
                         <button class="project_nav_btn graphic_design" id="vans_icon" onclick="currentDiv(3,2)"><img src="src/cases/vans/vans_post_v2.webp" loading="lazy" alt="Vans Button Toggle"></button> 
                         <button class="project_nav_btn illustration" id="kattype_icon" onclick="currentDiv(4,1)"><img src="src/cases/finder_extras/kats_script2.jpg" loading="lazy" alt="Kats Script Button Toggle" ></button> 
                         <button class="project_nav_btn website" id="debra_icon" onclick="currentDiv(5,2)"><img src="src/cases/finder_extras/brain.png" loading="lazy" alt="Debra Austin Website Button Toggle"></button> 
-                        <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,3)"><img src="src/cases/west_flanders/brut.jpg" loading="lazy" alt = "West Flanders Button Toggle"></button> 
+                        <button class="project_nav_btn graphic_design" id="wf_icon" onclick="currentDiv(6,3)"><img src="src/cases/west_flanders/menu_details.jpg" loading="lazy" alt = "West Flanders Button Toggle"></button> 
                         <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(7,2)"><img src="src/cases/finder_extras/northern_icon.png" loading="lazy" alt="Northern Wild Button Toggle" ></button> 
                         <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(8,3)"><img src="src/cases/finder_extras/cuMech.png" loading="lazy" alt="CU Website Button Toggle"></button> 
                         <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(9,4)"><img src="src/cases/finder_extras/civico_tall.jpg" loading="lazy" alt="Civico Button Toggle" ></button> 
