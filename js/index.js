@@ -1,3 +1,11 @@
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
+
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -28,7 +36,9 @@ function animate(time) {
 requestAnimationFrame(animate);
 
 var loader = new THREE.TextureLoader();
+loader.generateMipmaps = false;
 loader.minFilter = THREE.LinearFilter;
+loader.wrapS = loader.wrapT = THREE.ClampToEdgeWrapping;
 
 // canvas OBJECTS 
 var cubeMaterials = [
