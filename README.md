@@ -1,6 +1,1 @@
-
-
-
-[Article on Codrops](https://tympanus.net/codrops/?p=38923)
-
-[Demo](https://tympanus.net/Tutorials/scroll-transitions-webgl)
+Repository for the portfolio of Megan Rae Byers (Design Elixir). Entirely hand-drawn, using three.js and WebGL. 
