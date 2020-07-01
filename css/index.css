@@ -140,7 +140,7 @@ button:hover {cursor: pointer; }
  
  /* Desktop Framework CSS ------------------------------------------------------------------------------- */
 .desktop {position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-size: cover; background-image: url("../src/desktop_items/mountain_wallpaper.svg");  background-color: #2E345B; z-index: 0;}
-#desktop_window_wrapper {width: 100%; height: 90%;  position: fixed; z-index: 0; contain: content; margin: 60px 0px 60px 0px;  display: flex; justify-content: center; align-items: center;  }
+#desktop_window_wrapper {width: 100%; height: 90%; top: 50px; position: fixed; z-index: 0;  margin: 60px 0px 60px 0px;  display: flex; justify-content: center; align-items: center;  }
 .desktop_toolbar {width: 100%; z-index: 10000; background-color: #2c2c2c; display: inline-block; height: 50px; display: flex; align-items: center; color: white; font-size: 16px; overflow: hidden; }
 #desktop_toolbar_left { float: left; width: 95%; padding-left: 20px; }
 #desktop_toolbar_left a {padding-right: 10px;}
@@ -149,7 +149,7 @@ button:hover {cursor: pointer; }
 #time {font-family: 'GreycliffCF-Light', sans-serif;}
 #desktop_toolbar_right img:hover {transform: scale(1.2);}
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
-.dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; background-color: #707Ba5; display: flex; justify-content: center; align-items: center; z-index: 200;}
+.dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; z-index: 200;}
 .dock img {height: 100px; padding: 15px; opacity: 1; }
 .dock button:hover {transform: rotate(5deg); cursor: pointer;}
 .tooltip {position: relative; display: inline-block;}
@@ -169,14 +169,14 @@ button:hover {cursor: pointer; }
 
 /* Window CSS ------------------------------------------------------------------------------------------------------- */
 .window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; height: 90%; background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed; contain: content; z-index: 10;}
-.window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
+.window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; overflow-x: hidden; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
 .window_closebar p {display: inline-block; margin-top: 5px;  color: #c6cadf;}
 .close_btn { height: 20px; left: 10px; top: 5px; position: absolute; } 
 .window_closebar img:hover {cursor: pointer; transform: scale(1.2)}
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 
 /* About Window CSS ---------------------------------------------------------------------------------------------------- */
-#about_window {max-width: 590px; width: 100%; height: 85%; max-height: 850px; top: 75px; background: #ececec; }
+#about_window {max-width: 590px; width: 100%; height: 80%; max-height: 750px; top: 75px; background: #ececec; }
 #about_wrapper {justify-content: center; align-items: center; contain: content; width: 100%; height: 100%; top: 25px;}
 #about_content {height: 100%; margin-top: 1%; display: flex; scroll-behavior: smooth; flex-wrap: nowrap; overflow-x: auto; width: 100%;}
 .slide {left: 0; padding: 40px; flex: 0 0 auto;  display: inline-block; height: 100%; width: 100%;  max-width: 610px; contain: content; }
@@ -189,7 +189,7 @@ button:hover {cursor: pointer; }
 .about_btn_right {float: right; margin-left: 140px; }
 
 /* Contact Window CSS --------------------------------------------------------------------------------------------------- */
-#contact_window {height: 550px; max-width: 400px; contain: content; overflow: hidden;}
+#contact_window {height: 550px; max-width: 400px; bottom: 13%; contain: content; overflow: hidden;}
 #contact_window_content p {padding-left: 5%; padding-right: 5%; }
 #contact_window_content img {height: 80px; padding-left: 20px; }
 #contact_window_content img:hover {transform: scale(1.1); cursor: alias;}
@@ -207,7 +207,7 @@ button:hover {cursor: pointer; }
 .css-typing p:nth-child(6) {width: 40em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 20.1s; animation-delay: 20.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
 .css-typing p:nth-child(7) {width: 36em;opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 24.1s; animation-delay: 24.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
 .css-typing p:nth-child(8) {width: 36em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 28.1s; animation-delay: 28.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-#extras_window {height: 500px; width: 400px; position: fixed; right: 10%; bottom: 10%;}
+#extras_window {height: 400px; width: 300px; position: fixed; right: 10%; bottom: 10%; background: #384272}
 #extras_window_content {height: 490px; width: 375px; padding: 10%; }
 #extras_window_content button {position: fixed; padding: 5%; width: 80px;}
 #extras_window_content button:hover {transform: rotate(5deg); cursor: pointer;}
@@ -218,7 +218,7 @@ button:hover {cursor: pointer; }
 #mia3 {width: 600px; height: 475px; top: 10%; right: 30%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
 
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
-#finder_window {height: calc(100% - 200px);  width: 100%; max-width: 1000px; max-height: 750px; overflow: hidden;}
+#finder_window {height: 75%; bottom: 12.5%;  width: 95%; max-width: 1000px; max-height: 750px; overflow: hidden;}
 #finder_window .window_closebar {border-bottom: none;}
 .slide_container { height: calc(100% - 120px); margin: 25px;  }
 .slide_image {width: 100%; height: 80%;  }
@@ -226,9 +226,9 @@ button:hover {cursor: pointer; }
 .slideshow_btn { position: absolute; top: 75px; width: 35px;  height: calc(100% - 250px);  font-size: 72px; cursor: pointer;  color: #2f335c; background: #c6cadf;}
 .slideshow_btn:hover {transform: scale(1.1); color: #707Ba5;}
 .mySlides {min-width: 100%; min-height: 100%;  display: flex; justify-content: center; text-align: center;}
-.slide_caption_wrapper {margin: auto; left: 25px; right: 25px; bottom: 100px; font-family: 'GreycliffCF-Thin', sans-serif !important; position: absolute; height: 100px;  z-index: 2; }
-.slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; background: #c6cadf; margin: 0px; padding: 5px; font-size: 0.9rem;}
-.slide_caption_wrapper p {margin: 8px 0px 0px 0px;}
+.slide_caption_wrapper {margin: auto; left: 25px; right: 25px; bottom: 100px; background: #c6cadf; font-family: 'GreycliffCF-Thin', sans-serif !important; position: absolute; height: 100px;  z-index: 2; }
+.slide_caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center;  margin: 0px; padding: 5px; font-size: 0.9rem;}
+.slide_caption_wrapper p {margin: 8px 0px 0px 0px; background: }
 .case_study_btn {position: absolute; top: 48px !important; width: 150px !important; z-index: 3000; height: unset !important; box-shadow: none !important; margin: 1px ! important;}
 .case_study_btn:hover {transform: scale(1.05); cursor: alias;}
 .finder_carousel{background: #707BA5; box-shadow: 0px -4px 7px gray; border-top: 1px solid #2f335c; width: 100%; height: 100px; position: absolute; bottom: 0; display: flex;  align-items: center; overflow-y: hidden; overflow-x: scroll;}
@@ -294,7 +294,7 @@ button:hover {cursor: pointer; }
 
 @media screen and (max-width: 500px) {
   #desktop_toolbar_right {display: none;}
-  #finder_window {max-height: 625px; background: orange;}
+  #finder_window {height: calc(100%-50px);}
   #finder_carousel {display: none;}
 }
 
