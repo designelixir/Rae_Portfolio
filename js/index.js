@@ -138,22 +138,26 @@ uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
+window.addEventListener("scroll", function(){
+  dragElement(document.getElementById("about_window"));
+  dragElement(document.getElementById("finder_window"));
+  dragElement(document.getElementById("thankyou_note"));
+  dragElement(document.getElementById("extras_window"));
+  dragElement(document.getElementById("thankyou_note"));
+  dragElement(document.getElementById("mia1"));
+  dragElement(document.getElementById("mia2"));
+  dragElement(document.getElementById("mia3"));
+  dragElement(document.getElementById("contact_window"));
+  dragElement(document.getElementById("terminal_window"));
+  dragElement(document.getElementById("testimonial_window1"));
+  dragElement(document.getElementById("testimonial_window2"));
+  dragElement(document.getElementById("testimonial_window3"));
+  
 
-dragElement(document.getElementById("about_window"));
-dragElement(document.getElementById("finder_window"));
-dragElement(document.getElementById("thankyou_note"));
-dragElement(document.getElementById("extras_window"));
-dragElement(document.getElementById("thankyou_note"));
-dragElement(document.getElementById("mia1"));
-dragElement(document.getElementById("mia2"));
-dragElement(document.getElementById("mia3"));
-dragElement(document.getElementById("contact_window"));
-dragElement(document.getElementById("terminal_window"));
-dragElement(document.getElementById("testimonial_window1"));
-dragElement(document.getElementById("testimonial_window2"));
-dragElement(document.getElementById("testimonial_window3"));
 
+  
 
+});
 var desktop_icons_array = document.getElementsByClassName("desktop_icons");
 
   const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
@@ -166,6 +170,11 @@ var desktop_icons_array = document.getElementsByClassName("desktop_icons");
       icon.style.top = icon_top;
               
 }
+
+
+
+
+
 
 function about_scroller(direction) {
   if (direction === 1) {document.getElementById('about_content').scrollLeft += 590;}

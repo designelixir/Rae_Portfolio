@@ -211,7 +211,7 @@ button:hover {cursor: pointer; }
 
 #viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
 .page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
-#container {height: 2000vh; position: fixed;}
+#container {height: 1000vh; position: fixed;}
 canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B; }
 
 
@@ -321,103 +321,17 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 
 /* terminal Window.... maybe going to scratch tho  */
 #terminal_window {height: 400px; width: 80vw; max-width: 700px; background-color: #3A4172; top: 30%; }
-.done {display: block !important;}
 .terminal {padding-top: 20px;}
-.code p {display: none; font-family:'Courier New', Courier, monospace;  padding-left: 2%; line-height: 24px;}
-.line {white-space: nowrap; overflow: hidden; animation: typing 2.5s steps(30, end); transform: translateY(-50%); display: block !important;}
-#line1 {animation: typing 3s steps(30, end);}
+.css-typing p {border-right: .15em solid #c6cADF; font-family: "Courier"; font-size: 15px; white-space: nowrap; overflow: hidden; color: white; padding-left: 10px;}
+.css-typing p:nth-child(1) {width: 46em; -webkit-animation: type 4s steps(40, end); animation: type 4s steps(40, end); -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(2) {width: 50em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 4.1s; animation-delay: 4.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(3) {width: 46em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 8.1s; animation-delay: 8.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(4) {width: 32em;opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 12.1s; animation-delay: 12.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(5) {width: 43em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 16.1s; animation-delay: 16.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(6) {width: 40em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 20.1s; animation-delay: 20.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(7) {width: 36em;opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 24.1s; animation-delay: 24.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(8) {width: 36em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 28.1s; animation-delay: 28.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
 
-.css-typing p {
-  border-right: .15em solid #c6cADF;
-  font-family: "Courier";
-  font-size: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
-  padding-left: 10px;
-}
-
-
-
-.css-typing p:nth-child(1) {
-  width: 46em;
-  -webkit-animation: type 4s steps(40, end);
-  animation: type 4s steps(40, end);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.css-typing p:nth-child(2) {
-  width: 50em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 4.1s;
-  animation-delay: 4.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.css-typing p:nth-child(3) {
-  width: 46em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 8.1s;
-  animation-delay: 8.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(4) {
-  width: 32em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 12.1s;
-  animation-delay: 12.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(5) {
-  width: 43em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 16.1s;
-  animation-delay: 16.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(6) {
-  width: 40em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 20.1s;
-  animation-delay: 20.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(7) {
-  width: 36em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end);
-  -webkit-animation-delay: 24.1s;
-  animation-delay: 24.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(8) {
-  width: 36em;
-  opacity: 0;
-  -webkit-animation: type2 4s steps(40, end);
-  animation: type2 4s steps(40, end), blink .5s step-end infinite alternate; 
-  -webkit-animation-delay: 28.1s;
-  animation-delay: 28.1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
 
 #extras_window {height: 500px; width: 400px; position: fixed; right: 10%; bottom: 10%;}
 #extras_window_content {height: 490px; width: 375px; padding: 10%; }
@@ -434,8 +348,6 @@ canvas { width: 100vw; height: 100vh; display: block; background-color: #2E345B;
 
 
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
-
-
 #finder_window {height: calc(100% - 200px);  width: 100%; max-width: 1000px; max-height: 750px; overflow: hidden;}
 #finder_window .window_closebar {border-bottom: none;}
 #finder_filter {box-shadow: 0px 5px 5px gray; width: 100%; height: 35px; background: #4c5987; border-bottom: 1px solid #2f335c; display: flex; justify-content: center; align-items: center;}
