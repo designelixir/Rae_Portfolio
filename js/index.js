@@ -1,4 +1,3 @@
-
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -8,7 +7,6 @@ var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHei
 camera.position.set(0, 1, 18);
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
-
 
 let renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -22,18 +20,12 @@ renderer.setSize(window.innerWidth, window.innerHeight, false);
 let light = new THREE.AmbientLight(0xFFFFFF); 
 scene.add(light);
 
-
-    
-
-    
 function animate(time) {
   time *= 0.001;  // seconds
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
-
 requestAnimationFrame(animate);
-
 
 var loader = new THREE.TextureLoader();
 loader.minFilter = THREE.LinearFilter;
@@ -180,7 +172,6 @@ function about_scroller(direction) {
   else {document.getElementById('about_content').scrollLeft -= 590;}
 };
 
-
 var open = [];
 function toggleOpenClose(window_id) {
   var icons = document.getElementById("desktop_icon_container");
@@ -216,90 +207,41 @@ function trashOpenClose(window_id) {
   }
 }
 
-// ------------------------------------------------------------------------  
-//START finder functions
-
-function finder_filter(filterbutton, filterbuttonName) {
-  var allButtons = document.getElementsByClassName("finder_filter_btn");
-  for (i = 0; i < allButtons.length; i++){
-      var deactivate = allButtons[i];
-      deactivate.style.background="#384272";
-      deactivate.style.color = "#c7ccde";
-  }
-  var activeButton = document.getElementById(filterbuttonName);
-  activeButton.style.background = "#2f335c";
-  activeButton.style.color = "white";
-
-  var all = ["civico_icon", "civico_slide", "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "renu_slide", "renu_icon"];
-  var allIcons = ["civico_icon", "miller_icon", "kattype_icon",  "killanilla_icon", "northern_icon", "vans_icon",   "wf_icon",  "tlgs_icon",  "debra_icon", "mech_icon", "renu_icon"];
-  
-  for (i = 0; i < all.length; i++){
-    var showElement = document.getElementById(all[i]);
-    showElement.className = showElement.className.replace("hiddenMySlides", "mySlides");
-  }
-  
-  for (i=0; i<allIcons.length; i++){
-      var showIcon = document.getElementById(allIcons[i]);
-      showIcon.style.display = "block";
-  }
-  
-  if (filterbutton === 1){scaleCarouselButton('tlgs_icon', 1); var hideThis = ["renu_icon", "renu_slide","civico_icon", "civico_slide" , "millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "vans_icon", "vansslide", "wfslide", "wf_icon"];}
-  else if (filterbutton === 2){scaleCarouselButton('vans_icon', 1); var hideThis = ["millerslide", "miller_icon", "katslide", "kattype_icon", "killanillaslide", "killanilla_icon", "northern_icon", "northernslide", "tlgsslide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon"];}
-  else if (filterbutton === 3){scaleCarouselButton('miller_icon', 1); var hideThis = ["tlgsslide", "civico_icon", "civico_slide", "tlgs_icon", "debraslide", "debra_icon", "mechslide", "mech_icon", "vans_icon", "vansslide", "wfslide", "wf_icon", "renu_icon", "renu_slide"];}
-  else {var hideThis = []; scaleCarouselButton('renu_icon', 1);}
-
- for (i = 0; i < hideThis.length; i++){
-     var hide = document.getElementById(hideThis[i]);
-     hide.style.display = "none";
-     hide.className = hide.className.replace('mySlides', "hiddenMySlides");
- }
-
- var mySlides = document.getElementsByClassName("mySlides");
- mySlides[0].style.display = "block";
-}
-
-function scaleCarouselButton(buttonName, buttonPosition){
-  var openbuttons = [];
-  openbuttons.push(buttonName);
- 
-  for (i = 0; i<openbuttons.length; i++){
-          var scaleDown = document.getElementById(openbuttons[i]);
-          scaleDown.classList.remove('active_carousel_button');
-          openbuttons.pop(openbuttons[i]);
-      }
-  if (buttonPosition === 1){
-      
-      var scaleThisButton = document.getElementById(buttonName);
-      scaleThisButton.classList.add("active_carousel_button");
-  } 
-}
-
 var x = document.getElementsByClassName("mySlides");                    
 var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+showDivs(slideIndex += n);
 }
 
 
 function currentDiv(n, filteredSlideIndex) {
-  if (x.length <= 4){slideIndex = filteredSlideIndex;}
-  else {slideIndex = n;}
-  showDivs(slideIndex);
+var buttons = document.getElementById('finder_carousel_container').getElementsByClassName('project_nav_btn');
+console.log("currentDiv status: " + buttons[0] );
+if (x.length <= 4){slideIndex = filteredSlideIndex;}
+else {slideIndex = n;}
+
+
+
+showDivs(slideIndex);
 }
 
 function showDivs(n) {
 var i;
 var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-x[slideIndex-1].style.display = "block";  
+var dots = document.getElementsByClassName("project_nav_btn");
+
+if (n > x.length) {slideIndex = 1}    
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+
 }
 
+x[slideIndex-1].style.display = "block";  
+
+}
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -341,14 +283,6 @@ function dragElement(elmnt) {
   }
 }
 
-var terminal_lines = document.getElementsByClassName('line');
-for (i=0; i<terminal_lines.length; i++) {
-  console.log(terminal_lines[i]);
-  var thisLine = terminal_lines[i];
-  thisLine.style.animation = "typing " + i+2 +"s steps(30, end);"
-}
-
-
 
 function scrollToPosition(value){
   var doc = document.getElementById('viewport');
@@ -371,15 +305,12 @@ function changeTime(){
   } else if (hours == 0) {
     timeValue= "12";
   }
-
   if (hours >0 && hours <= 11) {nd="AM";}
   else {nd = "PM"}
   const minutes = current.getMinutes();
   if (minutes < 10){space ="0";}
   else {space=""};
   document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
-  document.getElementById("timeLogin").innerHTML = "Last Login: "+timeValue+":"+space+minutes+" "+nd;
-
 }
 window.addEventListener("scroll", changeTime);
 
@@ -389,7 +320,3 @@ function updateCamera(ev) {
 }
 
 window.addEventListener("scroll", updateCamera);
-window.addEventListener("resize", function resizeWEBGL(){
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
