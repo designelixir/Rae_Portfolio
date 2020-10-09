@@ -98,7 +98,7 @@ h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 1
 h3 {font-family: 'GreycliffCF-DemiBoldOblique', sans-serif; font-size: 1.5rem; margin-bottom: 10px; line-height: 1.7rem; }
 h4 {font-family: 'GreycliffCF-RegularOblique', sans-serif; font-size: 1.5rem; color: gray; margin: 0px;}
 h5 {font-family: 'GreycliffCF-ExtraThin', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
-h6 {font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.75rem; color: gray;}
+h6 {font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.75rem; color: white;}
 p {font-family: 'GreycliffCF-Regular', sans-serif; font-size: 1rem;   }
 i {font-family: 'GreycliffCF-MediumOblique', sans-serif;  }
 em {font-family: 'GreycliffCF-MediumOblique', sans-serif, italic; color: gray;}
@@ -111,9 +111,9 @@ button:hover {cursor: pointer; }
 
 /* Homepage CSS ----------------------------------------------------------- */
 .homepage {background-color: #2E345B; background-image: url("../src/splash+contexts/stars_wallpaper.svg"); background-size: contain; background-repeat: repeat-y; height: 100%; width: 100%; opacity: 1; display: flex; justify-content: center; align-items: center; position: fixed; z-index: 20;}
-.homepage_context {width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;}
-#logo { width: 30%; max-width: 225px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; padding-right: 10px;}
-#entry_moto {max-width: 650px; width: 80%; animation: rotateStars 15s infinite;  position: absolute;}
+.homepage_context {width: 100%;  display: flex; align-items: center; justify-content: center;}
+#logo { width: 32%; max-width: 275px; animation: rotateStars 15s infinite; position: absolute; z-index: 3; }
+#entry_moto {max-width: 675px; width: 90%; animation: rotateStars 15s infinite;  position: absolute;}
 .downArrow{height: 20px;}
 #bounce_arrow_button {height: 50px; width: 100%; z-index: 1200; position: fixed; bottom: 20px; display: flex; justify-content: center; align-items: center; }
 .social_banners_wrapper { width: 30%; max-width: 250px; min-width: 150px; bottom: 5%; left: 0; position: fixed;}
@@ -150,15 +150,16 @@ button:hover {cursor: pointer; }
 #time {font-family: 'GreycliffCF-Light', sans-serif;}
 #desktop_toolbar_right img:hover {transform: scale(1.2);}
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
-.dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; z-index: 200;}
-.dockIcons { display: flex; width: 100%; max-height: 100px; padding: 10px; opacity: 1;}
+.dock {bottom: 0; height: 100px; border-radius: 5px; width: 400px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; z-index: 200;}
+.dockIcons { display: table-cell; width: auto; height: 90px; padding: 10px; opacity: 1;}
+
 .dock button:hover {transform: rotate(5deg); cursor: pointer;}
 .tooltip {position: relative; display: inline-block;}
-.tooltip .tooltiptext {visibility: hidden; width: 100%; background-color: #c7ccde; color: #000; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 1; bottom: 100%; opacity: 0; transition: opacity 0.3s;}
+.tooltip .tooltiptext {visibility: hidden; width: 100%; background-color: #c7ccde; color: #000; text-align: center; padding: 5px; border-radius: 6px; position: absolute; z-index: 1; bottom: 100%; opacity: 0; transition: opacity 0.3s;}
 .tooltip .tooltiptext::after {content: " "; position: absolute; top: 100%; left: 50%; margin-left: -10px; border: 7px solid; border-width: 9px; border-style: solid; border-color: #c7ccde transparent transparent transparent;}
 .tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
 .desktop_icon_container {position: fixed; width: 90%; height: 100%; z-index: 5;}
-.desktop_icon_container img {max-width: 100px; width: 80%; padding-bottom: 10%;}
+.desktop_icon_container img {max-width: 110px; width: 80%; padding-bottom: 10%;}
 .desktop_icon_container button:hover {transform: rotate(5deg); cursor: pointer;}
 .desktop_icons {position: fixed;}
 .star_wallpaper {width: 100%; top: 50px; margin: auto; position: fixed; z-index: 0; }
@@ -170,31 +171,45 @@ button:hover {cursor: pointer; }
 
 /* Window CSS ------------------------------------------------------------------------------------------------------- */
 .window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; height: 90%; background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed; contain: content; z-index: 10;}
-.window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; overflow-x: hidden; border-bottom: #3A4172 1px solid; text-align: center; position: sticky; z-index: 20;}
+.case .window_closebar {position: sticky;}
+.window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; overflow-x: hidden; border-bottom: #3A4172 1px solid; text-align: center; position: absolute; z-index: 20;}
 .window_closebar p {display: inline-block; margin-top: 5px;  color: #c6cadf;}
 .close_btn { height: 20px; left: 10px; top: 5px; position: absolute; } 
 .window_closebar img:hover {cursor: pointer; transform: scale(1.2)}
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 
 /* About Window CSS ---------------------------------------------------------------------------------------------------- */
-#about_window {width: 600px; height: 80%; max-height: 800px; top: 75px; background: #ececec; }
-#about_wrapper {justify-content: center; align-items: center; contain: content; width: 100%; height: 100%; top: 25px;}
+/* #about_window {width: 45%; max-width: 600px; height: 80%; max-height: 800px; top: 75px; background: #ececec; }
+#about_wrapper {justify-content: center; align-items: center; contain: content; width: 100%; height: 100%; top: 25px; }
 #about_content {height: 100%; margin-top: 1%; display: flex; scroll-behavior: smooth; flex-wrap: nowrap; overflow-x: auto; width: 100%;}
-.slide {left: 0; padding: 40px; flex: 0 0 auto;  display: inline-block; height: 100%; width: 100%;  max-width: 610px; contain: content; }
+.slide {left: 0;  flex: 0 0 auto;  display: inline-block; height: 100%; margin: 0px 50px 0px 0px; width: 100%; overflow-y: hidden; }
 #about_content::-webkit-scrollbar {display: none;}
-.about_copy {height: 100%; contain: content; overflow-y: scroll; overflow-x: hidden; }
-.about_nav {width: 100%;  max-width: 600px; display: flex; justify-content: center; align-items: center;  contain: content;}
-#about_window h1 {font-size: 24px !important; font-family: 'GreycliffCF-Bold', sans-serif; line-height: 26px;}
+.about_copy {margin-bottom: 25px; contain: content; overflow-y: scroll; overflow-x: hidden; }
+.about_nav {width: 100%; display: flex; justify-content: center; align-items: center;  contain: content; margin-bottom: 25px;}
+.about_nav h6 {margin: 0 25px 0 25px;}
+#about_window h1 {font-size: 24px !important; font-family: 'GreycliffCF-Bold', sans-serif; line-height: 28px;}
 .about_nav button:hover {transform: scale(1.5); cursor: pointer;}
-.about_btn_left {float: left;  margin-right: 140px;}
-.about_btn_right {float: right; margin-left: 140px; }
+.about_btn_left {float: left;}
+.about_btn_right {float: right; } */
+
+/* AboutALTTTTTTWindow CSS ---------------------------------------------------------------------------------------------------- */
+
+#about_window {width: 98%; max-width: 700px; height: calc(100% - 150px); max-height:740px;}
+.about_menu {width: 100%; bottom: 0px; position: absolute; height: 40px; background: #49588b; display: table; z-index: 10; }
+.about_menu_item {display: table-cell; padding: 10px;   text-align: center;}
+.about_content {height: calc(100% - 100px); top: 40px; margin: 25px;  z-index: 2;  display: flex; scroll-behavior: smooth;  overflow-x: hidden; }
+.about_inner_section {height:630px;  }
+.about_section {width: 100%; top: 20px;  }
+#middle_about_menu_item {border: 1px solid white; border-style: none solid none solid;}
+#about_window h1 {font-size: 24px !important; font-family: 'GreycliffCF-Bold', sans-serif; line-height: 28px;}
+
 
 /* Contact Window CSS --------------------------------------------------------------------------------------------------- */
-#contact_window {height: 550px; max-width: 400px; bottom: 13%; contain: content; overflow: hidden;}
+#contact_window {height: 550px; max-width: 400px; top: 25%; contain: content; overflow: hidden;}
 #contact_window_content p {padding-left: 5%; padding-right: 5%; }
 #contact_window_content img {height: 80px; padding-left: 20px; }
 #contact_window_content img:hover {transform: scale(1.1); cursor: alias;}
-.mail_button {background: #2f335c; padding: 10px; bottom: 0px; margin-left: 55%;}
+.mail_button {background: #2f335c; padding: 10px 100px 10px 100px; bottom: 0px; margin-left: 40px; }
 
 /* terminal Window.... maybe going to scratch tho  */
 #terminal_window {height: 400px; width: 80vw; max-width: 700px; background-color: #3A4172; top: 30%; }
@@ -286,7 +301,11 @@ button:hover {cursor: pointer; }
 @media screen and (min-width: 800px ) {
   .artboard_columnfifty {float: left; right: 0; margin: 0px; width: 50%;}
   .tlgs_flex_text {margin-left: 25px;}
+  
 }
+
+
+
 
 @media screen and (min-width: 1000px) {
   .artboard_response_row {display: -ms-flexbox; /* IE10 */ display: flex; -ms-flex-wrap: wrap; /* IE10 */ flex-wrap: wrap; padding: 0 4px;}
@@ -297,25 +316,31 @@ button:hover {cursor: pointer; }
 }
 
 /* MOBILE QUERY  */
-/* @media screen and (min-height: 800px) {
-  #finder_carousel {display: none;}
-} */
+
 
 @media screen and (max-width: 500px) {
-
-  #finder_window {height: calc(100%-50px);}
+ #logo {max-width: 325px !important; width: 35%;}
+  #finder_window {height: calc(100% - 150px);  top: 40px; }
   #finder_carousel {display: none;}
-  .artboard {padding: 20px;}
+  .artboard {padding: 30px 25px;}
   .case {width: 98%; height: calc(100% - 142px); top: 42px;}
-  .window_closebar p {display: none;}
-  #time_mobile {display: block; }
-  .toolbar_hide {display: none;}
   h1 {font-size: 36px;}
   h3 {font-size: 24px;}
   .mobile_hide {display: none;}
+  .mobile_icon_container {display: block !important;}
   #tlgs_footer {margin-top: 25px;}
+  .slide_caption_wrapper {bottom: 15px; width: 90%;}
+  .slide_image {height: 70%; width: auto; display: flex; justify-content: middle;}
+  .slideshow_btn {height: calc(100% - 100px); top: 20px;}
 
+  
+  .about_content {margin: 0px; width: 100%; }
+  #about_window { top: 45px; height: calc(100% - 150px);  }
+  #about_window h1 {font-size: 18px !important; line-height: 22px;}
+  .about_section {margin: 15px; }
 }
+#about_window h1 {font-size: 1.25em !important; line-height: 1em; }
+
 
 @keyframes type {0% {width: 0;} 99.9% {border-right: .15em solid #c6cADF;} 100% {border: none;}}
 @keyframes type2 {0% {width: 0;} 1% {opacity: 1;} 99.9% {border-right: .15em solid #c6cADF;} 100% {opacity: 1; border: none;}}
@@ -341,65 +366,22 @@ button:hover {cursor: pointer; }
 
 
 /* MOBILE CSS */
-/* 
-.mobile_container{
-  height: 100vh; 
-  width: 100vw; 
-  overflow: hidden;
-}
-.mobile_toolbar_container {
-  width: 100%;
-  height: 40px; 
-  padding: 10px 10px 10px 10px;
-  background: #2c2c2c;
+
+
+.mobile_icon_container {
+  position: fixed; width: 95%; height: 100%; max-height: 600px;  top: 50px; z-index: 5;
+ white-space: nowrap;  display: flex; justify-content: center; display: none; 
 
 }
-#time {text-align: right;}
-#design_elixir_home {text-align: center;}
 
-.mobile_app_container {
-  height: 80%; 
-  padding: 40px 20px 0px 20px;
-  border: 1px solid red;
-  width: 100vw; 
+.mobile_icons {
+  width: 95%;
+  height: auto;
+  margin: 2.5%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  grid-gap: 10px; 
-  justify-content: center;
-
-  
-  
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-gap: 25px;
 }
 
-.mobile_app_container img {
-  height: 100px; padding: 10px; opacity: 1; 
-}
 
-.dockIcons {
-  display: flex;
-  width: 100%;
-}
-
-.mobile_app_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0fr;
-  grid-gap: 10px;
-}
-.mobile_app_container button{
-  
-  height: 100px;
-  width: 100px;
-}
-
-.testWindow {
-
-  width: 100%; 
-  height: 80%; 
-  border: 3px solid yellow;
-  position: fixed;
-  bottom: 0px; 
-  top: 40px; 
-  left: 0; 
-  right: 0;
-} */
+.cell img{height: auto; width: 100%;}

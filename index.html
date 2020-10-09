@@ -7,13 +7,27 @@
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
         <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171559896-1"></script>
-    <script>
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-171559896-1"></script>
+    <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-171559896-1');
+    </script>
+    <script type="text/javascript">
+
+    function isMobileDevice() {
+    if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
+        console.log(true);
+        document.write('<link rel="stylesheet" type="text/css" href="css/mobile.css">');
+    } else {
+        console.log(false);
+    }
+    };
+
+    isMobileDevice();
+        
     </script>
 
 
@@ -84,9 +98,9 @@
         
                 <div id="desktop_toolbar_left"> 
                     <a onclick="scrollToPosition(0)" class="toolbar_design_elixir"><b> Design Elixir</b></a>
-                    <a onclick="toggleOpenClose('about_window')" class="toolbar_hide">About</a>
-                    <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide">Contact</a>
-                    <a onclick="toggleOpenClose('notification')" class="toolbar_hide">Store</a>
+                    <a onclick="toggleOpenClose('about_window')" class="toolbar_hide mobile_hide">About</a>
+                    <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide mobile_hide">Contact</a>
+                    <a onclick="toggleOpenClose('notification')" class="toolbar_hide mobile_hide">Store</a>
                     
                 </div>
                 <div id="desktop_toolbar_right">
@@ -94,7 +108,7 @@
                     <a href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank" aria-label="Open Megan's Instagram"><img src= "src/social_media/instagram_simple.svg" alt="instagram icon"></a>
                     <a href="https://github.com/coloradical" rel='noopener' target="_blank" aria-label="Open Megan's Github"><img src= "src/social_media/github_simple.svg" alt="github icon"></a>
                     <a href="https://unsplash.com/@designelixir" rel='noopener' target="_blank" aria-label="Open Megan's Unsplash"><img src= "src/social_media/unsplash_simple.svg" alt="unsplash icon"></a>
-                    <a class="toolbar_hide" id="time">time</a>
+                    <a class="toolbar_hide mobile_hide" id="time">time</a>
                 </div>
                 <!-- <div id="desktop_toolbar_mobile">
                     <a id="time">time</a>
@@ -107,113 +121,27 @@
         <div id="desktop_window_wrapper">
                 
     
-            <div class="desktop_icon_container" id="desktop_icon_container">
+            <div class="desktop_icon_container mobile_hide" id="desktop_icon_container">
                     <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" style="left: 10%; top: 10%;" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_desk_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/baja_desk_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" style="left: 40%; top: 25%;" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_desk_icon.png" loading="lazy" alt='West Flanders Project Icon'></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" style="left: 65%; top: 10%;" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_desk_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" style="left: 65%; top: 58%;" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" style="left: 8%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" style="left: 70%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/portfolio.svg" loading="lazy" alt="Vans Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('about_alt_window')" style="left: 70%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/portfolio.svg" loading="lazy" alt="Vans Project Icon"></button>
 
             </div>
 
-            <div id="about_window" class="window" style="display: none;">
-            <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About</p></div>
-                <div id="about_wrapper">   
-                    <div id="about_content">
-                        <div class="slide">
-                                <div class="about_nav">
-                                        <button style="color: #ececec" class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
-                                        <h6> Welcome to Design Elixir </h6>
-                                        <button class="about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
-                                    </div>
-                                    <br>
-                            <div class="about_copy">
-                                    <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%; margin-bottom: 20px;" alt="Portrait of Megan">
-                                    <h1>Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1><br>
-                                    <p class="blu">I’m an all-in-one creative consultant, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. Through websites, logos, typography, posters, branding materials and any other client-related needs, I create work structured with practical user experience and fabricated with a flair of character. </p>
-                                
-                            </div>
-                            
-                                    
-                        </div>
-                        <div class="slide">
-                            <div class="about_copy">
-                                    <div class="about_nav">
-                                            <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
-                                            <h6> Our Mission</h6>
-                                            <button class="about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
-                                        </div><br>
-                                    <img src="src/cases/about_me/painting.jpg" style="width: 100%;" alt="photo of Megan painting"> <br><br>
-                                    <h1>We specialize in catering our artistic tools to your creative vision.</h1> <br> 
-                                    <p class="blu">The foundation of Design Elixir is focused on functionality and excellent user-experience, and framed by an authentic, one-of-a-kind approach expressing your ideality to the world. We provide a diverse design portfolio ranging from minimalist to abstract, industrial to organic. Design is fluid, and the combination of different mediums (code, painting, drawing and more) results in unique and versatile media. Design Elixir simply strives to provide the world with good design intertwined with the spirit and character of amazing individuals. <br> Like you!  </p>
-                            
-                                    
-                                </div>
-                                
-                               
-                                
-
-                                
-                        </div>
-                        <div class="slide">
-                            <div class="about_copy">
-                                    <div class="about_nav">
-                                            <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
-                                            <h6> Our Services</h6>
-                                            <button class="about_btn_right" onclick="about_scroller(1)"> &rarr; </button>
-                                        </div><br>
-                                    <h1>Skills &amp; Services</h1><br><br>
-                                    <p><b>Graphic Design &amp; Illustration</b></p>
-                                    <p>Name a design need, and we’ll fulfill it! Using the tools of Adobe Creative Suite, we develop print and digital materials to make your business and mission shine. </p>
-                                    <br>
-                                    <p class="blu">
-                                            Logos • Flyers • Posters • Advertising • Infographics • Brochures 
-                                            Branding Materials • Illustrations • Product Photos • Murals
-                                            Stickers • Packaging • Typography • Digital  / Vector Art<br> 
-                                    </p>
-                                    <br>
-                                    <br>
-                                    <p><b>Web Development</b></p>
-                                    <p>From establishing a domain name to launching a fully-responsive site, we provide all necessary services to build a 
-                                        web presence that covers all the bases. </p><br>
-                                    <p class="blu">
-                                        Wordpress • Wix • Squarespace • Weebly • Webs • Page Design 
-                                        Page Development & Maintenance •  Custom Wordpress Themes 
-                                        E-Commerce • SEO  
-                                    </p>
-                                    <br>
-                                    
-
-                            </div>
-                                
-                            
-
-
-
-                        </div>
-                        <div class="slide" >
-                            <div class="about_copy">
-                                    <div class="about_nav">
-                                            <button class="about_btn_left" onclick="about_scroller(0)"> &larr; </button>
-                                            <h6> About Megan</h6>
-                                            <button class="about_btn_right" style="color: #ececec" onclick="about_scroller(1)"> &rarr; </button>
-
-                                    </div><br>
-                                    <img src="src/cases/about_me/alpine.jpg" style="width: 100%;" loading="lazy" alt="close up of Megan"> <br><br>
-                                    <h1>A lil' something about Megan:</h1><br>
-                                    
-                                    <p class="blu"> 
-                                            Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. When the seed of an idea is planted in her mind, the stubborn nature of Megan’s brain refuses to give up, pouring hours into practice, persistence and perfection. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, illustrating, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. 
-                                    </p>
-
-                            </div>
-                                
-                                
-                        </div>
+            <div class="mobile_icon_container mobile_show">
+                    <div class="mobile_icons">
+                        <div class="cell"><button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_desk_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/baja_desk_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_desk_icon.png" loading="lazy" alt='West Flanders Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_desk_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('about_alt_window')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button></div>
                     </div>
-                </div>     
             </div>
 
             <div id="contact_window" class="window" style="display: none;">
@@ -224,7 +152,7 @@
                     <p style="line-height: 32px"> <b>From:</b> megan@designelixir.studio</p> <hr>
                     <p style="line-height: 32px"> <b>Subject:</b> Let's Chat!</p> <hr> <br>
                     <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-                        Contact me at megan@designelixir.studio for any questions or inquiries.  </p> <br>
+                        Contact me at <strong>megan@designelixir.studio</strong> for any questions or inquiries.  </p> <br>
                     <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
                     <a href="https://unsplash.com/@designelixir" rel='noopener' target="_blank"><img src="src/social_media/unsplash_file.svg" loading="lazy" alt="unsplash.com shortcut"></a>
                     <a href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank"><img src="src/social_media/instagram_file.svg" loading="lazy" alt="Megans instagram shortcut"></a>
@@ -233,6 +161,70 @@
                     <a class="mail_button" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Send a Message</a>
                 </div>
             </div>
+
+            <div id="about_window" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="toggleOpenClose('about_alt_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
+                    
+                    <div class="about_content">
+
+                        <div class="about_section" id="section1">
+                            <div class="about_inner_section">
+                                <br>
+                                    <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%; margin: 20px 0px;" alt="Portrait of Megan">
+                                    <h1 class="about_h1">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1>
+                                    <p class="blu">I’m an all-in-one, one-woman creative studio, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. </p>
+                                    
+                            </div>
+                            <br id="section2"><br><br>
+                            <div class="about_inner_section">
+                                
+                                    <h1>Skills &amp; Services</h1>
+                                    <p><b>Graphic Design &amp; Illustration</b></p>
+                                    <!-- <p>Name a design need, and I'll fulfill it! Using the tools of Adobe Creative Suite, I develop print and digital materials to make your business and mission shine. </p> -->
+                                    <br>
+                                    <p class="blu">
+                                            Logos • Flyers • Posters • Advertising • Infographics • Brochures •
+                                            Branding  • Illustrations • Product Photos • Murals •
+                                            Stickers • Packaging • Typography • Digital  / Vector Art<br> 
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <p><b>Web Development</b></p><br>
+                                    <!-- <p>From establishing a domain name to launching a fully-responsive site, I provide all necessary services to build a 
+                                        web presence that covers all the bases. </p><br> -->
+                                    <p class="blu">
+                                        Wordpress • Wix • Squarespace • Weebly • Webs • Page Design 
+                                        Page Development & Maintenance •  Custom Wordpress Themes 
+                                        E-Commerce • SEO  
+                                    </p>
+                            </div>
+                            <br id="section3"><br>
+                            <div  class="about_inner_section">   
+                                
+                                <h1>About Megan</h1>
+                                <div style="float: left; margin: 5px 15px 0px 0px; width: 100%;">
+                                        <img  src="src/cases/about_me/alpine.jpg" style="width: 100%;" loading="lazy" alt="close up of Megan"> <br><br>
+
+                                </div>
+                                        <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
+            
+                                </div>
+                            
+                    </div>
+
+                       
+
+                    </div>
+
+
+                    <div class="about_menu">
+                        
+                        <a href="#section1" class="about_menu_item"><h6>About Design Elixir</h6></a>
+                        <a href="#section2" id="middle_about_menu_item" class="about_menu_item"><h6>Skills &amp; Services</h6></a>
+                        <a href="#section3" class="about_menu_item"><h6>About Megan</h6></a>
+                    </div>
+                        
+                    </div>
 
                    
             <div id="extras_window" class="window" style="display: none;">
@@ -286,7 +278,7 @@
 
 
             <div id="finder_window" class="window" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Finder</p></div>
+                <div class="window_closebar"><button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>All Projects</p></div>
                 <div class="mySlides graphic_design" id="renu_slide">
                         <div class="slide_image">
                             <img src="src/cases/finder_extras/renu_layout.jpg" loading="lazy" alt="renu logo layout">
@@ -374,7 +366,7 @@
                                         
                                 </div>
                                 <div class="slide_caption_wrapper">
-                                    <p><b>West Flanders Brewing Company</b>-Menu Redesign</p>
+                                    <p><b>West Flanders Brewing Co</b>-Menu Redesign</p>
                                     <p class="slide_caption">Design a new menu layout focused on user-experience and clean design, while utilizing new brand elements. </p>
                                 </div>
                                 
@@ -398,7 +390,7 @@
                                 </div>
                                 <div class="slide_caption_wrapper">
                                     <p><b>University of Colorado</b>-Website Development</p>
-                                    <p class="slide_caption"> Using existing brand standards, design a graduate website for Class of 2020 Mechanical Engineers featuring keynote videos and a photo gallery of 300+ students. </p>
+                                    <p class="slide_caption"> Using existing brand standards, design a website for Class of 2020 Mechanical Engineers featuring keynote videos and a gallery of 300+ students. </p>
                                 </div>
         
                                 
@@ -456,7 +448,7 @@
                 </div>
 
                 <button class="slideshow_btn" id="big_nav_left" style="left: 0;" onclick="plusDivs(-1)" >&lsaquo;</button>
-                <div class="finder_carousel" id="finder_carousel_container">
+                <div class="finder_carousel mobile_hide" id="finder_carousel_container">
                         <button class="project_nav_btn graphic_design" id="renu_icon" onclick="currentDiv(1,1)"><img src="src/cases/finder_extras/renu_bottle.png" loading="lazy" alt="Renu Project Button Toggle"></button> 
 
                         <button class="project_nav_btn website" id="tribalfit_icon" onclick="currentDiv(2,1)"><img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="Twin Lakes Button Toggle"></button> 
@@ -524,7 +516,7 @@
             </div>
 
             <div id="miller_project" class="window case" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Miller Bros - Logo and Sticker Design</p></div>
+                    <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                     <div class="case_content">
                         <div class="artboard">
                             <div>
@@ -543,7 +535,8 @@
                             </div>
                                 
                             <h3>The Miller Bros requested a bright color palette that utilized flowers, mountains and other natural elements from their travels illustrated in an organic style. </h3>
-                            <p class="blu">The first steps of my creative process revolved around developing a sense of the environments visited in Lars. After collaborating with the Miller Bros and pulling scenes from photos and videos of their trip, I could sum the majority of their travels to deserts, mountains, coasts and forests. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
+                            <p class="blu">After collaborating with the Miller Bros and pulling scenes from photos and videos of their trip, I could sum the majority of their travels to deserts, mountains, coasts and forests. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
+                            
                             <div class="artboard_response_row"> 
                                 <div class="artboard_response_column">
                                     <img style="width: 100%" src="src/cases/miller_bros/lars_sketches.jpg" loading="lazy" alt="Sketches of Lars, the VW Westfalia">
@@ -554,8 +547,7 @@
                             </div>
                             <div>
                                 <h3>When creating mockups for the Miller Bros, I hand-drew over 20 designs which allowed multiple options for both a brand logo and stickers. </h3>
-                                <!-- <h3>The Miller Bros requested multiple design options for both a brand logo and stickers, so I hand-drew over 20 options for them to choose from.</h3> -->
-                                <p class="blu">The variations were developed in SVG format, so that the designs could be scaled to any size without losing quality. This allow them to use any design for not only their logo and stickers, but in the future for t-shirts and embroidered hats.  </p>
+                                <p class="blu">The variations were developed in SVG format, so that the designs could be scaled to any size without losing quality. This allowed them to use any design for not only their logo and stickers, but in the future for t-shirts and embroidered hats.  </p>
                                 <br>
                                 <img style="width: 100%; " src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="All Stickers">
                                 <img style="width: 100%" src="src/cases/miller_bros/sticker_stack.jpg" loading="lazy" alt="printed stickers">
@@ -564,11 +556,10 @@
                             <div class="artboard_bottom">
                                     <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
                                     <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! We will be using Design Elixir for any design needs in the future, and wholeheartedly recommend her to anyone looking to add a distinct character to their brand.</p>
-                                    <br><p><i>-Camden and Spencer Miller, The Miller Bros</i></p>
+                                    <br><p><i>-Camden and Spencer Miller, <a target="_blank" rel="noopener" href="https://www.themillerbros.com">The Miller Bros</a></i></p>
                                     <br>
                                     <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
-                                    <br><br><br>
-                                    <p>Learn more about the Miller Bro's premier film, the Comfort Zone at <a target="_blank" rel="noopener" href="https://www.themillerbros.com"><i>themillerbros.com</i></a>.</p>	
+                                    
                         
                             </div>
                             <div class="artboard_navigation">
@@ -579,11 +570,11 @@
             </div>
                 
             <div id="baja_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Boulder Baja - Logo Design</p></div>
+                <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 <div class="case_content">
                     <div class="artboard">
                         <div>
-                            <h1> Boulder Baja </h1>
+                            <h1>Boulder Baja </h1>
                             <h2>Logo Design</h2>
                             <br>
                         </div>
@@ -613,7 +604,7 @@
             </div>
         
             <div id="menu_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>West Flanders Brewing Co. - Branding and Marketing Materials</p></div>
+                <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 <div class="case_content">
                     <div class="artboard">
                             <h1>West Flanders Brewing Company</h1>
@@ -687,7 +678,7 @@
             </div>
         
             <div id="vans_project" class="window case" style="display: none;">
-            <div class="window_closebar"><button onclick="toggleOpenClose('vans_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Vans - Product Photos and Videos</p></div>
+            <div class="window_closebar"><button onclick="toggleOpenClose('vans_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
             <div class="case_content">
                     <div class="artboard">
                         <div>
@@ -736,7 +727,7 @@
             </div>
         
             <div id="killa_nilla_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('killa_nilla_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Killa Nilla - Album Artwork</p></div>
+                <div class="window_closebar"><button onclick="toggleOpenClose('killa_nilla_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 
                 <div class="case_content">
                     <div class="artboard">
@@ -777,7 +768,7 @@
             </div>
         
             <div id="tlgs_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('tlgs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Twin Lakes General Store - Website Design and Development</p></div>
+                <div class="window_closebar"><button onclick="toggleOpenClose('tlgs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 
                 <div class="case_content">
                     <div class="artboard">
@@ -859,7 +850,7 @@
                 <div class="dock">
                     
                     <div class="tooltip">   
-                        <span class="tooltiptext">Work Quickview</span> 
+                        <span class="tooltiptext">All Projects</span> 
                         <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
                     </div>
                     <div class="tooltip">   
@@ -876,7 +867,7 @@
                     </div>
                     
                     
-                    </div>
+                </div>
         </div>
                  
 
