@@ -40,6 +40,35 @@ loader.generateMipmaps = false;
 loader.minFilter = THREE.LinearFilter;
 loader.wrapS = loader.wrapT = THREE.ClampToEdgeWrapping;
 
+
+var DESKGeom = new THREE.PlaneGeometry(40, 40);
+var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_aspect_ratio_v3@300x.png';
+var DESKmesh;
+var DESKtex = new THREE.TextureLoader().load(DESKSrc, (DESKtex) => {
+  DESKtex.needsUpdate = true;
+  DESKmesh.scale.set(1.0, DESKtex.image.height / DESKtex.image.width, 1.0);
+});
+var DESKmaterial = new THREE.MeshLambertMaterial({map: DESKtex});
+DESKmesh = new THREE.Mesh(DESKGeom, DESKmaterial);
+DESKmaterial.transparent = true;
+DESKmesh.position.set(-1.5,-4,-30);
+
+
+
+var POSTERGeom = new THREE.PlaneGeometry(30, 30);
+var POSTERSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters_aspect_ratio_v2@300x.png';
+var POSTERmesh;
+var POSTERtex = new THREE.TextureLoader().load(POSTERSrc, (POSTERtex) => {
+  POSTERtex.needsUpdate = true;
+  POSTERmesh.scale.set(1.0, POSTERtex.image.height / POSTERtex.image.width, 1.0);
+});
+var POSTERmaterial = new THREE.MeshLambertMaterial({map: POSTERtex});
+POSTERmesh = new THREE.Mesh(POSTERGeom, POSTERmaterial);
+POSTERmaterial.transparent = true;
+
+POSTERmesh.position.set(2,5,-32);
+
+
 // canvas OBJECTS 
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
@@ -70,7 +99,7 @@ var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
 var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')});
 doorway.transparent=true;
 
-var deskchair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk12.png')}); 
+var deskchair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_aspect_ratio_v2@300x.png')}); 
 deskchair.transparent=true;
 var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
 chair.transparent=true;
@@ -79,7 +108,7 @@ posters.transparent=true;
 
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
-var doorGeometry = new THREE.PlaneGeometry(60, 24);
+var doorGeometry = new THREE.PlaneGeometry(70, 34);
 var deskGeometry = new THREE.PlaneGeometry(31, 19.18);
 var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
 var posterGeometry = new THREE.PlaneGeometry(19.3,13.1);
@@ -88,16 +117,15 @@ var posterGeometry = new THREE.PlaneGeometry(19.3,13.1);
 var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
 var deskMesh = new THREE.Mesh(deskGeometry, deskchair);
 var chairMesh = new THREE.Mesh(chairGeometry, chair);
-var posterMesh = new THREE.Mesh(posterGeometry,posters);
+// var posterMesh = new THREE.Mesh(posterGeometry,posters);
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(-1,0,-14);
 deskMesh.position.set(-1.5,-3.5,-31);
 chairMesh.position.set(5,-8.5,-28);
-posterMesh.position.set(2,4.5,-32);
 
 floor.position.set (-1,-16,-30);
-ceiling.position.set(-1,16,-30)
+ceiling.position.set(-1,18,-30)
 wall.position.set(0,1,-40);
 wall2.rotateY(180);
 wall2.position.set(-25,0,-40);
@@ -105,7 +133,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling, wall, deskMesh, chairMesh, posterMesh); //took out skill
+scene.add(doorwayMesh, floor, ceiling, wall, DESKmesh, chairMesh, POSTERmesh); //took out skill
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
@@ -125,7 +153,7 @@ const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
-const loading_bar = document.querySelector('.loading_scroller');
+// const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
@@ -137,7 +165,7 @@ uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*30))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.43, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
+// uos(0.43, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.46, 0.6, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.6, 0.75, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
