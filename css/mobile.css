@@ -1,0 +1,5 @@
+.mobile_icon_container {
+    position: fixed; width: 99%; height: calc(100% - 140px); top: 50px; z-index: 5;
+   white-space: nowrap;  display: flex; justify-content: center; 
+  
+  }

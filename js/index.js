@@ -120,7 +120,7 @@ const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-const desktop_icons = document.querySelector('.desktop_icon_container');
+// const desktop_icons = document.querySelector('.desktop_icon_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
 const splash_pages = document.querySelector('#splash_pages');
@@ -144,13 +144,12 @@ uos(0.6, 0.75, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 uos(0.8, 0.85, p => (scrollArrow.style.left = (p*200)+"%"));
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
+// uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 window.addEventListener("scroll", function(){
   dragElement(document.getElementById("about_window"));
-  dragElement(document.getElementById("finder_window"));
   dragElement(document.getElementById("thankyou_note"));
   dragElement(document.getElementById("extras_window"));
   dragElement(document.getElementById("thankyou_note"));
@@ -162,7 +161,8 @@ window.addEventListener("scroll", function(){
   dragElement(document.getElementById("testimonial_window1"));
   dragElement(document.getElementById("testimonial_window2"));
   dragElement(document.getElementById("testimonial_window3"));
-  
+  dragElement(document.getElementById("about_window"));
+
 
 
   
@@ -180,9 +180,6 @@ window.addEventListener("scroll", function(){
 //       icon.style.top = icon_top;
               
 // }
-
-
-
 
 
 
