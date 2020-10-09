@@ -112,7 +112,7 @@ var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.homepage');
-const spinny = document.querySelector('.spinny');
+// const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
 const scrollArrow = document.querySelector('#bounce_arrow_button');
@@ -129,8 +129,8 @@ const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
-uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
+// uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
+// uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
@@ -168,18 +168,18 @@ window.addEventListener("scroll", function(){
   
 
 });
-var desktop_icons_array = document.getElementsByClassName("desktop_icons");
+// var desktop_icons_array = document.getElementsByClassName("desktop_icons");
 
-  const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
-  for (i=0; i<desktop_icons_array.length; i++){
-      var y = Math.floor( Math.random()*top_padding.length );
-      var icon = desktop_icons_array[i];
-      var icon_top = top_padding[y];
+//   const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
+//   for (i=0; i<desktop_icons_array.length; i++){
+//       var y = Math.floor( Math.random()*top_padding.length );
+//       var icon = desktop_icons_array[i];
+//       var icon_top = top_padding[y];
       
-      top_padding.splice(y,1);
-      icon.style.top = icon_top;
+//       top_padding.splice(y,1);
+//       icon.style.top = icon_top;
               
-}
+// }
 
 
 
