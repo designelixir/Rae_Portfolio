@@ -70,7 +70,7 @@
 
 html {width: 100%; height: 100%;}
 #viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 4000vh; scroll-behavior: smooth;}
+.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 2000vh; scroll-behavior: smooth;}
 #container {height: 2000vh; position: fixed;}
 canvas { width: 100%; height: 100%; display: block; background-color: #2E345B; }
 
@@ -93,8 +93,8 @@ body {
   width: 100%;
 }
 
-h1 {font-family: 'GreycliffCF-Heavy', sans-serif; font-size: 3rem; margin: 0px; }
-h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 20px; color: gray; }
+h1 {font-family: 'GreycliffCF-Heavy', sans-serif; font-size: 3rem; margin: 0px; line-height: 2.25rem; padding-bottom: 10px; }
+h2 {font-family: 'GreycliffCF-LightOblique', sans-serif; margin: 0; font-size: 18px; color: gray; }
 h3 {font-family: 'GreycliffCF-DemiBoldOblique', sans-serif; font-size: 1.5rem; margin-bottom: 10px; line-height: 1.7rem; }
 h4 {font-family: 'GreycliffCF-RegularOblique', sans-serif; font-size: 1.5rem; color: gray; margin: 0px;}
 h5 {font-family: 'GreycliffCF-ExtraThin', sans-serif; font-size: 0.66rem; padding-left: 10px; padding-right: 10px;}
@@ -141,23 +141,24 @@ button:hover {cursor: pointer; }
  /* Desktop Framework CSS ------------------------------------------------------------------------------- */
 .desktop {position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-size: cover; background-image: url("../src/desktop_items/mountain_wallpaper.svg");  background-color: #2E345B; z-index: 0;}
 #desktop_window_wrapper {width: 100%; height: 90%; top: 50px; position: fixed; z-index: 0;  margin: 60px 0px 60px 0px;  display: flex; justify-content: center; align-items: center;  }
-.desktop_toolbar {width: 100%; z-index: 10000; background-color: #2c2c2c; display: inline-block; height: 50px; display: flex; align-items: center; color: white; font-size: 16px; overflow: hidden; }
-#desktop_toolbar_left { float: left; width: 95%; padding-left: 20px; }
+.desktop_toolbar {width: 100%; z-index: 10000; background-color: #2c2c2c; display: inline-block; height: 40px; display: flex; align-items: center; color: white; font-size: 16px; overflow: hidden; }
+#desktop_toolbar_left { width: 70%; float: left;  padding-left: 20px;}
 #desktop_toolbar_left a {padding-right: 10px;}
-#desktop_toolbar_right {width: 175px; float: right;  }
-#desktop_toolbar_right img {height: 15px; padding-right: 5px; }
+#desktop_toolbar_right { width: 30%; text-align: right; padding-right: 10px; }
+#desktop_toolbar_mobile {width: 100%; text-align: center;}
+#desktop_toolbar_right img {height: 14px; padding-right: 5px; }
 #time {font-family: 'GreycliffCF-Light', sans-serif;}
 #desktop_toolbar_right img:hover {transform: scale(1.2);}
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
 .dock {bottom: 0; height: 100px; border-radius: 5px; width: 500px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; z-index: 200;}
-.dock img {height: 100px; padding: 15px; opacity: 1; }
+.dockIcons { display: flex; width: 100%; max-height: 100px; padding: 10px; opacity: 1;}
 .dock button:hover {transform: rotate(5deg); cursor: pointer;}
 .tooltip {position: relative; display: inline-block;}
 .tooltip .tooltiptext {visibility: hidden; width: 100%; background-color: #c7ccde; color: #000; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 1; bottom: 100%; opacity: 0; transition: opacity 0.3s;}
 .tooltip .tooltiptext::after {content: " "; position: absolute; top: 100%; left: 50%; margin-left: -10px; border: 7px solid; border-width: 9px; border-style: solid; border-color: #c7ccde transparent transparent transparent;}
 .tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
 .desktop_icon_container {position: fixed; width: 90%; height: 100%; z-index: 5;}
-.desktop_icon_container img {width: 100px; padding-bottom: 10%;}
+.desktop_icon_container img {max-width: 100px; width: 80%; padding-bottom: 10%;}
 .desktop_icon_container button:hover {transform: rotate(5deg); cursor: pointer;}
 .desktop_icons {position: fixed;}
 .star_wallpaper {width: 100%; top: 50px; margin: auto; position: fixed; z-index: 0; }
@@ -245,7 +246,7 @@ button:hover {cursor: pointer; }
 
 /* Case Studies Window CSS --------------------------------------------------------------------------- */
 .artboard{height: 500px; padding: 50px;}
-.case {width: 90%; max-width: 1100px; height: calc(100% - 200px); top: 50px; background-color: #ececec; background-size: contain; overflow: auto;}
+.case {width: 95%; max-width: 1100px; height: calc(100% - 200px); top: 50px; background-color: #ececec; background-size: contain; overflow: auto;}
 .artboard img {  margin: 0% 1% 1% 0%;}
 .caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 1% 0px 100px 0px; font-size: 1rem; }
 .artboard_bottom {margin-top: 100px; margin-bottom: 50px;}
@@ -267,8 +268,11 @@ button:hover {cursor: pointer; }
 .artboard_columnthird p {margin-top: 0px; margin-bottom: 0px;}
 .artboard a {font-family: 'GreycliffCF-DemiBold', sans-serif; color: black; font-size: 1rem;  }
 .artboard a:hover {color: gray;  }
+.wf_poster {display: table-cell; vertical-align: middle; padding-right: 1%;}
+.wf_poster img {max-width: 100%;}
+.wf_tri_poster_container {display: table; width: 100%; white-space: nowrap; height: 100px;}
 
-@media screen and (min-width: 1200px ) {
+@media screen and (min-width: 1100px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
   .artboard_columntwothird {right: 0; width: 66%;} 
   #overlap_tlgs_img { transform: translateX(-50px)}
@@ -277,6 +281,11 @@ button:hover {cursor: pointer; }
   #tlgs_section_h3 {margin: 0px 0px 50px 50px}
   #tlgs_section_h3 h3 {margin-top: 0px;}
 
+}
+
+@media screen and (min-width: 800px ) {
+  .artboard_columnfifty {float: left; right: 0; margin: 0px; width: 50%;}
+  .tlgs_flex_text {margin-left: 25px;}
 }
 
 @media screen and (min-width: 1000px) {
@@ -288,14 +297,24 @@ button:hover {cursor: pointer; }
 }
 
 /* MOBILE QUERY  */
-@media screen and (min-height: 800px) {
+/* @media screen and (min-height: 800px) {
   #finder_carousel {display: none;}
-}
+} */
 
 @media screen and (max-width: 500px) {
-  #desktop_toolbar_right {display: none;}
+
   #finder_window {height: calc(100%-50px);}
   #finder_carousel {display: none;}
+  .artboard {padding: 20px;}
+  .case {width: 98%; height: calc(100% - 142px); top: 42px;}
+  .window_closebar p {display: none;}
+  #time_mobile {display: block; }
+  .toolbar_hide {display: none;}
+  h1 {font-size: 36px;}
+  h3 {font-size: 24px;}
+  .mobile_hide {display: none;}
+  #tlgs_footer {margin-top: 25px;}
+
 }
 
 @keyframes type {0% {width: 0;} 99.9% {border-right: .15em solid #c6cADF;} 100% {border: none;}}
@@ -318,3 +337,69 @@ button:hover {cursor: pointer; }
 @-moz-keyframes bounce {0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0); transform: translateY(0);} 40% {-moz-transform: translateY(-30px); transform: translateY(-30px);} 60% { -moz-transform: translateY(-15px); transform: translateY(-15px);}}
 @-webkit-keyframes bounce {0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0); transform: translateY(0);} 40% {-webkit-transform: translateY(-30px);transform: translateY(-30px);} 60% {-webkit-transform: translateY(-15px); transform: translateY(-15px);}}
 @keyframes bounce {0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0);} 40% {-moz-transform: translateY(-30px); -ms-transform: translateY(-30px); -webkit-transform: translateY(-30px); transform: translateY(-30px);} 60% {-moz-transform: translateY(-15px); -ms-transform: translateY(-15px); -webkit-transform: translateY(-15px); transform: translateY(-15px);}}
+
+
+
+/* MOBILE CSS */
+/* 
+.mobile_container{
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden;
+}
+.mobile_toolbar_container {
+  width: 100%;
+  height: 40px; 
+  padding: 10px 10px 10px 10px;
+  background: #2c2c2c;
+
+}
+#time {text-align: right;}
+#design_elixir_home {text-align: center;}
+
+.mobile_app_container {
+  height: 80%; 
+  padding: 40px 20px 0px 20px;
+  border: 1px solid red;
+  width: 100vw; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 10px; 
+  justify-content: center;
+
+  
+  
+}
+
+.mobile_app_container img {
+  height: 100px; padding: 10px; opacity: 1; 
+}
+
+.dockIcons {
+  display: flex;
+  width: 100%;
+}
+
+.mobile_app_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0fr;
+  grid-gap: 10px;
+}
+.mobile_app_container button{
+  
+  height: 100px;
+  width: 100px;
+}
+
+.testWindow {
+
+  width: 100%; 
+  height: 80%; 
+  border: 3px solid yellow;
+  position: fixed;
+  bottom: 0px; 
+  top: 40px; 
+  left: 0; 
+  right: 0;
+} */
