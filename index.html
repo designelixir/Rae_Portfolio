@@ -16,17 +16,22 @@
       gtag('config', 'UA-171559896-1');
     </script>
     <script type="text/javascript">
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        console.log(isChrome);
+    // function isMobileDevice() {
+    // if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
+    //     console.log(true);
+    //     document.write('<link rel="stylesheet" type="text/css" href="css/mobile.css">');
+    // } else {
+    //     console.log(false);
+    // }
+    // };
 
-    function isMobileDevice() {
-    if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
-        console.log(true);
-        document.write('<link rel="stylesheet" type="text/css" href="css/mobile.css">');
-    } else {
-        console.log(false);
-    }
-    };
+    // isMobileDevice();
 
-    isMobileDevice();
+    var isSafari = window.safari !== undefined;
+if (isSafari) console.log("Safari, yeah!");
+else console.log('nope');
         
     </script>
 
@@ -116,37 +121,38 @@
             
         </div>
         <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" loading="lazy" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>   
-       
+
+        <a onclick="toggleOpenClose('notification')"><img id="mobile_notification" src="src/desktop_items/notif_mobile.svg" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
+
         
         <div id="desktop_window_wrapper">
                 
     
             <div class="desktop_icon_container mobile_hide" id="desktop_icon_container">
-                    <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" style="left: 10%; top: 10%;" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_desk_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/baja_desk_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" style="left: 40%; top: 25%;" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_desk_icon.png" loading="lazy" alt='West Flanders Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" style="left: 65%; top: 10%;" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_desk_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" style="left: 10%; top: 10%;" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/docs_hemp_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" style="left: 40%; top: 25%;" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_icon.png" loading="lazy" alt='West Flanders Project Icon'></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" style="left: 65%; top: 10%;" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/tribal_fit_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button>
                     <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" style="left: 65%; top: 58%;" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" style="left: 8%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('about_alt_window')" style="left: 70%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/portfolio.svg" loading="lazy" alt="Vans Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" style="left: 8%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/vans_icon.png" loading="lazy" alt="Vans Project Icon"></button>
+                    <button class="desktop_icons" onclick="toggleOpenClose('terminal_window')" style="right: 5%; top: 85%; width: 75px;" aria-label="open close trash"><img src="src/desktop_items/trash.svg" loading="lazy" alt="Vans Project Icon"></button>
 
             </div>
 
             <div class="mobile_icon_container mobile_show">
                     <div class="mobile_icons">
-                        <div class="cell"><button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_desk_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/baja_desk_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_desk_icon.png" loading="lazy" alt='West Flanders Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/killa_desk_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('about_alt_window')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_desk_icon.png" loading="lazy" alt="Vans Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_app.png" loading="lazy" alt='Miller Bros Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/docs_app.png" loading="lazy" alt='Boulder Baja Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_app.png" loading="lazy" alt='West Flanders Project Icon'></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/tribal_app.png" loading="lazy" alt="Killa Nilla Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_app.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button></div>
+                        <div class="cell"><button onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_app.png" loading="lazy" alt="Vans Project Icon"></button></div>
                     </div>
             </div>
 
             <div id="contact_window" class="window" style="display: none;">
             <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Me</p></div>
-            
+            <br>
                 <div id="contact_window_content">
                     <p style="line-height: 32px"> <b>To:</b> yourbeautifulface@email.com</p> <hr>
                     <p style="line-height: 32px"> <b>From:</b> megan@designelixir.studio</p> <hr>
@@ -163,7 +169,7 @@
             </div>
 
             <div id="about_window" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('about_alt_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
+                    <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
                     
                     <div class="about_content">
 
@@ -207,7 +213,9 @@
 
                                 </div>
                                         <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
-            
+                                        <br><br>
+                                        <a style="background: #2f335c; padding: 10px 100px 10px 100px; bottom: 0px; margin-left: 40px;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Contact Me!</a>
+
                                 </div>
                             
                     </div>
@@ -846,7 +854,7 @@
         
             </div>
         </div>  
-        <div class="dock_container">
+        <!-- <div class="dock_container">
                 <div class="dock">
                     
                     <div class="tooltip">   
@@ -855,7 +863,7 @@
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">About Megan</span> 
-                        <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open Terminal Icon"></button>
+                        <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">Contact Me</span> 
@@ -868,7 +876,19 @@
                     
                     
                 </div>
-        </div>
+        </div> --> 
+
+        <div class="dock_container">
+            <div class="dock">
+                <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
+                <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
+                <button  onclick="toggleOpenClose('mobile_contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Contact Me Icon"></button>
+                <button onclick="toggleOpenClose('testimonial_wrapper');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+
+                
+                
+            </div>
+    </div>
                  
 
 
@@ -876,7 +896,7 @@
 
 </div><!-- page wrapper div -->
      
-<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
+<script src="https://cdn.rawgit.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
 <script src="js/index.js"></script>   

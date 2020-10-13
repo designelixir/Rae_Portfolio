@@ -1,10 +1,12 @@
-window.addEventListener( 'resize', onWindowResize, false );
+// window.addEventListener( 'resize', onWindowResize, false );
+window.ImageBitmap = window.ImageBitmap || function () { return null }
 
-function onWindowResize(){
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-}
+// function onWindowResize(){
+//     camera.aspect = window.innerWidth / window.innerHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize( window.innerWidth, window.innerHeight );
+// }
+
 
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
@@ -21,7 +23,7 @@ let renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById("viewport")
 });
 
-renderer.setClearColor(0x47578a); //back wall
+renderer.setClearColor(0x47578A); //back wall
 renderer.setSize(window.innerWidth, window.innerHeight, false);
 
 
@@ -65,17 +67,16 @@ var POSTERtex = new THREE.TextureLoader().load(POSTERSrc, (POSTERtex) => {
 var POSTERmaterial = new THREE.MeshLambertMaterial({map: POSTERtex});
 POSTERmesh = new THREE.Mesh(POSTERGeom, POSTERmaterial);
 POSTERmaterial.transparent = true;
-
 POSTERmesh.position.set(2,5,-32);
 
 
 // canvas OBJECTS 
 var cubeMaterials = [
-    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
-    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: true}),
+    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
+    new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
     new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/ceiling3.jpg')}),
-    new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: true})
+    new THREE.MeshBasicMaterial({color: 0x2E345B,wireframe: false})
 
   ];
 var cubeGeometry = new THREE.BoxGeometry(80,0,70);
@@ -87,41 +88,33 @@ var skillGeometry = new THREE.PlaneGeometry(6,3);
 var wall2Geometry = new THREE.PlaneGeometry(18,180);
 
 var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578a, side: THREE.DoubleSide}); //back wall
-var wall2Material = new THREE.MeshBasicMaterial( {color: 0x2E3456, side: THREE.DoubleSide} );
+var wall2Material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
 
 
 var wall = new THREE.Mesh( wallGeometry, wallMaterial );
-var wall2 = new THREE.Mesh( wallGeometry, wall2Material );
-var wall3 = new THREE.Mesh( wallGeometry, wall2Material );
+var wall2 = new THREE.Mesh( wallGeometry, wall2Material ); //ceiling
+var wall3 = new THREE.Mesh( wallGeometry, wall2Material ); //floor
 
 
 //loaders
 var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')});
 doorway.transparent=true;
 
-var deskchair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_aspect_ratio_v2@300x.png')}); 
-deskchair.transparent=true;
+
 var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
 chair.transparent=true;
-var posters = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters2.png')});
-posters.transparent=true;
 
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
 var doorGeometry = new THREE.PlaneGeometry(70, 34);
-var deskGeometry = new THREE.PlaneGeometry(31, 19.18);
 var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
-var posterGeometry = new THREE.PlaneGeometry(19.3,13.1);
 
 // combine our image geometry and material into a mesh
 var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
-var deskMesh = new THREE.Mesh(deskGeometry, deskchair);
 var chairMesh = new THREE.Mesh(chairGeometry, chair);
-// var posterMesh = new THREE.Mesh(posterGeometry,posters);
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(-1,0,-14);
-deskMesh.position.set(-1.5,-3.5,-31);
 chairMesh.position.set(5,-8.5,-28);
 
 floor.position.set (-1,-16,-30);
@@ -133,7 +126,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, ceiling, wall, DESKmesh, chairMesh, POSTERmesh); //took out skill
+scene.add(doorwayMesh, floor, wall, ceiling, DESKmesh, chairMesh, POSTERmesh); //took out skill
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
@@ -190,10 +183,6 @@ window.addEventListener("scroll", function(){
   dragElement(document.getElementById("testimonial_window2"));
   dragElement(document.getElementById("testimonial_window3"));
   dragElement(document.getElementById("about_window"));
-
-
-
-  
 
 });
 // var desktop_icons_array = document.getElementsByClassName("desktop_icons");

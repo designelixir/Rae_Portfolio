@@ -70,9 +70,9 @@
 
 html {width: 100%; height: 100%;}
 #viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 2000vh; scroll-behavior: smooth;}
+#portfolio_page_wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 2000vh; scroll-behavior: smooth;}
 #container {height: 2000vh; position: fixed;}
-canvas { width: 100%; height: 100%; display: block; background-color: #2f345a }
+canvas { width: 100%; height: 100%; display: block; background-color: #2E345B; }
 
 * {
   box-sizing: border-box;

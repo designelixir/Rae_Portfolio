@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+      <title>Design Elixir - A Creative Studio by Megan Byers</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Portfolio website for Design Elixir Studio out of Boulder, Colorado. Owned and operated by graphic designer, illustrator, and web developer Megan Rae Byers"/>
+      <link type="text/css" rel="stylesheet" href="css/index2.css"> 
+      <link rel="shortcut icon" type="image/png" href="src/favicon.png">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-171559896-1"></script>
+    <script type="text/javascript">
+
+    function isMobileDevice() {
+    if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
+        console.log(true);
+        document.write('<link rel="stylesheet" type="text/css" href="css/mobile.css">');
+        console.log(document.getElementById("portfolio_page_wrapper"));
+        
+
+    } else {
+        console.log(false);
+    }
+    };
+
+    isMobileDevice();
+        
+    </script>
+
+
+    </head>
+    <body> 
+
+
+      <canvas id="viewport" ></canvas> 
+        <div class="page-wrapper" id="portfolio_page_wrapper">
+        
+        
+
+</div><!-- page wrapper div -->
+     
+<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
+<script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
+<script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
+<script src="js/index.js"></script>   
+
+            
+</body>
+  
+    
+
+</html>
