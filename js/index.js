@@ -1,16 +1,17 @@
 // window.addEventListener( 'resize', onWindowResize, false );
 window.ImageBitmap = window.ImageBitmap || function () { return null }
 
-// function onWindowResize(){
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize( window.innerWidth, window.innerHeight );
-// }
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
 
 
-var canvas = document.getElementById("viewport");
-canvas.width  = window.innerWidth;
-canvas.height = window.innerHeight;
+
+// var canvas = document.getElementById("viewport");
+// canvas.width  = window.innerWidth;
+// canvas.height = window.innerHeight;
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
@@ -126,7 +127,7 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(doorwayMesh, floor, wall, ceiling, DESKmesh, chairMesh, POSTERmesh); //took out skill
+scene.add(); //took out doorwayMesh, floor, wall, ceiling, DESKmesh, chairMesh, POSTERmesh
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
@@ -179,9 +180,7 @@ window.addEventListener("scroll", function(){
   dragElement(document.getElementById("mia3"));
   dragElement(document.getElementById("contact_window"));
   dragElement(document.getElementById("terminal_window"));
-  dragElement(document.getElementById("testimonial_window1"));
-  dragElement(document.getElementById("testimonial_window2"));
-  dragElement(document.getElementById("testimonial_window3"));
+
   dragElement(document.getElementById("about_window"));
 
 });
@@ -227,6 +226,77 @@ function toggleOpenClose(window_id) {
     }
     open.push(tab);
     icons.style.animation="fade-out2 .5s ease-out both";
+  }
+}
+
+
+function togglePhoto(frame, tile) {
+  
+document.getElementById('photo_viewer').style.display = "block";
+
+  var that_tile = document.getElementById(tile);
+  that_tile.scrollIntoView({inline: "center"});
+
+  var tab = document.getElementById(frame);
+  if (tab.style.display === "block") {
+    open.pop(tab);
+    tab.style.display = "none";
+    
+  }else {
+    tab.style.display = "block";
+    
+    var openWindow = open.length;
+    if (open.length > 0) {
+      for (i = 0; i < openWindow ; i++ ){
+        var closeThis = open[i];
+        closeThis.style.display = "none";
+        open.pop(closeThis);
+      }
+    }
+    open.push(tab);
+  }
+}
+
+function toggleFinder(window_id) {
+  
+  var tab = document.getElementById(window_id);
+
+  if (tab.style.display === "block") {
+    tab.style.display = "none";
+    icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
+  }else {
+    tab.style.display = "block";
+    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
+
+  }
+  }
+
+
+function toggleOpenCloseNoAnimation(window_id) {
+  var icons = document.getElementById("desktop_icon_container");
+  var mobile_icons = document.getElementById("mobile_icon_container");
+
+  var tab = document.getElementById(window_id);
+
+  if (tab.style.display === "block") {
+    open.pop(tab);
+    tab.style.display = "none";
+    mobile_icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
+
+  }else {
+    tab.style.display = "block";
+    var openWindow = open.length;
+    if (open.length > 0) {
+      for (i = 0; i < openWindow ; i++ ){
+        var closeThis = open[i];
+        closeThis.style.display = "none";
+        open.pop(closeThis);
+      }
+    }
+    open.push(tab);
+    icons.style.animation="fade-out2 .5s ease-out both";
+    mobile_icons.style.animation="fade-out2 .5s ease-out both";
+
   }
 }
 
@@ -353,3 +423,6 @@ function updateCamera(ev) {
 }
 
 window.addEventListener("scroll", updateCamera);
+
+
+
