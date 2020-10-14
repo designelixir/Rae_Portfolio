@@ -16,8 +16,7 @@
       gtag('config', 'UA-171559896-1');
     </script>
     <script type="text/javascript">
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        console.log(isChrome);
+
     // function isMobileDevice() {
     // if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
     //     console.log(true);
@@ -29,16 +28,23 @@
 
     // isMobileDevice();
 
-    var isSafari = window.safari !== undefined;
-if (isSafari) console.log("Safari, yeah!");
-else console.log('nope');
+    
+
+    document.onreadystatechange = function () {
+            if (document.readyState === "complete") {
+                console.log(document.readyState);
+                document.getElementById("PreLoaderBar").style.display = "none";
+            }
+        }
         
     </script>
 
 
     </head>
     <body> 
-
+        <div class="progress" id="PreLoaderBar">
+            <div class="indeterminate"></div>
+        </div>
 
       <canvas id="viewport" ></canvas> 
         <div class="page-wrapper" id="portfolio_page_wrapper">
@@ -122,32 +128,74 @@ else console.log('nope');
         </div>
         <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" loading="lazy" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>   
 
-        <a onclick="toggleOpenClose('notification')"><img id="mobile_notification" src="src/desktop_items/notif_mobile.svg" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
-
+        <div id="mobile_notification_window" style="display: none;">
+            <button onclick="toggleOpenCloseNoAnimation('mobile_notification_window')" ><img src="src/close.svg" id="mobile_notif_close" alt="close button"></button>
+            <a id="mobile_notification" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'><img src="src/desktop_items/mobile_notification.png" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
+        </div>
         
         <div id="desktop_window_wrapper">
                 
     
             <div class="desktop_icon_container mobile_hide" id="desktop_icon_container">
-                    <button class="desktop_icons" onclick="toggleOpenClose('miller_project')" style="left: 10%; top: 10%;" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('baja_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/docs_hemp_icon.png" loading="lazy" alt='Boulder Baja Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('menu_project')" style="left: 40%; top: 25%;" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_icon.png" loading="lazy" alt='West Flanders Project Icon'></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('killa_nilla_project')" style="left: 65%; top: 10%;" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/tribal_fit_icon.png" loading="lazy" alt="Killa Nilla Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('tlgs_project')" style="left: 65%; top: 58%;" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_desk_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('vans_project')" style="left: 8%; top: 40%;" aria-label="open close Vans Project"><img src="src/desktop_items/vans_icon.png" loading="lazy" alt="Vans Project Icon"></button>
-                    <button class="desktop_icons" onclick="toggleOpenClose('terminal_window')" style="right: 5%; top: 85%; width: 75px;" aria-label="open close trash"><img src="src/desktop_items/trash.svg" loading="lazy" alt="Vans Project Icon"></button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('miller_project')" style="left: 10%; top: 10%;" aria-label="Open/Close Miller Bros Project">
+                        <img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'>
+                        <span class="icon_label">Miller Bros</span>
+                    </button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Docs Hemp Project">
+                        <img src="src/desktop_items/docs_icon.png" loading="lazy" alt='Docs Hemp RX Project Icon'>
+                        <span class="icon_label">Doc's Hemp RX</span>
+                    </button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('menu_project')" style="left: 40%; top: 25%;" aria-label="open/close West Flanders Project">
+                        <img src="src/desktop_items/wf_icon.png" loading="lazy" alt='West Flanders Project Icon'>
+      
+                        <span class="icon_label">West Flanders</span>
+                    </button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%;" aria-label="open close Tribal Fitness Project">
+                        <img src="src/desktop_items/tribal_icon.png" loading="lazy" alt="Tribal Fitness Project Icon">
+                        <span class="icon_label">Tribal Fitness</span>
+                    </button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tlgs_project')" style="left: 65%; top: 58%;" aria-label="open close Twin Lakes General Store Project">
+                        <img src="src/desktop_items/tlgs_icon.png" loading="lazy" alt="Twin Lakes General Store Project Icon">
+                        <span class="icon_label">Twin Lakes Store</span>
+                    </button>
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('vans_project')" style="left: 8%; top: 40%;" aria-label="open close Vans Project">
+                        <img src="src/desktop_items/vans_icon.png" loading="lazy" alt="Vans Project Icon">
+                        <span class="icon_label">Vans</span>
+                    </button>
+                 
 
             </div>
 
-            <div class="mobile_icon_container mobile_show">
-                    <div class="mobile_icons">
-                        <div class="cell"><button onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project"><img src="src/desktop_items/miller_app.png" loading="lazy" alt='Miller Bros Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('baja_project')" aria-label="Open/Close Boulder Baja Project"><img src="src/desktop_items/docs_app.png" loading="lazy" alt='Boulder Baja Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project"><img src="src/desktop_items/wf_app.png" loading="lazy" alt='West Flanders Project Icon'></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('killa_nilla_project')" aria-label="open close Killa Nilla Project"><img src="src/desktop_items/tribal_app.png" loading="lazy" alt="Killa Nilla Project Icon"></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project"><img src="src/desktop_items/tlgs_app.png" loading="lazy" alt="Twin Lakes General Store Project Icon"></button></div>
-                        <div class="cell"><button onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project"><img src="src/desktop_items/vans_app.png" loading="lazy" alt="Vans Project Icon"></button></div>
-                    </div>
+            <div class="mobile_icon_container mobile_show" id="mobile_icon_container">
+                    
+                <div class="mobile_grid_container">
+                        <div><button class="icon_button" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project">
+                            <img src="src/desktop_items/miller_mobile.png" loading="lazy" alt='Miller Bros Project Icon'>
+                            <span class="app_label">Miller Bros</span>
+                            </button></div>
+                        <div><button class="icon_button" onclick="toggleOpenClose('docs_project')" aria-label="Open/Close Docs Hemp Project">
+                            <img src="src/desktop_items/docs_mobile.png" loading="lazy" alt='Docs Hemp Project Icon'>
+                            <span class="app_label">Doc's Hemp RX</span>
+                        </button></div>
+                        <div> <button class="icon_button" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project">
+                            <img src="src/desktop_items/wf_mobile.png" loading="lazy" alt='West Flanders Project Icon'>
+                            <span class="app_label">West Flanders </span>
+                        </button></div>  
+                        <div><button class="icon_button" onclick="toggleOpenClose('tribal_fit_project')" aria-label="open close Tribal Fitness Project">
+                                <img src="src/desktop_items/tribal_mobile.png" loading="lazy" alt="Tribal Fitness Project Icon">
+                                <span class="app_label">Tribal Fitness</span>
+                            </button></div>
+                        <div><button class="icon_button" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project">
+                                <img src="src/desktop_items/tlgs_mobile.png" loading="lazy" alt="Twin Lakes General Store Project Icon">
+                                <span class="app_label">Twin Lakes Store</span>
+                            </button></div>
+                        <div><button class="icon_button" onclick="toggleOpenClose('vans_project')" aria-label="open close Vans Project">
+                                <img src="src/desktop_items/vans_mobile.png" loading="lazy" alt="Vans Project Icon">
+                                <span class="app_label">Vans</span>
+                            </button></div>
+                        
+                        </div>
+                    
             </div>
 
             <div id="contact_window" class="window" style="display: none;">
@@ -167,6 +215,324 @@ else console.log('nope');
                     <a class="mail_button" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Send a Message</a>
                 </div>
             </div>
+
+            <div id="instagram_window" class="window" style="display: none;">
+                    <div class="window_closebar"><button onclick="toggleOpenClose('instagram_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Projects Quickview</p></div>
+                        <br><br>
+                        <div class="instagram_main_grid" >
+                            <div class="instagram_tile">
+                                <button onclick="togglePhoto('tlgs_frame', 'tlgs_tile')" aria-label="toggle open/close">
+                                    <img class="tile" src="src/cases/tlgs/ipad_tlgs.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
+                                </button>
+                                
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('renu_frame', 'renu_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/finder_extras/renu_layout.jpg" loading="lazy" alt="renu logo layout">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('tribal_frame', 'tribal_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="renu logo layout">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('docs_frame', 'docs_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('kats_frame', 'kats_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/finder_extras/happiness_kat.jpg"   loading="lazy" alt="kat script sample">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('vans_frame', 'vans_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/vans/vans_post_v2.webp"  loading="lazy" alt="megan on skateboard">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                <button onclick="togglePhoto('debra_frame','debra_tile')" aria-label="toggle open/close">
+                                    <img src="src/cases/finder_extras/debra_website.jpg"  loading="lazy" alt="Debra Austin Website">
+                                </button>
+                                
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('wf_frame', 'wf_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/west_flanders/menu_closeup.jpg" loading="lazy" alt="Menu Rework Closeup">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('northern_frame', 'northern_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/finder_extras/northern_stickers.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('mech_frame', 'mech_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/finder_extras/mech_computer.jpg" loading="lazy"  alt="University of Colorado Class of 2020 Mechanical Engineers website">    
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                <button onclick="togglePhoto('civico_frame', 'civico_tile')" aria-label="toggle open/close">
+                                    <img src="src/cases/finder_extras/civico_layout2.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                </button>
+                                
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('killa_frame', 'killa_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('miller_frame', 'miller_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/miller_bros/miller_sticker_layout.jpg"  loading="lazy" alt="Miller Bros Sticker layout">
+                                    </button>
+                                    
+                            </div>
+                            <div class="instagram_tile">
+                                    <button onclick="togglePhoto('baja_frame', 'baja_tile')" aria-label="toggle open/close">
+                                        <img src="src/cases/boulder_baja/baja_simple.jpg"  loading="lazy" alt="Boulder Baja Logo">
+                                    </button>
+                                    
+                            </div>
+                            
+
+                           
+                            
+                            
+                        </div>
+
+                        <div id="photo_viewer" style="display: none;">
+                            <div class="picture_slide">
+                                <div class="photo_frame" id="tlgs_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('tlgs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
+
+                                    <img src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                    <caption style="padding-top: 50px;">
+                                            
+                                            <p><b>Twin Lakes General Store</b>-Website Development</p>
+                                            <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
+                                    </caption>
+                                </div>
+
+                                <div class="photo_frame" id="vans_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('vans_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <img src="src/cases/vans/vans_post_v2.webp" loading="lazy" alt="megan on skateboard">
+
+                                    <caption style="padding-top: 50px;">
+                                            
+                                            <p><b>Vans Ultrarange Project</b>-Product Photos</p>
+                                            <p class="slide_caption" > Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
+                                    </caption>
+                                </div>
+
+                                <div class="photo_frame" id="renu_frame" style="display: none;">
+                                        <img src="src/cases/finder_extras/renu_layout.jpg" loading="lazy" alt="renu logo layout">
+
+                                    <caption style="padding-top: 50px;">
+                                            
+                                            <p><b>Renu Cosmetics</b>-Logo &amp; Packaging</p>
+                                            <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
+                                         </caption>
+                                </div>
+
+                                <div class="photo_frame" id="tribal_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('tribal_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="fill in">
+                                        <caption style="padding-top: 50px;">
+                                                <p><b>Tribal Fitness</b>-Logo &amp; Packaging</p>
+                                                <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
+                                        </caption>
+                                </div>
+
+                                <div class="photo_frame" id="docs_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
+                                        <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                    <caption style="padding-top: 50px;">
+                                            <p><b>Doc's Hemp Rx</b>-Website Development</p>
+                                            <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
+                                         </caption>
+                                </div>
+                                <div class="photo_frame" id="kats_frame" style="display: none;">
+                                        <img src="src/cases/finder_extras/happiness_kat.jpg" loading="lazy" alt="kat script sample">
+                                        <caption style="padding-top: 50px;">
+                                            <p><b>Kat's Script</b>-Custom Typography</p>
+                                            <p class="slide_caption"> A script font face inspired by the handwriting of my friend, Kat Hebda. </p>
+                                        </caption>
+                                </div>
+                                <div class="photo_frame" id="debra_frame" style="display: none;">
+                                        <img src="src/cases/finder_extras/debra_website.jpg" loading="lazy" alt="Debra Austin Website">
+                                        <caption style="padding-top: 50px;">
+                                            <p><b>Debra Austin, JD, PhD</b>-Website Development</p>
+                                            <p class="slide_caption"> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                        </caption>
+                                </div>
+                                <div class="photo_frame" id="wf_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('menu_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <img src="src/cases/west_flanders/menu_closeup.jpg" loading="lazy"  alt="Menu Rework Closeup">
+                                        <caption style="padding-top: 50px;">
+                                                <p><b>West Flanders Brewing Co</b>-Menu Redesign</p>
+                                                <p class="slide_caption">Design a new menu layout focused on user-experience and clean design, while utilizing new brand elements. </p>
+                                         </caption>
+                                </div>
+                                <div class="photo_frame" id="northern_frame" style="display: none;">
+                                        <img src="src/cases/finder_extras/northern_stickers.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                        <caption>
+                                                <p><b>Northern Wild </b>-Sticker Designs</p>
+                                                <p class="slide_caption"> Illustrated sticker designs for the Northern Wild - a girl and her samoyed.  </p>
+                                         </caption>
+                                </div>
+                                <div class="photo_frame" id="mech_frame" style="display: none;">
+                                        <a href="https://meclassof2020.wpcomstaging.com/" target="_blank" rel="noopener"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" alt="View Website"></a>
+                                        <img src="src/cases/finder_extras/mech_computer.jpg" loading="lazy"  alt="University of Colorado Class of 2020 Mechanical Engineers website">    
+                        
+                                        <caption>
+                                            <p><b>University of Colorado</b>-Website Development</p>
+                                            <p class="slide_caption"> Using existing brand standards, design a website for Class of 2020 Mechanical Engineers featuring keynote videos and a gallery of 300+ students. </p>
+                                        </caption>
+                                </div>
+
+                                <div class="photo_frame" id="civico_frame" style="display: none;">
+                                        <img src="src/cases/finder_extras/civico_layout2.jpg" loading="lazy" alt="Northern Wild Stickers">
+
+                                        <caption>
+                                                <p><b>Civico </b>-Brochure Designs</p>
+                                                <p class="slide_caption"> Help transition a political group's brand from old to new with fresh layouts for informational brochures.  </p>
+                                        </caption>
+                                </div>
+
+                                <div class="photo_frame" id="killa_frame" style="display: none;">
+                                        <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+
+                                        <caption>
+                                                <p><b>Killa Nilla</b>-Album Artworks</p>
+                                                <p class="slide_caption"> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                        </caption>
+                                </div>
+
+                                <div class="photo_frame" id="miller_frame" style="display: none;">
+                                        <a onclick="toggleOpenClose('miller_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <img src="src/cases/miller_bros/miller_sticker_layout.jpg"  loading="lazy" alt="Miller Bros Sticker layout">
+
+
+                                        <caption>
+                                                <p><b>The Miller Bros</b>-Sticker Designs</p>                                  
+                                                <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                        </caption>
+                                </div>
+
+                                <div class="photo_frame" id="baja_frame" style="display: none;">
+                                        <img src="src/cases/boulder_baja/baja_simple.jpg"  loading="lazy" alt="Docs Hemp Layout">
+
+
+                                        <caption>
+                                                <p><b>Boulder Baja</b>-Logo Design</p>                                  
+                                                <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                        </caption>
+                                </div>
+
+
+
+                            </div>
+                            <div class="photo_carousel">
+                                    <div class="instagram_tile" id="tlgs_tile">
+                                        <button onclick="togglePhoto('tlgs_frame', 'tlgs_tile')" aria-label="toggle open/close">
+                                            <img class="tile" src="src/cases/tlgs/ipad_tlgs.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="instagram_tile" id="renu_tile">
+                                            <button onclick="togglePhoto('renu_frame', 'renu_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/finder_extras/renu_layout.jpg" loading="lazy" alt="renu logo layout">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="tribal_tile">
+                                            <button onclick="togglePhoto('tribal_frame', 'tribal_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="renu logo layout">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="docs_tile">
+                                            <button onclick="togglePhoto('docs_frame', 'docs_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="kats_tile">
+                                            <button onclick="togglePhoto('kats_frame', 'kats_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/finder_extras/happiness_kat.jpg"   loading="lazy" alt="kat script sample">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="vans_tile">
+                                            <button onclick="togglePhoto('vans_frame', 'vans_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/vans/vans_post_v2.webp"  loading="lazy" alt="megan on skateboard">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="debra_tile">
+                                        <button onclick="togglePhoto('debra_frame','debra_tile')" aria-label="toggle open/close">
+                                            <img src="src/cases/finder_extras/debra_website.jpg"  loading="lazy" alt="Debra Austin Website">
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="instagram_tile" id="wf_tile">
+                                            <button onclick="togglePhoto('wf_frame', 'wf_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/west_flanders/menu_closeup.jpg" loading="lazy" alt="Menu Rework Closeup">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="northern_tile">
+                                            <button onclick="togglePhoto('northern_frame', 'northern_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/finder_extras/northern_stickers.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="mech_tile">
+                                            <button onclick="togglePhoto('mech_frame', 'mech_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/finder_extras/mech_computer.jpg" loading="lazy"  alt="University of Colorado Class of 2020 Mechanical Engineers website">    
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="civico_tile">
+                                        <button onclick="togglePhoto('civico_frame', 'civico_tile')" aria-label="toggle open/close">
+                                            <img src="src/cases/finder_extras/civico_layout2.jpg" loading="lazy" alt="Northern Wild Stickers">
+                                        </button>
+                                        
+                                    </div>
+                                    <div class="instagram_tile" id="killa_tile">
+                                            <button onclick="togglePhoto('killa_frame', 'killa_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="miller_tile">
+                                            <button onclick="togglePhoto('miller_frame', 'miller_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/miller_bros/miller_sticker_layout.jpg"  loading="lazy" alt="Miller Bros Sticker layout">
+                                            </button>
+                                            
+                                    </div>
+                                    <div class="instagram_tile" id="baja_tile">
+                                            <button onclick="togglePhoto('baja_frame', 'baja_tile')" aria-label="toggle open/close">
+                                                <img src="src/cases/boulder_baja/baja_simple.jpg"  loading="lazy" alt="Boulder Baja Logo">
+                                            </button>
+                                            
+                                    </div>
+                            </div>
+
+                        </div>
+
+                    </div>
 
             <div id="about_window" class="window" style="display: none;">
                     <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
@@ -309,7 +675,7 @@ else console.log('nope');
                 
                 <div class="mySlides website" id="docshemp_slide">
                         <div class="slide_image">
-                                <a onclick="toggleOpenClose('baja_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
+                                <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
 
                             <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg" style="box-shadow: 0px 5px 5px gray;" loading="lazy" alt="twin lakes general store website on an ipad">
                         </div>
@@ -417,7 +783,7 @@ else console.log('nope');
 
                         <div class="mySlides illustration" id="killanillaslide">
                                 <div class="slide_image">
-                                    <a onclick="toggleOpenClose('killa_nilla_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                    <a onclick="toggleOpenClose('tribal_fit_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
 
                                     <img src="src/cases/killa_nilla/phone_love_me_now.jpg" loading="lazy"  alt="love me now album cover">
                                 </div>
@@ -441,12 +807,12 @@ else console.log('nope');
                         </div>
                         <div class="mySlides graphic_design" id="bajaslide">
                                 <div class="slide_image">
-                                    <img src="src/cases/boulder_baja/baja_simple.jpg"  loading="lazy" alt="Boulder Baja Layout">
+                                    <img src="src/cases/boulder_baja/baja_simple.jpg"  loading="lazy" alt="Docs Hemp Layout">
     
                                 </div>
     
                                 <div class="slide_caption_wrapper">
-                                        <p><b>Boulder Baja</b>-Logo Design</p>                                  
+                                        <p><b>Docs Hemp</b>-Logo Design</p>                                  
                                         <p class="slide_caption">Design a logo to embellish an off-road vehicle that represents CU Boulder's Buffs mascott and the spirit of racing.</p>	
                                 </div>
                                     
@@ -470,9 +836,9 @@ else console.log('nope');
                         <button class="project_nav_btn illustration" id="northern_icon" onclick="currentDiv(9,2)"><img src="src/cases/finder_extras/northern_icon.png" loading="lazy" alt="Northern Wild Button Toggle" ></button> 
                         <button class="project_nav_btn website" id="mech_icon" onclick="currentDiv(10,3)"><img src="src/cases/finder_extras/cuMech.png" loading="lazy" alt="CU Website Button Toggle"></button> 
                         <button class="project_nav_btn graphic_design" id="civico_icon" onclick="currentDiv(11,4)"><img src="src/cases/finder_extras/civico_tall.jpg" loading="lazy" alt="Civico Button Toggle" ></button> 
-                        <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(12,3)"><img src="src/cases/killa_nilla/love_me_now.svg" loading="lazy" alt="Killa Nilla Button Toggle" ></button> 
+                        <button class="project_nav_btn illustration" id="killanilla_icon" onclick="currentDiv(12,3)"><img src="src/cases/killa_nilla/love_me_now.svg" loading="lazy" alt="Tribal Fitness Button Toggle" ></button> 
                         <button class="project_nav_btn illustration" id="miller_icon" onclick="currentDiv(13,4)"><img src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="Miller Bros Button Toggle "></button> 
-                        <button class="project_nav_btn illustration" id="baja_icon" onclick="currentDiv(14,4)"><img src="src/cases/boulder_baja/tricolor.jpg" loading="lazy" alt="Boulder Baja Button Toggle "></button> 
+                        <button class="project_nav_btn illustration" id="baja_icon" onclick="currentDiv(14,4)"><img src="src/cases/boulder_baja/tricolor.jpg" loading="lazy" alt="Docs Hemp Button Toggle "></button> 
 
                 </div>
                 <button class="slideshow_btn" style="right: 0;" id="big_nav_right" onclick="plusDivs(1)" >&rsaquo;</button>
@@ -480,48 +846,7 @@ else console.log('nope');
 
             </div>
 
-            <div id="testimonial_wrapper" style="display: none;">
-                    <div id="testimonial_window1" class="window sticky" style="top: 45%; left: 50%;" >
-                            <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Miller Bros</p></div>
-                            <div class="sticky_textbox">
-                                    <img style="float: left;" src="src/desktop_items/quotes1left.svg" alt="left quote mark"> <br> <br>
-                                    <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! </p>
-                                    <br>
-                                    <img style="float: right;" src="src/desktop_items/quotes1.svg" alt="right quote mark">
-                                </div>
-                    </div>
-                    
-                    <div id="testimonial_window2" class="window sticky" style="top: 50%; left: 55%;" >
-                        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close" ><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Debra Austin</p></div>
-                        <div class="sticky_textbox">
-                            <img style="float: left;" src="src/desktop_items/quotes2.svg" alt="left quote mark"> <br><br>
-                            <p>Megan was extremely responsive in listening to my objectives and
-                                    redesigning that page in my site. I recommend Megan as a creative, collaborative, and
-                                    professional young web designer and I’m so delighted with both my website and the technical
-                                    capacity I gained by working with Megan.</p><br><br>
-                            <img style="float: right;" src="src/desktop_items/quotes2.svg" alt="right quote mark">
-
-
-                        </div>
-
-                    </div>
-                    
-                    <div id="testimonial_window3" class="window sticky" style="top: 55%; left: 60%;">
-                        <div class="window_closebar"><button onclick="toggleOpenClose('testimonial_wrapper')"  aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Testimonial - Bob Mathes</p></div>
-                        <div class="sticky_textbox">
-                            <img style="float: left;" src="src/desktop_items/quotes3left.svg" alt="left quote mark"> <br> <br>
-
-                            <p>Megan has been a great asset to my small business by helping us transition away 
-                                    from an out-of-date website and social media we inherited from former owners.  
-                                    From great concept and design, tech fixes and consulting, art, photography, and helping 
-                                    get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                    hard, and recommend her for any sized project!  </p><br>
-                            <img style="float: right;" src="src/desktop_items/quotes3.svg" alt="right quote mark">
-    
-                        </div>
-                    </div>
-
-            </div>
+            
 
             <div id="miller_project" class="window case" style="display: none;">
                     <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
@@ -571,36 +896,35 @@ else console.log('nope');
                         
                             </div>
                             <div class="artboard_navigation">
-                                    <a onclick="toggleOpenClose('baja_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                    <a onclick="toggleOpenClose('docs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
                             </div>
                         </div>
                     </div>
             </div>
                 
-            <div id="baja_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('baja_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+            <div id="docs_project" class="window case" style="display: none;">
+                <div class="window_closebar"><button onclick="toggleOpenClose('docs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 <div class="case_content">
                     <div class="artboard">
                         <div>
-                            <h1>Boulder Baja </h1>
-                            <h2>Logo Design</h2>
+                            <h1>Doc's Hemp RX</h1>
+                            <h2>Website Development, Product Photos</h2>
                             <br>
                         </div>
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
-                            <p><b>April '19</b></p>
-                            <p><b>Tools: </b>Illustrator</p><br>
+                            <p><b>August '20</b></p>
+                            <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p><br>
                             <p>Assigned with the task of building an off-road vehicle to compete in the Society of Automotive Engineers (SAE) Baja competition, the University of Colorado’s racing team aspired to stand out with a custom logo to embellish their finished car and team gear. Pulling inspiration from sports team logos and racing culture, the logo represents the school’s mascot (the Buffaloes) while utilizing the rough and tough nature of off-road racing. </p>
                         </div>
                        
                         <div class="artboard_columntwothird">
-                            <img style="width: 100%;" src="src/cases/boulder_baja/group_photo_baja.jpg" loading="lazy" alt="team photo with off-road vehicle">
+                            <img style="width: 100%;" src="" loading="lazy" alt="team photo with off-road vehicle">
                             <p class="caption">The BAJA team poses with their off-road vehicle, embellished with a shiny new logo.</p><br> <br> 
                         </div>
                         <div class="artboard_bottom">
-                            <img style="width: 100%;" src="src/cases/boulder_baja/tricolor.jpg" loading="lazy" alt="baja logo on three colored backgrounds">
+                            <img style="width: 100%;" src="" loading="lazy" alt="">
         
-                            <img style="width: 33.5%;" src="src/cases/boulder_baja/racer.jpg" loading="lazy" alt="racer in off-road vehicle">
-                            <img style="width: 64%;" src="src/cases/boulder_baja/hat.jpg" loading="lazy" alt="hat with baja logo">
+                     
                             <p class="caption">The logo decorated the team's off-road vehicle, embroidered on hats and shirts, and used for presentation materials.</p>
 
                         </div>   
@@ -727,47 +1051,43 @@ else console.log('nope');
                         </div>
                         <p class="caption" style="margin: 1% 0px 50px 0px">Photos captured by me in Vans UltraRange sneakers <a href="https://www.instagram.com/p/BgRPJFMDpsv/" rel="noopener" target="_blank"><i>post</i></a> and advertisement featured on Vans Official Instagram in March of 2018.</p>
                         <div class="artboard_navigation">
-                                <a onclick="toggleOpenClose('killa_nilla_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                <a onclick="toggleOpenClose('tribal_fit_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
                         </div>
                         
                     </div>
                 </div>
             </div>
         
-            <div id="killa_nilla_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('killa_nilla_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+            <div id="tribal_fit_project" class="window case" style="display: none;">
+                <div class="window_closebar"><button onclick="toggleOpenClose('tribal_fit_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 
                 <div class="case_content">
                     <div class="artboard">
                         
-                        <h1> Killa Nilla </h1>
-                        <h2>Album Artworks</h2>
+                        <h1>Tribal Fitness</h1>
+                        <h2>Brand Design, Website Development, eCommerce </h2>
                         <br>
                         <div class="blu">
-                                <p><b>December '18</b><br>
-                                <b>Tools: </b>Illustrator</p>
+                                <p><b>July '20</b><br>
+                                <b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
                                 <br>
                                 <p>
-                                    Given complete creative freedom, I developed two album artworks for singles from electronic artist “Killa Nilla”. Driven by the hypnotic and space-inspired culture of the dubstep, I created album covers based on the titles of the singles, “Traffic” and “Love Me Now”. The albums both feature bold contrast between subject and background and bright colors to parallel the nature and aesthetic of electronic music. 
+                                    Run by personal trainer April Riggins, Tribal Fitness is a community of people who like to work out. 
                                 </p>
                             </div>
                             <br>
                         <div>
                             <div class="artboard_response_row">
                                     <div class="artboard_response_column">
-                                            <img src="src/cases/killa_nilla/phone_love_me_now.jpg" style="width: 100%;" alt="Love Me Now album cover on phone">
-                                            <img style="width: 100%;" src="src/cases/killa_nilla/max_album_traffic_v1_medium_res.jpg" loading="lazy" alt="traffic album artwork">
+                                            <img src="" style="" alt="">
         
                                     </div>
                                     <div class="artboard_response_column">
-                                            <img style="width: 100%; " src="src/cases/killa_nilla/love_me_now.svg" loading="lazy" alt="love me now album cover">
         
-                                            <img src="src/cases/killa_nilla/traffic_macbook.jpg" style="width: 100%;" loading="lazy" alt="Traffic album cover on macbook pro">
         
                                     </div>
                             </div>
                         </div>
-                        <p style="text-align: center; margin-bottom: 50px; margin-top: 1%;">Find Killa Nilla's tracks <i>Love Me Now</i> and <i>Traffic on his <a target="_blank" rel="noopener" href="https://open.spotify.com/artist/56fkl9znFBq2U82hEWyZNR?si=I10aXE5hQcaKEZ83_zsy4w">Spotify page.</a></i></p>
                         <div class="artboard_navigation">
                                 <a onclick="toggleOpenClose('tlgs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
                         </div>
@@ -789,7 +1109,7 @@ else console.log('nope');
                             <p><b>February '20</b><br>
                             <b>Tools: </b> Wordpress, WooCommerce, HTML/CSS, Illustrator</p><br>
                             <p>
-                                Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop for travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
+                                Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop to travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
                                 
                             </p>
                         </div>
@@ -854,36 +1174,49 @@ else console.log('nope');
         
             </div>
         </div>  
-        <!-- <div class="dock_container">
+        <div class="dock_container mobile_hide">
                 <div class="dock">
                     
                     <div class="tooltip">   
                         <span class="tooltiptext">All Projects</span> 
-                        <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
+                        <button onclick="toggleFinder('instagram_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Open Projects Icon"></button>
                     </div>
                     <div class="tooltip">   
-                        <span class="tooltiptext">About Megan</span> 
+                        <span class="tooltiptext">About</span> 
                         <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
                     </div>
                     <div class="tooltip">   
-                        <span class="tooltiptext">Contact Me</span> 
-                        <button  onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Contact Me Icon"></button>
+                        <span class="tooltiptext">Contact</span> 
+                        <button  onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Open Contact Me Icon"></button>
                     </div>
                     <div class="tooltip">   
-                        <span class="tooltiptext">Testimonials</span> 
-                        <button onclick="toggleOpenClose('testimonial_wrapper');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+                        <span class="tooltiptext">Trash</span> 
+                        <button onclick="toggleOpenClose('terminal_window');" aria-label="toggle open/close trash window"><img class="dockIcons tooltip" src="src/desktop_items/trash.svg" alt="Open Trash Icon"></button>
                     </div>
                     
                     
                 </div>
-        </div> --> 
+        </div> 
 
-        <div class="dock_container">
-            <div class="dock">
-                <button onclick="toggleOpenClose('finder_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Projects Icon"></button>
-                <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
-                <button  onclick="toggleOpenClose('mobile_contact_window')" aria-label="toggle open/close Email Me Window"><img class="dockIcons tooltip" src="src/desktop_items/mail.svg" alt="Contact Me Icon"></button>
-                <button onclick="toggleOpenClose('testimonial_wrapper');" aria-label="toggle open/close testimonial windows"><img class="dockIcons tooltip" src="src/desktop_items/stickies.svg" alt="View Testimonials Icon"></button>
+        <div class="mobile_dock_container" id="mobile_dock_container" >
+            <div class="dock" style="height: 100px; width: 100vw;">
+                    
+                <button class="mobile_icon_button" onclick="toggleFinder('instagram_window')" aria-label="toggle open/close Project Window">
+                    <img class="mobileIcons" src="src/desktop_items/finder.svg" alt="Projects">
+                    
+                </button>
+
+
+                <button class="mobile_icon_button" onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window">
+                    <img class="mobileIcons" src="src/desktop_items/portfolio.svg" alt="About">
+                    
+
+                </button>
+                <button class="mobile_icon_button" onclick="toggleOpenCloseNoAnimation('mobile_notification_window')" aria-label="toggle open/close Email Me Window">
+                    <img class="mobileIcons" src="src/desktop_items/mail.svg" alt="Contact">
+                    
+
+                </button>
 
                 
                 
