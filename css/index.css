@@ -70,7 +70,7 @@
 
 html {width: 100%; height: 100%;}
 #viewport {width: 100vw; height: 100vh; position: fixed; display: block;}
-.page-wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 2000vh; scroll-behavior: smooth;}
+#portfolio_page_wrapper {padding: 0px; position: absolute; left: 0; top: 0; width: 100%; height: 2000vh; scroll-behavior: smooth;}
 #container {height: 2000vh; position: fixed;}
 canvas { width: 100%; height: 100%; display: block; background-color: #2f345a }
 
@@ -106,7 +106,7 @@ b {font-family: 'GreycliffCF-DemiBold', sans-serif; font-size: 1rem;}
 a { color: white; text-decoration: none; font-family: 'GreycliffCF-Medium', sans-serif;}
 a:hover { cursor: pointer;}
 button {font-family: 'GreycliffCF-Regular', sans-serif; background: none; outline: none; border: none; }
-button:hover {cursor: pointer; }
+button:hover {cursor: pointer; color:# }
 
 
 /* Homepage CSS ----------------------------------------------------------- */
@@ -150,7 +150,7 @@ button:hover {cursor: pointer; }
 #time {font-family: 'GreycliffCF-Light', sans-serif;}
 #desktop_toolbar_right img:hover {transform: scale(1.2);}
 .dock_container {position: fixed; width: 100%; bottom: 0; z-index: 2; display: flex; justify-content: center;} 
-.dock {bottom: 0; height: 100px; border-radius: 5px; width: 400px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; z-index: 200;}
+.dock {bottom: 0; height: 100px; border-radius: 5px; width: 400px; border: 1px solid #2f335c; background-color: #707BA5; display: flex; justify-content: center; align-items: center; }
 .dockIcons { display: table-cell; width: auto; height: 90px; padding: 10px; opacity: 1;}
 
 #mobile_dock_container {display: none; }
@@ -159,7 +159,6 @@ button:hover {cursor: pointer; }
 .mobileIcons { display: table-cell;  width: auto; height: 80px; margin: 10px;  opacity: 1; z-index: 1000;}
 .icon_label {color: white; position: absolute; text-align: center; bottom: 0; }
 .icon_button { height: 125px; width: 125px; text-align: center; display: flex; margin-right: 20px; justify-content: center; top: 0;}
-.app_label {color: white; transform: translate(0px, 110px); text-align: center; position: absolute; }
 
 
 
@@ -173,7 +172,7 @@ button:hover {cursor: pointer; }
 .desktop_icon_container button:hover {transform: rotate(5deg); cursor: pointer;}
 .desktop_icons {position: fixed;}
 .star_wallpaper {width: 100%; top: 50px; margin: auto; position: fixed; z-index: 0; }
-#wallpaper1 {animation: fadeInFromNone 4s ease-out infinite both;}
+#wallpaper1 {animation: fadeInFromNone 4s e ase-out infinite both;}
 #wallpaper2 {animation: fadeInFromNone 10s ease-out infinite both; animation-delay: 5s;}
 #wallpaper3 {animation: fadeInFromNone 8s ease-out infinite both; animation-delay: 10s}
 #notification {right: 0px; z-index: 20; width: 500px; position: fixed; top: 50px; display: none; -webkit-animation:slide-in-right 15s cubic-bezier(.25,.46,.45,.94) both; animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both !important}     
@@ -203,7 +202,7 @@ button:hover {cursor: pointer; }
 
 
 /* Window CSS ------------------------------------------------------------------------------------------------------- */
-.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; top: 40px; height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
+.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; top: 60px; height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
 .case .window_closebar {position: sticky;}
 .window_closebar {height: 30px; width: 100%; contain: content; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4; display: inline-block; overflow-x: hidden; border-bottom: #3A4172 1px solid; text-align: center; position: absolute; z-index: 20; }
 .window_closebar p {display: inline-block; margin-top: 5px;  color: #c6cadf;}
@@ -212,20 +211,6 @@ button:hover {cursor: pointer; }
 .blu {border-left: 10px solid #3a4172; padding-left: 20px; margin-right: 20px;}
 
 /* About Window CSS ---------------------------------------------------------------------------------------------------- */
-/* #about_window {width: 45%; max-width: 600px; height: 80%; max-height: 800px; top: 75px; background: #ececec; }
-#about_wrapper {justify-content: center; align-items: center; contain: content; width: 100%; height: 100%; top: 25px; }
-#about_content {height: 100%; margin-top: 1%; display: flex; scroll-behavior: smooth; flex-wrap: nowrap; overflow-x: auto; width: 100%;}
-.slide {left: 0;  flex: 0 0 auto;  display: inline-block; height: 100%; margin: 0px 50px 0px 0px; width: 100%; overflow-y: hidden; }
-#about_content::-webkit-scrollbar {display: none;}
-.about_copy {margin-bottom: 25px; contain: content; overflow-y: scroll; overflow-x: hidden; }
-.about_nav {width: 100%; display: flex; justify-content: center; align-items: center;  contain: content; margin-bottom: 25px;}
-.about_nav h6 {margin: 0 25px 0 25px;}
-#about_window h1 {font-size: 24px !important; font-family: 'GreycliffCF-Bold', sans-serif; line-height: 28px;}
-.about_nav button:hover {transform: scale(1.5); cursor: pointer;}
-.about_btn_left {float: left;}
-.about_btn_right {float: right; } */
-
-/* AboutALTTTTTTWindow CSS ---------------------------------------------------------------------------------------------------- */
 
 #about_window {width: 98%; max-width: 700px; height: calc(100% - 150px); max-height:740px;}
 .about_menu {width: 100%; bottom: 0px; position: absolute; height: 40px; background: #49588b; display: table; z-index: 10; }
@@ -244,27 +229,58 @@ button:hover {cursor: pointer; }
 #contact_window_content img:hover {transform: scale(1.1); cursor: alias;}
 .mail_button {background: #2f335c; padding: 10px 100px 10px 100px; bottom: 0px; margin-left: 40px; text-align: center;}
 
-/* terminal Window.... maybe going to scratch tho  */
+/* Mobile App Container --------------------------------------------------------------------------------------------------- */
+.mobile_icon_container {height:60%; width:100%; position:fixed; top:20px; padding:30px; display:none}
+.mobile_grid_container {display:grid; grid-template-columns:auto auto auto; grid-template-rows:125px 125px; justify-content:center; grid-gap:10px;padding-left:10px}
+.app_label {color:#fff; transform:translate(0,105px); text-align:center; position:absolute; font-family:'GreycliffCF-Regular',sans-serif!important}
+.mobile_grid_container>div {text-align:center; height:125px; width:110px; display:flex; content:contain}
+.mobile_grid_container > div img {width: 100px;}
+.mobile_grid_container img {width: 100px;}
+.mobile_icons {height: 125px; width: 100px; }
+.mobile_icons img {width: 100px; height: auto;}
+
+/* Finder Window---------------------------------------------------------------------------------------------------  */
+#instagram_window {max-width:1000px;height:calc(100% - 140px);max-height:1000px;width:100%;object-fit:contain;background:#c6cADF}
+.instagram_tile img{object-fit:cover;height:120px;width:120px;top:0;left:0}
+#photo_viewer{height:calc(100% - 195px);max-height:940px;max-width:980px;width:100%;background:#c6cADF;top:90px;position:fixed;display:flex;justify-content:center}
+.picture_slide{height:calc(100% - 150px);top:48px;width:90%;margin:40px 0 0 0%;text-align:center}
+.photo_frame img{max-height:700px; height:80%; width:100%; object-fit:cover; margin-bottom:25px; -webkit-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);-moz-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);box-shadow:25px 6px 35px -28px rgba(0,0,0,.75)}
+.photo_carousel{width:100%; height:100px; bottom:-20px; background:#fff; position:absolute; display:inline-flex; overflow-x:scroll; overflow-y:hidden; border:5px solid #fff}
+.photo_carousel .instagram_tile{padding:0 5px}
+
+/* Social Media Link App Icon and window --------------------------------------------------------------------------------------------------- */
+#socials_mobile_window{height:42.5%;top:25%;background:none;width:90%;margin:5%}
+#socials_mobile_wrapper{border-radius:5px;background:rgba(198,202,223,.85);height:100%;width:100%;padding:10px;text-align:center;color:#fff}
+.socials_mobile_container{display:grid;grid-template-columns:auto auto auto;grid-template-rows:100px 100px;justify-content:center;grid-gap:15px}
+.socials_mobile_container>div{text-align:center;height:90px;width:90px;display:flex;object-fit:contain}
+.socials_mobile_container img{height:90px}
+.social_app_label{color:#fff;transform:translate(0,90px);text-align:center;position:absolute;font-family:'GreycliffCF-Regular',sans-serif!important;font-size:14px}
+
+/* terminal Window  */
 #terminal_window {height: 400px; width: 80vw; max-width: 700px; background-color: #3A4172; top: 30%; }
 .terminal {padding-top: 20px;}
 .css-typing p {border-right: .15em solid #c6cADF; font-family: "Courier"; font-size: 15px; white-space: nowrap; overflow: hidden; color: white; padding-left: 10px;}
-.css-typing p:nth-child(1) {width: 46em; -webkit-animation: type 4s steps(40, end); animation: type 4s steps(40, end); -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(2) {width: 50em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 4.1s; animation-delay: 4.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(3) {width: 46em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 8.1s; animation-delay: 8.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(4) {width: 32em;opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 12.1s; animation-delay: 12.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(5) {width: 43em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 16.1s; animation-delay: 16.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(6) {width: 40em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 20.1s; animation-delay: 20.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(7) {width: 36em;opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 24.1s; animation-delay: 24.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-.css-typing p:nth-child(8) {width: 36em; opacity: 0; -webkit-animation: type2 4s steps(40, end); animation: type2 4s steps(40, end); -webkit-animation-delay: 28.1s; animation-delay: 28.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
-#extras_window {height: 400px; width: 300px; position: fixed; right: 10%; bottom: 10%; background: #384272}
+.css-typing p:nth-child(1) {width: 46em; -webkit-animation: type 2s steps(40, end); animation: type 2s steps(40, end); -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(2) {width: 50em; opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 2.1s; animation-delay: 2.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(3) {width: 46em; opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 4.1s; animation-delay: 4.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(4) {width: 32em;opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 6.1s; animation-delay: 8.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(5) {width: 43em; opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 8.1s; animation-delay: 10.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(6) {width: 40em; opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 10.1s; animation-delay: 12.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(7) {width: 36em;opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 12.1s; animation-delay: 14.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+.css-typing p:nth-child(8) {width: 36em; opacity: 0; -webkit-animation: type2 2s steps(40, end); animation: type2 2s steps(40, end); -webkit-animation-delay: 14.1s; animation-delay: 16.1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;}
+#extras_window {height: 400px; width: 500px; top: 45%; right: 10%;  background: #384272}
 #extras_window_content {height: 490px; width: 375px; padding: 10%; }
 #extras_window_content button {position: fixed; padding: 5%; width: 80px;}
 #extras_window_content button:hover {transform: rotate(5deg); cursor: pointer;}
-#thankyou_note {height: 600px; width: 400px; background: #ececec; }
-#thankyou_note_content {padding: 20px; }
-#mia1 {width: 300px; height: 275px; top: 5%; right: 10%; background: url('../src/desktop_items/mia.webp'); background-size: cover;}
-#mia2 {width: 300px; height: 275px; top: 50%; right: 40%; background: url('../src/desktop_items/mia.jpg'); background-size: cover;}
-#mia3 {width: 600px; height: 475px; top: 10%; right: 30%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
+
+.trash_container {display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:100px 100px;justify-content:center;grid-gap:15px}
+.trash_container > div {text-align:center;height:90px;width:90px;display:flex;object-fit:contain}
+.trash_container img {height: 90px;}
+
+
+
+#mia2 { width: 100%; max-width: 300px; max-height: 275px; height: 80%; top: 5%; left: 5%; background: url('../src/desktop_items/mia.jpg'); background-size: cover;}
+#mia3 {width: 90%; max-width: 400px; max-height: 250px; top: 20%; left: 10%; background: url('../src/desktop_items/miame.jpg'); background-size: cover;}
 
 /* Finder Window CSS ---------------------------------------------------------------------------------------------------- */
 #finder_window {height: 75%; bottom: 12.5%;  width: 95%; max-width: 1000px; max-height: 750px; overflow: hidden;}
@@ -285,12 +301,6 @@ button:hover {cursor: pointer; }
 .finder_carousel button {padding: 20px; outline: none; border: none; cursor: pointer; }
 .finder_carousel button:focus {transform: scale(1.3);}
 
-/* Testimonials Window CSS --------------------------------------------------------------------------- */
-.sticky {width: 300px; height: 300px;  text-align: center; }
-.sticky_textbox {height: 300px; width: 300px; padding: 15px; }
-.sticky_textbox p {font-size: 13px !important;}
-.sticky_textbox img {height: 25px;}
-#testimonial_wrapper {z-index: 20; height: 80%; width: 50%;}
 
 /* Case Studies Window CSS --------------------------------------------------------------------------- */
 .artboard{height: 500px; padding: 50px;}
@@ -371,7 +381,8 @@ button:hover {cursor: pointer; }
   #about_window h1 {font-size: 18px !important; line-height: 22px;}
   .about_section {margin: 15px; }
   #mobile_dock_container {display: block !important;}
-
+  .window {top: 40px;}
+  #photo_viewer{ top: 65px !important;}
 }
 #about_window h1 {font-size: 1.25em !important; line-height: 1em; }
 
@@ -401,227 +412,10 @@ button:hover {cursor: pointer; }
 @-webkit-keyframes flip-2-hor-top-1{0%{-webkit-transform:translateY(0) rotateX(0);transform:translateY(0) rotateX(0);-webkit-transform-origin:50% 0;transform-origin:50% 0}100%{-webkit-transform:translateY(-100%) rotateX(-180deg);transform:translateY(-100%) rotateX(-180deg);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}}@keyframes flip-2-hor-top-1{0%{-webkit-transform:translateY(0) rotateX(0);transform:translateY(0) rotateX(0);-webkit-transform-origin:50% 0;transform-origin:50% 0}100%{-webkit-transform:translateY(-100%) rotateX(-180deg);transform:translateY(-100%) rotateX(-180deg);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}}
 .scale-in-center{-webkit-animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both}
 @-webkit-keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
-
-
+.scale-up-bl{-webkit-animation:scale-up-bl 1s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-bl 1s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes scale-up-bl{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-bl{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}
 
 /* MOBILE CSS */
 
 
-.mobile_icon_container {height: 60%; width: 100%; position: fixed; top: 60px; padding: 15px;
-  
- display: none;
-}
 
-.mobile_grid_container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 150px 150px;
-  justify-content: center;
-  grid-gap: 15px;
-  padding-left: 10px;
-  
-
-
-  
-}
-
-.mobile_grid_container > div{
-  
-  text-align: center;
-  height: 125px;
-  width: 110px;
-  display: flex; 
-  content: contain;
- 
-}
-
-.mobile_grid_container > div img {
-  width: 100px;
-}
-
-.mobile_grid_container img {
-  width: 100px;
-}
-
-.mobile_icons {
-  height: 125px; 
-  width: 100px;
-  
-}
-
-.mobile_icons img {
-  width: 100px;
-  height: auto;
-}
-.cell img{height: auto; width: 100%;}
-
-
-#PreLoaderBar {
-  position: fixed; 
-  z-index: 100000;
-  bottom: 0;
-
-}
-.progress {
-  position: relative;
-  height: 10px;
-  display: block;
-  width: 100%;
-  background-color: white;
-  border-radius: 2px;
-  background-clip: padding-box;
-  /*margin: 0.5rem 0 1rem 0;*/
-  overflow: hidden;
-
-}
-.progress .indeterminate {
-background-color:black; }
-.progress .indeterminate:before {
-  content: '';
-  position: absolute;
-  background-color: #384272;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  will-change: left, right;
-  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-          animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
-.progress .indeterminate:after {
-  content: '';
-  position: absolute;
-  background-color: #384272;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  will-change: left, right;
-  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-  -webkit-animation-delay: 1.15s;
-          animation-delay: 1.15s; }
-
-@-webkit-keyframes indeterminate {
-  0% {
-    left: -35%;
-    right: 100%; }
-  60% {
-    left: 100%;
-    right: -90%; }
-  100% {
-    left: 100%;
-    right: -90%; } }
-@keyframes indeterminate {
-  0% {
-    left: -35%;
-    right: 100%; }
-  60% {
-    left: 100%;
-    right: -90%; }
-  100% {
-    left: 100%;
-    right: -90%; } }
-@-webkit-keyframes indeterminate-short {
-  0% {
-    left: -200%;
-    right: 100%; }
-  60% {
-    left: 107%;
-    right: -8%; }
-  100% {
-    left: 107%;
-    right: -8%; } }
-@keyframes indeterminate-short {
-  0% {
-    left: -200%;
-    right: 100%; }
-  60% {
-    left: 107%;
-    right: -8%; }
-  100% {
-    left: 107%;
-    right: -8%; } }
-
-
-  #instagram_window {
-    max-width: 1000px;
-    height: calc(100% - 140px);
-    max-height: 1000px;
-    width: 100%;
-    
-    object-fit: contain;
-    background: #c6cADF;
-  }
-
-.instagram_main_grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto;
-  column-gap: 1px;
-  row-gap: 1px;
-
-  
-}
-
-.instagram_main_grid > div {
-  text-align: center;
-
-
-}
-
-
-
-.instagram_tile img {
-  object-fit: cover;
-  height: 120px; width: 120px;
-  top: 0; 
-  left: 0;
-}
-
-#photo_viewer{
-  height: calc(100% - 195px);
-  max-height: 940px;
-  max-width: 980px;
-  width: 100%;
-  background: #c6cADF;
-  top: 70px;
-  position: fixed;
-  
-  display: flex;
-  justify-content: center;
-  
-}
-.picture_slide {
-  height: calc(100% - 150px); 
-  top: 48px;
-  width: 90%; 
-  margin: 40px 0px 0px 5%;
-  text-align: center;
- 
-  
-}
-
-
-
-.photo_frame img {
-  max-height: 700px;
-  height: 80%;
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 25px;
-  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);
-}
-
-.photo_carousel {
-  width: 100%; 
-  height: 100px; 
-  bottom: -20px; 
-  background: white;
-  position: absolute;
-  display: inline-flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
- border: 5px solid white;
-}
-
-.photo_carousel .instagram_tile {
-  padding: 0px 5px;
-}

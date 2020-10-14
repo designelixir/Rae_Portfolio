@@ -1,17 +1,43 @@
 // window.addEventListener( 'resize', onWindowResize, false );
 window.ImageBitmap = window.ImageBitmap || function () { return null }
 
+var isThisMobile;
+
+  if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
+      console.log("mobile");
+      var isThisMobile = true;
+      
+      
+      
+      
+  } else {
+      console.log("not mobile");
+      var isThisMobile = false;
+      
+  } console.log(isThisMobile);
+ 
+if (!isThisMobile){
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------
+
 function onWindowResize(){
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
+function animate(time) {
+  time *= 0.001;  // seconds
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
 
-
-// var canvas = document.getElementById("viewport");
-// canvas.width  = window.innerWidth;
-// canvas.height = window.innerHeight;
+var canvas = document.getElementById("viewport");
+canvas.width  = window.innerWidth;
+canvas.height = window.innerHeight;
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 50); //first number should be 60 
@@ -27,16 +53,10 @@ let renderer = new THREE.WebGLRenderer({
 renderer.setClearColor(0x47578A); //back wall
 renderer.setSize(window.innerWidth, window.innerHeight, false);
 
-
 let light = new THREE.AmbientLight(0xFFFFFF); 
 scene.add(light);
 
-function animate(time) {
-  time *= 0.001;  // seconds
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
-}
-requestAnimationFrame(animate);
+
 
 var loader = new THREE.TextureLoader();
 loader.generateMipmaps = false;
@@ -56,8 +76,6 @@ DESKmesh = new THREE.Mesh(DESKGeom, DESKmaterial);
 DESKmaterial.transparent = true;
 DESKmesh.position.set(-1.5,-4,-30);
 
-
-
 var POSTERGeom = new THREE.PlaneGeometry(30, 30);
 var POSTERSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters_aspect_ratio_v2@300x.png';
 var POSTERmesh;
@@ -69,7 +87,6 @@ var POSTERmaterial = new THREE.MeshLambertMaterial({map: POSTERtex});
 POSTERmesh = new THREE.Mesh(POSTERGeom, POSTERmaterial);
 POSTERmaterial.transparent = true;
 POSTERmesh.position.set(2,5,-32);
-
 
 // canvas OBJECTS 
 var cubeMaterials = [
@@ -91,16 +108,13 @@ var wall2Geometry = new THREE.PlaneGeometry(18,180);
 var wallMaterial = new THREE.MeshBasicMaterial( {color: 0x47578a, side: THREE.DoubleSide}); //back wall
 var wall2Material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
 
-
 var wall = new THREE.Mesh( wallGeometry, wallMaterial );
 var wall2 = new THREE.Mesh( wallGeometry, wall2Material ); //ceiling
 var wall3 = new THREE.Mesh( wallGeometry, wall2Material ); //floor
 
-
 //loaders
 var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')});
 doorway.transparent=true;
-
 
 var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
 chair.transparent=true;
@@ -127,14 +141,13 @@ wall3.rotateY(-180);
 wall3.position.set(25,0,-40);
 
 // add the image to the scene
-scene.add(); //took out doorwayMesh, floor, wall, ceiling, DESKmesh, chairMesh, POSTERmesh
+scene.add(doorwayMesh, floor, wall, ceiling, DESKmesh, chairMesh, POSTERmesh); //took out 
 
 //update ON SCROLL 
 var updatedProgress = window.innerWidth/100;
 var updatedProgressHeight = window.innerHeight/100;
 
 const header = document.querySelector('.homepage');
-// const spinny = document.querySelector('.spinny');
 const login = document.querySelector('.login');
 const profile = document.querySelector('.profile');
 const scrollArrow = document.querySelector('#bounce_arrow_button');
@@ -142,209 +155,37 @@ const profile_description = document.querySelector('.profile_description');
 const toolbar = document.querySelector('.desktop_toolbar');
 const toolbar_hide = document.querySelector('#desktop_toolbar_left');
 const desktop = document.querySelector('.desktop');
-// const desktop_icons = document.querySelector('.desktop_icon_container');
 const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
-// const loading_bar = document.querySelector('.loading_scroller');
 
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
-// uos(0.2, 0.25, p => (spinny.style.opacity =  ((p*50/updatedProgress)) ));
-// uos(0.25, 0.39, p => (spinny.style.width = (100-(p*100)) +"%"));
 uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.33, 0.37, p => (profile.style.width= ((p*30))+"%"));
 uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
 uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
-// uos(0.43, 0.90, p => (loading_bar.style.width= ((p*90))+"%"));
 uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.46, 0.6, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.6, 0.75, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
 uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
 uos(0.8, 0.85, p => (scrollArrow.style.left = (p*200)+"%"));
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-// uos(0.9, 0.94, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-
 
 window.addEventListener("scroll", function(){
   dragElement(document.getElementById("about_window"));
-  dragElement(document.getElementById("thankyou_note"));
   dragElement(document.getElementById("extras_window"));
-  dragElement(document.getElementById("thankyou_note"));
-  dragElement(document.getElementById("mia1"));
   dragElement(document.getElementById("mia2"));
   dragElement(document.getElementById("mia3"));
   dragElement(document.getElementById("contact_window"));
   dragElement(document.getElementById("terminal_window"));
-
   dragElement(document.getElementById("about_window"));
 
 });
-// var desktop_icons_array = document.getElementsByClassName("desktop_icons");
-
-//   const top_padding = [ "75px", "10%", "25%", "35%", "50%", "60%"];
-//   for (i=0; i<desktop_icons_array.length; i++){
-//       var y = Math.floor( Math.random()*top_padding.length );
-//       var icon = desktop_icons_array[i];
-//       var icon_top = top_padding[y];
-      
-//       top_padding.splice(y,1);
-//       icon.style.top = icon_top;
-              
-// }
-
-
-
-function about_scroller(direction) {
-  if (direction === 1) {document.getElementById('about_content').scrollLeft += 590;}
-  else {document.getElementById('about_content').scrollLeft -= 590;}
-};
-
-var open = [];
-function toggleOpenClose(window_id) {
-  var icons = document.getElementById("desktop_icon_container");
-  var tab = document.getElementById(window_id);
-
-  if (tab.style.display === "block") {
-    open.pop(tab);
-    tab.style.display = "none";
-    icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
-  }else {
-    tab.style.display = "block";
-    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
-    var openWindow = open.length;
-    if (open.length > 0) {
-      for (i = 0; i < openWindow ; i++ ){
-        var closeThis = open[i];
-        closeThis.style.display = "none";
-        open.pop(closeThis);
-      }
-    }
-    open.push(tab);
-    icons.style.animation="fade-out2 .5s ease-out both";
-  }
-}
-
-
-function togglePhoto(frame, tile) {
-  
-document.getElementById('photo_viewer').style.display = "block";
-
-  var that_tile = document.getElementById(tile);
-  that_tile.scrollIntoView({inline: "center"});
-
-  var tab = document.getElementById(frame);
-  if (tab.style.display === "block") {
-    open.pop(tab);
-    tab.style.display = "none";
-    
-  }else {
-    tab.style.display = "block";
-    
-    var openWindow = open.length;
-    if (open.length > 0) {
-      for (i = 0; i < openWindow ; i++ ){
-        var closeThis = open[i];
-        closeThis.style.display = "none";
-        open.pop(closeThis);
-      }
-    }
-    open.push(tab);
-  }
-}
-
-function toggleFinder(window_id) {
-  
-  var tab = document.getElementById(window_id);
-
-  if (tab.style.display === "block") {
-    tab.style.display = "none";
-    icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
-  }else {
-    tab.style.display = "block";
-    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
-
-  }
-  }
-
-
-function toggleOpenCloseNoAnimation(window_id) {
-  var icons = document.getElementById("desktop_icon_container");
-  var mobile_icons = document.getElementById("mobile_icon_container");
-
-  var tab = document.getElementById(window_id);
-
-  if (tab.style.display === "block") {
-    open.pop(tab);
-    tab.style.display = "none";
-    mobile_icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
-
-  }else {
-    tab.style.display = "block";
-    var openWindow = open.length;
-    if (open.length > 0) {
-      for (i = 0; i < openWindow ; i++ ){
-        var closeThis = open[i];
-        closeThis.style.display = "none";
-        open.pop(closeThis);
-      }
-    }
-    open.push(tab);
-    icons.style.animation="fade-out2 .5s ease-out both";
-    mobile_icons.style.animation="fade-out2 .5s ease-out both";
-
-  }
-}
-
-function trashOpenClose(window_id) {
-  var trash = document.getElementById(window_id);
-  if (trash.style.display === "block") {
-    trash.style.display = "none";
-  } else {
-    trash.style.display = "block";
-    trash.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
-  }
-}
-
-var x = document.getElementsByClassName("mySlides");                    
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-showDivs(slideIndex += n);
-}
-
-
-function currentDiv(n, filteredSlideIndex) {
-var buttons = document.getElementById('finder_carousel_container').getElementsByClassName('project_nav_btn');
-console.log("currentDiv status: " + buttons[0] );
-if (x.length <= 4){slideIndex = filteredSlideIndex;}
-else {slideIndex = n;}
-
-
-
-showDivs(slideIndex);
-}
-
-function showDivs(n) {
-var i;
-var x = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("project_nav_btn");
-
-if (n > x.length) {slideIndex = 1}    
-if (n < 1) {slideIndex = x.length}
-for (i = 0; i < x.length; i++) {
-x[i].style.display = "none";  
-
-}
-
-x[slideIndex-1].style.display = "block";  
-
-}
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -386,7 +227,6 @@ function dragElement(elmnt) {
   }
 }
 
-
 function scrollToPosition(value){
   var doc = document.getElementById('viewport');
   var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
@@ -397,6 +237,112 @@ function scrollToPosition(value){
   
   window.scrollTo(0,scrollFrom);}
 }
+
+animate();
+function updateCamera(ev) {
+	camera.position.z = 18 - window.scrollY / 250.0;
+}
+
+window.addEventListener("scroll", updateCamera);
+
+
+} //ending bracket for desktop only javascript 
+
+else {
+  document.getElementById('portfolio_page_wrapper').style.height = "100vh";
+  var hide_homepage = document.getElementById('homepage_wrapper');
+  var hide_arrow = document.getElementById('arrow');
+  hide_homepage.classList.add('mobile_hide');
+  hide_arrow.classList.add('mobile_hide');
+}
+
+
+var open = [];
+function toggleOpenClose(window_id) {
+  var icons = document.getElementById("desktop_icon_container");
+  var mobile_icons = document.getElementById('mobile_icon_container');
+  var tab = document.getElementById(window_id);
+
+  if (tab.style.display === "block") {
+    open.pop(tab);
+    tab.style.display = "none";
+    icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
+    mobile_icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
+
+  }else {
+    tab.style.display = "block";
+    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
+
+    var openWindow = open.length;
+    if (open.length > 0) {
+      for (i = 0; i < openWindow ; i++ ){
+        var closeThis = open[i];
+        closeThis.style.display = "none";
+        open.pop(closeThis);
+      }
+    }
+    open.push(tab);
+    icons.style.animation="fade-out2 .5s ease-out both";
+    mobile_icons.style.animation="fade-out2 .5s ease-out both";
+
+  }
+}
+
+//switch between slides on project viewer
+var open_frames = [];
+if (open_frames.length === 0){
+  var tlgs = document.getElementById('tlgs_frame');
+  open_frames.push(tlgs);
+  tlgs.style.display = "block";
+}
+
+function togglePhoto(frame_name, tile_name) {
+  var frame = document.getElementById(frame_name);
+  document.getElementById(tile_name).scrollIntoView({inline: "center"});
+  
+  if (open_frames.length > 0) {
+    for (i = 0; i < open_frames.length; i++ ){
+      var closeThis = open_frames[i];
+      closeThis.style.display = "none";
+      open_frames.pop(closeThis);
+    }
+    open_frames.push(frame);
+    frame.style.display = "block";
+    
+  }else{
+      for (i = 0; i < openFrames ; i++ ){
+        var closeThis = open_frames[i];
+        closeThis.style.display = "none";
+        open_frames.pop(closeThis);
+      }
+      frame.style.display = "block";
+    open_frames.push(frame);
+  }
+} 
+
+//eventually change all buttons to this.. sigh 
+  document.getElementById('mobile_dock_finder').addEventListener("click", function()
+  {toggleOpenClose('instagram_window')});
+
+
+
+function trashOpenClose(window_id) {
+  var trash = document.getElementById(window_id);
+  if (trash.style.display === "block") {
+    trash.style.display = "none";
+  } else {
+    trash.style.display = "block";
+    trash.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
+  }
+}
+
+
+
+
+
+
+
+
 
 function changeTime(){
   const current = new Date();
@@ -416,13 +362,10 @@ function changeTime(){
   document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
 }
 window.addEventListener("scroll", changeTime);
+window.addEventListener("click", changeTime);
+window.addEventListener("load", changeTime);
 
-animate();
-function updateCamera(ev) {
-	camera.position.z = 18 - window.scrollY / 250.0;
-}
 
-window.addEventListener("scroll", updateCamera);
 
 
 
