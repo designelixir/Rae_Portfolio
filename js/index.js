@@ -230,30 +230,34 @@ function toggleOpenClose(window_id) {
 }
 
 
-function togglePhoto(frame, tile) {
+var open_frames = [];
+if (open_frames.length === 0){
+  var tlgs = document.getElementById('tlgs_frame');
+  open_frames.push(tlgs);
+  tlgs.style.display = "block";
+}
+
+function togglePhoto(frame_name, tile_name) {
+  var frame = document.getElementById(frame_name);
+  document.getElementById(tile_name).scrollIntoView({inline: "center"});
   
-document.getElementById('photo_viewer').style.display = "block";
-
-  var that_tile = document.getElementById(tile);
-  that_tile.scrollIntoView({inline: "center"});
-
-  var tab = document.getElementById(frame);
-  if (tab.style.display === "block") {
-    open.pop(tab);
-    tab.style.display = "none";
-    
-  }else {
-    tab.style.display = "block";
-    
-    var openWindow = open.length;
-    if (open.length > 0) {
-      for (i = 0; i < openWindow ; i++ ){
-        var closeThis = open[i];
-        closeThis.style.display = "none";
-        open.pop(closeThis);
-      }
+  if (open_frames.length > 0) {
+    for (i = 0; i < open_frames.length; i++ ){
+      var closeThis = open_frames[i];
+      closeThis.style.display = "none";
+      open_frames.pop(closeThis);
     }
-    open.push(tab);
+    open_frames.push(frame);
+    frame.style.display = "block";
+    
+  }else{
+      for (i = 0; i < openFrames ; i++ ){
+        var closeThis = open_frames[i];
+        closeThis.style.display = "none";
+        open_frames.pop(closeThis);
+      }
+      frame.style.display = "block";
+    open_frames.push(frame);
   }
 }
 
@@ -270,6 +274,26 @@ function toggleFinder(window_id) {
 
   }
   }
+
+  var on = (function(){
+    if (window.addEventListener) {
+        return function(target, type, listener){
+            target.addEventListener(type, listener, false);
+        };
+    }
+    else {
+        return function(object, sEvent, fpNotify){
+            object.attachEvent("on" + sEvent, fpNotify);
+        };
+    }
+}());
+
+
+  console.log(mobile_dock_finder);
+  document.getElementById('mobile_dock_finder').addEventListener("click", function()
+   {toggleOpenClose('instagram_window')});
+
+
 
 
 function toggleOpenCloseNoAnimation(window_id) {

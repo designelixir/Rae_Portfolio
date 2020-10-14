@@ -219,7 +219,7 @@
             <div id="instagram_window" class="window" style="display: none;">
                     <div class="window_closebar"><button onclick="toggleOpenClose('instagram_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Projects Quickview</p></div>
                         <br><br>
-                        <div class="instagram_main_grid" >
+                        <!-- <div class="instagram_main_grid" >
                             <div class="instagram_tile">
                                 <button onclick="togglePhoto('tlgs_frame', 'tlgs_tile')" aria-label="toggle open/close">
                                     <img class="tile" src="src/cases/tlgs/ipad_tlgs.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
@@ -309,9 +309,9 @@
                            
                             
                             
-                        </div>
+                        </div> -->
 
-                        <div id="photo_viewer" style="display: none;">
+                        <div id="photo_viewer">
                             <div class="picture_slide">
                                 <div class="photo_frame" id="tlgs_frame" style="display: none;">
                                         <a onclick="toggleOpenClose('tlgs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
@@ -346,7 +346,7 @@
                                 </div>
 
                                 <div class="photo_frame" id="tribal_frame" style="display: none;">
-                                        <a onclick="toggleOpenClose('tribal_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
+                                        <a onclick="toggleOpenClose('tribal_fit_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
                                         <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="fill in">
                                         <caption style="padding-top: 50px;">
                                                 <p><b>Tribal Fitness</b>-Logo &amp; Packaging</p>
@@ -370,6 +370,7 @@
                                         </caption>
                                 </div>
                                 <div class="photo_frame" id="debra_frame" style="display: none;">
+                                        <a href="https://debraaustin.com" target="_blank" rel="noopener"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" alt="View Website"></a>
                                         <img src="src/cases/finder_extras/debra_website.jpg" loading="lazy" alt="Debra Austin Website">
                                         <caption style="padding-top: 50px;">
                                             <p><b>Debra Austin, JD, PhD</b>-Website Development</p>
@@ -1179,7 +1180,7 @@
                     
                     <div class="tooltip">   
                         <span class="tooltiptext">All Projects</span> 
-                        <button onclick="toggleFinder('instagram_window')" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Open Projects Icon"></button>
+                        <button onclick="toggleOpenClose('instagram_window');" aria-label="toggle open/close Project Window"><img class="dockIcons tooltip" src="src/desktop_items/finder.svg" alt="Open Projects Icon"></button>
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">About</span> 
@@ -1201,7 +1202,7 @@
         <div class="mobile_dock_container" id="mobile_dock_container" >
             <div class="dock" style="height: 100px; width: 100vw;">
                     
-                <button class="mobile_icon_button" onclick="toggleFinder('instagram_window')" aria-label="toggle open/close Project Window">
+                <button id="mobile_dock_finder" class="mobile_icon_button" aria-label="toggle open/close Project Window">
                     <img class="mobileIcons" src="src/desktop_items/finder.svg" alt="Projects">
                     
                 </button>
