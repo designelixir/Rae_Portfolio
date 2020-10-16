@@ -1,4 +1,4 @@
-// window.addEventListener( 'resize', onWindowResize, false );
+window.addEventListener( 'resize', onWindowResize, false );
 window.ImageBitmap = window.ImageBitmap || function () { return null }
 
 var isThisMobile;
@@ -176,17 +176,6 @@ uos(0.8, 0.85, p => (scrollArrow.style.left = (p*200)+"%"));
 uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
-window.addEventListener("scroll", function(){
-  dragElement(document.getElementById("about_window"));
-  dragElement(document.getElementById("extras_window"));
-  dragElement(document.getElementById("mia2"));
-  dragElement(document.getElementById("mia3"));
-  dragElement(document.getElementById("contact_window"));
-  dragElement(document.getElementById("terminal_window"));
-  dragElement(document.getElementById("about_window"));
-
-});
-
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var window = document.getElementsByClassName('window');
@@ -227,6 +216,18 @@ function dragElement(elmnt) {
   }
 }
 
+window.addEventListener("load", function(){
+  dragElement(document.getElementById("about_window"));
+  dragElement(document.getElementById("extras_window"));
+  dragElement(document.getElementById("mia2"));
+  dragElement(document.getElementById("mia3"));
+  dragElement(document.getElementById("contact_window"));
+  dragElement(document.getElementById("terminal_window"));
+  dragElement(document.getElementById("about_window"));
+
+});
+
+
 function scrollToPosition(value){
   var doc = document.getElementById('viewport');
   var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
@@ -247,14 +248,25 @@ window.addEventListener("scroll", updateCamera);
 
 
 } //ending bracket for desktop only javascript 
-
+// ################################################################################
 else {
   document.getElementById('portfolio_page_wrapper').style.height = "100vh";
+  document.getElementById('portfolio_page_wrapper').style.overflowY = "hidden";
   var hide_homepage = document.getElementById('homepage_wrapper');
   var hide_arrow = document.getElementById('arrow');
   hide_homepage.classList.add('mobile_hide');
   hide_arrow.classList.add('mobile_hide');
+  document.getElementById('de_link').addEventListener("click", function(){toggleOpenClose('mobile_homepage_wrapper')});
+  var mobile_revealers = document.getElementsByClassName('mobile_reveal');
+  var revealThese = mobile_revealers.length;
+  for (i = 0; i < revealThese ; i++ ){
+    mobile_revealers[i].style.display = "block";
+  }
+  
 }
+
+
+
 
 
 var open = [];
@@ -306,6 +318,7 @@ function togglePhoto(frame_name, tile_name) {
       closeThis.style.display = "none";
       open_frames.pop(closeThis);
     }
+    frame.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
     open_frames.push(frame);
     frame.style.display = "block";
     
@@ -315,6 +328,7 @@ function togglePhoto(frame_name, tile_name) {
         closeThis.style.display = "none";
         open_frames.pop(closeThis);
       }
+      frame.style.animation="fade-out2 .5s ease-out both";
       frame.style.display = "block";
     open_frames.push(frame);
   }
@@ -336,16 +350,14 @@ function trashOpenClose(window_id) {
   }
 }
 
-
-
-
-
-
-
-
-
 function changeTime(){
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const current = new Date();
+  const month = months[current.getMonth()];
+  const dayWeek = days[current.getUTCDay()-1];
+  const day = current.getUTCDay();
+  
   const hours = current.getHours();
   if (hours > 0 && hours <= 12) {
     timeValue= "" + hours;
@@ -360,6 +372,8 @@ function changeTime(){
   if (minutes < 10){space ="0";}
   else {space=""};
   document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
+  document.getElementById("mobile_time").innerHTML = timeValue+":"+space+minutes;
+  document.getElementById('mobile_date').innerHTML = dayWeek+", "+month+" "+day;
 }
 window.addEventListener("scroll", changeTime);
 window.addEventListener("click", changeTime);
@@ -369,3 +383,38 @@ window.addEventListener("load", changeTime);
 
 
 
+function dragMobileSlider(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos3 = e.clientX;
+    // set the element's new position:
+    
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+
+dragMobileSlider(document.getElementById("unlock_btn"));

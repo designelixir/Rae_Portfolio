@@ -27,6 +27,32 @@
         <div id="arrow">
                 <button id="bounce_arrow_button" onclick="scrollToPosition(3500)"><img class="downArrow bounce" src="src/arrow.gif" alt="Scroll down indicator"/></button>
         </div>
+        <div class="mobile_homepage mobile_reveal" id="mobile_homepage_wrapper" style="display: none;">
+          
+                <div class="mobile_time">
+                        <p id="mobile_time"></p>
+                        <p id="mobile_date"></p>
+                </div>
+            
+                <div class="mobile_homepage_context">
+                    
+                        <img id="mobile_logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
+                        <img id="mobile_moto" src="src/splash+contexts/mobile_context.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
+                    </div>
+                    <div id="unlock_container">
+                        <div class="unlock_mobile">
+                                <div class="unlock_slide_container">
+                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 35%; bottom: 60px; color: white; animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both">Slide to Unlock</p>
+                                    <div id="unlock">
+                                        <button id="unlock_btn" onclick="toggleOpenClose('mobile_homepage_wrapper')">-> </button>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                
+
+        </div>
 
         <div class="homepage" id="homepage_wrapper">
                 <div class="homepage_context">
@@ -86,18 +112,21 @@
         <div class="desktop_toolbar">
         
                 <div id="desktop_toolbar_left"> 
-                    <a onclick="scrollToPosition(0)" class="toolbar_design_elixir"><b> Design Elixir</b></a>
+                    <a onclick="scrollToPosition(0)" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
                     <a onclick="toggleOpenClose('about_window')" class="toolbar_hide mobile_hide">About</a>
                     <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide mobile_hide">Contact</a>
                     <a onclick="toggleOpenClose('notification')" class="toolbar_hide mobile_hide">Store</a>
+                    <img class="mobile_reveal" style="width: 15px; float: right;" src="src/desktop_items/lock.svg">
                     
                 </div>
+           
                 <div id="desktop_toolbar_right">
                     <a class="mobile_hide" href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank" aria-label="Open Megan's LinkedIn"><img src= "src/social_media/linkedIn_simple.svg" alt="linked in icon"></a>
                     <a class="mobile_hide" href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank" aria-label="Open Megan's Instagram"><img src= "src/social_media/instagram_simple.svg" alt="instagram icon"></a>
                     <a class="mobile_hide" href="https://github.com/coloradical" rel='noopener' target="_blank" aria-label="Open Megan's Github"><img src= "src/social_media/github_simple.svg" alt="github icon"></a>
                     <a class="mobile_hide" href="https://unsplash.com/@designelixir" rel='noopener' target="_blank" aria-label="Open Megan's Unsplash"><img src= "src/social_media/unsplash_simple.svg" alt="unsplash icon"></a>
-                    <a class="toolbar_hide" id="time">time</a>
+                    <a class="mobile_reveal"><img id="mobile_wifi" src="src/desktop_items/wifi.svg" alt="wifi symbol"></a>
+                    <a class="toolbar_hide mobile_hide" id="time"></a>
                 </div>
             
         </div>
@@ -116,7 +145,7 @@
                         <img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'>
                         <span class="icon_label">Miller Bros</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Docs Hemp Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%; display: none;" aria-label="Open/Close Docs Hemp Project">
                         <img src="src/desktop_items/docs_icon.png" loading="lazy" alt='Docs Hemp RX Project Icon'>
                         <span class="icon_label">Doc's Hemp RX</span>
                     </button>
@@ -125,7 +154,7 @@
       
                         <span class="icon_label">West Flanders</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%;" aria-label="open close Tribal Fitness Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%; display: none;" aria-label="open close Tribal Fitness Project">
                         <img src="src/desktop_items/tribal_icon.png" loading="lazy" alt="Tribal Fitness Project Icon">
                         <span class="icon_label">Tribal Fitness</span>
                     </button>
@@ -148,18 +177,12 @@
                             <img src="src/desktop_items/miller_mobile.png" loading="lazy" alt='Miller Bros Project Icon'>
                             <span class="app_label">Miller Bros</span>
                             </button></div>
-                        <div><button class="icon_button" onclick="toggleOpenClose('docs_project')" aria-label="Open/Close Docs Hemp Project">
-                            <img src="src/desktop_items/docs_mobile.png" loading="lazy" alt='Docs Hemp Project Icon'>
-                            <span class="app_label">Doc's Hemp RX</span>
-                        </button></div>
+                        
                         <div> <button class="icon_button" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project">
                             <img src="src/desktop_items/wf_mobile.png" loading="lazy" alt='West Flanders Project Icon'>
                             <span class="app_label">West Flanders </span>
                         </button></div>  
-                        <div><button class="icon_button" onclick="toggleOpenClose('tribal_fit_project')" aria-label="open close Tribal Fitness Project">
-                                <img src="src/desktop_items/tribal_mobile.png" loading="lazy" alt="Tribal Fitness Project Icon">
-                                <span class="app_label">Tribal Fitness</span>
-                            </button></div>
+                       
                         <div><button class="icon_button" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project">
                                 <img src="src/desktop_items/tlgs_mobile.png" loading="lazy" alt="Twin Lakes General Store Project Icon">
                                 <span class="app_label">Twin Lakes Store</span>
@@ -172,6 +195,14 @@
                                 <img src="src/desktop_items/social_mobile.png" loading="lazy" alt="Social_Icons_mobile">
                                 <span class="app_label">Social Media</span>
                             </button></div>
+                            <div><button class="icon_button" style="display: none" onclick="toggleOpenClose('docs_project')" aria-label="Open/Close Docs Hemp Project">
+                                <img src="src/desktop_items/docs_mobile.png" loading="lazy" alt='Docs Hemp Project Icon'>
+                                <span class="app_label">Doc's Hemp RX</span>
+                            </button></div>
+                            <div><button class="icon_button" style="display: none;" onclick="toggleOpenClose('tribal_fit_project')" aria-label="open close Tribal Fitness Project">
+                                    <img src="src/desktop_items/tribal_mobile.png" loading="lazy" alt="Tribal Fitness Project Icon">
+                                    <span class="app_label">Tribal Fitness</span>
+                                </button></div>
                         
                         </div>
                         
@@ -279,8 +310,8 @@
                                         <a onclick="toggleOpenClose('tribal_fit_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
                                         <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="fill in">
                                         <caption style="padding-top: 50px;">
-                                                <p><b>Tribal Fitness</b>-Logo &amp; Packaging</p>
-                                                <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
+                                                <p><b>Tribal Fitness</b>-Branding &amp; Website Development </p>
+                                                <p class="slide_caption">Create a bright &amp; welcoming brand to express the energy of Tribal Fitness's community. </p>
                                         </caption>
                                 </div>
 
@@ -554,11 +585,6 @@
                         </div>
                 </div>
             </div>
-
-            <!-- <div id="mia1" class="window" style="display: none;" >
-                    <div class="window_closebar"><button onclick="trashOpenClose('mia1')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>miaSnow.gif</p></div>
-                       
-            </div> -->
             <div id="mia2" class="window" style="display: none;">
                     <div class="window_closebar"><button onclick="trashOpenClose('mia2')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>fatMia.jpg</p></div>
                        
@@ -635,15 +661,13 @@
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
                             <p><b>August '20</b></p>
                             <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p><br>
-                            <p>Assigned with the task of building an off-road vehicle to compete in the Society of Automotive Engineers (SAE) Baja competition, the University of Colorado’s racing team aspired to stand out with a custom logo to embellish their finished car and team gear. Pulling inspiration from sports team logos and racing culture, the logo represents the school’s mascot (the Buffaloes) while utilizing the rough and tough nature of off-road racing. </p>
+                            <p>working </p>
                         </div>
                        
                         <div class="artboard_columntwothird">
-                            <img style="width: 100%;" src="" loading="lazy" alt="team photo with off-road vehicle">
                             <p class="caption">The BAJA team poses with their off-road vehicle, embellished with a shiny new logo.</p><br> <br> 
                         </div>
                         <div class="artboard_bottom">
-                            <img style="width: 100%;" src="" loading="lazy" alt="">
         
                      
                             <p class="caption">The logo decorated the team's off-road vehicle, embroidered on hats and shirts, and used for presentation materials.</p>
@@ -738,15 +762,9 @@
                             <h1>Vans Ultrarange Project</h1>
                             <p class="artboard_subtitle">Product Photos and Videos</p> <br>
                         </div>
-                        <!-- <button style="position: absolute; top: 100px; right: 0; background: #707ba5; padding: 5px 85px 5px 20px; color: white;">GRAPHIC DESIGN</button> -->
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
                             <p><b>October '17</b><br> <b>Tools: </b>Photoshop, Lightroom</p><br>
                             <p>Following a <a style="color: black;" target="_blank" rel="noopener" href="https://youtu.be/v0mCY80knCU">486-mile backpacking trip across the Colorado Rockies</a> in a pair of Vans Hi-tops, I was commissioned by Vans to take photos and videos for their new line of UltraRange sneakers. This new line of sneakers expanded Vans into the outdoor industry by boasting durability and versatility for a variety of different environments, which I showcased during the fall season in the San Juan Mountains, Colorado.</p>
-                           
-                            
-                            
-                            
-                            
                         </div>
                 
                         <div class="artboard_columntwothird">
@@ -780,34 +798,43 @@
             </div>
         
             <div id="tribal_fit_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('tribal_fit_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-                
+                <div class="window_closebar"><button onclick="toggleOpenClose('tribal_fit_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>                
                 <div class="case_content">
                     <div class="artboard">
                         
                         <h1>Tribal Fitness</h1>
                         <h2>Brand Design, Website Development, eCommerce </h2>
                         <br>
-                        <div class="blu">
-                                <p><b>July '20</b><br>
-                                <b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
-                                <br>
-                                <p>
-                                    Run by personal trainer April Riggins, Tribal Fitness is a community of people who like to work out. 
-                                </p>
+                        <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
+                                <p><b>July '20</b><br> <b>Tools: </b>Squarespace, Illustrator, Photoshop</p><br>
+                            <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness.  Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
+                            </div>
+                    
+                            <div class="artboard_columntwothird">
+                                    <img src="src/cases/tribal_fitness/filler_img.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                    <p class="caption">The Tribal Fitness website is responsive on all devices.</p>
                             </div>
                             <br>
                         <div>
-                            <div class="artboard_response_row">
-                                    <div class="artboard_response_column">
-                                            <img src="" style="" alt="">
-        
-                                    </div>
-                                    <div class="artboard_response_column">
-        
-        
-                                    </div>
+                        <h3>Create brand guidelines that express strength and excitement to a welcoming fitness community. </h3>
+                        <p class="blu">Using the basis of her Hawaiian heritage as a baseline to build the brand, I developed several sketches of sharks (April’s favorite animal) in tribal style. In order to stand out in a dense market of fitness professionals, I strived to create a bright, exciting brand that steered away from the typical intense, sharp style of the fitness industry.</p>
+                        <br>
+                        <!-- <img style="width: 100%; " src="src/cases/tribal_fitness/tribal_specs2.png" loading="lazy" alt="Tribal Fitness Brand specs"> -->
+
+                    
+                            <div class="artboard_columntwothird">
+                                    <img src="src/cases/tribal_fitness/tribal_sketch2.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                   
                             </div>
+                            <div class="artboard_columnthird">
+                                    <img src="src/cases/tribal_fitness/tribal_shirt.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                </div>
+
+                            <h3>Develop a site to showcase information about April and the offerings of Tribal Fitness using newly designed brand guidelines.</h3>
+                            <p class="blu">Tribal Fit's website needed to showcase April's personality and invite people of all fitness levels into her community. It also needed to showcase the programs provided by Tribal Fitness and the fitness software used by April to train.  </p>
+                            <br>
+
+                          
                         </div>
                         <div class="artboard_navigation">
                                 <a onclick="toggleOpenClose('tlgs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
