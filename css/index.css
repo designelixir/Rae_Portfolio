@@ -213,7 +213,7 @@ button:hover {cursor: pointer; color:# }
 
 /* About Window CSS ---------------------------------------------------------------------------------------------------- */
 
-#about_window {width: 98%; max-width: 700px; height: calc(100% - 150px); max-height:740px;}
+#about_window {width: 98%; max-width: 700px; height: calc(100% - 150px); max-height:740px; background:#ececec}
 .about_menu {width: 100%; bottom: 0px; position: absolute; height: 40px; background: #49588b; display: table; z-index: 10; }
 .about_menu_item {display: table-cell; padding: 10px;   text-align: center;}
 .about_content {height: calc(100% - 100px); top: 40px; margin: 25px;  z-index: 2;  display: flex; scroll-behavior: smooth;  overflow-x: hidden; }
@@ -427,7 +427,7 @@ button:hover {cursor: pointer; color:# }
 .mobile_homepage {
   height: 100vh;
   width: 100vw;
-  background-size: 400%; background-position-x: 50%; background-repeat: no-repeat; background-position-y: bottom; background-image: url("../src/desktop_items/mountain_wallpaper.svg");  background-color: #2E345B;
+  background-size: cover; background-repeat: no-repeat; background-image: url("../src/desktop_items/mobile_wallpaper.jpg");  background-color: #2E345B;
   top: 40px;
   z-index: 1000000;
   position: fixed; 
