@@ -27,6 +27,31 @@
         <div id="arrow">
                 <button id="bounce_arrow_button" onclick="scrollToPosition(3500)"><img class="downArrow bounce" src="src/arrow.gif" alt="Scroll down indicator"/></button>
         </div>
+        <div class="mobile_homepage mobile_reveal" id="mobile_homepage_wrapper" style="display: none;">
+          
+                <div class="mobile_time">
+                        <p id="mobile_time"></p>
+                        <p id="mobile_date"></p>
+                </div>
+            
+                <div class="mobile_homepage_context">
+                    
+                        <img id="mobile_logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
+                        <img id="mobile_moto" src="src/splash+contexts/mobile_context.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
+                    </div>
+                    <div id="unlock_container">
+                        <div class="unlock_mobile">
+                                <div class="unlock_slide_container">
+                                    <div id="unlock">
+                                        <button style="padding: 10px 50px; background: white; position: absolute;" onclick="toggleOpenClose('mobile_homepage_wrapper')">Click me!</button>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                
+
+        </div>
 
         <div class="homepage" id="homepage_wrapper">
                 <div class="homepage_context">
@@ -86,18 +111,21 @@
         <div class="desktop_toolbar">
         
                 <div id="desktop_toolbar_left"> 
-                    <a onclick="scrollToPosition(0)" class="toolbar_design_elixir"><b> Design Elixir</b></a>
+                    <a onclick="scrollToPosition(0)" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
                     <a onclick="toggleOpenClose('about_window')" class="toolbar_hide mobile_hide">About</a>
                     <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide mobile_hide">Contact</a>
                     <a onclick="toggleOpenClose('notification')" class="toolbar_hide mobile_hide">Store</a>
+                    <img class="mobile_reveal" style="width: 15px; float: right;" src="src/desktop_items/lock.svg">
                     
                 </div>
+           
                 <div id="desktop_toolbar_right">
                     <a class="mobile_hide" href="https://www.linkedin.com/in/meganraebyers/" rel='noopener' target="_blank" aria-label="Open Megan's LinkedIn"><img src= "src/social_media/linkedIn_simple.svg" alt="linked in icon"></a>
                     <a class="mobile_hide" href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank" aria-label="Open Megan's Instagram"><img src= "src/social_media/instagram_simple.svg" alt="instagram icon"></a>
                     <a class="mobile_hide" href="https://github.com/coloradical" rel='noopener' target="_blank" aria-label="Open Megan's Github"><img src= "src/social_media/github_simple.svg" alt="github icon"></a>
                     <a class="mobile_hide" href="https://unsplash.com/@designelixir" rel='noopener' target="_blank" aria-label="Open Megan's Unsplash"><img src= "src/social_media/unsplash_simple.svg" alt="unsplash icon"></a>
-                    <a class="toolbar_hide" id="time">time</a>
+                    <a class="mobile_reveal"><img id="mobile_wifi" src="src/desktop_items/wifi.svg" alt="wifi symbol"></a>
+                    <a class="toolbar_hide mobile_hide" id="time"></a>
                 </div>
             
         </div>
