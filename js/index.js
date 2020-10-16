@@ -382,7 +382,6 @@ window.addEventListener("load", changeTime);
 
 
 
-dragMobileSlider(document.getElementById("unlock"));
 
 function dragMobileSlider(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -417,3 +416,5 @@ function dragMobileSlider(elmnt) {
   }
 }
 
+
+dragMobileSlider(document.getElementById("unlock_btn"));

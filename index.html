@@ -42,8 +42,9 @@
                     <div id="unlock_container">
                         <div class="unlock_mobile">
                                 <div class="unlock_slide_container">
+                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 35%; bottom: 60px; color: white; animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both">Slide to Unlock</p>
                                     <div id="unlock">
-                                        <button style="padding: 10px 50px; background: white; position: absolute;" onclick="toggleOpenClose('mobile_homepage_wrapper')">Click me!</button>
+                                        <button id="unlock_btn" onclick="toggleOpenClose('mobile_homepage_wrapper')">-> </button>
                                     </div>
                                 </div>
                         </div>
@@ -176,18 +177,12 @@
                             <img src="src/desktop_items/miller_mobile.png" loading="lazy" alt='Miller Bros Project Icon'>
                             <span class="app_label">Miller Bros</span>
                             </button></div>
-                        <div><button class="icon_button" style="display: none" onclick="toggleOpenClose('docs_project')" aria-label="Open/Close Docs Hemp Project">
-                            <img src="src/desktop_items/docs_mobile.png" loading="lazy" alt='Docs Hemp Project Icon'>
-                            <span class="app_label">Doc's Hemp RX</span>
-                        </button></div>
+                        
                         <div> <button class="icon_button" onclick="toggleOpenClose('menu_project')" aria-label="open/close West Flanders Project">
                             <img src="src/desktop_items/wf_mobile.png" loading="lazy" alt='West Flanders Project Icon'>
                             <span class="app_label">West Flanders </span>
                         </button></div>  
-                        <div><button class="icon_button" style="display: none;" onclick="toggleOpenClose('tribal_fit_project')" aria-label="open close Tribal Fitness Project">
-                                <img src="src/desktop_items/tribal_mobile.png" loading="lazy" alt="Tribal Fitness Project Icon">
-                                <span class="app_label">Tribal Fitness</span>
-                            </button></div>
+                       
                         <div><button class="icon_button" onclick="toggleOpenClose('tlgs_project')" aria-label="open close Twin Lakes General Store Project">
                                 <img src="src/desktop_items/tlgs_mobile.png" loading="lazy" alt="Twin Lakes General Store Project Icon">
                                 <span class="app_label">Twin Lakes Store</span>
@@ -200,6 +195,14 @@
                                 <img src="src/desktop_items/social_mobile.png" loading="lazy" alt="Social_Icons_mobile">
                                 <span class="app_label">Social Media</span>
                             </button></div>
+                            <div><button class="icon_button" style="display: none" onclick="toggleOpenClose('docs_project')" aria-label="Open/Close Docs Hemp Project">
+                                <img src="src/desktop_items/docs_mobile.png" loading="lazy" alt='Docs Hemp Project Icon'>
+                                <span class="app_label">Doc's Hemp RX</span>
+                            </button></div>
+                            <div><button class="icon_button" style="display: none;" onclick="toggleOpenClose('tribal_fit_project')" aria-label="open close Tribal Fitness Project">
+                                    <img src="src/desktop_items/tribal_mobile.png" loading="lazy" alt="Tribal Fitness Project Icon">
+                                    <span class="app_label">Tribal Fitness</span>
+                                </button></div>
                         
                         </div>
                         
