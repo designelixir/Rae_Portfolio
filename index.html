@@ -6,7 +6,17 @@
       <meta name="description" content="Portfolio website for Design Elixir Studio out of Boulder, Colorado. Owned and operated by graphic designer, illustrator, and web developer Megan Rae Byers"/>
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+
+     <script type="text/javascript">
+     document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    console.log("its ready, slut!!!") 
+  } else {
+      console.log('it aint');
+  }
+};
+     </script> 
     <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-171559896-1"></script>
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
@@ -15,6 +25,7 @@
 
       gtag('config', 'UA-171559896-1');
     </script>
+    
     
 
 
@@ -145,7 +156,7 @@
                         <img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'>
                         <span class="icon_label">Miller Bros</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Docs Hemp Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%; display: none;" aria-label="Open/Close Docs Hemp Project">
                         <img src="src/desktop_items/docs_icon.png" loading="lazy" alt='Docs Hemp RX Project Icon'>
                         <span class="icon_label">Doc's Hemp RX</span>
                     </button>
@@ -154,7 +165,7 @@
       
                         <span class="icon_label">West Flanders</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%;" aria-label="open close Tribal Fitness Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%; display: none;" aria-label="open close Tribal Fitness Project">
                         <img src="src/desktop_items/tribal_icon.png" loading="lazy" alt="Tribal Fitness Project Icon">
                         <span class="icon_label">Tribal Fitness</span>
                     </button>
@@ -253,13 +264,13 @@
 
             <div id="contact_window" class="window" style="display: none;">
             <div class="window_closebar"><button onclick="toggleOpenClose('contact_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Contact Me</p></div>
-            <br><br>
+            
                 <div id="contact_window_content">
                     <p style="line-height: 32px"> <b>To:</b> yourbeautifulface@email.com</p> <hr>
                     <p style="line-height: 32px"> <b>From:</b> megan@designelixir.studio</p> <hr>
                     <p style="line-height: 32px"> <b>Subject:</b> Let's Chat!</p> <hr> <br>
                     <p> I'm always looking for great businesses to partner with, and a new challenge to tackle. 
-                        Contact me at <strong><a style="color: black; font-size: 1rem;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>megan@designelixir.studio</a></strong> for any questions or inquiries.  </p> <br>
+                        Contact me at <strong><a style="color: black; font-size: 1rem;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>megan@designelixir.studio</a></strong> for any questions or inquiries. </p> <br>
                     <p>I've got a vibrant web presence, the internet is my favorite thing after all. Check out my code, attempts at photography, illustrations, work history and more.</p><br>
                     <a href="https://unsplash.com/@designelixir" rel='noopener' target="_blank"><img src="src/social_media/unsplash_file.svg" loading="lazy" alt="unsplash.com shortcut"></a>
                     <a href="https://www.instagram.com/meganbyers.jpeg/" rel='noopener' target="_blank"><img src="src/social_media/instagram_file.svg" loading="lazy" alt="Megans instagram shortcut"></a>
@@ -317,10 +328,10 @@
 
                                 <div class="photo_frame" id="docs_frame" style="display: none;">
                                         <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
-                                        <img src="src/cases/docs_hemp/docs_product_1 copy.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                        <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
                                     <caption style="padding-top: 50px;">
                                             <p><b>Doc's Hemp Rx</b>-Website Development</p>
-                                            <p class="slide_caption" >Build an online store to house the high-quality, organic products of Doc's Hemp RX.</p>
+                                            <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
                                          </caption>
                                 </div>
                                 <div class="photo_frame" id="kats_frame" style="display: none;">
@@ -496,61 +507,86 @@
 
                     </div>
 
-            <div id="about_window" class="window" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
-                    <div class="about_content">
-                        <div class="about_section" id="section1">
-                            <div class="about_inner_section">
-                                <br>
-                                    <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%; margin: 20px 0px;" alt="Portrait of Megan">
-                                    <h1 class="about_h1">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1>
-                                    <p class="blu">I’m an all-in-one, one-woman creative studio, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. </p>
-                            </div>
-                            <br id="section2"><br><br>
-                            <div class="about_inner_section">
-                                
-                                    <h1>Skills &amp; Services</h1>
-                                    <p><b>Graphic Design &amp; Illustration</b></p>
-                                    <!-- <p>Name a design need, and I'll fulfill it! Using the tools of Adobe Creative Suite, I develop print and digital materials to make your business and mission shine. </p> -->
-                                    <br>
-                                    <p class="blu">
-                                            Logos • Flyers • Posters • Advertising • Infographics • Brochures •
-                                            Branding  • Illustrations • Product Photos • Murals •
-                                            Stickers • Packaging • Typography • Digital  / Vector Art<br> 
-                                    </p>
-                                    <br>
-                                    <br>
-                                    <p><b>Web Development</b></p><br>
-                                    <!-- <p>From establishing a domain name to launching a fully-responsive site, I provide all necessary services to build a 
-                                        web presence that covers all the bases. </p><br> -->
-                                    <p class="blu">
-                                        Wordpress • Wix • Squarespace • Weebly • Webs • Page Design 
-                                        Page Development & Maintenance •  Custom Wordpress Themes 
-                                        E-Commerce • SEO  
-                                    </p>
-                            </div>
-                            <br id="section3"><br>
-                            <div  class="about_inner_section">   
-                                
-                                <h1>About Megan</h1>
-                                <div style="float: left; margin: 5px 15px 0px 0px; width: 100%;">
-                                        <img  src="src/cases/about_me/alpine.jpg" style="width: 100%;" loading="lazy" alt="close up of Megan"> <br><br>
-
+                    <div id="about_window" class="window" style="display: none;">
+                            <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
+                            <div class="about_content">
+                                <div class="about_section" id="section1" >
+                                        <ul class="flex-container">
+                                                <li class="flex-item">
+                                                    <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%;" alt="Portrait of Megan">
+                                                </li>
+                                                <li class="flex-item" class="mobile_column">
+                                                        <h1 class="about_h1">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1>
+                                                        <p>I’m an all-in-one, one-woman creative studio, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. </p>
+                                                </li>
+                                                
+                                              </ul>
+                                        <br>
+        
                                 </div>
-                                        <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
-                                        <br><br>
-                                        <a style="background: #2f335c; padding: 10px 100px 10px 100px; bottom: 0px; margin-left: 40px;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Contact Me!</a>
-
+        
+                                <div class="about_section" id="section2" style="display: none;">
+                                    <h1 style="margin-top: 50px;">Skills &amp; Services</h1>
+                                    <p style="margin: 0px 50px 25px 50px;">My insatiable urge to create combined with infinite power of computers enables me to provide a diverse set of services perfect for entrepreneurs and small businesses. I specialize in catering my artistic tools to your creative vision and capturing the spirit of amazing individuals. Like you!  
+                                        </p>
+                                        <ul class="flex-container">
+                                                <li class="flex-item">
+                                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Web Development</p>
+                                                    <br>
+                                                    <ul>
+                                                        <li>HTML/CSS/JS</li>
+                                                        <li>Custom Wordpress Themes</li>
+                                                        <li>Wordpress / Squarespace / Wix</li>
+                                                        <li>Page Design &amp; Development</li>
+                                                        <li>E-Commerce</li>
+                                                        <li>Search Engine Optimization</li>
+                                                    </ul>
+                                                </li>
+                                                <br>
+                                                <li class="flex-item">
+                                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Graphic Design &amp; Illustration</p>
+                                                        <br>
+                                                        <ul>
+                                                            <li>Branding</li>
+                                                            <li>Logo Design</li>
+                                                            <li>Print / Digital Media</li>
+                                                            <li>Product Photos</li>
+                                                            <li>Packaging</li>
+                                                            <li>Vector Art</li>
+                                                        </ul>
+                                                    </li>
+                                                
+                                              </ul>
+                                        <br>
+        
                                 </div>
-                            
-                    </div>
-                    </div>
-                    <div class="about_menu">
-                        <a href="#section1" class="about_menu_item"><h6>About Design Elixir</h6></a>
-                        <a href="#section2" id="middle_about_menu_item" class="about_menu_item"><h6>Skills &amp; Services</h6></a>
-                        <a href="#section3" class="about_menu_item"><h6>About Megan</h6></a>
-                    </div>
-                        
+                                <div class="about_section" id="section3" style="display: none;">
+                                        <ul class="flex-container">
+                                                <li class="flex-item">
+                                                    <img src="src/cases/about_me/alpine3.jpg" loading="lazy" style="width: 100%; margin-bottom: 25px;" alt="Portrait of Megan">
+                                                </li>
+                                                <li class="flex-item" class="mobile_column">
+                                                        <h1>A lil' something about Megan</h1>
+                                                        <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
+                                                        <br><br><a style="background: #2f335c; padding: 10px 20px 10px 20px; width: 100%; margin: 0;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Contact me - let's spill some ink!</a>
+        
+                                                    </li>
+                                                
+                                              </ul>
+                                        <br>
+        
+                                </div>
+        
+                                
+        
+        
+                            </div>
+                            <div class="about_menu">
+                                <a href="#section1" onclick="toggleOpenClose('section1')" class="about_menu_item"><h6>About Design Elixir</h6></a>
+                                <a href="#section2" onclick="toggleOpenClose('section2')" id="middle_about_menu_item" class="about_menu_item"><h6>Skills &amp; Services</h6></a>
+                                <a href="#section3" onclick="toggleOpenClose('section3')" class="about_menu_item"><h6>About Megan</h6></a>
+                            </div>
+                                
                     </div>
 
             <div id="extras_window" class="window" style="display: none;">
@@ -661,23 +697,17 @@
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
                             <p><b>August '20</b></p>
                             <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p><br>
-                            <p>Owned and operated by Trent Bailey, Doc's Hemp RX was formed in pursuit of helping his mother, 'Doc' with finding natural pain relief from symptoms caused by Parkinsons. When the benefits of CBD showed immediate relief for Doc's symtpoms, Trent began developing small batches of tinctures, using the nation's top retail product manufacturers. Today, Doc's Hemp RX strives to provide the purest, highest-quality ingredients at an affordable cost, so everyone has access to the benefits of true CBD products. </p>
+                            <p>working </p>
                         </div>
                        
                         <div class="artboard_columntwothird">
-                                <img src="src/cases/docs_hemp/docs_product_1 copy.jpg" style="width: 100%" loading="lazy" alt="twin lakes general store website on an ipad">
-
-                            <p class="caption">Capturing sharp product photos. </p><br> <br> 
+                            <p class="caption">The BAJA team poses with their off-road vehicle, embellished with a shiny new logo.</p><br> <br> 
                         </div>
-                        <div>
-                            <h3>Design a custom Wordpress theme that parallels the style of existing packaging. </h3>
-                            <p class="blu">I created gold metalic accents to compliment the packaging of the tinctures. I paralleled the vintage style packaging with similar font faces while creating an airy, simple layout to guide shoppers through the various pages of the site.</p>
-                            <br>
-                            <img style="width: 100%; " src="src/cases/docs_hemp/new_pages.png" loading="lazy" alt="All Stickers">
-                            
-                            </div>
                         <div class="artboard_bottom">
-                               
+        
+                     
+                            <p class="caption">The logo decorated the team's off-road vehicle, embroidered on hats and shirts, and used for presentation materials.</p>
+
                         </div>   
                         <div class="artboard_navigation">
                                 <a onclick="toggleOpenClose('menu_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
@@ -937,7 +967,7 @@
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">About</span> 
-                        <button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
+                        <button onclick="toggleOpenClose('about_window');" aria-label="toggle open/close about window"><img class="dockIcons tooltip" src="src/desktop_items/portfolio.svg" alt="Open About Window Icon"></button>
                     </div>
                     <div class="tooltip">   
                         <span class="tooltiptext">Contact</span> 
@@ -986,46 +1016,6 @@
 <script src="https://cdn.rawgit.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
-<script src="http://threejs.org/examples/js/renderers/SVGRenderer.js"></script>
-<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
-<script src="http://threejs.org/examples/js/loaders/SVGLoader.js"></script>
-<script>
-        /**
-         * @name LegacySVGLoader
-         * @author mrdoob / http://mrdoob.com/
-         * @author zz85 / http://joshuakoo.com/
-         * @see https://github.com/mrdoob/three.js/issues/14387
-         */
-      
-        THREE.LegacySVGLoader = function(manager) {
-      
-          this.manager = (manager !== undefined) ? manager : THREE.DefaultLoadingManager;
-      
-        };
-      
-        THREE.LegacySVGLoader.prototype = {
-      
-          constructor: THREE.LegacySVGLoader,
-      
-          load: function(url, onLoad, onProgress, onError) {
-      
-            var scope = this;
-      
-            var parser = new DOMParser();
-      
-            var loader = new THREE.FileLoader(scope.manager);
-            loader.load(url, function(svgString) {
-      
-              var doc = parser.parseFromString(svgString, 'image/svg+xml'); // application/xml
-      
-              onLoad(doc.documentElement);
-      
-            }, onProgress, onError);
-      
-          }
-      
-        };
-      </script>
 <script src="js/index.js"></script>   
 
             
