@@ -66,6 +66,7 @@ loader.wrapS = loader.wrapT = THREE.ClampToEdgeWrapping;
 
 var DESKGeom = new THREE.PlaneGeometry(40, 40);
 var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_resized_v4.png';
+
 var DESKmesh;
 var DESKtex = new THREE.TextureLoader().load(DESKSrc, (DESKtex) => {
   DESKtex.needsUpdate = true;
