@@ -145,7 +145,7 @@
                         <img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'>
                         <span class="icon_label">Miller Bros</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%; display: none;" aria-label="Open/Close Docs Hemp Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Docs Hemp Project">
                         <img src="src/desktop_items/docs_icon.png" loading="lazy" alt='Docs Hemp RX Project Icon'>
                         <span class="icon_label">Doc's Hemp RX</span>
                     </button>
@@ -154,7 +154,7 @@
       
                         <span class="icon_label">West Flanders</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%; display: none;" aria-label="open close Tribal Fitness Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%;" aria-label="open close Tribal Fitness Project">
                         <img src="src/desktop_items/tribal_icon.png" loading="lazy" alt="Tribal Fitness Project Icon">
                         <span class="icon_label">Tribal Fitness</span>
                     </button>
@@ -317,10 +317,10 @@
 
                                 <div class="photo_frame" id="docs_frame" style="display: none;">
                                         <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
-                                        <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                        <img src="src/cases/docs_hemp/docs_product_1 copy.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
                                     <caption style="padding-top: 50px;">
                                             <p><b>Doc's Hemp Rx</b>-Website Development</p>
-                                            <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
+                                            <p class="slide_caption" >Build an online store to house the high-quality, organic products of Doc's Hemp RX.</p>
                                          </caption>
                                 </div>
                                 <div class="photo_frame" id="kats_frame" style="display: none;">
@@ -661,17 +661,23 @@
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
                             <p><b>August '20</b></p>
                             <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p><br>
-                            <p>working </p>
+                            <p>Owned and operated by Trent Bailey, Doc's Hemp RX was formed in pursuit of helping his mother, 'Doc' with finding natural pain relief from symptoms caused by Parkinsons. When the benefits of CBD showed immediate relief for Doc's symtpoms, Trent began developing small batches of tinctures, using the nation's top retail product manufacturers. Today, Doc's Hemp RX strives to provide the purest, highest-quality ingredients at an affordable cost, so everyone has access to the benefits of true CBD products. </p>
                         </div>
                        
                         <div class="artboard_columntwothird">
-                            <p class="caption">The BAJA team poses with their off-road vehicle, embellished with a shiny new logo.</p><br> <br> 
-                        </div>
-                        <div class="artboard_bottom">
-        
-                     
-                            <p class="caption">The logo decorated the team's off-road vehicle, embroidered on hats and shirts, and used for presentation materials.</p>
+                                <img src="src/cases/docs_hemp/docs_product_1 copy.jpg" style="width: 100%" loading="lazy" alt="twin lakes general store website on an ipad">
 
+                            <p class="caption">Capturing sharp product photos. </p><br> <br> 
+                        </div>
+                        <div>
+                            <h3>Design a custom Wordpress theme that parallels the style of existing packaging. </h3>
+                            <p class="blu">I created gold metalic accents to compliment the packaging of the tinctures. I paralleled the vintage style packaging with similar font faces while creating an airy, simple layout to guide shoppers through the various pages of the site.</p>
+                            <br>
+                            <img style="width: 100%; " src="src/cases/docs_hemp/new_pages.png" loading="lazy" alt="All Stickers">
+                            
+                            </div>
+                        <div class="artboard_bottom">
+                               
                         </div>   
                         <div class="artboard_navigation">
                                 <a onclick="toggleOpenClose('menu_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
@@ -980,6 +986,46 @@
 <script src="https://cdn.rawgit.com/mrdoob/three.js/master/src/loaders/LoadingManager.js"></script>
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
+<script src="http://threejs.org/examples/js/renderers/SVGRenderer.js"></script>
+<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
+<script src="http://threejs.org/examples/js/loaders/SVGLoader.js"></script>
+<script>
+        /**
+         * @name LegacySVGLoader
+         * @author mrdoob / http://mrdoob.com/
+         * @author zz85 / http://joshuakoo.com/
+         * @see https://github.com/mrdoob/three.js/issues/14387
+         */
+      
+        THREE.LegacySVGLoader = function(manager) {
+      
+          this.manager = (manager !== undefined) ? manager : THREE.DefaultLoadingManager;
+      
+        };
+      
+        THREE.LegacySVGLoader.prototype = {
+      
+          constructor: THREE.LegacySVGLoader,
+      
+          load: function(url, onLoad, onProgress, onError) {
+      
+            var scope = this;
+      
+            var parser = new DOMParser();
+      
+            var loader = new THREE.FileLoader(scope.manager);
+            loader.load(url, function(svgString) {
+      
+              var doc = parser.parseFromString(svgString, 'image/svg+xml'); // application/xml
+      
+              onLoad(doc.documentElement);
+      
+            }, onProgress, onError);
+      
+          }
+      
+        };
+      </script>
 <script src="js/index.js"></script>   
 
             

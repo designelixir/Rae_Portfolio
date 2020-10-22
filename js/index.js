@@ -65,7 +65,7 @@ loader.wrapS = loader.wrapT = THREE.ClampToEdgeWrapping;
 
 
 var DESKGeom = new THREE.PlaneGeometry(40, 40);
-var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_aspect_ratio_v3@300x.png';
+var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/desktop_items/desk_resized_v1.svg';
 var DESKmesh;
 var DESKtex = new THREE.TextureLoader().load(DESKSrc, (DESKtex) => {
   DESKtex.needsUpdate = true;
@@ -113,7 +113,8 @@ var wall2 = new THREE.Mesh( wallGeometry, wall2Material ); //ceiling
 var wall3 = new THREE.Mesh( wallGeometry, wall2Material ); //floor
 
 //loaders
-var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/doorway_final.png')});
+
+var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/resized_doorway.png')});
 doorway.transparent=true;
 
 var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
@@ -129,7 +130,7 @@ var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
 var chairMesh = new THREE.Mesh(chairGeometry, chair);
 
 // set the position of the image mesh in the x,y,z dimensions
-doorwayMesh.position.set(-1,0,-14);
+doorwayMesh.position.set(1.5,0,-14);
 chairMesh.position.set(5,-8.5,-28);
 
 floor.position.set (-1,-16,-30);
