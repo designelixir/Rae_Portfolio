@@ -28,12 +28,8 @@ function onWindowResize(){
     renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
-function animate(time) {
-  time *= 0.001;  // seconds
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
-}
-requestAnimationFrame(animate);
+
+
 
 var canvas = document.getElementById("viewport");
 canvas.width  = window.innerWidth;
@@ -53,10 +49,16 @@ let renderer = new THREE.WebGLRenderer({
 renderer.setClearColor(0x47578A); //back wall
 renderer.setSize(window.innerWidth, window.innerHeight, false);
 
+
 let light = new THREE.AmbientLight(0xFFFFFF); 
 scene.add(light);
 
-
+function animate(time) {
+  time *= 0.001;  // seconds
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
 
 var loader = new THREE.TextureLoader();
 loader.generateMipmaps = false;
@@ -65,8 +67,7 @@ loader.wrapS = loader.wrapT = THREE.ClampToEdgeWrapping;
 
 
 var DESKGeom = new THREE.PlaneGeometry(40, 40);
-var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/desk_resized_v4.png';
-
+var DESKSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/desk_resized_optimized_v5.png';
 var DESKmesh;
 var DESKtex = new THREE.TextureLoader().load(DESKSrc, (DESKtex) => {
   DESKtex.needsUpdate = true;
@@ -75,10 +76,10 @@ var DESKtex = new THREE.TextureLoader().load(DESKSrc, (DESKtex) => {
 var DESKmaterial = new THREE.MeshLambertMaterial({map: DESKtex});
 DESKmesh = new THREE.Mesh(DESKGeom, DESKmaterial);
 DESKmaterial.transparent = true;
-DESKmesh.position.set(-1.5,-5,-35);
+DESKmesh.position.set(-1,-5.5,-35);
 
-var POSTERGeom = new THREE.PlaneGeometry(30, 30);
-var POSTERSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/posters_resized_v2.png';
+var POSTERGeom = new THREE.PlaneGeometry(28, 28);
+var POSTERSrc = 'https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/posters_resized_optimized_v2.png';
 var POSTERmesh;
 var POSTERtex = new THREE.TextureLoader().load(POSTERSrc, (POSTERtex) => {
   POSTERtex.needsUpdate = true;
@@ -87,33 +88,15 @@ var POSTERtex = new THREE.TextureLoader().load(POSTERSrc, (POSTERtex) => {
 var POSTERmaterial = new THREE.MeshLambertMaterial({map: POSTERtex});
 POSTERmesh = new THREE.Mesh(POSTERGeom, POSTERmaterial);
 POSTERmaterial.transparent = true;
-POSTERmesh.position.set(2,5,-36);
+POSTERmesh.position.set(2,1,-36);
 
 // canvas OBJECTS 
-
-function makeInstance(geometry, color, rotY, url) {
-  const texture = loader.load(url, render);
-  const material = new THREE.MeshPhongMaterial({
-    color: 0x2E345B,
-    map: texture,
-    opacity: 0.5,
-    transparent: true,
-    side: THREE.DoubleSide,
-  });
-
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
-
-  mesh.rotation.y = rotY;
-}
 
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
-    new THREE.MeshLambertMaterial({ map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/flooring9.jpg')}),
-    new THREE.MeshLambertMaterial({ color: 0x2E345B, transparent: true, opacity: 0.5, map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/wood_texture_test.png')}),
-    
-
+    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/flooring_resized_optimized_v4.png')}),
+    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/ceiling_resized_optimized_v3.png')}),
   ];
 var cubeGeometry = new THREE.BoxGeometry(80,0,70);
 var floor = new THREE.Mesh(cubeGeometry,cubeMaterials);
@@ -132,16 +115,16 @@ var wall3 = new THREE.Mesh( wallGeometry, wall2Material ); //floor
 
 //loaders
 
-var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/resized_doorway.png')});
+var doorway = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/doorway_resized_optimized_v1.png')});
 doorway.transparent=true;
 
-var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL_elements/chair.png')}); 
+var chair = new THREE.MeshLambertMaterial({map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/chair_resized_optimized_v2.png')}); 
 chair.transparent=true;
 
 // create a plane geometry for the image with a width of 10
 // and a height that preserves the image's aspect ratio
 var doorGeometry = new THREE.PlaneGeometry(70, 34);
-var chairGeometry = new THREE.PlaneGeometry(10, 14.8);
+var chairGeometry = new THREE.PlaneGeometry(10, 20);
 
 // combine our image geometry and material into a mesh
 var doorwayMesh = new THREE.Mesh(doorGeometry, doorway);
@@ -149,11 +132,12 @@ var chairMesh = new THREE.Mesh(chairGeometry, chair);
 
 // set the position of the image mesh in the x,y,z dimensions
 doorwayMesh.position.set(1.5,0,-14);
-chairMesh.position.set(5,-8.5,-28);
+chairMesh.position.set(6,-8,-30);
 
-floor.position.set (-1,-16,-30);
+
+floor.position.set (-1,-16,-26);
 ceiling.position.set(-1,18,-30)
-wall.position.set(0,1,-40);
+wall.position.set(0,1,-42);
 wall2.rotateY(180);
 wall2.position.set(-25,0,-40);
 wall3.rotateY(-180);
@@ -179,21 +163,32 @@ const illustration_splash = document.querySelector('#illustration_splash');
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
 
+const desktop_icons = document.querySelector('.desktop_icon_container');
+
+
 uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProgress) )));
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
-uos(0.39, 0.44, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.33, 0.37, p => (profile.style.width= ((p*30))+"%"));
-uos(0.43, 0.53, p => (login.style.left = (p*200)+"%"));
-uos(0.32, 0.34, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.43, 0.45, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.46, 0.6, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.6, 0.75, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.8, 0.85, p => (splash_pages.style.left = (p*200)+"%"));
-uos(0.8, 0.85, p => (scrollArrow.style.left = (p*200)+"%"));
-uos(0.85, 0.9, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+
+uos(0.45, 0.48, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
+uos(0.56, 0.60, p => (login.style.left = (p*200)+"%"));
+
+uos(0.33, 0.48, p => (profile.style.width= ((p*30))+"%"));
+uos(0.33, 0.60, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
+
+
+uos(0.65, 0.7, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.68, 0.82, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.82, 0.97, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.92, 0.95, p => (splash_pages.style.left = (p*200)+"%"));
+uos(0.92, 0.95, p => (scrollArrow.style.left = (p*200)+"%"));
+uos(0.90, 1, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+
+uos(0.97, 1, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
+
+// uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -258,7 +253,7 @@ function scrollToPosition(value){
   window.scrollTo(0,scrollFrom);}
 }
 
-animate();
+
 function updateCamera(ev) {
 	camera.position.z = 18 - window.scrollY / 250.0;
 }
@@ -266,7 +261,7 @@ function updateCamera(ev) {
 window.addEventListener("scroll", updateCamera);
 
 
-} //ending bracket for desktop only javascript 
+} //ending bracket for desktop only javascript ^^^^^^^^^^^^
 // ################################################################################
 else {
   document.getElementById('portfolio_page_wrapper').style.height = "100vh";
@@ -284,17 +279,20 @@ else {
   
 }
 
-
-
-
-
 var open = [];
+
+
+
+
+
 function toggleOpenClose(window_id) {
+
   var icons = document.getElementById("desktop_icon_container");
   var mobile_icons = document.getElementById('mobile_icon_container');
   var tab = document.getElementById(window_id);
+ 
 
-  if (tab.style.display === "block") {
+ if (tab.style.display === "block") {
     open.pop(tab);
     tab.style.display = "none";
     icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
