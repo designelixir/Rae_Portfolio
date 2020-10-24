@@ -94,7 +94,7 @@ POSTERmesh.position.set(2,1,-36);
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
-    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/flooring_resized_optimized_v5.png')}),
+    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/flooring_resized_optimized_v6.png')}),
     new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/ceiling_resized_optimized_v4.png')}),
   ];
 var cubeGeometry = new THREE.BoxGeometry(80,0,70);
