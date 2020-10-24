@@ -136,4 +136,3 @@ function LoadingManager( onLoad, onProgress, onError ) {
 const DefaultLoadingManager = new LoadingManager();
 
 
-export { DefaultLoadingManager, LoadingManager };
