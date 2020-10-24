@@ -4,7 +4,6 @@ window.ImageBitmap = window.ImageBitmap || function () { return null }
 var isThisMobile;
 
   if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
-      console.log("mobile");
       var isThisMobile = true;
       
       
@@ -270,7 +269,7 @@ else {
   var hide_arrow = document.getElementById('arrow');
   hide_homepage.classList.add('mobile_hide');
   hide_arrow.classList.add('mobile_hide');
-  document.getElementById('de_link').addEventListener("click", function(){toggleOpenClose('mobile_homepage_wrapper')});
+  document.getElementById('de_link').addEventListener("click", function(){document.getElementById('mobile_homepage_wrapper').style.display="block"; unlock(false);});
   var mobile_revealers = document.getElementsByClassName('mobile_reveal');
   var revealThese = mobile_revealers.length;
   for (i = 0; i < revealThese ; i++ ){
@@ -279,12 +278,36 @@ else {
   
 }
 
+function unlock(open){
+  var mobile_homepage = document.getElementById('mobile_homepage_wrapper');
+  var mobile_icons = document.getElementsByClassName('app');
+  console.log(mobile_icons);
+  var lock_icon=document.getElementById('lock');
+  var mobile_dock = document.getElementById('mobile_dock_container');
+  if (open) {
+    lock_icon.style.animation = "fade-out .5s ease-out both";
+    mobile_homepage.style.animation = "fade-out .5s ease-out both";
+    mobile_homepage.style.zIndex = '-100';
+    
+    console.log(mobile_icons);
+    // for(i=0; i < 7; i++){
+    //   var thatApp = (mobile_icons[i]);
+    //   console.log(thatApp);
+    //   thatApp.style.animation = 'slide-in-bck-center 5s cubic-bezier(.25,.46,.45,.94) both';
+    // }
+    mobile_dock.style.animation = "slide-in-fwd-bottom 0.75s cubic-bezier(.25,.46,.45,.94) both";
+    
+  } else {
+    mobile_homepage.style.zIndex="10";
+    lock_icon.style.opacity = '1';
+
+  }
+
+
+}
+
+
 var open = [];
-
-
-
-
-
 function toggleOpenClose(window_id) {
 
   var icons = document.getElementById("desktop_icon_container");
@@ -302,11 +325,9 @@ function toggleOpenClose(window_id) {
 
   } else {
     tab.style.display = "block";
-    console.log('fired');
     document.getElementById('body').style.overflow = 'hidden';
 
     if(window_id === 'mobile_notification_window'){
-      console.log('yep')
       tab.style.animation = 'slide-in-top 0.5s cubic-bezier(.25,.46,.45,.94) both;'
     } else {
       tab.style.animation = "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both";
@@ -370,7 +391,6 @@ function togglePhoto(frame_name, tile_name) {
 var section1 = document.getElementById('section1');
 var section2 = document.getElementById('section2');
 var section3 = document.getElementById('section3');
-console.log(section2);
 
   document.getElementById('section1_btn').addEventListener("click", function()
   {
@@ -416,23 +436,9 @@ function changeTime(){
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const current = new Date();
   const month = months[current.getMonth()];
-  const week = days[current.getUTCDay()];
-  const day = current.getUTCDate();
-  
-  
-
+  const week = days[current.getDay()];
+  const day = current.getDate();
   const hours = current.getHours();
-  var dayNumber = day;
-  var dayWeek = week;
-  if (hours >=0 && hours <= 6){
-    var dayNumber = day - 1;
-    var dayWeek = week - 1;
-    console.log('time is '+ hours);
-    console.log('day is' +dayNumber+dayWeek);
-  } else {
-    var dayNumber = day; 
-    var dayWeek = week;
-  }
 
   if (hours > 0 && hours <= 12) {
     timeValue= "" + hours;
@@ -448,7 +454,7 @@ function changeTime(){
   else {space=""};
   document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
   document.getElementById("mobile_time").innerHTML = timeValue+":"+space+minutes;
-  document.getElementById('mobile_date').innerHTML = dayWeek+", "+month+" "+dayNumber;
+  document.getElementById('mobile_date').innerHTML = week+", "+month+" "+day;
 }
 window.addEventListener("scroll", changeTime);
 window.addEventListener("click", changeTime);
