@@ -30,7 +30,7 @@
 
 
     </head>
-    <body> 
+    <body id="body"> 
         
 
       <canvas id="viewport" ></canvas> 
@@ -53,7 +53,7 @@
                     <div id="unlock_container">
                         <div class="unlock_mobile">
                                 <div class="unlock_slide_container">
-                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 35%; bottom: 60px; color: white; animation:fade-in .25s cubic-bezier(.39,.575,.565,1.000) both">Slide to Unlock</p>
+                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 35%; bottom: 60px; color: white;">Slide to Unlock</p>
                                     <div id="unlock">
                                         <button id="unlock_btn" onclick="toggleOpenClose('mobile_homepage_wrapper')">-> </button>
                                     </div>
@@ -143,8 +143,8 @@
         </div>
         <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" loading="lazy" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>   
 
-        <div id="mobile_notification_window" style="display: none;">
-            <button onclick="toggleOpenClose('mobile_notification_window')" ><img src="src/close.svg" id="mobile_notif_close" alt="close button"></button>
+        <div class="slide-in-top" id="mobile_notification_window" style="display: none;">
+            <button onclick="toggleOpenClose('mobile_notification_window')"><img src="src/close.svg" id="mobile_notif_close" alt="close button"></button>
             <a id="mobile_notification" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'><img src="src/desktop_items/mobile_notification.png" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
         </div>
         
@@ -156,7 +156,7 @@
                         <img src="src/desktop_items/miller_icon.png" loading="lazy" alt='Miller Bros Project Icon'>
                         <span class="icon_label">Miller Bros</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%; display: none;" aria-label="Open/Close Docs Hemp Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('docs_project')" style="left: 20%; top: 60%;" aria-label="Open/Close Docs Hemp Project">
                         <img src="src/desktop_items/docs_icon.png" loading="lazy" alt='Docs Hemp RX Project Icon'>
                         <span class="icon_label">Doc's Hemp RX</span>
                     </button>
@@ -165,7 +165,7 @@
       
                         <span class="icon_label">West Flanders</span>
                     </button>
-                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%; display: none;" aria-label="open close Tribal Fitness Project">
+                    <button class="desktop_icons icon_button" onclick="toggleOpenClose('tribal_fit_project')" style="left: 65%; top: 10%;" aria-label="open close Tribal Fitness Project">
                         <img src="src/desktop_items/tribal_icon.png" loading="lazy" alt="Tribal Fitness Project Icon">
                         <span class="icon_label">Tribal Fitness</span>
                     </button>
@@ -183,7 +183,7 @@
 
             <div class="mobile_icon_container mobile_show" id="mobile_icon_container">
                     
-                <div class="mobile_grid_container">
+                <div class="mobile_grid_container slide-in-fwd-center">
                         <div><button class="icon_button" onclick="toggleOpenClose('miller_project')" aria-label="Open/Close Miller Bros Project">
                             <img src="src/desktop_items/miller_mobile.png" loading="lazy" alt='Miller Bros Project Icon'>
                             <span class="app_label">Miller Bros</span>
@@ -291,7 +291,7 @@
                                     <img src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
                                     <caption style="padding-top: 50px;">
                                             
-                                            <p><b>Twin Lakes General Store</b>-Website Development</p>
+                                            <p><b>Twin Lakes Store</b>-Web Design</p>
                                             <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
                                     </caption>
                                 </div>
@@ -303,7 +303,7 @@
                                     <caption style="padding-top: 50px;">
                                             
                                             <p><b>Vans Ultrarange Project</b>-Product Photos</p>
-                                            <p class="slide_caption" > Capture product photos and videos for social media posts and advertisements to promote the adventure lifestyle of Vans UltraRange sneakers. </p>
+                                            <p class="slide_caption" > Capture product photos and videos for social media to promote Vans UltraRange sneakers. </p>
                                     </caption>
                                 </div>
 
@@ -312,8 +312,8 @@
 
                                     <caption style="padding-top: 50px;">
                                             
-                                            <p><b>Renu Cosmetics</b>-Logo &amp; Packaging</p>
-                                            <p class="slide_caption">Create a minimalist logo and packaging for organic, home-made skin care products by Renu Beauty. </p>
+                                            <p><b>Renu Beauty</b>-Logo Design</p>
+                                            <p class="slide_caption">Create minimalist logo options for home-made skin care products. </p>
                                          </caption>
                                 </div>
 
@@ -321,7 +321,7 @@
                                         <a onclick="toggleOpenClose('tribal_fit_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
                                         <img src="src/cases/tribal_fitness/tribal_fit_logo.jpg" loading="lazy" alt="fill in">
                                         <caption style="padding-top: 50px;">
-                                                <p><b>Tribal Fitness</b>-Branding &amp; Website Development </p>
+                                                <p><b>Tribal Fitness</b>-Branding &amp; Web Design  </p>
                                                 <p class="slide_caption">Create a bright &amp; welcoming brand to express the energy of Tribal Fitness's community. </p>
                                         </caption>
                                 </div>
@@ -330,8 +330,8 @@
                                         <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
                                         <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
                                     <caption style="padding-top: 50px;">
-                                            <p><b>Doc's Hemp Rx</b>-Website Development</p>
-                                            <p class="slide_caption" > Revamp the website for a historic, 141-year old mountain general store with a clean layout.</p>
+                                            <p><b>Doc's Hemp Rx</b>-Web Design</p>
+                                            <p class="slide_caption" > Build a website and online store that paralleled existing packaging.</p>
                                          </caption>
                                 </div>
                                 <div class="photo_frame" id="kats_frame" style="display: none;">
@@ -345,8 +345,8 @@
                                         <a href="https://debraaustin.com" target="_blank" rel="noopener"><img src="src/cases/finder_extras/website_btn.svg" class="case_study_btn" alt="View Website"></a>
                                         <img src="src/cases/finder_extras/debra_website.jpg" loading="lazy" alt="Debra Austin Website">
                                         <caption style="padding-top: 50px;">
-                                            <p><b>Debra Austin, JD, PhD</b>-Website Development</p>
-                                            <p class="slide_caption"> Design and develop a website for University of Denver Law Professor Debra Austin to house her research articles and blog. </p>
+                                            <p><b>Debra Austin, JD, PhD</b>-Web Design</p>
+                                            <p class="slide_caption"> Design and develop a website for Professor Debra Austin to house her research articles &amp; blog. </p>
                                         </caption>
                                 </div>
                                 <div class="photo_frame" id="wf_frame" style="display: none;">
@@ -354,7 +354,7 @@
                                         <img src="src/cases/west_flanders/menu_closeup.jpg" loading="lazy"  alt="Menu Rework Closeup">
                                         <caption style="padding-top: 50px;">
                                                 <p><b>West Flanders Brewing Co</b>-Menu Redesign</p>
-                                                <p class="slide_caption">Design a new menu layout focused on user-experience and clean design, while utilizing new brand elements. </p>
+                                                <p class="slide_caption">Design a new menu layout focused on user-experience and clean design. </p>
                                          </caption>
                                 </div>
                                 <div class="photo_frame" id="northern_frame" style="display: none;">
@@ -369,8 +369,8 @@
                                         <img src="src/cases/finder_extras/mech_computer.jpg" loading="lazy"  alt="University of Colorado Class of 2020 Mechanical Engineers website">    
                         
                                         <caption>
-                                            <p><b>University of Colorado</b>-Website Development</p>
-                                            <p class="slide_caption"> Using existing brand standards, design a website for Class of 2020 Mechanical Engineers featuring keynote videos and a gallery of 300+ students. </p>
+                                            <p><b>University of Colorado</b>-Web Design</p>
+                                            <p class="slide_caption"> Build a website for Class of '20 with keynote speeches and a gallery of 300+ students. </p>
                                         </caption>
                                 </div>
 
@@ -388,7 +388,7 @@
 
                                         <caption>
                                                 <p><b>Killa Nilla</b>-Album Artworks</p>
-                                                <p class="slide_caption"> Design abstract and psychedelic album covers to match the kaleidoscopic sounds of dubstep music created by artist Max Antoine (Killa Nilla). </p>
+                                                <p class="slide_caption"> Design album covers for dubstep artist Killa Nilla. </p>
                                         </caption>
                                 </div>
 
@@ -399,7 +399,7 @@
 
                                         <caption>
                                                 <p><b>The Miller Bros</b>-Sticker Designs</p>                                  
-                                                <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                                <p class="slide_caption">Design colorful stickers for two brothers and their VW Westfalia.</p>	
                                         </caption>
                                 </div>
 
@@ -409,14 +409,10 @@
 
                                         <caption>
                                                 <p><b>Boulder Baja</b>-Logo Design</p>                                  
-                                                <p class="slide_caption">Design a unique, eye-catching logo and stickers to compliment the adventures of two brothers and their Volkswagen Westfalia.</p>	
+                                                <p class="slide_caption">Create a logo for shirts and to embellish CU Boulder's BAJA racing team vehicle.</p>	
                                         </caption>
                                 </div>
-
-
-
-                            </div>
-                            <div class="photo_carousel">
+                                <div class="photo_carousel">
                                     <div class="instagram_tile" id="tlgs_tile">
                                         <button onclick="togglePhoto('tlgs_frame', 'tlgs_tile')" aria-label="toggle open/close">
                                             <img class="tile" src="src/cases/tlgs/ipad_tlgs.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
@@ -505,89 +501,76 @@
 
                         </div>
 
+
+                            </div>
+                            
+
                     </div>
 
-                    <div id="about_window" class="window" style="display: none;">
-                            <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
-                            <div class="about_content">
-                                <div class="about_section" id="section1" >
-                                        <ul class="flex-container">
-                                                <li class="flex-item">
-                                                    <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%;" alt="Portrait of Megan">
-                                                </li>
-                                                <li class="flex-item" class="mobile_column">
-                                                        <h1 class="about_h1">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1>
-                                                        <p>I’m an all-in-one, one-woman creative studio, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. </p>
-                                                </li>
-                                                
-                                              </ul>
-                                        <br>
-        
-                                </div>
-        
-                                <div class="about_section" id="section2" style="display: none;">
-                                    <h1 style="margin-top: 50px;">Skills &amp; Services</h1>
-                                    <p style="margin: 0px 50px 25px 50px;">My insatiable urge to create combined with infinite power of computers enables me to provide a diverse set of services perfect for entrepreneurs and small businesses. I specialize in catering my artistic tools to your creative vision and capturing the spirit of amazing individuals. Like you!  
-                                        </p>
-                                        <ul class="flex-container">
-                                                <li class="flex-item">
-                                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Web Development</p>
-                                                    <br>
-                                                    <ul>
-                                                        <li>HTML/CSS/JS</li>
-                                                        <li>Custom Wordpress Themes</li>
-                                                        <li>Wordpress / Squarespace / Wix</li>
-                                                        <li>Page Design &amp; Development</li>
-                                                        <li>E-Commerce</li>
-                                                        <li>Search Engine Optimization</li>
-                                                    </ul>
-                                                </li>
-                                                <br>
-                                                <li class="flex-item">
-                                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Graphic Design &amp; Illustration</p>
-                                                        <br>
-                                                        <ul>
-                                                            <li>Branding</li>
-                                                            <li>Logo Design</li>
-                                                            <li>Print / Digital Media</li>
-                                                            <li>Product Photos</li>
-                                                            <li>Packaging</li>
-                                                            <li>Vector Art</li>
-                                                        </ul>
-                                                    </li>
-                                                
-                                              </ul>
-                                        <br>
-        
-                                </div>
-                                <div class="about_section" id="section3" style="display: none;">
-                                        <ul class="flex-container">
-                                                <li class="flex-item">
-                                                    <img src="src/cases/about_me/alpine3.jpg" loading="lazy" style="width: 100%; margin-bottom: 25px;" alt="Portrait of Megan">
-                                                </li>
-                                                <li class="flex-item" class="mobile_column">
-                                                        <h1>A lil' something about Megan</h1>
-                                                        <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
-                                                        <br><br><a style="background: #2f335c; padding: 10px 20px 10px 20px; width: 100%; margin: 0;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Contact me - let's spill some ink!</a>
-        
-                                                    </li>
-                                                
-                                              </ul>
-                                        <br>
-        
-                                </div>
-        
-                                
-        
-        
+            <div id="about_window" class="window" style="display: none;">
+                <div class="window_closebar"><button onclick="toggleOpenClose('about_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About Design Elixir</p></div>
+                <div class="about_content">
+                    <div class="about_section" id="section1">
+                        <div class="about_col_left">
+                                <img src="src/cases/about_me/portrait.jpg" loading="lazy" style="width: 100%" alt="Portrait of Megan">
+                        </div>
+                        <div class="about_col_right">
+                                <h1 class="about_h1">Design Elixir houses the creative mind of Megan Byers and her quest to create media with brilliant character and user-experience.</h1>
+                                <p>I’m an all-in-one, one-woman creative studio, specializing in web development, graphic design and illustration. I believe great things come from great connections, and serving small businesses and entrepreneurs enables powerful relationships rooted in a collective, passionate vision. </p>
                             </div>
-                            <div class="about_menu">
-                                <a href="#section1" onclick="toggleOpenClose('section1')" class="about_menu_item"><h6>About Design Elixir</h6></a>
-                                <a href="#section2" onclick="toggleOpenClose('section2')" id="middle_about_menu_item" class="about_menu_item"><h6>Skills &amp; Services</h6></a>
-                                <a href="#section3" onclick="toggleOpenClose('section3')" class="about_menu_item"><h6>About Megan</h6></a>
-                            </div>
-                                
                     </div>
+
+                    <div class="about_section" id="section2" style="display: none;">
+                        <h1>Skills &amp; Services</h1>
+                        <p style="margin: 0px 25px;">My insatiable urge to create combined with infinite power of computers enables me to provide a diverse set of services perfect for entrepreneurs and small businesses. I specialize in catering my artistic tools to your creative vision and capturing the spirit of amazing individuals. Like you!</p>                
+                        <br>
+                                    <div class="about_col_left" >
+                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Graphic Design &amp; Illustration</p>
+                                        <ul>
+                                            <li>Branding</li>
+                                            <li>Logo Design</li>
+                                            <li>Print / Digital Media</li>
+                                            <li>Product Photos</li>
+                                            <li>Packaging</li>
+                                            <li>Vector Art</li>
+                                        </ul>
+                                        
+                                    </div>
+                                    <div class="about_col_right">
+                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Web Development</p>
+                                        <ul>
+                                            <li>HTML/CSS/JS</li>
+                                            <li>Custom Wordpress Themes</li>
+                                            <li>Wordpress / Squarespace / Wix</li>
+                                            <li>Page Design &amp; Development</li>
+                                            <li>E-Commerce</li>
+                                            <li>Search Engine Optimization</li>
+                                        </ul>
+            
+                                    </div>
+                    </div>
+                    <div class="about_section" id="section3" style="display: none;">
+                            <div class="about_col_left">
+                                <img src="src/cases/about_me/alpine3.jpg" loading="lazy" style="width: 100%;" alt="Photo of Megan on Colorado Trail">
+                            </div>
+                            <div class="about_col_right">
+                                <h1>A lil' something about Megan</h1>
+                                <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
+                                <!-- <br><br><a style="background: #2f335c; padding: 10px 20px 10px 20px; width: 100%; margin: 0;" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'>Contact me - let's spill some ink!</a> -->
+                            </div>
+                    </div>
+                </div>
+                <div class="about_menu">
+                     <button id="section1_btn">Design Elixir</button>
+                     <button id="section2_btn">Services</button>
+                     <button id="section3_btn">About Megan</button>
+
+                     
+
+                </div>
+                
+                    
+            </div>
 
             <div id="extras_window" class="window" style="display: none;">
             <div class="window_closebar"><button onclick="toggleOpenClose('extras_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Trash</p></div>
@@ -636,13 +619,14 @@
                     <div class="case_content">
                         <div class="artboard">
                             <div>
-                                <h1>The Miller Bros</h1>
+                                <h1 class="project_h1">The Miller Bros</h1>
                                 <h2>Logo and Sticker Design</h2>
                                 <br>
                             </div>
                             <div class="artboard_columnthird blu" >
                                 <p><b>March '20</b></p>
-                                <p><b>Tools: </b> Illustrator</p><br>
+                                <p><b>Tools: </b> Illustrator</p>
+                                <p><b>Scope: </b> Branding, Logo Design, Vector Art </p><br>
                                 <p> Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted colorful, organic illustrations based around the places visited in their baby blue 1982 Volkswagen Westfalia, Lars.  </p>
                             </div>
                             <div class="artboard_columntwothird">
@@ -690,13 +674,14 @@
                 <div class="case_content">
                     <div class="artboard">
                         <div>
-                            <h1>Doc's Hemp RX</h1>
+                            <h1 class="project_h1">Doc's Hemp RX</h1>
                             <h2>Website Development, Product Photos</h2>
                             <br>
                         </div>
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
                             <p><b>August '20</b></p>
-                            <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p><br>
+                            <p><b>Tools: </b>Wordpress, WooCommerce, Photoshop</p>
+                            <p><b>Scope: </b>Custom Wordpress Theme, Page Design, E-Commerce </p><br>
                             <p>working </p>
                         </div>
                        
@@ -720,15 +705,14 @@
                 <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
                 <div class="case_content">
                     <div class="artboard">
-                            <h1>West Flanders Brewing Company</h1>
+                            <h1 class="project_h1">West Flanders Brewing Company</h1>
                             <h2>Brand Development, Marketing Materials</h2>
                             <br>
                         <div class="blu">
                             <p><b>August '18 - January '20</b><br>
-                            <b>Tools: </b> Illustrator, InDesign, Lightroom, Squarespace</p><br>
-                            <p>
-                                Located on historic Pearl Street in Boulder, Colorado, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic.  
-                            </p>
+                            <p><b>Tools: </b> Illustrator, InDesign, Lightroom, Squarespace</p>
+                            <p><b>Scope: </b>Branding, Print / Digital Media, Product Photos</p><br>
+                            <p>Located on historic Pearl Street in Boulder, Colorado, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic.</p>
                         </div>
                         <br>
                         <div>
@@ -795,11 +779,14 @@
             <div class="case_content">
                     <div class="artboard">
                         <div>
-                            <h1>Vans Ultrarange Project</h1>
+                            <h1 class="project_h1">Vans Ultrarange Project</h1>
                             <p class="artboard_subtitle">Product Photos and Videos</p> <br>
                         </div>
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
-                            <p><b>October '17</b><br> <b>Tools: </b>Photoshop, Lightroom</p><br>
+                            <p><b>October '17</b></p><br>
+                            <p><b>Tools: </b>Photoshop, Lightroom</p>
+                            <p><b>Scope: </b>Product Photos</p><br>
+
                             <p>Following a <a style="color: black;" target="_blank" rel="noopener" href="https://youtu.be/v0mCY80knCU">486-mile backpacking trip across the Colorado Rockies</a> in a pair of Vans Hi-tops, I was commissioned by Vans to take photos and videos for their new line of UltraRange sneakers. This new line of sneakers expanded Vans into the outdoor industry by boasting durability and versatility for a variety of different environments, which I showcased during the fall season in the San Juan Mountains, Colorado.</p>
                         </div>
                 
@@ -838,11 +825,13 @@
                 <div class="case_content">
                     <div class="artboard">
                         
-                        <h1>Tribal Fitness</h1>
+                        <h1 class="project_h1">Tribal Fitness</h1>
                         <h2>Brand Design, Website Development, eCommerce </h2>
                         <br>
                         <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
-                                <p><b>July '20</b><br> <b>Tools: </b>Squarespace, Illustrator, Photoshop</p><br>
+                            <p><b>July '20</b><br>
+                            <p><b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
+                            <p><b>Scope: </b>Branding, Logo Design, Page Design, E-Commerce</p>
                             <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness.  Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
                             </div>
                     
@@ -884,14 +873,15 @@
                 
                 <div class="case_content">
                     <div class="artboard">
-                            <h1>Twin Lakes General Store </h1>      
+                            <h1 class="project_h1">Twin Lakes General Store </h1>      
                             <h2>Web Development, Product Photos, Social Media and Web Management</h2>                             
                             <br>
 
 
                         <div class="artboard_columnthird blu">
                             <p><b>February '20</b><br>
-                            <b>Tools: </b> Wordpress, WooCommerce, HTML/CSS, Illustrator</p><br>
+                            <p><b>Tools: </b> Wordpress, WooCommerce, Illustrator</p>
+                            <p><b>Scope: </b>Custom Wordpress Theme, E-Commerce, Product Photos</p>
                             <p>
                                 Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop to travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
                                 

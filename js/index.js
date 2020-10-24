@@ -95,8 +95,8 @@ POSTERmesh.position.set(2,1,-36);
 var cubeMaterials = [
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
     new THREE.MeshLambertMaterial({ color: 0x2E345B,wireframe: false}),
-    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/flooring_resized_optimized_v4.png')}),
-    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/ceiling_resized_optimized_v3.png')}),
+    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/flooring_resized_optimized_v5.png')}),
+    new THREE.MeshLambertMaterial({  map: loader.load('https://raw.githubusercontent.com/coloradical/Rae_Portfolio/master/src/webGL/ceiling_resized_optimized_v4.png')}),
   ];
 var cubeGeometry = new THREE.BoxGeometry(80,0,70);
 var floor = new THREE.Mesh(cubeGeometry,cubeMaterials);
@@ -178,11 +178,11 @@ uos(0.33, 0.48, p => (profile.style.width= ((p*30))+"%"));
 uos(0.33, 0.60, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
 
-uos(0.65, 0.7, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
-uos(0.68, 0.82, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.82, 0.97, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
-uos(0.92, 0.95, p => (splash_pages.style.left = (p*200)+"%"));
-uos(0.92, 0.95, p => (scrollArrow.style.left = (p*200)+"%"));
+uos(0.6, 0.65, p => (splash_page_wrapper.style.opacity =  ((p*50/updatedProgress)) ));
+uos(0.6, 0.7, p => (webDevelopmentSplash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.7, 0.85, p => (illustration_splash.style.opacity =  ((p*30/updatedProgress)) ));
+uos(0.88, 0.93, p => (splash_pages.style.left = (p*200)+"%"));
+uos(0.9, 0.95, p => (scrollArrow.style.left = (p*200)+"%"));
 uos(0.90, 1, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.97, 1, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
@@ -293,14 +293,25 @@ function toggleOpenClose(window_id) {
  
 
  if (tab.style.display === "block") {
+    document.getElementById('body').style.overflow = 'scroll';
+
     open.pop(tab);
     tab.style.display = "none";
     icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
     mobile_icons.style.animation = "fade-in .75s cubic-bezier(.39,.575,.565,1.000) both";
 
-  }else {
+  } else {
     tab.style.display = "block";
-    tab.style.animation = "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both";
+    console.log('fired');
+    document.getElementById('body').style.overflow = 'hidden';
+
+    if(window_id === 'mobile_notification_window'){
+      console.log('yep')
+      tab.style.animation = 'slide-in-top 0.5s cubic-bezier(.25,.46,.45,.94) both;'
+    } else {
+      tab.style.animation = "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both";
+
+    }
 
     var openWindow = open.length;
     if (open.length > 0) {
@@ -356,6 +367,39 @@ function togglePhoto(frame_name, tile_name) {
   {toggleOpenClose('instagram_window')});
 
 
+var section1 = document.getElementById('section1');
+var section2 = document.getElementById('section2');
+var section3 = document.getElementById('section3');
+console.log(section2);
+
+  document.getElementById('section1_btn').addEventListener("click", function()
+  {
+    section1.style.display = "block";
+    section1.style.animation = "fade-in 0.75s cubic-bezier(.0,.25,.75,1.000) both";
+    section2.style.display = "none";
+    section3.style.display = "none";
+});
+
+document.getElementById('section2_btn').addEventListener("click", function()
+  {
+    section1.style.display = "none";
+    section2.style.animation = "fade-in 0.75s cubic-bezier(.0,.25,.75,1.000) both";
+    section2.style.display = "block";
+    section3.style.display = "none";
+
+});
+
+
+
+document.getElementById('section3_btn').addEventListener("click", function()
+  {
+    section1.style.display = "none";
+    section2.style.display = "none";
+    section3.style.display = "block";
+    section3.style.animation = "fade-in 0.75s cubic-bezier(.0,.25,.75,1.000) both";
+
+});
+
 
 function trashOpenClose(window_id) {
   var trash = document.getElementById(window_id);
@@ -372,10 +416,24 @@ function changeTime(){
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const current = new Date();
   const month = months[current.getMonth()];
-  const dayWeek = days[current.getUTCDay()-1];
-  const day = current.getUTCDay();
+  const week = days[current.getUTCDay()];
+  const day = current.getUTCDate();
   
+  
+
   const hours = current.getHours();
+  var dayNumber = day;
+  var dayWeek = week;
+  if (hours >=0 && hours <= 6){
+    var dayNumber = day - 1;
+    var dayWeek = week - 1;
+    console.log('time is '+ hours);
+    console.log('day is' +dayNumber+dayWeek);
+  } else {
+    var dayNumber = day; 
+    var dayWeek = week;
+  }
+
   if (hours > 0 && hours <= 12) {
     timeValue= "" + hours;
   } else if (hours > 12) {
@@ -390,7 +448,7 @@ function changeTime(){
   else {space=""};
   document.getElementById("time").innerHTML = timeValue+":"+space+minutes+" "+nd;
   document.getElementById("mobile_time").innerHTML = timeValue+":"+space+minutes;
-  document.getElementById('mobile_date').innerHTML = dayWeek+", "+month+" "+day;
+  document.getElementById('mobile_date').innerHTML = dayWeek+", "+month+" "+dayNumber;
 }
 window.addEventListener("scroll", changeTime);
 window.addEventListener("click", changeTime);
