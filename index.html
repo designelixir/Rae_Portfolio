@@ -11,7 +11,7 @@
     
 
      <script type="text/javascript">
-     console.log('Last updated: 10.25.2020 20:17')
+     console.log('Last updated: 10.25.2020 21:35')
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
@@ -44,10 +44,10 @@
         <div class="page-wrapper" id="portfolio_page_wrapper">
         <img class="spinny" id="spinny_wheel" src="src/desktop_items/spinny.svg" alt="spinny loading wheel"> 
 
-        <div id="arrow">
+        <div class="mobile_hide" id="arrow">
                 <button id="bounce_arrow_button" onclick="scrollToPosition(3500)"><img class="downArrow bounce" src="src/arrow.gif" alt="Scroll down indicator"/></button>
         </div>
-        <div class="mobile_homepage mobile_reveal" id="mobile_homepage_wrapper" style="display: none;">
+        <div class="mobile_homepage mobile_show" id="mobile_homepage_wrapper" style="display: none;">
           
                 <div class="mobile_time">
                         <p id="mobile_time"></p>
@@ -132,7 +132,7 @@
         <div class="desktop_toolbar">
         
                 <div id="desktop_toolbar_left"> 
-                    <a href="#" onclick="unlock(false)" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
+                    <a href="#" onclick="unlock()" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
                     <a onclick="toggleOpenClose('about_window')" class="toolbar_hide mobile_hide">About</a>
                     <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide mobile_hide">Contact</a>
                     <a onclick="toggleOpenClose('notification')" class="toolbar_hide mobile_hide">Store</a>
@@ -991,7 +991,7 @@
                 </div>
         </div> 
 
-        <div class="mobile_dock_container" id="mobile_dock_container" >
+        <div class="mobile_dock_container mobile_show" id="mobile_dock_container" >
             <div class="dock" style="height: 100px; width: 100vw;">
                     
                 <button id="mobile_dock_finder" class="mobile_icon_button" aria-label="toggle open/close Project Window">
