@@ -357,9 +357,18 @@ if (open_frames.length === 0){
   tlgs.style.display = "block";
 }
 
+var all_instagram_tiles = document.getElementsByClassName('instagram_tile');
+console.log(all_instagram_tiles);
+
 function togglePhoto(frame_name, tile_name) {
   var frame = document.getElementById(frame_name);
-  document.getElementById(tile_name).scrollIntoView({inline: "center"});
+  var active_tile = document.getElementById(tile_name);
+  for (i=0; i<14; i++){
+    all_instagram_tiles[i].style.border = 'none';
+  }
+  active_tile.scrollIntoView({inline: "center"});
+  active_tile.style.border = '2px solid black';
+  
   
   if (open_frames.length > 0) {
     for (i = 0; i < open_frames.length; i++ ){
