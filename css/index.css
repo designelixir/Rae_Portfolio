@@ -408,7 +408,7 @@ button:hover {cursor: pointer; color:# }
 #about_window h1 {font-size: 1.25em !important; line-height: 1em; }
   .photo_frame img{max-height:250px;}
   .photo_carousel {bottom: -5px;}
-  .about_col_left, .about_col_right {width: 90%; margin: 30px 20px; height: auto; overflow-x: hidden; overflow-y: scroll;}
+  .about_col_left, .about_col_right {width: 90%; margin: 0px 20px 20px 20px; height: auto; overflow-x: hidden; overflow-y: scroll;}
   .about_col_left img {margin-top: 35px;}
   .about_section {width: 100%;}
   .photo_frame img{max-height:700px; height:80%; width:100%; object-fit:cover;}
@@ -477,7 +477,7 @@ button:hover {cursor: pointer; color:# }
 /* .mobile_homepage_context img {max-height: 100%;} */
 
 
-#mobile_logo {height: 65%; max-width: 240px;  animation: rotateStars 15s infinite; position: absolute; z-index: 3; }
+#mobile_logo {height: 63%; max-width: 240px;  animation: rotateStars 15s infinite; position: absolute; z-index: 3; }
 #mobile_moto {height: 100%;  max-height: 700px; width: 95%; max-width: 430px; }
 .mobile_time {width: 100%; font-size: 75px; color: white;  position: absolute;  }
 .mobile_toolbar {
@@ -505,7 +505,7 @@ button:hover {cursor: pointer; color:# }
   width: 100%; 
   max-width: 500px;
   background: #2c2c2c; 
-  height: 100px;
+  height: 80px;
   margin: 0px auto;
   bottom: 0;
   
