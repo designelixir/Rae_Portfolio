@@ -14,9 +14,14 @@
      console.log('Last updated: 10.24.2020 00:01')
      document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    console.log("its ready, slut!!!") 
+    
+    document.getElementById('spinny_wheel').style.display = 'none';
+    console.log("page loaded") 
   } else {
-      console.log('it aint');
+    document.getElementById('spinny_wheel').style.animation = 'fade-out .25s ease-out both';
+
+
+      console.log('page loading...');
   }
 };
      </script> 
@@ -38,6 +43,8 @@
 
       <canvas id="viewport" ></canvas> 
         <div class="page-wrapper" id="portfolio_page_wrapper">
+        <img class="spinny" id="spinny_wheel" src="src/desktop_items/spinny.svg" alt="spinny loading wheel"> 
+
         <div id="arrow">
                 <button id="bounce_arrow_button" onclick="scrollToPosition(3500)"><img class="downArrow bounce" src="src/arrow.gif" alt="Scroll down indicator"/></button>
         </div>
@@ -111,8 +118,8 @@
         <div id="splash_pages" id="splash_pages_wrapper">
             <div class="splash_page_wrapper">
             <img id="splash_context_text" src="src/splash+contexts/splash_context.svg" alt="What I can Offer you">
-                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/web.png" alt="Web Development: From page design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
-                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustrations.png" alt="Graphic Design & Illustration: We create clean and concise graphic design content that makes your brand stand out. Combined with illustrations, ranging from decorative elements for websites, logos, digital art, or even posters, add a custom and unique touch to all types of media. Services: Branding & Logo Design, Marketing Materials, Digital / Vector Art, Print and Digital Advertsiements">
+                <img class="splash_img" id="web_development_splash" src="src/splash+contexts/web_v11.jpg" alt="Web Development: From page design to web development and launch, Design Elixir is your one-stop shop for tailored and unique websites with functionality across all platforms. Services include: HTML/CSS/Javascript, Custom Wordpress Themes, Page Design, Development, E-Commerce">
+                <img class="splash_img" id="illustration_splash" src="src/splash+contexts/illustrations_v11.jpg" alt="Graphic Design & Illustration: We create clean and concise graphic design content that makes your brand stand out. Combined with illustrations, ranging from decorative elements for websites, logos, digital art, or even posters, add a custom and unique touch to all types of media. Services: Branding & Logo Design, Marketing Materials, Digital / Vector Art, Print and Digital Advertsiements">
             </div>    
             <!-- <div class="loading_scroller"></div> -->
   
@@ -215,7 +222,7 @@
                                     <span class="app_label">Tribal Fitness</span>
                                 </button></div>
                                 <div><button class="icon_button" onclick="toggleOpenClose('socials_mobile_window')" aria-label="open close Vans Project">
-                                    <img src="src/desktop_items/social_mobile.png" loading="lazy" alt="Social_Icons_mobile">
+                                    <img src="src/desktop_items/mobile_apps.svg" loading="lazy" alt="Social_Icons_mobile">
                                     <span class="app_label">Social Media</span>
                                 </button></div>
                         
@@ -228,7 +235,8 @@
             
 
             <div onclick="toggleOpenClose('socials_mobile_window')" id=socials_mobile_window class="window" style="display: none;">
-                
+                    <button onclick="toggleOpenClose('socials_mobile_window')"><img src="src/close.svg" style=" width: 30px; top: 24vh; left: 5%; z-index: 200; " id="mobile_notif_close" alt="close button"></button>
+
                     <div class=".scale-up-bl" id="socials_mobile_wrapper">
                             <div class="socials_mobile_container">
                                     <div class="socials_mobile_icons">
@@ -253,6 +261,12 @@
                                             <a class="icon_button" target="_blank" rel='noopener' href="https://www.instagram.com/meganbyers.jpeg/">
                                                 <img src="src/desktop_items/insta_app.png" loading="lazy" alt="Social_Icons_mobile">
                                                 <span class="social_app_label">Instagram</span>
+                                        </a>
+                                    </div>
+                                    <div class="socials_mobile_icons">
+                                            <a class="icon_button" target="_blank" rel='noopener' href="https://www.etsy.com/shop/DesignElixirStudio">
+                                                <img src="src/desktop_items/etsy.svg" loading="lazy" alt="Social_Icons_mobile">
+                                                <span class="social_app_label">Online Store</span>
                                         </a>
                                     </div>
                                     
@@ -418,7 +432,7 @@
                                         </caption>
                                 </div>
                                 <div class="photo_carousel">
-                                    <div class="instagram_tile" id="tlgs_tile">
+                                    <div class="instagram_tile" id="tlgs_tile" style="border: 2px solid black;">
                                         <button onclick="togglePhoto('tlgs_frame', 'tlgs_tile')" aria-label="toggle open/close">
                                             <img class="tile" src="src/cases/tlgs/ipad_tlgs.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
                                         </button>
@@ -530,7 +544,7 @@
                         <p style="margin: 0px 25px;">My insatiable urge to create combined with infinite power of computers enables me to provide a diverse set of services perfect for entrepreneurs and small businesses. I specialize in catering my artistic tools to your creative vision and capturing the spirit of amazing individuals. Like you!</p>                
                         <br>
                                     <div class="about_col_left" >
-                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Graphic Design &amp; Illustration</p>
+                                        <h1>Graphic Design &amp; Illustration</h1>
                                         <ul>
                                             <li>Branding</li>
                                             <li>Logo Design</li>
@@ -542,7 +556,7 @@
                                         
                                     </div>
                                     <div class="about_col_right">
-                                        <p style="font-size: 18px; font-family: 'GreycliffCF-Bold', sans-serif;">Web Development</p>
+                                        <h1><strong>Web Development</h1>
                                         <ul>
                                             <li>HTML/CSS/JS</li>
                                             <li>Custom Wordpress Themes</li>
