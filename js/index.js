@@ -284,6 +284,11 @@ function unlock(open){
   console.log(mobile_icons);
   var lock_icon=document.getElementById('lock');
   var mobile_dock = document.getElementById('mobile_dock_container');
+  for (i=0; i<8; i++){
+    console.log(mobile_icons[i]);
+    mobile_icons[i].style.animation = 'fade-in .25s cubic-bezier(.39,.575,.565,1.000) both';
+    mobile_icons[i].style.animation = 'scale-in-center 1s cubic-bezier(.25,.46,.45,.94) both';
+  }
   if (open) {
     lock_icon.style.animation = "fade-out .5s ease-out both";
     mobile_homepage.style.animation = "fade-out .5s ease-out both";
