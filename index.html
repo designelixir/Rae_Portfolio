@@ -13,17 +13,16 @@
      <script type="text/javascript">
      console.log('Last updated: 10.25.2020 20:17')
      document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    
-    document.getElementById('spinny_wheel').style.display = 'none';
-    console.log("page loaded") 
-  } else {
-    document.getElementById('spinny_wheel').style.animation = 'fade-out .25s ease-out both';
+        if (document.readyState === 'complete') {
+            document.getElementById('spinny_wheel').style.display = 'none';
+            console.log("page loaded");
+            
+        } else {
+            document.getElementById('spinny_wheel').style.animation = 'fade-out .25s ease-out both';
 
-
-      console.log('page loading...');
-  }
-};
+            console.log('page loading...');
+        }
+    };
      </script> 
     <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-171559896-1"></script>
     <script type="text/javascript">
