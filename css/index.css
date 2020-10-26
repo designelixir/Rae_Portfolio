@@ -472,7 +472,7 @@ button:hover {cursor: pointer; color:# }
   
 }
 
-.mobile_homepage_context { width: 100%; height: 70%; max-height: 500px; margin-top: 110px; display: flex; align-items: center; justify-content: center;}
+.mobile_homepage_context { width: 100%; height: 70%; max-height: 500px; margin-top: 33%; display: flex; align-items: center; justify-content: center;}
 /* .mobile_homepage_context img {max-height: 100%;} */
 
 
@@ -510,7 +510,7 @@ button:hover {cursor: pointer; color:# }
   
 }
 .unlock_slide_container {border: 1px solid gray; border-radius: 5px; margin: 10px; height: 40px; text-align: center;}
-#unlock_container {height: 100px; width: 100%; bottom: 0; position: absolute; display: flex; align-items: center;}
+#unlock_container {height: 100px; width: 100%; bottom: 0; position: absolute; display: flex; justify-content: center; align-items: center;}
 
 #unlock_btn {position: absolute;  left: 10px; background: rgba(198,202,223,.45); padding: 10px 30px; border-radius: 5px;}
 #unlock_text {animation:blink-1 10s infinite backwards}

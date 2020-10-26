@@ -265,6 +265,16 @@ window.addEventListener("scroll", updateCamera);
 else {
   document.getElementById('portfolio_page_wrapper').style.height = "100vh";
   document.getElementById('portfolio_page_wrapper').style.overflowY = "hidden";
+  document.getElementById('homepage_wrapper').style.display = 'none';
+  
+  var mobile_show = document.getElementsByClassName('mobile_show');
+  for (i=0; i<mobile_show.length; i++){
+    mobile_show[i].style.display = 'block';
+  }
+  var mobile_hide = document.getElementsByClassName('mobile_hide');
+  for (i=0; i<mobile_hide.length; i++){
+    mobile_hide[i].style.display = 'none';
+  }
   var hide_homepage = document.getElementById('homepage_wrapper');
   var hide_arrow = document.getElementById('arrow');
   hide_homepage.classList.add('mobile_hide');
@@ -281,29 +291,22 @@ else {
 function unlock(open){
   var mobile_homepage = document.getElementById('mobile_homepage_wrapper');
   var mobile_icons = document.getElementsByClassName('app');
-  console.log(mobile_icons);
   var lock_icon=document.getElementById('lock');
   var mobile_dock = document.getElementById('mobile_dock_container');
   for (i=0; i<8; i++){
-    console.log(mobile_icons[i]);
+  
     mobile_icons[i].style.animation = 'fade-in .25s cubic-bezier(.39,.575,.565,1.000) both';
     mobile_icons[i].style.animation = 'scale-in-center 1s cubic-bezier(.25,.46,.45,.94) both';
   }
   if (open) {
     lock_icon.style.animation = "fade-out .5s ease-out both";
     mobile_homepage.style.animation = "fade-out .5s ease-out both";
-    mobile_homepage.style.zIndex = '-100';
-    
-    console.log(mobile_icons);
-    // for(i=0; i < 7; i++){
-    //   var thatApp = (mobile_icons[i]);
-    //   console.log(thatApp);
-    //   thatApp.style.animation = 'slide-in-bck-center 5s cubic-bezier(.25,.46,.45,.94) both';
-    // }
+    mobile_homepage.style.display = "none";
     mobile_dock.style.animation = "slide-in-fwd-bottom 0.75s cubic-bezier(.25,.46,.45,.94) both";
     
   } else {
-    mobile_homepage.style.zIndex="10";
+    mobile_homepage.style.display = "block";
+    mobile_homepage.style.Zindex= "20";
     lock_icon.style.opacity = '1';
 
   }
@@ -363,7 +366,6 @@ if (open_frames.length === 0){
 }
 
 var all_instagram_tiles = document.getElementsByClassName('instagram_tile');
-console.log(all_instagram_tiles);
 
 function togglePhoto(frame_name, tile_name) {
   var frame = document.getElementById(frame_name);
