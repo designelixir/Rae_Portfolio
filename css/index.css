@@ -143,7 +143,7 @@ button:hover {cursor: pointer; color:# }
  
  /* Desktop Framework CSS ------------------------------------------------------------------------------- */
 .desktop {position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-size: cover; background-image: url("../src/desktop_items/mountain_wallpaper.svg");  background-color: #2E345B; z-index: 0; }
-#desktop_window_wrapper {width: 100%; height: 90%; top: 50px; position: fixed; z-index: 0;  margin: 60px 0px 60px 0px;  display: flex; justify-content: center; align-items: center;  }
+#desktop_window_wrapper {width: 100%; height: 90%; top: 50px; position: fixed; z-index: 0; display: flex; justify-content: center; align-items: center;  }
 .desktop_toolbar {width: 100%; z-index: 10000; background-color: #2c2c2c; display: inline-block; height: 40px; display: flex; align-items: center; color: white; font-size: 16px; overflow: hidden; }
 #desktop_toolbar_left { width: 55%; float: left;  padding-left: 15px;}
 #desktop_toolbar_left a {padding-right: 10px;}
@@ -202,8 +202,8 @@ button:hover {cursor: pointer; color:# }
 
 
 /* Window CSS ------------------------------------------------------------------------------------------------------- */
-.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; top: 60px; height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
-.case .window_closebar {position: sticky; position: -webkit-sticky;}
+.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; left: 5%; height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
+.case .window_closebar {position: sticky; position: -webkit-sticky; }
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4;  overflow-x: hidden; border-bottom: #3A4172 1px solid; position: -webkit-sticky; position: sticky; text-align: center; z-index: 20; }
 .window_closebar p {display: inline-block; margin-top: 5px;  color: #c6cadf;}
 .close_btn { height: 20px; left: 10px; top: 5px; position: absolute; } 
@@ -317,7 +317,7 @@ button:hover {cursor: pointer; color:# }
 
 
 /* Case Studies Window CSS --------------------------------------------------------------------------- */
-.artboard{height: 500px; padding: 50px;}
+.artboard{height: 500px; padding: 50px; }
 .case {width: 95%; max-width: 1100px; height: calc(100% - 200px); top: 50px; background-color: #ececec; background-size: contain; overflow: auto;}
 .artboard img {  margin: 0% 1% 1% 0%;}
 
@@ -335,7 +335,7 @@ button:hover {cursor: pointer; color:# }
 .artboard_columnthird {float: left; right: 0; margin: 0px 25px 50px 0px; width: 100%;}
 .artboard_columntwothird {float: left; right: 0; margin: 0px; width: 100%;}
 .artboard_columnfifty {float: left; right: 0; margin: 0px; width: 100%;}
-#overlap_tlgs_img { transform: translateX(0px)}
+.overlap_img { transform: translateX(0px)}
 #tlgs_section_h3 {margin: 0px 0px 50px 0px}
 #tlgs_section_h3 h3 {margin-top: 25px;}
 .artboard_columnthird p {margin-top: 0px; margin-bottom: 0px;}
@@ -348,11 +348,11 @@ button:hover {cursor: pointer; color:# }
 @media screen and (min-width: 1100px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
   .artboard_columntwothird {right: 0; width: 66%;} 
-  #overlap_tlgs_img { transform: translateX(-50px)}
+  .overlap_img { transform: translateX(-40px)!important;}
   .artboard_columnfifty {float: left; right: 0; margin: 0px; width: 50%;}
   .caption {text-align: left;}
-  #tlgs_section_h3 {margin: 0px 0px 50px 50px}
-  #tlgs_section_h3 h3 {margin-top: 0px;}
+  .tlgs_section_h3 {margin: 0px 0px 50px 50px}
+  .tlgs_section_h3 h3 {margin-top: 0px;}
 
 }
 
