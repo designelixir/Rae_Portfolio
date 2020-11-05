@@ -353,7 +353,8 @@ button:hover {cursor: pointer; color:# }
 .wf_poster img {max-width: 100%;}
 .wf_tri_poster_container {display: table; width: 100%; white-space: nowrap; height: 100px;}
 .project_h1 {line-height: 45px;}
-.tincture {display: none;}
+.tincture img{width: 100%;}
+
 
 @media screen and (min-width: 1100px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
@@ -426,6 +427,8 @@ button:hover {cursor: pointer; color:# }
   .photo_frame img{max-height:700px; height:80%; width:100%; object-fit:cover;}
   .tincture {display: block;}
   #ct_portrait {margin-top: 175px;}
+  #docs_flex_column {order: -1 !important;}
+  #docs_flex_column2 {order: 2;}
 }
 
 
