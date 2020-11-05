@@ -461,7 +461,7 @@ button:hover {cursor: pointer; color:# }
 @-webkit-keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
 .scale-up-bl{-webkit-animation:scale-up-bl 1s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-bl 1s cubic-bezier(.39,.575,.565,1.000) both}
 @-webkit-keyframes scale-up-bl{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}@keyframes scale-up-bl{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:0 100%;transform-origin:0 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 100%;transform-origin:0 100%}}
-.blink-1{-webkit-animation:blink-1 3s infinite backwards; animation:blink-1 3s infinite backwards}
+.blink-1{-webkit-animation:blink-1 5s infinite backwards; animation:blink-1 5s infinite backwards}
 @-webkit-keyframes blink-1{0%,50%,100%{opacity:1}25%,75%{opacity:0.25}}@keyframes blink-1{0%,50%,100%{opacity:1}25%,75%{opacity:0.25}}
 .slide-in-fwd-center{-webkit-animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both}
 @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
@@ -522,13 +522,13 @@ button:hover {cursor: pointer; color:# }
   width: 100%; 
  
   background: #2c2c2c; 
-  height: 60px;
+  height: 50px;
   margin: 0px auto;
   bottom: 0;
   
 }
-.unlock_slide_container {border: 1px solid gray; border-radius: 5px; margin: 10px; height: 40px; text-align: center;}
+.unlock_slide_container {border: 1px solid gray; border-radius: 5px; margin: 10px; height: 30px; text-align: center;}
 #unlock_container {height: 100px; width: 100%; bottom: 0; position: absolute; display: flex; justify-content: center; align-items: center;}
 
-#unlock_btn {position: absolute;  left: 10px; background: rgba(198,202,223,.45); padding: 10px 30px; border-radius: 5px;}
+#unlock_btn {position: absolute; color: white; left: 10px; background: rgba(198,202,223,.45); padding: 5px 30px; border-radius: 5px;}
 #unlock_text {animation:blink-1 10s infinite backwards}
