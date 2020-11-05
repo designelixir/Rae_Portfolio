@@ -11,7 +11,7 @@
     
 
      <script type="text/javascript">
-    alert('Last updated: 11.4.2020 21:49');
+    alert('Last updated: 11.4.2020 22:08');
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
@@ -62,7 +62,7 @@
                     <div id="unlock_container">
                         <div class="unlock_mobile">
                                 <div class="unlock_slide_container">
-                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 35%; bottom: 20px; color: white;">Slide to Unlock</p>
+                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 45%; bottom: 20px; color: white;">Slide to Unlock</p>
                                     <div id="unlock">
                                         <button id="unlock_btn" onclick="unlock(true)">-> </button>
                                     </div>
@@ -571,12 +571,13 @@
                     </div>
                     <div class="about_section" id="section3" style="display: none;">
                             <div class="about_col_left">
-                                <img src="src/cases/about_me/alpine3.jpg" loading="lazy" style="width: 100%;" alt="Photo of Megan on Colorado Trail">
+                            
+                                <img src="src/cases/about_me/alpine3.jpg" loading="lazy" id="ct_portrait" style="width: 100%;" alt="Photo of Megan on Colorado Trail">
                             </div>
                             <div class="about_col_right">
                                 <h1>A lil' something about Megan</h1>
                                 <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
-                                <br><br>
+                                <br><br><br><br>
                             </div>
                     </div>
                 </div>
@@ -595,18 +596,18 @@
             <div id="extras_window" class="window" style="display: none;">
             <div class="window_closebar"><button onclick="toggleOpenClose('extras_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>Trash</p></div>
             <br><br>
-                    <div class="trash_container">
-                            <div class="socials_mobile_icons">
-                                    <button class="trash_icon icon_button" onclick="trashOpenClose('mia2'); onclick=trashOpenClose('mia3');"><img src="src/desktop_items/mia.svg" loading="lazy" style="width: 80px;" alt="Mia folder button" ></button>
-                            </div>
-                            <div class="socials_mobile_icons">
-                                    <button class="trash_icon icon_button" onclick="trashOpenClose('terminal_window'); "><img src="src/desktop_items/terminal.svg" style="width: 80px;" loading="lazy" alt="Website Stats Button"></button>
-                            </div>
-                            <div class="socials_mobile_icons">
-                                    <a class="icon_button" href="https://www.youtube.com/watch?v=v0mCY80knCU" target="_blank" rel="noopener" style="cursor: alias;"><img src="src/desktop_items/youtube.svg" alt ="youtube video button" loading="lazy" ></a>
-                            </div>
-                            
+            <div class="trash_container">
+                    <div class="socials_mobile_icons">
+                            <button class="trash_icon icon_button" onclick="trashOpenClose('mia2'); onclick=trashOpenClose('mia3');"><img src="src/desktop_items/mia.svg" loading="lazy" style="width: 80px;" alt="Mia folder button" ></button>
                     </div>
+                    <div class="socials_mobile_icons">
+                            <button class="trash_icon icon_button" onclick="trashOpenClose('terminal_window'); "><img src="src/desktop_items/terminal.svg" style="width: 80px;" loading="lazy" alt="Website Stats Button"></button>
+                    </div>
+                    <div class="socials_mobile_icons">
+                            <a class="icon_button" href="https://www.youtube.com/watch?v=v0mCY80knCU" target="_blank" rel="noopener" style="cursor: alias;"><img src="src/desktop_items/youtube.svg" alt ="youtube video button" loading="lazy" ></a>
+                    </div>
+                    
+            </div>
             </div>
             <div id="terminal_window" class="window" style="display: none;">
                 <div class="window_closebar"><button onclick="trashOpenClose('terminal_window')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button><p>About This Site</p></div>
@@ -1024,28 +1025,32 @@
         </div> 
 
         <div class="mobile_dock_container mobile_show" id="mobile_dock_container" >
-            <div class="dock" style="height: 100px; width: 100vw;">
+            <div id="mobile_dock_wrapper">
+                    <div class="dock" style="height: 100px; width: 100vw; max-width: 400px;">
                     
-                <button id="mobile_dock_finder" class="mobile_icon_button" aria-label="toggle open/close Project Window">
-                    <img class="mobileIcons" src="src/desktop_items/finder.svg" alt="Projects">
-                    
-                </button>
-
-
-                <button class="mobile_icon_button" onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window">
-                    <img class="mobileIcons" src="src/desktop_items/portfolio.svg" alt="About">
-                    
-
-                </button>
-                <button class="mobile_icon_button" onclick="toggleOpenClose('mobile_notification_window')" aria-label="toggle open/close Email Me Window">
-                    <img class="mobileIcons" src="src/desktop_items/mail.svg" alt="Contact">
-                    
-
-                </button>
-
-                
+                            <button id="mobile_dock_finder" class="mobile_icon_button" aria-label="toggle open/close Project Window">
+                                <img class="mobileIcons" src="src/desktop_items/finder.svg" alt="Projects">
+                                
+                            </button>
+            
+            
+                            <button class="mobile_icon_button" onclick="toggleOpenClose('about_window')" aria-label="toggle open/close about window">
+                                <img class="mobileIcons" src="src/desktop_items/portfolio.svg" alt="About">
+                                
+            
+                            </button>
+                            <button class="mobile_icon_button" onclick="toggleOpenClose('mobile_notification_window')" aria-label="toggle open/close Email Me Window">
+                                <img class="mobileIcons" src="src/desktop_items/mail.svg" alt="Contact">
+                                
+            
+                            </button>
+            
+                            
+                            
+                        </div>
                 
             </div>
+            
         </div>
                  
 
