@@ -40,7 +40,7 @@ camera.position.set(0, 1, 18);
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
 
-let renderer = new THREE.WebGLRenderer({
+var renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: document.getElementById("viewport")
 });
