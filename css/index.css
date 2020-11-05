@@ -190,13 +190,16 @@ button:hover {cursor: pointer; color:# }
   animation:slide-in-top 0.75s cubic-bezier(.25,.46,.45,.94) both;
   
 }
+
+#mobile_notification_wrapper {width: 100%; height: 75px;  display: flex; align-items: center; justify-content: center; }
+
 #mobile_notification img{
   width: calc(100% - 10px); 
   margin: 0px 5px;
 }
 
 #mobile_notif_close {
-  margin: 30px 0px 25px 0px;
+  margin: 35px 0px 25px 0px;
   width: 20px;
   position: fixed;
 }
@@ -389,10 +392,9 @@ button:hover {cursor: pointer; color:# }
 .mobile_reveal {display: none;}
 
 @media screen and (max-width: 500px) {
-  /* .page-wrapper {height: 100vh;} */
   body {overflow-y: hidden; width: 100vw; height: 100vh;}
   .window {top: 50px; left: 2px; width: 100vw;}
- #logo {max-width: 325px !important; width: 35%;}
+  #logo {max-width: 325px !important; width: 35%;}
   #finder_window {height: calc(100% - 150px);  top: 40px; }
   #finder_carousel {display: none;}
   .artboard {padding: 30px 25px;}
@@ -414,9 +416,9 @@ button:hover {cursor: pointer; color:# }
   #photo_viewer{ top: 65px !important;}
   #mobile_wifi {display: block; float: right;}
   .mobile_column {padding-left: 0!important;}
-  #about_window {width: 100%; height: calc(100% - 100px); max-height: 400px; }
-  .about_content {overflow-y: scroll!important; margin-bottom: 20px;}
-#about_window h1 {font-size: 1.25em !important; line-height: 1em; }
+  #about_window {width: 100%; top: 40px; max-height: 100%; }
+  .about_content {overflow-y: scroll!important; }
+  #about_window h1 {font-size: 1.25em !important; line-height: 1em; }
 
   .photo_frame {margin-top: 25px;}
  

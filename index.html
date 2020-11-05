@@ -11,7 +11,7 @@
     
 
      <script type="text/javascript">
-    alert('Last updated: '+ document.lastModified);
+    alert('TESTING MODE \n Last updated: '+ document.lastModified);
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
@@ -132,7 +132,7 @@
         <div class="desktop_toolbar">
         
                 <div id="desktop_toolbar_left"> 
-                    <a href="#" onclick="unlock()" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
+                    <a href="#" onclick="unlock(false)" id="de_link" class="toolbar_design_elixir"><b> Design Elixir</b></a>
                     <a onclick="toggleOpenClose('about_window')" class="toolbar_hide mobile_hide">About</a>
                     <a onclick="toggleOpenClose('contact_window')" class="toolbar_hide mobile_hide">Contact</a>
                     <a onclick="toggleOpenClose('notification')" class="toolbar_hide mobile_hide">Store</a>
@@ -151,11 +151,13 @@
             
         </div>
         <a onclick="toggleOpenClose('notification')"><img id="notification" src="src/desktop_items/notif2.svg" loading="lazy" alt="Notification: The Design Elixir Store is not ready yet. Check back soon!"></a>   
-
+        <div id="mobile_notification_wrapper">
         <div class="slide-in-top" id="mobile_notification_window" style="display: none;">
-            <button onclick="toggleOpenClose('mobile_notification_window')"><img src="src/close.svg" id="mobile_notif_close" alt="close button"></button>
-            <a id="mobile_notification" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'><img src="src/desktop_items/mobile_notification.png" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
-        </div>
+            
+                <button onclick="toggleOpenClose('mobile_notification_window')"><img src="src/close.svg" id="mobile_notif_close" alt="close button"></button>
+                <a id="mobile_notification" aria-label="Send an Email to Megan" href="mailto:megan@designelixir.studio" target="_blank" rel='noopener'><img src="src/desktop_items/mobile_notification.png" loading="lazy" alt="Contact me at Megan@designelixir.studio"></a>   
+            
+        </div></div>
         
         <div id="desktop_window_wrapper">
                 
@@ -570,15 +572,16 @@
                                     </div>
                     </div>
                     <div class="about_section" id="section3" style="display: none;">
-                            <div class="about_col_left">
-                            
-                                <img src="src/cases/about_me/alpine3.jpg" loading="lazy" id="ct_portrait" style="width: 100%;" alt="Photo of Megan on Colorado Trail">
+                            <div class="about_col_left" id="about_sec3_left_col">
+                                
+                                    <img src="src/cases/about_me/alpine3.jpg" loading="lazy" style="width: 100%" alt="Portrait of Megan">
                             </div>
                             <div class="about_col_right">
-                                <h1>A lil' something about Megan</h1>
-                                <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
-                                <br><br><br><br>
-                            </div>
+                                    <h1>A lil' something about Megan</h1>
+                                    <p>Megan strives to learn a little something about everything. Raised on the Colorado Rockies, you can find her on alpine trails dancing like nobody’s watching. She finds inspiration everywhere, but especially in wild flowers. In case you were wondering what Megan’s done on any given day since May 23rd, 2013, she can pull up a journal entry from any day from then to now. Within these pages you’ll find a drive for new skills and experiences that never sleeps. Whether it be coding, painting, fly-fishing, growing a garden or cooking a mean ribeye steak, Megan is curious and eager to tackle challenges head on. </p>
+                                   <br><br>
+                                </div>
+                            
                     </div>
                 </div>
                 <div class="about_menu">
@@ -827,7 +830,7 @@
                             <div class="artboard">
                                 <div>
                                     <h1 class="project_h1">Vans Ultrarange Project</h1>
-                                    <p class="artboard_subtitle">Product Photos and Videos</p> <br>
+                                    <h2>Product Photos and Videos</h2> <br>
                                 </div>
                                 <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
                                     <p><b>October '17</b></p>
@@ -921,7 +924,7 @@
                         <div class="case_content">
                             <div class="artboard">
                                     <h1 class="project_h1">Twin Lakes General Store </h1>      
-                                    <h2>Custom Wordpress Theme, E-Commerce, Product Photos, Social Media and Web Management</h2>                             
+                                    <h2>Custom Wordpress Theme, E-Commerce, Product Photos</h2>                             
                                     <br>
         
         
@@ -941,7 +944,7 @@
                                 </div>
                                
                                 <div class="artboard_columnfifty">
-                                    <img src="src/cases/tlgs/backpacker_screenshot.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
+                                    <img src="src/cases/tlgs/backpacker_screenshot.png" class="tlgs_screenshot" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
                                 
                                 </div>
                                 <div class="artboard_columnfifty" >
@@ -949,7 +952,7 @@
                                         <h3 class="tlgs_flex_text">As a popular resupply spot for backpackers, hikers and campers, the general store needed a website that could convey information to future mountain adventurers.</h3>
                                         <p class="blu tlgs_flex_text">Featuring hand-illustrated touches, paired with striking images and bold red elements to parallel the bright red paint of the store building, this site is intended to exude the personality of a historically rich spot while providing a modern, youthful approach to business. </p>
                                     </div>
-                                        <img src="src/cases/tlgs/homepage_screenshot.png" class="tlgs_screenshot overlap_img" style="width: calc(100% + 50px); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
+                                        <img src="src/cases/tlgs/homepage_screenshot.png" class="tlgs_screenshot overlap_img" style="width: calc(100% + 50px); margin-top: 15px; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
         
                                 </div>
                                 <div class="artboard_bottom" style="padding-top: 25px;">
@@ -969,7 +972,7 @@
                                     <div class="artboard_response_column" style="margin: 50px 0px; text-align: center;">
                                         <img style="float: left;  box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
                                         <br>
-                                        <p > Megan has been a great asset to my small business by helping us transition away 
+                                        <p> Megan has been a great asset to my small business by helping us transition away 
                                             from an out-of-date website and social media we inherited from former owners.  
                                             From great concept and design, tech fixes and consulting, art, photography, and helping 
                                             get an online shopping platform built. I’ve never seen someone be so engaged and work so 
@@ -987,6 +990,7 @@
                                 </div>
                                 <div class="artboard_navigation">
                                         <a style="margin: 50px;" onclick="toggleOpenClose('miller_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                        <br>
                                 </div>
                         
                                 
