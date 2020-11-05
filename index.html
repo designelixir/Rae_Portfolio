@@ -11,7 +11,7 @@
     
 
      <script type="text/javascript">
-    alert('Last updated: 11.4.2020 22:47');
+    alert('Last updated: '+ document.lastModified);
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
@@ -50,7 +50,7 @@
         <div class="mobile_homepage mobile_show" id="mobile_homepage_wrapper" style="display: none;">
           
                 <div class="mobile_time">
-                        <p id="mobile_time"></p>
+                        <p id="mobile_time">hi :-)</p>
                         <p id="mobile_date"></p>
                 </div>
             
@@ -317,7 +317,7 @@
 
                                 <div class="photo_frame" id="vans_frame" style="display: none;">
                                         <a onclick="toggleOpenClose('vans_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button" ></a>
-                                        <img src="src/cases/vans/vans_post_v2.webp" loading="lazy" alt="megan on skateboard">
+                                        <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src = 'src/cases/vans/backup_vans.gif'"; loading="lazy" alt="Vans instagram post featuring my photos">
 
                                     <caption style="padding-top: 50px;">
                                             
@@ -347,7 +347,7 @@
 
                                 <div class="photo_frame" id="docs_frame" style="display: none;">
                                         <a onclick="toggleOpenClose('docs_project')"><img src="src/cases/finder_extras/case_study_btn.svg" class="case_study_btn" alt="View Case Study button"></a>
-                                        <img src="src/cases/docs_hemp/docs_photo_2.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                        <img src="src/cases/docs_hemp/docs_photo_2.jpg" loading="lazy" alt="docs hemp rx tinctures and website">
                                     <caption style="padding-top: 50px;">
                                             <p><b>Doc's Hemp Rx</b>-Web Design</p>
                                             <p class="slide_caption" > Build a website and online store that paralleled existing packaging.</p>
@@ -452,7 +452,7 @@
                                     </div>
                                     <div class="instagram_tile" id="docs_tile">
                                             <button onclick="togglePhoto('docs_frame', 'docs_tile')" aria-label="toggle open/close">
-                                                <img src="src/cases/docs_hemp/bottle_leaf_upclose.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
+                                                <img src="src/cases/docs_hemp/docs_photo_2.jpg"  loading="lazy" alt="twin lakes general store website on an ipad">
                                             </button>
                                             
                                     </div>
@@ -464,7 +464,7 @@
                                     </div>
                                     <div class="instagram_tile" id="vans_tile">
                                             <button onclick="togglePhoto('vans_frame', 'vans_tile')" aria-label="toggle open/close">
-                                                <img src="src/cases/vans/vans_post_v2.webp"  loading="lazy" alt="megan on skateboard">
+                                                <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src = 'src/cases/vans/backup_vans.gif'"; loading="lazy" alt="Vans instagram post featuring my photos">
                                             </button>
                                             
                                     </div>
@@ -712,8 +712,8 @@
                                     <p class="caption">The Doc's Hemp RX website was designed to match existing packaging.</p> 
                                 </div>
                                 <div class="artboard_columnfifty">
-                                    <img src="src/cases/docs_hemp/screenshot_docs_3.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
-                                    <img src="src/cases/docs_hemp/docs_tinctures.gif" class="mobile_hide" style="margin-top: 65px; width: 80%;" loading="lazy" alt="tincture product photos">
+                                    <img src="src/cases/docs_hemp/screenshot_docs_3.png" class="tlgs_screenshot" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
+                                    <img src="src/cases/docs_hemp/docs_tinctures.gif"  style="margin-top: 65px; width: 80%;" class="tincture" loading="lazy" alt="tincture product photos">
                                     
         
                                 </div>
@@ -723,11 +723,11 @@
                                         <p class="blu tlgs_flex_text">The site needed to be easy to use and invite customers with a variety of ailments to try high-quality hemp products with simple, organic ingredients. The homepage educates customers of the superior manufacturing process of Doc's Hemp RX tinctures and its mission to provide an affordable natural remedy to those who could benefit from it the most. Designed with fonts, coloring, and graphic elements parallel to the existing vintage-style packaging, Doc’s Hemp RX website stands out against the typically industrial layout of other hemp product websites. </p>
                                         <br>
                                     </div>
-                                    <img src="src/cases/docs_hemp/test_docs_gif.gif" class="tlgs_screenshot tincture" style="width: 100%; margin-bottom: 25px;  box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
+                                    <!-- <img src="src/cases/docs_hemp/test_docs_gif.gif" class="tlgs_screenshot tincture" style="width: 100%; margin-bottom: 25px;  box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement"> -->
         
-                                    <img src="src/cases/docs_hemp/docs_screenshot_2.png" class="tlgs_screenshot overlap_img mobile_hide" style="width: calc(100% + 50px); margin-bottom: 100px; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of product page on Doc's Hemp RX site">
+                                    <img src="src/cases/docs_hemp/docs_screenshot_2.png" class="tlgs_screenshot overlap_img " style="width: calc(100% + 50px); margin-bottom: 100px; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of product page on Doc's Hemp RX site">
         
-                                    <img src="src/cases/docs_hemp/docs_tinctures.gif" class="tincture" style="width: 100%;" loading="lazy" alt="tincture product photos">
+                                    <!-- <img src="src/cases/docs_hemp/docs_tinctures.gif" class="tincture" style="width: 100%;" loading="lazy" alt="tincture product photos"> -->
         
                                 </div>
                                 <br>
@@ -854,7 +854,7 @@
                                         </div>
                                         <div class="artboard_response_column">
                                             <img src="src/cases/vans/tpose.jpg" loading="lazy" style="width:100%" alt="megan on fence in sneakers">
-                                            <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src='src/cases/vans/vans_tags.gif'" id="vans_hide" loading="lazy" style="width:100%" alt="megan on skateboard">
+                                            <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src = 'src/cases/vans/backup_vans.gif'"; loading="lazy" alt="Vans instagram post featuring my photos">
                                         </div>  
                                         
                                 </div>
@@ -1026,7 +1026,7 @@
 
         <div class="mobile_dock_container mobile_show" id="mobile_dock_container" >
             <div id="mobile_dock_wrapper">
-                    <div class="dock" style="height: 100px; width: 100vw; max-width: 400px;">
+                    <div class="dock" style="height: 100px; width: 100vw; max-width: 420px;">
                     
                             <button id="mobile_dock_finder" class="mobile_icon_button" aria-label="toggle open/close Project Window">
                                 <img class="mobileIcons" src="src/desktop_items/finder.svg" alt="Projects">

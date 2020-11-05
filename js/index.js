@@ -295,7 +295,7 @@ function unlock(open){
   var lock_icon=document.getElementById('lock');
   var mobile_dock = document.getElementById('mobile_dock_container');
 
-  if (open && window.innerWidth < 400) {
+  if (open && window.innerWidth < 450) {
     console.log("condition 1");
     lock_icon.style.animation = "fade-out .5s ease-out both";
     mobile_homepage.style.animation = "fade-out .5s ease-out both";
