@@ -194,9 +194,15 @@ button:hover {cursor: pointer; color:# }
 }
 
 #mobile_notif_close {
-  margin: 30px 0px 25px 0px;
+  margin: 0px 0px 25px -5px;
   width: 20px;
   position: fixed;
+  z-index: 200;
+  width: 30px;
+}
+
+#mobile_notif_close:hover {
+  transform: scale(5x);
 }
 
 
@@ -211,7 +217,7 @@ button:hover {cursor: pointer; color:# }
 
 /* About Window CSS ---------------------------------------------------------------------------------------------------- */
 
-#about_window {width: 98%; max-width: 900px;  max-height:450px; background:#ececec; top: 25%;}
+#about_window {width: 98%; max-width: 900px;  max-height:450px; background:#ececec;}
 .about_menu {width: 100%; bottom: 0px;  position: absolute;  background: #49588b; height: 40px; z-index: 10; align-items: center; }
 .about_menu button {width: 32%; margin-top: 10px; font-family: 'GreycliffCF-Thin', sans-serif; text-transform: uppercase; font-size: 0.85rem; color: white;}
 #middle_about_menu_item {border: 1px solid white; border-style: none solid none solid;}

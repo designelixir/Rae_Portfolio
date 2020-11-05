@@ -11,7 +11,7 @@
     
 
      <script type="text/javascript">
-     console.log('Last updated: 10.25.2020 21:35')
+    alert('Last updated: 11.4.2020 21:49');
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
@@ -234,8 +234,6 @@
             
 
             <div onclick="toggleOpenClose('socials_mobile_window')" id=socials_mobile_window class="window" style="display: none;">
-                    <button onclick="toggleOpenClose('socials_mobile_window')"><img src="src/close.svg" style=" width: 30px; top: 20vh; left: 5%; z-index: 200; " id="mobile_notif_close" alt="close button"></button>
-
                     <div class=".scale-up-bl" id="socials_mobile_wrapper">
                             <div class="socials_mobile_container">
                                     <div class="socials_mobile_icons">
@@ -268,7 +266,10 @@
                                                 <span class="social_app_label">Online Store</span>
                                         </a>
                                     </div>
+                                    <div class="socials_mobile_icons"></div>
+                                    <div class="socials_mobile_icons"></div>
                                     
+                                    <p style="opacity: 0.5; padding-top: 50px;">Tap to Close</p>
                             </div>
                         
                         
