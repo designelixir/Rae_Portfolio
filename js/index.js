@@ -262,7 +262,10 @@ window.addEventListener("scroll", updateCamera);
 
 } //ending bracket for desktop only javascript ^^^^^^^^^^^^
 // ################################################################################
+
 else {
+
+  changeTime();
   document.getElementById('portfolio_page_wrapper').style.height = "100vh";
   document.getElementById('portfolio_page_wrapper').style.overflowY = "hidden";
   document.getElementById('homepage_wrapper').style.display = 'none';
@@ -308,7 +311,7 @@ function unlock(open){
     
   } else if (open && window.innerWidth > 400) {
     console.log("big!!!");
-    var mobile_app_wrapper = document.getElementById('mobile_icon_container').style.display = "none";
+    document.getElementById('mobile_icon_container').style.display = "none";
     desktop_icons.style.display = "block";
     desktop_icons.style.animation = 'fade-in .5s cubic-bezier(.39,.575,.565,1.000) both';
 
@@ -318,9 +321,7 @@ function unlock(open){
     mobile_dock.style.animation = "slide-in-fwd-bottom 0.75s cubic-bezier(.25,.46,.45,.94) both";
 
   } else {
-    console.log("condition 3");
-    mobile_homepage.style.display = "block";
-    lock_icon.style.opacity = '1';
+    location.reload();
 
   }
 
