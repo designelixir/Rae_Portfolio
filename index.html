@@ -4,7 +4,8 @@
       <title>Design Elixir - A Creative Studio by Megan Byers</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="#2f335c">
+      <meta name="theme-color" content="#2f335c"/>
+     
       <meta name="description" content="Portfolio website for Design Elixir Studio out of Boulder, Colorado. Owned and operated by graphic designer, illustrator, and web developer Megan Rae Byers"/>
       <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link rel="shortcut icon" type="image/png" href="src/favicon.png">
@@ -61,12 +62,12 @@
                     </div>
                     <div id="unlock_container">
                         <div class="unlock_mobile">
-                                <div class="unlock_slide_container">
-                                    <p id="unlock_text" class="blink-1" style="position: absolute; left: 45%; bottom: 20px; color: white;">Slide to Unlock</p>
-                                    <div id="unlock">
-                                        <button id="unlock_btn" onclick="unlock(true)">-> </button>
-                                    </div>
+                                <div class="unlock_slide_container" id="unlock_btn">
+                                    
+                                        <button class="blink-1" onclick="unlock(true)">Click to Unlock</button>
+                                    
                                 </div>
+                                
                         </div>
 
                     </div>
@@ -882,17 +883,17 @@
                                     <p><b>July '20</b><br>
                                     <p><b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
                                     <br>
-                                    <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness.  Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
+                                    <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness. Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
                                     </div>
                             
                                     <div class="artboard_columntwothird">
                                             <img src="src/cases/tribal_fitness/filler_img.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
-                                            <p class="caption">The Tribal Fitness website is responsive on all devices.</p>
+                                            <p class="caption">The Tribal Fitness brand was designed from scratch, with a website to match.</p>
                                     </div>
                                     <br>
                                 <div>
-                                <h3>Create brand guidelines that express strength and excitement to a welcoming fitness community. </h3>
-                                <p class="blu">Using the basis of her Hawaiian heritage as a baseline to build the brand, I developed several sketches of sharks (April’s favorite animal) in tribal style. In order to stand out in a dense market of fitness professionals, I strived to create a bright, exciting brand that steered away from the typical intense, sharp style of the fitness industry.</p>
+                                <h3>Tribal Fitness’s brand steers clear of the masculine, “extreme intesity” style in a dense market of fitness professionals. </h3>
+                                <p class="blu">Using the basis of her Hawaiian heritage as a baseline to build the brand, I developed several sketches of sharks (April’s favorite animal) in tribal style. I focused on bright, energetic colors and design elements inclusive to all. </p>
                                 <br>
                                 <!-- <img style="width: 100%; " src="src/cases/tribal_fitness/tribal_specs2.png" loading="lazy" alt="Tribal Fitness Brand specs"> -->
         
@@ -906,7 +907,7 @@
                                         </div>
         
                                     <h3>Develop a site to showcase information about April and the offerings of Tribal Fitness using newly designed brand guidelines.</h3>
-                                    <p class="blu">Tribal Fit's website needed to showcase April's personality and invite people of all fitness levels into her community. It also needed to showcase the programs provided by Tribal Fitness and the fitness software used by April to train.  </p>
+                                    <p class="blu">Using Squarespace to allow April her own website management, I built pages reflective of her brand and the energy of Tribal Fitness. From initial page design to setting up her domain and E-Commerce, the site was setup for ease of use in collecting customer information, selling products, and telling her story. I designed multiple colorful 'product photos' to share information on her programs, as well as banners to fully tie in elements from the Tribal Fitness branding.  </p>
                                     <br>
         
                                   
@@ -989,7 +990,7 @@
                                     
                                 </div>
                                 <div class="artboard_navigation">
-                                        <a style="margin: 50px;" onclick="toggleOpenClose('miller_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                        <a style="margin: 50px 50px 100px 50px;" onclick="toggleOpenClose('miller_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
                                         <br>
                                 </div>
                         
@@ -1064,6 +1065,7 @@
 </div><!-- page wrapper div -->
      
 <script src="js/LoadingManager.js"></script>
+
 <script src="https://unpkg.com/three@0.102.1/build/three.min.js"></script>
 <script src="https://unpkg.com/uos@1.1.1/dist/uos.umd.js"></script>
 <script src="js/index.js"></script>   
