@@ -291,22 +291,35 @@ else {
 function unlock(open){
   var mobile_homepage = document.getElementById('mobile_homepage_wrapper');
   var mobile_icons = document.getElementsByClassName('app');
+  var desktop_icons = document.getElementById('desktop_icon_container');
   var lock_icon=document.getElementById('lock');
   var mobile_dock = document.getElementById('mobile_dock_container');
-  for (i=0; i<8; i++){
-  
-    mobile_icons[i].style.animation = 'fade-in .25s cubic-bezier(.39,.575,.565,1.000) both';
-    mobile_icons[i].style.animation = 'scale-in-center 1s cubic-bezier(.25,.46,.45,.94) both';
-  }
-  if (open) {
+
+  if (open && window.innerWidth < 400) {
+    console.log("condition 1");
     lock_icon.style.animation = "fade-out .5s ease-out both";
     mobile_homepage.style.animation = "fade-out .5s ease-out both";
     mobile_homepage.style.display = "none";
     mobile_dock.style.animation = "slide-in-fwd-bottom 0.75s cubic-bezier(.25,.46,.45,.94) both";
+    for (i=0; i<8; i++){
+      mobile_icons[i].style.animation = 'fade-in .25s cubic-bezier(.39,.575,.565,1.000) both';
+      mobile_icons[i].style.animation = 'scale-in-center 1s cubic-bezier(.25,.46,.45,.94) both';
+    }
     
+  } else if (open && window.innerWidth > 400) {
+    console.log("big!!!");
+    var mobile_app_wrapper = document.getElementById('mobile_icon_container').style.display = "none";
+    desktop_icons.style.opacity = 1;
+    desktop_icons.style.animation = 'fade-in .5s cubic-bezier(.39,.575,.565,1.000) both';
+
+    lock_icon.style.animation = "fade-out .5s ease-out both";
+    mobile_homepage.style.animation = "fade-out .5s ease-out both";
+    mobile_homepage.style.display = "none";
+    mobile_dock.style.animation = "slide-in-fwd-bottom 0.75s cubic-bezier(.25,.46,.45,.94) both";
+
   } else {
+    console.log("condition 3");
     mobile_homepage.style.display = "block";
-    mobile_homepage.style.Zindex= "20";
     lock_icon.style.opacity = '1';
 
   }
