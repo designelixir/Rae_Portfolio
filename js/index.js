@@ -315,6 +315,8 @@ function unlock(open){
 }
 
 
+
+
 var open = [];
 function toggleOpenClose(window_id) {
 
@@ -402,6 +404,21 @@ function togglePhoto(frame_name, tile_name) {
 //eventually change all buttons to this.. sigh 
   document.getElementById('mobile_dock_finder').addEventListener("click", function()
   {toggleOpenClose('instagram_window')});
+
+
+  document.getElementById('social_banner_toggle').addEventListener("click", function()
+  {
+    var social_banner = document.getElementById('social_banners');
+    if (social_banner.style.display === "block") {social_banner.style.display = "none";}
+    else {social_banner.style.display = "block";}
+  });
+
+  document.getElementById('shortcut_banner_toggle').addEventListener("click", function()
+  {
+    var shortcut_banner = document.getElementById('shortcut_banners');
+    if (shortcut_banner.style.display === "block") {shortcut_banner.style.display = "none";}
+    else {shortcut_banner.style.display = "block";}
+  });
 
 
 var section1 = document.getElementById('section1');

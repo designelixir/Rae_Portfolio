@@ -57,7 +57,7 @@
                 <div class="mobile_homepage_context">
                     
                         <img id="mobile_logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
-                        <img id="mobile_moto" src="src/splash+contexts/mobile_context.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
+                        <img id="mobile_moto" src="src/splash+contexts/mobile_context_2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
                     </div>
                     <div id="unlock_container">
                         <div class="unlock_mobile">
@@ -77,7 +77,7 @@
         <div class="homepage" id="homepage_wrapper">
                 <div class="homepage_context">
                     <img id="logo" src="src/desktop_items/design_elixir_logo.svg" alt="Design Elixir Logo">
-                    <img id="entry_moto" src="src/splash+contexts/login_moto_v2.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
+                    <img id="entry_moto" src="src/splash+contexts/login_moto_v3.svg" alt="An all-in-one, one woman creative studio specializing in Web Development, Graphic Design and Illustration">
                 </div>
                 
                 
@@ -89,11 +89,11 @@
                                 <a target="_blank" rel='noopener' href="https://github.com/coloradical"> <img src="src/social_media/github_banner.svg" loading="lazy" class="banner" alt="github"></a>
                                 <a target="_blank" rel='noopener' href="https://www.linkedin.com/in/meganraebyers/"><img src="src/social_media/linkedin_banner.svg" loading="lazy" class="banner"  alt="linkedin"></a>
                             </div>
-                            <button aria-label="Open/Close Social Media Links" onclick="toggleOpenClose('social_banners')"><img id="social_banner" class="banner"  src="src/social_media/socials.svg" alt="open social media menu"></button>
+                            <button aria-label="Open/Close Social Media Links" id="social_banner_toggle"><img id="social_banner" class="banner"  src="src/social_media/socials.svg" alt="open social media menu"></button>
                 </div>
         
                 <div class="shortcut_banners_wrapper">
-                        <button onclick="toggleOpenClose('shortcut_banners')" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
+                        <button id="shortcut_banner_toggle" aria-label="Open / close shortcuts"><img id="shortcut_banner" class="banner" src="src/social_media/shortcuts.svg" alt="open shortcuts menu"></button>
                         <div id="shortcut_banners">
                             <a onclick="scrollToPosition(46683), toggleOpenClose('about_window')" id="about_shortcut" ><img src="src/social_media/about_banner.svg" loading="lazy" class="banner" alt="About Shortcut"></a>
                             <a onclick="scrollToPosition(46683), toggleOpenClose('finder_window')"><img src="src/social_media/work_banner.svg" loading="lazy" class="banner" alt="Work Shortcut"></a>
@@ -234,7 +234,7 @@
             
 
             <div onclick="toggleOpenClose('socials_mobile_window')" id=socials_mobile_window class="window" style="display: none;">
-                    <button onclick="toggleOpenClose('socials_mobile_window')"><img src="src/close.svg" style=" width: 30px; top: 24vh; left: 5%; z-index: 200; " id="mobile_notif_close" alt="close button"></button>
+                    <button onclick="toggleOpenClose('socials_mobile_window')"><img src="src/close.svg" style=" width: 30px; top: 20vh; left: 5%; z-index: 200; " id="mobile_notif_close" alt="close button"></button>
 
                     <div class=".scale-up-bl" id="socials_mobile_wrapper">
                             <div class="socials_mobile_container">
@@ -633,364 +633,370 @@
    
             </div>
 
-            <div id="miller_project" class="window case" style="display: none;">
-                    <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-                    <div class="case_content">
-                        <div class="artboard">
-                            <div>
-                                <h1 class="project_h1">The Miller Bros</h1>
-                                <h2>Branding, Logo Design, Vector Art</h2>
-                                <br>
-                            </div>
-                            <div class="artboard_columnthird blu">
-                                <p><b>March '20</b></p>
-                                <p><b>Tools: </b> Illustrator</p>
-                                <br>
-                                <p> Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted colorful, organic illustrations based around the places visited in their baby blue 1982 Volkswagen Westfalia, Lars.  </p>
-                            </div>
-                            <div class="artboard_columntwothird">
-                                <img style="width: 100%;" src="src/cases/miller_bros/cam_spence.jpg" loading="lazy" alt="Camden and Spencer Miller with their Volkswagen Westfalia">      
-                                <p class="caption">Camden and Spencer Miller sit in Lars.</p> 
-                            </div>
-                                
-                            <h3>The Miller Bros requested a bright color palette that utilized flowers, mountains and other natural elements from their travels illustrated in an organic style. </h3>
-                            <p class="blu">After collaborating with the Miller Bros and pulling scenes from photos and videos of their trip, I could sum the majority of their travels to deserts, mountains, coasts and forests. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
-                            
-                            <div class="artboard_response_row"> 
-                                <div class="artboard_response_column">
-                                    <img style="width: 100%" src="src/cases/miller_bros/lars_sketches.jpg" loading="lazy" alt="Sketches of Lars, the VW Westfalia">
-                                </div>
-                                <div class="artboard_response_column">
-                                    <img style="width: 100%; margin-bottom: 100px;" src="src/cases/miller_bros/miller_diamond_stickers.gif" loading="lazy" alt="Variations of one sticker design">
-                                </div>     
-                            </div>
-                            <div>
-                                <h3>When creating mockups for the Miller Bros, I hand-drew over 20 designs which allowed multiple options for both a brand logo and stickers. </h3>
-                                <p class="blu">The variations were developed in SVG format, so that the designs could be scaled to any size without losing quality. This allowed them to use any design for not only their logo and stickers, but in the future for t-shirts and embroidered hats.  </p>
-                                <br>
-                                <img style="width: 100%; " src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="All Stickers">
-                                <img style="width: 100%" src="src/cases/miller_bros/sticker_stack.jpg" loading="lazy" alt="printed stickers">
-                            </div>
-            
-                            <div class="artboard_bottom">
-                                    <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
-                                    <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! We will be using Design Elixir for any design needs in the future, and wholeheartedly recommend her to anyone looking to add a distinct character to their brand.</p>
-                                    <br><p><i>-Camden and Spencer Miller, <a target="_blank" rel="noopener" href="https://www.themillerbros.com">The Miller Bros</a></i></p>
-                                    <br>
-                                    <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+            <div id="case_studies_wrapper">
+                    <div id="miller_project" class="window case" style="display: none;">
+                            <div class="window_closebar"><button onclick="toggleOpenClose('miller_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+                            <div class="case_content">
+                                <div class="artboard">
+                                    <div>
+                                        <h1 class="project_h1">The Miller Bros</h1>
+                                        <h2>Branding, Logo Design, Vector Art</h2>
+                                        <br>
+                                    </div>
+                                    <div class="artboard_columnthird blu">
+                                        <p><b>March '20</b></p>
+                                        <p><b>Tools: </b> Illustrator</p>
+                                        <br>
+                                        <p> Following the two-year production of a documentary showcasing the spirit of the open road, Camden & Spencer Miller (Miller Bros) prepared to submit their premier film “The Comfort Zone” to festivals across the world. To supplement their message of authentic and unique storytelling, I crafted colorful, organic illustrations based around the places visited in their baby blue 1982 Volkswagen Westfalia, Lars.  </p>
+                                    </div>
+                                    <div class="artboard_columntwothird">
+                                        <img style="width: 100%;" src="src/cases/miller_bros/cam_spence.jpg" loading="lazy" alt="Camden and Spencer Miller with their Volkswagen Westfalia">      
+                                        <p class="caption">Camden and Spencer Miller sit in Lars.</p> 
+                                    </div>
+                                        
+                                    <h3>The Miller Bros requested a bright color palette that utilized flowers, mountains and other natural elements from their travels illustrated in an organic style. </h3>
+                                    <p class="blu">After collaborating with the Miller Bros and pulling scenes from photos and videos of their trip, I could sum the majority of their travels to deserts, mountains, coasts and forests. I researched the color of their Volkswagen bus and built color palettes off of this basis, and sketched multiple angles of Lars.</p> <br>
                                     
-                        
-                            </div>
-                            <div class="artboard_navigation">
-                                    <a onclick="toggleOpenClose('docs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
-                            </div>
-                        </div>
-                    </div>
-            </div>
-                
-            <div id="docs_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('docs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-                <div class="case_content">
-                    <div class="artboard">
-                        <div>
-                            <h1 class="project_h1">Doc's Hemp RX</h1>
-                            <h2>Custom Wordpress Theme, Page Design, E-Commerce </h2>
-                            <br>
-                        </div>
-                        <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
-                            <p><b>August '20</b></p>
-                            <p><b>Tools: </b>Wordpress, WooCommerce</p><br>
-                            
-                            <p>The first batch of Doc’s Hemp RX CBD was manufactured to help its founder’s mother, “Doc”, relieve symptoms of Parkinson’s. Since seeing the immediate benefits of CBD and CBN as a natural remedy, the mission of Doc’s Hemp RX has stayed true - creating high-quality, organic and affordable hemp products for those who need it most. </p>
-                        </div>
-                       
-                        <div class="artboard_columntwothird">
-                            <img style="width: 100%;" src="src/cases/docs_hemp/docs_photo_2.jpg" loading="lazy" alt="Camden and Spencer Miller with their Volkswagen Westfalia">      
-                            <p class="caption">The Doc's Hemp RX website was designed to match existing packaging.</p> 
-                        </div>
-                        <div class="artboard_columnfifty">
-                            <img src="src/cases/docs_hemp/screenshot_docs_3.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
-                            <img src="src/cases/docs_hemp/docs_tinctures.gif" class="mobile_hide" style="margin-top: 65px; width: 80%;" loading="lazy" alt="tincture product photos">
-                            
-
-                        </div>
-                        <div class="artboard_columnfifty">
-                            <div class="tlgs_section_h3">
-                                <h3 class="tlgs_flex_text">Doc’s Hemp RX website tells the passion-rooted story of a business dedicated to providing affordable, premium hemp products.</h3>
-                                <p class="blu tlgs_flex_text">The site needed to be easy to use and invite customers with a variety of ailments to try high-quality hemp products with simple, organic ingredients. The homepage educates customers of the superior manufacturing process of Doc's Hemp RX tinctures and its mission to provide an affordable natural remedy to those who could benefit from it the most. Designed with fonts, coloring, and graphic elements parallel to the existing vintage-style packaging, Doc’s Hemp RX website stands out against the typically industrial layout of other hemp product websites. </p>
-                                <br>
-                            </div>
-                            <img src="src/cases/docs_hemp/test_docs_gif.gif" class="tlgs_screenshot tincture" style="width: 100%; margin-bottom: 25px;  box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
-
-                            <img src="src/cases/docs_hemp/docs_screenshot_2.png" class="tlgs_screenshot overlap_img mobile_hide" style="width: calc(100% + 50px); margin-bottom: 100px; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of product page on Doc's Hemp RX site">
-
-                            <img src="src/cases/docs_hemp/docs_tinctures.gif" class="tincture" style="width: 100%;" loading="lazy" alt="tincture product photos">
-
-                        </div>
-                        <br>
-                        <div class="artboard_bottom" style="padding-top: 50px;">
-                                <img style="float: left; box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark">
-                                <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
-                                <br>
-                                <p>Working with Design Elixir has truly been a great experience. Megan manages her time very well, and is by far the most dedicated web designer I have come in contact with.  Design Elixir client for life.</p>
-                                <br><p><i>-Trent Bailey, Doc's Hemp RX founder</i></p>
-                                
-                        </div>
-                        
-                        <div class="artboard_navigation">
-                            <a onclick="toggleOpenClose('menu_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
-                        </div>
-                </div>
-                </div>
-            </div>
-        
-            <div id="menu_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-                <div class="case_content">
-                    <div class="artboard">
-                            <h1 class="project_h1">West Flanders Brewing Company</h1>
-                            <h2>Branding, Print / Digital Media, Product Photos</h2>
-                            <br>
-                        <div class="blu">
-                            <p><b>August '18 - January '20</b><br>
-                            <p><b>Tools: </b> Illustrator, InDesign, Lightroom, Squarespace</p>
-                            <br>
-                            <p>Located on historic Pearl Street in Boulder, Colorado, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic.</p>
-                        </div>
-                        <br>
-                        <div>
-                            <img src="src/cases/west_flanders/building.jpg" style="width: 65%;" loading="lazy" alt="West Flanders exterior">
-                            <img src="src/cases/west_flanders/erin_shovel_mashtun.JPG" style="width: 29.5%" loading="lazy" alt="Brewmaster Erin Casey">
-                
-                            <img src="src/cases/west_flanders/beer.jpg" style="width: 29.5%" loading="lazy" alt="Beer and food">
-                            <img src="src/cases/west_flanders/lightbulbs.jpg" style="width: 65%;" loading="lazy" alt="Interior edison bulbs">
-                        </div>
-                        <p class="caption">Photos captured by me for West Flander's website and advertisements</p>
-
-                        <div>
-                            <h3>Design a brand with the core values of the restaurant: local, authentic, cozy, high quality and hand-crafted. </h3>
-                            <p class="blu">Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content by pulling inspirating from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line drawings.</p>
-                            <br>
-                            <img src="src/cases/west_flanders/wf_ad_layout.jpg" style="width: 99%" loading="lazy" alt="sampling of graphic design work">
-                            <div class="wf_tri_poster_container" >
-                                    <div class="wf_poster"><img src="src/cases/west_flanders/brut.jpg" loading="lazy"  alt="brut ipa poster"></div>
-                                    <div class="wf_poster"><img src="src/cases/west_flanders/stoned.jpg" loading="lazy"  alt="stoned kettle sour poster"></div>
-                                    <div class="wf_poster"><img src="src/cases/west_flanders/juicy.jpg" loading="lazy"  alt="juicy double ipa poster"></div>
-
-                            </div>
-                            
-                        </div>
-                        <p class="caption">A sampling of advertisements, coupons and posters created over my two years with West Flanders.</p>
-        
-                
-                        <div style="margin: 100px 0px 50px 0px;">
-                            <h3>Redesign food and drink menus to a user-friendly, organized and clean layout.</h3>
-                            <p class="blu">After observing hundreds of customers struggle to navigate the West Flanders menu, I began to rework the layout to be more user-friendly. I made the menu foldable versus single page for easier viewing, improved menu flow by organizing sections, adding happy hour information and incorporating new branding measures. </p>
-                            <img src="src/cases/west_flanders/menu_closeup.jpg" style="width: 100%; margin: 4% 0% 1% 0%;" loading="lazy" alt="west flanders menu close up">
-                            <img src="src/cases/west_flanders/wf_details.png" style="width: 100%;" loading="lazy" alt="drink menu details">
-
-                            <!-- <div class="artboard_response_row">
-                                <div class="artboard_response_column">
-                                    <img src="src/cases/west_flanders/menu_details.jpg" style="width: 100%;" loading="lazy" alt="drink menu details">
-                
-                                </div>
-                                <div class="artboard_response_column">
-                                    <img src="src/cases/west_flanders/menu_overview.jpg" style="width: 100%;" loading="lazy" alt="menu overview">
-                                </div>
-                            </div> -->
-                        
-                        
-                        </div>
-                        <div class="artboard_bottom">
-                                <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
-                                <p> Megan played many roles at West Flanders, from busser to waitress, and finally as our graphic designer. Her involvement with every day operations gave her great insight into customer user experience, and she took the initiative to redesign our menu after seeing the flaws in our current layout. She helped our restaurant find an identity after 5 years of unorganized marketing, and designed an aesthetic that helped us stand out in a state with hundreds of craft breweries. We could count on her to meet deadlines and create content, often with only a few days notice. I highly recommend Megan for all graphic design needs.</p>
-                                <br>
-                                <p><i>-Malcolm Emison, General Manager at West Flanders Brewing Company</i></p>
-                                <br>
-                                <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
-                                
-                        </div>
-                        <div class="artboard_navigation">
-                                <a onclick="toggleOpenClose('vans_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
-                        </div>
-                    </div>
-                    </div>
-            
-            </div>
-        
-            <div id="vans_project" class="window case" style="display: none;">
-            <div class="window_closebar"><button onclick="toggleOpenClose('vans_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-            <div class="case_content">
-                    <div class="artboard">
-                        <div>
-                            <h1 class="project_h1">Vans Ultrarange Project</h1>
-                            <p class="artboard_subtitle">Product Photos and Videos</p> <br>
-                        </div>
-                        <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
-                            <p><b>October '17</b></p><br>
-                            <p><b>Tools: </b>Photoshop, Lightroom</p>
-                            <br>
-
-                            <p>Following a <a style="color: black;" target="_blank" rel="noopener" href="https://youtu.be/v0mCY80knCU">486-mile backpacking trip across the Colorado Rockies</a> in a pair of Vans Hi-tops, I was commissioned by Vans to take photos and videos for their new line of UltraRange sneakers. This new line of sneakers expanded Vans into the outdoor industry by boasting durability and versatility for a variety of different environments, which I showcased during the fall season in the San Juan Mountains, Colorado.</p>
-                        </div>
-                
-                        <div class="artboard_columntwothird">
-                            <img src="src/cases/vans/gray_skateboard.jpg" style="width: 100%;" loading="lazy" alt="Me on a skateboard with Vans logo">
-                            <p class="caption">Skating in the Black Canyon of the Gunnison with a makeshift selfie stick for my GoPro.</p>
-                        </div>
-                
-                        
-                        
-                        <h3>Portray the durability and adventurous side of the UltraRange sneakers with a variety of shots ranging from "shoe-selfies" to full body.</h3>
-                        <p class="blu">These videos were montaged with other Vans Ambassadors work in a 15 second advertisement displayed on Instagram. The ad recieved over 3.8 million views and featured 4 snippets of my videos adventuring through the mountains of Gunnison and Crested Butte, Colorado. High resolution photos were used for a promotional Instagram post. </p>
-                        <br>
-                        <div class="artboard_response_row"> 
-                                <div class="artboard_response_column">
-                                    <img src="src/cases/vans/phone_ad.webp" onerror="this.src='src/cases/vans/vans_ad.gif'" style="width:100%" loading="lazy" alt="Vans advertisement on iphone">
-                                    <img src="src/cases/vans/vans_lamborn.jpg" style="width:100%" loading="lazy" alt="sneakers in front of mountains">
-                                </div>
-                                <div class="artboard_response_column">
-                                    <img src="src/cases/vans/tpose.jpg" loading="lazy" style="width:100%" alt="megan on fence in sneakers">
-                                    <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src='src/cases/vans/vans_tags.gif'" id="vans_hide" loading="lazy" style="width:100%" alt="megan on skateboard">
-                                </div>  
-                                
-                        </div>
-                        <p class="caption" style="margin: 1% 0px 50px 0px">Photos captured by me in Vans UltraRange sneakers <a href="https://www.instagram.com/p/BgRPJFMDpsv/" rel="noopener" target="_blank"><i>post</i></a> and advertisement featured on Vans Official Instagram in March of 2018.</p>
-                        <div class="artboard_navigation">
-                                <a onclick="toggleOpenClose('tribal_fit_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        
-            <div id="tribal_fit_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('tribal_fit_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>                
-                <div class="case_content">
-                    <div class="artboard">
-                        
-                        <h1 class="project_h1">Tribal Fitness</h1>
-                        <h2>Branding, Logo Design, Page Design, E-Commerce</h2>
-                        <br>
-                        <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
-                            <p><b>July '20</b><br>
-                            <p><b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
-                            <br>
-                            <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness.  Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
-                            </div>
+                                    <div class="artboard_response_row"> 
+                                        <div class="artboard_response_column">
+                                            <img style="width: 100%" src="src/cases/miller_bros/lars_sketches.jpg" loading="lazy" alt="Sketches of Lars, the VW Westfalia">
+                                        </div>
+                                        <div class="artboard_response_column">
+                                            <img style="width: 100%; margin-bottom: 100px;" src="src/cases/miller_bros/miller_diamond_stickers.gif" loading="lazy" alt="Variations of one sticker design">
+                                        </div>     
+                                    </div>
+                                    <div>
+                                        <h3>When creating mockups for the Miller Bros, I hand-drew over 20 designs which allowed multiple options for both a brand logo and stickers. </h3>
+                                        <p class="blu">The variations were developed in SVG format, so that the designs could be scaled to any size without losing quality. This allowed them to use any design for not only their logo and stickers, but in the future for t-shirts and embroidered hats.  </p>
+                                        <br>
+                                        <img style="width: 100%; " src="src/cases/miller_bros/miller_sticker_layout.jpg" loading="lazy" alt="All Stickers">
+                                        <img style="width: 100%" src="src/cases/miller_bros/sticker_stack.jpg" loading="lazy" alt="printed stickers">
+                                    </div>
                     
-                            <div class="artboard_columntwothird">
-                                    <img src="src/cases/tribal_fitness/filler_img.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
-                                    <p class="caption">The Tribal Fitness website is responsive on all devices.</p>
-                            </div>
-                            <br>
-                        <div>
-                        <h3>Create brand guidelines that express strength and excitement to a welcoming fitness community. </h3>
-                        <p class="blu">Using the basis of her Hawaiian heritage as a baseline to build the brand, I developed several sketches of sharks (April’s favorite animal) in tribal style. In order to stand out in a dense market of fitness professionals, I strived to create a bright, exciting brand that steered away from the typical intense, sharp style of the fitness industry.</p>
-                        <br>
-                        <!-- <img style="width: 100%; " src="src/cases/tribal_fitness/tribal_specs2.png" loading="lazy" alt="Tribal Fitness Brand specs"> -->
-
-                    
-                            <div class="artboard_columntwothird">
-                                    <img src="src/cases/tribal_fitness/tribal_sketch2.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
-                                   
-                            </div>
-                            <div class="artboard_columnthird">
-                                    <img src="src/cases/tribal_fitness/tribal_shirt.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                    <div class="artboard_bottom">
+                                            <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
+                                            <p> Megan was a joy to work with! She truly brought our vision to life and helped us design logos, stickers, and apparel that have revolutionized our brand. She was very engaged and involved throughout the entire process, and helped us cultivate our vision to a place that surpassed the ideas we brought to the table. Megan is innovative, savvy, and professional; she is an artist in its purest form! We will be using Design Elixir for any design needs in the future, and wholeheartedly recommend her to anyone looking to add a distinct character to their brand.</p>
+                                            <br><p><i>-Camden and Spencer Miller, <a target="_blank" rel="noopener" href="https://www.themillerbros.com">The Miller Bros</a></i></p>
+                                            <br>
+                                            <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+                                            
+                                
+                                    </div>
+                                    <div class="artboard_navigation">
+                                            <a onclick="toggleOpenClose('docs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                    </div>
                                 </div>
-
-                            <h3>Develop a site to showcase information about April and the offerings of Tribal Fitness using newly designed brand guidelines.</h3>
-                            <p class="blu">Tribal Fit's website needed to showcase April's personality and invite people of all fitness levels into her community. It also needed to showcase the programs provided by Tribal Fitness and the fitness software used by April to train.  </p>
-                            <br>
-
-                          
-                        </div>
-                        <div class="artboard_navigation">
-                                <a onclick="toggleOpenClose('tlgs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
-                        </div>
+                            </div>
                     </div>
-                </div>
-            </div>
-        
-            <div id="tlgs_project" class="window case" style="display: none;">
-                <div class="window_closebar"><button onclick="toggleOpenClose('tlgs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
-                
-                <div class="case_content">
-                    <div class="artboard">
-                            <h1 class="project_h1">Twin Lakes General Store </h1>      
-                            <h2>Custom Wordpress Theme, E-Commerce, Product Photos, Social Media and Web Management</h2>                             
-                            <br>
-
-
-                        <div class="artboard_columnthird blu">
-                            <p><b>February '20</b><br>
-                            <p><b>Tools: </b> Wordpress, WooCommerce, Illustrator</p>
-                            <br>
-                            <p>
-                                Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop to travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
-                                
-                            </p>
-                        </div>
-                
-                        <div class="artboard_columntwothird">
-                                <img style="width: 100%;" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
-                                <p class='caption'>The Twin Lakes General Store website is responsive on all devices.</p>
-                        </div>
-                       
-                        <div class="artboard_columnfifty">
-                            <img src="src/cases/tlgs/backpacker_screenshot.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
                         
-                        </div>
-                        <div class="artboard_columnfifty" >
-                            <div class="tlgs_section_h3">
-                                <h3 class="tlgs_flex_text">As a popular resupply spot for backpackers, hikers and campers, the general store needed a website that could convey information to future mountain adventurers.</h3>
-                                <p class="blu tlgs_flex_text">Featuring hand-illustrated touches, paired with striking images and bold red elements to parallel the bright red paint of the store building, this site is intended to exude the personality of a historically rich spot while providing a modern, youthful approach to business. </p>
-                            </div>
-                                <img src="src/cases/tlgs/homepage_screenshot.png" class="tlgs_screenshot overlap_img" style="width: calc(100% + 50px); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
-
-                        </div>
-                        <div class="artboard_bottom" style="padding-top: 25px;">
-                                <img id="tlgs_footer" src="src/cases/tlgs/tlgs_footer.png" style="width: 100%;" loading="lazy" alt="illustrations for web page">
-                                <p class="caption" style="text-align: center; margin-bottom: 0;">Footer illustration featuring the highlights of Twin Lakes, Colorado</p>            
-                        </div>
-                        
-                    
-                            
-            
-                        <div class="artboard_response_row"> 
-                            <div class="artboard_response_column">
-                                <img class="bob_motu" src="src/cases/tlgs/bob_motu.jpg" style="width: 95%; margin: 50px 50px 0px 0px;" loading="lazy" alt="bob mathes and his golden retriever motu">
-                                
-                                <p class="caption" style="padding-top: 10px">Bob &amp; his golden retriever, Motu.</p>
-                            </div>
-                            <div class="artboard_response_column" style="margin-top: 50px; text-align: center;">
-                                <img style="float: left;  box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
-                                <br>
-                                <p > Megan has been a great asset to my small business by helping us transition away 
-                                    from an out-of-date website and social media we inherited from former owners.  
-                                    From great concept and design, tech fixes and consulting, art, photography, and helping 
-                                    get an online shopping platform built. I’ve never seen someone be so engaged and work so 
-                                    hard, and recommend her for any sized project!</p>
+                    <div id="docs_project" class="window case" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('docs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+                        <div class="case_content">
+                            <div class="artboard">
+                                <div>
+                                    <h1 class="project_h1">Doc's Hemp RX</h1>
+                                    <h2>Custom Wordpress Theme, Page Design, E-Commerce </h2>
                                     <br>
-                                <p><i>-Bob Mathes, Twin Lakes General Store & Mercantile 
-                                        Twin Lakes, Colorado</i></p>
+                                </div>
+                                <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px">
+                                    <p><b>August '20</b></p>
+                                    <p><b>Tools: </b>Wordpress, WooCommerce</p><br>
+                                    
+                                    <p>The first batch of Doc’s Hemp RX CBD was manufactured to help its founder’s mother, “Doc”, relieve symptoms of Parkinson’s. Since seeing the immediate benefits of CBD and CBN as a natural remedy, the mission of Doc’s Hemp RX has stayed true - creating high-quality, organic and affordable hemp products for those who need it most. </p>
+                                </div>
+                               
+                                <div class="artboard_columntwothird">
+                                    <img style="width: 100%;" src="src/cases/docs_hemp/docs_photo_2.jpg" loading="lazy" alt="Camden and Spencer Miller with their Volkswagen Westfalia">      
+                                    <p class="caption">The Doc's Hemp RX website was designed to match existing packaging.</p> 
+                                </div>
+                                <div class="artboard_columnfifty">
+                                    <img src="src/cases/docs_hemp/screenshot_docs_3.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
+                                    <img src="src/cases/docs_hemp/docs_tinctures.gif" class="mobile_hide" style="margin-top: 65px; width: 80%;" loading="lazy" alt="tincture product photos">
+                                    
+        
+                                </div>
+                                <div class="artboard_columnfifty">
+                                    <div class="tlgs_section_h3">
+                                        <h3 class="tlgs_flex_text">Doc’s Hemp RX website tells the passion-rooted story of a business dedicated to providing affordable, premium hemp products.</h3>
+                                        <p class="blu tlgs_flex_text">The site needed to be easy to use and invite customers with a variety of ailments to try high-quality hemp products with simple, organic ingredients. The homepage educates customers of the superior manufacturing process of Doc's Hemp RX tinctures and its mission to provide an affordable natural remedy to those who could benefit from it the most. Designed with fonts, coloring, and graphic elements parallel to the existing vintage-style packaging, Doc’s Hemp RX website stands out against the typically industrial layout of other hemp product websites. </p>
+                                        <br>
+                                    </div>
+                                    <img src="src/cases/docs_hemp/test_docs_gif.gif" class="tlgs_screenshot tincture" style="width: 100%; margin-bottom: 25px;  box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Doc's Hemp RX mission statement">
+        
+                                    <img src="src/cases/docs_hemp/docs_screenshot_2.png" class="tlgs_screenshot overlap_img mobile_hide" style="width: calc(100% + 50px); margin-bottom: 100px; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of product page on Doc's Hemp RX site">
+        
+                                    <img src="src/cases/docs_hemp/docs_tinctures.gif" class="tincture" style="width: 100%;" loading="lazy" alt="tincture product photos">
+        
+                                </div>
                                 <br>
-                                <img style="float: right; box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
-                                <br> <br> <br>
-                                <a href="https://www.twinlakesgs.com" class="artboard_button" style=" color: white;" rel="noopener" target="_blank">View Website</a>
-                            </div>  
-                            
+                                <div class="artboard_bottom" style="padding-top: 50px;">
+                                        <img style="float: left; box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark">
+                                        <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+                                        <br>
+                                        <p>Working with Design Elixir has truly been a great experience. Megan manages her time very well, and is by far the most dedicated web designer I have come in contact with.  Design Elixir client for life.</p>
+                                        <br><p><i>-Trent Bailey, Doc's Hemp RX founder</i></p>
+                                        
+                                </div>
+                                
+                                <div class="artboard_navigation">
+                                    <a onclick="toggleOpenClose('menu_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                </div>
                         </div>
-                        <div class="artboard_navigation">
-                                <a style="margin: 50px;" onclick="toggleOpenClose('miller_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
                         </div>
-                
-                        
                     </div>
                 
-                </div>
+                    <div id="menu_project" class="window case" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('menu_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+                        <div class="case_content">
+                            <div class="artboard">
+                                    <h1 class="project_h1">West Flanders Brewing Company</h1>
+                                    <h2>Branding, Print / Digital Media, Product Photos</h2>
+                                    <br>
+                                <div class="blu">
+                                    <p><b>August '18 - January '20</b><br>
+                                    <p><b>Tools: </b> Illustrator, InDesign, Lightroom, Squarespace</p>
+                                    <br>
+                                    <p>Located on historic Pearl Street in Boulder, Colorado, West Flanders Brewing Company is a local Belgian-inspired restaurant and brewery. The in-house brewing equipment lined amongst industrial brick and Edison era bulbs emits a cozy, timeless and genuine aesthetic.</p>
+                                </div>
+                                <br>
+                                <div>
+                                    <img src="src/cases/west_flanders/building.jpg" style="width: 65%;" loading="lazy" alt="West Flanders exterior">
+                                    <img src="src/cases/west_flanders/erin_shovel_mashtun.JPG" style="width: 29.5%" loading="lazy" alt="Brewmaster Erin Casey">
+                        
+                                    <img src="src/cases/west_flanders/beer.jpg" style="width: 29.5%" loading="lazy" alt="Beer and food">
+                                    <img src="src/cases/west_flanders/lightbulbs.jpg" style="width: 65%;" loading="lazy" alt="Interior edison bulbs">
+                                </div>
+                                <p class="caption">Photos captured by me for West Flander's website and advertisements</p>
         
+                                <div>
+                                    <h3>Design a brand with the core values of the restaurant: local, authentic, cozy, high quality and hand-crafted. </h3>
+                                    <p class="blu">Using their existing logo, I expanded their brand by developing graphic elements and layouts to create consistency in their marketing and content by pulling inspirating from the unique interior of the restaurant, creating graphic elements of brewing equipment, hops and even employees with simple, bold line drawings.</p>
+                                    <br>
+                                    <img src="src/cases/west_flanders/wf_ad_layout.jpg" style="width: 99%" loading="lazy" alt="sampling of graphic design work">
+                                    <div class="wf_tri_poster_container" >
+                                            <div class="wf_poster"><img src="src/cases/west_flanders/brut.jpg" loading="lazy"  alt="brut ipa poster"></div>
+                                            <div class="wf_poster"><img src="src/cases/west_flanders/stoned.jpg" loading="lazy"  alt="stoned kettle sour poster"></div>
+                                            <div class="wf_poster"><img src="src/cases/west_flanders/juicy.jpg" loading="lazy"  alt="juicy double ipa poster"></div>
+        
+                                    </div>
+                                    
+                                </div>
+                                <p class="caption">A sampling of advertisements, coupons and posters created over my two years with West Flanders.</p>
+                
+                        
+                                <div style="margin: 100px 0px 50px 0px;">
+                                    <h3>Redesign food and drink menus to a user-friendly, organized and clean layout.</h3>
+                                    <p class="blu">After observing hundreds of customers struggle to navigate the West Flanders menu, I began to rework the layout to be more user-friendly. I made the menu foldable versus single page for easier viewing, improved menu flow by organizing sections, adding happy hour information and incorporating new branding measures. </p>
+                                    <img src="src/cases/west_flanders/menu_closeup.jpg" style="width: 100%; margin: 4% 0% 1% 0%;" loading="lazy" alt="west flanders menu close up">
+                                    <img src="src/cases/west_flanders/wf_details.png" style="width: 100%;" loading="lazy" alt="drink menu details">
+        
+                                    <!-- <div class="artboard_response_row">
+                                        <div class="artboard_response_column">
+                                            <img src="src/cases/west_flanders/menu_details.jpg" style="width: 100%;" loading="lazy" alt="drink menu details">
+                        
+                                        </div>
+                                        <div class="artboard_response_column">
+                                            <img src="src/cases/west_flanders/menu_overview.jpg" style="width: 100%;" loading="lazy" alt="menu overview">
+                                        </div>
+                                    </div> -->
+                                
+                                
+                                </div>
+                                <div class="artboard_bottom">
+                                        <img style="float: left;  box-shadow: none !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
+                                        <p> Megan played many roles at West Flanders, from busser to waitress, and finally as our graphic designer. Her involvement with every day operations gave her great insight into customer user experience, and she took the initiative to redesign our menu after seeing the flaws in our current layout. She helped our restaurant find an identity after 5 years of unorganized marketing, and designed an aesthetic that helped us stand out in a state with hundreds of craft breweries. We could count on her to meet deadlines and create content, often with only a few days notice. I highly recommend Megan for all graphic design needs.</p>
+                                        <br>
+                                        <p><i>-Malcolm Emison, General Manager at West Flanders Brewing Company</i></p>
+                                        <br>
+                                        <img style="float: right; box-shadow: none !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+                                        
+                                </div>
+                                <div class="artboard_navigation">
+                                        <a onclick="toggleOpenClose('vans_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                </div>
+                            </div>
+                            </div>
+                    
+                    </div>
+                
+                    <div id="vans_project" class="window case" style="display: none;">
+                    <div class="window_closebar"><button onclick="toggleOpenClose('vans_project')" aria-label="toggle open/close"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+                    <div class="case_content">
+                            <div class="artboard">
+                                <div>
+                                    <h1 class="project_h1">Vans Ultrarange Project</h1>
+                                    <p class="artboard_subtitle">Product Photos and Videos</p> <br>
+                                </div>
+                                <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
+                                    <p><b>October '17</b></p>
+                                    <p><b>Tools: </b>Photoshop, Lightroom</p>
+                                    <br>
+        
+                                    <p>Following a <a style="color: black;" target="_blank" rel="noopener" href="https://youtu.be/v0mCY80knCU">486-mile backpacking trip across the Colorado Rockies</a> in a pair of Vans Hi-tops, I was commissioned by Vans to take photos and videos for their new line of UltraRange sneakers. This new line of sneakers expanded Vans into the outdoor industry by boasting durability and versatility for a variety of different environments, which I showcased during the fall season in the San Juan Mountains, Colorado.</p>
+                                </div>
+                        
+                                <div class="artboard_columntwothird">
+                                    <img src="src/cases/vans/gray_skateboard.jpg" style="width: 100%;" loading="lazy" alt="Me on a skateboard with Vans logo">
+                                    <p class="caption">Skating in the Black Canyon of the Gunnison with a makeshift selfie stick for my GoPro.</p>
+                                </div>
+                        
+                                
+                                
+                                <h3>Portray the durability and adventurous side of the UltraRange sneakers with a variety of shots ranging from "shoe-selfies" to full body.</h3>
+                                <p class="blu">These videos were montaged with other Vans Ambassadors work in a 15 second advertisement displayed on Instagram. The ad recieved over 3.8 million views and featured 4 snippets of my videos adventuring through the mountains of Gunnison and Crested Butte, Colorado. High resolution photos were used for a promotional Instagram post. </p>
+                                <br>
+                                <div class="artboard_response_row"> 
+                                        <div class="artboard_response_column">
+                                            <img src="src/cases/vans/phone_ad.webp" onerror="this.src='src/cases/vans/vans_ad.gif'" style="width:100%" loading="lazy" alt="Vans advertisement on iphone">
+                                            <img src="src/cases/vans/vans_lamborn.jpg" style="width:100%" loading="lazy" alt="sneakers in front of mountains">
+                                        </div>
+                                        <div class="artboard_response_column">
+                                            <img src="src/cases/vans/tpose.jpg" loading="lazy" style="width:100%" alt="megan on fence in sneakers">
+                                            <img src="src/cases/vans/vans_post_v2.webp" onerror="this.src='src/cases/vans/vans_tags.gif'" id="vans_hide" loading="lazy" style="width:100%" alt="megan on skateboard">
+                                        </div>  
+                                        
+                                </div>
+                                <p class="caption" style="margin: 1% 0px 50px 0px">Photos captured by me in Vans UltraRange sneakers <a href="https://www.instagram.com/p/BgRPJFMDpsv/" rel="noopener" target="_blank"><i>post</i></a> and advertisement featured on Vans Official Instagram in March of 2018.</p>
+                                <div class="artboard_navigation">
+                                        <a onclick="toggleOpenClose('tribal_fit_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="tribal_fit_project" class="window case" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('tribal_fit_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>                
+                        <div class="case_content">
+                            <div class="artboard">
+                                
+                                <h1 class="project_h1">Tribal Fitness</h1>
+                                <h2>Branding, Logo Design, Page Design, E-Commerce</h2>
+                                <br>
+                                <div class="artboard_columnthird blu" style="margin: 0px 25px 25px 0px ">
+                                    <p><b>July '20</b><br>
+                                    <p><b>Tools: </b>Squarespace, Illustrator, Photoshop</p>
+                                    <br>
+                                    <p>Tribal Fitness is a vibrant community of athletes ranging from beginner to professional looking to improve their fitness.  Owned and operated by personal trainer April Riggins, Tribal Fitness strives to teach others her approach towards health - building long-lasting habits that make you feel great. </p>
+                                    </div>
+                            
+                                    <div class="artboard_columntwothird">
+                                            <img src="src/cases/tribal_fitness/filler_img.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                            <p class="caption">The Tribal Fitness website is responsive on all devices.</p>
+                                    </div>
+                                    <br>
+                                <div>
+                                <h3>Create brand guidelines that express strength and excitement to a welcoming fitness community. </h3>
+                                <p class="blu">Using the basis of her Hawaiian heritage as a baseline to build the brand, I developed several sketches of sharks (April’s favorite animal) in tribal style. In order to stand out in a dense market of fitness professionals, I strived to create a bright, exciting brand that steered away from the typical intense, sharp style of the fitness industry.</p>
+                                <br>
+                                <!-- <img style="width: 100%; " src="src/cases/tribal_fitness/tribal_specs2.png" loading="lazy" alt="Tribal Fitness Brand specs"> -->
+        
+                            
+                                    <div class="artboard_columntwothird">
+                                            <img src="src/cases/tribal_fitness/tribal_sketch2.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                           
+                                    </div>
+                                    <div class="artboard_columnthird">
+                                            <img src="src/cases/tribal_fitness/tribal_shirt.jpg" loading="lazy" style="width: 100%;" alt="Tribal Fitness website with workout accessories">
+                                        </div>
+        
+                                    <h3>Develop a site to showcase information about April and the offerings of Tribal Fitness using newly designed brand guidelines.</h3>
+                                    <p class="blu">Tribal Fit's website needed to showcase April's personality and invite people of all fitness levels into her community. It also needed to showcase the programs provided by Tribal Fitness and the fitness software used by April to train.  </p>
+                                    <br>
+        
+                                  
+                                </div>
+                                <div class="artboard_navigation">
+                                        <a onclick="toggleOpenClose('tlgs_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="tlgs_project" class="window case" style="display: none;">
+                        <div class="window_closebar"><button onclick="toggleOpenClose('tlgs_project')"><img class="close_btn" src="src/close.svg" alt="close button"></button></div>
+                        
+                        <div class="case_content">
+                            <div class="artboard">
+                                    <h1 class="project_h1">Twin Lakes General Store </h1>      
+                                    <h2>Custom Wordpress Theme, E-Commerce, Product Photos, Social Media and Web Management</h2>                             
+                                    <br>
+        
+        
+                                <div class="artboard_columnthird blu">
+                                    <p><b>February '20</b><br>
+                                    <p><b>Tools: </b> Wordpress, WooCommerce, Illustrator</p>
+                                    <br>
+                                    <p>
+                                        Amidst 14,000-foot peaks, Colorado’s largest natural lakes and the United State’s longest backpacking trail resides the Twin Lakes General Store, an alluring and essential stop to travelers for over 100 years. Run solely by Bob Mathes and his shy golden retriever Motu, I completely revamped their site to a clean, easy-to-navigate home base for everything Twin Lakes, with touches of character to honor the marvels of the beautiful mountain town. 
+                                        
+                                    </p>
+                                </div>
+                        
+                                <div class="artboard_columntwothird">
+                                        <img style="width: 100%;" src="src/cases/tlgs/ipad_tlgs.jpg" loading="lazy" alt="twin lakes general store website on an ipad">
+                                        <p class='caption'>The Twin Lakes General Store website is responsive on all devices.</p>
+                                </div>
+                               
+                                <div class="artboard_columnfifty">
+                                    <img src="src/cases/tlgs/backpacker_screenshot.png" class="tlgs_screenshot mobile_hide" style="width: 100%; box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
+                                
+                                </div>
+                                <div class="artboard_columnfifty" >
+                                    <div class="tlgs_section_h3">
+                                        <h3 class="tlgs_flex_text">As a popular resupply spot for backpackers, hikers and campers, the general store needed a website that could convey information to future mountain adventurers.</h3>
+                                        <p class="blu tlgs_flex_text">Featuring hand-illustrated touches, paired with striking images and bold red elements to parallel the bright red paint of the store building, this site is intended to exude the personality of a historically rich spot while providing a modern, youthful approach to business. </p>
+                                    </div>
+                                        <img src="src/cases/tlgs/homepage_screenshot.png" class="tlgs_screenshot overlap_img" style="width: calc(100% + 50px); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75);" loading="lazy" alt="snapshot of Twin Lakes General Store home page">
+        
+                                </div>
+                                <div class="artboard_bottom" style="padding-top: 25px;">
+                                        <img id="tlgs_footer" src="src/cases/tlgs/tlgs_footer.png" style="width: 100%;" loading="lazy" alt="illustrations for web page">
+                                        <p class="caption" style="text-align: center; margin-bottom: 0;">Footer illustration featuring the highlights of Twin Lakes, Colorado</p>            
+                                </div>
+                                
+                            
+                                    
+                    
+                                <div class="artboard_response_row"> 
+                                    <div class="artboard_response_column">
+                                        <img class="bob_motu" src="src/cases/tlgs/bob_motu.jpg" style="width: 95%; margin: 50px 50px 0px 0px;" loading="lazy" alt="bob mathes and his golden retriever motu">
+                                        
+                                        <p class="caption" style="padding-top: 10px">Bob &amp; his golden retriever, Motu.</p>
+                                    </div>
+                                    <div class="artboard_response_column" style="margin: 50px 0px; text-align: center;">
+                                        <img style="float: left;  box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_left.svg" alt="left quote mark"> <br><br>
+                                        <br>
+                                        <p > Megan has been a great asset to my small business by helping us transition away 
+                                            from an out-of-date website and social media we inherited from former owners.  
+                                            From great concept and design, tech fixes and consulting, art, photography, and helping 
+                                            get an online shopping platform built. I’ve never seen someone be so engaged and work so 
+                                            hard, and recommend her for any sized project!</p>
+                                            <br>
+                                        <p><i>-Bob Mathes, Twin Lakes General Store & Mercantile 
+                                                Twin Lakes, Colorado</i></p>
+                                        <br>
+                                        <img style="float: right; box-shadow: none !important; width: 20px !important;" src="src/cases/miller_bros/quote_right.svg" alt="right quote mark">  
+                                        <br> <br> <br>
+                                        <a href="https://www.twinlakesgs.com" class="artboard_button" style=" color: white;" rel="noopener" target="_blank">View Website</a>
+                                        
+                                    </div>  
+                                    
+                                </div>
+                                <div class="artboard_navigation">
+                                        <a style="margin: 50px;" onclick="toggleOpenClose('miller_project')" class="case_nav_button"><h6>Next Case Study</h6></a>           
+                                </div>
+                        
+                                
+                            </div>
+                        
+                        </div>
+                
+                    </div>
+
             </div>
+
+            
         </div>  
         <div class="dock_container mobile_hide">
                 <div class="dock">

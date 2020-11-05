@@ -202,8 +202,7 @@ button:hover {cursor: pointer; color:# }
 
 
 /* Window CSS ------------------------------------------------------------------------------------------------------- */
-.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px; left: 5%; height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
-.case .window_closebar {position: sticky; position: -webkit-sticky; }
+.window {width: 100%; border: #3A4172 1px solid; border-radius: 5px;  height: calc(100% - 180px); background: #c6cadf;  -webkit-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); -moz-box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); position: fixed;  z-index: 10;}
 .window_closebar {height: 30px; width: 100%; top: 0; cursor: move; background-color: #49588b; color: #f4f4f4;  overflow-x: hidden; border-bottom: #3A4172 1px solid; position: -webkit-sticky; position: sticky; text-align: center; z-index: 20; }
 .window_closebar p {display: inline-block; margin-top: 5px;  color: #c6cadf;}
 .close_btn { height: 20px; left: 10px; top: 5px; position: absolute; } 
@@ -317,8 +316,10 @@ button:hover {cursor: pointer; color:# }
 
 
 /* Case Studies Window CSS --------------------------------------------------------------------------- */
+#case_studies_wrapper {width: 100vw; height: calc(100vh - 200px); top: 50px; z-index: 20000; display: flex; align-items: center; justify-content: center; }
+
 .artboard{height: 500px; padding: 50px; }
-.case {width: 100%; max-width: 1100px; height: calc(100% - 200px); top: 50px; background-color: #ececec; background-size: contain; overflow: auto;}
+.case {width: 100%; max-width: 1100px; height: calc(100% - 200px); top: 50px; background-color: #ececec; overflow: auto;}
 .artboard img {  margin: 0% 1% 1% 0%;}
 
 .caption {font-family: 'GreycliffCF-ThinOblique', sans-serif; text-align: center; margin: 1% 0px 100px 0px; font-size: 1rem; }
@@ -344,7 +345,7 @@ button:hover {cursor: pointer; color:# }
 .wf_poster {display: table-cell; vertical-align: middle; padding-right: 1%;}
 .wf_poster img {max-width: 100%;}
 .wf_tri_poster_container {display: table; width: 100%; white-space: nowrap; height: 100px;}
-
+.project_h1 {line-height: 45px;}
 .tincture {display: none;}
 
 @media screen and (min-width: 1100px ) {
@@ -409,7 +410,7 @@ button:hover {cursor: pointer; color:# }
   .about_content {overflow-y: scroll!important; margin-bottom: 20px;}
 #about_window h1 {font-size: 1.25em !important; line-height: 1em; }
 
-  .photo_frame {margin-top: 50px;}
+  .photo_frame {margin-top: 25px;}
  
   .photo_carousel {bottom: -5px;}
   .about_col_left, .about_col_right {width: 90%; margin: 0px 20px 20px 20px; height: auto; overflow-x: hidden; overflow-y: scroll;}
@@ -476,7 +477,7 @@ button:hover {cursor: pointer; color:# }
   
 }
 
-.mobile_homepage_context { width: 100%; height: 70%; max-height: 500px; margin-top: 33%; display: flex; align-items: center; justify-content: center;}
+.mobile_homepage_context { width: 100%; height: 70%; max-height: 500px; margin-top: 30%; display: flex; align-items: center; justify-content: center;}
 /* .mobile_homepage_context img {max-height: 100%;} */
 
 
