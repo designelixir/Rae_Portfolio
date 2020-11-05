@@ -309,7 +309,7 @@ function unlock(open){
   } else if (open && window.innerWidth > 400) {
     console.log("big!!!");
     var mobile_app_wrapper = document.getElementById('mobile_icon_container').style.display = "none";
-    desktop_icons.style.opacity = 1;
+    desktop_icons.style.display = "block";
     desktop_icons.style.animation = 'fade-in .5s cubic-bezier(.39,.575,.565,1.000) both';
 
     lock_icon.style.animation = "fade-out .5s ease-out both";
