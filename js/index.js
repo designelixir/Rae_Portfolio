@@ -1,19 +1,17 @@
-window.addEventListener( 'resize', onWindowResize, false );
+window.addEventListener( 'resize', function(){
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize( window.innerWidth, window.innerHeight );
+});
 window.ImageBitmap = window.ImageBitmap || function () { return null }
 
 var isThisMobile;
 
   if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1){
       var isThisMobile = true;
-      
-      
-      
-      
   } else {
-      console.log("not mobile");
       var isThisMobile = false;
-      
-  } console.log(isThisMobile);
+  } console.log("Mobile device detected: " + isThisMobile);
  
 if (!isThisMobile){
 
