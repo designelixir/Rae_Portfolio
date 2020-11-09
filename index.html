@@ -12,16 +12,12 @@
     
 
      <script type="text/javascript">
-    alert('TESTING MODE \n Last updated: '+ document.lastModified);
+    console.log("Last updated: "+ document.lastModified + " MT");
      document.onreadystatechange = () => {
         if (document.readyState === 'complete') {
             document.getElementById('spinny_wheel').style.display = 'none';
-            console.log("page loaded");
-            
         } else {
             document.getElementById('spinny_wheel').style.animation = 'fade-out .25s ease-out both';
-
-            console.log('page loading...');
         }
     };
      </script> 
