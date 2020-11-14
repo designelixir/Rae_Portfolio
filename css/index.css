@@ -339,7 +339,7 @@ button:hover {cursor: pointer; color:# }
 .artboard_button a{color: white!important; text-decoration: none; }
 .artboard_button:hover {background-color: #384272!important; cursor: pointer;}
 .bob_motu img {width: 50%; vertical-align: middle;}
-.artboard_navigation {width: 100%; height: 50px; display: flex; justify-content: center;}
+.artboard_navigation {width: 100%; height: 50px; display: flex; justify-content: center; padding: 50px 0px;}
 .case_nav_button h6 {color: black !important; font-size: 1rem; }
 .case_nav_button h6:hover {color: gray!important;}
 .artboard_column {float: left; width: 100%; }
@@ -357,6 +357,11 @@ button:hover {cursor: pointer; color:# }
 .wf_tri_poster_container {display: table; width: 100%; white-space: nowrap; height: 100px;}
 .project_h1 {line-height: 45px;}
 .tincture img{width: 100%;}
+#tribal_sketch {height: 550px; width: 99%;}
+#tribal_shirt {height: 550px;}
+.tf_product img{height: 320px; width: 100%;}
+.tf_product {width: calc((100% / 3)); height: 320px; float: left;}
+
 
 
 @media screen and (min-width: 1100px ) {
@@ -419,9 +424,7 @@ button:hover {cursor: pointer; color:# }
   #about_window {width: 100%; top: 40px; max-height: 100%; }
   .about_content {overflow-y: scroll!important; }
   #about_window h1 {font-size: 1.25em !important; line-height: 1em; }
-
   .photo_frame {margin-top: 25px;}
- 
   .photo_carousel {bottom: -5px;}
   .about_col_left, .about_col_right {width: 90%; margin: 0px 20px 20px 20px; height: auto; overflow-x: hidden; overflow-y: scroll;}
   .about_col_left img {margin-top: 35px;}
@@ -431,6 +434,8 @@ button:hover {cursor: pointer; color:# }
   #ct_portrait {margin-top: 175px;}
   #docs_flex_column {order: -1 !important;}
   #docs_flex_column2 {order: 2;}
+  #tribal_sketch {width: 100%; height: auto; }
+  #tribal_shirt {width: 100%; height: unset;}
 }
 
 
