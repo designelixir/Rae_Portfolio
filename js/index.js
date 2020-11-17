@@ -262,8 +262,8 @@ else {
 
 
   changeTime();
-  document.getElementById('portfolio_page_wrapper').style.height = "100vh";
-  document.getElementById('portfolio_page_wrapper').style.overflowY = "hidden";
+  document.getElementById('body').style.height = "100vh";
+  document.getElementById('body').style.overflowY = "hidden";
   document.getElementById('homepage_wrapper').style.display = 'none';
   
   var mobile_show = document.getElementsByClassName('mobile_show');
