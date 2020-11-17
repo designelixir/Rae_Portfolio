@@ -505,7 +505,7 @@ button:hover {cursor: pointer; color:# }
 /* .mobile_homepage_context img {max-height: 100%;} */
 
 
-#mobile_logo {height: 45%; max-width: 210px;  animation: rotateStars 15s infinite; position: absolute; z-index: 3; }
+#mobile_logo {height: 47%; max-width: 210px;  animation: rotateStars 15s infinite; position: absolute; z-index: 3; }
 #mobile_moto {height: 100%;  max-height: 700px; width: 95%; max-width: 430px; }
 .mobile_time {width: 100%; font-size: 75px; color: white;  position: absolute;  }
 .mobile_toolbar {
