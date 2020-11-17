@@ -356,13 +356,12 @@ button:hover {cursor: pointer; color:# }
 .wf_poster img {max-width: 100%;}
 .wf_tri_poster_container {display: table; width: 100%; white-space: nowrap; height: 100px;}
 .project_h1 {line-height: 45px;}
-.tincture img{width: 100%;}
+.tincture {width: 100%; }
 #tribal_sketch {height: 550px; width: 99%;}
 #tribal_shirt {height: 550px;}
 .tf_product img{height: 320px; width: 100%;}
 .tf_product {width: calc((100% / 3)); height: 320px; float: left;}
-
-
+.mobile_tincture {display: none;}
 
 @media screen and (min-width: 1100px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
@@ -430,12 +429,15 @@ button:hover {cursor: pointer; color:# }
   .about_col_left img {margin-top: 35px;}
   .about_section {width: 100%;}
   .photo_frame img{max-height:700px; height:80%; width:100%; object-fit:cover;}
-  .tincture {display: block;}
+  .tincture {display: block; width: 90%; margin-left: 5% !important;}
   #ct_portrait {margin-top: 175px;}
-  #docs_flex_column {order: -1 !important;}
-  #docs_flex_column2 {order: 2;}
+  #docs_col_1 {order: 0;}
+  #docs_col_2 {display: none;}
   #tribal_sketch {width: 100%; height: auto; }
   #tribal_shirt {width: 100%; height: unset;}
+  #docs_screenshot_hide {display: none;}
+  .tf_product{width: 100%; height: auto;}
+  .mobile_tincture {display: block;}
 }
 
 
