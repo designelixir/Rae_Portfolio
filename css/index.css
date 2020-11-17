@@ -439,7 +439,7 @@ button:hover {cursor: pointer; color:# }
   #tribal_shirt {width: 100%; height: unset;}
   #docs_screenshot_hide {display: none;}
   .tf_product{width: 100%; height: auto;}
-  .mobile_tincture {display: block;}
+  .mobile_tincture {display: block!important;}
 }
 
 
@@ -489,7 +489,9 @@ button:hover {cursor: pointer; color:# }
 .mobile_homepage {
   height: 100vh;
   width: 100vw;
-  background-size: cover; background-repeat: no-repeat;  background-color: #2E345B;
+  background-image: url('../src/splash+contexts/rainbow.svg');
+  
+  background-size: contain; background-repeat: no-repeat;  background-color: #2E345B;
   top: 40px;
   z-index: 1000000;
   position: fixed; 
