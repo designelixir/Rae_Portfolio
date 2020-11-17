@@ -159,7 +159,6 @@ const webDevelopmentSplash = document.querySelector('#web_development_splash');
 const illustration_splash = document.querySelector('#illustration_splash');
 const splash_pages = document.querySelector('#splash_pages');
 const splash_page_wrapper = document.querySelector('.splash_page_wrapper');
-
 const desktop_icons = document.querySelector('.desktop_icon_container');
 
 
@@ -167,10 +166,8 @@ uos(0, .1, p => (header.style.opacity = ((updatedProgress-(p*20)) / (updatedProg
 uos(0.1, 0.15, p => (header.style.left = (p*100)+"%")); //move header out of the way of desktop 
 uos(0.35, 0.4, p => (toolbar.style.opacity =  ((p*50/updatedProgress)) ));
 uos(0.85, 0.9, p => (toolbar_hide.style.opacity =  ((p*50/updatedProgress)) ));
-
 uos(0.45, 0.48, p => (login.style.opacity =  ((updatedProgress-(p*20))/(updatedProgress)) ));
 uos(0.56, 0.60, p => (login.style.left = (p*200)+"%"));
-
 uos(0.33, 0.48, p => (profile.style.width= ((p*30))+"%"));
 uos(0.33, 0.60, p => (profile_description.style.opacity =  ((p*50/updatedProgress)) ));
 
@@ -184,7 +181,6 @@ uos(0.90, 1, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 uos(0.97, 1, p => (desktop_icons.style.opacity =  ((p*50/updatedProgress)) ));
 
-// uos(0.42, 0.48, p => (desktop.style.opacity =  ((p*50/updatedProgress)) ));
 
 
 function dragElement(elmnt) {

@@ -135,11 +135,13 @@ button:hover {cursor: pointer; color:# }
 .spinny {position: fixed; bottom: 20px; left: 48%; z-index: 10000; max-width: 40px; opacity: 1;}
 
 /* Splash Pages CSS ------------------------------------------------------------------------------------ */
- #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; margin-top: 15vh; height: 70vh; width: 100%;  }
- #splash_context_text {width: 95%; max-height: 90vh; position: absolute; animation: rotateStars 15s infinite;}
- .splash_img {box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); max-height: 60vh; max-width: 75vw; margin-top: 2%; opacity: 1; position: absolute;}
- .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 10%; z-index: 200; background: #ededed; height: 25px; max-width: 68%; width: 0%; position: absolute;}
- 
+
+#splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; height: 100%; width: 100%; content: contain; }
+.splash_page_wrapper {display: flex; justify-content: center; align-items: center; max-height: 80%; }
+#splash_context_text {width: 95%; max-height: 900px; position: absolute; animation: rotateStars 15s infinite;}
+.splash_img {background: linear-gradient(0deg, rgba(47,51,92,1) 0%, rgba(198,202,223,1) 100%); width: 80%; max-width:1100px; margin-top: 2%; opacity: 1; position: absolute;}
+
+
  /* Desktop Framework CSS ------------------------------------------------------------------------------- */
 .desktop {position: fixed; top: 0; left: 0; height: 100%; width: 100%; background-size: cover; background-image: url("../src/desktop_items/mountain_wallpaper.svg");  background-color: #2E345B; z-index: 0; }
 #desktop_window_wrapper {width: 100%; height: 90%; top: 50px; position: fixed; z-index: 0; display: flex; justify-content: center; align-items: center;  }
@@ -272,8 +274,8 @@ button:hover {cursor: pointer; color:# }
 .instagram_tile img{object-fit:cover;height:86px;top:0;left:0}
 #photo_viewer{height:calc(100% - 170px);max-height:890px;max-width:980px;width:100%;top:90px;position:fixed;display:flex;justify-content:center}
 .picture_slide{height:calc(100% - 150px);top:48px;width:90%;margin:40px 0 0 0%;text-align:center}
-
-.photo_frame img{width: 100%; max-height: 550px; object-fit:cover; margin-bottom:25px; -webkit-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);-moz-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);box-shadow:25px 6px 35px -28px rgba(0,0,0,.75)}
+.photo_caption {padding-top: 25px;}
+.photo_frame img{width: 100%; max-height: 550px; object-fit: cover; -webkit-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);-moz-box-shadow:25px 6px 35px -28px rgba(0,0,0,.75);box-shadow:25px 6px 35px -28px rgba(0,0,0,.75)}
 .photo_carousel{width:100%; height:100px; bottom:21px; background:#fff; left: 0; position:absolute; display:inline-flex; scroll-behavior: smooth; overflow-x:scroll; overflow-y:hidden; border:5px solid #fff}
 .photo_carousel .instagram_tile{padding:0 5px}
 
@@ -361,6 +363,7 @@ button:hover {cursor: pointer; color:# }
 .tf_product img{height: 320px; width: 100%;}
 .tf_product {width: calc((100% / 3)); height: 320px; float: left;}
 .mobile_tincture {display: none;}
+
 
 @media screen and (min-width: 1100px ) {
   .artboard_columnthird{ width: 30%; margin-right: 2%; }
