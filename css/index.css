@@ -136,7 +136,6 @@ button:hover {cursor: pointer; color:# }
 
 /* Splash Pages CSS ------------------------------------------------------------------------------------ */
  #splash_pages {display: flex; justify-content: center; align-items: center; position: fixed; margin-top: 15vh; height: 70vh; width: 100%;  }
- .splash_page_wrapper {display: flex; justify-content: center; align-items: center; }
  #splash_context_text {width: 95%; max-height: 90vh; position: absolute; animation: rotateStars 15s infinite;}
  .splash_img {box-shadow: 25px 6px 35px -28px rgba(0,0,0,0.75); max-height: 60vh; max-width: 75vw; margin-top: 2%; opacity: 1; position: absolute;}
  .loading_scroller { border: 1px solid #2E345B; opacity: 50%; left: 20%; bottom: 10%; z-index: 200; background: #ededed; height: 25px; max-width: 68%; width: 0%; position: absolute;}
