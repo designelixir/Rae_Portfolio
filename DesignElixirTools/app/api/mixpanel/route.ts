@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Fields to keep from event properties, mapped to clean column names
 const FIELD_MAP: Record<string, string> = {
   distinct_id: "Distinct ID",
   $browser: "Browser",
@@ -36,28 +35,19 @@ export async function GET(req: NextRequest) {
   const from = searchParams.get("from");
   const to = searchParams.get("to");
   const event = searchParams.get("event");
+  const username = searchParams.get("username");
+  const secret = searchParams.get("secret");
+  const projectId = searchParams.get("project_id");
 
   if (!from || !to) {
-    return NextResponse.json(
-      { error: "Missing required params: from, to (YYYY-MM-DD)" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Missing required params: from, to" }, { status: 400 });
   }
 
-  const serviceAccountUsername = process.env.MIXPANEL_SERVICE_ACCOUNT_USERNAME;
-  const serviceAccountPassword = process.env.MIXPANEL_SERVICE_ACCOUNT_PASSWORD;
-  const projectId = process.env.MIXPANEL_PROJECT_ID;
-
-  if (!serviceAccountUsername || !serviceAccountPassword || !projectId) {
-    return NextResponse.json(
-      { error: "Missing Mixpanel env vars" },
-      { status: 500 }
-    );
+  if (!username || !secret || !projectId) {
+    return NextResponse.json({ error: "Missing service account credentials" }, { status: 400 });
   }
 
-  const credentials = Buffer.from(
-    `${serviceAccountUsername}:${serviceAccountPassword}`
-  ).toString("base64");
+  const credentials = Buffer.from(`${username}:${secret}`).toString("base64");
 
   const params = new URLSearchParams({
     project_id: projectId,
@@ -70,18 +60,12 @@ export async function GET(req: NextRequest) {
 
   try {
     const res = await fetch(mixpanelUrl, {
-      headers: {
-        Authorization: `Basic ${credentials}`,
-        Accept: "text/plain",
-      },
+      headers: { Authorization: `Basic ${credentials}`, Accept: "text/plain" },
     });
 
     if (!res.ok) {
       const errorText = await res.text();
-      return NextResponse.json(
-        { error: `Mixpanel error: ${errorText}` },
-        { status: res.status }
-      );
+      return NextResponse.json({ error: `Mixpanel error: ${errorText}` }, { status: res.status });
     }
 
     const raw = await res.text();
@@ -91,17 +75,13 @@ export async function GET(req: NextRequest) {
       try {
         const parsed = JSON.parse(line);
         const props = parsed.properties || {};
-
-        // Build filtered + renamed event object
         const filtered: Record<string, string> = {
           Time: props.time ? formatUnixTimestamp(props.time) : "—",
         };
-
         for (const [rawKey, label] of Object.entries(FIELD_MAP)) {
           const val = props[rawKey];
           filtered[label] = val !== undefined && val !== null ? String(val) : "—";
         }
-
         return filtered;
       } catch {
         return { raw: line };
@@ -110,9 +90,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ count: events.length, events });
   } catch (err) {
-    return NextResponse.json(
-      { error: `Fetch failed: ${(err as Error).message}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `Fetch failed: ${(err as Error).message}` }, { status: 500 });
   }
 }

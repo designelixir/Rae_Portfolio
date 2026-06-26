@@ -22,6 +22,8 @@
   --white-3: #CCCCCC;
   --white-4: #B3B4B4;
 
+  --max-width: calc(100vw - 325px);
+
   --greycliff: 'Greycliff-CF', sans-serif;
 }
 
@@ -67,6 +69,8 @@ section {background: var(--opaque-white);   border-radius: var(--br); overflow-x
 .xs-basic-padding {padding: 10px;}
 .basic-padding-left-right {padding: 0 var(--basic-padding)}
 .basic-padding-top-bottom {padding: var(--basic-padding) 0}
+
+.basic-margin-top-bottom {margin: var(--basic-padding) 0}
 
 h1 { font-size: 32px; line-height: 1.25; margin: 0;}
 h2 { font-size: 28px; line-height: 1.25; margin: 12.5px 0px; }
@@ -140,7 +144,15 @@ textarea {padding: 8px; font-size: 12px; border: 1px solid black; border-radius:
 .checkbox-wrapper {display: flex; align-items: center; background: var(--white-1); padding: 5px;}
 .checkbox-wrapper input {margin-right: 10px;}
 
-table {border-collapse: collapse; width: 100%;}
+.table-wrapper {border: 2px solid black; border-radius: 5px; max-width: var(--max-width);  overflow-x: scroll; max-height: 50vh; overflow-y: scroll;}
+.table-wrapper tbody {border: 2px solid lime; margin-top: 100px;}
+.table-wrapper thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+table {border-collapse: collapse; width: 100%; overflow-x: scroll;}
 tr {border-bottom: 2px solid var(--white-2)}
 .selected-row {border: 2px solid var(--lavender)!important; }
 .selected-row td {background: rgba(142, 161, 228, 0.5); }
@@ -196,6 +208,25 @@ td h3 {font-weight: 400;}
 .calculated-time-wrapper {background: white; margin-bottom: 10px; border-radius: var(--br); padding: 10px;}
 
 /* Module Popup window */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+}
 .module-popup-container {position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(1px); z-index: 1000;}
 .module-popup {background: white; max-height: 90vh; overflow-y: auto; max-width: 90vw;}
 .module-popup-header {min-width: 40vw; margin-bottom: var(--basic-padding)}

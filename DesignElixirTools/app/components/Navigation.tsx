@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { title: "Time Tracker", href: "/time-tracking", icon: "/clock.png", section: "Design Elixir"},
   {title: "Project List", href: "/projects", icon: "/pencil-case.png", section: "Design Elixir"},
   {title: "Invoices", href: '/invoices', icon: "/coin.png", section: "Design Elixir"},
-  { title: "Mixpanel", href: "/mixpanel", icon: "/qr-code.svg", section: 'Tools'},
+  { title: "Mixpanel", href: "/mixpanel", icon: "/mixpanel.svg", section: 'Tools'},
 ];
 
 

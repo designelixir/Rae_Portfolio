@@ -141,3 +141,12 @@ export interface Invoice {
   private_notes?: string;
   draft: true;
 }
+
+export interface MixpanelServiceAccount {
+  id: string;
+  created_at: string;
+  account_name: string;
+  project_id: string;
+  service_account_username: string;
+  service_account_secret: string;
+}

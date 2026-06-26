@@ -22,13 +22,11 @@ export default async function AdminLayout({
 
   if (!session) {
     return (
-    <html className="full-width">
-      <body className="flex-center-center full-width">
-        <Login />
-      </body>
-
+      <html className="full-width">
+        <body className="flex-center-center full-width">
+          <Login />
+        </body>
       </html>
-
     )
   }
 

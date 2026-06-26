@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages:  ["@supabase/ssr", "@react-pdf/renderer"],
+  turbopack: {
+    root: __dirname,
+  },
 };
 
 export default nextConfig;
