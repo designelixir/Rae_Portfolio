@@ -1,0 +1,210 @@
+@font-face { font-family: 'Greycliff-CF'; src: url('/fonts/GreycliffCF-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Greycliff-CF'; src: url('/fonts/GreycliffCF-Medium.woff') format('woff'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Greycliff-CF'; src: url('/fonts/GreycliffCF-Demi%20Bold.woff') format('woff'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'Greycliff-CF'; src: url('/fonts/GreycliffCF-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
+
+* {box-sizing: border-box; font-family: 'Greycliff-CF', sans-serif}
+:root {
+  --br: 5px;
+  --red: #e23f24;
+  --orange: #ff9933;
+  --yellow: #ffcc33;
+  --teal: #236666;
+  --green: #4CAF50;
+
+  /* From Asset 25.svg's palette, ordered lightest (1) to darkest (10). */
+  --blue-1: #f0f0fa;
+  --blue-2: #c2c2eb;
+  --blue-3: #a3a3e0;
+  --blue-4: #8585d6;
+  --blue-5: #6666cb;
+  --blue-6: #4747c2;
+  --blue-7: #2e2e8a;
+  --blue-8: #24246b;
+  --blue-9: #1f1f5c;
+  --blue-10: #14143c;
+  --off-black: #161616;
+
+  --opaque-white: rgba(255,255,255,0.85);
+  --basic-padding: clamp(15px, 2.5vw, 25px);
+  --box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  --white-1: #f3f3f3;
+  --white-2: #E7E8E8;
+  --white-3: #CCCCCC;
+  --white-4: #B3B4B4;
+
+  --max-width: calc(100vw - 325px);
+  --xs-pad: 10px;
+  --s-pad: 15px;
+  --pad: 25px;
+
+  --greycliff: 'Greycliff-CF', sans-serif;
+}
+
+.flex-center-center {display: flex; align-items: center; justify-content: center; flex:1}
+.flex-center-end {display: flex; align-items: center; justify-content: flex-end; flex:1}
+.flex-center-start {display: flex; align-items: center; justify-content: flex-start; flex:1}
+.flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between; flex:1}
+.flex-center-spaceevenly {display: flex; align-items: center; justify-content: space-evenly; flex:1}
+
+.flex-start-center {display: flex; align-items: flex-start; justify-content: center; flex:1}
+.flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start; flex:1;}
+.flex-start-end {display: flex; align-items: flex-start; justify-content: flex-end; flex:1;}
+.flex-start-spacebetween {display: flex; align-items: flex-start; justify-content: space-between; flex:1;}
+.flex-start-spaceevenly {display: flex; align-items: flex-start; justify-content: space-evenly; flex:1;}
+
+.flex-end-center {display: flex; align-items: flex-end; justify-content: center; flex:1;}
+.flex-end-start {display: flex; align-items: flex-end; justify-content: flex-start; flex:1;}
+.flex-end-end {display: flex; align-items: flex-end; justify-content: flex-end; flex:1;}
+.flex-end-spacebetween {display: flex; align-items: flex-end; justify-content: space-between; flex:1;}
+.flex-end-spaceevenly {display: flex; align-items: flex-end; justify-content: space-evenly; flex:1;}
+
+.flex-column {flex-direction: column;}
+.flex-wrap {flex-wrap: wrap}
+.no-flex-grow {flex: unset;}
+.full-width {width: 100%!important;}
+
+.hidden-scrollbar {scrollbar-width: none; /* Firefox */ -ms-overflow-style: none; /* Internet Explorer 10+ */}
+.hidden-scrollbar::-webkit-scrollbar {display: none; /* Chrome, Safari, and Edge */}
+.empty {min-width: 100px;}
+
+.basic-padding {padding: var(--basic-padding);}
+.xs-basic-padding {padding: 10px;}
+.basic-padding-left-right {padding: 0 var(--basic-padding)}
+.basic-padding-top-bottom {padding: var(--basic-padding) 0}
+
+.basic-margin-top-bottom {margin: var(--basic-padding) 0}
+
+.hover:hover {cursor: pointer; transform: scale(1.05);}
+.hover {cursor: pointer;}
+.box-shadow {box-shadow: 2px 2px 2px rgba(0,0,0,0.5);}
+.text-shadow {text-shadow: 0 0 2px rgba(0,0,0,0.5);}
+.no-text-spacing {margin: 0!important; padding: 0!important;}
+.no-link-styling {text-decoration: unset!important;}
+.white-text {color: white!important}
+.black-text {color: black!important;}
+.red-text {color: var(--red)}
+.teal-text {color: var(--teal)}
+.centered-text {text-align: center!important;}
+.nowrap {white-space: nowrap;}
+.xsmall-text {font-size: 8px;}
+.small-text {font-size: 12px;}
+
+
+#root { width: 1126px; max-width: 100%; margin: 0 auto; text-align: center; min-height: 100svh; display: flex; flex-direction: column; box-sizing: border-box; }
+
+body { margin: 0; }
+button {cursor: pointer; transition: all 0.5s ease;}
+
+.star-icon {height: 15px; margin: 0 15px;}
+
+/* Centered on the button alone when closed (50px = its own half-width plus
+   the overlay's 10px left padding); --menu-shift (set inline from
+   MenuOverlay.tsx, driven by the same measured nav width the blob uses)
+   slides the whole overlay left by half of what the nav adds, so the open
+   button+nav group re-balances around that same center point instead of
+   growing lopsided to the right. Delayed 0.35s on close to match the content
+   fade below -- it shifts back only once the nav's contents have finished
+   disappearing. */
+#menu-overlay {position: fixed; bottom: 0; left: calc(50vw - 32px - var(--menu-shift, 0px)); transition: left 0.7s ease 0.35s; z-index: 999; padding: 0 35px 10px 10px}
+#menu-overlay.is-open {transition: left 0.7s ease;}
+#menu-overlay:hover .site-nav-toggle-button {opacity: 1;}
+.site-nav-toggle-button {background: var(--blue-3)!important; border-radius: 50%; width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; line-height: 14px; border: 2px solid rgba(255,255,255,0); transition: all 0.5s smooth; margin-right: 10px;}
+.site-nav-toggle-button:hover {border: 2px solid rgba(255,255,255,1); }
+/* Closing: content fades out fully (0.35s) before the pill starts collapsing
+   (which then waits that same 0.35s before its own 0.7s max-width shrink
+   begins), so nothing is visibly clipped mid-fade. Opening: the pill/blob
+   grow immediately (no delay here), but the individual links/icons below
+   have their own delayed reveal so they only start appearing once that
+   growth (0.8s, matching the blob) has finished. */
+.site-nav { padding: var(--xs-pad) var(--pad); border-radius: 9999px; box-shadow: var(--box-shadow); overflow: hidden; white-space: nowrap; max-width: 600px; opacity: 1; transition: opacity 0.35s ease, max-width 0.7s ease 0.35s; }
+.site-nav.is-open {transition: opacity 0.35s ease, max-width 0.7s ease;}
+.site-nav:not(.is-open) {max-width: 0; opacity: 0; pointer-events: none; }
+
+/* Once the bubble/pill has fully extended (0.8s), its contents cascade in
+   one at a time rather than all at once -- each direct child (the 3 links,
+   3 star icons, and the social bubble, in DOM order) gets its own quick
+   0.18s fade with a slightly later start than the last. */
+.site-nav > * {opacity: 0; transition: opacity 0.18s ease;}
+.site-nav.is-open > *:nth-child(1) {opacity: 1; transition-delay: 0.8s;}
+.site-nav.is-open > *:nth-child(2) {opacity: 1; transition-delay: 0.86s;}
+.site-nav.is-open > *:nth-child(3) {opacity: 1; transition-delay: 0.92s;}
+.site-nav.is-open > *:nth-child(4) {opacity: 1; transition-delay: 0.98s;}
+.site-nav.is-open > *:nth-child(5) {opacity: 1; transition-delay: 1.04s;}
+.site-nav.is-open > *:nth-child(6) {opacity: 1; transition-delay: 1.1s;}
+.site-nav.is-open > *:nth-child(7) {opacity: 1; transition-delay: 1.16s;}
+.site-nav-link {color: white; text-decoration: unset; font-size: 16px; transition: all 0.25s ease;}
+.site-nav-link:hover {transform: scale(1.1);}
+
+.site-nav-bubble img {height: 25px;}
+
+.hamburger-icon {display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 25px; height: 20px;}
+.hamburger-line {display: block; width: 100%; height: 3px; background: white; border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease;}
+.hamburger-icon.is-open .hamburger-line:nth-child(1) {transform: translateY(8px) rotate(45deg);}
+.hamburger-icon.is-open .hamburger-line:nth-child(2) {opacity: 0;}
+.hamburger-icon.is-open .hamburger-line:nth-child(3) {transform: translateY(-8px) rotate(-45deg);}
+
+.menu-goo-layer { --menu-blob-x0: 15px; --menu-blob-d: 44px; position: absolute; inset: 0; z-index: -1; filter: url(#menu-goo); pointer-events: none; }
+.menu-blob { position: absolute; top: 50%; background: var(--blue-3); border-radius: 50%; transform: translateY(-60%); }
+.menu-blob-button { left: var(--menu-blob-x0); width: var(--menu-blob-d); height: var(--menu-blob-d); }
+/* Same 0.35s delay-on-close as .site-nav above, so the blob only starts
+   shrinking back once the content has fully faded out. */
+.menu-blob-nav { left: var(--menu-blob-x0); width: var(--menu-blob-d); height: var(--menu-blob-d); transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s, height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s, left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s, border-radius 0.8s ease 0.35s; }
+.menu-blob-nav.is-open { left: calc(var(--menu-blob-x0) + var(--menu-blob-d) + 10px); width: var(--menu-blob-open-w); height: var(--menu-blob-open-h); border-radius: calc(var(--menu-blob-open-h) / 2); transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), border-radius 0.8s ease; }
+.menu-bubble-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.menu-bubble { position: absolute; top: 50%; left: calc(10px + 44px); background: var(--blue-3); border-radius: 50%; transform: translateY(-50%); animation: menu-bubble-pop 0.6s ease-out forwards; }
+
+
+/* Canvas */
+.scene-layer { position: fixed; inset: 0; z-index: 0; }
+.scene-layer canvas { display: block; width: 100%; height: 100%; }
+.overlay-layer { position: absolute; inset: 0; pointer-events: none; }
+.overlay-no-click {pointer-events: none;}
+#scroll-debug { position: fixed; bottom: 10px; right: 10px; z-index: 999; padding: 4px 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; font-family: monospace; border-radius: 4px; pointer-events: none; }
+#wall-scale-debug { position: fixed; bottom: 38px; right: 10px; z-index: 999; padding: 4px 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; font-family: monospace; border-radius: 4px; pointer-events: none; }
+
+/* Scene */
+/* Two-segment scale: 10 -> 4 over scroll 0-0.45, then 4 -> 1 over 0.45-1.
+   --wall-seg1 ramps 0->6 across the first segment then holds at 6 (the
+   min() caps it); --wall-seg2 stays 0 until 0.45 then ramps 0->3 across the
+   second. Scale = 10 - seg1 - seg2, so it lands exactly on 10/4/1 at
+   scroll 0/0.45/1 with a clean bend at the midpoint -- keep in sync with
+   Scene.tsx's wallScaleAt, which mirrors this for the debug readout. */
+#layer0-wall-texture { position: fixed; inset: 0; z-index: 2; background-image: url('/scene/layer0-wall-texture-poster.svg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; --wall-seg1: calc(min(var(--scroll-progress, 0), 0.45) / 0.45 * 6); --wall-seg2: calc(max(0, min(var(--scroll-progress, 0), 1) - 0.45) / 0.55 * 3); --settle-t: calc(var(--scroll-progress, 0) / 0.2); --settle-fade: calc(1 - max(0, min(1, var(--settle-t)))); transform: translate(0, calc(28.86vh * var(--settle-fade))) scale(calc(10 - var(--wall-seg1) - var(--wall-seg2))); transform-origin: 50% 21.14%; }
+#layer1-wall-scene { position: absolute; height: 100vh; width: 100vw; border: 1px solid red; overflow-x: hidden}
+#layer1-window { position: absolute; width: 100vw; height: 100vh; background-image: url('/scene/layer1-window.svg'); background-size: auto 100vh; background-position: center; background-repeat: no-repeat;}
+#layer1-window-cut {margin-top: 8.75vh; width: 38vw; height: 31vh; border: 3px solid pink; z-index: 3;}
+
+#layer1-floors {width: 100vw; height: 10vh; border-top: 2px solid var(--off-black); background: var(--blue-7); position: fixed; left: 0; bottom: 0;}
+#layer1-floor-trim {height: 30%; width: 100%; background: var(--blue-8); border-bottom: 2px solid var(--off-black) }
+#neon-image { position: absolute; top: -1.5vh; left: 50%; height: 45vh; width: auto; aspect-ratio: 1963.92 / 1591.92; transform: translateX(-50%); border: 2px solid blue; }
+#neon-image svg { display: block; width: 100%; height: 100%; }
+
+#layer2-wall-scene {position: absolute; top: 0; left: 0; width: 100vw; overflow-x: hidden; height: 100vh; border: 3px solid orange;}
+
+#layer2-bookshelf {height: 100%; max-width: 20vw; width: 100%; border: 1px solid lime; z-index: 2; background-image: url('/scene/layer2-bookshelf.svg'); background-size: auto 50vh; background-position: 100% 105%; background-repeat: no-repeat; }
+#layer2-desk {width: 60vw; flex-grow: 1; min-width: 750px; height: 100vh; z-index: 2; border: 3px solid magenta; z-index: 3; background-image: url('/scene/layer2-desk.svg'); background-size: auto 57vh; background-repeat: no-repeat; background-position: center 110%;}
+#layer2-computer {height: 30vh; margin-top: -10vh;}
+
+#layer2-poster-plant-backpack { bottom: 0; right: 0; height: 100%; max-width: 20vw; width: 100%; border: 1px solid lime; z-index: 3; background-image: url('/scene/layer2-plant-backpack.svg'); background-size: auto 60vh; background-position: 0% 90%; background-repeat: no-repeat; overflow: hidden;}
+#layer2-lamp {height: 75vh; border: 1px solid purple; position: absolute; pointer-events: none;}
+
+/* Logo.tsx */
+.logo-wrapper {width: 40%; max-width: 500px; min-width: 400px; padding: 2.5vh; }
+
+
+
+
+/* animations */
+.slide-in-bottom{-webkit-animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bottom 1.5s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+@keyframes menu-bubble-pop { 0% { transform: translateY(-50%) translate(0, 0) scale(1); opacity: 0.9; } 100% { transform: translateY(-50%) translate(var(--bubble-dx), var(--bubble-dy)) scale(0.3); opacity: 0; } }
+
+.vibrate-1{-webkit-animation:vibrate-1 15s linear infinite both;animation:vibrate-1 15s linear infinite both}
+@-webkit-keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
+
+.slide-in-fwd-center{-webkit-animation:slide-in-fwd-center 1s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center 1s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+.bounce {-moz-animation: bounce 3s infinite; -webkit-animation: bounce 3s infinite; animation: bounce 3s infinite;}
+@-moz-keyframes bounce {0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0); transform: translateY(0);} 40% {-moz-transform: translateY(-30px); transform: translateY(-30px);} 60% { -moz-transform: translateY(-15px); transform: translateY(-15px);}}

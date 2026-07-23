@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7006.56 3639.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1f1f5c;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #161616;
+        stroke-miterlimit: 10;
+        stroke-width: 8px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #161616;
+        opacity: 0;
+      }
+
+      .cls-5 {
+        fill: #f0f0fa;
+        opacity: .1;
+      }
+
+      .cls-3 {
+        fill: #24246b;
+      }
+    </style>
+  </defs>
+  <g id="scene">
+    <rect class="cls-4" width="7006.56" height="3639.44"/>
+    <g id="window">
+      <g id="window-frame">
+        <polyline id="glass" class="cls-5" points="4293.3 331.1 4293.3 1445.24 2748.95 1445.24 2748.95 331.1 4293.3 331.1"/>
+        <path id="inner-frame" class="cls-3" d="M4294.32,331.1v1114.14h-1547.75V331.1h1547.75M4472.33,226.94h-1903.78v1352.31h1903.78V226.94h0Z"/>
+        <rect id="left-trim" class="cls-1" x="1876.3" y="803.27" width="1323.19" height="150.47" transform="translate(3416.4 -1659.39) rotate(90)"/>
+        <rect id="right-trim" class="cls-1" x="3827.06" y="803.27" width="1323.19" height="150.47" transform="translate(5367.17 -3610.16) rotate(90)"/>
+        <rect id="top-trim" class="cls-1" x="2401.64" y="95.98" width="2204.37" height="143.75"/>
+        <rect id="bottom-trim" class="cls-1" x="2369.15" y="1516.46" width="2269.35" height="68.82"/>
+        <g id="trimnotches">
+          <line class="cls-2" x1="2608.9" y1="1514.36" x2="2745.81" y2="1450.12"/>
+          <line class="cls-2" x1="4291.69" y1="1442.56" x2="4412.48" y2="1514.39"/>
+          <line class="cls-2" x1="2612.68" y1="244.26" x2="2749.16" y2="332.35"/>
+          <line class="cls-2" x1="4417.68" y1="239.32" x2="4289.78" y2="333.77"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
